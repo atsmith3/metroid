@@ -1,0 +1,58 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/simulation/modelsim
+vadder2
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 !s110 1473384149
+!i10b 1
+!s100 4OJQeCj4NcAJa93eSHl`P2
+I6=gk]kUgHWUGzdfY0O_8c2
+Z3 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 adder2_sv_unit
+S1
+R0
+w1473384028
+8E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/adder2.sv
+FE:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/adder2.sv
+L0 1
+Z4 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1473384149.149000
+!s107 E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/adder2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04|E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/adder2.sv|
+!i113 1
+Z5 o-sv -work work
+Z6 !s92 -sv -work work {+incdir+E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04}
+vfull_adder
+R1
+R2
+!i10b 1
+!s100 7?THOPd^4`Z[XRBN=F5II2
+I99Z6V:W2`[:;2gkiO`Ne63
+R3
+!s105 full_adder_sv_unit
+S1
+R0
+w1473382510
+8E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/full_adder.sv
+FE:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/full_adder.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1473384149.087000
+!s107 E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/full_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04|E:/School/University of Illinois/ECE 385/Lab04/SystemVerilog_L04/full_adder.sv|
+!i113 1
+R5
+R6
