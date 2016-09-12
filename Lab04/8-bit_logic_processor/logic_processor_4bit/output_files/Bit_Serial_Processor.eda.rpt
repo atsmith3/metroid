@@ -1,6 +1,6 @@
 EDA Netlist Writer report for Bit_Serial_Processor
-Sun Sep 11 14:31:20 2016
-Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+Sun Sep 11 19:04:55 2016
+Quartus II 32-bit Version 13.1.4 Build 182 03/12/2014 SJ Full Version
 
 
 ---------------------
@@ -17,27 +17,26 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Copyright (C) 1991-2014 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus II License Agreement,
-the Altera MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
 
 
 
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Sep 11 14:31:20 2016 ;
+; EDA Netlist Writer Status ; Successful - Sun Sep 11 19:04:55 2016 ;
 ; Revision Name             ; Bit_Serial_Processor                  ;
 ; Top-level Entity Name     ; Bit_Serial_Processor                  ;
 ; Family                    ; Cyclone IV E                          ;
@@ -67,42 +66,42 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                   ;
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                              ;
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_85c_slow.svo    ;
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_0c_slow.svo     ;
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_min_1200mv_0c_fast.svo   ;
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor.svo                      ;
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_85c_v_slow.sdo  ;
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_0c_v_slow.sdo   ;
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_min_1200mv_0c_v_fast.sdo ;
-; /home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_v.sdo                    ;
-+----------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                                  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_85c_slow.svo    ;
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_0c_slow.svo     ;
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_min_1200mv_0c_fast.svo   ;
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor.svo                      ;
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_85c_v_slow.sdo  ;
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_7_1200mv_0c_v_slow.sdo   ;
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_min_1200mv_0c_v_fast.sdo ;
+; /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/Bit_Serial_Processor_v.sdo                    ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit EDA Netlist Writer
-    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Sun Sep 11 14:31:19 2016
+Info: Running Quartus II 32-bit EDA Netlist Writer
+    Info: Version 13.1.4 Build 182 03/12/2014 SJ Full Version
+    Info: Processing started: Sun Sep 11 19:04:54 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Bit_Serial_Processor -c Bit_Serial_Processor
-Info (204019): Generated file Bit_Serial_Processor_7_1200mv_85c_slow.svo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Bit_Serial_Processor_7_1200mv_0c_slow.svo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Bit_Serial_Processor_min_1200mv_0c_fast.svo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Bit_Serial_Processor.svo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Bit_Serial_Processor_7_1200mv_85c_v_slow.sdo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Bit_Serial_Processor_7_1200mv_0c_v_slow.sdo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Bit_Serial_Processor_min_1200mv_0c_v_fast.sdo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Bit_Serial_Processor_v.sdo in folder "/home/zach/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
-Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1099 megabytes
-    Info: Processing ended: Sun Sep 11 14:31:20 2016
-    Info: Elapsed time: 00:00:01
+Info (204019): Generated file Bit_Serial_Processor_7_1200mv_85c_slow.svo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Bit_Serial_Processor_7_1200mv_0c_slow.svo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Bit_Serial_Processor_min_1200mv_0c_fast.svo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Bit_Serial_Processor.svo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Bit_Serial_Processor_7_1200mv_85c_v_slow.sdo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Bit_Serial_Processor_7_1200mv_0c_v_slow.sdo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Bit_Serial_Processor_min_1200mv_0c_v_fast.sdo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Bit_Serial_Processor_v.sdo in folder "/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 354 megabytes
+    Info: Processing ended: Sun Sep 11 19:04:56 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

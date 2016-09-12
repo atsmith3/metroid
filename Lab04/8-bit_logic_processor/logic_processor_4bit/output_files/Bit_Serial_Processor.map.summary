@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Sep 11 15:08:34 2016
-Quartus II 64-Bit Version : 15.0.0 Build 145 04/22/2015 SJ Web Edition
+Analysis & Synthesis Status : Successful - Sun Sep 11 19:10:37 2016
+Quartus II 32-bit Version : 13.1.4 Build 182 03/12/2014 SJ Full Version
 Revision Name : Bit_Serial_Processor
 Top-level Entity Name : Bit_Serial_Processor
 Family : Cyclone IV E
-Total logic elements : 0
-    Total combinational functions : 0
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 58
+Total logic elements : 84
+    Total combinational functions : 71
+    Dedicated logic registers : 43
+Total registers : 43
+Total pins : 66
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

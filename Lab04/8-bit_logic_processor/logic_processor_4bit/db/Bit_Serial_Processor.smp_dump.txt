@@ -1,5 +1,5 @@
 
-State Machine - |Bit_Serial_Processor|testbench_8:test0|Processor:processor0|control:control_unit|curr_state
+State Machine - |Bit_Serial_Processor|Processor:main|control:control_unit|curr_state
 Name curr_state.J curr_state.I curr_state.H curr_state.G curr_state.F curr_state.E curr_state.D curr_state.C curr_state.B curr_state.A 
 curr_state.A 0 0 0 0 0 0 0 0 0 0 
 curr_state.B 0 0 0 0 0 0 0 0 1 1 
