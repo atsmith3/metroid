@@ -1,0 +1,190 @@
+# do Bit_Serial_Processor_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying /software/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /software/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Synchronizers.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sync
+# -- Compiling module sync_r0
+# -- Compiling module sync_r1
+# 
+# Top level modules:
+# 	sync
+# 	sync_r0
+# 	sync_r1
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Router.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module router
+# 
+# Top level modules:
+# 	router
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/HexDriver.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Control.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/compute.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module compute
+# 
+# Top level modules:
+# 	compute
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Bit_Serial_Processor.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Bit_Serial_Processor
+# 
+# Top level modules:
+# 	Bit_Serial_Processor
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Reg_8.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module reg_8
+# 
+# Top level modules:
+# 	reg_8
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Register_unit.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register_unit
+# 
+# Top level modules:
+# 	register_unit
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Processor.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Processor
+# 
+# Top level modules:
+# 	Processor
+# vlog -sv -work work +incdir+/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit {/home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/testbench_8.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module testbench_8
+# 
+# Top level modules:
+# 	testbench_8
+# 
+vsim work.testbench_8
+# vsim work.testbench_8 
+# Loading sv_std.std
+# Loading work.testbench_8
+# Loading work.Processor
+# Loading work.register_unit
+# Loading work.reg_8
+# Loading work.compute
+# Loading work.router
+# Loading work.control
+# Loading work.HexDriver
+# Loading work.sync
+wave create -pattern clock -initialvalue 0 -period 20ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/testbench_8/Clk
+wave create -pattern constant -value 1 -starttime 0ns -endtime 1000ns sim:/testbench_8/Reset
+# WARNING: No extended dataflow license exists
+wave create -pattern constant -value 0 -starttime 0ns -endtime 1000ns sim:/testbench_8/LoadA
+wave create -pattern constant -value 0 -starttime 0ns -endtime 1000ns sim:/testbench_8/LoadB
+wave create -pattern constant -value 0 -starttime 0ns -endtime 1000ns sim:/testbench_8/Execute
+wave create -pattern constant -value 10100000 -range 7 0 -starttime 0ns -endtime 1000ns sim:/testbench_8/Din
+vsim work.Bit_Serial_Processor
+# vsim work.Bit_Serial_Processor 
+# Loading sv_std.std
+# Loading work.Bit_Serial_Processor
+# Loading work.testbench_8
+# Loading work.Processor
+# Loading work.register_unit
+# Loading work.reg_8
+# Loading work.compute
+# Loading work.router
+# Loading work.control
+# Loading work.HexDriver
+# Loading work.sync
+run -all
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Control.sv(25): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Router.sv(17): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Router.sv(7): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/compute.sv(7): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Control.sv(25): No condition is true in the unique/priority if/case statement.
+# Success!
+add wave -position insertpoint  \
+sim:/Bit_Serial_Processor/R \
+sim:/Bit_Serial_Processor/Execute \
+sim:/Bit_Serial_Processor/LoadA \
+sim:/Bit_Serial_Processor/LoadB \
+sim:/Bit_Serial_Processor/Reset \
+sim:/Bit_Serial_Processor/Clk \
+sim:/Bit_Serial_Processor/F \
+sim:/Bit_Serial_Processor/Aval \
+sim:/Bit_Serial_Processor/Bval \
+sim:/Bit_Serial_Processor/AhexU \
+sim:/Bit_Serial_Processor/AhexL \
+sim:/Bit_Serial_Processor/BhexU \
+sim:/Bit_Serial_Processor/BhexL \
+sim:/Bit_Serial_Processor/LED
+run -all
+restart
+# Loading sv_std.std
+# Loading work.Bit_Serial_Processor
+# Loading work.testbench_8
+# Loading work.Processor
+# Loading work.register_unit
+# Loading work.reg_8
+# Loading work.compute
+# Loading work.router
+# Loading work.control
+# Loading work.HexDriver
+# Loading work.sync
+run -all
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Control.sv(25): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Router.sv(17): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Router.sv(7): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/compute.sv(7): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Control.sv(25): No condition is true in the unique/priority if/case statement.
+# Success!
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/Bit_Serial_Processor/test0/Clk \
+sim:/Bit_Serial_Processor/test0/Reset \
+sim:/Bit_Serial_Processor/test0/LoadA \
+sim:/Bit_Serial_Processor/test0/LoadB \
+sim:/Bit_Serial_Processor/test0/Execute \
+sim:/Bit_Serial_Processor/test0/Din \
+sim:/Bit_Serial_Processor/test0/F \
+sim:/Bit_Serial_Processor/test0/R \
+sim:/Bit_Serial_Processor/test0/LED \
+sim:/Bit_Serial_Processor/test0/Aval \
+sim:/Bit_Serial_Processor/test0/Bval \
+sim:/Bit_Serial_Processor/test0/AhexL \
+sim:/Bit_Serial_Processor/test0/AhexU \
+sim:/Bit_Serial_Processor/test0/BhexL \
+sim:/Bit_Serial_Processor/test0/BhexU \
+sim:/Bit_Serial_Processor/test0/ans_1a \
+sim:/Bit_Serial_Processor/test0/ans_2b \
+sim:/Bit_Serial_Processor/test0/ErrorCnt
+run -all
+restart
+# Loading sv_std.std
+# Loading work.Bit_Serial_Processor
+# Loading work.testbench_8
+# Loading work.Processor
+# Loading work.register_unit
+# Loading work.reg_8
+# Loading work.compute
+# Loading work.router
+# Loading work.control
+# Loading work.HexDriver
+# Loading work.sync
+run -all
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Control.sv(25): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Router.sv(17): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Router.sv(7): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/compute.sv(7): No condition is true in the unique/priority if/case statement.
+# ** Warning: (vsim-8315) /home/atsmith3/ece385/ECE_385/Lab04/8-bit_logic_processor/logic_processor_4bit/Control.sv(25): No condition is true in the unique/priority if/case statement.
+# Success!
