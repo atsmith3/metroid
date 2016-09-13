@@ -1,46 +1,65 @@
+module four_ripple_adder
+(
+ input logic c_in,
+ input logic [3:0] a, b,
+ output logic c_out,
+ output logic [3:0] s
+);
+	wire c_temp[2:0];
+	
+	full_adder FA0(.x(a[0]), .y(b[0]), .z(c_in), .c(c_temp[0]), .s(s[0]));
+	full_adder FA1(.x(a[1]), .y(b[1]), .z(c_temp[0]), .c(c_temp[1]), .s(s[1]));
+	full_adder FA2(.x(a[2]), .y(b[2]), .z(c_temp[1]), .c(c_temp[2]), .s(s[2]));
+	full_adder FA3(.x(a[3]), .y(b[3]), .z(c_temp[2]), .c(c_out), .s(s[3]));
+
+endmodule
+
 module LAAdder
 (
 	input logic x, y, z, 
 	output logic s, p, g
 );
 
-	always_comb
-	begin: adder_logic
 		assign s = x^y^z;
 		assign p = x^y;
 		assign g = x&y;
-	end: adder_logic
 	
 endmodule
 
-module Carry_Lookahead
+module Carry_four_Lookahead
 (
-	input logic [15:0] p,g,
+	input logic [3:0] p,q,
 	input logic	c_in,
-	output logic [14:0] c_out,
+	output logic [2:0] c_out,
 	output logic Cn
 );
 
-	always_comb
-	begin: lookahead_logic
-		assign c_out[0] = g[0] | (c_in & p[0]);
-		assign c_out[1] = g[1] | (c_out[0] & p[1]);
-		assign c_out[2] = g[2] | (c_out[1] & p[2]);
-		assign c_out[3] = g[3] | (c_out[2] & p[3]);
-		assign c_out[4] = g[4] | (c_out[3] & p[4]);
-		assign c_out[5] = g[5] | (c_out[4] & p[5]);
-		assign c_out[6] = g[6] | (c_out[5] & p[6]);
-		assign c_out[7] = g[7] | (c_out[6] & p[7]);
-		assign c_out[8] = g[8] | (c_out[7] & p[8]);
-		assign c_out[9] = g[9] | (c_out[8] & p[9]);
-		assign c_out[10] = g[10] | (c_out[9] & p[10]);
-		assign c_out[11] = g[11] | (c_out[10] & p[11]);
-		assign c_out[12] = g[12] | (c_out[11] & p[12]);
-		assign c_out[13] = g[13] | (c_out[12] & p[13]);
-		assign c_out[14] = g[14] | (c_out[13] & p[14]);
-		assign Cn = g[15] | (c_out[14] & p[15]);
-	end: lookahead_logic
 	
+		assign c_out[0] = q[0] | (c_in & p[0]);
+		assign c_out[1] = q[1] | ((q[0] | (c_in & p[0])) & p[1]);
+		assign c_out[2] = q[2] | ((q[1] | ((q[0] | (c_in & p[0])) & p[1])) & p[2]);
+		assign Cn = q[3] | ((q[2] | ((q[1] | ((q[0] | (c_in & p[0])) & p[1])) & p[2])) & p[3]);
+	
+endmodule
+
+module four_LAAdder
+(
+	input logic [3:0] A, B,
+	input logic cin,
+   output logic cout,
+	output logic [3:0] Sum
+);
+
+   wire [3:0] p, q;
+	wire [2:0] cint;
+
+	LAAdder LA0(.x(A[0]), .y(B[0]), .z(cin), .s(Sum[0]), .p(p[0]), .g(q[0]));
+	LAAdder LA1(.x(A[1]), .y(B[1]), .z(cint[0]), .s(Sum[1]), .p(p[1]), .g(q[1]));
+	LAAdder LA2(.x(A[2]), .y(B[2]), .z(cint[1]), .s(Sum[2]), .p(p[2]), .g(q[2]));
+	LAAdder LA3(.x(A[3]), .y(B[3]), .z(cint[2]), .s(Sum[3]), .p(p[3]), .g(q[3]));
+	
+	Carry_four_Lookahead(.c_in(cin), .p(p[3:0]), .q(q[3:0]), .Cn(cout), .c_out(cint[2:0]));
+
 endmodule
 
 module C_S_Adder

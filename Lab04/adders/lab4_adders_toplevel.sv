@@ -19,6 +19,7 @@ module lab4_adders_toplevel
     input   logic           Clk,        // 50MHz clock is only used to get timing estimate data
     input   logic           Reset,      // From push-button 0.  Remember the button is active low (0 when pressed)
     input   logic           LoadB,      // From push-button 1
+	 input   logic           LoadA,      // From push-button 2
     input   logic           Run,        // From push-button 3.
     input   logic[15:0]     SW,         // From slider switches
     
@@ -49,7 +50,7 @@ module lab4_adders_toplevel
     logic[6:0]      Ahex2_comb;
     logic[6:0]      Ahex3_comb;
     logic[6:0]      Bhex0_comb;
-    logic[6:0]      Bhex1_Reset, LoadA, LoadB, Executecomb;
+    logic[6:0]      Bhex1_comb;
     logic[6:0]      Bhex2_comb;
     logic[6:0]      Bhex3_comb;
     
@@ -104,7 +105,7 @@ module lab4_adders_toplevel
      * Each time you instantate an "object", you consume physical hardware on the FPGA
      * in the same way that you'd place a 74-series hex driver chip on your protoboard 
      * Make sure only *one* adder module (out of the three types) is instantiated*/
-	  
+/*	  
 	 ripple_adder ripple_adder_inst
     (
         .A,             // This is shorthand for .A(A) when both wires/registers have the same name
@@ -112,22 +113,23 @@ module lab4_adders_toplevel
         .Sum(Sum_comb), // Connects the Sum_comb wire in this file to the Sum wire in ripple_adder.sv
         .CO(CO_comb)
     );
-	 
-//    carry_lookahead_adder carry_lookahead_adder_inst
-//    (
-//        .A,             // This is shorthand for .A(A) when both wires/registers have the same name
-//        .B,
-//        .Sum(Sum_comb), // Connects the Sum_comb wire in this file to the Sum wire in ripple_adder.sv
-//        .CO(CO_comb)
-//    );
-
-//    carry_select_adder carry_select_adder_inst
-//    (
-//        .A,             // This is shorthand for .A(A) when both wires/registers have the same name
-//        .B,
-//        .Sum(Sum_comb), // Connects the Sum_comb wire in this file to the Sum wire in ripple_adder.sv
-//        .CO(CO_comb)
-//    );
+*/
+/* 
+    carry_lookahead_adder carry_lookahead_adder_inst
+    (
+        .A,             // This is shorthand for .A(A) when both wires/registers have the same name
+        .B,
+        .Sum(Sum_comb), // Connects the Sum_comb wire in this file to the Sum wire in ripple_adder.sv
+        .CO(CO_comb)
+    );
+*/
+    carry_select_adder carry_select_adder_inst
+    (
+        .A,             // This is shorthand for .A(A) when both wires/registers have the same name
+        .B,
+        .Sum(Sum_comb), // Connects the Sum_comb wire in this file to the Sum wire in ripple_adder.sv
+        .CO(CO_comb)
+    );
     
     HexDriver Ahex0_inst
     (
