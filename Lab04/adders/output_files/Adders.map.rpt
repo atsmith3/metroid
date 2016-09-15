@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Adders
-Mon Sep 12 21:26:26 2016
+Tue Sep 13 23:10:42 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -47,7 +47,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 12 21:26:26 2016      ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 13 23:10:42 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; Adders                                     ;
 ; Top-level Entity Name              ; lab4_adders_toplevel                       ;
@@ -162,17 +162,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
-; lab4_adders_toplevel.sv          ; yes             ; User SystemVerilog HDL File  ; /home/zach/ece385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv ;         ;
-; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; /home/zach/ece385/ECE_385/Lab04/adders/HexDriver.sv            ;         ;
-; carry_select_adder.sv            ; yes             ; User SystemVerilog HDL File  ; /home/zach/ece385/ECE_385/Lab04/adders/carry_select_adder.sv   ;         ;
-; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; /home/zach/ece385/ECE_385/Lab04/adders/standard_modules.sv     ;         ;
-; adder_modules.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/zach/ece385/ECE_385/Lab04/adders/adder_modules.sv        ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; lab4_adders_toplevel.sv          ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/lab4_adders_toplevel.sv ;         ;
+; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/HexDriver.sv            ;         ;
+; carry_select_adder.sv            ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/carry_select_adder.sv   ;         ;
+; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/standard_modules.sv     ;         ;
+; adder_modules.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/adder_modules.sv        ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -321,7 +321,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Mon Sep 12 21:26:12 2016
+    Info: Processing started: Tue Sep 13 23:10:28 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Adders -c Adders
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file ripple_adder.sv
@@ -365,8 +365,8 @@ Info (21057): Implemented 220 device resources after synthesis - the final resou
     Info (21059): Implemented 73 output pins
     Info (21061): Implemented 126 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1004 megabytes
-    Info: Processing ended: Mon Sep 12 21:26:26 2016
+    Info: Peak virtual memory: 1005 megabytes
+    Info: Processing ended: Tue Sep 13 23:10:42 2016
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:21
 
