@@ -1,0 +1,10 @@
+// Nine bit adder module
+
+module NineBitAdder(	input logic [7:0] switches, Ain,
+							input logic Add, Sub,
+							output logic [7:0] Aout,
+							output logic X);
+							
+							
+							
+endmodule
