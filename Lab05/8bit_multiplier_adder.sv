@@ -5,19 +5,19 @@ module NineBitAdder(	input logic [7:0] switches, Ain,
 							output logic [7:0] Aout,
 							output logic X);
 	
-	//Find 2's Comp of A and store it into Acomp
+	//Find 2's Comp of A and store it into Scomp
 	logic cComp;
 	logic outC;
-	logic [7:0] Acomp;
+	logic [7:0] Scomp;
 	logic [7:0] Out;
 	
-	FourBitRippleCarryAdder AC0(.A(~Ain[3:0]),.B(4'b0001),.Cin(1'b0),.Cout(cComp),.Sum(Acomp[3:0]));
-	FourBitRippleCarryAdder AC1(.A(~Ain[7:4]),.B(4'b0000),.Cin(cComp),.Cout(),.Sum(Acomp[7:4]));
+	FourBitRippleCarryAdder AC0(.A(~switches[3:0]),.B(4'b0001),.Cin(1'b0),.Cout(cComp),.Sum(Scomp[3:0]));
+	FourBitRippleCarryAdder AC1(.A(~switches[7:4]),.B(4'b0000),.Cin(cComp),.Cout(),.Sum(Scomp[7:4]));
 	//Determine what goes into Adder
 	BusSelector(.A(Ain[7:0]),.*);
 	//Find output of the NineBitAdder
 	FourBitRippleCarryAdder FFA0(.A(Ain[3:0]),.B(Out[3:0]),.Cin(1'b0),.Sum(Aout[3:0]),.Cout(outC));
-	FourBitRippleCarryAdder FFA1(.A(Ain[7:4]),.B(Out[7:4]),.Cin(outC),.Sum(Aout[3:0]),.Cout(X));
+	FourBitRippleCarryAdder FFA1(.A(Ain[7:4]),.B(Out[7:4]),.Cin(outC),.Sum(Aout[7:4]),.Cout(X));
 
 	
 endmodule
@@ -39,7 +39,7 @@ module FourBitRippleCarryAdder(	input logic [3:0] A, B,
 endmodule
 
 // Bus Selector
-module BusSelector( 	input logic [7:0] A, Acomp,
+module BusSelector( 	input logic [7:0] A, Scomp,
 							input logic Add, Sub,
 							output logic [7:0] Out);
 	integer i;
@@ -56,13 +56,13 @@ module BusSelector( 	input logic [7:0] A, Acomp,
 	end
 	
 	// Now couple the output with the proper bus:
-	FourInputMux F0(.a(1'b0),.b(A[0]),.c(Acomp[0]),.d(1'b1),.select(Select[1:0]),.out(Out[0]));
-	FourInputMux F1(.a(1'b0),.b(A[1]),.c(Acomp[1]),.d(1'b1),.select(Select[1:0]),.out(Out[1]));
-	FourInputMux F2(.a(1'b0),.b(A[2]),.c(Acomp[2]),.d(1'b1),.select(Select[1:0]),.out(Out[2]));
-	FourInputMux F3(.a(1'b0),.b(A[3]),.c(Acomp[3]),.d(1'b1),.select(Select[1:0]),.out(Out[3]));
-	FourInputMux F4(.a(1'b0),.b(A[4]),.c(Acomp[4]),.d(1'b1),.select(Select[1:0]),.out(Out[4]));
-	FourInputMux F5(.a(1'b0),.b(A[5]),.c(Acomp[5]),.d(1'b1),.select(Select[1:0]),.out(Out[5]));
-	FourInputMux F6(.a(1'b0),.b(A[6]),.c(Acomp[6]),.d(1'b1),.select(Select[1:0]),.out(Out[6]));
-	FourInputMux F7(.a(1'b0),.b(A[7]),.c(Acomp[7]),.d(1'b1),.select(Select[1:0]),.out(Out[7]));
+	FourInputMux F0(.a(1'b0),.b(A[0]),.c(Scomp[0]),.d(1'b1),.select(Select[1:0]),.out(Out[0]));
+	FourInputMux F1(.a(1'b0),.b(A[1]),.c(Scomp[1]),.d(1'b1),.select(Select[1:0]),.out(Out[1]));
+	FourInputMux F2(.a(1'b0),.b(A[2]),.c(Scomp[2]),.d(1'b1),.select(Select[1:0]),.out(Out[2]));
+	FourInputMux F3(.a(1'b0),.b(A[3]),.c(Scomp[3]),.d(1'b1),.select(Select[1:0]),.out(Out[3]));
+	FourInputMux F4(.a(1'b0),.b(A[4]),.c(Scomp[4]),.d(1'b1),.select(Select[1:0]),.out(Out[4]));
+	FourInputMux F5(.a(1'b0),.b(A[5]),.c(Scomp[5]),.d(1'b1),.select(Select[1:0]),.out(Out[5]));
+	FourInputMux F6(.a(1'b0),.b(A[6]),.c(Scomp[6]),.d(1'b1),.select(Select[1:0]),.out(Out[6]));
+	FourInputMux F7(.a(1'b0),.b(A[7]),.c(Scomp[7]),.d(1'b1),.select(Select[1:0]),.out(Out[7]));
 								
 endmodule

@@ -1,6 +1,6 @@
 // Register file
 
-module Reagisters(	input logic [7:0] Ain, Bin,
+module Registers(	input logic [7:0] Ain, Bin,
 							input logic X, Clr_Ld, Shift, Clk, Reset, Add, Subtract,
 							output logic [7:0] Aout, Bout,
 							output logic M);
@@ -66,6 +66,6 @@ module EightBitShiftRegister(	input logic [7:0] DataIn,
 	
    always_comb
 	begin
-		assign ShiftOut = DataOut[0];		
+		ShiftOut = DataOut[0];		
 	end	
 endmodule

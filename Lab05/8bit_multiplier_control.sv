@@ -67,46 +67,66 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 						if(Run)
 						begin
 							if(M)
+							begin
 								NextState = ADD;
+							end
 							else
 								NextState = A;
 						end
 						else
 							NextState = WAIT;
 					end
-			A:		if(M)
+			A:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = B;
-			B:		if(M)
+					end
+			B:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = C;
-			C:		if(M)
+					end
+			C:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = D;
-			D:		if(M)
+					end
+			D:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = E;
-			E:		if(M)
+					end
+			E:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = F;
-			F:		if(M)
+					end
+			F:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = G;
-			G:		if(M)
+					end
+			G:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = H;
-			H:		if(M)
+					end
+			H:		begin
+					if(M)
 						NextState = ADD;
 					else	
 						NextState = WAIT;
-			ADD:	NextState = PreviousState;
+					end
+			ADD:	begin
+					NextState = PreviousState;
+					end
 		endcase
 	end
 							
