@@ -5,12 +5,10 @@ timeunit 10ns;	// Half clock cycle at 50 MHz
 timeprecision 1ns;
 
 logic Clk = 0;
-logic [7:0] switches, Ain;
-logic Add, Sub;
-logic [7:0] Aout;
-logic X;
+logic ClearA_LoadB, Run, Reset, M, Clr_Ld, Shift, Add, Sub;
+logic [3:0] currentState;
 
-NineBitAdder AdderUnit(.*);
+Controller ControllerUnitTest(.*);
 
 // Toggle the clock
 // #1 means wait for a delay of 1 timeunit
@@ -27,16 +25,14 @@ end
 // Everything happens sequentially inside an initial block
 // as in a software program
 initial begin: TEST_VECTORS
-Ain = 8'b00001111;
-switches = 8'b00010000;
-Add = 0;
-Sub = 0;
+ClearA_LoadB = 0;
+Run = 0;
+Reset = 0;
+M = 1;
 
-#2 Add = 1;
-#2 Add = 0;
+#2 Run = 1;
+#2 Run = 0;
 
-#4 Sub = 1;
-#2 Sub = 0;
 
 end
 endmodule

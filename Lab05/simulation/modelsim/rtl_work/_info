@@ -10,7 +10,7 @@ cModel Technology
 Z0 dE:/School/University of Illinois/ECE 385/ECE_385/Lab05/simulation/modelsim
 vBusSelector
 Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z2 !s110 1474152382
+Z2 !s110 1474155706
 !i10b 1
 !s100 BBJkA]?jGjYVYO^S?jWa40
 IEmiAI;5A??3>dJYj;1o4A0
@@ -26,7 +26,7 @@ Z8 OV;L;10.3d;59
 r1
 !s85 0
 31
-Z9 !s108 1474152382.433000
+Z9 !s108 1474155706.170000
 Z10 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_adder.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_adder.sv|
 !i113 1
@@ -37,13 +37,13 @@ vController
 R1
 R2
 !i10b 1
-!s100 GATEzUXDhAAj@?JigD<`70
-I6AYdc;17mS99zoo:WMf2>0
+!s100 S8W@]l[l^jK9i<MSPYPzb1
+Ic6S;Fb_X@W]4;dJQidUAZ0
 R3
 !s105 _8bit_multiplier_control_sv_unit
 S1
 R0
-w1474141629
+w1474155522
 8E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_control.sv
 FE:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_control.sv
 L0 3
@@ -51,7 +51,7 @@ R8
 r1
 !s85 0
 31
-!s108 1474152382.371000
+!s108 1474155706.101000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_control.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_control.sv|
 !i113 1
@@ -76,7 +76,7 @@ R8
 r1
 !s85 0
 31
-Z18 !s108 1474152382.502000
+Z18 !s108 1474155706.240000
 Z19 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_registers.sv|
 Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_registers.sv|
 !i113 1
@@ -110,50 +110,50 @@ R13
 n@four@bit@ripple@carry@adder
 vFourInputMux
 R1
-R2
+Z21 !s110 1474155705
 !i10b 1
 !s100 Lo51kPhP=DeA[`h@Ncz_U0
 IKBW2ZnzWdz5]jTE5V_Z0`1
 R3
-Z21 !s105 standard_modules_sv_unit
+Z22 !s105 standard_modules_sv_unit
 S1
 R0
-Z22 w1474079148
-Z23 8E:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv
-Z24 FE:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv
+Z23 w1474079148
+Z24 8E:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv
+Z25 FE:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv
 L0 11
 R8
 r1
 !s85 0
 31
-Z25 !s108 1474152382.208000
-Z26 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv|
-Z27 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv|
+Z26 !s108 1474155705.975000
+Z27 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv|
+Z28 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/standard_modules.sv|
 !i113 1
 R12
 R13
 n@four@input@mux
 vFullAdder
 R1
-R2
+R21
 !i10b 1
 !s100 8o<4J[Rg2a>U6ZY_LiY^?2
 IYPR6NJc2JGPBL2Kc`V<B83
 R3
-R21
+R22
 S1
 R0
-R22
 R23
 R24
+R25
 L0 31
 R8
 r1
 !s85 0
 31
-R25
 R26
 R27
+R28
 !i113 1
 R12
 R13
@@ -176,7 +176,7 @@ R8
 r1
 !s85 0
 31
-!s108 1474152382.569000
+!s108 1474155706.305000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/hexdriver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/hexdriver.sv|
 !i113 1
@@ -187,13 +187,13 @@ vMultiplier
 R1
 R2
 !i10b 1
-!s100 NOK75zcO6mWXPbF<@e<VF1
-IeV=4`>h0eRN;k48fmLFRO2
+!s100 OE:YhJ:8<88o=Y?alC:ea1
+ICla>IG[6fSHH_zJJm@Qlo2
 R3
 !s105 _8bit_multiplier_toplevel_sv_unit
 S1
 R0
-w1474144057
+w1474154981
 8E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_toplevel.sv
 FE:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_toplevel.sv
 L0 4
@@ -201,7 +201,7 @@ R8
 r1
 !s85 0
 31
-!s108 1474152382.277000
+!s108 1474155706.039000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_toplevel.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/8bit_multiplier_toplevel.sv|
 !i113 1
@@ -262,13 +262,13 @@ vtestbench
 R1
 R2
 !i10b 1
-!s100 =ATiB>METaYW[FhFONZ]_3
-I7O@P=`1;ANBUZfSX`8Ggb0
+!s100 efDPz>B[@i[8f`Q6nWCJD3
+IieU4j>_UE``<0Zc`[4NB41
 R3
 !s105 Test_Bench_sv_unit
 S1
 R0
-w1474151174
+w1474155677
 8E:/School/University of Illinois/ECE 385/ECE_385/Lab05/Test_Bench.sv
 FE:/School/University of Illinois/ECE 385/ECE_385/Lab05/Test_Bench.sv
 L0 1
@@ -276,7 +276,7 @@ R8
 r1
 !s85 0
 31
-!s108 1474152382.632000
+!s108 1474155706.367000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab05/Test_Bench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab05|E:/School/University of Illinois/ECE 385/ECE_385/Lab05/Test_Bench.sv|
 !i113 1
@@ -284,25 +284,25 @@ R12
 R13
 vTwoInputMux
 R1
-R2
+R21
 !i10b 1
 !s100 ofKSoMS3kM672Hd^_daVR2
 Io6l1fBBdH6MW[g`Q1hNhO2
 R3
-R21
+R22
 S1
 R0
-R22
 R23
 R24
+R25
 L0 1
 R8
 r1
 !s85 0
 31
-R25
 R26
 R27
+R28
 !i113 1
 R12
 R13

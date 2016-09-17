@@ -24,7 +24,8 @@ module Multiplier(	input logic [7:0] Switches,
 											.Clr_Ld(Clr_Ld),
 											.Shift(Shift), 
 											.Add(Add), 
-											.Sub(Sub));
+											.Sub(Sub),
+											.currentState());
 	
 	
 	

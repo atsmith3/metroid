@@ -1,2 +1,3 @@
 Info (10281): Verilog HDL Declaration information at 8bit_multiplier_control.sv(4): object "Add" differs only in case from object "ADD" in the same scope
+Info (10281): Verilog HDL Declaration information at 8bit_multiplier_control.sv(5): object "currentState" differs only in case from object "CurrentState" in the same scope
 Warning (10268): Verilog HDL information at 8bit_multiplier_registers.sv(57): always construct contains both blocking and non-blocking assignments

@@ -1,9 +1,12 @@
 // Controller logic 8 bit multiplier
 
 module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
-							output logic Clr_Ld, Shift, Add, Sub);
+							output logic Clr_Ld, Shift, Add, Sub, 
+							output logic [3:0]currentState);
 							
-	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, ADD} PreviousState, CurrentState, NextState;
+	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD} PreviousState, CurrentState, NextState;
+	
+	assign currentState = CurrentState;
 	
 	always_ff @ (posedge Clk)
 	begin
@@ -20,7 +23,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 	// Combinational Output Logic
 	always_comb
 	begin
-		if(WAIT)
+		if(CurrentState == WAIT)
 		begin
 		   Shift = 1'b0;
 			Add 	= 1'b0;
@@ -34,7 +37,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 				Clr_Ld = 1'b0;
 			end
 		end
-		else if(ADD)
+		else if(CurrentState == ADD)
 		begin
 			if(PreviousState == H)
 			begin
@@ -122,10 +125,19 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 					if(M)
 						NextState = ADD;
 					else	
+						NextState = I;
+					end
+			I:		begin
+					if(~Run)
 						NextState = WAIT;
+					else
+						NextState = I;
 					end
 			ADD:	begin
 					NextState = PreviousState;
+					end
+			default: begin
+					NextState = WAIT;
 					end
 		endcase
 	end

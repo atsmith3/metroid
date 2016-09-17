@@ -1,26 +1,56 @@
 
+State Machine - |Multiplier|testbench:test|Controller:ControllerUnitTest|PreviousState
+Name PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
+PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+PreviousState.A 0 0 0 0 0 0 0 0 0 1 1 
+PreviousState.B 0 0 0 0 0 0 0 0 1 0 1 
+PreviousState.C 0 0 0 0 0 0 0 1 0 0 1 
+PreviousState.D 0 0 0 0 0 0 1 0 0 0 1 
+PreviousState.E 0 0 0 0 0 1 0 0 0 0 1 
+PreviousState.F 0 0 0 0 1 0 0 0 0 0 1 
+PreviousState.G 0 0 0 1 0 0 0 0 0 0 1 
+PreviousState.H 0 0 1 0 0 0 0 0 0 0 1 
+PreviousState.I 0 1 0 0 0 0 0 0 0 0 1 
+PreviousState.ADD 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Multiplier|testbench:test|Controller:ControllerUnitTest|CurrentState
+Name CurrentState.ADD CurrentState.I CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A CurrentState.WAIT 
+CurrentState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+CurrentState.A 0 0 0 0 0 0 0 0 0 1 1 
+CurrentState.B 0 0 0 0 0 0 0 0 1 0 1 
+CurrentState.C 0 0 0 0 0 0 0 1 0 0 1 
+CurrentState.D 0 0 0 0 0 0 1 0 0 0 1 
+CurrentState.E 0 0 0 0 0 1 0 0 0 0 1 
+CurrentState.F 0 0 0 0 1 0 0 0 0 0 1 
+CurrentState.G 0 0 0 1 0 0 0 0 0 0 1 
+CurrentState.H 0 0 1 0 0 0 0 0 0 0 1 
+CurrentState.I 0 1 0 0 0 0 0 0 0 0 1 
+CurrentState.ADD 1 0 0 0 0 0 0 0 0 0 1 
+
 State Machine - |Multiplier|Controller:LogicUnit|PreviousState
-Name PreviousState.ADD PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
-PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 
-PreviousState.A 0 0 0 0 0 0 0 0 1 1 
-PreviousState.B 0 0 0 0 0 0 0 1 0 1 
-PreviousState.C 0 0 0 0 0 0 1 0 0 1 
-PreviousState.D 0 0 0 0 0 1 0 0 0 1 
-PreviousState.E 0 0 0 0 1 0 0 0 0 1 
-PreviousState.F 0 0 0 1 0 0 0 0 0 1 
-PreviousState.G 0 0 1 0 0 0 0 0 0 1 
-PreviousState.H 0 1 0 0 0 0 0 0 0 1 
-PreviousState.ADD 1 0 0 0 0 0 0 0 0 1 
+Name PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
+PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+PreviousState.A 0 0 0 0 0 0 0 0 0 1 1 
+PreviousState.B 0 0 0 0 0 0 0 0 1 0 1 
+PreviousState.C 0 0 0 0 0 0 0 1 0 0 1 
+PreviousState.D 0 0 0 0 0 0 1 0 0 0 1 
+PreviousState.E 0 0 0 0 0 1 0 0 0 0 1 
+PreviousState.F 0 0 0 0 1 0 0 0 0 0 1 
+PreviousState.G 0 0 0 1 0 0 0 0 0 0 1 
+PreviousState.H 0 0 1 0 0 0 0 0 0 0 1 
+PreviousState.I 0 1 0 0 0 0 0 0 0 0 1 
+PreviousState.ADD 1 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |Multiplier|Controller:LogicUnit|CurrentState
-Name CurrentState.ADD CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A CurrentState.WAIT 
-CurrentState.WAIT 0 0 0 0 0 0 0 0 0 0 
-CurrentState.A 0 0 0 0 0 0 0 0 1 1 
-CurrentState.B 0 0 0 0 0 0 0 1 0 1 
-CurrentState.C 0 0 0 0 0 0 1 0 0 1 
-CurrentState.D 0 0 0 0 0 1 0 0 0 1 
-CurrentState.E 0 0 0 0 1 0 0 0 0 1 
-CurrentState.F 0 0 0 1 0 0 0 0 0 1 
-CurrentState.G 0 0 1 0 0 0 0 0 0 1 
-CurrentState.H 0 1 0 0 0 0 0 0 0 1 
-CurrentState.ADD 1 0 0 0 0 0 0 0 0 1 
+Name CurrentState.ADD CurrentState.I CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A CurrentState.WAIT 
+CurrentState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+CurrentState.A 0 0 0 0 0 0 0 0 0 1 1 
+CurrentState.B 0 0 0 0 0 0 0 0 1 0 1 
+CurrentState.C 0 0 0 0 0 0 0 1 0 0 1 
+CurrentState.D 0 0 0 0 0 0 1 0 0 0 1 
+CurrentState.E 0 0 0 0 0 1 0 0 0 0 1 
+CurrentState.F 0 0 0 0 1 0 0 0 0 0 1 
+CurrentState.G 0 0 0 1 0 0 0 0 0 0 1 
+CurrentState.H 0 0 1 0 0 0 0 0 0 0 1 
+CurrentState.I 0 1 0 0 0 0 0 0 0 0 1 
+CurrentState.ADD 1 0 0 0 0 0 0 0 0 0 1 
