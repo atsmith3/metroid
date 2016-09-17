@@ -8,9 +8,10 @@ Switches[5] => Switches[5].IN2
 Switches[6] => Switches[6].IN2
 Switches[7] => Switches[7].IN2
 Clk => Clk.IN2
-Reset => Reset.IN2
-Run => Run.IN1
-ClearA_LoadB => ClearA_LoadB.IN1
+Reset => _.IN1
+Reset => _.IN1
+Run => _.IN1
+ClearA_LoadB => _.IN1
 AhexU[0] << HexDriver:AUpper.Out0
 AhexU[1] << HexDriver:AUpper.Out0
 AhexU[2] << HexDriver:AUpper.Out0
@@ -56,13 +57,17 @@ Bval[5] << Bval[5].DB_MAX_OUTPUT_PORT_TYPE
 Bval[6] << Bval[6].DB_MAX_OUTPUT_PORT_TYPE
 Bval[7] << Bval[7].DB_MAX_OUTPUT_PORT_TYPE
 X << X.DB_MAX_OUTPUT_PORT_TYPE
+Clr_Ld << Clr_Ld.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Multiplier|Controller:LogicUnit
 ClearA_LoadB => ~NO_FANOUT~
 Run => NextState.OUTPUTSELECT
 Run => NextState.OUTPUTSELECT
+Run => Selector9.IN3
 Run => Selector0.IN1
+Run => Selector0.IN2
+Reset => CurrentState.OUTPUTSELECT
 Reset => CurrentState.OUTPUTSELECT
 Reset => CurrentState.OUTPUTSELECT
 Reset => CurrentState.OUTPUTSELECT
@@ -83,26 +88,10 @@ Reset => PreviousState.OUTPUTSELECT
 Reset => PreviousState.OUTPUTSELECT
 Reset => PreviousState.OUTPUTSELECT
 Reset => PreviousState.OUTPUTSELECT
-Clk => PreviousState~10.DATAIN
+Reset => PreviousState.OUTPUTSELECT
+Clk => PreviousState~11.DATAIN
 Clk => CurrentState~1.DATAIN
-M => NextState.DATAB
-M => Selector9.IN1
-M => Selector9.IN2
-M => Selector9.IN3
-M => Selector9.IN4
-M => Selector9.IN5
-M => Selector9.IN6
-M => Selector9.IN7
-M => Selector9.IN8
-M => Selector8.IN1
-M => Selector7.IN1
-M => Selector6.IN1
-M => Selector5.IN1
-M => Selector4.IN1
-M => Selector3.IN1
-M => Selector2.IN1
-M => NextState.DATAB
-M => Selector0.IN2
+M => always2.IN0
 Clr_Ld <= <GND>
 Shift <= <GND>
 Add <= Sub.DB_MAX_OUTPUT_PORT_TYPE
@@ -153,13 +142,21 @@ M <= EightBitShiftRegister:RegB.ShiftOut
 
 
 |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA
+DataIn[0] => DataOut.DATAA
 DataIn[0] => DataOut.DATAB
+DataIn[1] => DataOut.DATAA
 DataIn[1] => DataOut.DATAB
+DataIn[2] => DataOut.DATAA
 DataIn[2] => DataOut.DATAB
+DataIn[3] => DataOut.DATAA
 DataIn[3] => DataOut.DATAB
+DataIn[4] => DataOut.DATAA
 DataIn[4] => DataOut.DATAB
+DataIn[5] => DataOut.DATAA
 DataIn[5] => DataOut.DATAB
+DataIn[6] => DataOut.DATAA
 DataIn[6] => DataOut.DATAB
+DataIn[7] => DataOut.DATAA
 DataIn[7] => DataOut.DATAB
 Clk => DataOut[0]~reg0.CLK
 Clk => DataOut[1]~reg0.CLK
@@ -206,13 +203,21 @@ ShiftOut <= DataOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegB
+DataIn[0] => DataOut.DATAA
 DataIn[0] => DataOut.DATAB
+DataIn[1] => DataOut.DATAA
 DataIn[1] => DataOut.DATAB
+DataIn[2] => DataOut.DATAA
 DataIn[2] => DataOut.DATAB
+DataIn[3] => DataOut.DATAA
 DataIn[3] => DataOut.DATAB
+DataIn[4] => DataOut.DATAA
 DataIn[4] => DataOut.DATAB
+DataIn[5] => DataOut.DATAA
 DataIn[5] => DataOut.DATAB
+DataIn[6] => DataOut.DATAA
 DataIn[6] => DataOut.DATAB
+DataIn[7] => DataOut.DATAA
 DataIn[7] => DataOut.DATAB
 Clk => DataOut[0]~reg0.CLK
 Clk => DataOut[1]~reg0.CLK

@@ -5,20 +5,20 @@ module Multiplier(	input logic [7:0] Switches,
 							input logic Clk, Reset, Run, ClearA_LoadB,
 							output logic [6:0] AhexU, AhexL, BhexU, BhexL,
 							output logic [7:0] Aval, Bval,
-							output logic X);
+							output logic X, Clr_Ld);
 							
 	// Intermediate Logic Wires
 	logic M;
-	logic Clr_Ld;
+	//logic Clr_Ld;
 	logic Shift;
 	logic Add;
 	logic Sub;
 	logic [7:0] Aout;
 							
 							
-	Controller 		LogicUnit(		.ClearA_LoadB(ClearA_LoadB),
-											.Run(Run),
-											.Reset(Reset),
+	Controller 		LogicUnit(		.ClearA_LoadB(~ClearA_LoadB),
+											.Run(~Run),
+											.Reset(~Reset),
 											.Clk(Clk),
 											.M(M),
 											.Clr_Ld(Clr_Ld),
@@ -28,22 +28,22 @@ module Multiplier(	input logic [7:0] Switches,
 	
 	
 	
-   Registers		RegisterUnit(	.Ain(Aval[7:0]), 
+   Registers		RegisterUnit(	.Ain(Aout[7:0]), 
 											.Bin(Switches[7:0]),
 											.Bout(Bval[7:0]),
 											.X(X),
 											.Clr_Ld(Clr_Ld),
 											.Shift(Shift),
 											.Clk(Clk),
-											.Reset(Reset), 
+											.Reset(~Reset), 
 											.Add(Add), 
 											.Subtract(Sub),
-											.Aout(Aout[7:0]), 
+											.Aout(Aval[7:0]), 
 											.M(M));
 	
 	NineBitAdder	AdderUnit(		.switches(Switches[7:0]),
-											.Ain(Aout[7:0]),
-											.Aout(Aval[7:0]),
+											.Ain(Aval[7:0]),
+											.Aout(Aout[7:0]),
 											.Add(Add),
 											.Sub(Sub),
 											.X(X));

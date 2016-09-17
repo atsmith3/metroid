@@ -62,6 +62,8 @@ module EightBitShiftRegister(	input logic [7:0] DataIn,
 			DataOut <= DataIn [7:0];
 		else if (ShiftEnable)
 			DataOut <= {ShiftIn, DataOut[7:1]};
+		else
+			DataOut <= DataIn;
 	end
 	
    always_comb

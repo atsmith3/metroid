@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 8bit_multiplier
-Sat Sep 17 14:43:13 2016
+Sat Sep 17 15:51:45 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -16,23 +16,22 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
   8. State Machine - |Multiplier|Controller:LogicUnit|PreviousState
   9. State Machine - |Multiplier|Controller:LogicUnit|CurrentState
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Port Connectivity Checks: "NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0"
- 14. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F7"
- 15. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F6"
- 16. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F5"
- 17. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F4"
- 18. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F3"
- 19. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2"
- 20. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F1"
- 21. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F0"
- 22. Port Connectivity Checks: "NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1"
- 23. Port Connectivity Checks: "NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
- 27. Analysis & Synthesis Suppressed Messages
+ 11. General Register Statistics
+ 12. Port Connectivity Checks: "NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0"
+ 13. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F7"
+ 14. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F6"
+ 15. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F5"
+ 16. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F4"
+ 17. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F3"
+ 18. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2"
+ 19. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F1"
+ 20. Port Connectivity Checks: "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F0"
+ 21. Port Connectivity Checks: "NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1"
+ 22. Port Connectivity Checks: "NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -59,16 +58,16 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 17 14:43:13 2016      ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 17 15:51:45 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; 8bit_multiplier                            ;
 ; Top-level Entity Name              ; Multiplier                                 ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 62                                         ;
-;     Total combinational functions  ; 61                                         ;
-;     Dedicated logic registers      ; 18                                         ;
-; Total registers                    ; 18                                         ;
-; Total pins                         ; 57                                         ;
+; Total logic elements               ; 94                                         ;
+;     Total combinational functions  ; 83                                         ;
+;     Dedicated logic registers      ; 38                                         ;
+; Total registers                    ; 38                                         ;
+; Total pins                         ; 58                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -174,50 +173,50 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; standard_modules.sv              ; yes             ; User SystemVerilog HDL File        ; /home/zach/ECE_385/Lab05/standard_modules.sv          ;         ;
-; 8bit_multiplier_toplevel.sv      ; yes             ; User SystemVerilog HDL File        ; /home/zach/ECE_385/Lab05/8bit_multiplier_toplevel.sv  ;         ;
-; 8bit_multiplier_control.sv       ; yes             ; User SystemVerilog HDL File        ; /home/zach/ECE_385/Lab05/8bit_multiplier_control.sv   ;         ;
-; 8bit_multiplier_adder.sv         ; yes             ; User SystemVerilog HDL File        ; /home/zach/ECE_385/Lab05/8bit_multiplier_adder.sv     ;         ;
-; 8bit_multiplier_registers.sv     ; yes             ; User SystemVerilog HDL File        ; /home/zach/ECE_385/Lab05/8bit_multiplier_registers.sv ;         ;
-; HexDriver.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; /home/zach/ECE_385/Lab05/HexDriver.sv                 ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                          ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
+; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab05/HexDriver.sv                 ;         ;
+; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab05/standard_modules.sv          ;         ;
+; 8bit_multiplier_toplevel.sv      ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab05/8bit_multiplier_toplevel.sv  ;         ;
+; 8bit_multiplier_control.sv       ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab05/8bit_multiplier_control.sv   ;         ;
+; 8bit_multiplier_adder.sv         ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab05/8bit_multiplier_adder.sv     ;         ;
+; 8bit_multiplier_registers.sv     ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab05/8bit_multiplier_registers.sv ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 62          ;
-;                                             ;             ;
-; Total combinational functions               ; 61          ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 39          ;
-;     -- 3 input functions                    ; 9           ;
-;     -- <=2 input functions                  ; 13          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 61          ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 18          ;
-;     -- Dedicated logic registers            ; 18          ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 57          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; Reset~input ;
-; Maximum fan-out                             ; 18          ;
-; Total fan-out                               ; 326         ;
-; Average fan-out                             ; 1.69        ;
-+---------------------------------------------+-------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 94        ;
+;                                             ;           ;
+; Total combinational functions               ; 83        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 63        ;
+;     -- 3 input functions                    ; 10        ;
+;     -- <=2 input functions                  ; 10        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 83        ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 38        ;
+;     -- Dedicated logic registers            ; 38        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 58        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 38        ;
+; Total fan-out                               ; 510       ;
+; Average fan-out                             ; 2.15      ;
++---------------------------------------------+-----------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -225,118 +224,99 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Library Name ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
-; |Multiplier                          ; 61 (0)            ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |Multiplier                                                                   ; work         ;
-;    |Controller:LogicUnit|            ; 9 (9)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Controller:LogicUnit                                              ; work         ;
+; |Multiplier                          ; 83 (0)            ; 38 (0)       ; 0           ; 0            ; 0       ; 0         ; 58   ; 0            ; |Multiplier                                                                   ; work         ;
+;    |Controller:LogicUnit|            ; 18 (18)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Controller:LogicUnit                                              ; work         ;
 ;    |HexDriver:ALower|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:ALower                                                  ; work         ;
 ;    |HexDriver:AUpper|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:AUpper                                                  ; work         ;
-;    |NineBitAdder:AdderUnit|          ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit                                            ; work         ;
-;       |BusSelector:comb_11|          ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11                        ; work         ;
+;    |HexDriver:BLower|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:BLower                                                  ; work         ;
+;    |HexDriver:BUpper|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:BUpper                                                  ; work         ;
+;    |NineBitAdder:AdderUnit|          ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit                                            ; work         ;
+;       |BusSelector:comb_11|          ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11                        ; work         ;
 ;          |FourInputMux:F0|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F0        ; work         ;
 ;          |FourInputMux:F1|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F1        ; work         ;
 ;          |FourInputMux:F2|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2        ; work         ;
 ;          |FourInputMux:F4|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F4        ; work         ;
 ;          |FourInputMux:F5|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F5        ; work         ;
 ;          |FourInputMux:F6|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F6        ; work         ;
-;          |FourInputMux:F7|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F7        ; work         ;
 ;       |FourBitRippleCarryAdder:AC0|  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0                ; work         ;
-;          |FullAdder:FA3|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3  ; work         ;
+;          |FullAdder:FA2|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA2  ; work         ;
+;          |FullAdder:FA3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3  ; work         ;
 ;       |FourBitRippleCarryAdder:AC1|  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1                ; work         ;
-;          |FullAdder:FA2|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2  ; work         ;
+;          |FullAdder:FA1|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA1  ; work         ;
+;          |FullAdder:FA3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA3  ; work         ;
 ;       |FourBitRippleCarryAdder:FFA0| ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0               ; work         ;
 ;          |FullAdder:FA0|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA0 ; work         ;
 ;          |FullAdder:FA1|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA1 ; work         ;
-;          |FullAdder:FA2|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA2 ; work         ;
-;          |FullAdder:FA3|             ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3 ; work         ;
+;          |FullAdder:FA2|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA2 ; work         ;
+;          |FullAdder:FA3|             ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3 ; work         ;
 ;       |FourBitRippleCarryAdder:FFA1| ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1               ; work         ;
 ;          |FullAdder:FA0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA0 ; work         ;
 ;          |FullAdder:FA1|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA1 ; work         ;
 ;          |FullAdder:FA2|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA2 ; work         ;
 ;          |FullAdder:FA3|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA3 ; work         ;
-;    |Registers:RegisterUnit|          ; 8 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit                                            ; work         ;
-;       |EightBitShiftRegister:RegA|   ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA                 ; work         ;
+;    |Registers:RegisterUnit|          ; 8 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit                                            ; work         ;
+;       |EightBitShiftRegister:RegA|   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA                 ; work         ;
+;       |EightBitShiftRegister:RegB|   ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegB                 ; work         ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|Controller:LogicUnit|PreviousState                                                                                                                                              ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
-; Name               ; PreviousState.ADD ; PreviousState.H ; PreviousState.G ; PreviousState.F ; PreviousState.E ; PreviousState.D ; PreviousState.C ; PreviousState.B ; PreviousState.A ; PreviousState.WAIT ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
-; PreviousState.WAIT ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                  ;
-; PreviousState.A    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                  ;
-; PreviousState.B    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                  ;
-; PreviousState.C    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                  ;
-; PreviousState.D    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.E    ; 0                 ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.F    ; 0                 ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.G    ; 0                 ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.H    ; 0                 ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.ADD  ; 1                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|Controller:LogicUnit|PreviousState                                                                                                                                                                ;
++--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
+; Name               ; PreviousState.ADD ; PreviousState.I ; PreviousState.H ; PreviousState.G ; PreviousState.F ; PreviousState.E ; PreviousState.D ; PreviousState.C ; PreviousState.B ; PreviousState.A ; PreviousState.WAIT ;
++--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
+; PreviousState.WAIT ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                  ;
+; PreviousState.A    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                  ;
+; PreviousState.B    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                  ;
+; PreviousState.C    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                  ;
+; PreviousState.D    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.E    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.F    ; 0                 ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.G    ; 0                 ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.H    ; 0                 ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.I    ; 0                 ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.ADD  ; 1                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
++--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|Controller:LogicUnit|CurrentState                                                                                                                                    ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; Name              ; CurrentState.ADD ; CurrentState.H ; CurrentState.G ; CurrentState.F ; CurrentState.E ; CurrentState.D ; CurrentState.C ; CurrentState.B ; CurrentState.A ; CurrentState.WAIT ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; CurrentState.WAIT ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
-; CurrentState.A    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
-; CurrentState.B    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
-; CurrentState.C    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
-; CurrentState.D    ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.E    ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.F    ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.G    ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.H    ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.ADD  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|Controller:LogicUnit|CurrentState                                                                                                                                                     ;
++-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; Name              ; CurrentState.ADD ; CurrentState.I ; CurrentState.H ; CurrentState.G ; CurrentState.F ; CurrentState.E ; CurrentState.D ; CurrentState.C ; CurrentState.B ; CurrentState.A ; CurrentState.WAIT ;
++-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; CurrentState.WAIT ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
+; CurrentState.A    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
+; CurrentState.B    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
+; CurrentState.C    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
+; CurrentState.D    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.E    ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.F    ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.G    ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.H    ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.I    ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.ADD  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
++-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                       ;
-+-----------------------------------------------------------------+----------------------------------------+
-; Register name                                                   ; Reason for Removal                     ;
-+-----------------------------------------------------------------+----------------------------------------+
-; Registers:RegisterUnit|X_Flop:RegX|Xout                         ; Lost fanout                            ;
-; Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[0..7] ; Stuck at GND due to stuck port data_in ;
-; Controller:LogicUnit|PreviousState~21                           ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState~22                           ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState~23                           ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState~24                           ; Lost fanout                            ;
-; Controller:LogicUnit|CurrentState~2                             ; Lost fanout                            ;
-; Controller:LogicUnit|CurrentState~3                             ; Lost fanout                            ;
-; Controller:LogicUnit|CurrentState~4                             ; Lost fanout                            ;
-; Controller:LogicUnit|CurrentState~5                             ; Lost fanout                            ;
-; Controller:LogicUnit|CurrentState.ADD                           ; Stuck at GND due to stuck port data_in ;
-; Controller:LogicUnit|PreviousState.ADD                          ; Stuck at GND due to stuck port data_in ;
-; Controller:LogicUnit|PreviousState.G                            ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState.F                            ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState.E                            ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState.D                            ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState.C                            ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState.B                            ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState.A                            ; Lost fanout                            ;
-; Controller:LogicUnit|PreviousState.WAIT                         ; Lost fanout                            ;
-; Total Number of Removed Registers = 27                          ;                                        ;
-+-----------------------------------------------------------------+----------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                       ;
-+---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
-; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                        ;
-+---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
-; Controller:LogicUnit|PreviousState~21 ; Lost Fanouts              ; Controller:LogicUnit|PreviousState.G, Controller:LogicUnit|PreviousState.E,   ;
-;                                       ;                           ; Controller:LogicUnit|PreviousState.C                                          ;
-; Controller:LogicUnit|PreviousState~22 ; Lost Fanouts              ; Controller:LogicUnit|PreviousState.F, Controller:LogicUnit|PreviousState.B    ;
-; Controller:LogicUnit|CurrentState.ADD ; Stuck at GND              ; Controller:LogicUnit|PreviousState.A, Controller:LogicUnit|PreviousState.WAIT ;
-;                                       ; due to stuck port data_in ;                                                                               ;
-; Controller:LogicUnit|PreviousState~23 ; Lost Fanouts              ; Controller:LogicUnit|PreviousState.D                                          ;
-+---------------------------------------+---------------------------+-------------------------------------------------------------------------------+
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++-----------------------------------------+--------------------+
+; Register name                           ; Reason for Removal ;
++-----------------------------------------+--------------------+
+; Registers:RegisterUnit|X_Flop:RegX|Xout ; Lost fanout        ;
+; Controller:LogicUnit|PreviousState~23   ; Lost fanout        ;
+; Controller:LogicUnit|PreviousState~24   ; Lost fanout        ;
+; Controller:LogicUnit|PreviousState~25   ; Lost fanout        ;
+; Controller:LogicUnit|PreviousState~26   ; Lost fanout        ;
+; Controller:LogicUnit|CurrentState~2     ; Lost fanout        ;
+; Controller:LogicUnit|CurrentState~3     ; Lost fanout        ;
+; Controller:LogicUnit|CurrentState~4     ; Lost fanout        ;
+; Controller:LogicUnit|CurrentState~5     ; Lost fanout        ;
+; Total Number of Removed Registers = 9   ;                    ;
++-----------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -344,12 +324,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 18    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 18    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1     ;
+; Number of registers using Clock Enable       ; 11    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -469,20 +449,21 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 57                          ;
-; cycloneiii_ff         ; 18                          ;
-;     ENA               ; 1                           ;
-;     plain             ; 17                          ;
-; cycloneiii_lcell_comb ; 65                          ;
-;     normal            ; 65                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 39                          ;
+; boundary_port         ; 58                          ;
+; cycloneiii_ff         ; 38                          ;
+;     ENA               ; 11                          ;
+;     SCLR              ; 18                          ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 88                          ;
+;     normal            ; 88                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 63                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.96                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 2.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -501,9 +482,11 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Sat Sep 17 14:43:01 2016
+    Info: Processing started: Sat Sep 17 15:51:32 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8bit_multiplier -c 8bit_multiplier
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file HexDriver.sv
+    Info (12023): Found entity 1: HexDriver
 Info (12021): Found 3 design units, including 3 entities, in source file standard_modules.sv
     Info (12023): Found entity 1: TwoInputMux
     Info (12023): Found entity 2: FourInputMux
@@ -531,47 +514,24 @@ Info (12128): Elaborating entity "FourBitRippleCarryAdder" for hierarchy "NineBi
 Info (12128): Elaborating entity "FullAdder" for hierarchy "NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA0"
 Info (12128): Elaborating entity "BusSelector" for hierarchy "NineBitAdder:AdderUnit|BusSelector:comb_11"
 Info (12128): Elaborating entity "FourInputMux" for hierarchy "NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F0"
-Warning (12125): Using design file HexDriver.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: HexDriver
 Info (12128): Elaborating entity "HexDriver" for hierarchy "HexDriver:AUpper"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "BhexU[0]" is stuck at GND
-    Warning (13410): Pin "BhexU[1]" is stuck at GND
-    Warning (13410): Pin "BhexU[2]" is stuck at GND
-    Warning (13410): Pin "BhexU[3]" is stuck at GND
-    Warning (13410): Pin "BhexU[4]" is stuck at GND
-    Warning (13410): Pin "BhexU[5]" is stuck at GND
-    Warning (13410): Pin "BhexU[6]" is stuck at VCC
-    Warning (13410): Pin "BhexL[0]" is stuck at GND
-    Warning (13410): Pin "BhexL[1]" is stuck at GND
-    Warning (13410): Pin "BhexL[2]" is stuck at GND
-    Warning (13410): Pin "BhexL[3]" is stuck at GND
-    Warning (13410): Pin "BhexL[4]" is stuck at GND
-    Warning (13410): Pin "BhexL[5]" is stuck at GND
-    Warning (13410): Pin "BhexL[6]" is stuck at VCC
-    Warning (13410): Pin "Bval[0]" is stuck at GND
-    Warning (13410): Pin "Bval[1]" is stuck at GND
-    Warning (13410): Pin "Bval[2]" is stuck at GND
-    Warning (13410): Pin "Bval[3]" is stuck at GND
-    Warning (13410): Pin "Bval[4]" is stuck at GND
-    Warning (13410): Pin "Bval[5]" is stuck at GND
-    Warning (13410): Pin "Bval[6]" is stuck at GND
-    Warning (13410): Pin "Bval[7]" is stuck at GND
+    Warning (13410): Pin "Clr_Ld" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/zach/ECE_385/Lab05/output_files/8bit_multiplier.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ClearA_LoadB"
-Info (21057): Implemented 119 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 152 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 45 output pins
-    Info (21061): Implemented 62 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 1000 megabytes
-    Info: Processing ended: Sat Sep 17 14:43:13 2016
-    Info: Elapsed time: 00:00:12
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 94 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 1002 megabytes
+    Info: Processing ended: Sat Sep 17 15:51:45 2016
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:20
 
 

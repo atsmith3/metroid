@@ -1,5 +1,5 @@
 Fitter report for 8bit_multiplier
-Sat Sep 17 14:43:39 2016
+Sat Sep 17 15:52:11 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -66,18 +66,18 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Sat Sep 17 14:43:39 2016      ;
+; Fitter Status                      ; Successful - Sat Sep 17 15:52:11 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; 8bit_multiplier                            ;
 ; Top-level Entity Name              ; Multiplier                                 ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 61 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 61 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 18 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 18                                         ;
-; Total pins                         ; 57 / 529 ( 11 % )                          ;
+; Total logic elements               ; 92 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 83 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 38 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 38                                         ;
+; Total pins                         ; 58 / 529 ( 11 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                      ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                            ;
@@ -206,6 +206,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Bval[6]  ; Missing drive strength and slew rate ;
 ; Bval[7]  ; Missing drive strength and slew rate ;
 ; X        ; Missing drive strength and slew rate ;
+; Clr_Ld   ; Missing drive strength and slew rate ;
 ; Aval[0]  ; Missing location assignment          ;
 ; Aval[1]  ; Missing location assignment          ;
 ; Aval[2]  ; Missing location assignment          ;
@@ -231,8 +232,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 205 ) ; 0.00 % ( 0 / 205 )         ; 0.00 % ( 0 / 205 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 205 ) ; 0.00 % ( 0 / 205 )         ; 0.00 % ( 0 / 205 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 249 ) ; 0.00 % ( 0 / 249 )         ; 0.00 % ( 0 / 249 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 249 ) ; 0.00 % ( 0 / 249 )         ; 0.00 % ( 0 / 249 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -255,7 +256,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 195 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 239 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -271,28 +272,28 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 61 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 43                     ;
-;     -- Register only                        ; 0                      ;
-;     -- Combinational with a register        ; 18                     ;
+; Total logic elements                        ; 92 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 54                     ;
+;     -- Register only                        ; 9                      ;
+;     -- Combinational with a register        ; 29                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 39                     ;
-;     -- 3 input functions                    ; 9                      ;
-;     -- <=2 input functions                  ; 13                     ;
-;     -- Register only                        ; 0                      ;
+;     -- 4 input functions                    ; 63                     ;
+;     -- 3 input functions                    ; 10                     ;
+;     -- <=2 input functions                  ; 10                     ;
+;     -- Register only                        ; 9                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 61                     ;
+;     -- normal mode                          ; 83                     ;
 ;     -- arithmetic mode                      ; 0                      ;
 ;                                             ;                        ;
-; Total registers*                            ; 18 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 18 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 38 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 38 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 5 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 9 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 57 / 529 ( 11 % )      ;
+; I/O pins                                    ; 58 / 529 ( 11 % )      ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )         ;
 ;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )          ;
 ;                                             ;                        ;
@@ -308,12 +309,12 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%     ;
-; Peak interconnect usage (total/H/V)         ; 0.8% / 0.6% / 1.1%     ;
-; Maximum fan-out                             ; 18                     ;
-; Highest non-global fan-out                  ; 18                     ;
-; Total fan-out                               ; 332                    ;
-; Average fan-out                             ; 1.63                   ;
+; Average interconnect usage (total/H/V)      ; 0.1% / 0.0% / 0.1%     ;
+; Peak interconnect usage (total/H/V)         ; 1.1% / 0.7% / 1.9%     ;
+; Maximum fan-out                             ; 38                     ;
+; Highest non-global fan-out                  ; 38                     ;
+; Total fan-out                               ; 524                    ;
+; Average fan-out                             ; 2.05                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -326,29 +327,29 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 61 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 43                    ; 0                              ;
-;     -- Register only                        ; 0                     ; 0                              ;
-;     -- Combinational with a register        ; 18                    ; 0                              ;
+; Total logic elements                        ; 92 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 54                    ; 0                              ;
+;     -- Register only                        ; 9                     ; 0                              ;
+;     -- Combinational with a register        ; 29                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 39                    ; 0                              ;
-;     -- 3 input functions                    ; 9                     ; 0                              ;
-;     -- <=2 input functions                  ; 13                    ; 0                              ;
-;     -- Register only                        ; 0                     ; 0                              ;
+;     -- 4 input functions                    ; 63                    ; 0                              ;
+;     -- 3 input functions                    ; 10                    ; 0                              ;
+;     -- <=2 input functions                  ; 10                    ; 0                              ;
+;     -- Register only                        ; 9                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 61                    ; 0                              ;
+;     -- normal mode                          ; 83                    ; 0                              ;
 ;     -- arithmetic mode                      ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 18                    ; 0                              ;
-;     -- Dedicated logic registers            ; 18 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 38                    ; 0                              ;
+;     -- Dedicated logic registers            ; 38 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 5 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 9 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 57                    ; 0                              ;
+; I/O pins                                    ; 58                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )       ; 0 / 532 ( 0 % )                ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
@@ -361,8 +362,8 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 327                   ; 5                              ;
-;     -- Registered Connections               ; 57                    ; 0                              ;
+;     -- Total Connections                    ; 519                   ; 5                              ;
+;     -- Registered Connections               ; 228                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -370,7 +371,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 12                    ; 0                              ;
-;     -- Output Ports                         ; 45                    ; 0                              ;
+;     -- Output Ports                         ; 46                    ; 0                              ;
 ;     -- Bidir Ports                          ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -395,16 +396,16 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; ClearA_LoadB ; N21   ; 6        ; 115          ; 42           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Clk          ; Y2    ; 2        ; 0            ; 36           ; 14           ; 18                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Reset        ; M23   ; 6        ; 115          ; 40           ; 7            ; 18                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Run          ; R24   ; 5        ; 115          ; 35           ; 21           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Clk          ; Y2    ; 2        ; 0            ; 36           ; 14           ; 38                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Reset        ; M23   ; 6        ; 115          ; 40           ; 7            ; 38                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Run          ; R24   ; 5        ; 115          ; 35           ; 21           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Switches[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 7                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Switches[1]  ; AC28  ; 5        ; 115          ; 14           ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Switches[2]  ; AC27  ; 5        ; 115          ; 15           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Switches[3]  ; AD27  ; 5        ; 115          ; 13           ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Switches[1]  ; AC28  ; 5        ; 115          ; 14           ; 0            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Switches[2]  ; AC27  ; 5        ; 115          ; 15           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Switches[3]  ; AD27  ; 5        ; 115          ; 13           ; 7            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Switches[4]  ; AB27  ; 5        ; 115          ; 18           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Switches[5]  ; AC26  ; 5        ; 115          ; 11           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Switches[6]  ; AD26  ; 5        ; 115          ; 10           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Switches[6]  ; AD26  ; 5        ; 115          ; 10           ; 0            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Switches[7]  ; AB26  ; 5        ; 115          ; 15           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
@@ -428,14 +429,14 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; AhexU[4] ; AD24  ; 4        ; 105          ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; AhexU[5] ; AF23  ; 4        ; 105          ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; AhexU[6] ; Y19   ; 4        ; 105          ; 0            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; Aval[0]  ; V28   ; 5        ; 115          ; 22           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Aval[1]  ; AB25  ; 5        ; 115          ; 16           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Aval[2]  ; AE27  ; 5        ; 115          ; 12           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Aval[3]  ; AD28  ; 5        ; 115          ; 12           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Aval[4]  ; AE28  ; 5        ; 115          ; 11           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Aval[5]  ; Y24   ; 5        ; 115          ; 13           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Aval[6]  ; AA23  ; 5        ; 115          ; 10           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Aval[7]  ; Y23   ; 5        ; 115          ; 14           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[0]  ; V24   ; 5        ; 115          ; 24           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[1]  ; V23   ; 5        ; 115          ; 24           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[2]  ; U25   ; 5        ; 115          ; 27           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[3]  ; V25   ; 5        ; 115          ; 23           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[4]  ; V27   ; 5        ; 115          ; 22           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[5]  ; V28   ; 5        ; 115          ; 22           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[6]  ; V26   ; 5        ; 115          ; 23           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Aval[7]  ; AB25  ; 5        ; 115          ; 16           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; BhexL[0] ; G18   ; 7        ; 69           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; BhexL[1] ; F22   ; 7        ; 107          ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; BhexL[2] ; E17   ; 7        ; 67           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -450,14 +451,15 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; BhexU[4] ; W25   ; 5        ; 115          ; 20           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; BhexU[5] ; U23   ; 5        ; 115          ; 22           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; BhexU[6] ; U24   ; 5        ; 115          ; 28           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; Bval[0]  ; L3    ; 1        ; 0            ; 52           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Bval[1]  ; AG22  ; 4        ; 79           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Bval[2]  ; A23   ; 7        ; 102          ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Bval[3]  ; AD14  ; 3        ; 56           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Bval[4]  ; G26   ; 6        ; 115          ; 66           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Bval[5]  ; AG19  ; 4        ; 72           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Bval[6]  ; AD15  ; 4        ; 60           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Bval[7]  ; V3    ; 2        ; 0            ; 29           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[0]  ; V22   ; 5        ; 115          ; 26           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[1]  ; U27   ; 5        ; 115          ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[2]  ; U28   ; 5        ; 115          ; 28           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[3]  ; T21   ; 5        ; 115          ; 32           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[4]  ; T26   ; 5        ; 115          ; 31           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[5]  ; U26   ; 5        ; 115          ; 27           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[6]  ; T25   ; 5        ; 115          ; 31           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Bval[7]  ; U22   ; 5        ; 115          ; 26           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Clr_Ld   ; G16   ; 7        ; 67           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; X        ; F17   ; 7        ; 67           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
@@ -474,6 +476,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; N7       ; DATA0                       ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
 ; P4       ; nCONFIG                     ; -                        ; -                       ; Dedicated Programming Pin ;
 ; R8       ; nCE                         ; -                        ; -                       ; Dedicated Programming Pin ;
+; T21      ; DIFFIO_R29p, DEV_CLRn       ; Use as regular IO        ; Bval[3]                 ; Dual Purpose Pin          ;
 ; P24      ; CONF_DONE                   ; -                        ; -                       ; Dedicated Programming Pin ;
 ; N22      ; MSEL0                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; P23      ; MSEL1                       ; -                        ; -                       ; Dedicated Programming Pin ;
@@ -488,12 +491,12 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 5 / 56 ( 9 % )   ; 2.5V          ; --           ;
-; 2        ; 2 / 63 ( 3 % )   ; 2.5V          ; --           ;
-; 3        ; 1 / 73 ( 1 % )   ; 2.5V          ; --           ;
-; 4        ; 8 / 71 ( 11 % )  ; 2.5V          ; --           ;
-; 5        ; 32 / 65 ( 49 % ) ; 2.5V          ; --           ;
-; 6        ; 9 / 58 ( 16 % )  ; 2.5V          ; --           ;
+; 1        ; 4 / 56 ( 7 % )   ; 2.5V          ; --           ;
+; 2        ; 1 / 63 ( 2 % )   ; 2.5V          ; --           ;
+; 3        ; 0 / 73 ( 0 % )   ; 2.5V          ; --           ;
+; 4        ; 5 / 71 ( 7 % )   ; 2.5V          ; --           ;
+; 5        ; 40 / 65 ( 62 % ) ; 2.5V          ; --           ;
+; 6        ; 8 / 58 ( 14 % )  ; 2.5V          ; --           ;
 ; 7        ; 5 / 72 ( 7 % )   ; 2.5V          ; --           ;
 ; 8        ; 0 / 71 ( 0 % )   ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
@@ -525,7 +528,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; A20      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; A21      ; 425        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A22      ; 423        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A23      ; 412        ; 7        ; Bval[2]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A23      ; 412        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A24      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; A25      ; 405        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A26      ; 404        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -552,7 +555,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; AA20     ;            ;          ; GNDA4                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA21     ; 269        ; 4        ; AhexU[3]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AA22     ; 275        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AA23     ; 280        ; 5        ; Aval[6]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AA23     ; 280        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AA24     ; 279        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; AA25     ; 294        ; 5        ; AhexL[0]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AA26     ; 293        ; 5        ; AhexL[1]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -582,7 +585,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; AB22     ; 265        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB23     ; 276        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB24     ; 274        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AB25     ; 292        ; 5        ; Aval[1]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AB25     ; 292        ; 5        ; Aval[7]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; AB26     ; 291        ; 5        ; Switches[7]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AB27     ; 296        ; 5        ; Switches[4]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AB28     ; 295        ; 5        ; Switches[0]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -627,8 +630,8 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; AD11     ; 186        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD12     ; 182        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD13     ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; AD14     ; 196        ; 3        ; Bval[3]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; AD15     ; 204        ; 4        ; Bval[6]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AD14     ; 196        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AD15     ; 204        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD16     ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AD17     ; 222        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD18     ; 237        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -641,7 +644,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; AD25     ; 255        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD26     ; 281        ; 5        ; Switches[6]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; AD27     ; 286        ; 5        ; Switches[3]                                               ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; AD28     ; 285        ; 5        ; Aval[3]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AD28     ; 285        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE1      ; 106        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE2      ; 105        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE3      ; 122        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -668,8 +671,8 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; AE24     ; 256        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE25     ; 243        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE26     ; 278        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; AE27     ; 284        ; 5        ; Aval[2]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; AE28     ; 283        ; 5        ; Aval[4]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AE27     ; 284        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; AE28     ; 283        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AF1      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AF2      ; 123        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AF3      ; 138        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -716,10 +719,10 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; AG16     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG17     ; 207        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG18     ; 217        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AG19     ; 219        ; 4        ; Bval[5]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AG19     ; 219        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG20     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG21     ; 223        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AG22     ; 227        ; 4        ; Bval[1]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AG22     ; 227        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG23     ; 229        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG24     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG25     ; 245        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -907,7 +910,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; G13      ; 493        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G14      ; 484        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; G15      ; 457        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; G16      ; 453        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; G16      ; 453        ; 7        ; Clr_Ld                                                    ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; G17      ; 437        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; G18      ; 452        ; 7        ; BhexL[0]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; G19      ; 451        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -917,7 +920,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; G23      ; 398        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G24      ; 397        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G25      ; 393        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; G26      ; 392        ; 6        ; Bval[4]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G26      ; 392        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G27      ; 367        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G28      ; 366        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H1       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1006,7 +1009,7 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; K28      ; 361        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L1       ; 49         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L2       ; 48         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; L3       ; 32         ; 1        ; Bval[0]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L3       ; 32         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L4       ; 31         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L5       ; 21         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; L6       ; 43         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1164,12 +1167,12 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; T18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T19      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; T20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; T21      ; 325        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; T21      ; 325        ; 5        ; Bval[3]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; T22      ; 324        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T23      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T24      ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; T25      ; 323        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; T26      ; 322        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; T25      ; 323        ; 5        ; Bval[6]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T26      ; 322        ; 5        ; Bval[4]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; T27      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T28      ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; U1       ; 80         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1193,16 +1196,16 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; U19      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; U20      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U21      ; 319        ; 5        ; AhexU[1]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; U22      ; 313        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; U22      ; 313        ; 5        ; Bval[7]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; U23      ; 305        ; 5        ; BhexU[5]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; U24      ; 316        ; 5        ; BhexU[6]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; U25      ; 315        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; U26      ; 314        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; U27      ; 318        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; U28      ; 317        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; U25      ; 315        ; 5        ; Aval[2]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U26      ; 314        ; 5        ; Bval[5]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U27      ; 318        ; 5        ; Bval[1]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U28      ; 317        ; 5        ; Bval[2]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V1       ; 84         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V2       ; 83         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V3       ; 82         ; 2        ; Bval[7]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V3       ; 82         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V4       ; 81         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V5       ; 108        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V6       ; 107        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1221,13 +1224,13 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; V19      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; V20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; V21      ; 311        ; 5        ; AhexU[0]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; V22      ; 312        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V23      ; 309        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V24      ; 308        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V25      ; 307        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V26      ; 306        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V27      ; 304        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V28      ; 303        ; 5        ; Aval[0]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V22      ; 312        ; 5        ; Bval[0]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V23      ; 309        ; 5        ; Aval[1]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V24      ; 308        ; 5        ; Aval[0]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V25      ; 307        ; 5        ; Aval[3]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V26      ; 306        ; 5        ; Aval[6]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V27      ; 304        ; 5        ; Aval[4]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V28      ; 303        ; 5        ; Aval[5]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W1       ; 88         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W2       ; 87         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W3       ; 112        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1278,8 +1281,8 @@ The pin-out file can be found in /home/zach/ECE_385/Lab05/output_files/8bit_mult
 ; Y20      ;            ;          ; VCCD_PLL4                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; Y21      ;            ; --       ; VCCA4                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; Y22      ; 320        ; 5        ; BhexU[1]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; Y23      ; 288        ; 5        ; Aval[7]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; Y24      ; 287        ; 5        ; Aval[5]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; Y23      ; 288        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; Y24      ; 287        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y25      ; 298        ; 5        ; AhexL[2]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; Y26      ; 297        ; 5        ; AhexL[4]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; Y27      ; 336        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -1293,35 +1296,39 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                           ; Library Name ;
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------+--------------+
-; |Multiplier                          ; 61 (0)      ; 18 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 57   ; 0            ; 43 (0)       ; 0 (0)             ; 18 (0)           ; |Multiplier                                                                   ; work         ;
-;    |Controller:LogicUnit|            ; 10 (10)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 10 (10)          ; |Multiplier|Controller:LogicUnit                                              ; work         ;
+; |Multiplier                          ; 92 (0)      ; 38 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 58   ; 0            ; 54 (0)       ; 9 (0)             ; 29 (0)           ; |Multiplier                                                                   ; work         ;
+;    |Controller:LogicUnit|            ; 27 (27)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 8 (8)             ; 14 (14)          ; |Multiplier|Controller:LogicUnit                                              ; work         ;
 ;    |HexDriver:ALower|                ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Multiplier|HexDriver:ALower                                                  ; work         ;
 ;    |HexDriver:AUpper|                ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Multiplier|HexDriver:AUpper                                                  ; work         ;
-;    |NineBitAdder:AdderUnit|          ; 30 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 2 (0)            ; |Multiplier|NineBitAdder:AdderUnit                                            ; work         ;
-;       |BusSelector:comb_11|          ; 8 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 1 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11                        ; work         ;
+;    |HexDriver:BLower|                ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Multiplier|HexDriver:BLower                                                  ; work         ;
+;    |HexDriver:BUpper|                ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Multiplier|HexDriver:BUpper                                                  ; work         ;
+;    |NineBitAdder:AdderUnit|          ; 29 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 8 (0)            ; |Multiplier|NineBitAdder:AdderUnit                                            ; work         ;
+;       |BusSelector:comb_11|          ; 7 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11                        ; work         ;
 ;          |FourInputMux:F0|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F0        ; work         ;
 ;          |FourInputMux:F1|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F1        ; work         ;
 ;          |FourInputMux:F2|           ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2        ; work         ;
-;          |FourInputMux:F4|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F4        ; work         ;
+;          |FourInputMux:F4|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F4        ; work         ;
 ;          |FourInputMux:F5|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F5        ; work         ;
 ;          |FourInputMux:F6|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F6        ; work         ;
-;          |FourInputMux:F7|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F7        ; work         ;
-;       |FourBitRippleCarryAdder:AC0|  ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0                ; work         ;
-;          |FullAdder:FA3|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3  ; work         ;
+;       |FourBitRippleCarryAdder:AC0|  ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 1 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0                ; work         ;
+;          |FullAdder:FA2|             ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA2  ; work         ;
+;          |FullAdder:FA3|             ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3  ; work         ;
 ;       |FourBitRippleCarryAdder:AC1|  ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1                ; work         ;
-;          |FullAdder:FA2|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2  ; work         ;
-;       |FourBitRippleCarryAdder:FFA0| ; 9 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 1 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0               ; work         ;
-;          |FullAdder:FA0|             ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA0 ; work         ;
+;          |FullAdder:FA1|             ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA1  ; work         ;
+;          |FullAdder:FA3|             ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA3  ; work         ;
+;       |FourBitRippleCarryAdder:FFA0| ; 9 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 3 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0               ; work         ;
+;          |FullAdder:FA0|             ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA0 ; work         ;
 ;          |FullAdder:FA1|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA1 ; work         ;
-;          |FullAdder:FA2|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA2 ; work         ;
-;          |FullAdder:FA3|             ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3 ; work         ;
-;       |FourBitRippleCarryAdder:FFA1| ; 9 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1               ; work         ;
-;          |FullAdder:FA0|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA0 ; work         ;
-;          |FullAdder:FA1|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA1 ; work         ;
-;          |FullAdder:FA2|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA2 ; work         ;
-;          |FullAdder:FA3|             ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA3 ; work         ;
-;    |Registers:RegisterUnit|          ; 9 (0)       ; 8 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 8 (0)            ; |Multiplier|Registers:RegisterUnit                                            ; work         ;
-;       |EightBitShiftRegister:RegA|   ; 9 (9)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA                 ; work         ;
+;          |FullAdder:FA2|             ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA2 ; work         ;
+;          |FullAdder:FA3|             ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3 ; work         ;
+;       |FourBitRippleCarryAdder:FFA1| ; 9 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 4 (0)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1               ; work         ;
+;          |FullAdder:FA0|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA0 ; work         ;
+;          |FullAdder:FA1|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA1 ; work         ;
+;          |FullAdder:FA2|             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA2 ; work         ;
+;          |FullAdder:FA3|             ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA3 ; work         ;
+;    |Registers:RegisterUnit|          ; 16 (0)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 15 (0)           ; |Multiplier|Registers:RegisterUnit                                            ; work         ;
+;       |EightBitShiftRegister:RegA|   ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 7 (7)            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA                 ; work         ;
+;       |EightBitShiftRegister:RegB|   ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegB                 ; work         ;
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1377,17 +1384,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Bval[6]      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; Bval[7]      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; X            ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; Clr_Ld       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; Switches[6]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; Switches[5]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; Switches[4]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; Switches[3]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; Switches[3]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; Switches[2]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; Switches[0]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; Switches[0]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; Switches[1]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; Switches[5]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; Switches[6]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; Switches[7]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; Reset        ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Switches[7]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Clk          ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; Run          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Reset        ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Run          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +--------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1397,75 +1405,103 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                                                          ; Pad To Core Index ; Setting ;
 +------------------------------------------------------------------------------+-------------------+---------+
 ; ClearA_LoadB                                                                 ;                   ;         ;
-; Switches[4]                                                                  ;                   ;         ;
-;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F4|Mux0~0     ; 1                 ; 6       ;
+; Switches[6]                                                                  ;                   ;         ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA3|s    ; 0                 ; 6       ;
+;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F6|Mux0~0     ; 0                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~2           ; 0                 ; 6       ;
+; Switches[5]                                                                  ;                   ;         ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA1|c~0  ; 1                 ; 6       ;
 ;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F5|Mux0~0     ; 1                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2|s    ; 1                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2|c~0  ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~1           ; 1                 ; 6       ;
+; Switches[4]                                                                  ;                   ;         ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA1|c~0  ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F5|Mux0~0     ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F4|Mux0~0     ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~0           ; 1                 ; 6       ;
 ; Switches[3]                                                                  ;                   ;         ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|c~0  ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|s    ; 0                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|c~0  ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3|c~0 ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3|c~1 ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3|s~0 ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~7           ; 1                 ; 6       ;
 ; Switches[2]                                                                  ;                   ;         ;
 ;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|c~0  ; 1                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|s    ; 1                 ; 6       ;
-;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2|Mux0~1     ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA2|c~0  ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2|Mux0~0     ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~6           ; 1                 ; 6       ;
 ; Switches[0]                                                                  ;                   ;         ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|c~0  ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|s    ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2|Mux0~0     ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F0|Mux0~0     ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F1|Mux0~0     ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA0|s~0 ; 0                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~3           ; 0                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|c~0  ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA2|c~0  ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2|Mux0~0     ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F0|Mux0~0     ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F1|Mux0~0     ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA0|s~0 ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~4           ; 1                 ; 6       ;
 ; Switches[1]                                                                  ;                   ;         ;
 ;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|c~0  ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3|s    ; 0                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA2|c~0  ; 0                 ; 6       ;
 ;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F2|Mux0~0     ; 0                 ; 6       ;
 ;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F1|Mux0~0     ; 0                 ; 6       ;
-; Switches[5]                                                                  ;                   ;         ;
-;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F5|Mux0~0     ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2|s    ; 0                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2|c~0  ; 0                 ; 6       ;
-; Switches[6]                                                                  ;                   ;         ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2|s    ; 1                 ; 6       ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2|c~0  ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~5           ; 0                 ; 6       ;
 ; Switches[7]                                                                  ;                   ;         ;
-;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA3|s~0 ; 1                 ; 6       ;
-;      - NineBitAdder:AdderUnit|BusSelector:comb_11|FourInputMux:F7|Mux0~0     ; 1                 ; 6       ;
-; Reset                                                                        ;                   ;         ;
-;      - Controller:LogicUnit|PreviousState.H                                  ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~0           ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~1           ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~2           ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~3           ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~4           ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~5           ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~6           ; 1                 ; 6       ;
-;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut~7           ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~16                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~17                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~18                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~19                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~20                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~21                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~22                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~23                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~24                                  ; 1                 ; 6       ;
+;      - NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA3|s    ; 0                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~3           ; 0                 ; 6       ;
 ; Clk                                                                          ;                   ;         ;
+; Reset                                                                        ;                   ;         ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[4]          ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[5]          ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[6]          ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[7]          ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[0]          ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[1]          ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[2]          ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[3]          ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.H                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.H                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.ADD                                 ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.G                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.F                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.E                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.D                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.C                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.B                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.A                                   ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState.I                                   ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~0           ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~1           ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~2           ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~3           ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~4           ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~5           ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~6           ; 1                 ; 6       ;
+;      - Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut~7           ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.ADD                                ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.G                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState~17                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.WAIT                               ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.F                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.E                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.D                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.C                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.B                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.A                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|PreviousState.I                                  ; 1                 ; 6       ;
 ; Run                                                                          ;                   ;         ;
-;      - Controller:LogicUnit|CurrentState~23                                  ; 1                 ; 6       ;
-;      - Controller:LogicUnit|CurrentState~24                                  ; 1                 ; 6       ;
+;      - Controller:LogicUnit|Selector10~2                                     ; 0                 ; 6       ;
+;      - Controller:LogicUnit|CurrentState~17                                  ; 0                 ; 6       ;
+;      - Controller:LogicUnit|Selector1~1                                      ; 0                 ; 6       ;
+;      - Controller:LogicUnit|Selector9~2                                      ; 0                 ; 6       ;
 +------------------------------------------------------------------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                          ;
-+-------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name  ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Clk   ; PIN_Y2   ; 18      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; Reset ; PIN_M23  ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-+-------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                       ;
++-------+----------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name  ; Location ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------+----------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Clk   ; PIN_Y2   ; 38      ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; Reset ; PIN_M23  ; 38      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
++-------+----------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
@@ -1473,128 +1509,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Clk  ; PIN_Y2   ; 18      ; 6                                    ; Global Clock         ; GCLK4            ; --                        ;
+; Clk  ; PIN_Y2   ; 38      ; 3                                    ; Global Clock         ; GCLK4            ; --                        ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------------+
-; Routing Usage Summary                          ;
-+-----------------------+------------------------+
-; Routing Resource Type ; Usage                  ;
-+-----------------------+------------------------+
-; Block interconnects   ; 87 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 11 / 10,120 ( < 1 % )  ;
-; C4 interconnects      ; 57 / 209,544 ( < 1 % ) ;
-; Direct links          ; 21 / 342,891 ( < 1 % ) ;
-; Global clocks         ; 1 / 20 ( 5 % )         ;
-; Local interconnects   ; 32 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 5 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 44 / 289,782 ( < 1 % ) ;
-+-----------------------+------------------------+
++-------------------------------------------------+
+; Routing Usage Summary                           ;
++-----------------------+-------------------------+
+; Routing Resource Type ; Usage                   ;
++-----------------------+-------------------------+
+; Block interconnects   ; 136 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 35 / 10,120 ( < 1 % )   ;
+; C4 interconnects      ; 106 / 209,544 ( < 1 % ) ;
+; Direct links          ; 35 / 342,891 ( < 1 % )  ;
+; Global clocks         ; 1 / 20 ( 5 % )          ;
+; Local interconnects   ; 42 / 119,088 ( < 1 % )  ;
+; R24 interconnects     ; 17 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 64 / 289,782 ( < 1 % )  ;
++-----------------------+-------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 12.20) ; Number of LABs  (Total = 5) ;
+; Number of Logic Elements  (Average = 10.22) ; Number of LABs  (Total = 9) ;
 +---------------------------------------------+-----------------------------+
 ; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
+; 2                                           ; 1                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 0                           ;
-; 5                                           ; 0                           ;
+; 4                                           ; 1                           ;
+; 5                                           ; 1                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 1                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 1                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 0                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 1                           ;
-; 14                                          ; 0                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 2                           ;
-+---------------------------------------------+-----------------------------+
-
-
-+------------------------------------------------------------------+
-; LAB-wide Signals                                                 ;
-+------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 0.80) ; Number of LABs  (Total = 5) ;
-+------------------------------------+-----------------------------+
-; 1 Clock                            ; 3                           ;
-; 1 Clock enable                     ; 1                           ;
-+------------------------------------+-----------------------------+
-
-
-+----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 15.80) ; Number of LABs  (Total = 5) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 1                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
-; 12                                           ; 0                           ;
-; 13                                           ; 1                           ;
-; 14                                           ; 0                           ;
-; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
-; 17                                           ; 0                           ;
-; 18                                           ; 2                           ;
-; 19                                           ; 0                           ;
-; 20                                           ; 0                           ;
-; 21                                           ; 0                           ;
-; 22                                           ; 0                           ;
-; 23                                           ; 1                           ;
-+----------------------------------------------+-----------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 9.00) ; Number of LABs  (Total = 5) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 0                           ;
-; 1                                               ; 1                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 0                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 0                           ;
-; 7                                               ; 1                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 0                           ;
-; 10                                              ; 0                           ;
-; 11                                              ; 1                           ;
-; 12                                              ; 1                           ;
-; 13                                              ; 0                           ;
-; 14                                              ; 1                           ;
-+-------------------------------------------------+-----------------------------+
-
-
-+---------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 9.80) ; Number of LABs  (Total = 5) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 1                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 1                           ;
@@ -1602,7 +1548,108 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
 ; 14                                          ; 0                           ;
-; 15                                          ; 1                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 4                           ;
++---------------------------------------------+-----------------------------+
+
+
++------------------------------------------------------------------+
+; LAB-wide Signals                                                 ;
++------------------------------------+-----------------------------+
+; LAB-wide Signals  (Average = 1.00) ; Number of LABs  (Total = 9) ;
++------------------------------------+-----------------------------+
+; 1 Clock                            ; 6                           ;
+; 1 Clock enable                     ; 2                           ;
+; 1 Sync. clear                      ; 1                           ;
++------------------------------------+-----------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++----------------------------------------------+-----------------------------+
+; Number of Signals Sourced  (Average = 14.33) ; Number of LABs  (Total = 9) ;
++----------------------------------------------+-----------------------------+
+; 0                                            ; 0                           ;
+; 1                                            ; 0                           ;
+; 2                                            ; 0                           ;
+; 3                                            ; 0                           ;
+; 4                                            ; 2                           ;
+; 5                                            ; 1                           ;
+; 6                                            ; 0                           ;
+; 7                                            ; 1                           ;
+; 8                                            ; 0                           ;
+; 9                                            ; 0                           ;
+; 10                                           ; 0                           ;
+; 11                                           ; 0                           ;
+; 12                                           ; 0                           ;
+; 13                                           ; 0                           ;
+; 14                                           ; 0                           ;
+; 15                                           ; 0                           ;
+; 16                                           ; 0                           ;
+; 17                                           ; 1                           ;
+; 18                                           ; 0                           ;
+; 19                                           ; 0                           ;
+; 20                                           ; 2                           ;
+; 21                                           ; 0                           ;
+; 22                                           ; 1                           ;
+; 23                                           ; 0                           ;
+; 24                                           ; 0                           ;
+; 25                                           ; 0                           ;
+; 26                                           ; 0                           ;
+; 27                                           ; 0                           ;
+; 28                                           ; 0                           ;
+; 29                                           ; 0                           ;
+; 30                                           ; 1                           ;
++----------------------------------------------+-----------------------------+
+
+
++-------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                       ;
++-------------------------------------------------+-----------------------------+
+; Number of Signals Sourced Out  (Average = 7.89) ; Number of LABs  (Total = 9) ;
++-------------------------------------------------+-----------------------------+
+; 0                                               ; 0                           ;
+; 1                                               ; 0                           ;
+; 2                                               ; 1                           ;
+; 3                                               ; 0                           ;
+; 4                                               ; 1                           ;
+; 5                                               ; 1                           ;
+; 6                                               ; 0                           ;
+; 7                                               ; 3                           ;
+; 8                                               ; 1                           ;
+; 9                                               ; 0                           ;
+; 10                                              ; 0                           ;
+; 11                                              ; 0                           ;
+; 12                                              ; 0                           ;
+; 13                                              ; 0                           ;
+; 14                                              ; 1                           ;
+; 15                                              ; 0                           ;
+; 16                                              ; 0                           ;
+; 17                                              ; 1                           ;
++-------------------------------------------------+-----------------------------+
+
+
++---------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                       ;
++---------------------------------------------+-----------------------------+
+; Number of Distinct Inputs  (Average = 9.22) ; Number of LABs  (Total = 9) ;
++---------------------------------------------+-----------------------------+
+; 0                                           ; 0                           ;
+; 1                                           ; 0                           ;
+; 2                                           ; 0                           ;
+; 3                                           ; 0                           ;
+; 4                                           ; 4                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 0                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
+; 11                                          ; 0                           ;
+; 12                                          ; 1                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 2                           ;
+; 15                                          ; 0                           ;
 ; 16                                          ; 0                           ;
 ; 17                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
@@ -1665,9 +1712,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000002    ; IO_000003    ; IO_000001    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000022    ; IO_000021    ; IO_000046    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000047    ; IO_000020    ; IO_000019    ; IO_000018    ; IO_000015    ; IO_000014    ; IO_000013    ; IO_000012    ; IO_000011    ; IO_000010 ; IO_000009 ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+-----------+--------------+--------------+
-; Total Pass         ; 0            ; 41           ; 41           ; 0            ; 0            ; 57        ; 41           ; 0            ; 0            ; 0            ; 0            ; 0            ; 45           ; 0            ; 0            ; 0            ; 0            ; 12           ; 45           ; 0            ; 12           ; 0            ; 0            ; 45           ; 0            ; 57        ; 57        ; 57        ; 0            ; 0            ;
+; Total Pass         ; 0            ; 42           ; 42           ; 0            ; 0            ; 58        ; 42           ; 0            ; 0            ; 0            ; 0            ; 0            ; 46           ; 0            ; 0            ; 0            ; 0            ; 12           ; 46           ; 0            ; 12           ; 0            ; 0            ; 46           ; 0            ; 58        ; 58        ; 58        ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0         ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 57           ; 16           ; 16           ; 57           ; 57           ; 0         ; 16           ; 57           ; 57           ; 57           ; 57           ; 57           ; 12           ; 57           ; 57           ; 57           ; 57           ; 45           ; 12           ; 57           ; 45           ; 57           ; 57           ; 12           ; 57           ; 0         ; 0         ; 0         ; 57           ; 57           ;
+; Total Inapplicable ; 58           ; 16           ; 16           ; 58           ; 58           ; 0         ; 16           ; 58           ; 58           ; 58           ; 58           ; 58           ; 12           ; 58           ; 58           ; 58           ; 58           ; 46           ; 12           ; 58           ; 46           ; 58           ; 58           ; 12           ; 58           ; 0         ; 0         ; 0         ; 58           ; 58           ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0         ; 0         ; 0            ; 0            ;
 ; ClearA_LoadB       ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; AhexU[0]           ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1715,16 +1762,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Bval[6]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Bval[7]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; X                  ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; Clr_Ld             ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; Switches[6]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; Switches[5]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Switches[4]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Switches[3]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Switches[2]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Switches[0]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Switches[1]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; Switches[5]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; Switches[6]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Switches[7]        ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; Reset              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Clk                ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; Reset              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; Run                ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+-----------+--------------+--------------+
 
@@ -1791,7 +1839,7 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
     Info (169125): Pin ~ALTERA_DATA0~ is reserved at location N7
     Info (169125): Pin ~ALTERA_nCEO~ is reserved at location P28
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
-Critical Warning (169085): No exact pin location assignment(s) for 16 pins of 57 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Critical Warning (169085): No exact pin location assignment(s) for 16 pins of 58 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: '8bit_multiplier.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -1813,7 +1861,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 4 does not use VREF pins and has 2.5V VCCIO pins. 5 total pin(s) used --  66 pins available
         Info (176213): I/O bank number 5 does not use VREF pins and has 2.5V VCCIO pins. 24 total pin(s) used --  41 pins available
         Info (176213): I/O bank number 6 does not use VREF pins and has 2.5V VCCIO pins. 8 total pin(s) used --  50 pins available
-        Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 4 total pin(s) used --  68 pins available
+        Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 5 total pin(s) used --  67 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
@@ -1821,14 +1869,14 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X104_Y12 to location X115_Y23
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X104_Y24 to location X115_Y36
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.07 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.10 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1836,8 +1884,8 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file /home/zach/ECE_385/Lab05/output_files/8bit_multiplier.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1283 megabytes
-    Info: Processing ended: Sat Sep 17 14:43:39 2016
+    Info: Peak virtual memory: 1282 megabytes
+    Info: Processing ended: Sat Sep 17 15:52:11 2016
     Info: Elapsed time: 00:00:24
     Info: Total CPU time (on all processors): 00:00:24
 

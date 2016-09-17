@@ -3,7 +3,7 @@
 module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 							output logic Clr_Ld, Shift, Add, Sub);
 							
-	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, ADD} PreviousState, CurrentState, NextState;
+	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD} PreviousState, CurrentState, NextState;
 	
 	always_ff @ (posedge Clk)
 	begin
@@ -34,6 +34,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 				Clr_Ld = 1'b0;
 			end
 		end
+		
 		else if(ADD)
 		begin
 			if(PreviousState == H)
@@ -49,6 +50,15 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 			Shift  = 1'b0;
 			Clr_Ld = 1'b0;
 		end
+		
+		else if(I)
+		begin
+			Shift  = 1'b0;
+			Add 	 = 1'b0;
+			Sub    = 1'b0;
+			Clr_Ld = 1'b0;
+		end
+		
 		else
 		begin
 			Shift  = 1'b1;
@@ -66,9 +76,9 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 			WAIT:	begin
 						if(Run)
 						begin
-							if(M)
+							if(M & PreviousState!=ADD)
 							begin
-								NextState = ADD;
+								NextState = ADD;							
 							end
 							else
 								NextState = A;
@@ -77,51 +87,57 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 							NextState = WAIT;
 					end
 			A:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
 					else	
 						NextState = B;
 					end
 			B:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
 					else	
 						NextState = C;
 					end
 			C:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
 					else	
 						NextState = D;
 					end
 			D:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
 					else	
 						NextState = E;
 					end
 			E:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
 					else	
 						NextState = F;
 					end
 			F:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
 					else	
 						NextState = G;
 					end
 			G:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
 					else	
 						NextState = H;
 					end
 			H:		begin
-					if(M)
+					if(M & PreviousState!=ADD)
 						NextState = ADD;
-					else	
+					else
+						NextState = I;
+					end
+			I:		begin
+					if(Run)
+						NextState = I;
+					else
 						NextState = WAIT;
 					end
 			ADD:	begin
