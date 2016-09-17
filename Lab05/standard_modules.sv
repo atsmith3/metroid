@@ -10,11 +10,21 @@ endmodule
 
 module FourInputMux
 (
-	input logic a, b, c, d, [1:0] select,
+	input logic a, b, c, d, 
+	input logic [1:0] select,
 	output logic out
 );
 
-	assign out = (~select[0] & ~select[1] & a) | (select[0] & ~select[1] & b) | (~select[0] & select[1] & c) | (select[0] & select[1] & d);
+	always_comb
+	begin
+		unique case (select)
+			2'b00:	out = a;
+			2'b01:	out = b;
+			2'b10:	out = c;
+			2'b11:	out = d;
+			default  out = a;
+		endcase
+	end
 	
 endmodule
 
