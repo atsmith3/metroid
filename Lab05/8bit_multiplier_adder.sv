@@ -8,16 +8,19 @@ module NineBitAdder(	input logic [7:0] switches, Ain,
 	//Find 2's Comp of A and store it into Acomp
 	logic cComp;
 	logic outC;
-	logic Acomp [7:0];
-	logic Out [7:0];
-	FourBitRippleCarryAdder AC0(.A(Ain[3:0]),.B(b'40001),.Cin(1'b0),.Cout[cComp]);
-	FourBitRippleCarryAdder AC0(.A(Ain[7:4]),.B(b'40000),.Cin(cComp),.Cout[]);
-	//Determine what goes into Adder
-	BusSelector(.A(Ain[7:0]),.*}));
-	//Find output of the NineBitAdder
-	FourBitRippleCarryAdder FFA0(.A(Ain[3:0]),.B(Out[3:0]),.Cin(1'b0),.Sum(Aout[3:0]),.Cout(outC))
-	FourBitRippleCarryAdder FFA1(.A(Ain[7:4]),.B(Out[7:4]),.Cin(outC),.Sum(Aout[3:0]),.Cout(X))
-							
+	logic [7:0] Acomp;
+	logic [7:0] Out;
+	
+	always_comb
+	begin
+		FourBitRippleCarryAdder AC0(.A(~Ain[3:0]),.B(b'40001),.Cin(1'b0),.Cout(cComp),.Sum(Acomp[3:0]));
+		FourBitRippleCarryAdder AC1(.A(~Ain[7:4]),.B(b'40000),.Cin(cComp),.Cout(),.Sum(Acomp[7:4]));
+		//Determine what goes into Adder
+		BusSelector(.A(Ain[7:0]),.*}));
+		//Find output of the NineBitAdder
+		FourBitRippleCarryAdder FFA0(.A(Ain[3:0]),.B(Out[3:0]),.Cin(1'b0),.Sum(Aout[3:0]),.Cout(outC));
+		FourBitRippleCarryAdder FFA1(.A(Ain[7:4]),.B(Out[7:4]),.Cin(outC),.Sum(Aout[3:0]),.Cout(X));
+	end				
 endmodule
 
 
@@ -40,7 +43,7 @@ endmodule
 module BusSelector( 	logic input [7:0] A, Acomp,
 							logic input Add, Sub,
 							logic output [7:0] Out);
-			
+	integer i;
 	logic [1:0] Select;
 	
 	always_comb
@@ -54,7 +57,8 @@ module BusSelector( 	logic input [7:0] A, Acomp,
 	end
 	
 	// Now couple the output with the proper bus:
-			
-	FourInputMux(.a(1'b0),.b(A[0]),.c(Acomp[0]),.d(1'b0),.select(Select[1:0]),.out(Out[0]));
+	for(i = 0; i < 8; i++)		
+		FourInputMux(.a(1'b0),.b(A[i]),.c(Acomp[i]),.d(1'b1),.select(Select[1:0]),.out(Out[i]));
+	end
 							
 endmodule
