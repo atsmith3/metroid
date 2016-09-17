@@ -1,0 +1,10 @@
+// Register file
+
+module Reagisters(	input logic [7:0] Ain, Bin,
+							input logic X, Clr_Ld, Shift,
+							output logic [7:0] Aout, Bout,
+							output logic M);
+							
+							
+							
+endmodule
