@@ -6,8 +6,8 @@ module Reagisters(	input logic [7:0] Ain, Bin,
 							output logic M);
 	
 	logic ab, xa;
-	EightBitShiftRegister RegA(.DataIn([7:0]Ain), 
-										.DataOut([7:0]Aout), 
+	EightBitShiftRegister RegA(.DataIn(Ain [7:0]), 
+										.DataOut(Aout [7:0]), 
 										.ShiftEnable(Shift), 
 										.ShiftIn(xa), 
 										.ShiftOut(ab), 
@@ -15,8 +15,8 @@ module Reagisters(	input logic [7:0] Ain, Bin,
 										.Reset(Reset | Clr_Ld), 
 										.Load(Add | Subtract));
 										
-	EightBitShiftRegister RegB(.DataIn([7:0]Bin), 
-										.DataOut([7:0]Bout), 
+	EightBitShiftRegister RegB(.DataIn(Bin [7:0]), 
+										.DataOut(Bout [7:0]), 
 										.ShiftEnable(Shift), 
 										.ShiftIn(ab), 
 										.ShiftOut(M), 
@@ -27,7 +27,7 @@ module Reagisters(	input logic [7:0] Ain, Bin,
 	X_Flop RegX(.Xin(X),
 					.Xout(xa),
 					.Clk(Clk),
-					.Clr_Ld(Clr_Ld)
+					.Clr_Ld(Clr_Ld),
 					.Reset(Reset));
 							
 endmodule
@@ -39,7 +39,7 @@ module X_Flop(	input logic Xin, Clk, Clr_Ld, Reset,
 
 	always_ff @ (posedge Clk)
 	begin
-		if(Reset or Clr_Ld)
+		if(Reset | Clr_Ld)
 			Xout <= 1'b0;
 		else
 			Xout <= Xin;
@@ -50,7 +50,7 @@ endmodule
 
 // 8 bit register
 module EightBitShiftRegister(	input logic [7:0] DataIn,
-										input logic Clk, Reset, Load, ShiftEnable, ShiftIn
+										input logic Clk, Reset, Load, ShiftEnable, ShiftIn,
 										output logic [7:0] DataOut,
 										output logic ShiftOut);
 										
@@ -59,8 +59,8 @@ module EightBitShiftRegister(	input logic [7:0] DataIn,
 		if(Reset)
 			DataOut <= 8'b0;
 		else if (Load)
-			DataOut <= [7:0] DataIn;
-		else if (shiftEnable)
+			DataOut <= DataIn [7:0];
+		else if (ShiftEnable)
 			DataOut <= {ShiftIn, DataOut[7:1]};
 	end
 	

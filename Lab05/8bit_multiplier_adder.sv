@@ -11,26 +11,25 @@ module NineBitAdder(	input logic [7:0] switches, Ain,
 	logic [7:0] Acomp;
 	logic [7:0] Out;
 	
-	always_comb
-	begin
-		FourBitRippleCarryAdder AC0(.A(~Ain[3:0]),.B(b'40001),.Cin(1'b0),.Cout(cComp),.Sum(Acomp[3:0]));
-		FourBitRippleCarryAdder AC1(.A(~Ain[7:4]),.B(b'40000),.Cin(cComp),.Cout(),.Sum(Acomp[7:4]));
-		//Determine what goes into Adder
-		BusSelector(.A(Ain[7:0]),.*}));
-		//Find output of the NineBitAdder
-		FourBitRippleCarryAdder FFA0(.A(Ain[3:0]),.B(Out[3:0]),.Cin(1'b0),.Sum(Aout[3:0]),.Cout(outC));
-		FourBitRippleCarryAdder FFA1(.A(Ain[7:4]),.B(Out[7:4]),.Cin(outC),.Sum(Aout[3:0]),.Cout(X));
-	end				
+	FourBitRippleCarryAdder AC0(.A(~Ain[3:0]),.B(4'b0001),.Cin(1'b0),.Cout(cComp),.Sum(Acomp[3:0]));
+	FourBitRippleCarryAdder AC1(.A(~Ain[7:4]),.B(4'b0000),.Cin(cComp),.Cout(),.Sum(Acomp[7:4]));
+	//Determine what goes into Adder
+	BusSelector(.A(Ain[7:0]),.*);
+	//Find output of the NineBitAdder
+	FourBitRippleCarryAdder FFA0(.A(Ain[3:0]),.B(Out[3:0]),.Cin(1'b0),.Sum(Aout[3:0]),.Cout(outC));
+	FourBitRippleCarryAdder FFA1(.A(Ain[7:4]),.B(Out[7:4]),.Cin(outC),.Sum(Aout[3:0]),.Cout(X));
+
+	
 endmodule
 
 
 // 4 bit adder module
-module FourBitRippleCarryAdder(	logic input [3:0] A, B,
-											logic input Cin
-											logic output [3:0] Sum,
-											logic output Cout);
+module FourBitRippleCarryAdder(	input logic [3:0] A, B,
+											input logic Cin,
+											output logic [3:0] Sum,
+											output logic Cout);
 											
-	logic c [2:0];
+	logic [2:0] c;
 											
 	FullAdder FA0(.x(A[0]),.y(B[0]),.z(Cin),.s(Sum[0]),.c(c[0]));
 	FullAdder FA1(.x(A[1]),.y(B[1]),.z(c[0]),.s(Sum[1]),.c(c[1]));
@@ -40,9 +39,9 @@ module FourBitRippleCarryAdder(	logic input [3:0] A, B,
 endmodule
 
 // Bus Selector
-module BusSelector( 	logic input [7:0] A, Acomp,
-							logic input Add, Sub,
-							logic output [7:0] Out);
+module BusSelector( 	input logic [7:0] A, Acomp,
+							input logic Add, Sub,
+							output logic [7:0] Out);
 	integer i;
 	logic [1:0] Select;
 	
@@ -57,8 +56,13 @@ module BusSelector( 	logic input [7:0] A, Acomp,
 	end
 	
 	// Now couple the output with the proper bus:
-	for(i = 0; i < 8; i++)		
-		FourInputMux(.a(1'b0),.b(A[i]),.c(Acomp[i]),.d(1'b1),.select(Select[1:0]),.out(Out[i]));
-	end
-							
+	FourInputMux F0(.a(1'b0),.b(A[0]),.c(Acomp[0]),.d(1'b1),.select(Select[1:0]),.out(Out[0]));
+	FourInputMux F1(.a(1'b0),.b(A[1]),.c(Acomp[1]),.d(1'b1),.select(Select[1:0]),.out(Out[1]));
+	FourInputMux F2(.a(1'b0),.b(A[2]),.c(Acomp[2]),.d(1'b1),.select(Select[1:0]),.out(Out[2]));
+	FourInputMux F3(.a(1'b0),.b(A[3]),.c(Acomp[3]),.d(1'b1),.select(Select[1:0]),.out(Out[3]));
+	FourInputMux F4(.a(1'b0),.b(A[4]),.c(Acomp[4]),.d(1'b1),.select(Select[1:0]),.out(Out[4]));
+	FourInputMux F5(.a(1'b0),.b(A[5]),.c(Acomp[5]),.d(1'b1),.select(Select[1:0]),.out(Out[5]));
+	FourInputMux F6(.a(1'b0),.b(A[6]),.c(Acomp[6]),.d(1'b1),.select(Select[1:0]),.out(Out[6]));
+	FourInputMux F7(.a(1'b0),.b(A[7]),.c(Acomp[7]),.d(1'b1),.select(Select[1:0]),.out(Out[7]));
+								
 endmodule

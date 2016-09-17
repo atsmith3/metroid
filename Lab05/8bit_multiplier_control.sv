@@ -7,7 +7,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 	
 	always_ff @ (posedge Clk)
 	begin
-		if(reset)
+		if(Reset)
 			CurrentState <= WAIT;
 		else
 			begin
@@ -21,40 +21,41 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 	always_comb
 	begin
 		if(WAIT)
-		{
+		begin
 		   Shift = 1'b0;
 			Add 	= 1'b0;
 			Sub   = 1'b0;
 			if(ClearA_LoadB)
-			{
+			begin
 				Clr_Ld = 1'b1;
-			}
+			end
 			else
-			{
+			begin
 				Clr_Ld = 1'b0;
-			}
+			end
+		end
 		else if(ADD)
-		{
+		begin
 			if(PreviousState == H)
-			{
+			begin
 				Add 	 = 1'b0;
 				Sub    = 1'b1;
-			}
+			end
 			else
-			{
+			begin
 				Add 	 = 1'b1;
 				Sub    = 1'b0;
-			}
+			end
 			Shift  = 1'b0;
 			Clr_Ld = 1'b0;
-		}
+		end
 		else
-		{
+		begin
 			Shift  = 1'b1;
 			Add 	 = 1'b0;
 			Sub    = 1'b0;
 			Clr_Ld = 1'b0;
-		}
+		end
 	end
 	
 	// Combinational Next State Logic
@@ -64,12 +65,12 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 		unique case (CurrentState)
 			WAIT:	begin
 						if(Run)
-						{
+						begin
 							if(M)
 								NextState = ADD;
 							else
 								NextState = A;
-						}
+						end
 						else
 							NextState = WAIT;
 					end

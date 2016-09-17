@@ -7,8 +7,31 @@ module Multiplier(	input logic [7:0] Switches,
 							output logic [7:0] Aval, Bval,
 							output logic X);
 							
-//	Controller
-//	NineBitAdder
-// Registers
+	// Intermediate Logic Wires
+	logic M;
+							
+							
+	Controller 		LogicUnit(		);
+	
+	NineBitAdder	AdderUnit(		.switches,
+											.Ain,
+											.Add,
+											.Sub,
+											.Aout,
+											.X);
+	
+   Registers		RegisterUnit(	Ain, 
+											Bin,
+											X, 
+											Clr_Ld, 
+											Shift, 
+											Clk, 
+											Reset, 
+											Add, 
+											Subtract,
+											Aout,
+											Bout,
+											M);
+	
 
 endmodule
