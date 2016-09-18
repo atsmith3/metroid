@@ -16,9 +16,9 @@ module Multiplier(	input logic [7:0] Switches,
 	logic [7:0] Anew;
 							
 							
-	Controller 		LogicUnit(		.ClearA_LoadB(ClearA_LoadB),
-											.Run(Run),
-											.Reset(Reset),
+	Controller 		LogicUnit(		.ClearA_LoadB(~ClearA_LoadB),
+											.Run(~Run),
+											.Reset(~Reset),
 											.Clk(Clk),
 											.M(M),
 											.Clr_Ld(Clr_Ld),
@@ -36,7 +36,7 @@ module Multiplier(	input logic [7:0] Switches,
 											.Clr_Ld(Clr_Ld),
 											.Shift(Shift),
 											.Clk(Clk),
-											.Reset(Reset), 
+											.Reset(~Reset), 
 											.Add(Add), 
 											.Subtract(Sub),
 											.Aout(Aval[7:0]), 
@@ -54,6 +54,6 @@ module Multiplier(	input logic [7:0] Switches,
 	HexDriver		BUpper(	.In0(Bval[7:4]),.Out0(BhexU[6:0]));
 	HexDriver		BLower(	.In0(Bval[3:0]),.Out0(BhexL[6:0]));
 	
-	testbench test();
+	testbench newBench();
 							
 endmodule

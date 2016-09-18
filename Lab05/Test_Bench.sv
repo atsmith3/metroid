@@ -5,10 +5,52 @@ timeunit 10ns;	// Half clock cycle at 50 MHz
 timeprecision 1ns;
 
 logic Clk = 0;
-logic ClearA_LoadB, Run, Reset, M, Clr_Ld, Shift, Add, Sub;
-logic [3:0] currentState;
+logic [7:0] Switches;
+logic Reset, Run, ClearA_LoadB;
+logic [6:0] AhexU, AhexL, BhexU, BhexL;
+logic [7:0] Aval, Bval;
+logic X;
 
-Controller ControllerUnitTest(.*);
+logic M;
+logic Clr_Ld;
+logic Shift;
+logic Add;
+logic Sub;
+logic [7:0] Anew;
+						
+						
+Controller 		LogicUnit(		.ClearA_LoadB(~ClearA_LoadB),
+										.Run(~Run),
+										.Reset(~Reset),
+										.Clk(Clk),
+										.M(M),
+										.Clr_Ld(Clr_Ld),
+										.Shift(Shift), 
+										.Add(Add), 
+										.Sub(Sub),
+										.currentState());
+
+
+
+Registers		RegisterUnit(	.Ain(Anew[7:0]), 
+										.Bin(Switches[7:0]),
+										.Bout(Bval[7:0]),
+										.X(X),
+										.Clr_Ld(Clr_Ld),
+										.Shift(Shift),
+										.Clk(Clk),
+										.Reset(~Reset), 
+										.Add(Add), 
+										.Subtract(Sub),
+										.Aout(Aval[7:0]), 
+										.M(M));
+
+NineBitAdder	AdderUnit(		.switches(Switches[7:0]),
+										.Ain(Aval[7:0]),
+										.Aout(Anew[7:0]),
+										.Add(Add),
+										.Sub(Sub),
+										.X(X));
 
 // Toggle the clock
 // #1 means wait for a delay of 1 timeunit
@@ -25,24 +67,28 @@ end
 // Everything happens sequentially inside an initial block
 // as in a software program
 initial begin: TEST_VECTORS
-ClearA_LoadB = 0;
-Run = 0;
-Reset = 0;
-M = 0;
+Reset = 1;
+ClearA_LoadB = 1;
+Run = 1;
+Switches = 8'b11000101;
 
-#2 ClearA_LoadB = 1;
+#2 Reset = 0;
+#2 Reset = 1;
+
 #2 ClearA_LoadB = 0;
+#2 ClearA_LoadB = 1;
 
-#4 Run = 1;
+#2 Reset = 0;
+#2 Reset = 1;
+
+#2 ClearA_LoadB = 0;
+#2 begin 
+		ClearA_LoadB = 1;
+		Switches = 8'b00000111;
+	end
+	
 #2 Run = 0;
-
-// Test to make sure it doesnt clear and load:
-#2 ClearA_LoadB = 1;
-#2 ClearA_LoadB = 0;
-
-#2 M = 1;
-#2 M = 1;
-
+#2 Run = 1;
 
 end
 endmodule

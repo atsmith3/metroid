@@ -1,5 +1,5 @@
 
-State Machine - |Multiplier|testbench:test|Controller:ControllerUnitTest|StorageState
+State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|StorageState
 Name StorageState.ADD StorageState.I StorageState.H StorageState.G StorageState.F StorageState.E StorageState.D StorageState.C StorageState.B StorageState.A StorageState.WAIT 
 StorageState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
 StorageState.A 0 0 0 0 0 0 0 0 0 1 1 
@@ -13,7 +13,7 @@ StorageState.H 0 0 1 0 0 0 0 0 0 0 1
 StorageState.I 0 1 0 0 0 0 0 0 0 0 1 
 StorageState.ADD 1 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |Multiplier|testbench:test|Controller:ControllerUnitTest|PreviousState
+State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|PreviousState
 Name PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
 PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
 PreviousState.A 0 0 0 0 0 0 0 0 0 1 1 
@@ -27,7 +27,7 @@ PreviousState.H 0 0 1 0 0 0 0 0 0 0 1
 PreviousState.I 0 1 0 0 0 0 0 0 0 0 1 
 PreviousState.ADD 1 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |Multiplier|testbench:test|Controller:ControllerUnitTest|CurrentState
+State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|CurrentState
 Name CurrentState.ADD CurrentState.I CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A CurrentState.WAIT 
 CurrentState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
 CurrentState.A 0 0 0 0 0 0 0 0 0 1 1 
