@@ -1,4 +1,18 @@
 
+State Machine - |Multiplier|testbench:test|Controller:ControllerUnitTest|StorageState
+Name StorageState.ADD StorageState.I StorageState.H StorageState.G StorageState.F StorageState.E StorageState.D StorageState.C StorageState.B StorageState.A StorageState.WAIT 
+StorageState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+StorageState.A 0 0 0 0 0 0 0 0 0 1 1 
+StorageState.B 0 0 0 0 0 0 0 0 1 0 1 
+StorageState.C 0 0 0 0 0 0 0 1 0 0 1 
+StorageState.D 0 0 0 0 0 0 1 0 0 0 1 
+StorageState.E 0 0 0 0 0 1 0 0 0 0 1 
+StorageState.F 0 0 0 0 1 0 0 0 0 0 1 
+StorageState.G 0 0 0 1 0 0 0 0 0 0 1 
+StorageState.H 0 0 1 0 0 0 0 0 0 0 1 
+StorageState.I 0 1 0 0 0 0 0 0 0 0 1 
+StorageState.ADD 1 0 0 0 0 0 0 0 0 0 1 
+
 State Machine - |Multiplier|testbench:test|Controller:ControllerUnitTest|PreviousState
 Name PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
 PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
@@ -26,6 +40,20 @@ CurrentState.G 0 0 0 1 0 0 0 0 0 0 1
 CurrentState.H 0 0 1 0 0 0 0 0 0 0 1 
 CurrentState.I 0 1 0 0 0 0 0 0 0 0 1 
 CurrentState.ADD 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Multiplier|Controller:LogicUnit|StorageState
+Name StorageState.ADD StorageState.I StorageState.H StorageState.G StorageState.F StorageState.E StorageState.D StorageState.C StorageState.B StorageState.A StorageState.WAIT 
+StorageState.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+StorageState.A 0 0 0 0 0 0 0 0 0 1 1 
+StorageState.B 0 0 0 0 0 0 0 0 1 0 1 
+StorageState.C 0 0 0 0 0 0 0 1 0 0 1 
+StorageState.D 0 0 0 0 0 0 1 0 0 0 1 
+StorageState.E 0 0 0 0 0 1 0 0 0 0 1 
+StorageState.F 0 0 0 0 1 0 0 0 0 0 1 
+StorageState.G 0 0 0 1 0 0 0 0 0 0 1 
+StorageState.H 0 0 1 0 0 0 0 0 0 0 1 
+StorageState.I 0 1 0 0 0 0 0 0 0 0 1 
+StorageState.ADD 1 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |Multiplier|Controller:LogicUnit|PreviousState
 Name PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 

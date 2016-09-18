@@ -28,10 +28,20 @@ initial begin: TEST_VECTORS
 ClearA_LoadB = 0;
 Run = 0;
 Reset = 0;
-M = 1;
+M = 0;
 
-#2 Run = 1;
+#2 ClearA_LoadB = 1;
+#2 ClearA_LoadB = 0;
+
+#4 Run = 1;
 #2 Run = 0;
+
+// Test to make sure it doesnt clear and load:
+#2 ClearA_LoadB = 1;
+#2 ClearA_LoadB = 0;
+
+#2 M = 1;
+#2 M = 1;
 
 
 end

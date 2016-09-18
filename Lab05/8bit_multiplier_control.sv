@@ -4,7 +4,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 							output logic Clr_Ld, Shift, Add, Sub, 
 							output logic [3:0]currentState);
 							
-	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD} PreviousState, CurrentState, NextState;
+	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD} StorageState, PreviousState, CurrentState, NextState, NextNextState;
 	
 	assign currentState = CurrentState;
 	
@@ -16,6 +16,10 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 			begin
 			   PreviousState <= CurrentState;
 				CurrentState <= NextState;
+				if(M)
+					begin
+						StorageState <= NextNextState;
+					end
 			end
 	end
 	
@@ -24,47 +28,55 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 	always_comb
 	begin
 		if(CurrentState == WAIT)
-		begin
-		   Shift = 1'b0;
-			Add 	= 1'b0;
-			Sub   = 1'b0;
-			if(ClearA_LoadB)
 			begin
-				Clr_Ld = 1'b1;
+				Shift = 1'b0;
+				Add 	= 1'b0;
+				Sub   = 1'b0;
+				if(ClearA_LoadB)
+					begin
+						Clr_Ld = 1'b1;
+					end
+				else
+					begin
+						Clr_Ld = 1'b0;
+					end
 			end
-			else
+		else if(CurrentState == ADD)
 			begin
+				if(PreviousState == G)
+					begin
+						Add 	 = 1'b0;
+						Sub    = 1'b1;
+					end
+				else
+					begin
+						Add 	 = 1'b1;
+						Sub    = 1'b0;
+					end
+				Shift  = 1'b0;
 				Clr_Ld = 1'b0;
 			end
-		end
-		else if(CurrentState == ADD)
-		begin
-			if(PreviousState == H)
+		else if(CurrentState == I)
 			begin
+				Shift  = 1'b0;
 				Add 	 = 1'b0;
-				Sub    = 1'b1;
-			end
-			else
-			begin
-				Add 	 = 1'b1;
 				Sub    = 1'b0;
+				Clr_Ld = 1'b0;
 			end
-			Shift  = 1'b0;
-			Clr_Ld = 1'b0;
-		end
 		else
-		begin
-			Shift  = 1'b1;
-			Add 	 = 1'b0;
-			Sub    = 1'b0;
-			Clr_Ld = 1'b0;
-		end
+			begin
+				Shift  = 1'b1;
+				Add 	 = 1'b0;
+				Sub    = 1'b0;
+				Clr_Ld = 1'b0;
+			end
 	end
 	
 	// Combinational Next State Logic
 	always_comb
 	begin
 		NextState = CurrentState;
+		NextNextState = CurrentState;
 		unique case (CurrentState)
 			WAIT:	begin
 						if(Run)
@@ -72,6 +84,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 							if(M)
 							begin
 								NextState = ADD;
+								NextNextState = A;
 							end
 							else
 								NextState = A;
@@ -81,50 +94,68 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 					end
 			A:		begin
 					if(M)
-						NextState = ADD;
+						begin
+							NextState = ADD;
+							NextNextState = B;
+						end
 					else	
 						NextState = B;
 					end
 			B:		begin
 					if(M)
-						NextState = ADD;
+						begin
+							NextState = ADD;
+							NextNextState = C;
+						end
 					else	
 						NextState = C;
 					end
 			C:		begin
 					if(M)
-						NextState = ADD;
+						begin
+							NextState = ADD;
+							NextNextState = D;
+						end
 					else	
 						NextState = D;
 					end
 			D:		begin
 					if(M)
-						NextState = ADD;
+						begin
+							NextState = ADD;
+							NextNextState = E;
+						end
 					else	
 						NextState = E;
 					end
 			E:		begin
 					if(M)
-						NextState = ADD;
+						begin
+							NextState = ADD;
+							NextNextState = F;
+						end
 					else	
 						NextState = F;
 					end
 			F:		begin
 					if(M)
-						NextState = ADD;
+						begin
+							NextState = ADD;
+							NextNextState = G;
+						end
 					else	
 						NextState = G;
 					end
 			G:		begin
 					if(M)
-						NextState = ADD;
+						begin
+							NextState = ADD;
+							NextNextState = H;
+						end
 					else	
 						NextState = H;
 					end
 			H:		begin
-					if(M)
-						NextState = ADD;
-					else	
 						NextState = I;
 					end
 			I:		begin
@@ -134,7 +165,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 						NextState = I;
 					end
 			ADD:	begin
-					NextState = PreviousState;
+					NextState = StorageState;
 					end
 			default: begin
 					NextState = WAIT;
