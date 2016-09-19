@@ -98,6 +98,8 @@ module lab4_adders_toplevel
         
     end
     
+	 testbench testbench_();
+	 
     /* Module instantiation
 	  * You can think of the lines below as instantiating objects (analogy to C++).
      * The things with names like Ahex0_inst, Ahex1_inst... are like a objects

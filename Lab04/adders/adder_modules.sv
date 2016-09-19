@@ -58,7 +58,7 @@ module four_LAAdder
 	LAAdder LA2(.x(A[2]), .y(B[2]), .z(cint[1]), .s(Sum[2]), .p(p[2]), .g(q[2]));
 	LAAdder LA3(.x(A[3]), .y(B[3]), .z(cint[2]), .s(Sum[3]), .p(p[3]), .g(q[3]));
 	
-	Carry_four_Lookahead(.c_in(cin), .p(p[3:0]), .q(q[3:0]), .Cn(cout), .c_out(cint[2:0]));
+	Carry_four_Lookahead C4LA1(.c_in(cin), .p(p[3:0]), .q(q[3:0]), .Cn(cout), .c_out(cint[2:0]));
 
 endmodule
 
@@ -76,7 +76,7 @@ module C_S_Adder
 	
 	assign cout = (adder_internal[1] & cin) | adder_internal[0];
 	
-	two_input_mux(.a(s_internal[0]), .b(s_internal[1]), .select(cin), .out(s));
+	two_input_mux MUX1(.a(s_internal[0]), .b(s_internal[1]), .select(cin), .out(s));
 	
 endmodule
 

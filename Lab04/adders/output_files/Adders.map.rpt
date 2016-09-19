@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Adders
-Wed Sep 14 22:32:38 2016
+Mon Sep 19 12:42:47 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -18,9 +18,11 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
  10. Port Connectivity Checks: "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0|C_S_Adder:CS0|full_adder:FA1"
  11. Port Connectivity Checks: "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0|C_S_Adder:CS0|full_adder:FA0"
  12. Port Connectivity Checks: "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 13. Port Connectivity Checks: "testbench:testbench_|ripple_adder:test|four_ripple_adder:FRA0"
+ 14. Port Connectivity Checks: "testbench:testbench_|ripple_adder:test"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -47,7 +49,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 14 22:32:38 2016      ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 19 12:42:47 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; Adders                                     ;
 ; Top-level Entity Name              ; lab4_adders_toplevel                       ;
@@ -157,22 +159,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 8      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
-; lab4_adders_toplevel.sv          ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/lab4_adders_toplevel.sv ;         ;
-; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/HexDriver.sv            ;         ;
-; carry_select_adder.sv            ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/carry_select_adder.sv   ;         ;
-; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/standard_modules.sv     ;         ;
-; adder_modules.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/Lab04/adders/adder_modules.sv        ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; testbench_8.sv                   ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/testbench_8.sv          ;         ;
+; ripple_adder.sv                  ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/ripple_adder.sv         ;         ;
+; lab4_adders_toplevel.sv          ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv ;         ;
+; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/HexDriver.sv            ;         ;
+; carry_select_adder.sv            ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/carry_select_adder.sv   ;         ;
+; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/standard_modules.sv     ;         ;
+; adder_modules.sv                 ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/adder_modules.sv        ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -244,15 +248,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |lab4_adders_toplevel|Sum[0]~reg0 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab4_adders_toplevel|B[7]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab4_adders_toplevel|A[11]       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |lab4_adders_toplevel|CO~reg0 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab4_adders_toplevel|B[0]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab4_adders_toplevel|A[0]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -280,6 +284,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+-------+----------+-----------------------------------------------------------------+
 ; cin  ; Input ; Info     ; Stuck at GND                                                    ;
 +------+-------+----------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "testbench:testbench_|ripple_adder:test|four_ripple_adder:FRA0" ;
++------+-------+----------+-----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                         ;
++------+-------+----------+-----------------------------------------------------------------+
+; c_in ; Input ; Info     ; Stuck at GND                                                    ;
++------+-------+----------+-----------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "testbench:testbench_|ripple_adder:test"                                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; A[11..7]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; A[15..12] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; A[4..3]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; A[6]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; A[5]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; A[2]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; A[1]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; A[0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[11..8]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[4..3]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[15..12] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[7]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[6]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[5]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[1]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sum       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; CO        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -311,7 +351,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -321,15 +361,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Wed Sep 14 22:32:24 2016
+    Info: Processing started: Mon Sep 19 12:42:36 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Adders -c Adders
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file testbench_8.sv
+    Info (12023): Found entity 1: testbench
 Info (12021): Found 1 design units, including 1 entities, in source file ripple_adder.sv
     Info (12023): Found entity 1: ripple_adder
 Warning (10090): Verilog HDL syntax warning at lab4_adders_toplevel.sv(14): extra block comment delimiter characters /* within block comment
 Info (12021): Found 1 design units, including 1 entities, in source file lab4_adders_toplevel.sv
     Info (12023): Found entity 1: lab4_adders_toplevel
-Info (12021): Found 1 design units, including 1 entities, in source file HexDriver.sv
+Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
     Info (12023): Found entity 1: HexDriver
 Info (12021): Found 1 design units, including 1 entities, in source file carry_select_adder.sv
     Info (12023): Found entity 1: carry_select_adder
@@ -346,14 +388,17 @@ Info (12021): Found 6 design units, including 6 entities, in source file adder_m
     Info (12023): Found entity 4: four_LAAdder
     Info (12023): Found entity 5: C_S_Adder
     Info (12023): Found entity 6: four_cs_adder
-Critical Warning (10846): Verilog HDL Instantiation warning at adder_modules.sv(79): instance has no name
-Critical Warning (10846): Verilog HDL Instantiation warning at adder_modules.sv(61): instance has no name
 Info (12127): Elaborating entity "lab4_adders_toplevel" for the top level hierarchy
+Info (12128): Elaborating entity "testbench" for hierarchy "testbench:testbench_"
+Warning (10036): Verilog HDL or VHDL warning at testbench_8.sv(14): object "correct" assigned a value but never read
+Warning (10755): Verilog HDL warning at testbench_8.sv(22): assignments to Clk create a combinational loop
+Info (12128): Elaborating entity "ripple_adder" for hierarchy "testbench:testbench_|ripple_adder:test"
+Info (12128): Elaborating entity "four_ripple_adder" for hierarchy "testbench:testbench_|ripple_adder:test|four_ripple_adder:FRA0"
+Info (12128): Elaborating entity "full_adder" for hierarchy "testbench:testbench_|ripple_adder:test|four_ripple_adder:FRA0|full_adder:FA0"
 Info (12128): Elaborating entity "carry_select_adder" for hierarchy "carry_select_adder:carry_select_adder_inst"
 Info (12128): Elaborating entity "four_cs_adder" for hierarchy "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0"
 Info (12128): Elaborating entity "C_S_Adder" for hierarchy "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0|C_S_Adder:CS0"
-Info (12128): Elaborating entity "full_adder" for hierarchy "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0|C_S_Adder:CS0|full_adder:FA0"
-Info (12128): Elaborating entity "two_input_mux" for hierarchy "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0|C_S_Adder:CS0|two_input_mux:comb_5"
+Info (12128): Elaborating entity "two_input_mux" for hierarchy "carry_select_adder:carry_select_adder_inst|four_cs_adder:FCS0|C_S_Adder:CS0|two_input_mux:MUX1"
 Info (12128): Elaborating entity "HexDriver" for hierarchy "HexDriver:Ahex0_inst"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -365,9 +410,9 @@ Info (21057): Implemented 220 device resources after synthesis - the final resou
     Info (21059): Implemented 73 output pins
     Info (21061): Implemented 126 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1004 megabytes
-    Info: Processing ended: Wed Sep 14 22:32:38 2016
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 691 megabytes
+    Info: Processing ended: Mon Sep 19 12:42:47 2016
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:27
 
 

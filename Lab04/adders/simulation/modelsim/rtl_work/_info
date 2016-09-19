@@ -1,0 +1,327 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/simulation/modelsim
+vC_S_Adder
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 !s110 1474306990
+!i10b 1
+!s100 2Mb?XF=;M3NaSjiP8KB_k0
+IQQPfaQgf^KhN8V`i1<SKi3
+Z3 V`JN@9S9cnhjKRR_L]QIcM3
+Z4 !s105 adder_modules_sv_unit
+S1
+R0
+Z5 w1474306707
+Z6 8E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/adder_modules.sv
+Z7 FE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/adder_modules.sv
+L0 65
+Z8 OV;L;10.3d;59
+r1
+!s85 0
+31
+Z9 !s108 1474306990.879000
+Z10 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/adder_modules.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders|E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/adder_modules.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work {+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders}
+n@c_@s_@adder
+vCarry_four_Lookahead
+R1
+R2
+!i10b 1
+!s100 9_WbH_^89]glh_AnocHlj1
+Iz`d>QP=_<1j>Jnl4G<W2U1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 29
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+n@carry_four_@lookahead
+vcarry_select_adder
+R1
+R2
+!i10b 1
+!s100 FJ;Oghc@R7O>>G;9dMLdQ2
+IX8DNj[8S^QA5[YWnOjzhV2
+R3
+!s105 carry_select_adder_sv_unit
+S1
+R0
+Z14 w1474153646
+8E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/carry_select_adder.sv
+FE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/carry_select_adder.sv
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1474306990.747000
+!s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/carry_select_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders|E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/carry_select_adder.sv|
+!i113 1
+R12
+R13
+vfour_cs_adder
+R1
+R2
+!i10b 1
+!s100 m20Y2;XLElHX=1PWFMCXE1
+IV=0=6ZFDD=YY4_Z0iUe4N3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 83
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vfour_LAAdder
+R1
+R2
+!i10b 1
+!s100 7E^FmjdVazLmZU8<V?gRz1
+Idmf33I=Nb5ZVh24PA5?3S2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 45
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+nfour_@l@a@adder
+vfour_ripple_adder
+R1
+R2
+!i10b 1
+!s100 MJ>b_O5<f=KPVWl=K``EE1
+I4XolLhRjei]>bNL<5=[4P2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+vfull_adder
+R1
+R2
+!i10b 1
+!s100 AlH01kDF7eMGN=X;i581X2
+ISz6FOkB=iY]5Q0_]S5`PC3
+R3
+Z15 !s105 standard_modules_sv_unit
+S1
+R0
+Z16 w1474153647
+Z17 8E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/standard_modules.sv
+Z18 FE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/standard_modules.sv
+L0 11
+R8
+r1
+!s85 0
+31
+Z19 !s108 1474306990.818000
+Z20 !s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/standard_modules.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders|E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/standard_modules.sv|
+!i113 1
+R12
+R13
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 A89PE:z4001FXEa5_3CF:0
+I=[o2NnD1AjU=oCOQQjNiF0
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+R14
+8E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/HexDriver.sv
+FE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/HexDriver.sv
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1474306990.634000
+!s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders|E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/HexDriver.sv|
+!i113 1
+R12
+R13
+n@hex@driver
+vLAAdder
+R1
+R2
+!i10b 1
+!s100 _3nDaLO;]Gi6=>PK?QBOY2
+IK3zO`<=U5zSSGf?UCXbTY3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+Z22 L0 17
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+n@l@a@adder
+vlab4_adders_toplevel
+R1
+!s110 1474306991
+!i10b 1
+!s100 Ej<2YhQbD=g0HJ;093;1]0
+ImQzLa`j?T6o25z[9UlfXR2
+R3
+!s105 lab4_adders_toplevel_sv_unit
+S1
+R0
+w1474305490
+8E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv
+FE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv
+R22
+R8
+r1
+!s85 0
+31
+!s108 1474306991.076000
+!s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders|E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv|
+!i113 1
+R12
+R13
+vripple_adder
+R1
+R2
+!i10b 1
+!s100 i_LW4ON;^^RKgQ`hlF^>n0
+InW?4?Q<FDcPoS1GXnTH`>3
+R3
+!s105 ripple_adder_sv_unit
+S1
+R0
+R16
+8E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/ripple_adder.sv
+FE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/ripple_adder.sv
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1474306990.569000
+!s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/ripple_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders|E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/ripple_adder.sv|
+!i113 1
+R12
+R13
+vtestbench
+R1
+R2
+!i10b 1
+!s100 _F_2N@I4cBihOU[JRfSUg0
+IDbPQ0[>Nfl4[]6O2=]n[33
+R3
+!s105 testbench_8_sv_unit
+S1
+R0
+w1474306955
+8E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/testbench_8.sv
+FE:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/testbench_8.sv
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1474306990.982000
+!s107 E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/testbench_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders|E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/testbench_8.sv|
+!i113 1
+R12
+R13
+vtwo_input_mux
+R1
+R2
+!i10b 1
+!s100 >TK@bP7QG_ai^2V56nQ>^1
+I4J9<XLn:425DZMA5Z4go43
+R3
+R15
+S1
+R0
+R16
+R17
+R18
+L0 1
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 1
+R12
+R13
