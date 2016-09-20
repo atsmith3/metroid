@@ -54,6 +54,6 @@ module Multiplier(	input logic [7:0] Switches,
 	HexDriver		BUpper(	.In0(Bval[7:4]),.Out0(BhexU[6:0]));
 	HexDriver		BLower(	.In0(Bval[3:0]),.Out0(BhexL[6:0]));
 	
-	testbench newBench();
+	//testbench newBench();
 							
 endmodule
