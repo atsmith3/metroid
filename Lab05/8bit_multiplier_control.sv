@@ -2,9 +2,10 @@
 
 module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 							output logic Clr_Ld, Shift, Add, Sub, 
-							output logic [3:0]currentState);
+							output logic [3:0]currentState,
+							output logic Clear_A);
 							
-	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD, SHIFT} StorageState, PreviousState, CurrentState, NextState, NextNextState;
+	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD, SHIFT, CLEAR_A} StorageState, PreviousState, CurrentState, NextState, NextNextState;
 	
 	assign currentState = CurrentState;
 	
@@ -36,6 +37,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 				Shift = 1'b0;
 				Add 	= 1'b0;
 				Sub   = 1'b0;
+				Clear_A = 1'b0;
 				if(ClearA_LoadB)
 					begin
 						Clr_Ld = 1'b1;
@@ -59,6 +61,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 					end
 				Shift  = 1'b0;
 				Clr_Ld = 1'b0;
+				Clear_A = 1'b0;
 			end
 		else if(CurrentState == SHIFT)
 			begin
@@ -66,6 +69,15 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 				Add 	 = 1'b0;
 				Sub    = 1'b0;
 				Clr_Ld = 1'b0;
+				Clear_A = 1'b0;
+			end
+		else if(CurrentState == CLEAR_A)
+			begin
+				Shift  = 1'b0;
+				Add 	 = 1'b0;
+				Sub    = 1'b0;
+				Clr_Ld = 1'b0;
+				Clear_A = 1'b1;
 			end
 		else
 			begin
@@ -73,6 +85,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 				Add 	 = 1'b0;
 				Sub    = 1'b0;
 				Clr_Ld = 1'b0;
+				Clear_A = 1'b0;
 			end
 	end
 	
@@ -84,16 +97,17 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 		unique case (CurrentState)
 			WAIT:	begin
 						if(Run)
-						begin
-							if(M)
-								NextState = ADD;
-							else
-								NextState = SHIFT;
-								
-							NextNextState = A;
-						end
+							NextState = CLEAR_A;
 						else
 							NextState = WAIT;
+					end
+			CLEAR_A:begin
+					if(M)
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+				
+					NextNextState = A;
 					end
 			A:		begin
 					if(M)

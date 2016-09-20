@@ -1,45 +1,96 @@
 
+State Machine - |Multiplier|testbench:newBench|Controller:test|StorageState
+Name StorageState.CLEAR_A StorageState.SHIFT StorageState.ADD StorageState.I StorageState.H StorageState.G StorageState.F StorageState.E StorageState.D StorageState.C StorageState.B StorageState.A StorageState.WAIT 
+StorageState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 
+StorageState.A 0 0 0 0 0 0 0 0 0 0 0 1 1 
+StorageState.B 0 0 0 0 0 0 0 0 0 0 1 0 1 
+StorageState.C 0 0 0 0 0 0 0 0 0 1 0 0 1 
+StorageState.D 0 0 0 0 0 0 0 0 1 0 0 0 1 
+StorageState.E 0 0 0 0 0 0 0 1 0 0 0 0 1 
+StorageState.F 0 0 0 0 0 0 1 0 0 0 0 0 1 
+StorageState.G 0 0 0 0 0 1 0 0 0 0 0 0 1 
+StorageState.H 0 0 0 0 1 0 0 0 0 0 0 0 1 
+StorageState.I 0 0 0 1 0 0 0 0 0 0 0 0 1 
+StorageState.ADD 0 0 1 0 0 0 0 0 0 0 0 0 1 
+StorageState.SHIFT 0 1 0 0 0 0 0 0 0 0 0 0 1 
+StorageState.CLEAR_A 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Multiplier|testbench:newBench|Controller:test|PreviousState
+Name PreviousState.CLEAR_A PreviousState.SHIFT PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
+PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 
+PreviousState.A 0 0 0 0 0 0 0 0 0 0 0 1 1 
+PreviousState.B 0 0 0 0 0 0 0 0 0 0 1 0 1 
+PreviousState.C 0 0 0 0 0 0 0 0 0 1 0 0 1 
+PreviousState.D 0 0 0 0 0 0 0 0 1 0 0 0 1 
+PreviousState.E 0 0 0 0 0 0 0 1 0 0 0 0 1 
+PreviousState.F 0 0 0 0 0 0 1 0 0 0 0 0 1 
+PreviousState.G 0 0 0 0 0 1 0 0 0 0 0 0 1 
+PreviousState.H 0 0 0 0 1 0 0 0 0 0 0 0 1 
+PreviousState.I 0 0 0 1 0 0 0 0 0 0 0 0 1 
+PreviousState.ADD 0 0 1 0 0 0 0 0 0 0 0 0 1 
+PreviousState.SHIFT 0 1 0 0 0 0 0 0 0 0 0 0 1 
+PreviousState.CLEAR_A 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Multiplier|testbench:newBench|Controller:test|CurrentState
+Name CurrentState.CLEAR_A CurrentState.SHIFT CurrentState.ADD CurrentState.I CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A CurrentState.WAIT 
+CurrentState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 
+CurrentState.A 0 0 0 0 0 0 0 0 0 0 0 1 1 
+CurrentState.B 0 0 0 0 0 0 0 0 0 0 1 0 1 
+CurrentState.C 0 0 0 0 0 0 0 0 0 1 0 0 1 
+CurrentState.D 0 0 0 0 0 0 0 0 1 0 0 0 1 
+CurrentState.E 0 0 0 0 0 0 0 1 0 0 0 0 1 
+CurrentState.F 0 0 0 0 0 0 1 0 0 0 0 0 1 
+CurrentState.G 0 0 0 0 0 1 0 0 0 0 0 0 1 
+CurrentState.H 0 0 0 0 1 0 0 0 0 0 0 0 1 
+CurrentState.I 0 0 0 1 0 0 0 0 0 0 0 0 1 
+CurrentState.ADD 0 0 1 0 0 0 0 0 0 0 0 0 1 
+CurrentState.SHIFT 0 1 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.CLEAR_A 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
 State Machine - |Multiplier|Controller:LogicUnit|StorageState
-Name StorageState.SHIFT StorageState.ADD StorageState.I StorageState.H StorageState.G StorageState.F StorageState.E StorageState.D StorageState.C StorageState.B StorageState.A StorageState.WAIT 
-StorageState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 
-StorageState.A 0 0 0 0 0 0 0 0 0 0 1 1 
-StorageState.B 0 0 0 0 0 0 0 0 0 1 0 1 
-StorageState.C 0 0 0 0 0 0 0 0 1 0 0 1 
-StorageState.D 0 0 0 0 0 0 0 1 0 0 0 1 
-StorageState.E 0 0 0 0 0 0 1 0 0 0 0 1 
-StorageState.F 0 0 0 0 0 1 0 0 0 0 0 1 
-StorageState.G 0 0 0 0 1 0 0 0 0 0 0 1 
-StorageState.H 0 0 0 1 0 0 0 0 0 0 0 1 
-StorageState.I 0 0 1 0 0 0 0 0 0 0 0 1 
-StorageState.ADD 0 1 0 0 0 0 0 0 0 0 0 1 
-StorageState.SHIFT 1 0 0 0 0 0 0 0 0 0 0 1 
+Name StorageState.CLEAR_A StorageState.SHIFT StorageState.ADD StorageState.I StorageState.H StorageState.G StorageState.F StorageState.E StorageState.D StorageState.C StorageState.B StorageState.A StorageState.WAIT 
+StorageState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 
+StorageState.A 0 0 0 0 0 0 0 0 0 0 0 1 1 
+StorageState.B 0 0 0 0 0 0 0 0 0 0 1 0 1 
+StorageState.C 0 0 0 0 0 0 0 0 0 1 0 0 1 
+StorageState.D 0 0 0 0 0 0 0 0 1 0 0 0 1 
+StorageState.E 0 0 0 0 0 0 0 1 0 0 0 0 1 
+StorageState.F 0 0 0 0 0 0 1 0 0 0 0 0 1 
+StorageState.G 0 0 0 0 0 1 0 0 0 0 0 0 1 
+StorageState.H 0 0 0 0 1 0 0 0 0 0 0 0 1 
+StorageState.I 0 0 0 1 0 0 0 0 0 0 0 0 1 
+StorageState.ADD 0 0 1 0 0 0 0 0 0 0 0 0 1 
+StorageState.SHIFT 0 1 0 0 0 0 0 0 0 0 0 0 1 
+StorageState.CLEAR_A 1 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |Multiplier|Controller:LogicUnit|PreviousState
-Name PreviousState.SHIFT PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
-PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 
-PreviousState.A 0 0 0 0 0 0 0 0 0 0 1 1 
-PreviousState.B 0 0 0 0 0 0 0 0 0 1 0 1 
-PreviousState.C 0 0 0 0 0 0 0 0 1 0 0 1 
-PreviousState.D 0 0 0 0 0 0 0 1 0 0 0 1 
-PreviousState.E 0 0 0 0 0 0 1 0 0 0 0 1 
-PreviousState.F 0 0 0 0 0 1 0 0 0 0 0 1 
-PreviousState.G 0 0 0 0 1 0 0 0 0 0 0 1 
-PreviousState.H 0 0 0 1 0 0 0 0 0 0 0 1 
-PreviousState.I 0 0 1 0 0 0 0 0 0 0 0 1 
-PreviousState.ADD 0 1 0 0 0 0 0 0 0 0 0 1 
-PreviousState.SHIFT 1 0 0 0 0 0 0 0 0 0 0 1 
+Name PreviousState.CLEAR_A PreviousState.SHIFT PreviousState.ADD PreviousState.I PreviousState.H PreviousState.G PreviousState.F PreviousState.E PreviousState.D PreviousState.C PreviousState.B PreviousState.A PreviousState.WAIT 
+PreviousState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 
+PreviousState.A 0 0 0 0 0 0 0 0 0 0 0 1 1 
+PreviousState.B 0 0 0 0 0 0 0 0 0 0 1 0 1 
+PreviousState.C 0 0 0 0 0 0 0 0 0 1 0 0 1 
+PreviousState.D 0 0 0 0 0 0 0 0 1 0 0 0 1 
+PreviousState.E 0 0 0 0 0 0 0 1 0 0 0 0 1 
+PreviousState.F 0 0 0 0 0 0 1 0 0 0 0 0 1 
+PreviousState.G 0 0 0 0 0 1 0 0 0 0 0 0 1 
+PreviousState.H 0 0 0 0 1 0 0 0 0 0 0 0 1 
+PreviousState.I 0 0 0 1 0 0 0 0 0 0 0 0 1 
+PreviousState.ADD 0 0 1 0 0 0 0 0 0 0 0 0 1 
+PreviousState.SHIFT 0 1 0 0 0 0 0 0 0 0 0 0 1 
+PreviousState.CLEAR_A 1 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |Multiplier|Controller:LogicUnit|CurrentState
-Name CurrentState.SHIFT CurrentState.ADD CurrentState.I CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A CurrentState.WAIT 
-CurrentState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 
-CurrentState.A 0 0 0 0 0 0 0 0 0 0 1 1 
-CurrentState.B 0 0 0 0 0 0 0 0 0 1 0 1 
-CurrentState.C 0 0 0 0 0 0 0 0 1 0 0 1 
-CurrentState.D 0 0 0 0 0 0 0 1 0 0 0 1 
-CurrentState.E 0 0 0 0 0 0 1 0 0 0 0 1 
-CurrentState.F 0 0 0 0 0 1 0 0 0 0 0 1 
-CurrentState.G 0 0 0 0 1 0 0 0 0 0 0 1 
-CurrentState.H 0 0 0 1 0 0 0 0 0 0 0 1 
-CurrentState.I 0 0 1 0 0 0 0 0 0 0 0 1 
-CurrentState.ADD 0 1 0 0 0 0 0 0 0 0 0 1 
-CurrentState.SHIFT 1 0 0 0 0 0 0 0 0 0 0 1 
+Name CurrentState.CLEAR_A CurrentState.SHIFT CurrentState.ADD CurrentState.I CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A CurrentState.WAIT 
+CurrentState.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 
+CurrentState.A 0 0 0 0 0 0 0 0 0 0 0 1 1 
+CurrentState.B 0 0 0 0 0 0 0 0 0 0 1 0 1 
+CurrentState.C 0 0 0 0 0 0 0 0 0 1 0 0 1 
+CurrentState.D 0 0 0 0 0 0 0 0 1 0 0 0 1 
+CurrentState.E 0 0 0 0 0 0 0 1 0 0 0 0 1 
+CurrentState.F 0 0 0 0 0 0 1 0 0 0 0 0 1 
+CurrentState.G 0 0 0 0 0 1 0 0 0 0 0 0 1 
+CurrentState.H 0 0 0 0 1 0 0 0 0 0 0 0 1 
+CurrentState.I 0 0 0 1 0 0 0 0 0 0 0 0 1 
+CurrentState.ADD 0 0 1 0 0 0 0 0 0 0 0 0 1 
+CurrentState.SHIFT 0 1 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.CLEAR_A 1 0 0 0 0 0 0 0 0 0 0 0 1 

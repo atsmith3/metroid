@@ -14,6 +14,7 @@ module Multiplier(	input logic [7:0] Switches,
 	logic Add;
 	logic Sub;
 	logic [7:0] Anew;
+	logic Clear_A;
 							
 							
 	Controller 		LogicUnit(		.ClearA_LoadB(~ClearA_LoadB),
@@ -25,7 +26,8 @@ module Multiplier(	input logic [7:0] Switches,
 											.Shift(Shift), 
 											.Add(Add), 
 											.Sub(Sub),
-											.currentState());
+											.currentState(),
+											.Clear_A(Clear_A));
 	
 	
 	
@@ -40,7 +42,8 @@ module Multiplier(	input logic [7:0] Switches,
 											.Add(Add), 
 											.Subtract(Sub),
 											.Aout(Aval[7:0]), 
-											.M(M));
+											.M(M),
+											.Clear_A(Clear_A));
 	
 	NineBitAdder	AdderUnit(		.switches(Switches[7:0]),
 											.Ain(Aval[7:0]),
@@ -54,6 +57,6 @@ module Multiplier(	input logic [7:0] Switches,
 	HexDriver		BUpper(	.In0(Bval[7:4]),.Out0(BhexU[6:0]));
 	HexDriver		BLower(	.In0(Bval[3:0]),.Out0(BhexL[6:0]));
 	
-	//testbench newBench();
+	testbench newBench();
 							
 endmodule

@@ -1,7 +1,7 @@
 // Register file
 
 module Registers(	input logic [7:0] Ain, Bin,
-							input logic X, Clr_Ld, Shift, Clk, Reset, Add, Subtract,
+							input logic X, Clr_Ld, Shift, Clk, Reset, Add, Subtract, Clear_A,
 							output logic [7:0] Aout, Bout,
 							output logic M);
 	
@@ -12,7 +12,7 @@ module Registers(	input logic [7:0] Ain, Bin,
 										.ShiftIn(xa), 
 										.ShiftOut(ab), 
 										.Clk(Clk), 
-										.Reset(Reset | Clr_Ld), 
+										.Reset(Reset | Clr_Ld | Clear_A), 
 										.Load(Add | Subtract));
 										
 	EightBitShiftRegister RegB(.DataIn(Bin [7:0]), 
@@ -27,7 +27,7 @@ module Registers(	input logic [7:0] Ain, Bin,
 	X_Flop RegX(.Xin(X),
 					.Xout(xa),
 					.Clk(Clk),
-					.Clr_Ld(Clr_Ld),
+					.Clr_Ld(Clr_Ld | Clear_A), 
 					.Reset(Reset));
 							
 endmodule
