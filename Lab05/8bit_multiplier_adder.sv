@@ -14,7 +14,7 @@ module NineBitAdder(	input logic [7:0] switches, Ain,
 	FourBitRippleCarryAdder AC0(.A(~switches[3:0]),.B(4'b0001),.Cin(1'b0),.Cout(cComp),.Sum(Scomp[3:0]));
 	FourBitRippleCarryAdder AC1(.A(~switches[7:4]),.B(4'b0000),.Cin(cComp),.Cout(),.Sum(Scomp[7:4]));
 	//Determine what goes into Adder
-	BusSelector BusSelector1(.A(Ain[7:0]),.*);
+	BusSelector BusSelector1(.A(switches[7:0]),.*);
 	//Find output of the NineBitAdder
 	FourBitRippleCarryAdder FFA0(.A(Ain[3:0]),.B(Out[3:0]),.Cin(1'b0),.Sum(Aout[3:0]),.Cout(outC[0]));
 	FourBitRippleCarryAdder FFA1(.A(Ain[7:4]),.B(Out[7:4]),.Cin(outC[0]),.Sum(Aout[7:4]),.Cout(outC[1]));

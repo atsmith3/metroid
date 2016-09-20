@@ -17,6 +17,7 @@ logic Shift;
 logic Add;
 logic Sub;
 logic [7:0] Anew;
+logic [3:0] currentState;
 						
 						
 Controller 		LogicUnit(		.ClearA_LoadB(~ClearA_LoadB),
@@ -28,7 +29,7 @@ Controller 		LogicUnit(		.ClearA_LoadB(~ClearA_LoadB),
 										.Shift(Shift), 
 										.Add(Add), 
 										.Sub(Sub),
-										.currentState());
+										.currentState(currentState));
 
 
 

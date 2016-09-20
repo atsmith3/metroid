@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 8bit_multiplier
-Sat Sep 17 22:41:30 2016
+Mon Sep 19 21:58:22 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -68,15 +68,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 17 22:41:30 2016      ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 19 21:58:22 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; 8bit_multiplier                            ;
 ; Top-level Entity Name              ; Multiplier                                 ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 114                                        ;
-;     Total combinational functions  ; 111                                        ;
-;     Dedicated logic registers      ; 40                                         ;
-; Total registers                    ; 40                                         ;
+; Total logic elements               ; 111                                        ;
+;     Total combinational functions  ; 108                                        ;
+;     Dedicated logic registers      ; 41                                         ;
+; Total registers                    ; 41                                         ;
 ; Total pins                         ; 57                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -203,20 +203,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 114       ;
+; Estimated Total logic elements              ; 111       ;
 ;                                             ;           ;
-; Total combinational functions               ; 111       ;
+; Total combinational functions               ; 108       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 99        ;
-;     -- 3 input functions                    ; 6         ;
-;     -- <=2 input functions                  ; 6         ;
+;     -- 4 input functions                    ; 78        ;
+;     -- 3 input functions                    ; 20        ;
+;     -- <=2 input functions                  ; 10        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 111       ;
+;     -- normal mode                          ; 108       ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 40        ;
-;     -- Dedicated logic registers            ; 40        ;
+; Total registers                             ; 41        ;
+;     -- Dedicated logic registers            ; 41        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 57        ;
@@ -224,9 +224,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
-; Maximum fan-out                             ; 40        ;
-; Total fan-out                               ; 654       ;
-; Average fan-out                             ; 2.47      ;
+; Maximum fan-out                             ; 41        ;
+; Total fan-out                               ; 615       ;
+; Average fan-out                             ; 2.34      ;
 +---------------------------------------------+-----------+
 
 
@@ -235,37 +235,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Library Name ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
-; |Multiplier                          ; 111 (0)           ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |Multiplier                                                                   ; work         ;
-;    |Controller:LogicUnit|            ; 29 (29)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Controller:LogicUnit                                              ; work         ;
+; |Multiplier                          ; 108 (0)           ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |Multiplier                                                                   ; work         ;
+;    |Controller:LogicUnit|            ; 28 (28)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Controller:LogicUnit                                              ; work         ;
 ;    |HexDriver:ALower|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:ALower                                                  ; work         ;
 ;    |HexDriver:AUpper|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:AUpper                                                  ; work         ;
 ;    |HexDriver:BLower|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:BLower                                                  ; work         ;
 ;    |HexDriver:BUpper|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|HexDriver:BUpper                                                  ; work         ;
-;    |NineBitAdder:AdderUnit|          ; 32 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit                                            ; work         ;
-;       |BusSelector:BusSelector1|     ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1                   ; work         ;
+;    |NineBitAdder:AdderUnit|          ; 24 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit                                            ; work         ;
+;       |BusSelector:BusSelector1|     ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1                   ; work         ;
 ;          |FourInputMux:F0|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F0   ; work         ;
-;          |FourInputMux:F1|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F1   ; work         ;
+;          |FourInputMux:F1|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F1   ; work         ;
 ;          |FourInputMux:F2|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F2   ; work         ;
-;          |FourInputMux:F4|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F4   ; work         ;
+;          |FourInputMux:F3|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F3   ; work         ;
+;          |FourInputMux:F4|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F4   ; work         ;
 ;          |FourInputMux:F5|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F5   ; work         ;
-;          |FourInputMux:F7|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F7   ; work         ;
+;          |FourInputMux:F6|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F6   ; work         ;
+;          |FourInputMux:F7|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F7   ; work         ;
 ;       |FourBitRippleCarryAdder:AC0|  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0                ; work         ;
 ;          |FullAdder:FA2|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA2  ; work         ;
 ;          |FullAdder:FA3|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC0|FullAdder:FA3  ; work         ;
 ;       |FourBitRippleCarryAdder:AC1|  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1                ; work         ;
-;          |FullAdder:FA1|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA1  ; work         ;
+;          |FullAdder:FA0|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA0  ; work         ;
 ;          |FullAdder:FA2|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:AC1|FullAdder:FA2  ; work         ;
-;       |FourBitRippleCarryAdder:FFA0| ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0               ; work         ;
-;          |FullAdder:FA0|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA0 ; work         ;
+;       |FourBitRippleCarryAdder:FFA0| ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0               ; work         ;
 ;          |FullAdder:FA1|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA1 ; work         ;
-;          |FullAdder:FA3|             ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3 ; work         ;
-;       |FourBitRippleCarryAdder:FFA1| ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1               ; work         ;
-;          |FullAdder:FA0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA0 ; work         ;
-;          |FullAdder:FA2|             ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA2 ; work         ;
-;          |FullAdder:FA3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA3 ; work         ;
+;          |FullAdder:FA2|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA2 ; work         ;
+;          |FullAdder:FA3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA0|FullAdder:FA3 ; work         ;
+;       |FourBitRippleCarryAdder:FFA1| ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1               ; work         ;
+;          |FullAdder:FA0|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA0 ; work         ;
+;          |FullAdder:FA1|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA1 ; work         ;
+;          |FullAdder:FA2|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FourBitRippleCarryAdder:FFA1|FullAdder:FA2 ; work         ;
 ;       |FullAdder:FAX|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|NineBitAdder:AdderUnit|FullAdder:FAX                              ; work         ;
-;    |Registers:RegisterUnit|          ; 22 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit                                            ; work         ;
-;       |EightBitShiftRegister:RegA|   ; 11 (11)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA                 ; work         ;
+;    |Registers:RegisterUnit|          ; 28 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit                                            ; work         ;
+;       |EightBitShiftRegister:RegA|   ; 17 (17)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA                 ; work         ;
 ;       |EightBitShiftRegister:RegB|   ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegB                 ; work         ;
 ;       |X_Flop:RegX|                  ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Multiplier|Registers:RegisterUnit|X_Flop:RegX                                ; work         ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
@@ -273,255 +275,264 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|StorageState                                                                                                                                  ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; Name              ; StorageState.ADD ; StorageState.I ; StorageState.H ; StorageState.G ; StorageState.F ; StorageState.E ; StorageState.D ; StorageState.C ; StorageState.B ; StorageState.A ; StorageState.WAIT ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; StorageState.WAIT ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
-; StorageState.A    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
-; StorageState.B    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
-; StorageState.C    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
-; StorageState.D    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.E    ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.F    ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.G    ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.H    ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.I    ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.ADD  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|StorageState                                                                                                                                                        ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; Name               ; StorageState.SHIFT ; StorageState.ADD ; StorageState.I ; StorageState.H ; StorageState.G ; StorageState.F ; StorageState.E ; StorageState.D ; StorageState.C ; StorageState.B ; StorageState.A ; StorageState.WAIT ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; StorageState.WAIT  ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
+; StorageState.A     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
+; StorageState.B     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
+; StorageState.C     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
+; StorageState.D     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.E     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.F     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.G     ; 0                  ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.H     ; 0                  ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.I     ; 0                  ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.ADD   ; 0                  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.SHIFT ; 1                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|PreviousState                                                                                                                                             ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
-; Name               ; PreviousState.ADD ; PreviousState.I ; PreviousState.H ; PreviousState.G ; PreviousState.F ; PreviousState.E ; PreviousState.D ; PreviousState.C ; PreviousState.B ; PreviousState.A ; PreviousState.WAIT ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
-; PreviousState.WAIT ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                  ;
-; PreviousState.A    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                  ;
-; PreviousState.B    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                  ;
-; PreviousState.C    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                  ;
-; PreviousState.D    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.E    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.F    ; 0                 ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.G    ; 0                 ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.H    ; 0                 ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.I    ; 0                 ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.ADD  ; 1                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|PreviousState                                                                                                                                                                    ;
++---------------------+---------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
+; Name                ; PreviousState.SHIFT ; PreviousState.ADD ; PreviousState.I ; PreviousState.H ; PreviousState.G ; PreviousState.F ; PreviousState.E ; PreviousState.D ; PreviousState.C ; PreviousState.B ; PreviousState.A ; PreviousState.WAIT ;
++---------------------+---------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
+; PreviousState.WAIT  ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                  ;
+; PreviousState.A     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                  ;
+; PreviousState.B     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                  ;
+; PreviousState.C     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                  ;
+; PreviousState.D     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.E     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.F     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.G     ; 0                   ; 0                 ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.H     ; 0                   ; 0                 ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.I     ; 0                   ; 0                 ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.ADD   ; 0                   ; 1                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.SHIFT ; 1                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
++---------------------+---------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|CurrentState                                                                                                                                  ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; Name              ; CurrentState.ADD ; CurrentState.I ; CurrentState.H ; CurrentState.G ; CurrentState.F ; CurrentState.E ; CurrentState.D ; CurrentState.C ; CurrentState.B ; CurrentState.A ; CurrentState.WAIT ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; CurrentState.WAIT ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
-; CurrentState.A    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
-; CurrentState.B    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
-; CurrentState.C    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
-; CurrentState.D    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.E    ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.F    ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.G    ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.H    ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.I    ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.ADD  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|testbench:newBench|Controller:LogicUnit|CurrentState                                                                                                                                                        ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; Name               ; CurrentState.SHIFT ; CurrentState.ADD ; CurrentState.I ; CurrentState.H ; CurrentState.G ; CurrentState.F ; CurrentState.E ; CurrentState.D ; CurrentState.C ; CurrentState.B ; CurrentState.A ; CurrentState.WAIT ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; CurrentState.WAIT  ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
+; CurrentState.A     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
+; CurrentState.B     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
+; CurrentState.C     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
+; CurrentState.D     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.E     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.F     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.G     ; 0                  ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.H     ; 0                  ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.I     ; 0                  ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.ADD   ; 0                  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.SHIFT ; 1                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|Controller:LogicUnit|StorageState                                                                                                                                                     ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; Name              ; StorageState.ADD ; StorageState.I ; StorageState.H ; StorageState.G ; StorageState.F ; StorageState.E ; StorageState.D ; StorageState.C ; StorageState.B ; StorageState.A ; StorageState.WAIT ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; StorageState.WAIT ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
-; StorageState.A    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
-; StorageState.B    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
-; StorageState.C    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
-; StorageState.D    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.E    ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.F    ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.G    ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.H    ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.I    ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; StorageState.ADD  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|Controller:LogicUnit|StorageState                                                                                                                                                                           ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; Name               ; StorageState.SHIFT ; StorageState.ADD ; StorageState.I ; StorageState.H ; StorageState.G ; StorageState.F ; StorageState.E ; StorageState.D ; StorageState.C ; StorageState.B ; StorageState.A ; StorageState.WAIT ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; StorageState.WAIT  ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
+; StorageState.A     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
+; StorageState.B     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
+; StorageState.C     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
+; StorageState.D     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.E     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.F     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.G     ; 0                  ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.H     ; 0                  ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.I     ; 0                  ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.ADD   ; 0                  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; StorageState.SHIFT ; 1                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|Controller:LogicUnit|PreviousState                                                                                                                                                                ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
-; Name               ; PreviousState.ADD ; PreviousState.I ; PreviousState.H ; PreviousState.G ; PreviousState.F ; PreviousState.E ; PreviousState.D ; PreviousState.C ; PreviousState.B ; PreviousState.A ; PreviousState.WAIT ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
-; PreviousState.WAIT ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                  ;
-; PreviousState.A    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                  ;
-; PreviousState.B    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                  ;
-; PreviousState.C    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                  ;
-; PreviousState.D    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.E    ; 0                 ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.F    ; 0                 ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.G    ; 0                 ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.H    ; 0                 ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.I    ; 0                 ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-; PreviousState.ADD  ; 1                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
-+--------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|Controller:LogicUnit|PreviousState                                                                                                                                                                                       ;
++---------------------+---------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
+; Name                ; PreviousState.SHIFT ; PreviousState.ADD ; PreviousState.I ; PreviousState.H ; PreviousState.G ; PreviousState.F ; PreviousState.E ; PreviousState.D ; PreviousState.C ; PreviousState.B ; PreviousState.A ; PreviousState.WAIT ;
++---------------------+---------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
+; PreviousState.WAIT  ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0                  ;
+; PreviousState.A     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1                  ;
+; PreviousState.B     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1                  ;
+; PreviousState.C     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1                  ;
+; PreviousState.D     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.E     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.F     ; 0                   ; 0                 ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.G     ; 0                   ; 0                 ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.H     ; 0                   ; 0                 ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.I     ; 0                   ; 0                 ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.ADD   ; 0                   ; 1                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
+; PreviousState.SHIFT ; 1                   ; 0                 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1                  ;
++---------------------+---------------------+-------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+--------------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Multiplier|Controller:LogicUnit|CurrentState                                                                                                                                                     ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; Name              ; CurrentState.ADD ; CurrentState.I ; CurrentState.H ; CurrentState.G ; CurrentState.F ; CurrentState.E ; CurrentState.D ; CurrentState.C ; CurrentState.B ; CurrentState.A ; CurrentState.WAIT ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
-; CurrentState.WAIT ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
-; CurrentState.A    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
-; CurrentState.B    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
-; CurrentState.C    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
-; CurrentState.D    ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.E    ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.F    ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.G    ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.H    ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.I    ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-; CurrentState.ADD  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
-+-------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Multiplier|Controller:LogicUnit|CurrentState                                                                                                                                                                           ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; Name               ; CurrentState.SHIFT ; CurrentState.ADD ; CurrentState.I ; CurrentState.H ; CurrentState.G ; CurrentState.F ; CurrentState.E ; CurrentState.D ; CurrentState.C ; CurrentState.B ; CurrentState.A ; CurrentState.WAIT ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
+; CurrentState.WAIT  ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0                 ;
+; CurrentState.A     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1                 ;
+; CurrentState.B     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1                 ;
+; CurrentState.C     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1                 ;
+; CurrentState.D     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.E     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.F     ; 0                  ; 0                ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.G     ; 0                  ; 0                ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.H     ; 0                  ; 0                ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.I     ; 0                  ; 0                ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.ADD   ; 0                  ; 1                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
+; CurrentState.SHIFT ; 1                  ; 0                ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1                 ;
++--------------------+--------------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+-------------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                      ;
-+------------------------------------------------------------------------------------+--------------------+
-; Register name                                                                      ; Reason for Removal ;
-+------------------------------------------------------------------------------------+--------------------+
-; testbench:newBench|Controller:LogicUnit|PreviousState.WAIT                         ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.A                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.B                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.C                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.D                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.E                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.F                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.H                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.I                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.ADD                          ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState~13                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState~14                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState~15                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState~16                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState~14                           ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState~15                           ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState~16                           ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState~17                           ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState~2                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState~3                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState~4                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState~5                             ; Lost fanout        ;
-; Controller:LogicUnit|StorageState~13                                               ; Lost fanout        ;
-; Controller:LogicUnit|StorageState~14                                               ; Lost fanout        ;
-; Controller:LogicUnit|StorageState~15                                               ; Lost fanout        ;
-; Controller:LogicUnit|StorageState~16                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState~14                                              ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState~15                                              ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState~16                                              ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState~17                                              ; Lost fanout        ;
-; Controller:LogicUnit|CurrentState~2                                                ; Lost fanout        ;
-; Controller:LogicUnit|CurrentState~3                                                ; Lost fanout        ;
-; Controller:LogicUnit|CurrentState~4                                                ; Lost fanout        ;
-; Controller:LogicUnit|CurrentState~5                                                ; Lost fanout        ;
-; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[0..7] ; Lost fanout        ;
-; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[0..7] ; Lost fanout        ;
-; testbench:newBench|Registers:RegisterUnit|X_Flop:RegX|Xout                         ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.WAIT                          ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.A                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.B                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.C                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.D                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.E                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.F                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.G                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.H                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.I                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|StorageState.ADD                           ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.G                            ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.WAIT                          ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.A                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.B                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.C                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.D                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.E                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.F                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.G                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.H                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.I                             ; Lost fanout        ;
-; testbench:newBench|Controller:LogicUnit|CurrentState.ADD                           ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.WAIT                                            ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.A                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.B                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.C                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.D                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.E                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.F                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.H                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.I                                               ; Lost fanout        ;
-; Controller:LogicUnit|PreviousState.ADD                                             ; Lost fanout        ;
-; Total Number of Removed Registers = 84                                             ;                    ;
-+------------------------------------------------------------------------------------+--------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                          ;
++------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                      ; Reason for Removal                     ;
++------------------------------------------------------------------------------------+----------------------------------------+
+; testbench:newBench|Controller:LogicUnit|PreviousState.WAIT                         ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.A                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.B                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.C                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.D                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.E                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.F                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.H                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.I                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.ADD                          ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.SHIFT                        ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.G                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState~14                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState~15                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState~16                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState~17                            ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState~15                           ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState~16                           ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState~17                           ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|PreviousState~18                           ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState~2                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState~3                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState~4                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState~5                             ; Lost fanout                            ;
+; Controller:LogicUnit|StorageState~14                                               ; Lost fanout                            ;
+; Controller:LogicUnit|StorageState~15                                               ; Lost fanout                            ;
+; Controller:LogicUnit|StorageState~16                                               ; Lost fanout                            ;
+; Controller:LogicUnit|StorageState~17                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState~15                                              ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState~16                                              ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState~17                                              ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState~18                                              ; Lost fanout                            ;
+; Controller:LogicUnit|CurrentState~2                                                ; Lost fanout                            ;
+; Controller:LogicUnit|CurrentState~3                                                ; Lost fanout                            ;
+; Controller:LogicUnit|CurrentState~4                                                ; Lost fanout                            ;
+; Controller:LogicUnit|CurrentState~5                                                ; Lost fanout                            ;
+; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[0..7] ; Lost fanout                            ;
+; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[0..7] ; Lost fanout                            ;
+; testbench:newBench|Registers:RegisterUnit|X_Flop:RegX|Xout                         ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.WAIT                          ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.A                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.B                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.C                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.D                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.E                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.F                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.G                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.H                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.I                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.ADD                           ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|StorageState.SHIFT                         ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.WAIT                          ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.A                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.B                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.C                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.D                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.E                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.F                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.G                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.H                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.I                             ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.ADD                           ; Lost fanout                            ;
+; testbench:newBench|Controller:LogicUnit|CurrentState.SHIFT                         ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.WAIT                                            ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.A                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.B                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.C                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.D                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.E                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.F                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.H                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.I                                               ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.ADD                                             ; Lost fanout                            ;
+; Controller:LogicUnit|PreviousState.SHIFT                                           ; Lost fanout                            ;
+; Controller:LogicUnit|StorageState.ADD                                              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 89                                             ;                                        ;
++------------------------------------------------------------------------------------+----------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                        ;
-+------------------------------------------------------------+--------------------+----------------------------------------------------------------------------------+
-; Register name                                              ; Reason for Removal ; Registers Removed due to This Register                                           ;
-+------------------------------------------------------------+--------------------+----------------------------------------------------------------------------------+
-; testbench:newBench|Controller:LogicUnit|StorageState~13    ; Lost Fanouts       ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[0], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[1], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[2], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[3], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[4], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[5], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[6], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[7], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[0], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[1], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[2], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[3], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[4], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[5], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[6], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[7], ;
-;                                                            ;                    ; testbench:newBench|Registers:RegisterUnit|X_Flop:RegX|Xout,                      ;
-;                                                            ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.C,                          ;
-;                                                            ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.E,                          ;
-;                                                            ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.G,                          ;
-;                                                            ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.I,                          ;
-;                                                            ;                    ; testbench:newBench|Controller:LogicUnit|PreviousState.G                          ;
-; Controller:LogicUnit|PreviousState~14                      ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.A, Controller:LogicUnit|PreviousState.C,      ;
-;                                                            ;                    ; Controller:LogicUnit|PreviousState.E, Controller:LogicUnit|PreviousState.I       ;
-; testbench:newBench|Controller:LogicUnit|StorageState~14    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.B,                          ;
-;                                                            ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.F,                          ;
-;                                                            ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.ADD                         ;
-; Controller:LogicUnit|PreviousState~15                      ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.B, Controller:LogicUnit|PreviousState.F,      ;
-;                                                            ;                    ; Controller:LogicUnit|PreviousState.ADD                                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.WAIT ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.WAIT                        ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.A    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.A                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.B    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.B                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.C    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.C                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.D    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.D                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.E    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.E                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.F    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.F                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.H    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.H                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.I    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.I                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState.ADD  ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.ADD                         ;
-; testbench:newBench|Controller:LogicUnit|StorageState~15    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.D                           ;
-; testbench:newBench|Controller:LogicUnit|StorageState~16    ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.H                           ;
-; testbench:newBench|Controller:LogicUnit|PreviousState~14   ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.G                           ;
-; testbench:newBench|Controller:LogicUnit|CurrentState~2     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.A                           ;
-; Controller:LogicUnit|PreviousState~16                      ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.D                                             ;
-; Controller:LogicUnit|PreviousState~17                      ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.H                                             ;
-+------------------------------------------------------------+--------------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                         ;
++-------------------------------------------------------------+--------------------+----------------------------------------------------------------------------------+
+; Register name                                               ; Reason for Removal ; Registers Removed due to This Register                                           ;
++-------------------------------------------------------------+--------------------+----------------------------------------------------------------------------------+
+; testbench:newBench|Controller:LogicUnit|CurrentState~2      ; Lost Fanouts       ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[0], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[1], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[2], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[3], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[4], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[5], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[6], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[7], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[0], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[1], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[2], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[3], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[4], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[5], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[6], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[7], ;
+;                                                             ;                    ; testbench:newBench|Registers:RegisterUnit|X_Flop:RegX|Xout,                      ;
+;                                                             ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.C                           ;
+; testbench:newBench|Controller:LogicUnit|StorageState~14     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.E,                          ;
+;                                                             ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.G,                          ;
+;                                                             ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.I,                          ;
+;                                                             ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.SHIFT                       ;
+; Controller:LogicUnit|PreviousState~15                       ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.C, Controller:LogicUnit|PreviousState.E,      ;
+;                                                             ;                    ; Controller:LogicUnit|PreviousState.I, Controller:LogicUnit|PreviousState.SHIFT   ;
+; testbench:newBench|Controller:LogicUnit|StorageState~15     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.F,                          ;
+;                                                             ;                    ; testbench:newBench|Controller:LogicUnit|StorageState.ADD                         ;
+; Controller:LogicUnit|PreviousState~16                       ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.F, Controller:LogicUnit|PreviousState.ADD     ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.WAIT  ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.WAIT                        ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.A     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.A                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.B     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.B                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.C     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.C                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.D     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.D                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.E     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.E                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.F     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.F                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.H     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.H                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.I     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.I                           ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.ADD   ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.ADD                         ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.SHIFT ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.SHIFT                       ;
+; testbench:newBench|Controller:LogicUnit|PreviousState.G     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|CurrentState.G                           ;
+; testbench:newBench|Controller:LogicUnit|StorageState~16     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.D                           ;
+; testbench:newBench|Controller:LogicUnit|StorageState~17     ; Lost Fanouts       ; testbench:newBench|Controller:LogicUnit|StorageState.H                           ;
+; Controller:LogicUnit|PreviousState~17                       ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.D                                             ;
+; Controller:LogicUnit|PreviousState~18                       ; Lost Fanouts       ; Controller:LogicUnit|PreviousState.H                                             ;
++-------------------------------------------------------------+--------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -529,8 +540,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 40    ;
-; Number of registers using Synchronous Clear  ; 18    ;
+; Total registers                              ; 41    ;
+; Number of registers using Synchronous Clear  ; 11    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -539,21 +550,20 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Multiplier|testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[2]         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[1]                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[4]                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Multiplier|testbench:newBench|Controller:LogicUnit|Add                                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Multiplier|Controller:LogicUnit|Sub                                                                ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F6|Mux0                    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Multiplier|testbench:newBench|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F2|Mux0 ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Multiplier|testbench:newBench|Controller:LogicUnit|StorageState                                    ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Multiplier|Controller:LogicUnit|StorageState                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Multiplier|testbench:newBench|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[2] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegA|DataOut[0]                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Multiplier|Registers:RegisterUnit|EightBitShiftRegister:RegB|DataOut[0]                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Multiplier|testbench:newBench|Controller:LogicUnit|Add                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Multiplier|Controller:LogicUnit|Add                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |Multiplier|Controller:LogicUnit|StorageState                                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Multiplier|Controller:LogicUnit|CurrentState                                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Multiplier|NineBitAdder:AdderUnit|BusSelector:BusSelector1|FourInputMux:F4|Mux0            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -567,16 +577,16 @@ Encoding Type:  One-Hot
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:newBench|Controller:LogicUnit" ;
-+--------------+--------+----------+----------------------------------+
-; Port         ; Type   ; Severity ; Details                          ;
-+--------------+--------+----------+----------------------------------+
-; ClearA_LoadB ; Input  ; Info     ; Stuck at GND                     ;
-; Run          ; Input  ; Info     ; Stuck at GND                     ;
-; Reset        ; Input  ; Info     ; Stuck at GND                     ;
-; currentState ; Output ; Info     ; Explicitly unconnected           ;
-+--------------+--------+----------+----------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "testbench:newBench|Controller:LogicUnit"                                                    ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; ClearA_LoadB ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Run          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Reset        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; currentState ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------+
@@ -713,17 +723,17 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 57                          ;
-; cycloneiii_ff         ; 40                          ;
+; cycloneiii_ff         ; 41                          ;
 ;     ENA               ; 20                          ;
 ;     ENA SCLR          ; 8                           ;
-;     SCLR              ; 10                          ;
-;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 115                         ;
-;     normal            ; 115                         ;
+;     SCLR              ; 3                           ;
+;     plain             ; 10                          ;
+; cycloneiii_lcell_comb ; 112                         ;
+;     normal            ; 112                         ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 99                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 78                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
 ; Average LUT depth     ; 3.26                        ;
@@ -745,7 +755,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Sat Sep 17 22:41:19 2016
+    Info: Processing started: Mon Sep 19 21:58:11 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8bit_multiplier -c 8bit_multiplier
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 3 design units, including 3 entities, in source file standard_modules.sv
@@ -780,19 +790,19 @@ Warning (12125): Using design file hexdriver.sv, which is not specified as a des
     Info (12023): Found entity 1: HexDriver
 Info (12128): Elaborating entity "HexDriver" for hierarchy "HexDriver:AUpper"
 Info (12128): Elaborating entity "testbench" for hierarchy "testbench:newBench"
-Warning (10755): Verilog HDL warning at Test_Bench.sv(57): assignments to Clk create a combinational loop
+Warning (10755): Verilog HDL warning at Test_Bench.sv(58): assignments to Clk create a combinational loop
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 84 registers lost all their fanouts during netlist optimizations.
+Info (17049): 88 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/School/University of Illinois/ECE 385/ECE_385/Lab05/output_files/8bit_multiplier.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 171 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 168 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 45 output pins
-    Info (21061): Implemented 114 logic cells
+    Info (21061): Implemented 111 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 689 megabytes
-    Info: Processing ended: Sat Sep 17 22:41:30 2016
+    Info: Peak virtual memory: 692 megabytes
+    Info: Processing ended: Mon Sep 19 21:58:22 2016
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:25
 

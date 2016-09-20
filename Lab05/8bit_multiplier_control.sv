@@ -4,7 +4,7 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 							output logic Clr_Ld, Shift, Add, Sub, 
 							output logic [3:0]currentState);
 							
-	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD} StorageState, PreviousState, CurrentState, NextState, NextNextState;
+	enum logic [3:0] {WAIT, A, B, C, D, E, F, G, H, I, ADD, SHIFT} StorageState, PreviousState, CurrentState, NextState, NextNextState;
 	
 	assign currentState = CurrentState;
 	
@@ -16,7 +16,11 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 			begin
 			   PreviousState <= CurrentState;
 				CurrentState <= NextState;
-				if(M)
+				if(CurrentState == ADD)
+					begin
+						StorageState <= StorageState;
+					end
+				else
 					begin
 						StorageState <= NextNextState;
 					end
@@ -56,16 +60,16 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 				Shift  = 1'b0;
 				Clr_Ld = 1'b0;
 			end
-		else if(CurrentState == I)
+		else if(CurrentState == SHIFT)
 			begin
-				Shift  = 1'b0;
+				Shift  = 1'b1;
 				Add 	 = 1'b0;
 				Sub    = 1'b0;
 				Clr_Ld = 1'b0;
 			end
 		else
 			begin
-				Shift  = 1'b1;
+				Shift  = 1'b0;
 				Add 	 = 1'b0;
 				Sub    = 1'b0;
 				Clr_Ld = 1'b0;
@@ -82,78 +86,70 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 						if(Run)
 						begin
 							if(M)
-							begin
 								NextState = ADD;
-								NextNextState = A;
-							end
 							else
-								NextState = A;
+								NextState = SHIFT;
+								
+							NextNextState = A;
 						end
 						else
 							NextState = WAIT;
 					end
 			A:		begin
 					if(M)
-						begin
-							NextState = ADD;
-							NextNextState = B;
-						end
-					else	
-						NextState = B;
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+						
+					NextNextState = B;
 					end
 			B:		begin
 					if(M)
-						begin
-							NextState = ADD;
-							NextNextState = C;
-						end
-					else	
-						NextState = C;
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+						
+					NextNextState = C;
 					end
 			C:		begin
 					if(M)
-						begin
-							NextState = ADD;
-							NextNextState = D;
-						end
-					else	
-						NextState = D;
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+						
+					NextNextState = D;
 					end
 			D:		begin
 					if(M)
-						begin
-							NextState = ADD;
-							NextNextState = E;
-						end
-					else	
-						NextState = E;
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+						
+					NextNextState = E;
 					end
 			E:		begin
 					if(M)
-						begin
-							NextState = ADD;
-							NextNextState = F;
-						end
-					else	
-						NextState = F;
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+						
+					NextNextState = F;
 					end
 			F:		begin
 					if(M)
-						begin
-							NextState = ADD;
-							NextNextState = G;
-						end
-					else	
-						NextState = G;
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+						
+					NextNextState = G;
 					end
 			G:		begin
 					if(M)
-						begin
-							NextState = ADD;
-							NextNextState = H;
-						end
-					else	
-						NextState = H;
+						NextState = ADD;
+					else
+						NextState = SHIFT;
+						
+					NextNextState = H;
 					end
 			H:		begin
 						NextState = I;
@@ -165,10 +161,13 @@ module Controller(	input logic ClearA_LoadB, Run, Reset, Clk, M,
 						NextState = I;
 					end
 			ADD:	begin
-					NextState = StorageState;
+						NextState = SHIFT;
+					end
+			SHIFT:begin
+						NextState = StorageState;
 					end
 			default: begin
-					NextState = WAIT;
+						NextState = WAIT;
 					end
 		endcase
 	end
