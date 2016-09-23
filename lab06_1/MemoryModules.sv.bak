@@ -1,0 +1,17 @@
+module MDR
+(
+	input  logic [15:0] DataIn,
+	input  logic LDMDR, Clk, Reset,
+	output logic [15:0] DataOut,
+)
+
+SixteenBitShiftRegister(.DataIn(DataIn),
+								.Clk(Clk),
+								.Reset(Reset), 
+								.Load(LDMDR),
+								.ShiftEnable(1'b0), 
+								.ShiftIn(1'b0),
+								.DataOut(DataOut),
+								.ShiftOut());
+
+endmodule
