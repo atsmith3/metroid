@@ -52,6 +52,17 @@ logic [15:0] MDR_In;
 logic [15:0] MAR, MDR, IR;
 logic [15:0] Data_Mem_In, Data_Mem_Out;
 
+//Our Internal Signals
+logic [15:0] MDR_Mux_to_Reg;
+logic [15:0] PC_Mux_to_Reg;
+logic [15:0] MAR_Reg_to_Zext;
+
+logic [15:0] PC_inc;
+
+logic [15:0] ALU_Data;
+logic [15:0] PC_Data;
+logic [15:0] MARMUX_Data;
+
 
 // Connect MAR to ADDR, which is also connected as an input into MEM2IO
 //	MEM2IO will determine what gets put onto Data_CPU (which serves as a potential
@@ -61,7 +72,7 @@ assign MIO_EN = ~OE;
 
 // Connect everything to the data path (you have to figure out this part)
 // datapath d0 (.*);
-/*
+
 // Break the tri-state bus to the ram into input/outputs 
 tristate #(.N(16)) tr0(
 	.Clk(Clk), .OE(~WE), .In(Data_Mem_Out), .Out(Data_Mem_In), .Data(Data)
@@ -74,6 +85,28 @@ Mem2IO memory_subsystem(
 	.Data_CPU_In(MDR), .Data_CPU_Out(MDR_In)
 );
 
+//DataPath 
+/******* TODO: CHANGE ALU_data and MARMUX_Data for week 2 *******/
+Datapath BUS(	.gateMDR(GateMDR),.gateALU(GateALU),.gatePC(GatePC),.gateMARMUX(GateMARMUX),
+					.MDR_data(MDR),.ALU_data(16'h0000),.PC_data(PCR_Data),.MARMUX_data(16'h0000),
+					.Datapath(Data));
+					
+//Our Memory Modules
+MIO_MUX MM0(.Data_CPU_Out(MDR_In),.DataPath(Data),.MIOEN(MIO_EN),.DataOut(MDR_Mux_to_Reg));
+MDR MDR0(.DataIn(MDR_Mux_to_Reg),.LDMDR(LD_MDR),.Clk(Clk),.Reset(Reset),.DataOut(MDR));
+MAR MAR0(.DataIn(Data),.LDMAR(LD_MAR),.Clk(Clk),.Reset(Reset),.DataOut(MAR));
+
+//Our PC Modules
+PCR PCR0(.DataIn(PC_Mux_to_Reg),.LDPC(LD_PC),.Clk(Clk),.Reset(Reset),.DataOut(PCR_Data));
+PC_INC PCINC0(.PC_cur(PCR_Data),.PC_inc(PC_inc));
+/******* TODO: CHANGE MARMUX_data for week2 ******/
+PC_MUX PCMUX0(.PCMUX(PCMUX),.DataPath(Data),.MARMUX_data(16'h0000),.PC_inc(PC_inc),.PC_data(PC_Mux_to_Reg));
+
+//IR Module
+IR IR0(.DataIn(Data),.LDIR(LD_IR),.Clk(Clk),.Reset(Reset),.DataOut(IR));
+
+
+/*
 // State machine, you need to fill in the code here as well
 ISDU state_controller(
 	.*, .Reset(Reset_ah), .Run(Run_ah), .Continue(Continue_ah),
@@ -83,6 +116,6 @@ ISDU state_controller(
 */
 //
 
-testbench test(); 
+//testbench test(); 
 
 endmodule

@@ -85,17 +85,15 @@ SixteenBitShiftRegister sr(.DataIn(DataIn),
 
 endmodule
 
-
 //
-// Zero Extender:
-module ZEXT_16_20
+// PC incrementer
+module PC_INC
 (
-	input logic  [15:0] DataIn,
-	output logic [19:0] DataOut
+	input logic [15:0] PC_cur,
+	output logic [15:0] PC_inc
 );
 
-assign DataOut [19:16] = 4'b0000;
-assign DataOut [15:0]  = DataIn;
+	SixteenBitRippleAdder SSR0(.A(PC_cur),.B(16'h0001),.Sum(PC_inc),.CO());
 
 endmodule
 
@@ -123,7 +121,6 @@ begin
 end
 end
 endmodule
-
 
 
 //

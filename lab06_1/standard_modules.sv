@@ -113,9 +113,9 @@ module four_ripple_adder
 );
 	wire c_temp[2:0];
 	
-	full_adder FA0(.x(a[0]), .y(b[0]), .z(c_in), .c(c_temp[0]), .s(s[0]));
-	full_adder FA1(.x(a[1]), .y(b[1]), .z(c_temp[0]), .c(c_temp[1]), .s(s[1]));
-	full_adder FA2(.x(a[2]), .y(b[2]), .z(c_temp[1]), .c(c_temp[2]), .s(s[2]));
-	full_adder FA3(.x(a[3]), .y(b[3]), .z(c_temp[2]), .c(c_out), .s(s[3]));
+	FullAdder FA0(.x(a[0]), .y(b[0]), .z(c_in), .c(c_temp[0]), .s(s[0]));
+	FullAdder FA1(.x(a[1]), .y(b[1]), .z(c_temp[0]), .c(c_temp[1]), .s(s[1]));
+	FullAdder FA2(.x(a[2]), .y(b[2]), .z(c_temp[1]), .c(c_temp[2]), .s(s[2]));
+	FullAdder FA3(.x(a[3]), .y(b[3]), .z(c_temp[2]), .c(c_out), .s(s[3]));
 
 endmodule
