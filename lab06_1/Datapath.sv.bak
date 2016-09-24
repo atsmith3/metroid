@@ -1,0 +1,23 @@
+//
+// Datapath Mux:
+module Datapath
+(
+	input logic gateMDR, gateALU, gatePC, gateMARMUX,
+	input logic [15:0] MDR, ALU, PC, MARMUX,
+	inout logic [15:0] Datapath
+);
+
+always_comb
+begin
+	if(gateMDR)
+		Datapath = MDR;
+	else if(gateALU)
+		Datapath = ALU;
+	else if(gatePC)
+		Datapath = PC;
+	else if(gateMARMUX)
+		Datapath = MARMUX;
+	else Datapath = Datapath;
+end
+
+endmodule

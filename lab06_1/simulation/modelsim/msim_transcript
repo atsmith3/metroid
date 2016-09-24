@@ -1,0 +1,82 @@
+# Reading C:/Altera/modelsim_ase/tcl/vsim/pref.tcl
+# do SLC_1_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/Altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/Altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:43:24 on Sep 24,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv 
+# -- Compiling module slc3
+# 
+# Top level modules:
+# 	slc3
+# End time: 13:43:24 on Sep 24,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:43:24 on Sep 24,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv 
+# -- Compiling module MDR
+# -- Compiling module MAR
+# -- Compiling module PCR
+# -- Compiling module IR
+# -- Compiling module ZEXT_16_20
+# -- Compiling module MIO_MUX
+# -- Compiling module PC_MUX
+# 
+# Top level modules:
+# 	MDR
+# 	MAR
+# 	PCR
+# 	IR
+# 	ZEXT_16_20
+# 	MIO_MUX
+# 	PC_MUX
+# End time: 13:43:24 on Sep 24,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/hexdriver.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:43:24 on Sep 24,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/hexdriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 13:43:24 on Sep 24,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:43:24 on Sep 24,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 13:43:25 on Sep 24,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim work.testbench
+# vsim -gui "+altera" -l msim_transcript -do "SLC_1_run_msim_rtl_verilog.do" 
+# Start time: 13:43:38 on Sep 24,2016
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.MIO_MUX
+add wave -position insertpoint  \
+sim:/testbench/Clk \
+sim:/testbench/Data_CPU_Out \
+sim:/testbench/DataPath \
+sim:/testbench/MIOEN \
+sim:/testbench/DataOut
+run
+# End time: 13:46:13 on Sep 24,2016, Elapsed time: 0:02:35
+# Errors: 0, Warnings: 0

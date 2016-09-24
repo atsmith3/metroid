@@ -5,17 +5,11 @@ timeunit 10ns;	// Half clock cycle at 50 MHz
 timeprecision 1ns;
 
 logic Clk = 0;
-logic Reset, Run, ClearA_LoadB;
-logic M;
-logic Clr_Ld;
-logic Shift;
-logic Add;
-logic Sub;
-logic [3:0] currentState;
-logic Clear_A;
-
-// Controller test(.*);
-						
+logic gateMDR, gateALU, gatePC, gateMARMUX;
+logic [15:0] MDR_data, ALU_data, PC_data, MARMUX_data;
+logic [15:0] DatapathIn, DatapathOut;
+	
+Datapath test(.*);		
 
 
 // Toggle the clock
@@ -33,30 +27,30 @@ end
 // Everything happens sequentially inside an initial block
 // as in a software program
 initial begin: TEST_VECTORS
-Reset = 0;
-ClearA_LoadB = 0;
-Run = 0;
-M = 1;
+MDR_data = 16'hF0F0;
+ALU_data = 16'h0123;
+PC_data = 16'h3210;
+MARMUX_data = 16'hAA55;
+DatapathIn = 16'hFFFF;
+gateMDR = 1;
+gateALU = 0;
+gatePC = 0;
+gateMARMUX = 0;
 
-#2 Reset = 1;
-#2 Reset = 0;
+#2 begin
+	gateMDR = 0;
+	gateMARMUX = 1;
+	end
+#2 begin
+	gateMARMUX = 0;
+	gatePC = 1;
+	end
+#2 begin
+	gatePC = 0;
+	gateALU = 1;
+	end
+#2 gateALU = 0;
 
-#2 ClearA_LoadB = 1;
-#2 ClearA_LoadB = 0;
-
-#2 Reset = 1;
-#2 Reset = 0;
-
-#2 Run = 1;
-#2 Run = 0;
-
-#8 ClearA_LoadB = 1;
-#2 ClearA_LoadB = 0;
-
-#2 M = 0;
-#8 M = 1;
-
-#32 Run = 1;
 
 end
 endmodule

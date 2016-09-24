@@ -119,20 +119,3 @@ module four_ripple_adder
 	full_adder FA3(.x(a[3]), .y(b[3]), .z(c_temp[2]), .c(c_out), .s(s[3]));
 
 endmodule
-
-
-//
-// 4, 2-1 mux
-module four_2_1_mux
-(
-	input logic [3:0] Data_Path, Data_Cpu_Out, 
-	input logic MIOEN,
-	output logic [3:0] DataOut
-);
-
-	TwoInputMux TI0(.a(Data_Path[0]),.b(Data_Cpu_Out[0]),.select(MIOEN),.out(DataOut[0]));
-	TwoInputMux TI1(.a(Data_Path[1]),.b(Data_Cpu_Out[1]),.select(MIOEN),.out(DataOut[1]));
-	TwoInputMux TI2(.a(Data_Path[2]),.b(Data_Cpu_Out[2]),.select(MIOEN),.out(DataOut[2]));
-	TwoInputMux TI3(.a(Data_Path[3]),.b(Data_Cpu_Out[3]),.select(MIOEN),.out(DataOut[3]));
-	
-endmodule

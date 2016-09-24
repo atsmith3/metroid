@@ -61,7 +61,7 @@ assign MIO_EN = ~OE;
 
 // Connect everything to the data path (you have to figure out this part)
 // datapath d0 (.*);
-
+/*
 // Break the tri-state bus to the ram into input/outputs 
 tristate #(.N(16)) tr0(
 	.Clk(Clk), .OE(~WE), .In(Data_Mem_Out), .Out(Data_Mem_In), .Data(Data)
@@ -80,7 +80,9 @@ ISDU state_controller(
 	.Opcode(IR[15:12]), .IR_5(IR[5]), .IR_11(IR[11]),
 	.Mem_CE(CE), .Mem_UB(UB), .Mem_LB(LB), .Mem_OE(OE), .Mem_WE(WE)
 );
+*/
+//
 
-// 
+testbench test(); 
 
 endmodule
