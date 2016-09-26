@@ -19,6 +19,7 @@ logic Reset_ah, Continue_ah, Run_ah;
 
 assign Reset_ah = ~Reset;
 assign Continue_ah = ~Continue;
+assign ContinueIR = ~Continue;
 assign Run_ah = ~Run;
 
 // An array of 4-bit wires to connect the hex_drivers efficiently to wherever we want
@@ -134,6 +135,9 @@ Continue = 1;
 
 #2 Run = 0;
 #2 Run = 1;
+
+#2 Continue = 0;
+#2 Continue = 1;
 
 end
 endmodule

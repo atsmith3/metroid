@@ -31,6 +31,7 @@ logic Reset_ah, Continue_ah, Run_ah;
 assign Reset_ah = ~Reset;
 assign Continue_ah = ~Continue;
 assign Run_ah = ~Run;
+assign ContinueIR = ~Continue;
 
 /*
 // An array of 4-bit wires to connect the hex_drivers efficiently to wherever we want
@@ -94,11 +95,11 @@ Mem2IO memory_subsystem(
 );
 */
 
-test_memory SRAM(.Reset(Reset_ah), .I_O(Data),.A(ADDR), .*);
+//test_memory SRAM(.Reset(Reset_ah), .I_O(Data),.A(ADDR), .*);
 
 //DataPath 
 /******* TODO: CHANGE ALU_data and MARMUX_Data for week 2 *******/
-// Datapath BUS(	.gateMDR(GateMDR),.gateALU(GateALU),.gatePC(GatePC),.gateMARMUX(GateMARMUX),
+//Datapath BUS(	.gateMDR(GateMDR),.gateALU(GateALU),.gatePC(GatePC),.gateMARMUX(GateMARMUX),
 //					.MDR_data(MDR),.ALU_data(16'h0000),.PC_data(PC_Data),.MARMUX_data(16'h0000),
 //					.Datapath(DataBus));
 Datapath BUS(	.gateMDR(GateMDR),.gateALU(GateALU),.gatePC(GatePC),.gateMARMUX(GateMARMUX),

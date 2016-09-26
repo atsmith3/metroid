@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SLC_1
-Sun Sep 25 22:58:45 2016
+Sun Sep 25 23:33:26 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -60,15 +60,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Sep 25 22:58:45 2016      ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 25 23:33:25 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; SLC_1                                      ;
 ; Top-level Entity Name              ; slc3                                       ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 407                                        ;
-;     Total combinational functions  ; 388                                        ;
-;     Dedicated logic registers      ; 85                                         ;
-; Total registers                    ; 85                                         ;
+; Total logic elements               ; 409                                        ;
+;     Total combinational functions  ; 390                                        ;
+;     Dedicated logic registers      ; 87                                         ;
+; Total registers                    ; 87                                         ;
 ; Total pins                         ; 101                                        ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -197,20 +197,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------------------------+
 ; Resource                                    ; Usage                                          ;
 +---------------------------------------------+------------------------------------------------+
-; Estimated Total logic elements              ; 407                                            ;
+; Estimated Total logic elements              ; 409                                            ;
 ;                                             ;                                                ;
-; Total combinational functions               ; 388                                            ;
+; Total combinational functions               ; 390                                            ;
 ; Logic element usage by number of LUT inputs ;                                                ;
 ;     -- 4 input functions                    ; 321                                            ;
-;     -- 3 input functions                    ; 14                                             ;
+;     -- 3 input functions                    ; 16                                             ;
 ;     -- <=2 input functions                  ; 53                                             ;
 ;                                             ;                                                ;
 ; Logic elements by mode                      ;                                                ;
-;     -- normal mode                          ; 388                                            ;
+;     -- normal mode                          ; 390                                            ;
 ;     -- arithmetic mode                      ; 0                                              ;
 ;                                             ;                                                ;
-; Total registers                             ; 85                                             ;
-;     -- Dedicated logic registers            ; 85                                             ;
+; Total registers                             ; 87                                             ;
+;     -- Dedicated logic registers            ; 87                                             ;
 ;     -- I/O registers                        ; 0                                              ;
 ;                                             ;                                                ;
 ; I/O pins                                    ; 101                                            ;
@@ -219,8 +219,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                                                ;
 ; Maximum fan-out node                        ; MAR:MAR0|SixteenBitShiftRegister:sr|DataOut[3] ;
 ; Maximum fan-out                             ; 130                                            ;
-; Total fan-out                               ; 1896                                           ;
-; Average fan-out                             ; 2.74                                           ;
+; Total fan-out                               ; 1908                                           ;
+; Average fan-out                             ; 2.75                                           ;
 +---------------------------------------------+------------------------------------------------+
 
 
@@ -229,14 +229,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
-; |slc3                              ; 388 (0)           ; 85 (0)       ; 0           ; 0            ; 0       ; 0         ; 101  ; 0            ; |slc3                                                                               ; work         ;
+; |slc3                              ; 390 (0)           ; 87 (0)       ; 0           ; 0            ; 0       ; 0         ; 101  ; 0            ; |slc3                                                                               ; work         ;
 ;    |HexDriver:hex_driver0|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver0                                                         ; work         ;
 ;    |HexDriver:hex_driver1|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver1                                                         ; work         ;
 ;    |HexDriver:hex_driver2|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver2                                                         ; work         ;
 ;    |HexDriver:hex_driver3|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver3                                                         ; work         ;
 ;    |IR:IR0|                        ; 17 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0                                                                        ; work         ;
 ;       |SixteenBitShiftRegister:sr| ; 17 (17)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0|SixteenBitShiftRegister:sr                                             ; work         ;
-;    |ISDU:state_controller|         ; 3 (3)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ISDU:state_controller                                                         ; work         ;
+;    |ISDU:state_controller|         ; 5 (5)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ISDU:state_controller                                                         ; work         ;
 ;    |MAR:MAR0|                      ; 18 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0                                                                      ; work         ;
 ;       |SixteenBitShiftRegister:sr| ; 18 (18)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0|SixteenBitShiftRegister:sr                                           ; work         ;
 ;    |MDR:MDR0|                      ; 33 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MDR:MDR0                                                                      ; work         ;
@@ -4392,12 +4392,10 @@ Encoding Type:  One-Hot
 ; ISDU:state_controller|State~4            ; Lost fanout                                 ;
 ; ISDU:state_controller|State~5            ; Lost fanout                                 ;
 ; ISDU:state_controller|State~6            ; Lost fanout                                 ;
-; ISDU:state_controller|State.PauseIR2     ; Stuck at GND due to stuck port data_in      ;
 ; ISDU:state_controller|State.S_32         ; Stuck at GND due to stuck port data_in      ;
 ; ISDU:state_controller|State.S_01         ; Stuck at GND due to stuck port data_in      ;
-; ISDU:state_controller|State.PauseIR1     ; Lost fanout                                 ;
 ; tristate:tr0|a[0..15]                    ; Lost fanout                                 ;
-; Total Number of Removed Registers = 4119 ;                                             ;
+; Total Number of Removed Registers = 4117 ;                                             ;
 +------------------------------------------+---------------------------------------------+
 
 
@@ -4448,10 +4446,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 85    ;
+; Total registers                              ; 87    ;
 ; Number of registers using Synchronous Clear  ; 31    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Clear ; 7     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 64    ;
 ; Number of registers using Preset             ; 0     ;
@@ -4491,23 +4489,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ISDU:state_controller"                                                                    ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; ContinueIR ; Input  ; Info     ; Stuck at GND                                                                        ;
-; LD_BEN     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; LD_CC      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; LD_REG     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; DRMUX      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; SR1MUX     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; SR2MUX     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ADDR1MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ADDR2MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; MARMUX     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ALUK       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ISDU:state_controller"                                                                  ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; LD_BEN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; LD_CC    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; LD_REG   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; DRMUX    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SR1MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SR2MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ADDR1MUX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ADDR2MUX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; MARMUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ALUK     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------+
@@ -4608,22 +4605,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 101                         ;
-; cycloneiii_ff         ; 85                          ;
-;     CLR               ; 5                           ;
+; cycloneiii_ff         ; 87                          ;
+;     CLR               ; 7                           ;
 ;     ENA               ; 33                          ;
 ;     ENA SCLR          ; 31                          ;
 ;     plain             ; 16                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 395                         ;
-;     normal            ; 395                         ;
+; cycloneiii_lcell_comb ; 397                         ;
+;     normal            ; 397                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 53                          ;
-;         3 data inputs ; 14                          ;
+;         3 data inputs ; 16                          ;
 ;         4 data inputs ; 321                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.05                        ;
+; Average LUT depth     ; 3.03                        ;
 +-----------------------+-----------------------------+
 
 
@@ -4642,7 +4639,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Sun Sep 25 22:58:30 2016
+    Info: Processing started: Sun Sep 25 23:33:11 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SLC_1 -c SLC_1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file tristate.sv
@@ -4680,7 +4677,6 @@ Info (12021): Found 7 design units, including 7 entities, in source file memorym
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
     Info (12023): Found entity 1: Datapath
 Info (12127): Elaborating entity "slc3" for the top level hierarchy
-Warning (10030): Net "ContinueIR" at slc3.sv(62) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "LED" at slc3.sv(21) has no driver
 Warning (12125): Using design file hexdriver.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: HexDriver
@@ -4740,11 +4736,11 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ADDR[18]" is stuck at GND
     Warning (13410): Pin "ADDR[19]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 20 registers lost all their fanouts during netlist optimizations.
+Info (17049): 19 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/output_files/SLC_1.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 17 input pin(s) that do not drive logic
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "S[0]"
     Warning (15610): No output dependent on input pin "S[1]"
     Warning (15610): No output dependent on input pin "S[2]"
@@ -4761,15 +4757,14 @@ Warning (21074): Design contains 17 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "S[13]"
     Warning (15610): No output dependent on input pin "S[14]"
     Warning (15610): No output dependent on input pin "S[15]"
-    Warning (15610): No output dependent on input pin "Continue"
-Info (21057): Implemented 508 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 510 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 65 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 407 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 61 warnings
-    Info: Peak virtual memory: 698 megabytes
-    Info: Processing ended: Sun Sep 25 22:58:45 2016
+    Info (21061): Implemented 409 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 696 megabytes
+    Info: Processing ended: Sun Sep 25 23:33:26 2016
     Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:30
 
