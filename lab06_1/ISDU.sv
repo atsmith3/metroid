@@ -22,6 +22,7 @@ module ISDU ( 	input	Clk,
 									
 				input [3:0]  Opcode, 
 				input        IR_5,
+				input        IR_11,
 				  
 				output logic 	LD_MAR,
 								LD_MDR,

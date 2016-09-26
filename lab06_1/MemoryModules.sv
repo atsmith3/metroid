@@ -111,7 +111,7 @@ module MIO_MUX
 
 always_comb
 begin
-if(MIOEN)
+if(~MIOEN)
 begin
 	DataOut = DataPath;
 end
