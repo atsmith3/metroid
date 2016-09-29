@@ -55,9 +55,9 @@ endmodule
 
 // 16 bit register
 module SixteenBitShiftRegister(	input logic [15:0] DataIn,
-											input logic Clk, Reset, Load, ShiftEnable, ShiftIn,
-											output logic [15:0] DataOut,
-											output logic ShiftOut);
+											          input logic         Clk, Reset, Load, ShiftEnable, ShiftIn,
+											          output logic [15:0] DataOut,
+											          output logic        ShiftOut);
 										
 	always_ff @ (posedge Clk)
 	begin
