@@ -33,6 +33,26 @@ assign Continue_ah = ~Continue;
 assign Run_ah = ~Run;
 assign ContinueIR = ~Continue;
 
+// Internal connections
+logic LD_MAR, LD_MDR, LD_IR, LD_BEN, LD_CC, LD_REG, LD_PC, LD_LED;
+logic GatePC, GateMDR, GateALU, GateMARMUX;
+logic SR2MUX, ADDR1MUX, MARMUX, MIO_EN;
+logic BEN;
+logic [1:0] PCMUX, DRMUX, SR1MUX, ADDR2MUX, ALUK;
+logic [15:0] MDR_In;
+logic [15:0] MAR, MDR, IR;
+logic [15:0] Data_Mem_In, Data_Mem_Out;
+
+//Our Internal Signals
+logic [15:0] MDR_Mux_to_Reg;
+logic [15:0] PC_Mux_to_Reg;
+
+logic [15:0] PC_inc;
+logic [15:0] DataBus;
+logic [15:0] ALU_Data;
+logic [15:0] PC_Data;
+logic [15:0] MARMUX_Data;
+
 /*
 // An array of 4-bit wires to connect the hex_drivers efficiently to wherever we want
 // For Lab 1, they will direclty be connected to the IR register through an always_comb circuit
@@ -49,29 +69,6 @@ HexDriver hex_driver0(.In0(IR[3:0]), .Out0(HEX0));
 HexDriver hex_driver1(.In0(IR[7:4]), .Out0(HEX1));
 HexDriver hex_driver2(.In0(IR[11:8]), .Out0(HEX2));
 HexDriver hex_driver3(.In0(IR[15:12]), .Out0(HEX3));
-
-
-// Internal connections
-logic LD_MAR, LD_MDR, LD_IR, LD_BEN, LD_CC, LD_REG, LD_PC, LD_LED;
-logic GatePC, GateMDR, GateALU, GateMARMUX;
-logic SR2MUX, ADDR1MUX, MARMUX, MIO_EN;
-logic BEN;
-logic [1:0] PCMUX, DRMUX, SR1MUX, ADDR2MUX, ALUK;
-logic [15:0] MDR_In;
-logic [15:0] MAR, MDR, IR;
-logic [15:0] Data_Mem_In, Data_Mem_Out;
-logic ContinueIR;
-
-//Our Internal Signals
-logic [15:0] MDR_Mux_to_Reg;
-logic [15:0] PC_Mux_to_Reg;
-
-logic [15:0] PC_inc;
-logic [15:0] DataBus;
-logic [15:0] ALU_Data;
-logic [15:0] PC_Data;
-logic [15:0] MARMUX_Data;
-
 
 // Connect MAR to ADDR, which is also connected as an input into MEM2IO
 //	MEM2IO will determine what gets put onto Data_CPU (which serves as a potential
@@ -131,6 +128,6 @@ ISDU state_controller(
 	.Mem_CE(CE), .Mem_UB(UB), .Mem_LB(LB), .Mem_OE(OE), .Mem_WE(WE)
 );
 
-// testbench test(); 
+testbench test(); 
 
 endmodule

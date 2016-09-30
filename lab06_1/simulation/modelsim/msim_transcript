@@ -12,49 +12,49 @@
 # ** Warning: Copied C:/Altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:11:41 on Sep 29,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_2 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:11:41 on Sep 29,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_2" E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv 
+# -- Compiling module Register_File
+# 
+# Top level modules:
+# 	Register_File
+# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
+# Start time: 22:11:41 on Sep 29,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv 
 # -- Compiling module tristate
 # 
 # Top level modules:
 # 	tristate
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv 
-# -- Compiling package SLC3_2
-# 
-# Top level modules:
-# 	--none--
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv 
-# -- Compiling module Mem2IO
-# 
-# Top level modules:
-# 	Mem2IO
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
+# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
+# Start time: 22:11:41 on Sep 29,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv 
 # -- Compiling module ISDU
 # 
 # Top level modules:
 # 	ISDU
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
+# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
+# Start time: 22:11:41 on Sep 29,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv 
 # -- Compiling module TwoInputMux
 # -- Compiling module FourInputMux
@@ -70,11 +70,11 @@
 # 	FlipFlop
 # 	SixteenBitShiftRegister
 # 	SixteenBitRippleAdder
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
+# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
+# Start time: 22:11:42 on Sep 29,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv 
 # -- Compiling module MDR
 # -- Compiling module MAR
@@ -92,143 +92,59 @@
 # 	PC_INC
 # 	MIO_MUX
 # 	PC_MUX
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
+# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
+# Start time: 22:11:42 on Sep 29,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv 
 # -- Compiling module Datapath
 # 
 # Top level modules:
 # 	Datapath
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/hexdriver.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/hexdriver.sv 
-# -- Compiling module HexDriver
-# 
-# Top level modules:
-# 	HexDriver
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:20 on Sep 25,2016
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv 
-# -- Compiling package SLC3_2
-# -- Compiling package test_memory_sv_unit
-# -- Importing package SLC3_2
-# -- Compiling module test_memory
-# 
-# Top level modules:
-# 	test_memory
-# End time: 22:43:20 on Sep 25,2016, Elapsed time: 0:00:00
+# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:21 on Sep 25,2016
+# Start time: 22:11:42 on Sep 29,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv 
 # -- Compiling module slc3
 # 
 # Top level modules:
 # 	slc3
-# End time: 22:43:21 on Sep 25,2016, Elapsed time: 0:00:00
+# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:43:21 on Sep 25,2016
+# Start time: 22:11:42 on Sep 29,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv 
 # -- Compiling module testbench
+# ** Warning: E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv(82): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
 # 
 # Top level modules:
 # 	testbench
-# End time: 22:43:21 on Sep 25,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
 # 
 vsim work.testbench
 # vsim -gui "+altera" -l msim_transcript -do "SLC_1_run_msim_rtl_verilog.do" 
-# Start time: 22:43:31 on Sep 25,2016
+# Start time: 22:11:49 on Sep 29,2016
 # Loading sv_std.std
 # Loading work.testbench
-# Loading work.HexDriver
-# Loading work.tristate
-# Loading work.SLC3_2
-# Loading work.test_memory_sv_unit
-# Loading work.test_memory
-# Loading work.Datapath
-# Loading work.MAR
+# Loading work.Register_File
 # Loading work.SixteenBitShiftRegister
-# Loading work.MDR
-# Loading work.MIO_MUX
-# Loading work.PCR
-# Loading work.PC_INC
-# Loading work.SixteenBitRippleAdder
-# Loading work.four_ripple_adder
-# Loading work.FullAdder
-# Loading work.PC_MUX
-# Loading work.IR
-# Loading work.ISDU
 add wave -position insertpoint  \
-sim:/testbench/Clk \
-sim:/testbench/S \
-sim:/testbench/Reset \
-sim:/testbench/Run \
-sim:/testbench/Continue \
-sim:/testbench/LED \
-sim:/testbench/HEX0 \
-sim:/testbench/HEX1 \
-sim:/testbench/HEX2 \
-sim:/testbench/HEX3 \
-sim:/testbench/CE \
-sim:/testbench/UB \
-sim:/testbench/LB \
-sim:/testbench/OE \
-sim:/testbench/WE \
-sim:/testbench/ADDR \
-sim:/testbench/Data \
-sim:/testbench/ContinueIR \
-sim:/testbench/Reset_ah \
-sim:/testbench/Continue_ah \
-sim:/testbench/Run_ah \
-sim:/testbench/hex_4 \
-sim:/testbench/LD_MAR \
-sim:/testbench/LD_MDR \
-sim:/testbench/LD_IR \
-sim:/testbench/LD_BEN \
-sim:/testbench/LD_CC \
-sim:/testbench/LD_REG \
-sim:/testbench/LD_PC \
-sim:/testbench/LD_LED \
-sim:/testbench/GatePC \
-sim:/testbench/GateMDR \
-sim:/testbench/GateALU \
-sim:/testbench/GateMARMUX \
-sim:/testbench/SR2MUX \
-sim:/testbench/ADDR1MUX \
-sim:/testbench/MARMUX \
-sim:/testbench/MIO_EN \
-sim:/testbench/BEN \
-sim:/testbench/PCMUX \
-sim:/testbench/DRMUX \
-sim:/testbench/SR1MUX \
-sim:/testbench/ADDR2MUX \
-sim:/testbench/ALUK \
-sim:/testbench/MDR_In \
-sim:/testbench/MAR \
-sim:/testbench/MDR \
+sim:/testbench/DataIn \
 sim:/testbench/IR \
-sim:/testbench/Data_Mem_In \
-sim:/testbench/Data_Mem_Out \
-sim:/testbench/MDR_Mux_to_Reg \
-sim:/testbench/PC_Mux_to_Reg \
-sim:/testbench/PC_inc \
-sim:/testbench/DataBus \
-sim:/testbench/ALU_Data \
-sim:/testbench/PC_Data \
-sim:/testbench/MARMUX_Data
+sim:/testbench/LDREG \
+sim:/testbench/DR \
+sim:/testbench/SR1 \
+sim:/testbench/Clk \
+sim:/testbench/Reset \
+sim:/testbench/SR2 \
+sim:/testbench/SR2out \
+sim:/testbench/SR1out
 run
-# End time: 22:44:20 on Sep 25,2016, Elapsed time: 0:00:49
+# End time: 22:17:48 on Sep 29,2016, Elapsed time: 0:05:59
 # Errors: 0, Warnings: 0

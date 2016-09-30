@@ -49,7 +49,7 @@ module Adder
    output logic [15:0] MARMUX
    );
 
-   SixteenBitRippleAdder A0(.A(Mux1_to_Adder), .B(Mux2_to_Adder), .Sum(MARMUX), .CO());
+   SixteenBitRippleAdder(.A(Mux1_to_Adder), .B(Mux2_to_Adder)), .Sum(MARMUX), .CO());
 
 endmodule // Adder
 
@@ -74,23 +74,19 @@ module SR2MUX
 endmodule // SR2MUX
 
 module ALU
-(
+  (
   input logic [15:0]  Mux_to_ALU, SR1OUT,
   input logic [1:0]   ALUK,
   output logic [15:0] ALU_Out
-);
-   
-	logic [15:0]adder_out;
-	
-	SixteenBitRippleAdder A0(.A(Mux_to_ALU),.B(SR1OUT),.Sum(adder_out), .CO());
-	 
+    );
+
    always_comb
      begin
         case(ALUK)
-          2'b00: ALU_Out = adder_out;
-          2'b01: ALU_Out = Mux_to_ALU & SR1OUT;
-          2'b10: ALU_Out = SR1OUT;
-          2'b11: ALU_Out = SR1OUT;
+          2'00: SixteenBitRippleAdder(.A(Mux_to_ALU),.B(SR1OUT),.Sum(ALU_Out), .CO());
+          2'01: ALU_Out=Mux_to_ALU & SR1OUT;
+          2'10: ALU_Out=`SR1OUT;
+          2'11: ALU_Out= SR1OUT;
         endcase // case (ALUK)
      end // always_comb
 

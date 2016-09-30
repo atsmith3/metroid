@@ -52,7 +52,6 @@ logic [3:0] DRMUXout, SR1MUXout;
 	// Load Decoder:
 	always_comb
 	begin
-	   LDReg = 16'h0000;
 		case (DRMUXout)
 			3'b000:	LDReg = 8'b00000001; 
 			3'b001:	LDReg = 8'b00000010;
@@ -69,7 +68,6 @@ logic [3:0] DRMUXout, SR1MUXout;
     // SR1 output Mux
     always_comb
     begin
-	   SR1out = 16'h0000;
     	case (SR1MUXout)
     		3'b000:	SR1out = RegOut[0][15:0]; 
 			3'b001:	SR1out = RegOut[1][15:0];
@@ -86,7 +84,6 @@ logic [3:0] DRMUXout, SR1MUXout;
     // SR2 output Mux
     always_comb
     begin
-	   SR2out = 16'h0000;
     	case (SR2)
     		3'b000:	SR2out = RegOut[0][15:0]; 
 			3'b001:	SR2out = RegOut[1][15:0];
@@ -104,66 +101,66 @@ logic [3:0] DRMUXout, SR1MUXout;
 	SixteenBitShiftRegister SR_0(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[0]),
+									.Load(LDReg[0])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[0][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[0][15:0])
 									.ShiftOut());
 	SixteenBitShiftRegister SR_1(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[1]),
+									.Load(LDReg[1])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[1][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[1][15:0])
 									.ShiftOut());
 	SixteenBitShiftRegister SR_2(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[2]),
+									.Load(LDReg[2])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[2][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[2][15:0])
 									.ShiftOut());
 	SixteenBitShiftRegister SR_3(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[3]),
+									.Load(LDReg[3])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[3][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[3][15:0])
 									.ShiftOut());
 	SixteenBitShiftRegister SR_4(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[4]),
+									.Load(LDReg[4])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[4][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[4][15:0])
 									.ShiftOut());
 	SixteenBitShiftRegister SR_5(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[5]),
+									.Load(LDReg[5])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[5][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[5][15:0])
 									.ShiftOut());
 	SixteenBitShiftRegister SR_6(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[6]),
+									.Load(LDReg[6])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[6][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[6][15:0])
 									.ShiftOut());
 	SixteenBitShiftRegister SR_7(	.DataIn(DataIn[15:0]),
 									.Clk(Clk),
 									.Reset(Reset),
-									.Load(LDReg[7]),
+									.Load(LDReg[7])
 									.ShiftEnable(1'b0),
-									.ShiftIn(1'b0),
-									.DataOut(RegOut[7][15:0]),
+									.shiftIn(1'b0),
+									.DataOut(RegOut[7][15:0])
 									.ShiftOut());
 
 

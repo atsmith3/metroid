@@ -42,9 +42,9 @@ end
 always_comb
 begin
 	if(IR[9] == RegOut[0] | IR[10] == RegOut[1] | IR[11] == RegOut[2])
-		BENRegIn = 1'b1;
+		BENRegOut = 1;
 	else
-		BENRegIn = 1'b0;
+		BENRegOut = 0;
 end
 
 
