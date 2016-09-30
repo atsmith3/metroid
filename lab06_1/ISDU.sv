@@ -14,16 +14,16 @@
 //------------------------------------------------------------------------------
 
 
-module ISDU ( 	input	Clk, 
+module ISDU ( 	input	Clk,
                         Reset,
 						Run,
 						Continue,
 						ContinueIR,
-									
-				input [3:0]  Opcode, 
+
+				input [3:0]  Opcode,
 				input        IR_5,
 				input        IR_11,
-				  
+
 				output logic 	LD_MAR,
 								LD_MDR,
 								LD_IR,
@@ -31,12 +31,12 @@ module ISDU ( 	input	Clk,
 								LD_CC,
 								LD_REG,
 								LD_PC,
-									
+
 				output logic 	GatePC,
 								GateMDR,
 								GateALU,
 								GateMARMUX,
-									
+
 				output logic [1:0] 	PCMUX,
 				                    DRMUX,
 									SR1MUX,
@@ -44,9 +44,9 @@ module ISDU ( 	input	Clk,
 									ADDR1MUX,
 				output logic [1:0] 	ADDR2MUX,
 				output logic 		MARMUX,
-				  
+
 				output logic [1:0] 	ALUK,
-				  
+
 				output logic 		Mem_CE,
 									Mem_UB,
 									Mem_LB,
@@ -54,33 +54,33 @@ module ISDU ( 	input	Clk,
 									Mem_WE
 				);
 
-    enum logic [3:0] {Halted, PauseIR1, PauseIR2, S_18, S_33_1, S_33_2, S_35, S_32, S_01}   State, Next_state;   // Internal state logic
-	    
+    enum logic [3:0] {Halted, PauseIR1, PauseIR2, S_18, S_33_1, S_33_2, S_35, S_32, S_01, S_05, S_09, S_15, S_28_0, S_28_1, S_28_2, S_30, S_14, S_10, S_24_0, S_24_1, S_24_2, S_06, S_02, S_26, S_25_0, S_25_1, S_25_2, S_27, S_11, S_29_0, S_29_1, S_29_2, S_07, S_31, S_03, S_23, S_16_0, S_16_1, S_16_2, S_00, S_22, S_12, S_04, S_21, S_20}   State, Next_state;   // Internal state logic
+
     always_ff @ (posedge Clk or posedge Reset )
     begin : Assign_Next_State
-        if (Reset) 
+        if (Reset)
             State <= Halted;
-        else 
+        else
             State <= Next_state;
     end
-   
+
 	always_comb
-    begin 
+    begin
 	    Next_state  = State;
-	 
+
         unique case (State)
-            Halted : 
-	            if (Run) 
-					Next_state <= S_18;					  
-            S_18 : 
+            Halted :
+	            if (Run)
+					Next_state <= S_18;
+            S_18 :
                 Next_state <= S_33_1;
-            S_33_1 : 
+            S_33_1 :
                 Next_state <= S_33_2;
-            S_33_2 : 
+            S_33_2 :
                 Next_state <= S_35;
-            S_35 : 
+            S_35 :
                 Next_state <= PauseIR1;
-            PauseIR1 : 
+            PauseIR1 :
                 if (~ContinueIR) 
                     Next_state <= PauseIR1;
                 else 
@@ -90,7 +90,82 @@ module ISDU ( 	input	Clk,
                     Next_state <= PauseIR2;
                 else 
                     Next_state <= S_18;
-            S_32 : 
+            S_32 : ;
+            S_01:
+              Next_state <= S_18;
+          S_05:
+            Next_state <= S_18;
+          S_09:
+            Next_state <= S_18;
+          S_15:
+            Next_state <= S_28_0;
+          S_28_0:
+            Next_state <= S_28_1;
+          S_28_1:
+            Next_state <= S_28_2;
+          S_28_2:
+            Next_state <= S_30;
+          S_30:
+            Next_state <= S_18;
+          S_14:
+            Next_state <= S_18;
+          S_02:
+            Next_state <= S_25_0;
+          S_25_0:
+            Next_state <= S_25_1;
+          S_25_1:
+            Next_state <= S_25_2;
+          S_25_2:
+            Next_state <= S_27;
+          S_27:
+            Next_state <= S_18;
+          S_06:
+            Next_state <= S_25_0;
+          S_10:
+            Next_state <= S_24_0;
+          S_24_0:
+            Next_state <= S_24_1;
+          S_24_1:
+            Next_state <= S_24_2;
+          S_26:
+            Next_state <= S_25_0;
+          S_11:
+            Next_state <= S_29_0;
+          S_29_0:
+            Next_state <= S_29_1;
+          S_29_1:
+            Next_state <= S_29_2;
+          S_29_2:
+            Next_state <= S_31;
+          S_31:
+            Next_state <= S_23;
+          S_23:
+            Next_state <= S_16_0;
+          S_16_0:
+            Next_state <= S_16_1;
+          S_16_1:
+            Next_state <= S_16_2;
+          S_16_2:
+            Next_state <= S_18;
+          S_07:
+            Next_state <= S_23;
+          S_03:
+            Next_state <= S_23;
+          S_00:
+            Next_state <= S_22;
+          S_22:
+            Next_state <= S_18;
+          S_12:
+            Next_state <= S_18;
+          S_04:
+            if(INSERT CONDITION 1)
+              Next_state <= S_21;
+            else
+              Next_state <=S_20;
+          S_21:
+            Next_state <= S_18;
+          S_20:
+            Next_state <= S_18;
 				case (Opcode)
 					4'b0001 : 
 					    Next_state <= S_01;
