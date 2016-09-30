@@ -39,12 +39,12 @@ module FullAdder
 endmodule
 
 //D FLip Flop
-module FlipFlop(input logic in, Clk, Clr_Ld, Reset,
+module FlipFlop(input logic in, Clk, Reset,
 					 output logic out);
 
 	always_ff @ (posedge Clk)
 	begin
-		if(Reset | Clr_Ld)
+		if(Reset)
 			out <= 1'b0;
 		else
 			out <= in;
