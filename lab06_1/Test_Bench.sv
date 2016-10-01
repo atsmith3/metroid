@@ -1,4 +1,4 @@
-module testbench();
+module RegFile_testbench();
 
 
 timeunit 10ns;	// Half clock cycle at 50 MHz
