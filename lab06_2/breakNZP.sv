@@ -13,7 +13,7 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-module BreakNZP
+module BR_NZP
 (
 	input logic 	[15:0] DataIn, IR,
 	input logic 	Clk, Reset, LDCC, LDBEN,
@@ -49,10 +49,10 @@ end
 
 
 // Register Instances:
-FLipFLop N(.in(RegIn[2]), .Clk(Clk), .Reset(Reset), .out(RegOut[2]));
-FLipFLop Z(.in(RegIn[1]), .Clk(Clk), .Reset(Reset), .out(RegOut[1]));
-FLipFLop P(.in(RegIn[0]), .Clk(Clk), .Reset(Reset), .out(RegOut[0]));
-FLipFLop BreakEnableReg(.in(BENRegIn), .Clk(Clk), .Reset(Reset), .out(BEN));
+FlipFlop N(.in(RegIn[2]), .Clk(Clk), .Reset(Reset), .out(RegOut[2]));
+FlipFlop Z(.in(RegIn[1]), .Clk(Clk), .Reset(Reset), .out(RegOut[1]));
+FlipFlop P(.in(RegIn[0]), .Clk(Clk), .Reset(Reset), .out(RegOut[0]));
+FlipFlop BreakEnableReg(.in(BENRegIn), .Clk(Clk), .Reset(Reset), .out(BEN));
 
 
 endmodule

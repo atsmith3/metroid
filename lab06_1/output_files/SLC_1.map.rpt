@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SLC_1
-Thu Sep 29 22:11:21 2016
+Sat Oct 01 22:06:09 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -17,30 +17,35 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: tristate:tr0
- 14. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_7"
- 15. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_6"
- 16. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_5"
- 17. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_4"
- 18. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_3"
- 19. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_2"
- 20. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_1"
- 21. Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_0"
- 22. Port Connectivity Checks: "testbench:test|Register_File:testFile"
- 23. Port Connectivity Checks: "ISDU:state_controller"
- 24. Port Connectivity Checks: "IR:IR0|SixteenBitShiftRegister:sr"
- 25. Port Connectivity Checks: "PC_MUX:PCMUX0"
- 26. Port Connectivity Checks: "PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0"
- 27. Port Connectivity Checks: "PC_INC:PCINC0|SixteenBitRippleAdder:SSR0"
- 28. Port Connectivity Checks: "PCR:PCR0|SixteenBitShiftRegister:sr"
- 29. Port Connectivity Checks: "MDR:MDR0|SixteenBitShiftRegister:sr"
- 30. Port Connectivity Checks: "MAR:MAR0|SixteenBitShiftRegister:sr"
- 31. Port Connectivity Checks: "Datapath:BUS"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
- 35. Analysis & Synthesis Suppressed Messages
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: tristate:tr0
+ 15. Parameter Settings for User Entity Instance: test_memory:SRAM
+ 16. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_7"
+ 17. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_6"
+ 18. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_5"
+ 19. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_4"
+ 20. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_3"
+ 21. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_2"
+ 22. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_1"
+ 23. Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_0"
+ 24. Port Connectivity Checks: "Register_File:RF1"
+ 25. Port Connectivity Checks: "ALU:ALU1|SixteenBitRippleAdder:A0"
+ 26. Port Connectivity Checks: "Adder:ADDR0|SixteenBitRippleAdder:A0"
+ 27. Port Connectivity Checks: "ADDR1MUX:A1M"
+ 28. Port Connectivity Checks: "ISDU:state_controller"
+ 29. Port Connectivity Checks: "IR:IR0|SixteenBitShiftRegister:sr"
+ 30. Port Connectivity Checks: "PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0"
+ 31. Port Connectivity Checks: "PC_INC:PCINC0|SixteenBitRippleAdder:SSR0"
+ 32. Port Connectivity Checks: "PCR:PCR0|SixteenBitShiftRegister:sr"
+ 33. Port Connectivity Checks: "MAR:MAR0|SixteenBitShiftRegister:sr"
+ 34. Port Connectivity Checks: "MDR:MDR0|SixteenBitShiftRegister:sr"
+ 35. Port Connectivity Checks: "test_memory:SRAM"
+ 36. Port Connectivity Checks: "Mem2IO:memory_subsystem"
+ 37. Post-Synthesis Netlist Statistics for Top Partition
+ 38. Elapsed Time Per Partition
+ 39. Analysis & Synthesis Messages
+ 40. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -67,16 +72,16 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 29 22:11:21 2016      ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct 01 22:06:09 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; SLC_1                                      ;
 ; Top-level Entity Name              ; slc3                                       ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 158                                        ;
-;     Total combinational functions  ; 123                                        ;
-;     Dedicated logic registers      ; 103                                        ;
-; Total registers                    ; 103                                        ;
-; Total pins                         ; 101                                        ;
+; Total logic elements               ; 7,778                                      ;
+;     Total combinational functions  ; 4,421                                      ;
+;     Dedicated logic registers      ; 4,366                                      ;
+; Total registers                    ; 4366                                       ;
+; Total pins                         ; 85                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -182,21 +187,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv        ;         ;
-; ../lab06_2/registerFIle.sv       ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv     ;         ;
-; tristate.sv                      ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv         ;         ;
-; slc3.sv                          ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv             ;         ;
-; ISDU.sv                          ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv             ;         ;
-; Test_Bench.sv                    ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv       ;         ;
-; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv ;         ;
-; MemoryModules.sv                 ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv    ;         ;
-; Datapath.sv                      ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv         ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv         ;         ;
+; ../lab06_2/registerFIle.sv       ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv      ;         ;
+; ../lab06_2/data_path_modules.sv  ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv ;         ;
+; ../lab06_2/breakNZP.sv           ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/breakNZP.sv          ;         ;
+; tristate.sv                      ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv          ;         ;
+; test_memory.sv                   ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv       ;         ;
+; SLC3_2.sv                        ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv            ;         ;
+; slc3.sv                          ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv              ;         ;
+; Mem2IO.sv                        ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv            ;         ;
+; ISDU.sv                          ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv              ;         ;
+; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv  ;         ;
+; MemoryModules.sv                 ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv     ;         ;
+; Datapath.sv                      ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv          ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -204,118 +213,228 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 158       ;
+; Estimated Total logic elements              ; 7,778     ;
 ;                                             ;           ;
-; Total combinational functions               ; 123       ;
+; Total combinational functions               ; 4421      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 73        ;
-;     -- 3 input functions                    ; 7         ;
-;     -- <=2 input functions                  ; 43        ;
+;     -- 4 input functions                    ; 3116      ;
+;     -- 3 input functions                    ; 357       ;
+;     -- <=2 input functions                  ; 948       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 123       ;
+;     -- normal mode                          ; 4421      ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 103       ;
-;     -- Dedicated logic registers            ; 103       ;
+; Total registers                             ; 4366      ;
+;     -- Dedicated logic registers            ; 4366      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 101       ;
+; I/O pins                                    ; 85        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
-; Maximum fan-out                             ; 103       ;
-; Total fan-out                               ; 885       ;
-; Average fan-out                             ; 1.99      ;
+; Maximum fan-out                             ; 4366      ;
+; Total fan-out                               ; 31952     ;
+; Average fan-out                             ; 3.56      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Library Name ;
-+------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
-; |slc3                              ; 123 (0)           ; 103 (0)      ; 0           ; 0            ; 0       ; 0         ; 101  ; 0            ; |slc3                                                                               ; work         ;
-;    |HexDriver:hex_driver0|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver0                                                         ; work         ;
-;    |HexDriver:hex_driver1|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver1                                                         ; work         ;
-;    |HexDriver:hex_driver2|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver2                                                         ; work         ;
-;    |HexDriver:hex_driver3|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver3                                                         ; work         ;
-;    |IR:IR0|                        ; 17 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0                                                                        ; work         ;
-;       |SixteenBitShiftRegister:sr| ; 17 (17)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0|SixteenBitShiftRegister:sr                                             ; work         ;
-;    |ISDU:state_controller|         ; 5 (5)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ISDU:state_controller                                                         ; work         ;
-;    |MAR:MAR0|                      ; 16 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0                                                                      ; work         ;
-;       |SixteenBitShiftRegister:sr| ; 16 (16)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0|SixteenBitShiftRegister:sr                                           ; work         ;
-;    |MDR:MDR0|                      ; 33 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MDR:MDR0                                                                      ; work         ;
-;       |SixteenBitShiftRegister:sr| ; 33 (33)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MDR:MDR0|SixteenBitShiftRegister:sr                                           ; work         ;
-;    |PCR:PCR0|                      ; 2 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PCR:PCR0                                                                      ; work         ;
-;       |SixteenBitShiftRegister:sr| ; 2 (2)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PCR:PCR0|SixteenBitShiftRegister:sr                                           ; work         ;
-;    |PC_INC:PCINC0|                 ; 22 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0                                                                 ; work         ;
-;       |SixteenBitRippleAdder:SSR0| ; 22 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0                                      ; work         ;
-;          |four_ripple_adder:FRA0|  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0               ; work         ;
-;             |FullAdder:FA1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0|FullAdder:FA1 ; work         ;
-;             |FullAdder:FA2|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0|FullAdder:FA2 ; work         ;
-;             |FullAdder:FA3|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0|FullAdder:FA3 ; work         ;
-;          |four_ripple_adder:FRA1|  ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1               ; work         ;
-;             |FullAdder:FA0|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA0 ; work         ;
-;             |FullAdder:FA1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA1 ; work         ;
-;             |FullAdder:FA2|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA2 ; work         ;
-;             |FullAdder:FA3|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA3 ; work         ;
-;          |four_ripple_adder:FRA2|  ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2               ; work         ;
-;             |FullAdder:FA0|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2|FullAdder:FA0 ; work         ;
-;             |FullAdder:FA1|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2|FullAdder:FA1 ; work         ;
-;             |FullAdder:FA2|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2|FullAdder:FA2 ; work         ;
-;             |FullAdder:FA3|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2|FullAdder:FA3 ; work         ;
-;          |four_ripple_adder:FRA3|  ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3               ; work         ;
-;             |FullAdder:FA0|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA0 ; work         ;
-;             |FullAdder:FA1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA1 ; work         ;
-;             |FullAdder:FA2|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA2 ; work         ;
-;             |FullAdder:FA3|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA3 ; work         ;
-;    |tristate:tr0|                  ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|tristate:tr0                                                                  ; work         ;
-+------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Library Name ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
+; |slc3                                ; 4421 (0)          ; 4366 (0)     ; 0           ; 0            ; 0       ; 0         ; 85   ; 0            ; |slc3                                                                               ; work         ;
+;    |ADDR1MUX:A1M|                    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ADDR1MUX:A1M                                                                  ; work         ;
+;    |ADDR2MUX:A2M|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ADDR2MUX:A2M                                                                  ; work         ;
+;    |ALU:ALU1|                        ; 28 (5)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1                                                                      ; work         ;
+;       |SixteenBitRippleAdder:A0|     ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0                                             ; work         ;
+;          |four_ripple_adder:FRA0|    ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0                      ; work         ;
+;             |FullAdder:FA1|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA1        ; work         ;
+;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA2        ; work         ;
+;             |FullAdder:FA3|          ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA3        ; work         ;
+;          |four_ripple_adder:FRA1|    ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1                      ; work         ;
+;             |FullAdder:FA0|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA0        ; work         ;
+;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA1        ; work         ;
+;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA2        ; work         ;
+;             |FullAdder:FA3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA3        ; work         ;
+;          |four_ripple_adder:FRA2|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2                      ; work         ;
+;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA0        ; work         ;
+;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA1        ; work         ;
+;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA2        ; work         ;
+;             |FullAdder:FA3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA3        ; work         ;
+;          |four_ripple_adder:FRA3|    ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3                      ; work         ;
+;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA0        ; work         ;
+;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA1        ; work         ;
+;             |FullAdder:FA3|          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA3        ; work         ;
+;    |Adder:ADDR0|                     ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0                                                                   ; work         ;
+;       |SixteenBitRippleAdder:A0|     ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0                                          ; work         ;
+;          |four_ripple_adder:FRA0|    ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0                   ; work         ;
+;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA0     ; work         ;
+;             |FullAdder:FA1|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA1     ; work         ;
+;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA2     ; work         ;
+;             |FullAdder:FA3|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA3     ; work         ;
+;          |four_ripple_adder:FRA1|    ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1                   ; work         ;
+;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA0     ; work         ;
+;             |FullAdder:FA1|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA1     ; work         ;
+;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA2     ; work         ;
+;             |FullAdder:FA3|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA3     ; work         ;
+;          |four_ripple_adder:FRA2|    ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2                   ; work         ;
+;             |FullAdder:FA0|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA0     ; work         ;
+;             |FullAdder:FA1|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA1     ; work         ;
+;             |FullAdder:FA2|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA2     ; work         ;
+;    |BR_NZP:BRO|                      ; 12 (8)            ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO                                                                    ; work         ;
+;       |FlipFlop:BreakEnableReg|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|FlipFlop:BreakEnableReg                                            ; work         ;
+;       |FlipFlop:N|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|FlipFlop:N                                                         ; work         ;
+;       |FlipFlop:P|                   ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|FlipFlop:P                                                         ; work         ;
+;       |FlipFlop:Z|                   ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|FlipFlop:Z                                                         ; work         ;
+;    |Datapath:BUS|                    ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Datapath:BUS                                                                  ; work         ;
+;    |HexDriver:hex_driver0|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver0                                                         ; work         ;
+;    |HexDriver:hex_driver1|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver1                                                         ; work         ;
+;    |HexDriver:hex_driver2|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver2                                                         ; work         ;
+;    |HexDriver:hex_driver3|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver3                                                         ; work         ;
+;    |IR:IR0|                          ; 13 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0                                                                        ; work         ;
+;       |SixteenBitShiftRegister:sr|   ; 13 (13)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0|SixteenBitShiftRegister:sr                                             ; work         ;
+;    |ISDU:state_controller|           ; 26 (26)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ISDU:state_controller                                                         ; work         ;
+;    |MAR:MAR0|                        ; 6 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0                                                                      ; work         ;
+;       |SixteenBitShiftRegister:sr|   ; 6 (6)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0|SixteenBitShiftRegister:sr                                           ; work         ;
+;    |MDR:MDR0|                        ; 41 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MDR:MDR0                                                                      ; work         ;
+;       |SixteenBitShiftRegister:sr|   ; 41 (41)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MDR:MDR0|SixteenBitShiftRegister:sr                                           ; work         ;
+;    |Mem2IO:memory_subsystem|         ; 22 (22)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Mem2IO:memory_subsystem                                                       ; work         ;
+;    |PCR:PCR0|                        ; 22 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PCR:PCR0                                                                      ; work         ;
+;       |SixteenBitShiftRegister:sr|   ; 22 (22)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PCR:PCR0|SixteenBitShiftRegister:sr                                           ; work         ;
+;    |PC_INC:PCINC0|                   ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0                                                                 ; work         ;
+;       |SixteenBitRippleAdder:SSR0|   ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0                                      ; work         ;
+;          |four_ripple_adder:FRA0|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0               ; work         ;
+;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0|FullAdder:FA1 ; work         ;
+;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0|FullAdder:FA2 ; work         ;
+;             |FullAdder:FA3|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA0|FullAdder:FA3 ; work         ;
+;          |four_ripple_adder:FRA1|    ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1               ; work         ;
+;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA0 ; work         ;
+;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA1 ; work         ;
+;             |FullAdder:FA2|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA2 ; work         ;
+;             |FullAdder:FA3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA1|FullAdder:FA3 ; work         ;
+;          |four_ripple_adder:FRA2|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2               ; work         ;
+;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2|FullAdder:FA0 ; work         ;
+;             |FullAdder:FA1|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2|FullAdder:FA1 ; work         ;
+;             |FullAdder:FA3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA2|FullAdder:FA3 ; work         ;
+;          |four_ripple_adder:FRA3|    ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3               ; work         ;
+;             |FullAdder:FA0|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA0 ; work         ;
+;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA2 ; work         ;
+;    |Register_File:RF1|               ; 150 (136)         ; 128 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1                                                             ; work         ;
+;       |SixteenBitShiftRegister:SR_0| ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_0                                ; work         ;
+;       |SixteenBitShiftRegister:SR_1| ; 2 (2)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_1                                ; work         ;
+;       |SixteenBitShiftRegister:SR_2| ; 2 (2)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_2                                ; work         ;
+;       |SixteenBitShiftRegister:SR_3| ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_3                                ; work         ;
+;       |SixteenBitShiftRegister:SR_4| ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_4                                ; work         ;
+;       |SixteenBitShiftRegister:SR_5| ; 3 (3)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_5                                ; work         ;
+;       |SixteenBitShiftRegister:SR_6| ; 3 (3)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_6                                ; work         ;
+;       |SixteenBitShiftRegister:SR_7| ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_7                                ; work         ;
+;    |SR2MUX:SR2M|                     ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|SR2MUX:SR2M                                                                   ; work         ;
+;    |test_memory:SRAM|                ; 3932 (3932)       ; 4096 (4096)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|test_memory:SRAM                                                              ; work         ;
+;    |tristate:tr0|                    ; 17 (17)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|tristate:tr0                                                                  ; work         ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |slc3|ISDU:state_controller|State                                                                                                 ;
-+----------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+------------+
-; Name           ; State.S_32 ; State.S_35 ; State.S_33_2 ; State.S_33_1 ; State.S_18 ; State.PauseIR2 ; State.PauseIR1 ; State.Halted ; State.S_01 ;
-+----------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+------------+
-; State.Halted   ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 0            ; 0          ;
-; State.PauseIR1 ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 1              ; 1            ; 0          ;
-; State.PauseIR2 ; 0          ; 0          ; 0            ; 0            ; 0          ; 1              ; 0              ; 1            ; 0          ;
-; State.S_18     ; 0          ; 0          ; 0            ; 0            ; 1          ; 0              ; 0              ; 1            ; 0          ;
-; State.S_33_1   ; 0          ; 0          ; 0            ; 1            ; 0          ; 0              ; 0              ; 1            ; 0          ;
-; State.S_33_2   ; 0          ; 0          ; 1            ; 0            ; 0          ; 0              ; 0              ; 1            ; 0          ;
-; State.S_35     ; 0          ; 1          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ; 0          ;
-; State.S_32     ; 1          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ; 0          ;
-; State.S_01     ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ; 1          ;
-+----------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |slc3|ISDU:state_controller|State                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++----------------+------------+------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+
+; Name           ; State.S_21 ; State.S_04 ; State.S_12 ; State.S_22 ; State.S_00 ; State.S_16_2 ; State.S_16_1 ; State.S_16_0 ; State.S_23 ; State.S_03 ; State.S_31 ; State.S_07 ; State.S_29_2 ; State.S_29_1 ; State.S_29_0 ; State.S_11 ; State.S_27 ; State.S_25_2 ; State.S_25_1 ; State.S_25_0 ; State.S_26 ; State.S_02 ; State.S_06 ; State.S_24_2 ; State.S_24_1 ; State.S_24_0 ; State.S_10 ; State.S_14 ; State.S_30 ; State.S_28_2 ; State.S_28_1 ; State.S_28_0 ; State.S_15 ; State.S_09 ; State.S_05 ; State.S_01 ; State.S_32 ; State.S_35 ; State.S_33_2 ; State.S_33_1 ; State.S_18 ; State.PauseIR2 ; State.PauseIR1 ; State.Halted ;
++----------------+------------+------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+
+; State.Halted   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 0            ;
+; State.PauseIR1 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 1              ; 1            ;
+; State.PauseIR2 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 1              ; 0              ; 1            ;
+; State.S_18     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 1          ; 0              ; 0              ; 1            ;
+; State.S_33_1   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 1            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_33_2   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_35     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_32     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_01     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_05     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_09     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_15     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_28_0   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_28_1   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_28_2   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_30     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_14     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_10     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_24_0   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_24_1   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_24_2   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_06     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_02     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_26     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_25_0   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_25_1   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_25_2   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_27     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 1          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_11     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 1          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_29_0   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 1            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_29_1   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 1            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_29_2   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 1            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_07     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 1          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_31     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 1          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_03     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 1          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_23     ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 1          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_16_0   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 1            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_16_1   ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 1            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_16_2   ; 0          ; 0          ; 0          ; 0          ; 0          ; 1            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_00     ; 0          ; 0          ; 0          ; 0          ; 1          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_22     ; 0          ; 0          ; 0          ; 1          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_12     ; 0          ; 0          ; 1          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_04     ; 0          ; 1          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
+; State.S_21     ; 1          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0            ; 0            ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ;
++----------------+------------+------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+--------------+--------------+--------------+------------+------------+------------+------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; ISDU:state_controller|State~4         ; Lost fanout                            ;
-; ISDU:state_controller|State~5         ; Lost fanout                            ;
-; ISDU:state_controller|State~6         ; Lost fanout                            ;
-; ISDU:state_controller|State.S_32      ; Stuck at GND due to stuck port data_in ;
-; ISDU:state_controller|State.S_01      ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 5 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; ISDU:state_controller|State.S_15       ; Lost fanout                            ;
+; ISDU:state_controller|State.S_28_0     ; Lost fanout                            ;
+; ISDU:state_controller|State.S_28_1     ; Lost fanout                            ;
+; ISDU:state_controller|State.S_28_2     ; Lost fanout                            ;
+; ISDU:state_controller|State.S_30       ; Lost fanout                            ;
+; ISDU:state_controller|State.S_14       ; Lost fanout                            ;
+; ISDU:state_controller|State.S_10       ; Lost fanout                            ;
+; ISDU:state_controller|State.S_24_0     ; Lost fanout                            ;
+; ISDU:state_controller|State.S_11       ; Lost fanout                            ;
+; ISDU:state_controller|State.S_29_0     ; Lost fanout                            ;
+; ISDU:state_controller|State.S_29_1     ; Lost fanout                            ;
+; ISDU:state_controller|State.S_29_2     ; Lost fanout                            ;
+; ISDU:state_controller|State~4          ; Lost fanout                            ;
+; ISDU:state_controller|State~5          ; Lost fanout                            ;
+; ISDU:state_controller|State~6          ; Lost fanout                            ;
+; ISDU:state_controller|State~7          ; Lost fanout                            ;
+; ISDU:state_controller|State~8          ; Lost fanout                            ;
+; ISDU:state_controller|State~9          ; Lost fanout                            ;
+; ISDU:state_controller|State~10         ; Lost fanout                            ;
+; ISDU:state_controller|State~11         ; Lost fanout                            ;
+; ISDU:state_controller|State~12         ; Lost fanout                            ;
+; ISDU:state_controller|State.S_24_1     ; Stuck at GND due to stuck port data_in ;
+; ISDU:state_controller|State.S_02       ; Stuck at GND due to stuck port data_in ;
+; ISDU:state_controller|State.S_26       ; Stuck at GND due to stuck port data_in ;
+; ISDU:state_controller|State.S_31       ; Stuck at GND due to stuck port data_in ;
+; ISDU:state_controller|State.S_03       ; Stuck at GND due to stuck port data_in ;
+; ISDU:state_controller|State.S_24_2     ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 27 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                           ;
-+----------------------------------+---------------------------+----------------------------------------+
-; Register name                    ; Reason for Removal        ; Registers Removed due to This Register ;
-+----------------------------------+---------------------------+----------------------------------------+
-; ISDU:state_controller|State.S_32 ; Stuck at GND              ; ISDU:state_controller|State.S_01       ;
-;                                  ; due to stuck port data_in ;                                        ;
-+----------------------------------+---------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                             ;
++------------------------------------+---------------------------+----------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------------------------+---------------------------+----------------------------------------+
+; ISDU:state_controller|State.S_24_1 ; Stuck at GND              ; ISDU:state_controller|State.S_24_2     ;
+;                                    ; due to stuck port data_in ;                                        ;
++------------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -323,27 +442,153 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 103   ;
-; Number of registers using Synchronous Clear  ; 31    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 7     ;
+; Total registers                              ; 4366  ;
+; Number of registers using Synchronous Clear  ; 29    ;
+; Number of registers using Synchronous Load   ; 28    ;
+; Number of registers using Asynchronous Clear ; 4138  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Clock Enable       ; 4304  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |slc3|PCR:PCR0|SixteenBitShiftRegister:sr|DataOut[3] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|IR:IR0|SixteenBitShiftRegister:sr|DataOut[5]   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |slc3|MDR:MDR0|SixteenBitShiftRegister:sr|DataOut[4] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |slc3|ISDU:state_controller|Next_state.Halted        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |slc3|Datapath:BUS|Datapath[0]                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; test_memory:SRAM|mem_array[147][0]        ; 1       ;
+; test_memory:SRAM|mem_array[131][0]        ; 1       ;
+; test_memory:SRAM|mem_array[145][0]        ; 1       ;
+; test_memory:SRAM|mem_array[129][0]        ; 1       ;
+; test_memory:SRAM|mem_array[153][0]        ; 1       ;
+; test_memory:SRAM|mem_array[134][0]        ; 1       ;
+; test_memory:SRAM|mem_array[142][0]        ; 1       ;
+; test_memory:SRAM|mem_array[151][0]        ; 1       ;
+; test_memory:SRAM|mem_array[133][0]        ; 1       ;
+; test_memory:SRAM|mem_array[86][0]         ; 1       ;
+; test_memory:SRAM|mem_array[70][0]         ; 1       ;
+; test_memory:SRAM|mem_array[99][0]         ; 1       ;
+; test_memory:SRAM|mem_array[83][0]         ; 1       ;
+; test_memory:SRAM|mem_array[67][0]         ; 1       ;
+; test_memory:SRAM|mem_array[115][0]        ; 1       ;
+; test_memory:SRAM|mem_array[82][0]         ; 1       ;
+; test_memory:SRAM|mem_array[66][0]         ; 1       ;
+; test_memory:SRAM|mem_array[103][0]        ; 1       ;
+; test_memory:SRAM|mem_array[71][0]         ; 1       ;
+; test_memory:SRAM|mem_array[108][0]        ; 1       ;
+; test_memory:SRAM|mem_array[76][0]         ; 1       ;
+; test_memory:SRAM|mem_array[124][0]        ; 1       ;
+; test_memory:SRAM|mem_array[105][0]        ; 1       ;
+; test_memory:SRAM|mem_array[89][0]         ; 1       ;
+; test_memory:SRAM|mem_array[104][0]        ; 1       ;
+; test_memory:SRAM|mem_array[72][0]         ; 1       ;
+; test_memory:SRAM|mem_array[120][0]        ; 1       ;
+; test_memory:SRAM|mem_array[125][0]        ; 1       ;
+; test_memory:SRAM|mem_array[100][0]        ; 1       ;
+; test_memory:SRAM|mem_array[97][0]         ; 1       ;
+; test_memory:SRAM|mem_array[65][0]         ; 1       ;
+; test_memory:SRAM|mem_array[113][0]        ; 1       ;
+; test_memory:SRAM|mem_array[96][0]         ; 1       ;
+; test_memory:SRAM|mem_array[80][0]         ; 1       ;
+; test_memory:SRAM|mem_array[64][0]         ; 1       ;
+; test_memory:SRAM|mem_array[112][0]        ; 1       ;
+; test_memory:SRAM|mem_array[85][0]         ; 1       ;
+; test_memory:SRAM|mem_array[101][0]        ; 1       ;
+; test_memory:SRAM|mem_array[122][0]        ; 1       ;
+; test_memory:SRAM|mem_array[94][0]         ; 1       ;
+; test_memory:SRAM|mem_array[126][0]        ; 1       ;
+; test_memory:SRAM|mem_array[107][0]        ; 1       ;
+; test_memory:SRAM|mem_array[75][0]         ; 1       ;
+; test_memory:SRAM|mem_array[111][0]        ; 1       ;
+; test_memory:SRAM|mem_array[106][0]        ; 1       ;
+; test_memory:SRAM|mem_array[78][0]         ; 1       ;
+; test_memory:SRAM|mem_array[74][0]         ; 1       ;
+; test_memory:SRAM|mem_array[110][0]        ; 1       ;
+; test_memory:SRAM|mem_array[95][0]         ; 1       ;
+; test_memory:SRAM|mem_array[127][0]        ; 1       ;
+; test_memory:SRAM|mem_array[41][0]         ; 1       ;
+; test_memory:SRAM|mem_array[35][0]         ; 1       ;
+; test_memory:SRAM|mem_array[33][0]         ; 1       ;
+; test_memory:SRAM|mem_array[38][0]         ; 1       ;
+; test_memory:SRAM|mem_array[36][0]         ; 1       ;
+; test_memory:SRAM|mem_array[46][0]         ; 1       ;
+; test_memory:SRAM|mem_array[40][0]         ; 1       ;
+; test_memory:SRAM|mem_array[34][0]         ; 1       ;
+; test_memory:SRAM|mem_array[45][0]         ; 1       ;
+; test_memory:SRAM|mem_array[39][0]         ; 1       ;
+; test_memory:SRAM|mem_array[47][0]         ; 1       ;
+; test_memory:SRAM|mem_array[26][0]         ; 1       ;
+; test_memory:SRAM|mem_array[24][0]         ; 1       ;
+; test_memory:SRAM|mem_array[21][0]         ; 1       ;
+; test_memory:SRAM|mem_array[17][0]         ; 1       ;
+; test_memory:SRAM|mem_array[18][0]         ; 1       ;
+; test_memory:SRAM|mem_array[22][0]         ; 1       ;
+; test_memory:SRAM|mem_array[29][0]         ; 1       ;
+; test_memory:SRAM|mem_array[27][0]         ; 1       ;
+; test_memory:SRAM|mem_array[31][0]         ; 1       ;
+; test_memory:SRAM|mem_array[8][0]          ; 1       ;
+; test_memory:SRAM|mem_array[11][0]         ; 1       ;
+; test_memory:SRAM|mem_array[5][0]          ; 1       ;
+; test_memory:SRAM|mem_array[6][0]          ; 1       ;
+; test_memory:SRAM|mem_array[4][0]          ; 1       ;
+; test_memory:SRAM|mem_array[7][0]          ; 1       ;
+; test_memory:SRAM|mem_array[1][0]          ; 1       ;
+; test_memory:SRAM|mem_array[3][0]          ; 1       ;
+; test_memory:SRAM|mem_array[13][0]         ; 1       ;
+; test_memory:SRAM|mem_array[14][0]         ; 1       ;
+; test_memory:SRAM|mem_array[15][0]         ; 1       ;
+; test_memory:SRAM|mem_array[57][0]         ; 1       ;
+; test_memory:SRAM|mem_array[58][0]         ; 1       ;
+; test_memory:SRAM|mem_array[59][0]         ; 1       ;
+; test_memory:SRAM|mem_array[54][0]         ; 1       ;
+; test_memory:SRAM|mem_array[55][0]         ; 1       ;
+; test_memory:SRAM|mem_array[60][0]         ; 1       ;
+; test_memory:SRAM|mem_array[149][1]        ; 1       ;
+; test_memory:SRAM|mem_array[148][1]        ; 1       ;
+; test_memory:SRAM|mem_array[144][1]        ; 1       ;
+; test_memory:SRAM|mem_array[129][1]        ; 1       ;
+; test_memory:SRAM|mem_array[132][1]        ; 1       ;
+; test_memory:SRAM|mem_array[133][1]        ; 1       ;
+; test_memory:SRAM|mem_array[147][1]        ; 1       ;
+; test_memory:SRAM|mem_array[89][1]         ; 1       ;
+; test_memory:SRAM|mem_array[27][1]         ; 1       ;
+; test_memory:SRAM|mem_array[15][1]         ; 1       ;
+; test_memory:SRAM|mem_array[13][1]         ; 1       ;
+; test_memory:SRAM|mem_array[79][1]         ; 1       ;
+; test_memory:SRAM|mem_array[9][1]          ; 1       ;
+; Total number of inverted registers = 929* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|IR:IR0|SixteenBitShiftRegister:sr|DataOut[13]              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|MAR:MAR0|SixteenBitShiftRegister:sr|DataOut[2]             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_0|DataOut[12] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_1|DataOut[1]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_2|DataOut[9]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_3|DataOut[2]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_4|DataOut[9]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_5|DataOut[6]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_6|DataOut[12] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_7|DataOut[13] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |slc3|BR_NZP:BRO|FlipFlop:N|out                                  ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |slc3|PCR:PCR0|SixteenBitShiftRegister:sr|DataOut[12]            ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |slc3|PCR:PCR0|SixteenBitShiftRegister:sr|DataOut[3]             ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; Yes        ; |slc3|MDR:MDR0|SixteenBitShiftRegister:sr|DataOut[12]            ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |slc3|Register_File:RF1|Mux18                                    ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |slc3|Register_File:RF1|Mux7                                     ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |slc3|SR2MUX:SR2M|Mux_to_ALU[2]                                  ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |slc3|Datapath:BUS|Datapath[12]                                  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |slc3|ISDU:state_controller|Selector43                           ;
+; 8:1                ; 12 bits   ; 60 LEs        ; 48 LEs               ; 12 LEs                 ; No         ; |slc3|Datapath:BUS|Datapath[7]                                   ;
+; 256:1              ; 16 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; No         ; |slc3|test_memory:SRAM|Mux13                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------+
@@ -356,137 +601,150 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_7" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: test_memory:SRAM ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; size           ; 256   ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_6" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_7" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_5" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_6" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_4" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_5" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_3" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_4" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_2" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_3" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_1" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_2" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile|SixteenBitShiftRegister:SR_0" ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                      ;
-+-------------+--------+----------+--------------------------------------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                                                 ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected                                       ;
-+-------------+--------+----------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_1" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "testbench:test|Register_File:testFile"                                                        ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                             ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
-; DataIn[14..12] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; DataIn[10..8]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; DataIn[6..4]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; DataIn[2..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; DataIn[15]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; DataIn[11]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; DataIn[7]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; DataIn[3]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; IR[12..8]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; IR[15..13]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; IR[7..0]       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; LDREG          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; DR             ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SR1            ; Input  ; Info     ; Stuck at GND                                                                        ;
-; Reset          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SR2[2..0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SR2[3]         ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SR2out         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; SR1out         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1|SixteenBitShiftRegister:SR_0" ;
++-------------+--------+----------+------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                  ;
++-------------+--------+----------+------------------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                             ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected                   ;
++-------------+--------+----------+------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ISDU:state_controller"                                                                  ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; LD_BEN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; LD_CC    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; LD_REG   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; DRMUX    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; SR1MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; SR2MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ADDR1MUX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ADDR2MUX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; MARMUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ALUK     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:RF1"                                                                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; SR2  ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "SR2[3..3]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU1|SixteenBitRippleAdder:A0" ;
++------+--------+----------+------------------------------------+
+; Port ; Type   ; Severity ; Details                            ;
++------+--------+----------+------------------------------------+
+; CO   ; Output ; Info     ; Explicitly unconnected             ;
++------+--------+----------+------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:ADDR0|SixteenBitRippleAdder:A0" ;
++------+--------+----------+---------------------------------------+
+; Port ; Type   ; Severity ; Details                               ;
++------+--------+----------+---------------------------------------+
+; CO   ; Output ; Info     ; Explicitly unconnected                ;
++------+--------+----------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADDR1MUX:A1M"                                                                                                                                                                             ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ADDR1MUXK     ; Input  ; Warning  ; Input port expression (2 bits) is wider than the input port (1 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Mux2_to_Adder ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND.          ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ISDU:state_controller"                                                                   ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; DRMUX[1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SR1MUX[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ADDR1MUX  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------+
@@ -498,15 +756,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ShiftIn     ; Input  ; Info     ; Stuck at GND                ;
 ; ShiftOut    ; Output ; Info     ; Explicitly unconnected      ;
 +-------------+--------+----------+-----------------------------+
-
-
-+-----------------------------------------------+
-; Port Connectivity Checks: "PC_MUX:PCMUX0"     ;
-+-------------+-------+----------+--------------+
-; Port        ; Type  ; Severity ; Details      ;
-+-------------+-------+----------+--------------+
-; MARMUX_data ; Input ; Info     ; Stuck at GND ;
-+-------------+-------+----------+--------------+
 
 
 +---------------------------------------------------------------------------------------------+
@@ -541,17 +790,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------+
-; Port Connectivity Checks: "MDR:MDR0|SixteenBitShiftRegister:sr" ;
-+-------------+--------+----------+-------------------------------+
-; Port        ; Type   ; Severity ; Details                       ;
-+-------------+--------+----------+-------------------------------+
-; ShiftEnable ; Input  ; Info     ; Stuck at GND                  ;
-; ShiftIn     ; Input  ; Info     ; Stuck at GND                  ;
-; ShiftOut    ; Output ; Info     ; Explicitly unconnected        ;
-+-------------+--------+----------+-------------------------------+
-
-
-+-----------------------------------------------------------------+
 ; Port Connectivity Checks: "MAR:MAR0|SixteenBitShiftRegister:sr" ;
 +-------------+--------+----------+-------------------------------+
 ; Port        ; Type   ; Severity ; Details                       ;
@@ -562,14 +800,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------+
 
 
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "MDR:MDR0|SixteenBitShiftRegister:sr" ;
++-------------+--------+----------+-------------------------------+
+; Port        ; Type   ; Severity ; Details                       ;
++-------------+--------+----------+-------------------------------+
+; ShiftEnable ; Input  ; Info     ; Stuck at GND                  ;
+; ShiftIn     ; Input  ; Info     ; Stuck at GND                  ;
+; ShiftOut    ; Output ; Info     ; Explicitly unconnected        ;
++-------------+--------+----------+-------------------------------+
+
+
 +-----------------------------------------------+
-; Port Connectivity Checks: "Datapath:BUS"      ;
+; Port Connectivity Checks: "test_memory:SRAM"  ;
 +-------------+-------+----------+--------------+
 ; Port        ; Type  ; Severity ; Details      ;
 +-------------+-------+----------+--------------+
-; ALU_data    ; Input ; Info     ; Stuck at GND ;
-; MARMUX_data ; Input ; Info     ; Stuck at GND ;
+; A[19..16]   ; Input ; Info     ; Stuck at GND ;
+; inSW[1..0]  ; Input ; Info     ; Stuck at VCC ;
+; inSW[15..2] ; Input ; Info     ; Stuck at GND ;
 +-------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "Mem2IO:memory_subsystem" ;
++-----------------+-------+----------+----------------+
+; Port            ; Type  ; Severity ; Details        ;
++-----------------+-------+----------+----------------+
+; A[19..16]       ; Input ; Info     ; Stuck at GND   ;
+; Switches[1..0]  ; Input ; Info     ; Stuck at VCC   ;
+; Switches[15..2] ; Input ; Info     ; Stuck at GND   ;
++-----------------+-------+----------+----------------+
 
 
 +-----------------------------------------------------+
@@ -577,23 +838,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 101                         ;
-; cycloneiii_ff         ; 103                         ;
-;     CLR               ; 7                           ;
-;     ENA               ; 33                          ;
-;     ENA SCLR          ; 31                          ;
-;     plain             ; 32                          ;
+; boundary_port         ; 85                          ;
+; cycloneiii_ff         ; 4366                        ;
+;     CLR               ; 26                          ;
+;     ENA               ; 164                         ;
+;     ENA CLR           ; 4112                        ;
+;     ENA SCLR SLD      ; 28                          ;
+;     SCLR              ; 1                           ;
+;     plain             ; 35                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 130                         ;
-;     normal            ; 130                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 43                          ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 73                          ;
+; cycloneiii_lcell_comb ; 4428                        ;
+;     normal            ; 4428                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 935                         ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 357                         ;
+;         4 data inputs ; 3116                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.36                        ;
+; Max LUT depth         ; 21.00                       ;
+; Average LUT depth     ; 6.77                        ;
 +-----------------------+-----------------------------+
 
 
@@ -602,7 +865,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -612,7 +875,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
-    Info: Processing started: Thu Sep 29 22:11:10 2016
+    Info: Processing started: Sat Oct 01 22:05:45 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SLC_1 -c SLC_1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
@@ -626,7 +889,7 @@ Info (12021): Found 5 design units, including 5 entities, in source file /school
     Info (12023): Found entity 4: SR2MUX
     Info (12023): Found entity 5: ALU
 Info (12021): Found 1 design units, including 1 entities, in source file /school/university of illinois/ece 385/ece_385/lab06_2/breaknzp.sv
-    Info (12023): Found entity 1: BreakNZP
+    Info (12023): Found entity 1: BR_NZP
 Info (12021): Found 1 design units, including 1 entities, in source file tristate.sv
     Info (12023): Found entity 1: tristate
 Info (12021): Found 2 design units, including 1 entities, in source file test_memory.sv
@@ -641,7 +904,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file isdu.sv
     Info (12023): Found entity 1: ISDU
 Warning (10229): Verilog HDL Expression warning at Test_Bench.sv(82): truncated literal to match 16 bits
 Info (12021): Found 1 design units, including 1 entities, in source file test_bench.sv
-    Info (12023): Found entity 1: testbench
+    Info (12023): Found entity 1: RegFile_testbench
 Info (12021): Found 7 design units, including 7 entities, in source file standard_modules.sv
     Info (12023): Found entity 1: TwoInputMux
     Info (12023): Found entity 2: FourInputMux
@@ -650,7 +913,6 @@ Info (12021): Found 7 design units, including 7 entities, in source file standar
     Info (12023): Found entity 5: SixteenBitShiftRegister
     Info (12023): Found entity 6: SixteenBitRippleAdder
     Info (12023): Found entity 7: four_ripple_adder
-Info (12021): Found 0 design units, including 0 entities, in source file registerfile.sv
 Info (12021): Found 7 design units, including 7 entities, in source file memorymodules.sv
     Info (12023): Found entity 1: MDR
     Info (12023): Found entity 2: MAR
@@ -661,16 +923,19 @@ Info (12021): Found 7 design units, including 7 entities, in source file memorym
     Info (12023): Found entity 7: PC_MUX
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
     Info (12023): Found entity 1: Datapath
-Warning (10236): Verilog HDL Implicit Net warning at slc3.sv(34): created implicit net for "ContinueIR"
+Info (12021): Found 1 design units, including 1 entities, in source file /school/university of illinois/ece 385/ece_385/lab06_2/testbench.sv
+    Info (12023): Found entity 1: testbench
 Info (12127): Elaborating entity "slc3" for the top level hierarchy
-Warning (10034): Output port "LED" at slc3.sv(21) has no driver
 Info (12128): Elaborating entity "HexDriver" for hierarchy "HexDriver:hex_driver0"
 Info (12128): Elaborating entity "tristate" for hierarchy "tristate:tr0"
+Info (12128): Elaborating entity "Mem2IO" for hierarchy "Mem2IO:memory_subsystem"
+Info (12128): Elaborating entity "test_memory" for hierarchy "test_memory:SRAM"
+Warning (10230): Verilog HDL assignment warning at SLC3_2.sv(110): truncated value with size 32 to match size of target (5)
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:BUS"
-Info (12128): Elaborating entity "MAR" for hierarchy "MAR:MAR0"
-Info (12128): Elaborating entity "SixteenBitShiftRegister" for hierarchy "MAR:MAR0|SixteenBitShiftRegister:sr"
-Info (12128): Elaborating entity "MDR" for hierarchy "MDR:MDR0"
 Info (12128): Elaborating entity "MIO_MUX" for hierarchy "MIO_MUX:MM0"
+Info (12128): Elaborating entity "MDR" for hierarchy "MDR:MDR0"
+Info (12128): Elaborating entity "SixteenBitShiftRegister" for hierarchy "MDR:MDR0|SixteenBitShiftRegister:sr"
+Info (12128): Elaborating entity "MAR" for hierarchy "MAR:MAR0"
 Info (12128): Elaborating entity "PCR" for hierarchy "PCR:PCR0"
 Info (12128): Elaborating entity "PC_INC" for hierarchy "PC_INC:PCINC0"
 Info (12128): Elaborating entity "SixteenBitRippleAdder" for hierarchy "PC_INC:PCINC0|SixteenBitRippleAdder:SSR0"
@@ -679,83 +944,336 @@ Info (12128): Elaborating entity "FullAdder" for hierarchy "PC_INC:PCINC0|Sixtee
 Info (12128): Elaborating entity "PC_MUX" for hierarchy "PC_MUX:PCMUX0"
 Info (12128): Elaborating entity "IR" for hierarchy "IR:IR0"
 Info (12128): Elaborating entity "ISDU" for hierarchy "ISDU:state_controller"
-Info (12128): Elaborating entity "testbench" for hierarchy "testbench:test"
-Warning (10755): Verilog HDL warning at Test_Bench.sv(18): assignments to Clk create a combinational loop
-Info (12128): Elaborating entity "Register_File" for hierarchy "testbench:test|Register_File:testFile"
-Warning (10230): Verilog HDL assignment warning at registerFIle.sv(55): truncated value with size 16 to match size of target (8)
-Warning (10270): Verilog HDL Case Statement warning at registerFIle.sv(56): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at registerFIle.sv(73): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at registerFIle.sv(90): incomplete case statement has no default case item
-Warning (13008): TRI or OPNDRN buffers permanently disabled
-    Warning (13010): Node "tristate:tr0|Data[0]~synth"
-    Warning (13010): Node "tristate:tr0|Data[1]~synth"
-    Warning (13010): Node "tristate:tr0|Data[2]~synth"
-    Warning (13010): Node "tristate:tr0|Data[3]~synth"
-    Warning (13010): Node "tristate:tr0|Data[4]~synth"
-    Warning (13010): Node "tristate:tr0|Data[5]~synth"
-    Warning (13010): Node "tristate:tr0|Data[6]~synth"
-    Warning (13010): Node "tristate:tr0|Data[7]~synth"
-    Warning (13010): Node "tristate:tr0|Data[8]~synth"
-    Warning (13010): Node "tristate:tr0|Data[9]~synth"
-    Warning (13010): Node "tristate:tr0|Data[10]~synth"
-    Warning (13010): Node "tristate:tr0|Data[11]~synth"
-    Warning (13010): Node "tristate:tr0|Data[12]~synth"
-    Warning (13010): Node "tristate:tr0|Data[13]~synth"
-    Warning (13010): Node "tristate:tr0|Data[14]~synth"
-    Warning (13010): Node "tristate:tr0|Data[15]~synth"
+Warning (10958): SystemVerilog warning at ISDU.sv(94): unique or priority keyword makes case statement complete
+Info (10264): Verilog HDL Case Statement information at ISDU.sv(69): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at ISDU.sv(241): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "ADDR2MUX" for hierarchy "ADDR2MUX:A2M"
+Info (12128): Elaborating entity "ADDR1MUX" for hierarchy "ADDR1MUX:A1M"
+Warning (10230): Verilog HDL assignment warning at data_path_modules.sv(39): truncated value with size 16 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at data_path_modules.sv(40): truncated value with size 16 to match size of target (1)
+Info (12128): Elaborating entity "Adder" for hierarchy "Adder:ADDR0"
+Info (12128): Elaborating entity "SR2MUX" for hierarchy "SR2MUX:SR2M"
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU1"
+Info (12128): Elaborating entity "BR_NZP" for hierarchy "BR_NZP:BRO"
+Info (12128): Elaborating entity "FlipFlop" for hierarchy "BR_NZP:BRO|FlipFlop:N"
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:RF1"
+Warning (10270): Verilog HDL Case Statement warning at registerFIle.sv(58): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at registerFIle.sv(78): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at registerFIle.sv(95): incomplete case statement has no default case item
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[15]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[14]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[13]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[12]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[11]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[10]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[9]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[8]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[7]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[6]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[5]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[4]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[3]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[2]" is missing source, defaulting to GND
+    Warning (12110): Net "Mux2_to_Adder[1]" is missing source, defaulting to GND
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LED[0]" is stuck at GND
-    Warning (13410): Pin "LED[1]" is stuck at GND
-    Warning (13410): Pin "LED[2]" is stuck at GND
-    Warning (13410): Pin "LED[3]" is stuck at GND
-    Warning (13410): Pin "LED[4]" is stuck at GND
-    Warning (13410): Pin "LED[5]" is stuck at GND
-    Warning (13410): Pin "LED[6]" is stuck at GND
-    Warning (13410): Pin "LED[7]" is stuck at GND
-    Warning (13410): Pin "LED[8]" is stuck at GND
-    Warning (13410): Pin "LED[9]" is stuck at GND
-    Warning (13410): Pin "LED[10]" is stuck at GND
-    Warning (13410): Pin "LED[11]" is stuck at GND
     Warning (13410): Pin "CE" is stuck at GND
     Warning (13410): Pin "UB" is stuck at GND
     Warning (13410): Pin "LB" is stuck at GND
-    Warning (13410): Pin "WE" is stuck at VCC
     Warning (13410): Pin "ADDR[16]" is stuck at GND
     Warning (13410): Pin "ADDR[17]" is stuck at GND
     Warning (13410): Pin "ADDR[18]" is stuck at GND
     Warning (13410): Pin "ADDR[19]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (17049): 21 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/output_files/SLC_1.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "S[0]"
-    Warning (15610): No output dependent on input pin "S[1]"
-    Warning (15610): No output dependent on input pin "S[2]"
-    Warning (15610): No output dependent on input pin "S[3]"
-    Warning (15610): No output dependent on input pin "S[4]"
-    Warning (15610): No output dependent on input pin "S[5]"
-    Warning (15610): No output dependent on input pin "S[6]"
-    Warning (15610): No output dependent on input pin "S[7]"
-    Warning (15610): No output dependent on input pin "S[8]"
-    Warning (15610): No output dependent on input pin "S[9]"
-    Warning (15610): No output dependent on input pin "S[10]"
-    Warning (15610): No output dependent on input pin "S[11]"
-    Warning (15610): No output dependent on input pin "S[12]"
-    Warning (15610): No output dependent on input pin "S[13]"
-    Warning (15610): No output dependent on input pin "S[14]"
-    Warning (15610): No output dependent on input pin "S[15]"
-Info (21057): Implemented 259 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 20 input pins
+Info (21057): Implemented 7895 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 65 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 158 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 64 warnings
-    Info: Peak virtual memory: 692 megabytes
-    Info: Processing ended: Thu Sep 29 22:11:21 2016
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:26
+    Info (21061): Implemented 7810 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 306 warnings
+    Info: Peak virtual memory: 727 megabytes
+    Info: Processing ended: Sat Oct 01 22:06:09 2016
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:38
 
 
 +------------------------------------------+

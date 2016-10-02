@@ -157,6 +157,8 @@ set_location_assignment PIN_AC28 -to S[1]
 set_location_assignment PIN_AB28 -to S[0]
 set_location_assignment PIN_AC4 -to UB
 set_location_assignment PIN_AE8 -to WE
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name SYSTEMVERILOG_FILE HexDriver.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../lab06_2/registerFIle.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../lab06_2/data_path_modules.sv
@@ -169,9 +171,14 @@ set_global_assignment -name SYSTEMVERILOG_FILE Mem2IO.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ISDU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Test_Bench.sv
 set_global_assignment -name SYSTEMVERILOG_FILE standard_modules.sv
-set_global_assignment -name SYSTEMVERILOG_FILE registerFile.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MemoryModules.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Datapath.sv
-set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
-set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name SYSTEMVERILOG_FILE ../lab06_2/TestBench.sv
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH testbench -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME testbench -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testbench
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id testbench
+set_global_assignment -name EDA_TEST_BENCH_FILE ../lab06_2/TestBench.sv -section_id testbench
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

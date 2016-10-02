@@ -14,48 +14,46 @@
 //------------------------------------------------------------------------------
 
 
-module ISDU ( 	input	Clk,
-                        Reset,
-						Run,
-						Continue,
-						ContinueIR,
+module ISDU
+(				
+	input	Clk, Reset, Run, Continue,
+	input [3:0]Opcode,
+	input IR_5,
+	input IR_11,
+	input	BEN,
 
-				input [3:0]  Opcode,
-				input        IR_5,
-				input        IR_11,
+	output logic 	LD_MAR,
+						LD_MDR,
+						LD_IR,
+						LD_BEN,
+						LD_CC,
+						LD_REG,
+						LD_PC,
+						
+	output logic GatePC,
+					 GateMDR,
+					 GateALU,
+					 GateMARMUX,
 
-				output logic 	LD_MAR,
-									LD_MDR,
-									LD_IR,
-									LD_BEN,
-									LD_CC,
-									LD_REG,
-									LD_PC,
+	output logic [1:0] 	PCMUX,
+								DRMUX,
+								SR1MUX,
+								
+	output logic 	SR2MUX,
+						ADDR1MUX,
+						
+	output logic [1:0] 	ADDR2MUX,
 
-				output logic GatePC,
-								 GateMDR,
-								 GateALU,
-								 GateMARMUX,
+	output logic [1:0] 	ALUK,
 
-				output logic [1:0] 	PCMUX,
-				                    DRMUX,
-									SR1MUX,
-				output logic 		SR2MUX,
-									ADDR1MUX,
-									MIO_EN,
-				output logic [1:0] 	ADDR2MUX,
-				output logic 		MARMUX,
+	output logic 	Mem_CE,
+						Mem_UB,
+						Mem_LB,
+						Mem_OE,
+						Mem_WE
+);
 
-				output logic [1:0] 	ALUK,
-
-				output logic 		Mem_CE,
-									Mem_UB,
-									Mem_LB,
-									Mem_OE,
-									Mem_WE
-				);
-
-    enum logic [3:0] {Halted, PauseIR1, PauseIR2, S_18, S_33_1, S_33_2, S_35, S_32, S_01, S_05, S_09, S_15, S_28_0, S_28_1, S_28_2, S_30, S_14, S_10, S_24_0, S_24_1, S_24_2, S_06, S_02, S_26, S_25_0, S_25_1, S_25_2, S_27, S_11, S_29_0, S_29_1, S_29_2, S_07, S_31, S_03, S_23, S_16_0, S_16_1, S_16_2, S_00, S_22, S_12, S_04, S_21, S_20}   State, Next_state;   // Internal state logic
+    enum logic [8:0] {Halted, PauseIR1, PauseIR2, S_18, S_33_1, S_33_2, S_35, S_32, S_01, S_05, S_09, S_15, S_28_0, S_28_1, S_28_2, S_30, S_14, S_10, S_24_0, S_24_1, S_24_2, S_06, S_02, S_26, S_25_0, S_25_1, S_25_2, S_27, S_11, S_29_0, S_29_1, S_29_2, S_07, S_31, S_03, S_23, S_16_0, S_16_1, S_16_2, S_00, S_22, S_12, S_04, S_21, S_20}   State, Next_state;   // Internal state logic
 
     always_ff @ (posedge Clk or posedge Reset )
     begin : Assign_Next_State
@@ -70,39 +68,53 @@ module ISDU ( 	input	Clk,
 	    Next_state  = State;
        unique case (State)
          Halted :
-	            if (Run)
-			Next_state <= S_18;
+	         if (Run)
+					Next_state <= S_18;
          S_18 :
-             Next_state <= S_33_1;
+            Next_state <= S_33_1;
          S_33_1 :
-             Next_state <= S_33_2;
+            Next_state <= S_33_2;
          S_33_2 :
-             Next_state <= S_35;
+            Next_state <= S_35;
          S_35 :
-             Next_state <= PauseIR1;
+				Next_state <= S_32;
+            //Next_state <= PauseIR1;
          PauseIR1 :
-             if (~ContinueIR) 
+             if (~Continue) 
                  Next_state <= PauseIR1;
              else 
                  Next_state <= PauseIR2;
          PauseIR2 : 
-             if (ContinueIR) 
+             if (Continue) 
                  Next_state <= PauseIR2;
              else 
                  Next_state <= S_18;
-         S_32 : ;
-         
+         S_32 :
+				begin
+					unique case (Opcode)
+						4'b0000:	Next_state <= S_00;		// BR
+						4'b0001: Next_state <= S_01;		// ADD
+						4'b0101: Next_state <= S_05;		// AND
+						4'b1100: Next_state <= S_12;		// JMP
+						4'b0100: Next_state <= S_04;		// JSR
+						4'b0110: Next_state <= S_06;		// LDR
+						4'b1001: Next_state <= S_09; 		// NOT
+						4'b0111: Next_state <= S_07;  	// STR
+						4'b1101: Next_state <= PauseIR1;	// PAUSE
+					endcase
+				end
+			
 			// Opcode ADD
 			S_01:
-             Next_state <= S_18;
+				 Next_state <= S_18;
          
 			// Opcode AND
 			S_05:
-           Next_state <= S_18;
+				Next_state <= S_18;
          
 			// Opcode NOT
 			S_09:
-           Next_state <= S_18;
+				Next_state <= S_18;
          
 			// Opcode TRAP : Unused
 			S_15:
@@ -130,7 +142,7 @@ module ISDU ( 	input	Clk,
          S_25_2:
            Next_state <= S_27;
          S_27:
-           Next_state <= S_18;
+				Next_state <= S_18;
          
 			// Opcode LDR
 			S_06:
@@ -176,7 +188,10 @@ module ISDU ( 	input	Clk,
          
 			// Opcode BR
 			S_00:
-           Next_state <= S_22;
+				if(BEN)
+					Next_state <= S_22;
+				else
+					Next_state <= S_18;
          S_22:
             Next_state <= S_18;
          
@@ -186,22 +201,10 @@ module ISDU ( 	input	Clk,
          
 			// Opcode JSR
 			S_04:
-           if(INSERT CONDITION 1)
-             Next_state <= S_21;
-           else
-             Next_state <=S_20;
+				//Only supports JSR
+				Next_state <= S_21;
          S_21:
-           Next_state <= S_18;
-         S_20:
-           Next_state <= S_18;
-			case (Opcode)
-				4'b0001 : 
-				    Next_state <= S_01;
-				default : 
-				    Next_state <= S_18;
-			endcase
-           S_01 : 
-			Next_state <= S_18;
+				Next_state <= S_18;
 			default : ;
 	     endcase
     end
@@ -218,8 +221,6 @@ module ISDU ( 	input	Clk,
 	   LD_REG = 1'b0;
 	   LD_PC = 1'b0;
 		
-		MIO_EN = 1'b1;
-		
 	   GatePC = 1'b0;
 	   GateMDR = 1'b0;
 	   GateALU = 1'b0;
@@ -233,7 +234,6 @@ module ISDU ( 	input	Clk,
 	   SR2MUX = 1'b0;
 	   ADDR1MUX = 1'b0;
 	   ADDR2MUX = 2'b00;
-	   MARMUX = 1'b0;
 		
 	   Mem_OE = 1'b1;
 	   Mem_WE = 1'b1;
@@ -264,12 +264,12 @@ module ISDU ( 	input	Clk,
          S_32 : 
                LD_BEN = 1'b1;
          // ADD
-			S_01 : 
+			S_01 :
             begin 
 					SR2MUX = IR_5;
 					ALUK = 2'b00;
-					GateALU = 1'b1;
 					LD_REG = 1'b1;
+					GateALU = 1'b1;
 					SR1MUX = 1'b1;
 					LD_CC = 1'b1;
                end
@@ -278,8 +278,8 @@ module ISDU ( 	input	Clk,
 				begin
 					SR1MUX = 1'b1;
 					SR2MUX = IR_5;
-					ALUK = 2'b01;
 					LD_REG = 1'b1;
+					ALUK = 2'b01;
 					GateALU = 1'b1;
 					LD_CC = 1'b1;
 				end
@@ -334,7 +334,6 @@ module ISDU ( 	input	Clk,
 				begin
 				   // Pass A
 					ALUK = 2'b11;
-					MIO_EN = 1'b0;
 					LD_MDR = 1'b1;
 				end
 			S_16_0 :
@@ -366,7 +365,7 @@ module ISDU ( 	input	Clk,
 			S_12 :
 				begin
 					SR1MUX = 1'b1;
-					ALUK = 1'b11;
+					ALUK = 2'b11;
 					GateALU = 1'b1;
 					PCMUX = 2'b01;
 					LD_PC = 1'b1;
@@ -375,15 +374,11 @@ module ISDU ( 	input	Clk,
 			S_00 :
 				begin
 				end
-			s_22 :
+			S_22 :
 				begin
 					ADDR2MUX = 2'b10;
 					PCMUX = 2'b10;
 					LD_PC = 1'b1;
-				end
-			// PAUSE
-			S_13 :
-				begin
 				end
          default : ;
          endcase

@@ -25,9 +25,10 @@
 import SLC3_2::*;
 
 module test_memory ( input 			Clk,
-					 input          Reset, 
+							input          Reset, 
                      inout  [15:0]  I_O,
                      input  [19:0]  A,
+							input  [15:0]	inSW,
                      input          CE,
                                     UB,
                                     LB,

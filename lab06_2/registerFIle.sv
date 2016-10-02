@@ -52,17 +52,22 @@ logic [3:0] DRMUXout, SR1MUXout;
 	// Load Decoder:
 	always_comb
 	begin
-	   LDReg = 16'h0000;
-		case (DRMUXout)
-			3'b000:	LDReg = 8'b00000001; 
-			3'b001:	LDReg = 8'b00000010;
-			3'b010:	LDReg = 8'b00000100;
-			3'b011:	LDReg = 8'b00001000;
-			3'b100:	LDReg = 8'b00010000;
-			3'b101:	LDReg = 8'b00100000;
-			3'b110:	LDReg = 8'b01000000;
-			3'b111:	LDReg = 8'b10000000;
-		endcase
+		if(LDREG == 1'b1)
+			begin
+				LDReg = 8'h00;
+				case (DRMUXout)
+					3'b000:	LDReg = 8'b00000001; 
+					3'b001:	LDReg = 8'b00000010;
+					3'b010:	LDReg = 8'b00000100;
+					3'b011:	LDReg = 8'b00001000;
+					3'b100:	LDReg = 8'b00010000;
+					3'b101:	LDReg = 8'b00100000;
+					3'b110:	LDReg = 8'b01000000;
+					3'b111:	LDReg = 8'b10000000;
+				endcase
+			end
+	   else
+			LDReg = 8'h00;
 	end
 
     

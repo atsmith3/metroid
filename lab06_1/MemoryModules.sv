@@ -137,8 +137,8 @@ always_comb
 begin
 case (PCMUX)
 	2'b00: PC_data = PC_inc;
-	2'b01: PC_data = MARMUX_data;
-	2'b10: PC_data = DataPath;
+	2'b01: PC_data = DataPath;
+	2'b10: PC_data = MARMUX_data;
 	2'b11: PC_data = 16'h0000;
 endcase
 end

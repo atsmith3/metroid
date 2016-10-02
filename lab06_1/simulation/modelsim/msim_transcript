@@ -14,47 +14,95 @@
 # 
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:41 on Sep 29,2016
+# Start time: 22:06:40 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv 
 # -- Compiling module HexDriver
 # 
 # Top level modules:
 # 	HexDriver
-# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_2 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:41 on Sep 29,2016
+# Start time: 22:06:41 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_2" E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv 
 # -- Compiling module Register_File
 # 
 # Top level modules:
 # 	Register_File
-# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_2 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:06:41 on Oct 01,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_2" E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv 
+# -- Compiling module ADDR2MUX
+# -- Compiling module ADDR1MUX
+# -- Compiling module Adder
+# -- Compiling module SR2MUX
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ADDR2MUX
+# 	ADDR1MUX
+# 	Adder
+# 	SR2MUX
+# 	ALU
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_2 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/breakNZP.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:06:41 on Oct 01,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_2" E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/breakNZP.sv 
+# -- Compiling module BR_NZP
+# 
+# Top level modules:
+# 	BR_NZP
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:41 on Sep 29,2016
+# Start time: 22:06:41 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv 
 # -- Compiling module tristate
 # 
 # Top level modules:
 # 	tristate
-# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:06:41 on Oct 01,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv 
+# -- Compiling package SLC3_2
+# 
+# Top level modules:
+# 	--none--
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:06:41 on Oct 01,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv 
+# -- Compiling module Mem2IO
+# 
+# Top level modules:
+# 	Mem2IO
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:41 on Sep 29,2016
+# Start time: 22:06:41 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv 
 # -- Compiling module ISDU
 # 
 # Top level modules:
 # 	ISDU
-# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:41 on Sep 29,2016
+# Start time: 22:06:41 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv 
 # -- Compiling module TwoInputMux
 # -- Compiling module FourInputMux
@@ -70,11 +118,11 @@
 # 	FlipFlop
 # 	SixteenBitShiftRegister
 # 	SixteenBitRippleAdder
-# End time: 22:11:41 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:42 on Sep 29,2016
+# Start time: 22:06:41 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv 
 # -- Compiling module MDR
 # -- Compiling module MAR
@@ -92,59 +140,147 @@
 # 	PC_INC
 # 	MIO_MUX
 # 	PC_MUX
-# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:42 on Sep 29,2016
+# Start time: 22:06:41 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv 
 # -- Compiling module Datapath
 # 
 # Top level modules:
 # 	Datapath
-# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:41 on Oct 01,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:06:42 on Oct 01,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv 
+# -- Compiling package SLC3_2
+# -- Compiling package test_memory_sv_unit
+# -- Importing package SLC3_2
+# -- Compiling module test_memory
+# 
+# Top level modules:
+# 	test_memory
+# End time: 22:06:42 on Oct 01,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:42 on Sep 29,2016
+# Start time: 22:06:42 on Oct 01,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv 
 # -- Compiling module slc3
 # 
 # Top level modules:
 # 	slc3
-# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
+# End time: 22:06:42 on Oct 01,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv}
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 22:11:42 on Sep 29,2016
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv 
-# -- Compiling module testbench
-# ** Warning: E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Test_Bench.sv(82): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/lab06_1/../lab06_2 {E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/../lab06_2/TestBench.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:06:42 on Oct 01,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/../lab06_2" E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/../lab06_2/TestBench.sv 
+# -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 22:11:42 on Sep 29,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
+# End time: 22:06:42 on Oct 01,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # 
-vsim work.testbench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -gui "+altera" -l msim_transcript -do "SLC_1_run_msim_rtl_verilog.do" 
-# Start time: 22:11:49 on Sep 29,2016
+# Start time: 22:06:42 on Oct 01,2016
 # Loading sv_std.std
 # Loading work.testbench
-# Loading work.Register_File
+# Loading work.slc3
+# Loading work.HexDriver
+# Loading work.tristate
+# Loading work.Mem2IO
+# Loading work.SLC3_2
+# Loading work.test_memory_sv_unit
+# Loading work.test_memory
+# Loading work.Datapath
+# Loading work.MIO_MUX
+# Loading work.MDR
 # Loading work.SixteenBitShiftRegister
+# Loading work.MAR
+# Loading work.PCR
+# Loading work.PC_INC
+# Loading work.SixteenBitRippleAdder
+# Loading work.four_ripple_adder
+# Loading work.FullAdder
+# Loading work.PC_MUX
+# Loading work.IR
+# Loading work.ISDU
+# Loading work.ADDR2MUX
+# Loading work.ADDR1MUX
+# Loading work.Adder
+# Loading work.SR2MUX
+# Loading work.ALU
+# Loading work.BR_NZP
+# Loading work.FlipFlop
+# Loading work.Register_File
+# ** Warning: (vsim-3015) E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv(141): [PCDPC] - Port size (1) does not match connection size (2) for port 'ADDR1MUXK'. The port definition is at: E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv(32).
+# 
+#         Region: /testbench/slc3test/A1M
+# ** Warning: (vsim-3015) E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv(141): [PCDPC] - Port size (1) does not match connection size (16) for port 'Mux2_to_Adder'. The port definition is at: E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv(33).
+# 
+#         Region: /testbench/slc3test/A1M
+# ** Warning: (vsim-3015) E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv(156): [PCDPC] - Port size (4) does not match connection size (3) for port 'SR2'. The port definition is at: E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv(23).
+# 
+#         Region: /testbench/slc3test/RF1
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
 add wave -position insertpoint  \
-sim:/testbench/DataIn \
-sim:/testbench/IR \
-sim:/testbench/LDREG \
-sim:/testbench/DR \
-sim:/testbench/SR1 \
-sim:/testbench/Clk \
-sim:/testbench/Reset \
-sim:/testbench/SR2 \
-sim:/testbench/SR2out \
-sim:/testbench/SR1out
+sim:/testbench/slc3test/ADDR
+add wave -position insertpoint  \
+sim:/testbench/slc3test/IR \
+sim:/testbench/slc3test/PC_Data
+restart
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.slc3
+# Loading work.HexDriver
+# Loading work.tristate
+# Loading work.Mem2IO
+# Loading work.SLC3_2
+# Loading work.test_memory_sv_unit
+# Loading work.test_memory
+# Loading work.Datapath
+# Loading work.MIO_MUX
+# Loading work.MDR
+# Loading work.SixteenBitShiftRegister
+# Loading work.MAR
+# Loading work.PCR
+# Loading work.PC_INC
+# Loading work.SixteenBitRippleAdder
+# Loading work.four_ripple_adder
+# Loading work.FullAdder
+# Loading work.PC_MUX
+# Loading work.IR
+# Loading work.ISDU
+# Loading work.ADDR2MUX
+# Loading work.ADDR1MUX
+# Loading work.Adder
+# Loading work.SR2MUX
+# Loading work.ALU
+# Loading work.BR_NZP
+# Loading work.FlipFlop
+# Loading work.Register_File
+# ** Warning: (vsim-3015) E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv(141): [PCDPC] - Port size (1) does not match connection size (2) for port 'ADDR1MUXK'. The port definition is at: E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv(32).
+# 
+#         Region: /testbench/slc3test/A1M
+# ** Warning: (vsim-3015) E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv(141): [PCDPC] - Port size (1) does not match connection size (16) for port 'Mux2_to_Adder'. The port definition is at: E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv(33).
+# 
+#         Region: /testbench/slc3test/A1M
+# ** Warning: (vsim-3015) E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv(156): [PCDPC] - Port size (4) does not match connection size (3) for port 'SR2'. The port definition is at: E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv(23).
+# 
+#         Region: /testbench/slc3test/RF1
 run
-# End time: 22:17:48 on Sep 29,2016, Elapsed time: 0:05:59
-# Errors: 0, Warnings: 0
+# End time: 22:08:35 on Oct 01,2016, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 6
