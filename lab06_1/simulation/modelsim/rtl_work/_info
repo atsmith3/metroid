@@ -10,7 +10,7 @@ cModel Technology
 Z0 dE:/School/University of Illinois/ECE 385/ECE_385/lab06_1/simulation/modelsim
 vAdder
 Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z2 !s110 1475377601
+Z2 !s110 1475435443
 !i10b 1
 !s100 S9Td1R5^`jM6zj=H]zb9Z2
 II?6YmD?PAn@CFkzajSd5i2
@@ -26,7 +26,7 @@ Z8 OV;L;10.3d;59
 r1
 !s85 0
 31
-Z9 !s108 1475377601.147000
+Z9 !s108 1475435443.954000
 Z10 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_2|E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv|
 !i113 1
@@ -110,7 +110,7 @@ R13
 n@a@l@u
 vBR_NZP
 R1
-R2
+Z14 !s110 1475435444
 !i10b 1
 !s100 Vb8JV]jRJJ21d_CnUH7j^0
 Ic]HZ[>[2OgjYB;dWkejjf1
@@ -126,7 +126,7 @@ R8
 r1
 !s85 0
 31
-!s108 1475377601.227000
+!s108 1475435444.023000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/breakNZP.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_2|E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/breakNZP.sv|
 !i113 1
@@ -135,7 +135,7 @@ R13
 n@b@r_@n@z@p
 vDatapath
 R1
-R2
+R14
 !i10b 1
 !s100 Pi37ImfYGScZ[=>jbIFFj1
 I7Q?Oz]I^H0CnGCI<MZZ<J2
@@ -151,115 +151,115 @@ R8
 r1
 !s85 0
 31
-!s108 1475377601.962000
+!s108 1475435444.740000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv|
 !i113 1
 R12
-Z14 !s92 -sv -work work {+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1}
+Z15 !s92 -sv -work work {+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1}
 n@datapath
 vFlipFlop
 R1
-R2
+R14
 !i10b 1
 !s100 _NIjiA3a[MiAF<bHCK0G92
 I7ZheG_4TQ1[Ei`BKMhE]23
 R3
-Z15 !s105 standard_modules_sv_unit
+Z16 !s105 standard_modules_sv_unit
 S1
 R0
-Z16 w1475200125
-Z17 8E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv
-Z18 FE:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv
+Z17 w1475200125
+Z18 8E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv
+Z19 FE:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv
 L0 42
 R8
 r1
 !s85 0
 31
-Z19 !s108 1475377601.778000
-Z20 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv|
-Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv|
+Z20 !s108 1475435444.571000
+Z21 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv|
+Z22 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv|
 !i113 1
 R12
-R14
+R15
 n@flip@flop
 vfour_ripple_adder
 R1
-R2
+R14
 !i10b 1
 !s100 k7QCoTWcTbCoIOFd0XU@z0
 IYDna3l<^?a5E<9Mk^l`7N2
 R3
-R15
+R16
 S1
 R0
-R16
 R17
 R18
+R19
 L0 107
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !i113 1
 R12
-R14
+R15
 vFourInputMux
 R1
-R2
+R14
 !i10b 1
 !s100 Lo51kPhP=DeA[`h@Ncz_U0
 IC53emzn]EkKc3>O626Sf[2
 R3
-R15
+R16
 S1
 R0
-R16
 R17
 R18
+R19
 L0 11
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !i113 1
 R12
-R14
+R15
 n@four@input@mux
 vFullAdder
 R1
-R2
+R14
 !i10b 1
 !s100 8o<4J[Rg2a>U6ZY_LiY^?2
 Iokb^@SKfVE@oE=kmk`;I73
 R3
-R15
+R16
 S1
 R0
-R16
 R17
 R18
+R19
 L0 31
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !i113 1
 R12
-R14
+R15
 n@full@adder
 vHexDriver
 R1
-!s110 1475377600
+R2
 !i10b 1
 !s100 A89PE:z4001FXEa5_3CF:0
 IZK5>oALEmlK7e09h7_^h:0
@@ -275,41 +275,41 @@ R8
 r1
 !s85 0
 31
-!s108 1475377600.974000
+!s108 1475435443.769000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv|
 !i113 1
 R12
-R14
+R15
 n@hex@driver
 vIR
 R1
-R2
+R14
 !i10b 1
 !s100 CZk>aO]eoXnKH9IoIYeUN2
 I0c`zz`AKnGA03XEU?PChA3
 R3
-Z22 !s105 MemoryModules_sv_unit
+Z23 !s105 MemoryModules_sv_unit
 S1
 R0
-Z23 w1475375642
-Z24 8E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv
-Z25 FE:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv
+Z24 w1475375642
+Z25 8E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv
+Z26 FE:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv
 L0 70
 R8
 r1
 !s85 0
 31
-Z26 !s108 1475377601.870000
-Z27 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv|
-Z28 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv|
+Z27 !s108 1475435444.656000
+Z28 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv|
+Z29 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv|
 !i113 1
 R12
-R14
+R15
 n@i@r
 vISDU
 R1
-R2
+R14
 !i10b 1
 !s100 j`a:E@:S;;1mG2X_9>6jm2
 I4GoBQ87N^^gg?;jl>jo]O3
@@ -325,66 +325,66 @@ R8
 r1
 !s85 0
 31
-!s108 1475377601.687000
+!s108 1475435444.471000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv|
 !i113 1
 R12
-R14
+R15
 n@i@s@d@u
 vMAR
 R1
-R2
+R14
 !i10b 1
 !s100 2XMVC@UgdXmjo]5?9_b=j2
 INMCjdY:dT<Bc=MhnAK<a^3
 R3
-R22
+R23
 S1
 R0
-R23
 R24
 R25
+R26
 L0 26
 R8
 r1
 !s85 0
 31
-R26
 R27
 R28
+R29
 !i113 1
 R12
-R14
+R15
 n@m@a@r
 vMDR
 R1
-R2
+R14
 !i10b 1
 !s100 gQkhZAz]?Hkeh?Aed:7VQ3
 I66X5j@zmBE=J;465Yj`e[3
 R3
-R22
+R23
 S1
 R0
-R23
 R24
 R25
+R26
 L0 4
 R8
 r1
 !s85 0
 31
-R26
 R27
 R28
+R29
 !i113 1
 R12
-R14
+R15
 n@m@d@r
 vMem2IO
 R1
-R2
+R14
 !i10b 1
 !s100 z?b=;m86TGJK?<a3W=ZjG3
 IE0iS29m:AnWi9PTegWMi?2
@@ -400,112 +400,112 @@ R8
 r1
 !s85 0
 31
-!s108 1475377601.507000
+!s108 1475435444.286000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv|
 !i113 1
 R12
-R14
+R15
 n@mem2@i@o
 vMIO_MUX
 R1
-R2
+R14
 !i10b 1
 !s100 SQYc17?EW:>dCDl@[>=kS3
 I8gU^g9B:O?2fj9Z[FPZMX3
 R3
-R22
+R23
 S1
 R0
-R23
 R24
 R25
+R26
 L0 104
 R8
 r1
 !s85 0
 31
-R26
 R27
 R28
+R29
 !i113 1
 R12
-R14
+R15
 n@m@i@o_@m@u@x
 vPC_INC
 R1
-R2
+R14
 !i10b 1
 !s100 Y41LV3Lbe_?BgS@MlYXTF3
 If4;cO?@b7;=<N1b<[k@;H1
 R3
-R22
+R23
 S1
 R0
-R23
 R24
 R25
+R26
 L0 90
 R8
 r1
 !s85 0
 31
-R26
 R27
 R28
+R29
 !i113 1
 R12
-R14
+R15
 n@p@c_@i@n@c
 vPC_MUX
 R1
-R2
+R14
 !i10b 1
 !s100 bORE<W]gBd3g4XV4?OEPN1
 IL<0OYe4UE0Shk1be^g;j=1
 R3
-R22
+R23
 S1
 R0
-R23
 R24
 R25
+R26
 L0 129
 R8
 r1
 !s85 0
 31
-R26
 R27
 R28
+R29
 !i113 1
 R12
-R14
+R15
 n@p@c_@m@u@x
 vPCR
 R1
-R2
+R14
 !i10b 1
 !s100 iU=Bi;o<omhIM3amE@47E3
 IagddE`kn_n@TlEdlUne562
 R3
-R22
+R23
 S1
 R0
-R23
 R24
 R25
+R26
 L0 48
 R8
 r1
 !s85 0
 31
-R26
 R27
 R28
+R29
 !i113 1
 R12
-R14
+R15
 n@p@c@r
 vRegister_File
 R1
@@ -525,7 +525,7 @@ R8
 r1
 !s85 0
 31
-!s108 1475377601.040000
+!s108 1475435443.838000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_2|E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv|
 !i113 1
@@ -534,57 +534,57 @@ R13
 n@register_@file
 vSixteenBitRippleAdder
 R1
-R2
+R14
 !i10b 1
 !s100 3`_M^6U3ZfF`F?CUAZWMX3
 IBK4Td4m:PkD@jIL=nfb<l2
 R3
-R15
+R16
 S1
 R0
-R16
 R17
 R18
+R19
 L0 82
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !i113 1
 R12
-R14
+R15
 n@sixteen@bit@ripple@adder
 vSixteenBitShiftRegister
 R1
-R2
+R14
 !i10b 1
 !s100 Z5zXAbIbZ>NC9PNkS8bA71
 I5jJLl;P9^Sb@>Pk5[iJT<2
 R3
-R15
+R16
 S1
 R0
-R16
 R17
 R18
+R19
 L0 57
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !i113 1
 R12
-R14
+R15
 n@sixteen@bit@shift@register
 vslc3
 R1
-Z29 !s110 1475377602
+R14
 !i10b 1
 !s100 `6<RCKAPISK2Bo4`Pi@L63
 IRnL<f5j8o^C@Ozk>4NjZz3
@@ -600,22 +600,22 @@ R8
 r1
 !s85 0
 31
-!s108 1475377602.151000
+!s108 1475435444.925000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv|
 !i113 1
 R12
-R14
+R15
 XSLC3_2
 R1
-R29
+R14
 !i10b 1
 !s100 YOGG]fo2<@5h3`@;QJ5JE3
 IbRamPnolR9dJoOelOl^mE2
 VbRamPnolR9dJoOelOl^mE2
 S1
 R0
-Z30 w1475377479
+Z30 w1475435395
 Z31 FE:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv
 Z32 8E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv
 Z33 FE:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv
@@ -624,12 +624,12 @@ R8
 r1
 !s85 0
 31
-Z34 !s108 1475377602.045000
+Z34 !s108 1475435444.825000
 Z35 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv|
 Z36 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv|
 !i113 1
 R12
-R14
+R15
 n@s@l@c3_2
 vSR2MUX
 R1
@@ -665,8 +665,8 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 Vb0@R[mhBajQDF3^A=n6j1
-IfVj3[O3DSD;9SFL9HfVA@3
+!s100 kahAL^:1zHi2jgMk8WRPW1
+Izk[AA<A61L`dDiCT1laoX2
 !s105 test_memory_sv_unit
 S1
 R0
@@ -680,7 +680,7 @@ R35
 R36
 !i113 1
 R12
-R14
+R15
 Xtest_memory_sv_unit
 R1
 R37
@@ -705,10 +705,10 @@ R35
 R36
 !i113 1
 R12
-R14
+R15
 vtestbench
 R1
-R29
+!s110 1475435445
 !i10b 1
 !s100 RNTeZmX`5441:1PmK:[bD0
 IkRR5YP5z`]6OUoP[dKI1X3
@@ -724,7 +724,7 @@ R8
 r1
 !s85 0
 31
-!s108 1475377602.245000
+!s108 1475435445.010000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/../lab06_2/TestBench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/../lab06_2|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/../lab06_2/TestBench.sv|
 !i113 1
@@ -732,7 +732,7 @@ R12
 !s92 -sv -work work {+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/../lab06_2}
 vtristate
 R1
-R2
+R14
 !i10b 1
 !s100 Kh0gA[BFIaaPgnNYzGW4g3
 I@i@]N1b?1UR`_DH4=QWSC1
@@ -748,34 +748,34 @@ R8
 r1
 !s85 0
 31
-!s108 1475377601.302000
+!s108 1475435444.104000
 !s107 E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/School/University of Illinois/ECE 385/ECE_385/lab06_1|E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv|
 !i113 1
 R12
-R14
+R15
 vTwoInputMux
 R1
-R2
+R14
 !i10b 1
 !s100 ofKSoMS3kM672Hd^_daVR2
 IKEbl3bZlG_3]dZ@0W?V4Q3
 R3
-R15
+R16
 S1
 R0
-R16
 R17
 R18
+R19
 L0 1
 R8
 r1
 !s85 0
 31
-R19
 R20
 R21
+R22
 !i113 1
 R12
-R14
+R15
 n@two@input@mux

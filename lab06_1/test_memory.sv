@@ -28,7 +28,6 @@ module test_memory ( input 			Clk,
 							input          Reset, 
                      inout  [15:0]  I_O,
                      input  [19:0]  A,
-							input  [15:0]	inSW,
                      input          CE,
                                     UB,
                                     LB,
@@ -40,7 +39,12 @@ module test_memory ( input 			Clk,
    logic [15:0] mem_array [size-1:0];
    logic [15:0] mem_out;
    logic [15:0] I_O_wire;
-	 
+	
+	// For memory mapped IO:
+	logic [5:0] outHEX, inSW;
+	assign inSW =   6'hFF;
+	assign outHEX = 6'hFF;
+	
    assign mem_out = mem_array[A[7:0]];  //ATTENTION: Size here must correspond to size of
               // memory vector above.  Current size is 64, so the slice must be 6 bits.  If size were 1024,
               // slice would have to be 10 bits.  (There are three more places below where values must stay

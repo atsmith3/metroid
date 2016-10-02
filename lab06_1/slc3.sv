@@ -18,6 +18,7 @@
 module slc3(
 	//input logic [15:0] S,
 	input logic	Clk, Reset, Run, Continue,
+	input logic [15:0] S,
 	output logic [11:0] LED,
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3,
 	output logic CE, UB, LB, OE, WE,
@@ -58,8 +59,6 @@ logic [15:0] Mux_to_ALU;
 
 // Connect LEDS to IR
 assign LED = IR[11:0];
-logic [15:0] S;
-assign S = 16'h0003;
 
 
 // An array of 4-bit wires to connect the hex_drivers efficiently to wherever we want
@@ -99,7 +98,7 @@ Mem2IO memory_subsystem(
 );
 
 
-test_memory SRAM(.Reset(Reset_ah), .I_O(Data),.A(ADDR), .inSW(S), .*);
+test_memory SRAM(.Reset(Reset_ah), .I_O(Data),.A(ADDR), .*);
 
 //DataPath 
 /******* TODO: CHANGE ALU_data and MARMUX_Data for week 2 *******/

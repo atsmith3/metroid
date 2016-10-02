@@ -33,12 +33,15 @@ initial begin: TEST_VECTORS
 Reset = 1'b1;
 Run = 1'b1;
 Continue = 1'b1;
+S = 16'h0003;
 
 #2 Reset = 1'b0;
 #2 Reset = 1'b1;
 
 #2 Run = 1'b0;
 #2 Run = 1'b1;
+
+#20 S = 16'hFFFF;
 
 end
 endmodule
