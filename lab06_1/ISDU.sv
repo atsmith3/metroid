@@ -334,6 +334,7 @@ module ISDU
 				begin
 				   // Pass A
 					ALUK = 2'b11;
+					GateALU = 1'b1;
 					LD_MDR = 1'b1;
 				end
 			S_16_0 :

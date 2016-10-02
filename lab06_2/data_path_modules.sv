@@ -9,16 +9,13 @@ module ADDR2MUX
      begin
         case(ADDR2MUXK)
           2'b11:begin
-             Mux1_to_Adder[15:10]=IR[10];
-             Mux1_to_Adder[9:0]=IR[9:0];
+				Mux1_to_Adder = {IR[10],IR[10],IR[10],IR[10],IR[10],IR[10],IR[9],IR[8],IR[7],IR[6], IR[5], IR[4], IR[3], IR[2], IR[1], IR[0]};
           end
           2'b10:begin
-             Mux1_to_Adder[15:8]=IR[8];
-             Mux1_to_Adder[7:0]=IR[7:0];
+				Mux1_to_Adder = {IR[8],IR[8],IR[8],IR[8],IR[8],IR[8],IR[8],IR[8],IR[7],IR[6], IR[5], IR[4], IR[3], IR[2], IR[1], IR[0]};
           end
           2'b01:begin
-            Mux1_to_Adder[15:5]=IR[5];
-            Mux1_to_Adder[4:0]=IR[4:0];
+				Mux1_to_Adder = {IR[5],IR[5],IR[5],IR[5],IR[5],IR[5],IR[5],IR[5],IR[5],IR[5], IR[5], IR[4], IR[3], IR[2], IR[1], IR[0]};
           end
           2'b00:Mux1_to_Adder=16'h0000;
         endcase // case (ADDR2MUXK)
@@ -28,16 +25,16 @@ endmodule // ADDR2MUX
 
 module ADDR1MUX
   (
-   input logic [15:0] SR1OUT, PCR_Data,
-   input logic        ADDR1MUXK,
-   output logic       Mux2_to_Adder
+   input logic [15:0]  SR1OUT, PCR_Data,
+   input logic         ADDR1MUXK,
+   output logic [15:0] Mux2_to_Adder
    );
 
    always_comb
      begin
         case(ADDR1MUXK)
-          1'b0:Mux2_to_Adder=PCR_Data;
-          1'b1:Mux2_to_Adder=SR1OUT;
+          1'b0: Mux2_to_Adder=PCR_Data;
+          1'b1: Mux2_to_Adder=SR1OUT;
         endcase // case (ADDR1MUXK)
      end // always_comb
 
@@ -65,8 +62,7 @@ module SR2MUX
         case(SR2MUXK)
           1'b0:Mux_to_ALU=SR2OUT;
           1'b1:begin
-             Mux_to_ALU[15:4]=IR[4];
-             Mux_to_ALU[3:0]=IR[3:0];
+				Mux_to_ALU = {IR[4],IR[4],IR[4],IR[4],IR[4],IR[4],IR[4],IR[4],IR[4],IR[4], IR[4], IR[4], IR[3], IR[2], IR[1], IR[0]};
           end
         endcase // case (SR2MUXK)
      end

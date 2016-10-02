@@ -41,7 +41,7 @@ S = 16'h0003;
 #2 Run = 1'b0;
 #2 Run = 1'b1;
 
-#20 S = 16'hFFFF;
+#50 S = 16'hFFFF;
 
 end
 endmodule
