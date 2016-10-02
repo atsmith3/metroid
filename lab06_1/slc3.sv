@@ -137,7 +137,7 @@ ISDU state_controller(
 ADDR2MUX A2M(.IR(IR), .ADDR2MUXK(ADDR2MUX), .Mux1_to_Adder(Mux1_to_Adder));
 
 // Adder1Mux
-ADDR1MUX A1M(.ADDR1MUXK(ADDR2MUX), .Mux2_to_Adder(Mux2_to_Adder), .SR1OUT(SR1_Data), .PCR_Data(PC_Data));
+ADDR1MUX A1M(.ADDR1MUXK(ADDR1MUX), .Mux2_to_Adder(Mux2_to_Adder), .SR1OUT(SR1_Data), .PCR_Data(PC_Data));
 
 // Adder
 Adder ADDR0(.Mux1_to_Adder(Mux1_to_Adder), .Mux2_to_Adder(Mux2_to_Adder), .MARMUX(MARMUX_Data));

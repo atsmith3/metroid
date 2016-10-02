@@ -352,7 +352,7 @@ module ISDU
 			// JSR
 			S_04 :
 				begin
-					GatePC = 1'b0;
+					GatePC = 1'b1;
 					DRMUX = 2'b01;
 					LD_REG = 1'b1;
 				end

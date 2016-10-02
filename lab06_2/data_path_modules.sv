@@ -33,8 +33,8 @@ module ADDR1MUX
    always_comb
      begin
         case(ADDR1MUXK)
-          1'b0: Mux2_to_Adder=PCR_Data;
-          1'b1: Mux2_to_Adder=SR1OUT;
+          1'b0: Mux2_to_Adder = PCR_Data;
+          1'b1: Mux2_to_Adder = SR1OUT;
         endcase // case (ADDR1MUXK)
      end // always_comb
 
