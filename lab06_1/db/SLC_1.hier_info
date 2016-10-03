@@ -15328,37 +15328,41 @@ IR[14] => ~NO_FANOUT~
 IR[15] => ~NO_FANOUT~
 Clk => Clk.IN4
 Reset => Reset.IN4
-LDCC => ~NO_FANOUT~
-LDBEN => ~NO_FANOUT~
-BEN <= FlipFlop:BreakEnableReg.out
+LDCC => LDCC.IN3
+LDBEN => LDBEN.IN1
+BEN <= singleBitReg:BreakEnableReg.Out
 
 
-|slc3|BR_NZP:BRO|FlipFlop:N
-in => out.DATAA
-Clk => out~reg0.CLK
-Reset => out.OUTPUTSELECT
-out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|slc3|BR_NZP:BRO|singleBitReg:N
+In => Out.DATAB
+Clk => Out~reg0.CLK
+Reset => Out.OUTPUTSELECT
+Load => Out.OUTPUTSELECT
+Out <= Out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|slc3|BR_NZP:BRO|FlipFlop:Z
-in => out.DATAA
-Clk => out~reg0.CLK
-Reset => out.OUTPUTSELECT
-out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|slc3|BR_NZP:BRO|singleBitReg:Z
+In => Out.DATAB
+Clk => Out~reg0.CLK
+Reset => Out.OUTPUTSELECT
+Load => Out.OUTPUTSELECT
+Out <= Out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|slc3|BR_NZP:BRO|FlipFlop:P
-in => out.DATAA
-Clk => out~reg0.CLK
-Reset => out.OUTPUTSELECT
-out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|slc3|BR_NZP:BRO|singleBitReg:P
+In => Out.DATAB
+Clk => Out~reg0.CLK
+Reset => Out.OUTPUTSELECT
+Load => Out.OUTPUTSELECT
+Out <= Out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|slc3|BR_NZP:BRO|FlipFlop:BreakEnableReg
-in => out.DATAA
-Clk => out~reg0.CLK
-Reset => out.OUTPUTSELECT
-out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|slc3|BR_NZP:BRO|singleBitReg:BreakEnableReg
+In => Out.DATAB
+Clk => Out~reg0.CLK
+Reset => Out.OUTPUTSELECT
+Load => Out.OUTPUTSELECT
+Out <= Out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |slc3|Register_File:RF1
@@ -15409,70 +15413,54 @@ DR => Decoder0.IN0
 SR1 => Decoder1.IN0
 Clk => Clk.IN8
 Reset => Reset.IN8
-SR2[0] => Mux16.IN11
-SR2[0] => Mux17.IN11
-SR2[0] => Mux18.IN11
-SR2[0] => Mux19.IN11
-SR2[0] => Mux20.IN11
-SR2[0] => Mux21.IN11
-SR2[0] => Mux22.IN11
-SR2[0] => Mux23.IN11
-SR2[0] => Mux24.IN11
-SR2[0] => Mux25.IN11
-SR2[0] => Mux26.IN11
-SR2[0] => Mux27.IN11
-SR2[0] => Mux28.IN11
-SR2[0] => Mux29.IN11
-SR2[0] => Mux30.IN11
-SR2[0] => Mux31.IN11
-SR2[1] => Mux16.IN10
-SR2[1] => Mux17.IN10
-SR2[1] => Mux18.IN10
-SR2[1] => Mux19.IN10
-SR2[1] => Mux20.IN10
-SR2[1] => Mux21.IN10
-SR2[1] => Mux22.IN10
-SR2[1] => Mux23.IN10
-SR2[1] => Mux24.IN10
-SR2[1] => Mux25.IN10
-SR2[1] => Mux26.IN10
-SR2[1] => Mux27.IN10
-SR2[1] => Mux28.IN10
-SR2[1] => Mux29.IN10
-SR2[1] => Mux30.IN10
-SR2[1] => Mux31.IN10
-SR2[2] => Mux16.IN9
-SR2[2] => Mux17.IN9
-SR2[2] => Mux18.IN9
-SR2[2] => Mux19.IN9
-SR2[2] => Mux20.IN9
-SR2[2] => Mux21.IN9
-SR2[2] => Mux22.IN9
-SR2[2] => Mux23.IN9
-SR2[2] => Mux24.IN9
-SR2[2] => Mux25.IN9
-SR2[2] => Mux26.IN9
-SR2[2] => Mux27.IN9
-SR2[2] => Mux28.IN9
-SR2[2] => Mux29.IN9
-SR2[2] => Mux30.IN9
-SR2[2] => Mux31.IN9
-SR2[3] => Mux16.IN8
-SR2[3] => Mux17.IN8
-SR2[3] => Mux18.IN8
-SR2[3] => Mux19.IN8
-SR2[3] => Mux20.IN8
-SR2[3] => Mux21.IN8
-SR2[3] => Mux22.IN8
-SR2[3] => Mux23.IN8
-SR2[3] => Mux24.IN8
-SR2[3] => Mux25.IN8
-SR2[3] => Mux26.IN8
-SR2[3] => Mux27.IN8
-SR2[3] => Mux28.IN8
-SR2[3] => Mux29.IN8
-SR2[3] => Mux30.IN8
-SR2[3] => Mux31.IN8
+SR2[0] => Mux16.IN2
+SR2[0] => Mux17.IN2
+SR2[0] => Mux18.IN2
+SR2[0] => Mux19.IN2
+SR2[0] => Mux20.IN2
+SR2[0] => Mux21.IN2
+SR2[0] => Mux22.IN2
+SR2[0] => Mux23.IN2
+SR2[0] => Mux24.IN2
+SR2[0] => Mux25.IN2
+SR2[0] => Mux26.IN2
+SR2[0] => Mux27.IN2
+SR2[0] => Mux28.IN2
+SR2[0] => Mux29.IN2
+SR2[0] => Mux30.IN2
+SR2[0] => Mux31.IN2
+SR2[1] => Mux16.IN1
+SR2[1] => Mux17.IN1
+SR2[1] => Mux18.IN1
+SR2[1] => Mux19.IN1
+SR2[1] => Mux20.IN1
+SR2[1] => Mux21.IN1
+SR2[1] => Mux22.IN1
+SR2[1] => Mux23.IN1
+SR2[1] => Mux24.IN1
+SR2[1] => Mux25.IN1
+SR2[1] => Mux26.IN1
+SR2[1] => Mux27.IN1
+SR2[1] => Mux28.IN1
+SR2[1] => Mux29.IN1
+SR2[1] => Mux30.IN1
+SR2[1] => Mux31.IN1
+SR2[2] => Mux16.IN0
+SR2[2] => Mux17.IN0
+SR2[2] => Mux18.IN0
+SR2[2] => Mux19.IN0
+SR2[2] => Mux20.IN0
+SR2[2] => Mux21.IN0
+SR2[2] => Mux22.IN0
+SR2[2] => Mux23.IN0
+SR2[2] => Mux24.IN0
+SR2[2] => Mux25.IN0
+SR2[2] => Mux26.IN0
+SR2[2] => Mux27.IN0
+SR2[2] => Mux28.IN0
+SR2[2] => Mux29.IN0
+SR2[2] => Mux30.IN0
+SR2[2] => Mux31.IN0
 SR2out[0] <= Mux31.DB_MAX_OUTPUT_PORT_TYPE
 SR2out[1] <= Mux30.DB_MAX_OUTPUT_PORT_TYPE
 SR2out[2] <= Mux29.DB_MAX_OUTPUT_PORT_TYPE

@@ -41,7 +41,7 @@ end
 // Output Logic:
 always_comb
 begin
-	if(IR[9] == RegOut[0] | IR[10] == RegOut[1] | IR[11] == RegOut[2])
+	if((IR[9] == 1'b1 & RegOut[0] == 1'b1) | (IR[10] == 1'b1 & RegOut[1] == 1'b1) | (IR[11] == 1'b1 & RegOut[2] == 1'b1))
 		BENRegIn = 1'b1;
 	else
 		BENRegIn = 1'b0;
@@ -49,10 +49,10 @@ end
 
 
 // Register Instances:
-FlipFlop N(.in(RegIn[2]), .Clk(Clk), .Reset(Reset), .out(RegOut[2]));
-FlipFlop Z(.in(RegIn[1]), .Clk(Clk), .Reset(Reset), .out(RegOut[1]));
-FlipFlop P(.in(RegIn[0]), .Clk(Clk), .Reset(Reset), .out(RegOut[0]));
-FlipFlop BreakEnableReg(.in(BENRegIn), .Clk(Clk), .Reset(Reset), .out(BEN));
+singleBitReg N(.In(RegIn[2]), .Load(LDCC), .Clk(Clk), .Reset(Reset), .Out(RegOut[2]));
+singleBitReg Z(.In(RegIn[1]), .Load(LDCC), .Clk(Clk), .Reset(Reset), .Out(RegOut[1]));
+singleBitReg P(.In(RegIn[0]), .Load(LDCC), .Clk(Clk), .Reset(Reset), .Out(RegOut[0]));
+singleBitReg BreakEnableReg(.In(BENRegIn), .Load(LDBEN), .Clk(Clk), .Reset(Reset), .Out(BEN));
 
 
 endmodule

@@ -52,6 +52,24 @@ module FlipFlop(input logic in, Clk, Reset,
 
 endmodule
 
+module singleBitReg
+(
+input logic In, Clk, Reset, Load,
+output logic Out
+);
+
+	always_ff @ (posedge Clk)
+	begin
+		if(Reset)
+			Out <= 1'b0;
+		else if (Load)
+			Out <= In;
+		else
+			Out <= Out;
+	end
+
+endmodule
+
 
 // 16 bit register
 module SixteenBitShiftRegister(	input logic [15:0] DataIn,

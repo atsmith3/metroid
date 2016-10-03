@@ -20,7 +20,7 @@ module Register_File
 (
 	input logic 	[15:0] DataIn, IR,
 	input logic 	LDREG, DR, SR1, Clk, Reset,
-	input logic 	[3:0] SR2,
+	input logic 	[2:0] SR2,
 	output logic	[15:0] SR2out, SR1out
 );
 

@@ -85,7 +85,7 @@ module ALU
         case(ALUK)
           2'b00: ALU_Out = adder_out;
           2'b01: ALU_Out = Mux_to_ALU & SR1OUT;
-          2'b10: ALU_Out = SR1OUT;
+          2'b10: ALU_Out = ~SR1OUT;
           2'b11: ALU_Out = SR1OUT;
         endcase // case (ALUK)
      end // always_comb
