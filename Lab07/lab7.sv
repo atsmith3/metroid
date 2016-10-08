@@ -24,7 +24,7 @@ module lab7(  	  input	       CLOCK_50,
 				  
 				  );
 				  
-				  lab7_soc m_lab7_soc (.clk_clk(CLOCK_50),
+				  Lab07_soc m_lab7_soc (.clk_clk(CLOCK_50),
 											 .reset_reset_n(KEY[0]), 
 											 .led_wire_export(LEDG),
 											 .sdram_wire_addr(DRAM_ADDR),    //  sdram_wire.addr
