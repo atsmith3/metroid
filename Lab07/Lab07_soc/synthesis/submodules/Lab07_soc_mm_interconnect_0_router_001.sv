@@ -135,7 +135,7 @@ module Lab07_soc_mm_interconnect_0_router_001
     // during address decoding
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h10 - 64'h0); 
-    localparam PAD1 = log2ceil(64'h30 - 64'h20); 
+    localparam PAD1 = log2ceil(64'h40 - 64'h30); 
     localparam PAD2 = log2ceil(64'h50 - 64'h48); 
     localparam PAD3 = log2ceil(64'h1800 - 64'h1000); 
     localparam PAD4 = log2ceil(64'h18000000 - 64'h10000000); 
@@ -203,8 +203,8 @@ module Lab07_soc_mm_interconnect_0_router_001
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
-    // ( 0x20 .. 0x30 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 29'h20   ) begin
+    // ( 0x30 .. 0x40 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 29'h30   ) begin
             src_channel = 6'b00100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
