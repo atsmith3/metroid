@@ -1,0 +1,9 @@
+21:48:40 **** Incremental Build of configuration Nios II for project lab7_accum ****
+make all 
+Info: Building ../lab7_accum_bsp/
+make --no-print-directory -C ../lab7_accum_bsp/
+[BSP build complete]
+[lab7_accum build complete]
+
+21:48:40 Build Finished (took 141ms)
+

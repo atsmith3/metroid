@@ -1,6 +1,6 @@
 Analysis & Synthesis report for SLC_1
-Mon Oct 10 19:18:52 2016
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon Oct 10 21:17:22 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
 ---------------------
@@ -40,49 +40,51 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  32. Port Connectivity Checks: "MDR:MDR0|SixteenBitShiftRegister:sr"
  33. Port Connectivity Checks: "test_memory:SRAM"
  34. Port Connectivity Checks: "Mem2IO:memory_subsystem"
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
- 37. Analysis & Synthesis Suppressed Messages
+ 35. Post-Synthesis Netlist Statistics for Top Partition
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
+ 38. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 10 19:18:52 2016           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; SLC_1                                           ;
-; Top-level Entity Name              ; slc3                                            ;
-; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 7,849                                           ;
-;     Total combinational functions  ; 4,540                                           ;
-;     Dedicated logic registers      ; 4,366                                           ;
-; Total registers                    ; 4366                                            ;
-; Total pins                         ; 101                                             ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Oct 10 21:17:22 2016      ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name                      ; SLC_1                                      ;
+; Top-level Entity Name              ; slc3                                       ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 7,851                                      ;
+;     Total combinational functions  ; 4,542                                      ;
+;     Dedicated logic registers      ; 4,366                                      ;
+; Total registers                    ; 4366                                       ;
+; Total pins                         ; 101                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -92,7 +94,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                                      ; slc3               ; SLC_1              ;
-; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; On                 ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -152,7 +154,7 @@ applicable agreement for further details.
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
 ; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
 ; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
 ; HDL message level                                                          ; Level2             ; Level2             ;
 ; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
 ; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
@@ -178,30 +180,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 8      ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/HexDriver.sv         ;         ;
-; ../lab06_2/registerFIle.sv       ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/registerFIle.sv      ;         ;
-; ../lab06_2/data_path_modules.sv  ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/data_path_modules.sv ;         ;
-; ../lab06_2/breakNZP.sv           ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_2/breakNZP.sv          ;         ;
-; tristate.sv                      ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/tristate.sv          ;         ;
-; test_memory.sv                   ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/test_memory.sv       ;         ;
-; SLC3_2.sv                        ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/SLC3_2.sv            ;         ;
-; slc3.sv                          ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/slc3.sv              ;         ;
-; Mem2IO.sv                        ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Mem2IO.sv            ;         ;
-; ISDU.sv                          ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/ISDU.sv              ;         ;
-; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/standard_modules.sv  ;         ;
-; MemoryModules.sv                 ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/MemoryModules.sv     ;         ;
-; Datapath.sv                      ; yes             ; User SystemVerilog HDL File  ; E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/Datapath.sv          ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------+---------+
+; HexDriver.sv                     ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/HexDriver.sv         ;         ;
+; ../lab06_2/registerFIle.sv       ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_2/registerFIle.sv      ;         ;
+; ../lab06_2/data_path_modules.sv  ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_2/data_path_modules.sv ;         ;
+; ../lab06_2/breakNZP.sv           ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_2/breakNZP.sv          ;         ;
+; tristate.sv                      ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/tristate.sv          ;         ;
+; test_memory.sv                   ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/test_memory.sv       ;         ;
+; SLC3_2.sv                        ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/SLC3_2.sv            ;         ;
+; slc3.sv                          ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/slc3.sv              ;         ;
+; Mem2IO.sv                        ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/Mem2IO.sv            ;         ;
+; ISDU.sv                          ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/ISDU.sv              ;         ;
+; standard_modules.sv              ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/standard_modules.sv  ;         ;
+; MemoryModules.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/MemoryModules.sv     ;         ;
+; Datapath.sv                      ; yes             ; User SystemVerilog HDL File  ; /home/zach/ECE_385/lab06_1/Datapath.sv          ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -209,16 +211,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 7,849     ;
+; Estimated Total logic elements              ; 7,851     ;
 ;                                             ;           ;
-; Total combinational functions               ; 4540      ;
+; Total combinational functions               ; 4542      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 3169      ;
-;     -- 3 input functions                    ; 361       ;
-;     -- <=2 input functions                  ; 1010      ;
+;     -- 4 input functions                    ; 3170      ;
+;     -- 3 input functions                    ; 363       ;
+;     -- <=2 input functions                  ; 1009      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 4540      ;
+;     -- normal mode                          ; 4542      ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
 ; Total registers                             ; 4366      ;
@@ -226,10 +228,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 101       ;
+;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
 ; Maximum fan-out                             ; 4366      ;
-; Total fan-out                               ; 32235     ;
+; Total fan-out                               ; 32243     ;
 ; Average fan-out                             ; 3.53      ;
 +---------------------------------------------+-----------+
 
@@ -239,11 +243,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Library Name ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
-; |slc3                                ; 4540 (0)          ; 4366 (0)     ; 0           ; 0            ; 0       ; 0         ; 101  ; 0            ; |slc3                                                                               ; work         ;
-;    |ADDR1MUX:A1M|                    ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ADDR1MUX:A1M                                                                  ; work         ;
+; |slc3                                ; 4542 (0)          ; 4366 (0)     ; 0           ; 0            ; 0       ; 0         ; 101  ; 0            ; |slc3                                                                               ; work         ;
+;    |ADDR1MUX:A1M|                    ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ADDR1MUX:A1M                                                                  ; work         ;
 ;    |ADDR2MUX:A2M|                    ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ADDR2MUX:A2M                                                                  ; work         ;
-;    |ALU:ALU1|                        ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1                                                                      ; work         ;
-;       |SixteenBitRippleAdder:A0|     ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0                                             ; work         ;
+;    |ALU:ALU1|                        ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1                                                                      ; work         ;
+;       |SixteenBitRippleAdder:A0|     ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0                                             ; work         ;
 ;          |four_ripple_adder:FRA0|    ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0                      ; work         ;
 ;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA1        ; work         ;
 ;             |FullAdder:FA3|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA0|FullAdder:FA3        ; work         ;
@@ -251,11 +255,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA0        ; work         ;
 ;             |FullAdder:FA2|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA2        ; work         ;
 ;             |FullAdder:FA3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA1|FullAdder:FA3        ; work         ;
-;          |four_ripple_adder:FRA2|    ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2                      ; work         ;
+;          |four_ripple_adder:FRA2|    ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2                      ; work         ;
 ;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA0        ; work         ;
 ;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA1        ; work         ;
 ;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA2        ; work         ;
-;             |FullAdder:FA3|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA3        ; work         ;
+;             |FullAdder:FA3|          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA2|FullAdder:FA3        ; work         ;
 ;          |four_ripple_adder:FRA3|    ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3                      ; work         ;
 ;             |FullAdder:FA0|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA0        ; work         ;
 ;             |FullAdder:FA1|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ALU:ALU1|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA1        ; work         ;
@@ -283,18 +287,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |FullAdder:FA1|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA1     ; work         ;
 ;             |FullAdder:FA2|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA2     ; work         ;
 ;             |FullAdder:FA3|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Adder:ADDR0|SixteenBitRippleAdder:A0|four_ripple_adder:FRA3|FullAdder:FA3     ; work         ;
-;    |BR_NZP:BRO|                      ; 13 (4)            ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO                                                                    ; work         ;
+;    |BR_NZP:BRO|                      ; 14 (7)            ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO                                                                    ; work         ;
 ;       |singleBitReg:BreakEnableReg|  ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|singleBitReg:BreakEnableReg                                        ; work         ;
 ;       |singleBitReg:N|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|singleBitReg:N                                                     ; work         ;
 ;       |singleBitReg:P|               ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|singleBitReg:P                                                     ; work         ;
-;       |singleBitReg:Z|               ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|singleBitReg:Z                                                     ; work         ;
-;    |Datapath:BUS|                    ; 87 (87)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Datapath:BUS                                                                  ; work         ;
+;       |singleBitReg:Z|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|BR_NZP:BRO|singleBitReg:Z                                                     ; work         ;
+;    |Datapath:BUS|                    ; 81 (81)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Datapath:BUS                                                                  ; work         ;
 ;    |HexDriver:hex_driver0|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver0                                                         ; work         ;
 ;    |HexDriver:hex_driver1|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver1                                                         ; work         ;
 ;    |HexDriver:hex_driver2|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver2                                                         ; work         ;
 ;    |HexDriver:hex_driver3|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|HexDriver:hex_driver3                                                         ; work         ;
-;    |IR:IR0|                          ; 13 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0                                                                        ; work         ;
-;       |SixteenBitShiftRegister:sr|   ; 13 (13)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0|SixteenBitShiftRegister:sr                                             ; work         ;
+;    |IR:IR0|                          ; 15 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0                                                                        ; work         ;
+;       |SixteenBitShiftRegister:sr|   ; 15 (15)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|IR:IR0|SixteenBitShiftRegister:sr                                             ; work         ;
 ;    |ISDU:state_controller|           ; 25 (25)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|ISDU:state_controller                                                         ; work         ;
 ;    |MAR:MAR0|                        ; 6 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0                                                                      ; work         ;
 ;       |SixteenBitShiftRegister:sr|   ; 6 (6)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|MAR:MAR0|SixteenBitShiftRegister:sr                                           ; work         ;
@@ -324,7 +328,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |FullAdder:FA1|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA1 ; work         ;
 ;             |FullAdder:FA2|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA2 ; work         ;
 ;             |FullAdder:FA3|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|PC_INC:PCINC0|SixteenBitRippleAdder:SSR0|four_ripple_adder:FRA3|FullAdder:FA3 ; work         ;
-;    |Register_File:RF1|               ; 96 (82)           ; 128 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1                                                             ; work         ;
+;    |Register_File:RF1|               ; 97 (83)           ; 128 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1                                                             ; work         ;
 ;       |SixteenBitShiftRegister:SR_0| ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_0                                ; work         ;
 ;       |SixteenBitShiftRegister:SR_1| ; 2 (2)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_1                                ; work         ;
 ;       |SixteenBitShiftRegister:SR_2| ; 2 (2)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_2                                ; work         ;
@@ -333,7 +337,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |SixteenBitShiftRegister:SR_5| ; 3 (3)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_5                                ; work         ;
 ;       |SixteenBitShiftRegister:SR_6| ; 3 (3)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_6                                ; work         ;
 ;       |SixteenBitShiftRegister:SR_7| ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_7                                ; work         ;
-;    |SR2MUX:SR2M|                     ; 95 (95)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|SR2MUX:SR2M                                                                   ; work         ;
+;    |SR2MUX:SR2M|                     ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|SR2MUX:SR2M                                                                   ; work         ;
 ;    |test_memory:SRAM|                ; 3981 (3981)       ; 4096 (4096)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|test_memory:SRAM                                                              ; work         ;
 ;    |tristate:tr0|                    ; 17 (17)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |slc3|tristate:tr0                                                                  ; work         ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+--------------+
@@ -569,24 +573,24 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|IR:IR0|SixteenBitShiftRegister:sr|DataOut[14]              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|MAR:MAR0|SixteenBitShiftRegister:sr|DataOut[10]            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|IR:IR0|SixteenBitShiftRegister:sr|DataOut[0]               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|MAR:MAR0|SixteenBitShiftRegister:sr|DataOut[12]            ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_0|DataOut[14] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_1|DataOut[14] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_2|DataOut[1]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_1|DataOut[9]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_2|DataOut[12] ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_3|DataOut[6]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_4|DataOut[5]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_5|DataOut[10] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_6|DataOut[13] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_7|DataOut[5]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_4|DataOut[1]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_5|DataOut[1]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_6|DataOut[3]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |slc3|Register_File:RF1|SixteenBitShiftRegister:SR_7|DataOut[14] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |slc3|BR_NZP:BRO|singleBitReg:P|Out                              ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |slc3|PCR:PCR0|SixteenBitShiftRegister:sr|DataOut[14]            ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |slc3|MDR:MDR0|SixteenBitShiftRegister:sr|DataOut[4]             ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |slc3|PCR:PCR0|SixteenBitShiftRegister:sr|DataOut[8]             ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |slc3|MDR:MDR0|SixteenBitShiftRegister:sr|DataOut[11]            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |slc3|ADDR2MUX:A2M|Mux5                                          ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |slc3|Register_File:RF1|Mux12                                    ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |slc3|SR2MUX:SR2M|Mux_to_ALU[7]                                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |slc3|ISDU:state_controller|Selector46                           ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; No         ; |slc3|Datapath:BUS|Datapath[11]                                  ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |slc3|Register_File:RF1|Mux13                                    ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |slc3|SR2MUX:SR2M|Mux_to_ALU[5]                                  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |slc3|ISDU:state_controller|Selector25                           ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; No         ; |slc3|Datapath:BUS|Datapath[10]                                  ;
 ; 256:1              ; 16 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; No         ; |slc3|test_memory:SRAM|Mux10                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
@@ -809,6 +813,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+----------------------+
 
 
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 101                         ;
+; cycloneiii_ff         ; 4366                        ;
+;     CLR               ; 26                          ;
+;     ENA               ; 178                         ;
+;     ENA CLR           ; 4112                        ;
+;     ENA SCLR SLD      ; 16                          ;
+;     SCLR              ; 2                           ;
+;     plain             ; 32                          ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 4549                        ;
+;     normal            ; 4549                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 983                         ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 363                         ;
+;         4 data inputs ; 3170                        ;
+;                       ;                             ;
+; Max LUT depth         ; 21.00                       ;
+; Average LUT depth     ; 6.83                        ;
++-----------------------+-----------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -823,21 +854,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Oct 10 19:18:35 2016
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Mon Oct 10 21:16:53 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SLC_1 -c SLC_1
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
+Info (12021): Found 1 design units, including 1 entities, in source file HexDriver.sv
     Info (12023): Found entity 1: HexDriver
-Info (12021): Found 1 design units, including 1 entities, in source file /school/university of illinois/ece 385/ece_385/lab06_2/registerfile.sv
+Info (12021): Found 1 design units, including 1 entities, in source file /home/zach/ECE_385/lab06_2/registerFIle.sv
     Info (12023): Found entity 1: Register_File
-Info (12021): Found 5 design units, including 5 entities, in source file /school/university of illinois/ece 385/ece_385/lab06_2/data_path_modules.sv
+Info (12021): Found 5 design units, including 5 entities, in source file /home/zach/ECE_385/lab06_2/data_path_modules.sv
     Info (12023): Found entity 1: ADDR2MUX
     Info (12023): Found entity 2: ADDR1MUX
     Info (12023): Found entity 3: Adder
     Info (12023): Found entity 4: SR2MUX
     Info (12023): Found entity 5: ALU
-Info (12021): Found 1 design units, including 1 entities, in source file /school/university of illinois/ece 385/ece_385/lab06_2/breaknzp.sv
+Info (12021): Found 1 design units, including 1 entities, in source file /home/zach/ECE_385/lab06_2/breakNZP.sv
     Info (12023): Found entity 1: BR_NZP
 Info (12021): Found 1 design units, including 1 entities, in source file tristate.sv
     Info (12023): Found entity 1: tristate
@@ -846,15 +877,15 @@ Warning (10229): Verilog HDL Expression warning at test_memory.sv(46): truncated
 Info (12021): Found 2 design units, including 1 entities, in source file test_memory.sv
     Info (12022): Found design unit 1: SLC3_2 (SystemVerilog)
     Info (12023): Found entity 1: test_memory
-Info (12021): Found 0 design units, including 0 entities, in source file slc3_2.sv
+Info (12021): Found 0 design units, including 0 entities, in source file SLC3_2.sv
 Info (12021): Found 1 design units, including 1 entities, in source file slc3.sv
     Info (12023): Found entity 1: slc3
-Info (12021): Found 1 design units, including 1 entities, in source file mem2io.sv
+Info (12021): Found 1 design units, including 1 entities, in source file Mem2IO.sv
     Info (12023): Found entity 1: Mem2IO
-Info (12021): Found 1 design units, including 1 entities, in source file isdu.sv
+Info (12021): Found 1 design units, including 1 entities, in source file ISDU.sv
     Info (12023): Found entity 1: ISDU
 Warning (10229): Verilog HDL Expression warning at Test_Bench.sv(82): truncated literal to match 16 bits
-Info (12021): Found 1 design units, including 1 entities, in source file test_bench.sv
+Info (12021): Found 1 design units, including 1 entities, in source file Test_Bench.sv
     Info (12023): Found entity 1: RegFile_testbench
 Info (12021): Found 8 design units, including 8 entities, in source file standard_modules.sv
     Info (12023): Found entity 1: TwoInputMux
@@ -865,7 +896,7 @@ Info (12021): Found 8 design units, including 8 entities, in source file standar
     Info (12023): Found entity 6: SixteenBitShiftRegister
     Info (12023): Found entity 7: SixteenBitRippleAdder
     Info (12023): Found entity 8: four_ripple_adder
-Info (12021): Found 7 design units, including 7 entities, in source file memorymodules.sv
+Info (12021): Found 7 design units, including 7 entities, in source file MemoryModules.sv
     Info (12023): Found entity 1: MDR
     Info (12023): Found entity 2: MAR
     Info (12023): Found entity 3: PCR
@@ -873,9 +904,9 @@ Info (12021): Found 7 design units, including 7 entities, in source file memorym
     Info (12023): Found entity 5: PC_INC
     Info (12023): Found entity 6: MIO_MUX
     Info (12023): Found entity 7: PC_MUX
-Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
+Info (12021): Found 1 design units, including 1 entities, in source file Datapath.sv
     Info (12023): Found entity 1: Datapath
-Info (12021): Found 1 design units, including 1 entities, in source file /school/university of illinois/ece 385/ece_385/lab06_2/testbench.sv
+Info (12021): Found 1 design units, including 1 entities, in source file /home/zach/ECE_385/lab06_2/TestBench.sv
     Info (12023): Found entity 1: testbench
 Info (12127): Elaborating entity "slc3" for the top level hierarchy
 Info (12128): Elaborating entity "HexDriver" for hierarchy "HexDriver:hex_driver0"
@@ -921,24 +952,24 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ADDR[19]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 21 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/output_files/SLC_1.map.smsg
+Info (144001): Generated suppressed messages file /home/zach/ECE_385/lab06_1/output_files/SLC_1.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7966 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7968 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 65 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 7865 logic cells
+    Info (21061): Implemented 7867 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 532 megabytes
-    Info: Processing ended: Mon Oct 10 19:18:52 2016
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 1042 megabytes
+    Info: Processing ended: Mon Oct 10 21:17:22 2016
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:37
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in E:/School/University of Illinois/ECE 385/ECE_385/lab06_1/output_files/SLC_1.map.smsg.
+The suppressed messages can be found in /home/zach/ECE_385/lab06_1/output_files/SLC_1.map.smsg.
 
 
