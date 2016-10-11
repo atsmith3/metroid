@@ -8,6 +8,6 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library/Basic Functions,Project,Library/Basic Functions/Clocks; PLLs and Resets,Library/Basic Functions/Simulation; Debug and Verification,Library,Library/Basic Functions/Clocks; PLLs and Resets/PLL,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance" />
+   expandedCategories="Library/Processors and Peripherals,Library/Basic Functions,Library/Processors and Peripherals/Peripherals,Library,Project" />
  <window width="1936" height="1096" x="-8" y="-8" />
 </preferences>

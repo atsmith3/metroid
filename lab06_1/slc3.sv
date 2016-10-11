@@ -98,7 +98,7 @@ Mem2IO memory_subsystem(
 );
 
 
-//test_memory SRAM(.Reset(Reset_ah), .I_O(Data),.A(ADDR), .*);
+test_memory SRAM(.Reset(Reset_ah), .I_O(Data),.A(ADDR), .*);
 
 //DataPath 
 /******* TODO: CHANGE ALU_data and MARMUX_Data for week 2 *******/

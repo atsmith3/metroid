@@ -1,8 +1,9 @@
 	component Lab07_soc is
 		port (
 			clk_clk          : in    std_logic                     := 'X';             -- clk
-			reset_reset_n    : in    std_logic                     := 'X';             -- reset_n
 			led_wire_export  : out   std_logic_vector(7 downto 0);                     -- export
+			reset_reset_n    : in    std_logic                     := 'X';             -- reset_n
+			sdram_clk_clk    : out   std_logic;                                        -- clk
 			sdram_wire_addr  : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_wire_ba    : out   std_logic_vector(1 downto 0);                     -- ba
 			sdram_wire_cas_n : out   std_logic;                                        -- cas_n
@@ -12,15 +13,17 @@
 			sdram_wire_dqm   : out   std_logic_vector(1 downto 0);                     -- dqm
 			sdram_wire_ras_n : out   std_logic;                                        -- ras_n
 			sdram_wire_we_n  : out   std_logic;                                        -- we_n
-			sdram_clk_clk    : out   std_logic                                         -- clk
+			switches_export  : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- export
+			key_export       : in    std_logic_vector(1 downto 0)  := (others => 'X')  -- export
 		);
 	end component Lab07_soc;
 
 	u0 : component Lab07_soc
 		port map (
 			clk_clk          => CONNECTED_TO_clk_clk,          --        clk.clk
-			reset_reset_n    => CONNECTED_TO_reset_reset_n,    --      reset.reset_n
 			led_wire_export  => CONNECTED_TO_led_wire_export,  --   led_wire.export
+			reset_reset_n    => CONNECTED_TO_reset_reset_n,    --      reset.reset_n
+			sdram_clk_clk    => CONNECTED_TO_sdram_clk_clk,    --  sdram_clk.clk
 			sdram_wire_addr  => CONNECTED_TO_sdram_wire_addr,  -- sdram_wire.addr
 			sdram_wire_ba    => CONNECTED_TO_sdram_wire_ba,    --           .ba
 			sdram_wire_cas_n => CONNECTED_TO_sdram_wire_cas_n, --           .cas_n
@@ -30,6 +33,7 @@
 			sdram_wire_dqm   => CONNECTED_TO_sdram_wire_dqm,   --           .dqm
 			sdram_wire_ras_n => CONNECTED_TO_sdram_wire_ras_n, --           .ras_n
 			sdram_wire_we_n  => CONNECTED_TO_sdram_wire_we_n,  --           .we_n
-			sdram_clk_clk    => CONNECTED_TO_sdram_clk_clk     --  sdram_clk.clk
+			switches_export  => CONNECTED_TO_switches_export,  --   switches.export
+			key_export       => CONNECTED_TO_key_export        --        key.export
 		);
 
