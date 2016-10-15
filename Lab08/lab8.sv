@@ -10,9 +10,9 @@
 //-------------------------------------------------------------------------
 
 
-module  lab8 		( input         CLOCK_50,
+module  lab8 			( input         CLOCK_50,
                        input[3:0]    KEY, //bit 0 is set up as Reset
-							  output [6:0]  HEX0, HEX1,// HEX2, HEX3, HEX4, HEX5, HEX6, HEX7,
+							  output [6:0]  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7,
 							  //output [8:0]  LEDG,
 							  //output [17:0] LEDR,
 							  // VGA Interface 
@@ -75,7 +75,7 @@ module  lab8 		( input         CLOCK_50,
 	 );
 	 
 	 //The connections for nios_system might be named different depending on how you set up Qsys
-	 Lab08_soc nios_system(		 .clk_clk(Clk),         
+	 nios_system nios_system(	 .clk_clk(Clk),         
 										 .reset_reset_n(KEY[0]),   
 										 .sdram_wire_addr(DRAM_ADDR), 
 										 .sdram_wire_ba(DRAM_BA),   
@@ -104,6 +104,12 @@ module  lab8 		( input         CLOCK_50,
 										  
 	 HexDriver hex_inst_0 (keycode[3:0], HEX0);
 	 HexDriver hex_inst_1 (keycode[7:4], HEX1);
+	 HexDriver hex_inst_2 (hpi_data_in[3:0], HEX2);
+	 HexDriver hex_inst_3 (hpi_data_in[7:4], HEX3);
+	 HexDriver hex_inst_4 (hpi_data_in[11:8], HEX4);
+	 HexDriver hex_inst_5 (hpi_data_in[15:12], HEX5);
+	 HexDriver hex_inst_6 ({1'b0,1'b0,OTG_ADDR[1:0]}, HEX6);
+	 HexDriver hex_inst_7 ({1'b0, OTG_CS_N, OTG_RD_N, OTG_WR_N}, HEX7);
     
 
 	 /**************************************************************************************
