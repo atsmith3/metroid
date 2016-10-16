@@ -22,32 +22,33 @@ void IO_init(void)
 
 void IO_write(alt_u8 Address, alt_u16 Data)
 {
-	*otg_hpi_cs = 0;
-	*otg_hpi_w = 0;
+
 
 	*otg_hpi_address = Address;
 	*otg_hpi_data = Data;
-
-	int i;
-	for(i = 0; i < 10000; i++) {}
-
+	*otg_hpi_cs = 0;
+	*otg_hpi_w = 0;
+	usleep(100000);
 	*otg_hpi_cs = 1;
+	*otg_hpi_r = 1;
 	*otg_hpi_w = 1;
+	*otg_hpi_address = 0;
+	*otg_hpi_data = 0;
 }
 
 alt_u16 IO_read(alt_u8 Address)
 {
-	*otg_hpi_r = 0;
-	*otg_hpi_cs = 0;
-
 	alt_u16 temp;
+	*otg_hpi_address = Address;
 	temp = *otg_hpi_data;
 	printf("%x\n",temp);
-
-	int i;
-	for(i = 0; i < 10000; i++) {}
-
-	*otg_hpi_r = 1;
+	*otg_hpi_r = 0;
+	*otg_hpi_cs = 0;
+	usleep(100000);
 	*otg_hpi_cs = 1;
+	*otg_hpi_r = 1;
+	*otg_hpi_w = 1;
+	*otg_hpi_address = 0;
+	*otg_hpi_data = 0;
 	return temp;
 }

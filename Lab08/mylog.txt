@@ -5,6 +5,6 @@ Reading System ID at address 0x000000C0:
     Timestamp value was not verified: value was not specified
 Initializing CPU cache (if present)
 OK
-Downloading 10000000 ( 0%)Downloading 10010000 (81%)Downloading 100138FC (91%)Downloaded 79KB in 11.4s (6.9KB/s)
-Verifying 10000000 ( 0%)Verifying 10010000 (81%)Verifying 100138FC (91%)Verified OK                         
+Downloading 10000000 ( 0%)Downloading 10010000 (81%)Downloading 10013920 (91%)Downloaded 79KB in 6.0s (13.1KB/s)
+Verifying 10000000 ( 0%)Verifying 10010000 (81%)Verifying 10013920 (91%)Verified OK                         
 Starting processor at address 0x100001BC

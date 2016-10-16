@@ -71,7 +71,7 @@ module  lab8 			( input         CLOCK_50,
 										 .OTG_RST_N(OTG_RST_N),   
 										 .OTG_INT(OTG_INT),
 										 .Clk(Clk),
-										 .Reset(Reset_h)
+										 .Reset(~KEY[1])	
 	 );
 	 
 	 //The connections for nios_system might be named different depending on how you set up Qsys
