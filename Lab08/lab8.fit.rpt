@@ -1,5 +1,5 @@
 Fitter report for lab8
-Mon Oct 17 00:59:29 2016
+Mon Oct 17 01:10:13 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -73,7 +73,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Mon Oct 17 00:59:29 2016      ;
+; Fitter Status                      ; Successful - Mon Oct 17 01:10:13 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; lab8                                       ;
 ; Top-level Entity Name              ; lab8                                       ;
@@ -4053,7 +4053,7 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 17% of the available device resources in the region that extends from location X46_Y24 to location X57_Y36
@@ -4071,9 +4071,9 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Info (144001): Generated suppressed messages file /home/zach/ECE_385/Lab08/lab8.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 364 warnings
     Info: Peak virtual memory: 1338 megabytes
-    Info: Processing ended: Mon Oct 17 00:59:30 2016
-    Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Processing ended: Mon Oct 17 01:10:14 2016
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:40
 
 
 +----------------------------+

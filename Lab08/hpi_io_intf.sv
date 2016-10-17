@@ -14,7 +14,7 @@ logic from_sw_int;
 assign OTG_DATA = from_sw_w ? {16{1'bZ}} : tmp_data;
 
 //Fill in the blanks below. 
-assign OTG_RST_N = ~Reset;
+assign OTG_RST_N = Reset;
 
 always_ff @ (posedge Clk or posedge Reset)
 begin
