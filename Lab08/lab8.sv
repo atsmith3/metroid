@@ -108,8 +108,8 @@ module  lab8 			( input         CLOCK_50,
 	 HexDriver hex_inst_3 (hpi_data_in[7:4], HEX3);
 	 HexDriver hex_inst_4 (hpi_data_in[11:8], HEX4);
 	 HexDriver hex_inst_5 (hpi_data_in[15:12], HEX5);
-	 HexDriver hex_inst_6 ({1'b0,1'b0,OTG_ADDR[1:0]}, HEX6);
-	 HexDriver hex_inst_7 ({1'b0, OTG_CS_N, OTG_RD_N, OTG_WR_N}, HEX7);
+	 HexDriver hex_inst_6 ({OTG_DATA[3:0]}, HEX6);
+	 HexDriver hex_inst_7 ({OTG_DATA[7:4]}, HEX7);
     
 
 	 /**************************************************************************************

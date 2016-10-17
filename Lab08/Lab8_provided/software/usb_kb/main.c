@@ -33,6 +33,7 @@
 //----------------------------------------------------------------------------------------//
 int main(void)
 {
+	printf("Start of Main");
 	IO_init();
 
 	/*while(1)
@@ -130,6 +131,7 @@ int main(void)
 	}
 	// STEP 2 end
 
+	printf("In Main.c pre usb read");
 	ctl_reg = USB1_CTL_REG;
 	no_device = (A_DP_STAT | A_DM_STAT);
 	fs_device = A_DP_STAT;

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../../nios_system.sopcinfo
  *
- * Generated: Sat Oct 15 16:54:26 CDT 2016
+ * Generated: Sun Oct 16 14:24:41 CDT 2016
  */
 
 /*
@@ -58,7 +58,7 @@
  * Device headers
  */
 
-#include "altera_nios2_qsys_irq.h"
+#include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_sysid_qsys.h"
 
@@ -66,7 +66,7 @@
  * Allocate the device storage
  */
 
-ALTERA_NIOS2_QSYS_IRQ_INSTANCE ( NIOS2_QSYS_0, nios2_qsys_0);
+ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS2_QSYS_0, nios2_qsys_0);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID_QSYS_0, sysid_qsys_0);
 
@@ -80,7 +80,7 @@ ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID_QSYS_0, sysid_qsys_0);
 
 void alt_irq_init ( const void* base )
 {
-    ALTERA_NIOS2_QSYS_IRQ_INIT ( NIOS2_QSYS_0, nios2_qsys_0);
+    ALTERA_NIOS2_GEN2_IRQ_INIT ( NIOS2_QSYS_0, nios2_qsys_0);
     alt_irq_cpu_enable_interrupts();
 }
 

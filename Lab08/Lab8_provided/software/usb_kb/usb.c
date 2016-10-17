@@ -41,7 +41,7 @@
 void UsbWrite(alt_u16 Address, alt_u16 Data)
 {
 	// Local Vars:
-
+	printf("Here in UsbWrite");
 	// Call IO_write to write to the EZ-OTG
 	IO_write(Address, Data);
 
@@ -62,6 +62,7 @@ void UsbWrite(alt_u16 Address, alt_u16 Data)
  ******************************************************************************/
 alt_u16 UsbRead(alt_u16 Address)
 {
+	printf("Here in UsbRrite");
 	return IO_read(Address);
 }
 
