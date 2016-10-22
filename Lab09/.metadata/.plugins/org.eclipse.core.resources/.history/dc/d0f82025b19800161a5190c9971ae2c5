@@ -234,7 +234,7 @@ int main()
 			// 2.4: Add ROundkey with keySchedule
 			unsigned char keySchedTemp[4][4];
 			for(j=0; j<4; j++){
-				for(k=0; k<4; k++){
+				for(k=0; k<4, k++){
 					keySchedTemp[j][k]=keySchedule[j][k+4*i];
 				}
 			}

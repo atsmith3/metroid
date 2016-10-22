@@ -169,12 +169,7 @@ void makeKeySched(char** keySq, char** keySchedule){
 			}
 			temp[0]^=Rcon[i/4-1]>>6;
 			for(j=0; j<4; j++){
-				keySchedule[j][i]=keySchedule[j][i-4]^temp[j];
-			}
-		}
-		else{
-			for(j=0; j<4; j++){
-				keySchedule[j][i]=keySchedule[j][i-1]^keySchedule[j][i-4];
+				keySchedule[j][i]=keySchedule[j][i-4]
 			}
 		}
 	}
@@ -191,7 +186,7 @@ int main()
 	unsigned char keySq[4][4];
     unsigned char keySchedule[4][44];
 
-    int i,j,k;
+    int i,j;
 
 	// Start with pressing reset
 	*to_hw_sig = 0;
@@ -225,20 +220,14 @@ int main()
 
 		// 2: Looping construct:
 		for(i = 0; i < 9; i++){
-			// 2.1: SubBytes
-			SubBytes(wordSq);
+			// 2.1: Subytes
+
 			// 2.2: ShiftRows
-			ShiftRows(wordSq);
+
 			// 2.3: Mix Columns
-			MixColumns(wordSq);
+
 			// 2.4: Add ROundkey with keySchedule
-			unsigned char keySchedTemp[4][4];
-			for(j=0; j<4; j++){
-				for(k=0; k<4; k++){
-					keySchedTemp[j][k]=keySchedule[j][k+4*i];
-				}
-			}
-			AddRoundKey(wordSq,keySchedTemp);
+
 		}
 
 		// 3.1: SubBytes
