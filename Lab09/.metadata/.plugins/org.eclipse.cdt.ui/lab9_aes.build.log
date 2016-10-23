@@ -1,0 +1,6 @@
+15:23:30 **** Clean-only build of configuration Nios II for project lab9_aes ****
+make clean 
+[lab9_aes clean complete]
+
+15:23:30 Build Finished (took 111ms)
+

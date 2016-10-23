@@ -1,5 +1,5 @@
 	Lab07_soc u0 (
-		.clk_clk          (<connected-to-clk_clk>),          //        clk.clk
+		.key_export       (<connected-to-key_export>),       //        key.export
 		.led_wire_export  (<connected-to-led_wire_export>),  //   led_wire.export
 		.reset_reset_n    (<connected-to-reset_reset_n>),    //      reset.reset_n
 		.sdram_clk_clk    (<connected-to-sdram_clk_clk>),    //  sdram_clk.clk
@@ -13,6 +13,6 @@
 		.sdram_wire_ras_n (<connected-to-sdram_wire_ras_n>), //           .ras_n
 		.sdram_wire_we_n  (<connected-to-sdram_wire_we_n>),  //           .we_n
 		.switches_export  (<connected-to-switches_export>),  //   switches.export
-		.key_export       (<connected-to-key_export>)        //        key.export
+		.clk_clk          (<connected-to-clk_clk>)           //        clk.clk
 	);
 

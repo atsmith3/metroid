@@ -41,5 +41,5 @@ module lab7(  	  input	       CLOCK_50,
 											 .switches_export(SW[7:0])
 											 );
 											 
-				//Instantiate additional FPGA fabric modules as needed		  
+				//Instantiate additional FPGA fabric modules as needed
 endmodule

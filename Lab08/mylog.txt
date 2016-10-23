@@ -1,0 +1,4 @@
+Using cable "USB-Blaster [1-2]", device 1, instance 0x00
+Pausing target processor: not responding.
+Resetting and trying again: FAILED
+Leaving target processor paused
