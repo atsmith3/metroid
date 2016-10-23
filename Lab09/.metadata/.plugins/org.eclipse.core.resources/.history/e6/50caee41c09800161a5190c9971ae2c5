@@ -189,7 +189,6 @@ int main()
 
 	unsigned char wordSq[4][4];
 	unsigned char keySq[4][4];
-	unsigned char keySchedTemp[4][4];
     unsigned char keySchedule[4][44];
 
     int i,j,k;
@@ -233,25 +232,21 @@ int main()
 			// 2.3: Mix Columns
 			MixColumns(wordSq);
 			// 2.4: Add ROundkey with keySchedule
+			unsigned char keySchedTemp[4][4];
 			for(j=0; j<4; j++){
 				for(k=0; k<4; k++){
-					keySchedTemp[j][k]=keySchedule[j][k+4*(i+1)];
+					keySchedTemp[j][k]=keySchedule[j][k+4*i];
 				}
 			}
 			AddRoundKey(wordSq,keySchedTemp);
 		}
 
 		// 3.1: SubBytes
-		SubBytes(wordSq);
+
 		// 3.2: ShiftRows
-		ShiftRows(wordSq);
+
 		// 3.3: Add KeySchedule
-		for(j=0; j<4; j++){
-			for(k=0; k<4; k++){
-				keySchedTemp[j][k]=keySchedule[j][k+40];
-			}
-		}
-		AddRoundKey(wordSq,keySchedTemp);
+
 		// Convert back to a plaintext:
 
 		// TODO: display the encrypted message.
