@@ -181,6 +181,49 @@ void makeKeySched(char** keySq, char** keySchedule){
 }
 
 
+// Function hex2char:
+void hex2char(unsigned char hexVal, unsigned char* buffer, int index) {
+	unsigned char higher, lower;
+    higher = (hexVal & 0xF0) >> 4;
+    lower = (hexVal & 0x0F);
+
+    if (higher >= 0 && higher <= 9)
+		higher += '0';
+	else if (higher >= 10 && higher <= 15)
+	{
+		higher += 'a';
+		higher -= 10;
+	}
+
+    // Set the higher char as the first character:
+	buffer[index] = higher;
+
+    if (lower >= 0 && lower <= 9)
+		lower += '0';
+	else if (lower >= 10 && lower <= 15)
+	{
+		lower += 'a';
+		lower -= 10;
+	}
+
+	// Set the lower char as the second character:
+	buffer[index + 1] = lower;
+}
+
+// Function square to string:
+void square2string(unsigned char** array, unsigned char* buffer) {
+    int i, j;
+	for(i = 0; i < 4; i++){
+		for(j = 0; j < 4; j++){
+			// Call uppon macro function that converts hex to chars:
+			// Read down columns:
+			hex2char(array[j][i], buffer, 2(4i + j));
+		}
+	}
+	buffer[32] = '\0'
+}
+
+
 int main()
 {
 	int i;
@@ -191,6 +234,8 @@ int main()
 	unsigned char keySq[4][4];
 	unsigned char keySchedTemp[4][4];
     unsigned char keySchedule[4][44];
+
+    unsigned char cypher[33];
 
     int i,j,k;
 
@@ -252,10 +297,13 @@ int main()
 			}
 		}
 		AddRoundKey(wordSq,keySchedTemp);
+
 		// Convert back to a plaintext:
+		square2string(wordSq, cypher);
 
 		// TODO: display the encrypted message.
 		printf("\nEncrypted message is\n");
+		printf("%s \n", cypher);
 
 		// Transmit encrypted message to hardware side for decryption.
 		printf("\nTransmitting message...\n");
