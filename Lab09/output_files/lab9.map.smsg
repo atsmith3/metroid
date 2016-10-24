@@ -14,6 +14,7 @@ Info (10281): Verilog HDL Declaration information at nios_system_mm_interconnect
 Info (10281): Verilog HDL Declaration information at nios_system_mm_interconnect_0_router_002.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
 Info (10281): Verilog HDL Declaration information at nios_system_mm_interconnect_0_router_003.sv(48): object "DEFAULT_WR_CHANNEL" differs only in case from object "default_wr_channel" in the same scope
 Info (10281): Verilog HDL Declaration information at nios_system_mm_interconnect_0_router_003.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
+Warning (10236): Verilog HDL Implicit Net warning at lab9.sv(58): created implicit net for "sdram_wire_ras_n"
 Warning (10037): Verilog HDL or VHDL warning at nios_system_sdram.v(316): conditional expression evaluates to a constant
 Warning (10037): Verilog HDL or VHDL warning at nios_system_sdram.v(326): conditional expression evaluates to a constant
 Warning (10037): Verilog HDL or VHDL warning at nios_system_sdram.v(336): conditional expression evaluates to a constant

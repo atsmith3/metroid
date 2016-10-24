@@ -1,6 +1,21 @@
-15:23:30 **** Clean-only build of configuration Nios II for project lab9_aes ****
-make clean 
-[lab9_aes clean complete]
+20:37:49 **** Build of configuration Nios II for project lab9_aes ****
+make all 
+Info: Building ../lab9_aes_bsp/
+make --no-print-directory -C ../lab9_aes_bsp/
+Makefile not up to date.
+../../nios_system.sopcinfo has been modified since the BSP was generated.
 
-15:23:30 Build Finished (took 111ms)
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make[1]: *** [public.mk] Error 1
+make: *** [../lab9_aes_bsp/-recurs-make-lib] Error 2
+
+20:37:50 Build Finished (took 177ms)
 

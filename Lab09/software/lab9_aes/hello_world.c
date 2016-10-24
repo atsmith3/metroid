@@ -45,7 +45,16 @@ char charsToHex(char c1, char c2)
 	return (hex1 << 4) + hex2;
 }
 
-void SubBytes(char** wordSquare){
+char SubByte(char word1){
+	/* Get the coordinates for S-Box */
+	unsigned int coord1 = word1 & 0xF0;
+	coord1 = coord1 >> 4;
+	unsigned int coord2 = word1 & 0x0F;
+
+	return aes_sbox[coord1][coord2];
+}
+
+void SubBytes(unsigned char** wordSquare){
 	int i,j;
 	for(i = 0; i < 4; i++){
 		for(j = 0; j < 4; j++){
@@ -54,20 +63,11 @@ void SubBytes(char** wordSquare){
 	}
 }
 
-char SubByte(char word1){
-	/* Get the coordinates for S-Box */
-	unsigned int coord1 = word1 & 0xF0;
-	coord1 = coord1 >> 4;
-	unsigned int coord2 = word2 & 0x0F;
-
-	return aes_sbox[coord1][coord2];
-}
-
-void ShiftRows(char** wordSquare){
+void ShiftRows(unsigned char** wordSquare){
 	int i,j;
 		for(j = 1; j < 4; j++){
 			for(i = 0; i < j; i++){
-				char temp = wordSqaure[j][0];
+				char temp = wordSquare[j][0];
 				wordSquare[j][0]=wordSquare[j][1];
 				wordSquare[j][1]=wordSquare[j][2];
 				wordSquare[j][2]=wordSquare[j][3];
@@ -99,37 +99,38 @@ char Xor(char word, int val){
 	}
 }
 
-void MixColumns(char** wordSquare){
+void MixColumns(unsigned char** wordSquare){
 	int i;
-		for(i = 0; i < 4; i++){
-				temp0= Xor(wordSquare[0][i],2);
-				temp0^=Xor(wordSquare[1][i],3);
-				temp0^=Xor(wordSquare[2][i],1);
-				temp0^=Xor(wordSquare[3][i],1);
+	char temp0, temp1, temp2, temp3;
+	for(i = 0; i < 4; i++){
+			temp0= Xor(wordSquare[0][i],2);
+			temp0^=Xor(wordSquare[1][i],3);
+			temp0^=Xor(wordSquare[2][i],1);
+			temp0^=Xor(wordSquare[3][i],1);
 
-				temp1= Xor(wordSquare[0][i],1);
-				temp1^=Xor(wordSquare[1][i],2);
-				temp1^=Xor(wordSquare[2][i],3);
-				temp1^=Xor(wordSquare[3][i],1);
+			temp1= Xor(wordSquare[0][i],1);
+			temp1^=Xor(wordSquare[1][i],2);
+			temp1^=Xor(wordSquare[2][i],3);
+			temp1^=Xor(wordSquare[3][i],1);
 
-				temp2= Xor(wordSquare[0][i],1);
-				temp2^=Xor(wordSquare[1][i],1);
-				temp2^=Xor(wordSquare[2][i],2);
-				temp2^=Xor(wordSquare[3][i],3);
+			temp2= Xor(wordSquare[0][i],1);
+			temp2^=Xor(wordSquare[1][i],1);
+			temp2^=Xor(wordSquare[2][i],2);
+			temp2^=Xor(wordSquare[3][i],3);
 
-				temp3= Xor(wordSquare[0][i],3);
-				temp3^=Xor(wordSquare[1][i],1);
-				temp3^=Xor(wordSquare[2][i],1);
-				temp3^=Xor(wordSquare[3][i],2);
+			temp3= Xor(wordSquare[0][i],3);
+			temp3^=Xor(wordSquare[1][i],1);
+			temp3^=Xor(wordSquare[2][i],1);
+			temp3^=Xor(wordSquare[3][i],2);
 
-				wordSquare[0][i]=temp0;
-				wordSquare[1][i]=temp1;
-				wordSquare[2][i]=temp2;
-				wordSquare[3][i]=temp3;
-		}
+			wordSquare[0][i]=temp0;
+			wordSquare[1][i]=temp1;
+			wordSquare[2][i]=temp2;
+			wordSquare[3][i]=temp3;
+	}
 }
 
-void AddRoundKey(char** wordSquare, char** roundKey){
+void AddRoundKey(unsigned char** wordSquare, unsigned char** roundKey){
 	int i,j;
 	for(i=0; i<3; i++){
 		for(j=0; j<3; j++){
@@ -138,22 +139,22 @@ void AddRoundKey(char** wordSquare, char** roundKey){
 	}
 }
 
-void string2array(char** wordSq, char* plaintext)
+void string2array(unsigned char** wordSq, unsigned char* plaintext)
 {
 	char a,b;
 	int i,j;
 	for(i = 0; i < 4; i++){
 		for(j = 0; j < 4; j++)
 		{
-			a = plaintext[2(4i + j)];
-			b = plaintext[2(4i + j) + 1];
+			a = plaintext[2*(4*i + j)];
+			b = plaintext[2*(4*i + j) + 1];
 
 			wordSq[i][j] = charsToHex(a,b);
 		}
 	}
 }
 
-void makeKeySched(char** keySq, char** keySchedule){
+void makeKeySched(unsigned char** keySq, unsigned char** keySchedule){
 	int i, j;
 	for(i=0; i<4; i++){
 		for(j=0; j<4; j++){
@@ -217,16 +218,15 @@ void square2string(unsigned char** array, unsigned char* buffer) {
 		for(j = 0; j < 4; j++){
 			// Call uppon macro function that converts hex to chars:
 			// Read down columns:
-			hex2char(array[j][i], buffer, 2(4i + j));
+			hex2char(array[j][i], buffer, 2*(4*i + j));
 		}
 	}
-	buffer[32] = '\0'
+	buffer[32] = '\0';
 }
 
 
 int main()
 {
-	int i;
 	unsigned char plaintext[33]; //should be 1 more character to account for string terminator
 	unsigned char key[33];
 
