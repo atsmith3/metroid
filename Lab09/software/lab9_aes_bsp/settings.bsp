@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Oct 22, 2016 3:23:25 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1477167805446</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Oct 24, 2016 8:48:51 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1477360131446</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/zach/ECE_385/Lab09/software/lab9_aes_bsp</BspGeneratedLocation>
-        <BspSettingsFile>./settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../nios_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_qsys_0</Cpu>
