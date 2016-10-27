@@ -46,7 +46,7 @@ AES module interface with all ports, commented for Week 1
          state <= next_state;
       end
    end
-/* Notes:
+/* TODO:
    What to do with WAIT and RESET states.
    Where to set next and prev state
    Accurate module naming
