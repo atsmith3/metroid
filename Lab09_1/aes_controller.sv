@@ -20,8 +20,11 @@ module aes_controller(
 
 enum logic [1:0] {WAIT, COMPUTE, READY} state, next_state;
 logic [15:0] counter;
+logic aes_complete; /* signal that lets AES know the decryption is done */
+logic aes_begin; /* signal that initiates the encryption process */
 
-AES aes0(clk, key[127:96], key[95:64], key[63:32], key[31:0], msg_de[127:96], msg_de[95:64], msg_de[63:32], msg_de[31:0]);
+
+AES aes0(.Clk(clk), .Plaintext(msg_en), .Cipherkey({key[127:96], key[95:64], key[63:32], key[31:0]}), .Run(aes_begin), .Ciphertext({msg_de[127:96], msg_de[95:64], msg_de[63:32], msg_de[31:0]}), .Ready(aes_complete));
 			  
 always_ff @ (posedge clk, negedge reset_n) begin
 	if (reset_n == 1'b0) begin

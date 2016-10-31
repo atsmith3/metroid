@@ -10,12 +10,12 @@
 // SubBytes 
 // Input : System Clock, input Byte
 // Output: SubBytes transformation of the Byte
-module SubBytes ( input              clk,
+module SubBytes ( input              Clk,
 				  input        [0:7] in ,
                   output logic [0:7] out );
 
 	// This module will be synthesized into a RAM
-    always @ (posedge clk)
+    always @ (posedge Clk)
     case (in)
 	   8'h00: out <= 8'h63;    8'h01: out <= 8'h7c;    8'h02: out <= 8'h77;    8'h03: out <= 8'h7b;
 	   8'h04: out <= 8'hf2;    8'h05: out <= 8'h6b;    8'h06: out <= 8'h6f;    8'h07: out <= 8'hc5;
@@ -87,12 +87,12 @@ endmodule
 // InvSubBytes 
 // Input : System Clock, input Byte
 // Output: InvSubBytes transformation of the Byte
-module InvSubBytes ( input              clk,
+module InvSubBytes ( input              Clk,
 					 input        [0:7] in ,
                      output logic [0:7] out );
 
 	// This module will be synthesized into a RAM
-    always @ (posedge clk)
+    always @ (posedge Clk)
     case (in)
 	   8'h00: out <= 8'h52;	   8'h01: out <= 8'h09;	   8'h02: out <= 8'h6a;	   8'h03: out <= 8'hd5;
 	   8'h04: out <= 8'h30;	   8'h05: out <= 8'h36;	   8'h06: out <= 8'ha5;	   8'h07: out <= 8'h38;

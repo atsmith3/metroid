@@ -21,23 +21,25 @@
    // module  AES ( input clk,
    // 		  input  [0:31]  Cipherkey_0, Cipherkey_1, Cipherkey_2, Cipherkey_3,
    //             output [0:31]  keyschedule_out_0, keyschedule_out_1, keyschedule_out_2, keyschedule_out_3 );
-
+   logic reset_n;
    logic [0:1407]              keyschedule;
 
    enum logic[6:0] {InvShiftRows_1, InvSubBytes_1, AddRoundKey_1,
-                    InvShiftRows_3, InvSubBytes_2, AddRoundKey_2,
-                    InvShiftRows_4, InvSubBytes_3, AddRoundKey_3,
-                    InvShiftRows_5, InvSubBytes_4, AddRoundKey_4,
-                    InvShiftRows_6, InvSubBytes_5, AddRoundKey_5,
-                    InvShiftRows_7, InvSubBytes_6, AddRoundKey_6,
-                    InvShiftRows_8, InvSubBytes_7, AddRoundKey_7,
-                    InvShiftRows_9, InvSubBytes_8, AddRoundKey_8,
-                    InvShiftRows_1, InvSubBytes_9, AddRoundKey_9,
+                    InvShiftRows_2, InvSubBytes_2, AddRoundKey_2,
+                    InvShiftRows_3, InvSubBytes_3, AddRoundKey_3,
+                    InvShiftRows_4, InvSubBytes_4, AddRoundKey_4,
+                    InvShiftRows_5, InvSubBytes_5, AddRoundKey_5,
+                    InvShiftRows_6, InvSubBytes_6, AddRoundKey_6,
+                    InvShiftRows_7, InvSubBytes_7, AddRoundKey_7,
+                    InvShiftRows_8, InvSubBytes_8, AddRoundKey_8,
+                    InvShiftRows_9, InvSubBytes_9, AddRoundKey_9,
                     InvShiftRows_0, InvSubBytes_0, AddRoundKey_0,
                     InvMixColumns, WAIT, RESET}
         state, next_state, prev_state;
 
-   always @ (posedge clk, negedge reset_n) begin
+	assign reset_n = ~Reset;	  
+	
+   always @ (posedge Clk, negedge reset_n) begin
       if(reset_n == 1'b0) begin
          state <= RESET;
       end
@@ -153,13 +155,8 @@
        
 
      endcase // case (state)
-   
 
-   always
-
-   KeyExpansion keyexpansion_0(
-                               .*, .Cipherkey({Cipherkey_0, Cipherkey_1, Cipherkey_2, Cipherkey_3}),
-                               .KeySchedule(keyschedule));
+   KeyExpansion keyexpansion_0(.*, .Cipherkey({Cipherkey_0, Cipherkey_1, Cipherkey_2, Cipherkey_3}),.KeySchedule(keyschedule));
 
    assign {keyschedule_out_0, keyschedule_out_1, keyschedule_out_2, keyschedule_out_3} = keyschedule[1280:1407];
 

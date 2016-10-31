@@ -8,7 +8,7 @@
   ---------------------------------------------------------------------------*/
 
 
-module KeyExpansion (input clk,
+module KeyExpansion (input Clk,
 							input	[0:127]	Cipherkey, 
 							output [0:1407] KeySchedule );
 	
@@ -35,7 +35,7 @@ module KeyExpansion (input clk,
 endmodule
 
 
-module KeyExpansionOne (input clk,
+module KeyExpansionOne (input Clk,
 								input	[0:127]	oldkey, 
 								output [0:127] newkey,
 								input [0:7] Rcon );

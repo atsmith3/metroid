@@ -1,13 +1,13 @@
-module InvMixColumns ( input        [127:0] in ,
+module InvShiftRows ( input        [127:0] in ,
                        output logic [127:0] out );
 
    //Temp variable to allow rotations
    logic [7:0] temp;
 
    //Individual bytes from wordSquare
-   logic [7:0] a00, a01, a02, a03
-               a10, a11, a12, a13
-               a20, a21, a22, a23
+   logic [7:0] a00, a01, a02, a03,
+               a10, a11, a12, a13,
+               a20, a21, a22, a23,
                a30, a31, a32, a33;
 
    assign {a00, a01, a02, a03, a10, a11, a12, a13, a20, a21, a22, a23, a30, a31, a32, a33} = in;
