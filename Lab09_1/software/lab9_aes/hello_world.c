@@ -457,6 +457,7 @@ int main()
   char keySchedule[176];
 
   char cypher[33];
+  char decrypted[33];
 
   int i,j,k;
 
@@ -468,51 +469,36 @@ int main()
 	printf("Press reset!\n");
 	while (*to_sw_sig != 3);
 
-
-	string2array(keySq, key);
-	//printf("keySq: \n");
-	//printSquare(keySq, 4, 4);
-	string2array(wordSq, plaintext);
-	//printf("keySq: \n");
-	//printSquare(wordSq, 4, 4);
-
-
-	// Make key schedule:
-	makeKeySched(keySq, keySchedule);
-	//printf("keySchedule: \n");
-	//printSquare(keySchedule, 44, 4);
-
-
 	while (bench < 1000)
 	{
 		bench++;
 		*to_hw_sig = 0;
-		//printf("\n");
+		printf("\n");
 
-		//printf("Enter plain text:\n");
-		//scanf ("%s", plaintext);
-		//printf ("\n");
-		//printf("Enter key:\n");
-		//scanf ("%s", key);
-		//printf ("\n");
-        //printf("%d", bench);
+		printf("Enter plain text:\n");
+		scanf ("%s", plaintext);
+		printf ("\n");
+		printf("Enter key:\n");
+		scanf ("%s", key);
+		printf ("\n");
+      printf("%d", bench);
 
 		// Convert the plaintext and key into 4x4 arrays:
-		//string2array(keySq, key);
+		string2array(keySq, key);
 		//printf("keySq: \n");
 		//printSquare(keySq, 4, 4);
-		//string2array(wordSq, plaintext);
+		string2array(wordSq, plaintext);
 		//printf("keySq: \n");
 		//printSquare(wordSq, 4, 4);
 
 
 		// Make key schedule:
-		//makeKeySched(keySq, keySchedule);
+		makeKeySched(keySq, keySchedule);
 		//printf("keySchedule: \n");
 		//printSquare(keySchedule, 44, 4);
 
 		//Key Expansion and AES encryption using week 1's AES algorithm.
-	    // 1: Add round key:
+	   // 1: Add round key:
 		//printf("Add Roundkey 1: \n");
 		AddRoundKey(wordSq, keySq);
 		//printSquare(wordSq, 4, 4);
@@ -564,41 +550,53 @@ int main()
 		square2string(wordSq, cypher);
 
 
-		// TODO: display the encrypted message.
-		//printf("\nEncrypted message is\n");
-		//printf("%s \n", cypher);
+		// Display the encrypted message.
+		printf("\nEncrypted message is\n");
+		printf("%s \n", cypher);
 
 		// Transmit encrypted message to hardware side for decryption.
-		//printf("\nTransmitting message...\n");
+		printf("\nTransmitting message...\n");
 
-//		for (j = 0; j < 4; j++){
-//			for (i = 0; i < 4; i++)
-//			{
-//				*to_hw_sig = 1;
-//				*to_hw_port = wordSq[4*i + j]; // encryptedMsg is your encrypted message
-//				// Consider to use charToHex() if your encrypted message is a string.
-//				while (*to_sw_sig != 1);
-//				*to_hw_sig = 2;
-//				while (*to_sw_sig != 0);
-//			}
-//		}
-//		*to_hw_sig = 0;
+		for (j = 0; j < 4; j++){
+			for (i = 0; i < 4; i++)
+			{
+				*to_hw_sig = 1;
+				*to_hw_port = wordSq[4*i + j]; // encryptedMsg is your encrypted message
+				// Consider to use charToHex() if your encrypted message is a string.
+				while (*to_sw_sig != 1);
+				*to_hw_sig = 2;
+				while (*to_sw_sig != 0);
+			}
+		}
+		*to_hw_sig = 0;
 
-		// Transmit encrypted message to hardware side for decryption.
-		//printf("\nTransmitting key...\n");
+    	// Transmit encrypted message to hardware side for decryption.
+		printf("\nTransmitting key...\n");
+      for (j = 0; j < 4; j++){
+         for (i = 0; i < 4; i++)
+         {
+            *to_hw_sig = 1;
+            *to_hw_port = keySq[4*i + j]; // encryptedMsg is your encrypted message
+            // Consider to use charToHex() if your encrypted message is a string.
+            while (*to_sw_sig != 1);
+            *to_hw_sig = 2;
+            while (*to_sw_sig != 0);
+         }
+      }
+      *to_hw_sig = 0;
 
-    /*
-		//TODO: Transmit key
+
 
 		printf("\n\n");
 
 		while (*to_sw_sig != 2);
-		printf("\nRetrieving message...\n");
+		
+      printf("\nRetrieving message...\n");
 		for (i = 0; i < 16; ++i)
 		{
 			*to_hw_sig = 1;
 			while (*to_sw_sig != 1);
-			str[i] = *to_sw_port;
+			wordSq[i] = *to_sw_port;
 			*to_hw_sig = 2;
 			while (*to_sw_sig != 0);
 		}
@@ -606,9 +604,9 @@ int main()
 		printf("\n\n");
 
 		printf("Decoded message:\n");
+      square2string(wordSq, decrypted);
+      printf("%s\n", decrypted);
 
-		// TODO: print decoded message
-    */
 
 	}
 

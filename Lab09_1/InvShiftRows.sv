@@ -1,40 +1,28 @@
 module InvShiftRows ( input        [127:0] in ,
                        output logic [127:0] out );
+	// Row 1:						  
+   assign out[127:120] = in[127:120];
+   assign out[95:88] = in[95:88];
+	assign out[63:56] = in[63:56];
+	assign out[31:24] = in[31:24];
+	
+	//Row 2: <-
+	assign out[119:112] = in[87:80];
+	assign out[87:80] = in[55:48];
+	assign out[55:48] = in[23:16];
+	assign out[23:16] = in[119:112];
 
-   //Temp variable to allow rotations
-   logic [7:0] temp;
+	// Row 3: <-<-
+	assign out[111:104] = in[47:40];
+	assign out[79:72] = in[15:8];
+	assign out[47:40] = in[111:104];
+	assign out[15:8] = in[79:72];
 
-   //Individual bytes from wordSquare
-   logic [7:0] a00, a01, a02, a03,
-               a10, a11, a12, a13,
-               a20, a21, a22, a23,
-               a30, a31, a32, a33;
+	// Row 4: <-<-<-
+	assign out[103:96] = in[7:0];
+	assign out[71:64] = in[103:96];
+	assign out[39:32] = in[71:64];
+	assign out[7:0] = in[39:32];
 
-   assign {a00, a01, a02, a03, a10, a11, a12, a13, a20, a21, a22, a23, a30, a31, a32, a33} = in;
-
-   /*TODO: Please check that this program actually works */
-   //Store first variable in temp then rotate
-   assign temp = a10;
-   assign a10 = a11;
-   assign a11 = a12;
-   assign a12 = a13;
-   assign a13 = a14;
-   assign a14 = temp;
-
-   assign temp = a20;
-   assign a20 = a22;
-   assign a22 = temp;
-   assign a21 = temp;
-   assign a21 = a23;
-   assign a23 = temp;
-
-   assign temp = a30;
-   assign a30 = a33;
-   assign a33 = a32;
-   assign a32 = a31;
-   assign a31 = temp;
-
-   assign {a00, a01, a02, a03, a10, a11, a12, a13, a20, a21, a22, a23, a30, a31, a32, a33} = out;
-
-endmodule // InvMixColumns
+endmodule
 

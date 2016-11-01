@@ -35,8 +35,8 @@ module lab9(  	  input			CLOCK_50,
 				  logic  [127:0] msg_en;
 				  logic  [127:0] aes_key;
 				  logic  [127:0] msg_de;
-				  logic 		 io_ready;
-				  logic			 aes_ready;
+				  logic 	io_ready;
+				  logic	aes_ready;
 				  
 				  // For debugging purpose
 				  assign LEDR[7:0] = {to_hw_port[7:0]};

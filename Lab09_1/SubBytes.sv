@@ -87,8 +87,8 @@ endmodule
 // InvSubBytes 
 // Input : System Clock, input Byte
 // Output: InvSubBytes transformation of the Byte
-module InvSubBytes ( input              Clk,
-					 input        [0:7] in ,
+module InvSubBytes ( input logic             Clk,
+					      input logic       [0:7] in ,
                      output logic [0:7] out );
 
 	// This module will be synthesized into a RAM
