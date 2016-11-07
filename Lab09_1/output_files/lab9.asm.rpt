@@ -1,6 +1,6 @@
 Assembler report for lab9
-Tue Oct 25 09:11:04 2016
-Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+Sun Nov  6 20:42:50 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
 ---------------------
@@ -11,8 +11,8 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/zgleaso2/Downloads/ECE_385-master/Lab09/output_files/lab9.sof
-  7. Assembler Device Options: C:/Users/zgleaso2/Downloads/ECE_385-master/Lab09/output_files/lab9.pof
+  6. Assembler Device Options: lab9.sof
+  7. Assembler Device Options: lab9.pof
   8. Assembler Messages
 
 
@@ -40,7 +40,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Oct 25 09:11:04 2016 ;
+; Assembler Status      ; Successful - Sun Nov  6 20:42:50 2016 ;
 ; Revision Name         ; lab9                                  ;
 ; Top-level Entity Name ; lab9                                  ;
 ; Family                ; Cyclone IV E                          ;
@@ -65,37 +65,37 @@ agreement for further details.
 +--------+------------------------+--------------+
 
 
-+------------------------------------------------------------------------+
-; Assembler Generated Files                                              ;
-+------------------------------------------------------------------------+
-; File Name                                                              ;
-+------------------------------------------------------------------------+
-; C:/Users/zgleaso2/Downloads/ECE_385-master/Lab09/output_files/lab9.sof ;
-; C:/Users/zgleaso2/Downloads/ECE_385-master/Lab09/output_files/lab9.pof ;
-+------------------------------------------------------------------------+
++---------------------------+
+; Assembler Generated Files ;
++---------------------------+
+; File Name                 ;
++---------------------------+
+; lab9.sof                  ;
+; lab9.pof                  ;
++---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/zgleaso2/Downloads/ECE_385-master/Lab09/output_files/lab9.sof ;
-+----------------+---------------------------------------------------------------------------------+
-; Option         ; Setting                                                                         ;
-+----------------+---------------------------------------------------------------------------------+
-; Device         ; EP4CE115F29C7                                                                   ;
-; JTAG usercode  ; 0x00760766                                                                      ;
-; Checksum       ; 0x00760766                                                                      ;
-+----------------+---------------------------------------------------------------------------------+
++------------------------------------+
+; Assembler Device Options: lab9.sof ;
++----------------+-------------------+
+; Option         ; Setting           ;
++----------------+-------------------+
+; Device         ; EP4CE115F29C7     ;
+; JTAG usercode  ; 0x00886CE8        ;
+; Checksum       ; 0x00886CE8        ;
++----------------+-------------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/zgleaso2/Downloads/ECE_385-master/Lab09/output_files/lab9.pof ;
-+--------------------+-----------------------------------------------------------------------------+
-; Option             ; Setting                                                                     ;
-+--------------------+-----------------------------------------------------------------------------+
-; Device             ; EPCS64                                                                      ;
-; JTAG usercode      ; 0x00000000                                                                  ;
-; Checksum           ; 0x70FDC7F8                                                                  ;
-; Compression Ratio  ; 3                                                                           ;
-+--------------------+-----------------------------------------------------------------------------+
++------------------------------------+
+; Assembler Device Options: lab9.pof ;
++--------------------+---------------+
+; Option             ; Setting       ;
++--------------------+---------------+
+; Device             ; EPCS64        ;
+; JTAG usercode      ; 0x00000000    ;
+; Checksum           ; 0x70CEF3AF    ;
+; Compression Ratio  ; 3             ;
++--------------------+---------------+
 
 
 +--------------------+
@@ -103,15 +103,15 @@ agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
-    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Tue Oct 25 09:10:57 2016
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Sun Nov  6 20:42:44 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off lab09_AES_Encryption -c lab9
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 631 megabytes
-    Info: Processing ended: Tue Oct 25 09:11:04 2016
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 875 megabytes
+    Info: Processing ended: Sun Nov  6 20:42:50 2016
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 
