@@ -55,7 +55,7 @@ module lab9(  	  input			CLOCK_50,
 											 .sdram_wire_cs_n(DRAM_CS_N),     //            .cs_n
 											 .sdram_wire_dq(DRAM_DQ),      	//            .dq
 											 .sdram_wire_dqm(DRAM_DQM),     	//            .dqm
-											 .sdram_wire_ras_n(sdram_wire_ras_n),   //            .ras_n
+											 .sdram_wire_ras_n(DRAM_RAS_N),   //            .ras_n
 											 .sdram_wire_we_n(DRAM_WE_N),     //            .we_n
 											 .sdram_clk_clk(DRAM_CLK)
 											 );

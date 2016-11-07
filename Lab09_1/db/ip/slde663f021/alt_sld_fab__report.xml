@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
+<<<<<<< HEAD
+ date="2016.11.06.15:56:05"
+ outputDirectory="E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/db/ip/slde663f021/">
+=======
  date="2016.11.06.20:41:03"
  outputDirectory="/home/zach/ECE_385/Lab09_1/db/ip/slde663f021/">
+>>>>>>> origin/master
  <perimeter>
   <parameter
      name="AUTO_DEVICE_FAMILY"
