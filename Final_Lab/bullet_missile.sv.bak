@@ -76,7 +76,7 @@ module  ball ( input Reset, frame_clk,
 						Ball_X_Motion <= 1'b0;
 						pressed <= 26;
 				 end
-				 if(keycode == 4)
+				 if(keycode == 4 && pressed != 4)
 				 begin
 						//Set the ball Y motion to 0; and ball X motion to - direction;
 						Ball_X_Motion <= ~Ball_X_Step + 1'b1;
@@ -90,7 +90,7 @@ module  ball ( input Reset, frame_clk,
 						Ball_X_Motion <= 1'b0;
 						pressed <= 22;
 				 end
-				 if(keycode == 7)
+				 if(keycode == 7 && pressed != 7)
 				 begin
 						//Set the ball Y motion to 0; and ball X motion to + direction;
 						Ball_X_Motion <= Ball_X_Step;
