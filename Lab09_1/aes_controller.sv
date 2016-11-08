@@ -9,13 +9,13 @@
 // AES controller module
 
 module aes_controller(
-				input			 		   clk,
-				input					   reset_n,
-				input	[127:0]			msg_en,
-				input	[127:0]			key,
-				output  [127:0]		msg_de,
-				input					   io_ready,
-				output					aes_ready);
+				input	 logic 		 		   clk,
+				input	 logic 				   reset_n,
+				input	 logic [127:0]			msg_en,
+				input	 logic [127:0]			key,
+				output logic [127:0]			msg_de,
+				input	 logic				   io_ready,
+				output logic 					aes_ready);
 
 enum logic [1:0] {WAIT, COMPUTE, READY} state, next_state;
 logic [15:0] counter;
@@ -60,21 +60,21 @@ end
 
 always_comb begin
    // Default values:
-	aes_ready = 1'b0;
+	aes_ready = 0;
 	aes_begin = 0;
 	case (state)
 		WAIT: begin
-			aes_ready = 1'b0;
+			aes_ready = 0;
 			aes_begin = 0;
 		end
 		
 		COMPUTE: begin
-			aes_ready = 1'b0;
+			aes_ready = 0;
 			aes_begin = 1;
 		end
 		
 		READY: begin
-			aes_ready = 1'b1;
+			aes_ready = 1;
 			aes_begin = 0;
 		end
 	endcase

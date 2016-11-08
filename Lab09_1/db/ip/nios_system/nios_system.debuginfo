@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="system" version="15.0" fabric="QSYS">
  <!-- Format version 15.0 145 (Future versions may contain additional information.) -->
-<<<<<<< HEAD
- <!-- 2016.11.06.15:55:46 -->
-=======
- <!-- 2016.11.06.20:40:43 -->
->>>>>>> origin/master
+ <!-- 2016.11.07.13:37:25 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -57,11 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-<<<<<<< HEAD
-  <value>1478469317</value>
-=======
-  <value>1478486417</value>
->>>>>>> origin/master
+  <value>1478547417</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -10680,11 +10672,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-<<<<<<< HEAD
-   <value>1478469317</value>
-=======
-   <value>1478486417</value>
->>>>>>> origin/master
+   <value>1478547417</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -10704,11 +10692,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-<<<<<<< HEAD
-   <value>1478469317</value>
-=======
-   <value>1478486417</value>
->>>>>>> origin/master
+   <value>1478547417</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -10724,11 +10708,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-<<<<<<< HEAD
-   <value>1478469317</value>
-=======
-   <value>1478486417</value>
->>>>>>> origin/master
+   <value>1478547417</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -23552,9 +23532,5 @@ parameters are a RESULT of the module parameters. -->
   <version>15.0</version>
  </plugin>
  <reportVersion>15.0 145</reportVersion>
-<<<<<<< HEAD
- <uniqueIdentifier>14CC201EB7FD000001583BA38830</uniqueIdentifier>
-=======
- <uniqueIdentifier>080027536CB0000001583CA87D97</uniqueIdentifier>
->>>>>>> origin/master
+ <uniqueIdentifier>14CC201EB7FD00000158404B40AF</uniqueIdentifier>
 </EnsembleReport>

@@ -251,6 +251,7 @@ InvMixColumns  IMC3(.in(cypherSq[31:0]), .out(InvMixColumns_Out[31:0]));
 					AddRoundKey_6: next_state = InvShiftRows_6;
 					AddRoundKey_7: next_state = InvShiftRows_7;
                AddRoundKey_8: next_state = InvShiftRows_8;
+					AddRoundKey_9: next_state = InvShiftRows_9;
 					default: next_state = RESET;
             endcase
        end

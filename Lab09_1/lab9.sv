@@ -82,6 +82,8 @@ module lab9(  	  input			CLOCK_50,
 													.io_ready(io_ready),
 													.aes_ready(aes_ready)
 					);
+					
+					testbench tb();
 									
 					// Displays the first 4 and the last 4 digits of the received message
 					HexDriver        Hex0 (.In0(msg_en[3:0]),

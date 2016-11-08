@@ -42,6 +42,6 @@ module InvAddRoundKey ( input        [127:0] in , round_key,
    assign c32 = a32^b32;
    assign c33 = a32^b33;
 
-   assign {c00, c01, c02, c03, c10, c11, c12, c13, c20, c21, c22, c23, c30, c31, c32, c33} = out;
+   assign  out = {c00, c01, c02, c03, c10, c11, c12, c13, c20, c21, c22, c23, c30, c31, c32, c33};
 
 endmodule // InvMixColumns

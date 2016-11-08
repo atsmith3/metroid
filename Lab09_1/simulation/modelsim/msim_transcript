@@ -1,0 +1,334 @@
+# Reading C:/Altera/modelsim_ase/tcl/vsim/pref.tcl
+# do lab9_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/Altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/Altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlib nios_system
+# ** Warning: (vlib-34) Library already exists at "nios_system".
+# 
+# vmap nios_system nios_system
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet nios_system nios_system 
+# Modifying modelsim.ini
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/nios_system.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:25 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/nios_system.v 
+# -- Compiling module nios_system
+# 
+# Top level modules:
+# 	nios_system
+# End time: 13:41:25 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/altera_avalon_sc_fifo.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:25 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/altera_avalon_sc_fifo.v 
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# End time: 13:41:25 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/altera_reset_controller.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/altera_reset_controller.v 
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/altera_reset_synchronizer.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/altera_reset_synchronizer.v 
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_jtag_uart_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_jtag_uart_0.v 
+# -- Compiling module nios_system_jtag_uart_0_sim_scfifo_w
+# -- Compiling module nios_system_jtag_uart_0_scfifo_w
+# -- Compiling module nios_system_jtag_uart_0_sim_scfifo_r
+# -- Compiling module nios_system_jtag_uart_0_scfifo_r
+# -- Compiling module nios_system_jtag_uart_0
+# 
+# Top level modules:
+# 	nios_system_jtag_uart_0
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_key.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_key.v 
+# -- Compiling module nios_system_key
+# 
+# Top level modules:
+# 	nios_system_key
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_led.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_led.v 
+# -- Compiling module nios_system_led
+# 
+# Top level modules:
+# 	nios_system_led
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_mm_interconnect_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_mm_interconnect_0.v 
+# -- Compiling module nios_system_mm_interconnect_0
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v 
+# -- Compiling module nios_system_mm_interconnect_0_avalon_st_adapter
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_avalon_st_adapter
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:26 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0.v 
+# -- Compiling module nios_system_nios2_qsys_0
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0
+# End time: 13:41:26 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:27 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_register_bank_a_module
+# -- Compiling module nios_system_nios2_qsys_0_cpu_register_bank_b_module
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_debug
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_break
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_xbrk
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_dbrk
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_itrace
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_td_mode
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_dtrace
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_compute_input_tm_cnt
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_fifo_wrptr_inc
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_fifo_cnt_inc
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_fifo
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_pib
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_im
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_performance_monitors
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_avalon_reg
+# -- Compiling module nios_system_nios2_qsys_0_cpu_ociram_sp_ram_module
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_ocimem
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci
+# -- Compiling module nios_system_nios2_qsys_0_cpu
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_nios2_performance_monitors
+# 	nios_system_nios2_qsys_0_cpu
+# End time: 13:41:27 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_sysclk.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:27 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_sysclk.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_sysclk
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_debug_slave_sysclk
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_tck.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_tck.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_tck
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_debug_slave_tck
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_wrapper.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_wrapper.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_wrapper
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_debug_slave_wrapper
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_test_bench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_nios2_qsys_0_cpu_test_bench.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_test_bench
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_test_bench
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_onchip_memory2_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_onchip_memory2_0.v 
+# -- Compiling module nios_system_onchip_memory2_0
+# 
+# Top level modules:
+# 	nios_system_onchip_memory2_0
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_sdram.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_sdram.v 
+# -- Compiling module nios_system_sdram_input_efifo_module
+# -- Compiling module nios_system_sdram
+# 
+# Top level modules:
+# 	nios_system_sdram
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_sdram_pll.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_sdram_pll.v 
+# -- Compiling module nios_system_sdram_pll_dffpipe_l2c
+# -- Compiling module nios_system_sdram_pll_stdsync_sv6
+# -- Compiling module nios_system_sdram_pll_altpll_lqa2
+# -- Compiling module nios_system_sdram_pll
+# 
+# Top level modules:
+# 	nios_system_sdram_pll
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_switches.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_switches.v 
+# -- Compiling module nios_system_switches
+# 
+# Top level modules:
+# 	nios_system_switches
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_sysid_qsys_1.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_sysid_qsys_1.v 
+# -- Compiling module nios_system_sysid_qsys_1
+# 
+# Top level modules:
+# 	nios_system_sysid_qsys_1
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_to_hw_sig.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_to_hw_sig.v 
+# -- Compiling module nios_system_to_hw_sig
+# 
+# Top level modules:
+# 	nios_system_to_hw_sig
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_to_sw_port.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_to_sw_port.v 
+# -- Compiling module nios_system_to_sw_port
+# 
+# Top level modules:
+# 	nios_system_to_sw_port
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+e:/school/university\ of\ illinois/ece\ 385/ece_385/lab09_1/db/ip/nios_system/submodules {e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_to_sw_sig.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules" e:/school/university of illinois/ece 385/ece_385/lab09_1/db/ip/nios_system/submodules/nios_system_to_sw_sig.v 
+# -- Compiling module nios_system_to_sw_sig
+# 
+# Top level modules:
+# 	nios_system_to_sw_sig
+# End time: 13:41:28 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab09_1 {E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvShiftRows.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:28 on Nov 07,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1" E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvShiftRows.sv 
+# -- Compiling module InvShiftRows
+# 
+# Top level modules:
+# 	InvShiftRows
+# End time: 13:41:29 on Nov 07,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab09_1 {E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 13:41:29 on Nov 07,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1" E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv 
+# -- Compiling module InvAddRoundKey
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c33' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(43).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c32' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(42).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c31' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(41).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c30' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(40).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c23' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(38).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c22' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(37).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c21' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(36).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c20' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(35).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c13' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(33).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c12' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(32).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c11' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(31).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c10' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(30).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c03' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(28).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c02' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(27).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c01' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(26).
+# 
+# ** Error: (vlog-7045) E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(45): 'c00' is driven by more than one continuous assignment. See E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvAddRoundKey.sv(25).
+# 
+# End time: 13:41:29 on Nov 07,2016, Elapsed time: 0:00:00
+# Errors: 16, Warnings: 0
+# ** Error: C:/Altera/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./lab9_run_msim_rtl_verilog.do line 34
+# C:/Altera/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab09_1 {E:/School/University of Illinois/ECE 385/ECE_385/Lab09_1/InvA..."
