@@ -1,28 +1,43 @@
-module blitter(input logic [7:0] opCode,
+module blitter(
+               /*** Interface with the rest of the system ***/
+					input logic [7:0] opCode,
 					input logic [22:0] startAddress,
 					input logic [22:0] endAddress,
 					input logic clk, reset, draw_en,
-					output logic draw_complete,
-					
+					output logic draw_complete
 					
 					/*** Flash Interface ***/
 					input logic  [7:0] FL_DQ,
 					output logic [22:0] FL_ADDR,
-					output logic FL_CE_N, FL_OE_N, FL_WE_N, FL_RST_N, FL_WP_N, FL_RY
+					output logic FL_CE_N, FL_OE_N, FL_WE_N, FL_RST_N, FL_WP_N, FL_RY,
 					
 					/*** Sram Interface ***/
 					output logic [15:0] SRAM_DQ,
 					output logic [19:0] SRAM_ADDR,
 					output logic SRAM_UB_N, SRAM_LB_N, SRAM_CE_N, SRAM_OE_N, SRAM_WE_N
 					)
-	
+	   /*** Memory locations of the different background sprites ***/
+	   parameter [23:0] bg0 = 0;
+		parameter [23:0] bg1 = 0;
+      parameter [23:0] bg2 = 0;
+		parameter [23:0] bg3 = 0;
+		parameter [23:0] bg4 = 0;
+		parameter [23:0] bg5 = 0;
+		parameter [23:0] bg6 = 0;
+		parameter [23:0] bg7 = 0;
+		parameter [23:0] bg8 = 0;
+		parameter [23:0] bg9 = 0;
+		
+		
+		/*** Internal Logic Signals ***/
 		logic [3:0] counter;
-		logic []
+		logic [3:0] waitCounter;
 		logic [19:0] clear_count;
 		logic [9:0] blitter_x, tile_origin_x;
 		logic [8:0] blitter_y, tile_origin_y;
 		
-		logic [0:191] sp_0, sp_1, sp_2, sp_3, sp_4, sp_5, sp_6, sp_7, sp_8, sp_9;
+		logic [1535:0] bg_0, bg_1, bg_2, bg_3, bg_4, bg_5, bg_6, bg_7, bg_8, bg_9;
+		logic [1535:0] sp_0, sp_1, sp_2, sp_3, sp_4, sp_5, sp_6, sp_7, sp_8, sp_9;
 		
 		enum logic [2:0] {WAIT, clr_black, draw_bkg, get_background_0, get_background_1, get_background_2, get_background_3, get_background_4, fetch_tile, draw_sprites} state, next_state;
 		
@@ -116,8 +131,19 @@ module blitter(input logic [7:0] opCode,
 		
 		/*** State Logic ***/
 		always_comb begin
-		
-		
+			/*** Fetch_tile ***/
+			/* Each sprite has 3 Bytes of information per pixel for R,G,B channels */
+			case(state)
+			// 
+			Fetch_Tile0:
+         Fetch_Tile1:
+			Fetch_Tile2: 
+			Fetch_Tile3: 
+			Fetch_Tile4: 
+			Fetch_Tile5: 
+			Fetch_Tile6: 
+			Fetch_Tile7: 
+			Wait_For_Tile1:
 		end
 endmodule
 
