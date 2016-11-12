@@ -4,7 +4,7 @@ module blitter(
 					input logic [22:0] startAddress,
 					input logic [22:0] endAddress,
 					input logic clk, reset, draw_en,
-					output logic draw_complete
+					output logic draw_complete,
 					
 					/*** Flash Interface ***/
 					input logic  [7:0] FL_DQ,
@@ -15,8 +15,9 @@ module blitter(
 					output logic [15:0] SRAM_DQ,
 					output logic [19:0] SRAM_ADDR,
 					output logic SRAM_UB_N, SRAM_LB_N, SRAM_CE_N, SRAM_OE_N, SRAM_WE_N
-					)
-	   /*** Memory locations of the different background sprites ***/
+					);
+		
+	   /*** Memory locations of the different background sprites ***//*
 	   parameter [23:0] bg0 = 0;
 		parameter [23:0] bg1 = 0;
       parameter [23:0] bg2 = 0;
@@ -29,7 +30,7 @@ module blitter(
 		parameter [23:0] bg9 = 0;
 		
 		
-		/*** Internal Logic Signals ***/
+		/*** Internal Logic Signals ***//*
 		logic [3:0] counter;
 		logic [3:0] waitCounter;
 		logic [19:0] clear_count;
@@ -46,7 +47,7 @@ module blitter(
 		
 		//spriteDecoder SD0(.spriteCode(background_code), .x, .y, .Color);
 		
-		/*** State Counters and Reset ***/
+		/*** State Counters and Reset ***//*
 		always_ff @ (posedge clk, negedge reset) begin
 			if (reset == 1'b0) begin
 				state <= WAIT;
@@ -76,11 +77,12 @@ module blitter(
 				end
 				
 				if (state == draw_sprites) begin
-					/*** INSERT CODE HERE ***/
+					/*** INSERT CODE HERE ***//*
 				end
+			end
 		end
 		
-		/*** State Transitions ***/
+		/*** State Transitions ***//*
 		always_comb begin
 			case(state)
 				WAIT: begin
@@ -129,10 +131,10 @@ module blitter(
 			endcase
 		end
 		
-		/*** State Logic ***/
+		/*** State Logic ***//*
 		always_comb begin
-			/*** Fetch_tile ***/
-			/* Each sprite has 3 Bytes of information per pixel for R,G,B channels */
+			/*** Fetch_tile ***//*
+			/* Each sprite has 3 Bytes of information per pixel for R,G,B channels *//*
 			case(state)
 			// 
 			Fetch_Tile0:
@@ -165,3 +167,4 @@ Load first pixel
 Load sixth pixel
 get new texture
 */
+endmodule

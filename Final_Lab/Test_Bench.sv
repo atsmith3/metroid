@@ -11,7 +11,7 @@ logic 	LDREG, DR, SR1, Clk, Reset;
 logic 	[3:0] SR2;
 logic	[15:0] SR2out, SR1out;
 
-Register_File testFile(.*);
+//Register_File testFile(.*);
 
 // Toggle the clock
 // #1 means wait for a delay of 1 timeunit

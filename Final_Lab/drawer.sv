@@ -1,54 +1,91 @@
 module drawer(	/*** Basically a more powerful color mapper ***/
-					logic input vgaX, vgaY, clk, vgaClkIn, vsync,
-					logic output vgaClkOut,
-					logic output red, green, blue,
-					logic output finished_draw,
+					input logic  vgaX, vgaY, clk, vgaClkIn, vsync, hsync, reset,
+					output logic vgaClkOut,
+					output logic [7:0] red, green, blue,
 					
 					// Handshake with the blitter:
-					logic input enable,				// From blitter, tells the drawer to start drawing
-					logic output acknowladge,		// Tells the blitter to got to the WAIT state
-					logic input ackBack,				// Tells us blitter took over
-					logic output blitterStart,		// Triggers the blitter (safe space required)
-					logic output inControl,			// Couples the drawer to the SRAM
+					input logic enable,				// From blitter, tells the drawer to start drawing
+					output logic acknowladge,		// Tells the blitter to got to the WAIT state
+					input logic ackBack,				// Tells us blitter took over
+					output logic blitterStart,		// Triggers the blitter (safe space required)
+					output logic inControl,			// Couples the drawer to the SRAM
+					
+					output logic vgaReset,
 					
 					/*** SRAM INTERFACE ***/
 					input logic [15:0] SRAM_DQ,
-					input logic [19:0] SRAM_ADDR,
-					input logic SRAM_UB_N, SRAM_LB_N, SRAM_CE_N, SRAM_OE_N, SRAM_WE_N
+					output logic [19:0] SRAM_ADDR,
+					output logic SRAM_UB_N, SRAM_LB_N, SRAM_CE_N, SRAM_OE_N, SRAM_WE_N
   				 );
 
 /*** This modules purpose is to iterate over the buffer in memory and determine the correct color for that pixel ***/
 parameter [19:0] bufferStart = 0;
+parameter [8:0] bufferWidth = 127;
 
 /*** Local signals ***/
-logic [7:0] sdram_data;
+logic [3:0] sram_data;
 logic [19:0] address;
 logic [19:0] prev_address;
+logic [8:0] memoryCounter;
 logic [7:0] new_data;
-logic [7:0] hs_counter;		// When we horizontal sync twice, add to the address;
-enum logic [2:0] {WAIT, RESET, INITIAL_0, INITIAL_1, output1_0, output1_1, output1_2, output1_3, output1_4, output2_0, output2_1, output2_3, output2_4} state, next_state;
+logic [7:0] cur_data;
+logic [3:0] hs_counter;		// When we horizontal sync twice, add to the address;
+enum logic [6:0] {WAIT, RESET, INITIAL_0, INITIAL_1, output1_0, output1_1, output1_2, output1_3, output1_4, output2_0, output2_1, output2_2, output2_3, output2_4, TERMINATE} state, next_state;
 
 /*** Synchronous logic ***/
-always_ff @(posedge vgaClk) begin
+always_ff @(posedge vgaClkIn) begin
 	if (reset == 1'b0) begin
 		state <= WAIT;
 		address <= bufferStart;
+		hs_counter <= 8'b0;
 	end
 	else
 		state <= next_state;
+		
+	if (hsync) begin
+		hs_counter <= hs_counter+1;
+	end
+	
+	if (state == output1_0) begin
+		 sram_data <= cur_data[7:4];
+	    if(memoryCounter == bufferWidth && hs_counter != 4) begin
+		     address <= prev_address;
+			  memoryCounter = memoryCounter + 1;
+		 end
+		 else if(memoryCounter < bufferWidth) begin
+		     address <= address + 1;
+			  memoryCounter = memoryCounter + 1;
+		 end
+		 else if(memoryCounter == bufferWidth && hs_counter == 4) begin
+		     address <= address + 1;
+			  prev_address <= address;
+			  hs_counter <= 3'b0;
+			  memoryCounter <= 1'b0;
+		 end
+	end
+	
+	if(state == output1_1) begin
+		// Retrieve data from SRAM:
+		cur_data <= new_data;
+		new_data <= SRAM_DQ[7:0];
+	end
+	
+	if (state == output2_0) begin
+		// Transfer the second nibble to the sram_data:
+		sram_data <= cur_data[3:0];
+		
+	end
 end
 
 /*** Next State Logic ***/
 always_comb begin
+	next_state = state;
 	case(state)
 	WAIT: begin
 		if(enable)
 			next_state = INITIAL_0;
 		else
 			next_state = WAIT;
-	end
-	DONE: begin
-		if(ackBack)
 	end
 	INITIAL_0: begin
 		next_state = INITIAL_1;
@@ -57,7 +94,7 @@ always_comb begin
 		next_state = output1_0;
 	end
 	RESET: begin
-	
+		next_state = WAIT;
 	end
 	output1_0: begin
 		next_state = output1_1;
@@ -87,19 +124,122 @@ always_comb begin
 		next_state = output2_4;
 	end
 	output2_4: begin
-	   if()
-		next_state = output1_0;
+	   if(vsync == 1'b1)
+			next_state = TERMINATE;
+		else
+			next_state = output1_0;
 	end
+	TERMINATE: begin
+		if(ackBack == 1'b1)
+			next_state = WAIT;
+		else
+			next_state = TERMINATE;
+	end
+	endcase
 end
 
-/*** State Logic ***/
-always_comb begin
-
 /*** Output Logic : Color Mapper ***/
+always_comb begin
+   /* Defaults */
+	vgaClkOut = 1'b0;
+	SRAM_ADDR = 20'b0;
+	
+	vgaReset = 1'b0;			// Resets the VGA to sync up with our counting
+   acknowladge = 1'b0;		// Tells the blitter to got to the WAIT state
+	blitterStart = 1'b0;		// Triggers the blitter (safe space required)
+	inControl = 1'b0;			// Couples the drawer to the SRAM
+	
+	//SRAM interface
+	SRAM_UB_N = 1'b0;
+	SRAM_LB_N = 1'b0;
+	SRAM_CE_N = 1'b0;
+	SRAM_OE_N = 1'b0;
+	SRAM_WE_N = 1'b1;
+	
+	
+	/* State Dependent : Overwrites Defaults */
+	case(state)
+	WAIT: begin
+		//Defaults
+	end
+	INITIAL_0: begin
+		acknowladge = 1'b1;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	INITIAL_1: begin
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+		vgaReset = 1'b1;
+	end
+	RESET: begin
+		
+	end
+	output1_0: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output1_1: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output1_2: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output1_3: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output1_4: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output2_0: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output2_1: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output2_2: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output2_3: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	output2_4: begin
+		vgaClkOut = vgaClkIn;
+		inControl = 1'b1;
+		SRAM_ADDR = address;
+	end
+	TERMINATE: begin
+		blitterStart = 1'b1;
+	end
+	endcase
+end
+
 
 /*** Looks Up from a Pallate ***/
 always_comb begin
-	case(sdram_data)
+
+	red = 8'h00;
+	green = 8'h00;
+	blue = 8'h00;
+		
+	case(sram_data)
 	/* Color 0 is black */
 	4'h0: begin
 		red = 8'h00;

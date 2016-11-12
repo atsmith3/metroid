@@ -24,6 +24,7 @@
 
 module  vga_controller ( input        Clk,       // 50 MHz clock
                                       Reset,     // reset signal
+												  SoftwareResetInt, // So the drawer can reset the system;
                          output logic hs,        // Horizontal sync pulse.  Active low
 								              vs,        // Vertical sync pulse.  Active low
 												  pixel_clk, // 25 MHz pixel clock output
@@ -49,18 +50,18 @@ module  vga_controller ( input        Clk,       // 50 MHz clock
     assign sync = 1'b0;
      
 	//This cuts the 50 Mhz clock in half to generate a 25 MHz pixel clock  
-    always_ff @ (posedge Clk or posedge Reset )
+    always_ff @ (posedge Clk or posedge Reset or posedge SoftwareResetInt)
     begin 
-        if (Reset) 
+        if ( Reset || SoftwareResetInt ) 
             clkdiv <= 1'b0;
         else 
             clkdiv <= ~ (clkdiv);
     end
    
 	//Runs the horizontal counter  when it resets vertical counter is incremented
-   always_ff @ (posedge clkdiv or posedge Reset )
+   always_ff @ (posedge clkdiv or posedge Reset or posedge SoftwareResetInt)
 	begin: counter_proc
-		  if ( Reset ) 
+		  if ( Reset || SoftwareResetInt ) 
 			begin 
 				 hc <= 10'b0000000000;
 				 vc <= 10'b0000000000;
@@ -84,9 +85,9 @@ module  vga_controller ( input        Clk,       // 50 MHz clock
    
 	 //horizontal sync pulse is 96 pixels long at pixels 656-752
     //(signal is registered to ensure clean output waveform)
-    always_ff @ (posedge Reset or posedge clkdiv )
+    always_ff @ (posedge Reset or posedge clkdiv or posedge SoftwareResetInt)
     begin : hsync_proc
-        if ( Reset ) 
+        if ( Reset || SoftwareResetInt ) 
             hs <= 1'b0;
         else  
             if ((((hc + 1) >= 10'b1010010000) & ((hc + 1) < 10'b1011110000))) 
@@ -97,9 +98,9 @@ module  vga_controller ( input        Clk,       // 50 MHz clock
 	 
     //vertical sync pulse is 2 lines(800 pixels) long at line 490-491
     //(signal is registered to ensure clean output waveform)
-    always_ff @ (posedge Reset or posedge clkdiv )
+    always_ff @ (posedge Reset or posedge clkdiv or posedge SoftwareResetInt)
     begin : vsync_proc
-        if ( Reset ) 
+        if ( Reset || SoftwareResetInt ) 
            vs <= 1'b0;
         else 
             if ( ((vc + 1) == 9'b111101010) | ((vc + 1) == 9'b111101011) ) 

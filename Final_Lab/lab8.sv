@@ -51,11 +51,20 @@ module  lab8 			( input         CLOCK_50,
     
 	 assign Clk = CLOCK_50;
     assign {Reset_h}=~ (KEY[0]);  // The push buttons are active low
-	
+	 
+	 logic ResetInt;
 	 
 	 wire [1:0] hpi_addr;
 	 wire [15:0] hpi_data_in, hpi_data_out;
 	 wire hpi_r, hpi_w,hpi_cs;
+	 
+	 wire SRAM_DQ;
+	 logic SRAM_ADDR;
+	 logic SRAM_UB_N;
+	 logic SRAM_LB_N;
+	 logic SRAM_CE_N;
+	 logic SRAM_OE_N;
+	 logic SRAM_WE_N;
 	 
 	 hpi_io_intf hpi_io_inst(   .from_sw_address(hpi_addr),
 										 .from_sw_data_in(hpi_data_in),
@@ -99,15 +108,42 @@ module  lab8 			( input         CLOCK_50,
     vga_controller vgasync_instance(.*,.Reset(Reset_h),
 													.hs(VGA_HS),    
 													.vs(VGA_VS),        
-													.pixel_clk(VGA_CLK), 
+													.pixel_clk(VGA_CLK_intermediate), 
 													.blank(VGA_BLANK_N),     
 													.sync(VGA_SYNC_N),
 												   .DrawX(drawxsig), 
-								               .DrawY(drawysig));
-   
-    ball ball_instance(.*,.Reset(Reset_h), .frame_clk(VGA_VS), .keycode(keycode), .BallX(ballxsig), .BallY(ballysig), .BallS(ballsizesig));
-   
-    color_mapper color_instance(.BallX(ballxsig), .BallY(ballysig), .DrawX(drawxsig), .DrawY(drawysig), .Ball_size(ballsizesig), .Red(VGA_R), .Green(VGA_G), .Blue(VGA_B));
+								               .DrawY(drawysig),
+													.SoftwareResetInt(ResetInt));
+ 
+    drawer dr0(	/*** Basically a more powerful color mapper ***/
+				.vgaClkIn(VGA_CLK_intermediate), .vsync(VGA_VS), .hsync(VGA_HS), .reset(reset_h),
+				.vgaClkOut(VGA_CLK),
+				.red(VGA_R), .green(VGA_G), .blue(VGA_B),
+				
+				.enable(),				// From blitter, tells the drawer to start drawing
+				.acknowladge(),		// Tells the blitter to got to the WAIT state
+				.ackBack(),				// Tells us blitter took over
+				.blitterStart(),		// Triggers the blitter (safe space required)
+				.inControl(),			// Couples the drawer to the SRAM
+					
+				.vgaReset(ResetInt),
+					
+					/*** SRAM INTERFACE ***/
+				.SRAM_DQ(SRAM_DQ),
+				.SRAM_ADDR(SRAM_ADDR),
+				.SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), .SRAM_WE_N(SRAM_WE_N)
+  				);
+				
+	 /* Test SRAM */
+	 test_memory testSRAM( 	.Clk(Clk),
+									.Reset(reset_h), 
+									.I_O(SRAM_DQ),
+									.A(SRAM_ADDR),
+									.CE(SRAM_CE_N),
+                           .UB(SRAM_UB_N),
+                           .LB(SRAM_LB_N),
+                           .OE(SRAM_OE_N),
+									.WE(SRAM_WE_N));
 										  
 	 HexDriver hex_inst_0 (keycode[3:0], HEX0);
 	 HexDriver hex_inst_1 (keycode[7:4], HEX1);
