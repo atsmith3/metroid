@@ -53,18 +53,21 @@ module  lab8 			( input         CLOCK_50,
     assign {Reset_h}=~ (KEY[0]);  // The push buttons are active low
 	 
 	 logic ResetInt;
+	 logic enable;
 	 
 	 wire [1:0] hpi_addr;
 	 wire [15:0] hpi_data_in, hpi_data_out;
 	 wire hpi_r, hpi_w,hpi_cs;
 	 
-	 wire SRAM_DQ;
-	 logic SRAM_ADDR;
+	 wire [15:0] SRAM_DQ;
+	 logic [19:0] SRAM_ADDR;
 	 logic SRAM_UB_N;
 	 logic SRAM_LB_N;
 	 logic SRAM_CE_N;
 	 logic SRAM_OE_N;
 	 logic SRAM_WE_N;
+	 
+	 logic VGA_CLK_intermediate;
 	 
 	 hpi_io_intf hpi_io_inst(   .from_sw_address(hpi_addr),
 										 .from_sw_data_in(hpi_data_in),
@@ -82,6 +85,7 @@ module  lab8 			( input         CLOCK_50,
 										 .Clk(Clk),
 										 .Reset(~KEY[1])	
 	 );
+	 
 	 
 	 //The connections for nios_system might be named different depending on how you set up Qsys
 	 nios_system nios_system(	 .clk_clk(Clk),         
@@ -104,6 +108,8 @@ module  lab8 			( input         CLOCK_50,
 										 .otg_hpi_r_export(hpi_r),
 										 .otg_hpi_w_export(hpi_w));
 	
+	assign enable = 1;
+	
 	//Fill in the connections for the rest of the modules 
     vga_controller vgasync_instance(.*,.Reset(Reset_h),
 													.hs(VGA_HS),    
@@ -114,13 +120,14 @@ module  lab8 			( input         CLOCK_50,
 												   .DrawX(drawxsig), 
 								               .DrawY(drawysig),
 													.SoftwareResetInt(ResetInt));
- 
-    drawer dr0(	/*** Basically a more powerful color mapper ***/
-				.vgaClkIn(VGA_CLK_intermediate), .vsync(VGA_VS), .hsync(VGA_HS), .reset(reset_h),
+	 
+	 
+    drawer dr0(	
+				.vgaClkIn(VGA_CLK_intermediate), .vsync(VGA_VS), .hsync(VGA_HS), .reset(Reset_h),
 				.vgaClkOut(VGA_CLK),
 				.red(VGA_R), .green(VGA_G), .blue(VGA_B),
 				
-				.enable(),				// From blitter, tells the drawer to start drawing
+				.enable(enable),		// From blitter, tells the drawer to start drawing
 				.acknowladge(),		// Tells the blitter to got to the WAIT state
 				.ackBack(),				// Tells us blitter took over
 				.blitterStart(),		// Triggers the blitter (safe space required)
@@ -128,15 +135,15 @@ module  lab8 			( input         CLOCK_50,
 					
 				.vgaReset(ResetInt),
 					
-					/*** SRAM INTERFACE ***/
+					
 				.SRAM_DQ(SRAM_DQ),
 				.SRAM_ADDR(SRAM_ADDR),
 				.SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), .SRAM_WE_N(SRAM_WE_N)
-  				);
-				
-	 /* Test SRAM */
+  				);		
+	 
+	 
 	 test_memory testSRAM( 	.Clk(Clk),
-									.Reset(reset_h), 
+									.Reset(Reset_h), 
 									.I_O(SRAM_DQ),
 									.A(SRAM_ADDR),
 									.CE(SRAM_CE_N),
@@ -144,7 +151,7 @@ module  lab8 			( input         CLOCK_50,
                            .LB(SRAM_LB_N),
                            .OE(SRAM_OE_N),
 									.WE(SRAM_WE_N));
-										  
+	 
 	 HexDriver hex_inst_0 (keycode[3:0], HEX0);
 	 HexDriver hex_inst_1 (keycode[7:4], HEX1);
 	 HexDriver hex_inst_2 (hpi_data_in[3:0], HEX2);
@@ -153,12 +160,4 @@ module  lab8 			( input         CLOCK_50,
 	 HexDriver hex_inst_5 (hpi_data_in[15:12], HEX5);
 	 HexDriver hex_inst_6 ({OTG_DATA[3:0]}, HEX6);
 	 HexDriver hex_inst_7 ({OTG_DATA[7:4]}, HEX7);
-    
-
-	 /**************************************************************************************
-	    ATTENTION! Please answer the following quesiton in your lab report! Points will be allocated for the answers!
-		 Hidden Question #1/2:
-          What are the advantages and/or disadvantages of using a USB interface over PS/2 interface to
-			 connect to the keyboard? List any two.  Give an answer in your Post-Lab.
-     **************************************************************************************/
 endmodule

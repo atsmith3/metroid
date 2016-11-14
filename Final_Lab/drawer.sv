@@ -37,7 +37,7 @@ always_ff @(posedge vgaClkIn) begin
 	if (reset == 1'b0) begin
 		state <= WAIT;
 		address <= bufferStart;
-		hs_counter <= 8'b0;
+		hs_counter <= 3'b0;
 	end
 	else
 		state <= next_state;
