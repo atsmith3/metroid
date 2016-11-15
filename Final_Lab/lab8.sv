@@ -59,16 +59,6 @@ module  lab8 			( input         CLOCK_50,
 	 wire [15:0] hpi_data_in, hpi_data_out;
 	 wire hpi_r, hpi_w,hpi_cs;
 	 
-	 wire [15:0] SRAM_DQ;
-	 logic [19:0] SRAM_ADDR;
-	 logic SRAM_UB_N;
-	 logic SRAM_LB_N;
-	 logic SRAM_CE_N;
-	 logic SRAM_OE_N;
-	 logic SRAM_WE_N;
-	 
-	 logic VGA_CLK_intermediate;
-	 
 	 hpi_io_intf hpi_io_inst(   .from_sw_address(hpi_addr),
 										 .from_sw_data_in(hpi_data_in),
 										 .from_sw_data_out(hpi_data_out),
@@ -111,7 +101,7 @@ module  lab8 			( input         CLOCK_50,
 	assign enable = 1;
 	
 	//Fill in the connections for the rest of the modules 
-    vga_controller vgasync_instance(.*,.Reset(Reset_h),
+   vga_controller vgasync_instance(.*,.Reset(Reset_h),
 													.hs(VGA_HS),    
 													.vs(VGA_VS),        
 													.pixel_clk(VGA_CLK_intermediate), 
@@ -120,44 +110,67 @@ module  lab8 			( input         CLOCK_50,
 												   .DrawX(drawxsig), 
 								               .DrawY(drawysig),
 													.SoftwareResetInt(ResetInt));
-	 
-	 
-    drawer dr0(	
-				.vgaClkIn(VGA_CLK_intermediate), .vsync(VGA_VS), .hsync(VGA_HS), .reset(Reset_h),
-				.vgaClkOut(VGA_CLK),
-				.red(VGA_R), .green(VGA_G), .blue(VGA_B),
-				
-				.enable(enable),		// From blitter, tells the drawer to start drawing
-				.acknowladge(),		// Tells the blitter to got to the WAIT state
-				.ackBack(),				// Tells us blitter took over
-				.blitterStart(),		// Triggers the blitter (safe space required)
-				.inControl(),			// Couples the drawer to the SRAM
-					
-				.vgaReset(ResetInt),
-					
-					
-				.SRAM_DQ(SRAM_DQ),
-				.SRAM_ADDR(SRAM_ADDR),
-				.SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), .SRAM_WE_N(SRAM_WE_N)
-  				);		
-	 
-	 
-	 test_memory testSRAM( 	.Clk(Clk),
-									.Reset(Reset_h), 
-									.I_O(SRAM_DQ),
-									.A(SRAM_ADDR),
-									.CE(SRAM_CE_N),
-                           .UB(SRAM_UB_N),
-                           .LB(SRAM_LB_N),
-                           .OE(SRAM_OE_N),
-									.WE(SRAM_WE_N));
-	 
-	 HexDriver hex_inst_0 (keycode[3:0], HEX0);
-	 HexDriver hex_inst_1 (keycode[7:4], HEX1);
-	 HexDriver hex_inst_2 (hpi_data_in[3:0], HEX2);
-	 HexDriver hex_inst_3 (hpi_data_in[7:4], HEX3);
-	 HexDriver hex_inst_4 (hpi_data_in[11:8], HEX4);
-	 HexDriver hex_inst_5 (hpi_data_in[15:12], HEX5);
-	 HexDriver hex_inst_6 ({OTG_DATA[3:0]}, HEX6);
-	 HexDriver hex_inst_7 ({OTG_DATA[7:4]}, HEX7);
+	 	
+	//--------------------------------------------------------------------------------------------
+	// Sprite Mapper:
+	//
+	//		The sprite mapper is a glorified color mapper and it will draw the sprites with the 
+	//		top left corner at the (x,y) coordinate. The background moves based on the position of
+	//		samus. (She is in the middle on the screen)
+	//
+	//--------------------------------------------------------------------------------------------
+	sprite_mapper sp1(.clk(), .reset(), .vgaX(), .vgaY(), .red(), .green(), .blue()
+							// Samus Sprite Controller:
+							.samus_en(),
+							.samus_x(),
+							.samus_y(),
+							.samus_sprite(),
+							// Bullet Sprite Signals:
+							.bullet_1_en(),
+							.bullet_2_en(),
+							.bullet_3_en(),
+							.bullet_1_x(),
+							.bullet_1_y(),
+							.bullet_2_x(),
+							.bullet_2_y(),
+							.bullet_3_x(),
+							.bullet_3_y(),
+							// Monster sprites:
+							.monster_1_en(),
+							.monster_2_en(),
+							.monster_3_en(),
+							.monster_1_x(),
+							.monster_1_y(),
+							.monster_2_x(),
+							.monster_2_y(),
+							.monster_3_x(),
+							.monster_3_y(),
+							// Power Ups:
+							.power_up_en(),
+							.power_up_x(),
+							.power_up_y(),
+							.power_up_type());
+							
+	//--------------------------------------------------------------------------------------------
+	// Sound Unit:
+	//
+	//		Interfaces with the GPIO Pins:
+	//		This is a custom sound unit that will connect with a low pass filter and amp on a
+	//		breadboard. Uses a 256 bit shift register to send a pwm signal to the filter / amp.
+	//
+	//--------------------------------------------------------------------------------------------
+	//sound_controller sc1(	.clk(), 
+	//								.enable(),
+	//								.reset(),
+	//								.soundNumber());
+
+	// Hex drivers (for debug)
+	HexDriver hex_inst_0 (keycode[3:0], HEX0);
+	HexDriver hex_inst_1 (keycode[7:4], HEX1);
+	HexDriver hex_inst_2 (hpi_data_in[3:0], HEX2);
+	HexDriver hex_inst_3 (hpi_data_in[7:4], HEX3);
+	HexDriver hex_inst_4 (hpi_data_in[11:8], HEX4);
+	HexDriver hex_inst_5 (hpi_data_in[15:12], HEX5);
+	HexDriver hex_inst_6 ({OTG_DATA[3:0]}, HEX6);
+	HexDriver hex_inst_7 ({OTG_DATA[7:4]}, HEX7);
 endmodule
