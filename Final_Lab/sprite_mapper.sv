@@ -300,17 +300,57 @@ module background(
 	// Combinational math an returns 
 	logic [10:0] background_x, background_y;
 	
+	
+	// Sprites: 8 different backgrounds:
+	int BG1 [40][40];
+	int BG2 [40][40];
+	int BG3 [40][40];
+	int BG4 [40][40];
+	int BG5 [40][40];
+	int BG6 [40][40];
+	int BG7 [40][40];
+	int BG8 [40][40];
+	
+	//-------------------------------------------------------------------------------------------------------------
+	// Sprite arrays:
+	//-------------------------------------------------------------------------------------------------------------
+	always_ff begin
+		
+	end
+	
+	
 	always_comb begin
-		// vga_x and vga_y mod Tile size:
+		// Determines the upper left corner of the tile sprite:
 		if(vga_x >= 0 && vga_x < width) background_x = 0;
 		if(vga_x >= width && vga_x < 2*width) background_x = width;
 		if(vga_x >= 2*width && vga_x < 3*width) background_x = 2*width;
 		if(vga_x >= 3*width && vga_x < 4*width) background_x = 3*width;
 		if(vga_x >= 4*width && vga_x < 5*width) background_x = 4*width;
 		if(vga_x >= 5*width && vga_x < 6*width) background_x = 5*width;
+		if(vga_x >= 6*width && vga_x < 7*width) background_x = 6*width;
+		if(vga_x >= 7*width && vga_x < 8*width) background_x = 7*width;
+		if(vga_x >= 8*width && vga_x < 9*width) background_x = 8*width;
+		if(vga_x >= 9*width && vga_x < 10*width) background_x = 9*width;
+		if(vga_x >= 10*width && vga_x < 11*width) background_x = 10*width;
+		if(vga_x >= 11*width && vga_x < 12*width) background_x = 11*width;
+		if(vga_x >= 12*width && vga_x < 13*width) background_x = 12*width;
+		if(vga_x >= 13*width && vga_x < 14*width) background_x = 13*width;
+		if(vga_x >= 14*width && vga_x < 15*width) background_x = 14*width;
+		if(vga_x >= 15*width && vga_x < 16*width) background_x = 15*width;
+		
+		if(vga_y >= 0 && vga_y < height) background_y = 0;
+		if(vga_y >= height && vga_y < 2*height) background_y = height;
+		if(vga_y >= 2*height && vga_y < 3*height) background_y = 2*height;
+		if(vga_y >= 3*height && vga_y < 4*height) background_y = 3*height;
+		if(vga_y >= 4*height && vga_y < 5*height) background_y = 4*height;
+		if(vga_y >= 5*height && vga_y	< 6*height) background_y = 5*height;
+		if(vga_y >= 6*height && vga_y < 7*height) background_y = 6*height;
+		if(vga_y >= 7*height && vga_y < 8*height) background_y = 7*height;
+		if(vga_y >= 8*height && vga_y < 9*height) background_y = 8*height;
+		if(vga_y >= 9*height && vga_y < 10*height) background_y = 9*height;
+		if(vga_y >= 10*height && vga_y < 11*height) background_y = 10*height;
+		if(vga_y >= 11*height && vga_y < 12*height) background_y = 11*height;
 	end
 	
-	// Case statement to select sprite from a big array that has all of the background tiles on it:
-	case()
-
+	// Select the correct background tile from the background tile array:
 endmodule
