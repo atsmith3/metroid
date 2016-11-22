@@ -1,35 +1,130 @@
 from PIL import Image
 
-# im = Image.open("../Desktop/sprites/NEW/Samus_jumping_forward.png") #Can be many different formats.
-# im = Image.open("../Desktop/sprites/NEW/enemy3.png") #Can be many different formats.
-im = Image.open("../sprites/NEW/enemy2.png") #Can be many different formats.
-pix = im.load()
-minDistance = -1
+ims = [Image.open("../sprites/NEW/block_blue.png"),
+       Image.open("../sprites/NEW/block_gray.png"),
+       Image.open("../sprites/NEW/block_green.png"),
+       Image.open("../sprites/NEW/block_moss_blue.png"),
+       Image.open("../sprites/NEW/blue_door_botmid.png"),
+       Image.open("../sprites/NEW/blue_door_botright.png"),
+       Image.open("../sprites/NEW/blue_door_bottop.png"),
+       Image.open("../sprites/NEW/blue_door_left.png"),
+       Image.open("../sprites/NEW/EN_indicate.png"),
+       Image.open("../sprites/NEW/EN.png"),
+       Image.open("../sprites/NEW/enemy1.png"),
+       Image.open("../sprites/NEW/enemy2.png"),
+       Image.open("../sprites/NEW/enemy3.png"),
+       Image.open("../sprites/NEW/explosion1.png"),
+       Image.open("../sprites/NEW/explosion2.png"),
+       Image.open("../sprites/NEW/health.png"),
+       Image.open("../sprites/NEW/Running_forward_3.png"),
+       Image.open("../sprites/NEW/Samus_jumping_forward.png"),
+       Image.open("../sprites/NEW/Samus_jumping_up.png"),
+       Image.open("../sprites/NEW/Samus_running_forward_2.png"),
+       Image.open("../sprites/NEW/Samus_running_forward1.png"),
+       Image.open("../sprites/NEW/Samus_standing_up.png"),
+       Image.open("../sprites/NEW/Standing_forward.png"),] #Can be many different formats.
+
+saveLocations = ["../sprites/MODIFIED/block_blue.png",
+                 "../sprites/MODIFIED/block_gray.png",
+                 "../sprites/MODIFIED/block_green.png",
+                 "../sprites/MODIFIED/block_moss_blue.png",
+                 "../sprites/MODIFIED/blue_door_botmid.png",
+                 "../sprites/MODIFIED/blue_door_botright.png",
+                 "../sprites/MODIFIED/blue_door_bottop.png",
+                 "../sprites/MODIFIED/blue_door_left.png",
+                 "../sprites/MODIFIED/EN_indicate.png",
+                 "../sprites/MODIFIED/EN.png",
+                 "../sprites/MODIFIED/enemy1.png",
+                 "../sprites/MODIFIED/enemy2.png",
+                 "../sprites/MODIFIED/enemy3.png",
+                 "../sprites/MODIFIED/explosion1.png",
+                 "../sprites/MODIFIED/explosion2.png",
+                 "../sprites/MODIFIED/health.png",
+                 "../sprites/MODIFIED/Running_forward_3.png",
+                 "../sprites/MODIFIED/Samus_jumping_forward.png",
+                 "../sprites/MODIFIED/Samus_jumping_up.png",
+                 "../sprites/MODIFIED/Samus_running_forward_2.png",
+                 "../sprites/MODIFIED/Samus_running_forward1.png",
+                 "../sprites/MODIFIED/Samus_standing_up.png",
+                 "../sprites/MODIFIED/Standing_forward.png",] #Can be many different formats.
+
+pallette = [(255,111,207),
+            (44,92,10),
+            (248,146,56),
+            (156,0,18),
+            (0,255,128),
+            (0,0,128),
+            (0,128,255),
+            (255,255,255),
+            (0,0,0),
+            (0,0,255),
+            (102,102,102),
+            (0,255,255),
+            (0,255,0),
+            (64,128,0),
+            (255,0,0),
+            (255,102,102),
+            (128,0,0),
+            (248,146,56),
+            (232,146,41),
+            (27,175,0),
+            (19,137,13),
+            (255,49,62),
+            (234,228,94),
+            (126,0,246),
+            (47,151,209),
+            (156,89,33),
+            (82,105,250),
+            (43,93,83),
+            (13,65,63),
+            (37,75,258),
+            (148,148,118),
+            (60,70,17),
+            (63,71,73),
+            (34,28,28),
+            (4,35,248),
+            (186,0,37),
+            (126,0,246),
+            (103,0,183)]
+pix = list()
 closestColorList = list()
-pallette = [(255,111,207,255), (44,92,10,255),(248,146,56,255),(156,0,18,255), (0, 255, 128), (0,0,128), (0,128,255), (255,255,255), (0,0,0), (0,0,255), (102,102,102), (0,255,255),(0,255,0), (64,128,0),(255,0,0),(255,102,102),(128,0,0),(248,146,56),(232,146,41),(27,175,0),(19,137,13),(255,49,62),(234,228,94),(126,0,246),(47,151,209),(156,89,33),(82,105,250),(43,93,83),(13,65,63),(37,75,258),(148,148,118),(60,70,17),(63,71,73),(34,28,28),(4,35,248),(186,0,37),(126,0,246),(103,0,183)]
-xsize = im.size[0]
-ysize = im.size[1]
-print(im.size) #Get the width and hight of the image for iterating over
-print(len(pallette))
-for y in range(ysize):
-    for x in range(xsize):
-        for color in range(len(pallette)):
-            distance = (pix[x,y][0]-pallette[color][0])**2+(pix[x,y][1]-pallette[color][1])**2+(pix[x,y][2]-pallette[color][2])**2
-            if distance < minDistance or minDistance < 0:
-                minDistance = distance
-                # closestColor = pallette[color]
-                closestColor = color
-        closestColorList.append(closestColor)
-        minDistance = -1
+background_ims = 0
+minDistance = -1
 
-# for y in range(ysize):
-#     for x in range(xsize):
-#         # print(closestColorList[x+y*xsize],end="")
-#     print()
+for image in ims:
+    pix.append(image.load())
 
-imw = Image.new( 'RGB', (xsize,ysize), "black") # create a new black
-pixw = imw.load()
-for y in range(ysize):
-    for x in range(xsize):
-        pixw[x,y] = pallette[closestColorList[x+y*xsize]] # Set the RGBA Value of the image (tuple)
-imw.show()
+for z in range(len(ims)):
+    closestColorList.append(list())
+    xsize = ims[z].size[0]
+    ysize = ims[z].size[1]
+
+    if xsize == 30 and ysize == 30:
+        background_ims+=1
+
+    print(ims[z].size) #Get the width and hight of the image for iterating over
+
+    for y in range(ysize):
+        for x in range(xsize):
+            for color in range(len(pallette)):
+                distance = (pix[z][x,y][0]-pallette[color][0])**2+(pix[z][x,y][1]-pallette[color][1])**2+(pix[z][x,y][2]-pallette[color][2])**2
+                if distance < minDistance or minDistance < 0:
+                    minDistance = distance
+                    # closestColor = pallette[color]
+                    closestColor = color
+            closestColorList[z].append(closestColor)
+            minDistance = -1
+
+    # for y in range(ysize):
+    #     for x in range(xsize):
+    #         # print(closestColorList[x+y*xsize],end="")
+    #     print()
+
+    imw = Image.new( 'RGB', (xsize,ysize), "black") # create a new black
+    pixw = imw.load()
+    for y in range(ysize):
+        for x in range(xsize):
+            pixw[x,y] = pallette[closestColorList[z][x+y*xsize]] # Set the RGBA Value of the image (tuple)
+    imw.save(saveLocations[z])
+
+print(background_ims)
