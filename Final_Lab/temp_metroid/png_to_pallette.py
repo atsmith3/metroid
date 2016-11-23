@@ -48,6 +48,30 @@ saveLocations = ["../sprites/MODIFIED/block_blue.png",
                  "../sprites/MODIFIED/Samus_standing_up.png",
                  "../sprites/MODIFIED/Standing_forward.png",] #Can be many different formats.
 
+saveLocations2 = ["../sprites/TEXT/block_blue.txt",
+                  "../sprites/TEXT/block_gray.txt",
+                  "../sprites/TEXT/block_green.txt",
+                  "../sprites/TEXT/block_moss_blue.txt",
+                  "../sprites/TEXT/blue_door_botmid.txt",
+                  "../sprites/TEXT/blue_door_botright.txt",
+                  "../sprites/TEXT/blue_door_bottop.txt",
+                  "../sprites/TEXT/blue_door_left.txt",
+                  "../sprites/TEXT/EN_indicate.txt",
+                  "../sprites/TEXT/EN.txt",
+                  "../sprites/TEXT/enemy1.txt",
+                  "../sprites/TEXT/enemy2.txt",
+                  "../sprites/TEXT/enemy3.txt",
+                  "../sprites/TEXT/explosion1.txt",
+                  "../sprites/TEXT/explosion2.txt",
+                  "../sprites/TEXT/health.txt",
+                  "../sprites/TEXT/Running_forward_3.txt",
+                  "../sprites/TEXT/Samus_jumping_forward.txt",
+                  "../sprites/TEXT/Samus_jumping_up.txt",
+                  "../sprites/TEXT/Samus_running_forward_2.txt",
+                  "../sprites/TEXT/Samus_running_forward1.txt",
+                  "../sprites/TEXT/Samus_standing_up.txt",
+                  "../sprites/TEXT/Standing_forward.txt",] #Can be many different formats.
+
 pallette = [(255,111,207),
             (44,92,10),
             (248,146,56),
@@ -98,6 +122,7 @@ for z in range(len(ims)):
     closestColorList.append(list())
     xsize = ims[z].size[0]
     ysize = ims[z].size[1]
+    pngtext = [[0 for x in range(xsize)] for y in range(ysize)]
 
     if xsize == 30 and ysize == 30:
         background_ims+=1
@@ -113,6 +138,7 @@ for z in range(len(ims)):
                     # closestColor = pallette[color]
                     closestColor = color
             closestColorList[z].append(closestColor)
+            pngtext[y][x]=closestColor
             minDistance = -1
 
     # for y in range(ysize):
@@ -126,5 +152,11 @@ for z in range(len(ims)):
         for x in range(xsize):
             pixw[x,y] = pallette[closestColorList[z][x+y*xsize]] # Set the RGBA Value of the image (tuple)
     imw.save(saveLocations[z])
+
+    with open(saveLocations2[z], 'w') as f:
+        for y in pngtext:
+            for x in y:
+                f.write(str(x))
+            f.write('\n')
 
 print(background_ims)
