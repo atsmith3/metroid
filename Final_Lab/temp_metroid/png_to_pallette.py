@@ -155,8 +155,9 @@ for z in range(len(ims)):
 
     with open(saveLocations2[z], 'w') as f:
         for y in pngtext:
+            f.write("'{")
             for x in y:
-                f.write(str(x))
-            f.write('\n')
+                f.write(str(x) + ",")
+            f.write("},\n")
 
 print(background_ims)
