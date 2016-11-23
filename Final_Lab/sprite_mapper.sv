@@ -8,15 +8,246 @@
 //--------------------------------------------------------------------------------------------
 // Pallate: 55,111,207,255), (44,92,10,255),(248,146,56,255),(156,0,18,255), (0, 255, 128), (0,0,128), (0,128,255), (255,255,255), (0,0,0), (0,0,255), (102,102,102), (0,255,255),(0,255,0), (64,128,0),(255,0,0),(255,102,102),(128,0,0),(248,146,56),(232,146,41),(27,175,0),(19,137,13),(255,49,62),(234,228,94),(126,0,246),(47,151,209),(156,89,33),(82,105,250),(43,93,83),(13,65,63),(37,75,258),(148,148,118),(60,70,17),(63,71,73),(34,28,28),(4,35,248),(186,0,37),(126,0,246),(103,0,183)
 module sprite_mapper(
-
-	// This module acts as a mux on all of the different levels of sprites:
-
-
+	input logic  [10:0]	background_start_addr,
+	input logic  [10:0] 	vga_x, vga_y,
+	output logic [7:0] 	red, green, blue
 );
 
+	// Internal Signals:
+	logic [6:0] bg_color;
+	logic [6:0] powerUp_color;
+	logic [6:0] bullet_color;
+	logic [6:0] monster_color;
+	logic [6:0] samus_color;
+   logic [6:0] color;
+ 
+	// This module acts as a mux on all of the different levels of sprites:
+	background bg(.background_start_addr(1'b0), .vga_x(vga_x), .vga_y(vga_y), .color(bg_color))
+
+	// Select the color based on priority:
+	always_comb begin
+		//Default
+		color = bg_color;
+	end
+	
+	// Pass the color to pallate to output the proper color:
+	always_comb begin
+		//Defaults:
+		red = 8'b0;
+		green = 8'b0;
+		blue = 8'b0;
+		
+		case(color)
+			//Color 1:
+			1: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 2:
+			2: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 3:
+			3: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 4:
+			4: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 5:
+			5: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 6:
+			6: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 7:
+			7: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 8:
+			8: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 9:
+			9: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 10:
+			10: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 11:
+			11: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 12
+			12: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 13:
+			13: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 14:
+			14: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 15:
+			15: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 16
+			16: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 17:
+			17: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 18:
+			18: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 19:
+			19: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 20:
+			20: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 21:
+			21: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 22:
+			22: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 23:
+			23: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 24:
+			24: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 25:
+			25: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 26:
+			26: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 27:
+			27: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 28:
+			28: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 29:
+			29: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 30:
+			30: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 31:
+			31: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 32:
+			32: begin
+				red = 44;
+				green = 92;
+				blue = 10;
+			end
+			//Color 33:
+			33: begin
+				red = 0;
+				green = 0;
+				blue = 0;
+			end
+			// Default:
+			default: begin
+				red = 0;
+				green = 0;
+				blue = 0;
+			end
+		endcase
+	end
+	
 endmodule
 
-
+/*
 //--------------------------------------------------------------------------------------------
 // Samus:
 //
@@ -305,7 +536,7 @@ module bullet(
 	end
 endmodule
 
-
+*/
 //--------------------------------------------------------------------------------------------
 // Background:
 //
@@ -316,45 +547,48 @@ endmodule
 module background(
    input logic  [10:0]	background_start_addr,
 	input logic  [10:0] 	vga_x, vga_y,
-	input logic  [1:0] 	sprite_num,
 	output logic [5:0] 	color,
-	output logic 			draw
 );
 	// Background Tile sizes:
-	parameter [9:0] height = 40;
-	parameter [9:0] width = 40;
-	
+	parameter [9:0] height = 30;
+	parameter [9:0] width = 30;
+	parameter [9:0] screenH = 16;
+	parameter [9:0] screenW = 22;
 	// Combinational math an returns 
 	logic [10:0] background_x, background_y; // Normalized background array pointers:
 	logic [10:0] tile_x, tile_y; // Normalized tile coordinate pointers:
 	
 	// Sprites: 8 different backgrounds:
-	int BG1 [30][30];
-	int BG2 [30][30];
-	int BG3 [30][30];
-	int BG4 [30][30];
-	int BG5 [30][30];
-	int BG6 [30][30];
-	int BG7 [30][30];
-	int BG8 [30][30];
-	int dummy [16][22];
+	int BG1 [height][width];
+	int BG2 [height][width];
+	int BG3 [height][width];
+	int BG4 [height][width];
+	int BG5 [height][width];
+	int BG6 [height][width];
+	int BG7 [height][width];
+	int BG8 [height][width];
+	int dummy [screenH][screenW];
 	
 	//-------------------------------------------------------------------------------------------------------------
 	// Sprite arrays + dummy background array:
 	//-------------------------------------------------------------------------------------------------------------
 	always_ff begin
-		dummy = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,1,2,3,3,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,3,2,2,2,0,0,0,0,1},
-					 '{1,0,0,0,0,1,1,1,1,0,3,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		dummy = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,0,1,1},
+					 '{1,0,0,0,0,0,0,1,2,3,3,0,0,0,0,0,6,6,6,0,1,1},
+					 '{1,0,0,0,0,0,0,3,2,2,2,0,0,0,0,0,7,7,7,0,1,1},
+					 '{1,0,0,0,0,1,1,1,1,0,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
 		// All Black (08):
 		BG1 = '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 		        '{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
@@ -609,39 +843,198 @@ module background(
 	
 	always_comb begin
 		// Determines the upper left corner of the tile sprite:
-		if(vga_x >= 0 && vga_x < width) background_x = 0;
-		if(vga_x >= width && vga_x < 2*width) background_x = width;
-		if(vga_x >= 2*width && vga_x < 3*width) background_x = 2*width;
-		if(vga_x >= 3*width && vga_x < 4*width) background_x = 3*width;
-		if(vga_x >= 4*width && vga_x < 5*width) background_x = 4*width;
-		if(vga_x >= 5*width && vga_x < 6*width) background_x = 5*width;
-		if(vga_x >= 6*width && vga_x < 7*width) background_x = 6*width;
-		if(vga_x >= 7*width && vga_x < 8*width) background_x = 7*width;
-		if(vga_x >= 8*width && vga_x < 9*width) background_x = 8*width;
-		if(vga_x >= 9*width && vga_x < 10*width) background_x = 9*width;
-		if(vga_x >= 10*width && vga_x < 11*width) background_x = 10*width;
-		if(vga_x >= 11*width && vga_x < 12*width) background_x = 11*width;
-		if(vga_x >= 12*width && vga_x < 13*width) background_x = 12*width;
-		if(vga_x >= 13*width && vga_x < 14*width) background_x = 13*width;
-		if(vga_x >= 14*width && vga_x < 15*width) background_x = 14*width;
-		if(vga_x >= 15*width && vga_x < 16*width) background_x = 15*width;
+		// Defaults:
+		background_x = 0;
+		background_y = 0;
+		tile_x = 0;
+		tile_y = 0;
 		
-		if(vga_y >= 0 && vga_y < height) background_y = 0;
-		if(vga_y >= height && vga_y < 2*height) background_y = height;
-		if(vga_y >= 2*height && vga_y < 3*height) background_y = 2*height;
-		if(vga_y >= 3*height && vga_y < 4*height) background_y = 3*height;
-		if(vga_y >= 4*height && vga_y < 5*height) background_y = 4*height;
-		if(vga_y >= 5*height && vga_y	< 6*height) background_y = 5*height;
-		if(vga_y >= 6*height && vga_y < 7*height) background_y = 6*height;
-		if(vga_y >= 7*height && vga_y < 8*height) background_y = 7*height;
-		if(vga_y >= 8*height && vga_y < 9*height) background_y = 8*height;
-		if(vga_y >= 9*height && vga_y < 10*height) background_y = 9*height;
-		if(vga_y >= 10*height && vga_y < 11*height) background_y = 10*height;
-		if(vga_y >= 11*height && vga_y < 12*height) background_y = 11*height;
+		if(vga_x >= 0 && vga_x < width) begin
+	   	background_x = 0;
+			tile_x = 0;
+		end
+		if(vga_x >= width && vga_x < 2*width) begin
+			background_x = width;
+			tile_x = 1;
+		end
+		if(vga_x >= 2*width && vga_x < 3*width) begin
+			background_x = 2*width;
+			tile_x = 2;
+		end
+		if(vga_x >= 3*width && vga_x < 4*width) begin
+			background_x = 3*width;
+			tile_x = 3;
+		end
+		if(vga_x >= 4*width && vga_x < 5*width) begin 
+			background_x = 4*width;
+			tile_x = 4;
+		end
+		if(vga_x >= 5*width && vga_x < 6*width) begin
+			background_x = 5*width;
+			tile_x = 5;
+		end
+		if(vga_x >= 6*width && vga_x < 7*width) begin
+			background_x = 6*width;
+			tile_x = 6;
+		end
+		if(vga_x >= 7*width && vga_x < 8*width) begin
+			background_x = 7*width;
+			tile_x = 7;
+		end
+		if(vga_x >= 8*width && vga_x < 9*width) begin
+			background_x = 8*width;
+			tile_x = 8;
+		end
+		if(vga_x >= 9*width && vga_x < 10*width) begin
+			background_x = 9*width;
+			tile_x = 9;
+		end
+		if(vga_x >= 10*width && vga_x < 11*width) begin
+			background_x = 10*width;
+			tile_x = 10;
+		end
+		if(vga_x >= 11*width && vga_x < 12*width) begin
+			background_x = 11*width;
+			tile_x = 11;
+		end
+		if(vga_x >= 12*width && vga_x < 13*width) begin
+			background_x = 12*width;
+			tile_x = 12;
+		end
+		if(vga_x >= 13*width && vga_x < 14*width) begin
+			background_x = 13*width;
+			tile_x = 13;
+		end
+		if(vga_x >= 14*width && vga_x < 15*width) begin
+			background_x = 14*width;
+			tile_x = 14;
+		end
+		if(vga_x >= 15*width && vga_x < 16*width) begin
+			background_x = 15*width;
+			tile_x = 15;
+		end
+		if(vga_x >= 16*width && vga_x < 17*width) begin
+			background_x = 16*width;
+			tile_x = 16;
+		end
+		if(vga_x >= 17*width && vga_x < 18*width) begin
+			background_x = 17*width;
+			tile_x = 17;
+		end
+		if(vga_x >= 18*width && vga_x < 19*width) begin
+			background_x = 18*width;
+			tile_x = 18;
+		end
+		if(vga_x >= 19*width && vga_x < 20*width) begin
+			background_x = 19*width;
+			tile_x = 19;
+		end
+		if(vga_x >= 20*width && vga_x < 21*width) begin
+			background_x = 20*width;
+			tile_x = 20;
+		end
+		if(vga_x >= 21*width && vga_x < 22*width) begin
+			background_x = 21*width;
+			tile_x = 21;
+		end
+		
+		
+		if(vga_y >= 0 && vga_y < height) begin
+			background_y = 0;
+			tile_y = 0;
+		end
+		if(vga_y >= height && vga_y < 2*height) begin
+			background_y = height;
+			tile_y = 1;
+		end
+		if(vga_y >= 2*height && vga_y < 3*height) begin
+			background_y = 2*height;
+			tile_y = 2;
+		end
+		if(vga_y >= 3*height && vga_y < 4*height) begin
+			background_y = 3*height;
+			tile_y = 3;
+		end
+		if(vga_y >= 4*height && vga_y < 5*height) begin
+			background_y = 4*height;
+			tile_y = 4;
+		end
+		if(vga_y >= 5*height && vga_y	< 6*height) begin
+			background_y = 5*height;
+			tile_y = 5;
+		end
+		if(vga_y >= 6*height && vga_y < 7*height) begin
+			background_y = 6*height;
+			tile_y = 6;
+		end
+		if(vga_y >= 7*height && vga_y < 8*height) begin
+			background_y = 7*height;
+			tile_y = 7;
+		end
+		if(vga_y >= 8*height && vga_y < 9*height) begin
+			background_y = 8*height;
+			tile_y = 8;
+		end
+		if(vga_y >= 9*height && vga_y < 10*height) begin
+			background_y = 9*height;
+			tile_y = 9;
+		end
+		if(vga_y >= 10*height && vga_y < 11*height) begin
+			background_y = 10*height;
+			tile_y = 10;
+		end
+		if(vga_y >= 11*height && vga_y < 12*height) begin
+			background_y = 11*height;
+			tile_y = 11;
+		end
+		if(vga_y >= 12*height && vga_y < 13*height) begin
+			background_y = 12*height;
+			tile_y = 12;
+		end
+		if(vga_y >= 13*height && vga_y < 14*height) begin
+			background_y = 13*height;
+			tile_y = 13;
+		end
+		if(vga_y >= 14*height && vga_y < 15*height) begin
+			background_y = 14*height;
+			tile_y = 14;
+		end
+		if(vga_y >= 15*height && vga_y < 16*height) begin
+			background_y = 15*height;
+			tile_y = 15;
+		end
 	end
 	
 	// Select the correct background tile from the background tile array:
 	always_comb begin
-	
+		 // Default == Black
+		 color = 33;
+		 case(dummy[tile_y][tile_x])
+			 0: begin
+				color = BG1[vga_y - background_y][vga_x - background_x];
+			 end
+			 1: begin
+				color = BG2[vga_y - background_y][vga_x - background_x];
+			 end
+			 2: begin
+				color = BG3[vga_y - background_y][vga_x - background_x];
+			 end
+			 3: begin
+				color = BG4[vga_y - background_y][vga_x - background_x];
+			 end
+			 4: begin
+				color = BG5[vga_y - background_y][vga_x - background_x];
+			 end
+			 5: begin
+				color = BG6[vga_y - background_y][vga_x - background_x];
+			 end
+			 6: begin
+				color = BG7[vga_y - background_y][vga_x - background_x];
+			 end
+			 7: begin
+				color = BG8[vga_y - background_y][vga_x - background_x];
+			 end
+		 endcase
+		 if(color  == 0) color = 33;
 	end
 endmodule
