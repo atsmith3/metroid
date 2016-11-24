@@ -52,9 +52,6 @@ module  lab8 			( input         CLOCK_50,
 	 assign Clk = CLOCK_50;
     assign {Reset_h}=~ (KEY[0]);  // The push buttons are active low
 	 
-	 logic ResetInt;
-	 logic enable;
-	 
 	 wire [1:0] hpi_addr;
 	 wire [15:0] hpi_data_in, hpi_data_out;
 	 wire hpi_r, hpi_w,hpi_cs;
@@ -98,18 +95,15 @@ module  lab8 			( input         CLOCK_50,
 										 .otg_hpi_r_export(hpi_r),
 										 .otg_hpi_w_export(hpi_w));
 	
-	assign enable = 1;
-	
 	//Fill in the connections for the rest of the modules 
    vga_controller vgasync_instance(.*,.Reset(Reset_h),
 													.hs(VGA_HS),    
 													.vs(VGA_VS),        
-													.pixel_clk(VGA_CLK_intermediate), 
+													.pixel_clk(VGA_CLK), 
 													.blank(VGA_BLANK_N),     
 													.sync(VGA_SYNC_N),
 												   .DrawX(drawxsig), 
-								               .DrawY(drawysig),
-													.SoftwareResetInt(ResetInt));
+								               .DrawY(drawysig));
 	 	
 	//--------------------------------------------------------------------------------------------
 	// Sprite Mapper:
@@ -119,8 +113,8 @@ module  lab8 			( input         CLOCK_50,
 	//		samus. (She is in the middle on the screen)
 	//
 	//--------------------------------------------------------------------------------------------
-	sprite_mapper sp1(.clk(), .reset(), .vgaX(), .vgaY(), .red(), .green(), .blue()
-							// Samus Sprite Controller:
+	sprite_mapper sp1(.clk(Clk), .reset(Reset_h), .vgaX(drawxsig), .vgaY(drawysig), .red(VGA_R), .green(VGA_G), .blue(VGA_B)
+							/*// Samus Sprite Controller:
 							.samus_en(),
 							.samus_x(),
 							.samus_y(),
@@ -149,7 +143,7 @@ module  lab8 			( input         CLOCK_50,
 							.power_up_en(),
 							.power_up_x(),
 							.power_up_y(),
-							.power_up_type());
+							.power_up_type()*/);
 							
 	//--------------------------------------------------------------------------------------------
 	// Sound Unit:

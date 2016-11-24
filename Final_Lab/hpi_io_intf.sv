@@ -8,8 +8,7 @@
 								input  logic		 OTG_INT, Clk, Reset);
 								
 logic [15:0] tmp_data;
-logic from_sw_int; 
-
+logic from_sw_int;
 //Tristate Buffer:
 assign OTG_DATA = from_sw_w ? {16{1'bZ}} : tmp_data;
 

@@ -6,11 +6,11 @@
 //		samus. (She is in the middle on the screen)
 //
 //--------------------------------------------------------------------------------------------
-// Pallate: 55,111,207,255), (44,92,10,255),(248,146,56,255),(156,0,18,255), (0, 255, 128), (0,0,128), (0,128,255), (255,255,255), (0,0,0), (0,0,255), (102,102,102), (0,255,255),(0,255,0), (64,128,0),(255,0,0),(255,102,102),(128,0,0),(248,146,56),(232,146,41),(27,175,0),(19,137,13),(255,49,62),(234,228,94),(126,0,246),(47,151,209),(156,89,33),(82,105,250),(43,93,83),(13,65,63),(37,75,258),(148,148,118),(60,70,17),(63,71,73),(34,28,28),(4,35,248),(186,0,37),(126,0,246),(103,0,183)
+// Pallate: (0,0,0), (0,0,255), (102,102,102), (0,255,255),(0,255,0), (64,128,0),(255,0,0),(255,102,102),(128,0,0),(248,146,56),(232,146,41),(27,175,0),(19,137,13),(255,49,62),(234,228,94),(126,0,246),(47,151,209),(156,89,33),(82,105,250),(43,93,83),(13,65,63),(37,75,258),(148,148,118),(60,70,17),(63,71,73),(34,28,28),(4,35,248),(186,0,37),(126,0,246),(103,0,183)
 module sprite_mapper(
-	input logic  [10:0]	background_start_addr,
-	input logic  [10:0] 	vga_x, vga_y,
-	output logic [7:0] 	red, green, blue
+input logic clk, reset,
+input logic [9:0] vgaX, vgaY, 
+output logic [7:0] red, green, blue
 );
 
 	// Internal Signals:
@@ -22,7 +22,7 @@ module sprite_mapper(
    logic [6:0] color;
  
 	// This module acts as a mux on all of the different levels of sprites:
-	background bg(.background_start_addr(1'b0), .vga_x(vga_x), .vga_y(vga_y), .color(bg_color))
+	background bg(.background_start_addr(1'b0), .vga_x(vgaX), .vga_y(vgaY), .color(bg_color));
 
 	// Select the color based on priority:
 	always_comb begin
@@ -46,195 +46,221 @@ module sprite_mapper(
 			end
 			//Color 2:
 			2: begin
-				red = 44;
-				green = 92;
-				blue = 10;
+			//248,146,56
+				red = 248;
+				green = 146;
+				blue = 56;
 			end
 			//Color 3:
 			3: begin
-				red = 44;
-				green = 92;
-				blue = 10;
+			//(156,0,18
+				red = 156;
+				green = 0;
+				blue = 18;
 			end
 			//Color 4:
 			4: begin
-				red = 44;
-				green = 92;
-				blue = 10;
+			// 0, 255, 128
+				red = 0;
+				green = 255;
+				blue = 128;
 			end
 			//Color 5:
 			5: begin
-				red = 44;
-				green = 92;
-				blue = 10;
+			// 0,0,128
+				red = 0;
+				green = 0;
+				blue = 128;
 			end
 			//Color 6:
 			6: begin
-				red = 44;
-				green = 92;
-				blue = 10;
+			// 0,128,255
+				red = 0;
+				green = 128;
+				blue = 255;
 			end
 			//Color 7:
 			7: begin
-				red = 44;
-				green = 92;
-				blue = 10;
+			// 255,255,255
+				red = 255;
+				green = 255;
+				blue = 255;
 			end
 			//Color 8:
 			8: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 9:
-			9: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 10:
-			10: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 11:
-			11: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 12
-			12: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 13:
-			13: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 14:
-			14: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 15:
-			15: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 16
-			16: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 17:
-			17: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 18:
-			18: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 19:
-			19: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 20:
-			20: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 21:
-			21: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 22:
-			22: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 23:
-			23: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 24:
-			24: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 25:
-			25: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 26:
-			26: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 27:
-			27: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 28:
-			28: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 29:
-			29: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 30:
-			30: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 31:
-			31: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 32:
-			32: begin
-				red = 44;
-				green = 92;
-				blue = 10;
-			end
-			//Color 33:
-			33: begin
 				red = 0;
 				green = 0;
 				blue = 0;
+			end
+			//Color 9:
+			9: begin
+				red = 0;
+				green = 0;
+				blue = 255;
+			end
+			//Color 10:
+			10: begin
+				red = 102;
+				green = 102;
+				blue = 102;
+			end
+			//Color 11:
+			11: begin
+				red = 0;
+				green = 255;
+				blue = 255;
+			end
+			//Color 12
+			12: begin
+				red = 0;
+				green = 255;
+				blue = 0;
+			end
+			//Color 13:
+			13: begin
+				red = 64;
+				green = 128;
+				blue = 0;
+			end
+			//Color 14:
+			14: begin
+				red = 255;
+				green = 0;
+				blue = 0;
+			end
+			//Color 15:
+			15: begin
+				red = 255;
+				green = 102;
+				blue = 102;
+			end
+			//Color 16
+			16: begin
+				red = 128;
+				green = 0;
+				blue = 0;
+			end
+			//Color 17:
+			17: begin
+				red = 248;
+				green = 146;
+				blue = 56;
+			end
+			//Color 18:
+			18: begin
+				red = 232;
+				green = 146;
+				blue = 41;
+			end
+			//Color 19:
+			19: begin
+				red = 27;
+				green = 175;
+				blue = 0;
+			end
+			//Color 20:
+			20: begin
+				red = 19;
+				green = 137;
+				blue = 13;
+			end
+			//Color 21:
+			21: begin
+				red = 255;
+				green = 49;
+				blue = 62;
+			end
+			//Color 22:
+			22: begin
+				red = 234;
+				green = 228;
+				blue = 94;
+			end
+			//Color 23:
+			23: begin
+				red = 126;
+				green = 0;
+				blue = 246;
+			end
+			//Color 24:
+			24: begin
+				red = 47;
+				green = 151;
+				blue = 209;
+			end
+			//Color 25:
+			25: begin
+				red = 156;
+				green = 89;
+				blue = 33;
+			end
+			//Color 26:
+			26: begin
+				red = 82;
+				green = 105;
+				blue = 250;
+			end
+			//Color 27:
+			27: begin
+				red = 43;
+				green = 93;
+				blue = 83;
+			end
+			//Color 28:
+			28: begin
+				red = 13;
+				green = 65;
+				blue = 63;
+			end
+			//Color 29:
+			29: begin
+				red = 37;
+				green = 75;
+				blue = 258;
+			end
+			//Color 30:
+			30: begin
+				red = 148;
+				green = 148;
+				blue = 118;
+			end
+			//Color 31:
+			31: begin
+				red = 60;
+				green = 70;
+				blue = 17;
+			end
+			//Color 32:
+			32: begin
+				red = 63;
+				green = 71;
+				blue = 73;
+			end
+			//Color 33:
+			33: begin
+				red = 34;
+				green = 28;
+				blue = 28;
+			end
+			34: begin
+				red = 4;
+				green = 35;
+				blue = 248;
+			end
+			35: begin
+				red = 186;
+				green = 0;
+				blue = 37;
+			end
+			36: begin
+				red = 103;
+				green = 0;
+				blue = 246;
+			end
+			37: begin
+				red = 103;
+				green = 0;
+				blue = 183;
 			end
 			// Default:
 			default: begin
@@ -546,8 +572,8 @@ endmodule
 //--------------------------------------------------------------------------------------------
 module background(
    input logic  [10:0]	background_start_addr,
-	input logic  [10:0] 	vga_x, vga_y,
-	output logic [5:0] 	color,
+	input logic  [9:0] 	vga_x, vga_y,
+	output logic [5:0] 	color
 );
 	// Background Tile sizes:
 	parameter [9:0] height = 30;
@@ -1034,7 +1060,10 @@ module background(
 			 7: begin
 				color = BG8[vga_y - background_y][vga_x - background_x];
 			 end
+			 default: begin
+				color = 8;
+			 end
 		 endcase
-		 if(color  == 0) color = 33;
+		 if(color  == 0) color = 8;
 	end
 endmodule
