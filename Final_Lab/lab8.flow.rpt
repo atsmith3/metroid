@@ -1,5 +1,5 @@
 Flow report for lab8
-Fri Nov 25 13:25:17 2016
+Sat Nov 26 11:55:48 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Fri Nov 25 13:25:17 2016      ;
+; Flow Status                        ; Successful - Sat Nov 26 11:55:48 2016      ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; lab8                                       ;
 ; Top-level Entity Name              ; lab8                                       ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 5,243 / 114,480 ( 5 % )                    ;
-;     Total combinational functions  ; 4,612 / 114,480 ( 4 % )                    ;
+; Total logic elements               ; 5,282 / 114,480 ( 5 % )                    ;
+;     Total combinational functions  ; 4,643 / 114,480 ( 4 % )                    ;
 ;     Dedicated logic registers      ; 2,096 / 114,480 ( 2 % )                    ;
 ; Total registers                    ; 2215                                       ;
 ; Total pins                         ; 170 / 529 ( 32 % )                         ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/25/2016 13:22:05 ;
+; Start date & time ; 11/26/2016 11:53:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab8                ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +--------------------------------------+---------------------------------------------------------------+---------------+-----------------+----------------+
 ; Assignment Name                      ; Value                                                         ; Default Value ; Entity Name     ; Section Id     ;
 +--------------------------------------+---------------------------------------------------------------+---------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 0.148010172517630                                             ; --            ; --              ; --             ;
+; COMPILER_SIGNATURE_ID                ; 53132159939124.148018279009276                                ; --            ; --              ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                            ; --            ; --              ; testbench      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                                                     ; --            ; --              ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                                             ; --            ; --              ; eda_simulation ;
@@ -115,28 +115,28 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:19     ; 1.0                     ; 1321 MB             ; 00:01:47                           ;
-; Fitter                    ; 00:00:54     ; 1.0                     ; 1373 MB             ; 00:00:53                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 878 MB              ; 00:00:06                           ;
-; PowerPlay Power Analyzer  ; 00:00:17     ; 1.0                     ; 1035 MB             ; 00:00:17                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 1017 MB             ; 00:00:07                           ;
-; EDA Netlist Writer        ; 00:00:10     ; 1.0                     ; 1192 MB             ; 00:00:09                           ;
-; Total                     ; 00:02:54     ; --                      ; --                  ; 00:03:19                           ;
+; Analysis & Synthesis      ; 00:01:09     ; 1.0                     ; 1019 MB             ; 00:01:38                           ;
+; Fitter                    ; 00:00:38     ; 1.0                     ; 1263 MB             ; 00:00:39                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 656 MB              ; 00:00:06                           ;
+; PowerPlay Power Analyzer  ; 00:00:14     ; 1.0                     ; 830 MB              ; 00:00:14                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 837 MB              ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 696 MB              ; 00:00:08                           ;
+; Total                     ; 00:02:20     ; --                      ; --                  ; 00:02:51                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                           ;
-+---------------------------+------------------+--------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name      ; OS Version ; Processor type ;
-+---------------------------+------------------+--------------+------------+----------------+
-; Analysis & Synthesis      ; developer        ; Ubuntu 16.04 ; 16         ; x86_64         ;
-; Fitter                    ; developer        ; Ubuntu 16.04 ; 16         ; x86_64         ;
-; Assembler                 ; developer        ; Ubuntu 16.04 ; 16         ; x86_64         ;
-; PowerPlay Power Analyzer  ; developer        ; Ubuntu 16.04 ; 16         ; x86_64         ;
-; TimeQuest Timing Analyzer ; developer        ; Ubuntu 16.04 ; 16         ; x86_64         ;
-; EDA Netlist Writer        ; developer        ; Ubuntu 16.04 ; 16         ; x86_64         ;
-+---------------------------+------------------+--------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-LDVP458  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-LDVP458  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-LDVP458  ; Windows 7 ; 6.2        ; x86_64         ;
+; PowerPlay Power Analyzer  ; DESKTOP-LDVP458  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-LDVP458  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-LDVP458  ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------

@@ -20,14 +20,34 @@ output logic [7:0] red, green, blue
 	logic [6:0] monster_color;
 	logic [6:0] samus_color;
    logic [6:0] color;
+	logic bulletDraw, monsterDraw, samusDraw, powerUpDraw;
+	logic tempFlash;
+	
+	always_ff @(posedge clk) begin
+	    if(vgaY == 479 && vgaX == 639) tempFlash <= ~tempFlash;
+	end
  
 	// This module acts as a mux on all of the different levels of sprites:
-	background bg(.background_start_addr(1'b0), .vga_x(vgaX), .vga_y(vgaY), .color(bg_color));
 
+   // Texture Units:
+	background bg(.background_start_addr(1'b0), .vga_x(vgaX), .vga_y(vgaY), .color(bg_color));
+   bullet bull(.enable1(flash), .enable2(flash), .enable3(flash), 
+		.vga_x(vgaX), .vga_y(vgaY), 
+		.sprite1_x(120), .sprite1_y(40), 
+		.sprite2_x(80), .sprite2_y(40), 
+		.sprite3_x(40), .sprite3_y(40), 
+		.sprite_num(1'b0),
+		.color(bullet_color),
+		.draw(bulletDraw));
+	
+	
 	// Select the color based on priority:
 	always_comb begin
-		//Default
-		color = bg_color;
+	   // Default:
+	   color = bg_color;	
+		
+		if(bulletDraw == 1'b1) color = bullet_color;
+		else color = bg_color;
 	end
 	
 	// Pass the color to pallate to output the proper color:
@@ -476,7 +496,7 @@ module power_up(
 		end
 	end
 endmodule
-
+*/
 
 //--------------------------------------------------------------------------------------------
 // Bullet:
@@ -494,14 +514,24 @@ module bullet(
 );
 // Mux the bullet instances:
 // powerUp Sprites:
-	parameter [9:0] height = 20;
-	parameter [9:0] width = 20;
+	parameter [9:0] height = 10;
+	parameter [9:0] width = 10;
 	
 	int BulletN [10][10];
 	int BulletE [10][10];
 	
 	always_ff begin
-	    BulletN = '{'{63,63,63,63,06,06,63,63,63,63},
+	    BulletN = '{'{00,00,00,00,06,06,00,00,00,00},
+		             '{00,00,06,06,06,06,06,06,00,00},
+						 '{00,06,06,06,06,06,06,06,06,00},
+						 '{00,06,06,06,06,06,06,06,06,00},
+						 '{06,06,06,06,06,06,06,06,06,06},
+						 '{06,06,06,06,06,06,06,06,06,06},
+						 '{00,06,06,06,06,06,06,06,06,00},
+						 '{00,06,06,06,06,06,06,06,06,00},
+						 '{00,00,06,06,06,06,06,06,00,00},
+						 '{00,00,00,00,06,06,00,00,00,00}};
+		/* BulletE = '{'{63,63,63,63,06,06,63,63,63,63},
 		             '{63,63,06,06,06,06,06,06,63,63},
 						 '{63,06,06,06,06,06,63,63,06,63},
 						 '{63,06,06,06,06,06,63,63,06,63},
@@ -510,27 +540,21 @@ module bullet(
 						 '{63,06,06,06,06,06,63,63,63,63},
 						 '{63,06,63,06,06,06,63,63,63,63},
 						 '{63,63,06,06,06,06,63,63,63,63},
-						 '{63,63,63,63,06,06,63,63,63,63}};
-		 BulletE = '{'{63,63,63,63,06,06,63,63,63,63},
-		             '{63,63,06,06,06,06,06,06,63,63},
-						 '{63,06,06,06,06,06,63,63,06,63},
-						 '{63,06,06,06,06,06,63,63,06,63},
-						 '{06,06,06,06,06,06,63,63,63,06},
-						 '{06,06,06,06,06,06,63,63,63,06},
-						 '{63,06,06,06,06,06,63,63,63,63},
-						 '{63,06,63,06,06,06,63,63,63,63},
-						 '{63,63,06,06,06,06,63,63,63,63},
-						 '{63,63,63,63,06,06,63,63,63,63}};
+						 '{63,63,63,63,06,06,63,63,63,63}}; */
 	end
 	
 	// Monster Combinational Logic:
 	always_comb begin
+	// Defaults:
+	color = 0;
+	draw = 0;
 		// Make sure that the pointer is inside the normal bullet:
 		if(vga_x > sprite1_x && vga_x < sprite1_x + width && vga_y > sprite1_y && vga_y < sprite1_y + height && enable1) begin
 		   // If the color is not pink output draw:
-			if(BulletN[vga_x - sprite1_x][vga_y - sprite1_y] != 63) begin
+			if(BulletN[vga_x - sprite1_x][vga_y - sprite1_y] != 0) begin
 			    draw = 1'b1;
 			    color = BulletN[vga_x - sprite1_x][vga_y - sprite1_y];
+			end
 		end
 		else begin
 			draw = 1'b0;
@@ -539,21 +563,22 @@ module bullet(
 		// powerUp 2
 		if(vga_x > sprite2_x && vga_x < sprite2_x + width && vga_y > sprite2_y && vga_y < sprite2_y + height && enable2) begin
 		   // If the color is not pink output draw:
-			//if( != 63)
-			draw = 1'b1;
-			color = 6'b0;
+			if(BulletN[vga_x - sprite2_x][vga_y - sprite2_y] != 0) begin
+			    draw = 1'b1;
+			    color = BulletN[vga_x - sprite2_x][vga_y - sprite2_y];
+			end
 		end
 		else begin
 			draw = 1'b0;
 			color = 6'b0;
 		end
 		// powerUp 3
-		if(vga_x > sprite1_x && vga_x < sprite1_x + width && vga_y > sprite1_y && vga_y < sprite1_y + height && enable3) begin
+		if(vga_x > sprite3_x && vga_x < sprite3_x + width && vga_y > sprite3_y && vga_y < sprite3_y + height && enable3) begin
 		   // If the color is not pink output draw:
-			//if( != 63)
-			draw = 1'b1;
-			// Chose the proper color:
-			color = 6'b0;
+			if(BulletN[vga_x - sprite3_x][vga_y - sprite3_y] != 0) begin
+			    draw = 1'b1;
+			    color = BulletN[vga_x - sprite3_x][vga_y - sprite3_y];
+			end
 		end
 		else begin
 			draw = 1'b0;
@@ -562,7 +587,7 @@ module bullet(
 	end
 endmodule
 
-*/
+
 //--------------------------------------------------------------------------------------------
 // Background:
 //
@@ -1064,6 +1089,6 @@ module background(
 				color = 8;
 			 end
 		 endcase
-		 if(color  == 0) color = 8;
+		 if(color  == 0) color = 33;
 	end
 endmodule
