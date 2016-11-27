@@ -113,7 +113,7 @@ module  lab8 			( input         CLOCK_50,
 	//		samus. (She is in the middle on the screen)
 	//
 	//--------------------------------------------------------------------------------------------
-	sprite_mapper sp1(.clk(Clk), .reset(Reset_h), .vgaX(drawxsig), .vgaY(drawysig), .red(VGA_R), .green(VGA_G), .blue(VGA_B)
+	sprite_mapper sp1(.clk(Clk), .reset(Reset_h), .vgaX(drawxsig), .vgaY(drawysig), .red(VGA_R), .green(VGA_G), .blue(VGA_B), .vsync(VGA_VS)
 							/*// Samus Sprite Controller:
 							.samus_en(),
 							.samus_x(),
