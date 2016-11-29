@@ -15,7 +15,7 @@ input logic samus_en, samus_dir, samus_walk, samus_jump,
 input logic [9:0] samus_x, samus_y,
 
 // Background
-input logic scene_number,
+input logic [2:0] scene_number,
 
 // GUI
 input logic title_en,
@@ -49,61 +49,53 @@ output logic [7:0] red, green, blue
 	logic [6:0] explosion_color;
    logic [6:0] color;
 	logic bulletDraw, monsterDraw, samusDraw, powerUpDraw, titleDraw, explosionDraw;
-   logic [8:0] counter;
-	logic [3:0] samus_temp;
  
-	// This module acts as a mux on all of the different levels of sprites:
-	always_ff @ (posedge vsync) begin
-		counter <= counter + 1;
-		if(counter >= 480) samus_temp <= 0;
-		if(counter < 480) samus_temp <= 8;
-		if(counter < 450) samus_temp <= 15;
-		if(counter < 420) samus_temp <= 7;
-		if(counter < 390) samus_temp <= 14;
-		if(counter < 360) samus_temp <= 6;
-		if(counter < 330) samus_temp <= 13;
-		if(counter < 300) samus_temp <= 5;
-		if(counter < 270) samus_temp <= 12;
-		if(counter < 240) samus_temp <= 4;
-		if(counter < 210) samus_temp <= 11;
-		if(counter < 180) samus_temp <= 3;
-		if(counter < 150) samus_temp <= 10;
-		if(counter < 120) samus_temp <= 2;
-		if(counter < 90) samus_temp <= 9;
-		if(counter < 60) samus_temp <= 1;
-		if(counter < 30) samus_temp <= 1;
-	end
-	
-	
-	
    // Texture Units: 
-	
-	background bg(.background_start_addr(1'b0), .vga_x(vgaX), .vga_y(vgaY), .color(bg_color)); 
-   bullet bull(.enable1(1'b1), .enable2(1'b1), .enable3(1'b1), 
-		.vga_x(vgaX), .vga_y(vgaY), 
-		.sprite1_x(120), .sprite1_y(40), 
-		.sprite2_x(80), .sprite2_y(40), 
-		.sprite3_x(40), .sprite3_y(40), 
-		.empowered(1'b1),
-		.color(bullet_color),
-		.draw(bulletDraw));
-	monster mon(.enable1(1'b1), .enable2(1'b1), .enable3(1'b1),
+	background bg(.background_start_addr(scene_number), 
+	              .vga_x(vgaX), 
+					  .vga_y(vgaY), 
+					  .color(bg_color)); 
+   bullet bull(.enable1(bullet1), 
+					.enable2(bullet2), 
+					.enable3(bullet3), 
 					.vga_x(vgaX), .vga_y(vgaY), 
-					.sprite1_x(40), .sprite1_y(80), 
-					.sprite2_x(100), .sprite2_y(80), 
-					.sprite3_x(160), .sprite3_y(80),
-					.color(monster_color), .draw(monsterDraw)); 
-	samus(.enable(1'b1), .vga_x(vgaX), .vga_y(vgaY),
-			.sprite_x(40), .sprite_y(140), .walk(1'b1), .jump(1'b0), .vsync(vsync),
-			.direction(1'b1)), .color(samus_color), .draw(samusDraw));
-	gui info(.titleEn(1'b0), .health(samus_temp[1:0]),
+					.sprite1_x(b1_x), .sprite1_y(b1_y), 
+					.sprite2_x(b2_y), .sprite2_y(b2_y), 
+					.sprite3_x(b3_y), .sprite3_y(b3_y), 
+					.empowered(1'b0),
+					.color(bullet_color),
+					.draw(bulletDraw));
+	monster mon(.enable1(monster1), 
+					.enable2(monster2), 
+					.enable3(monster3),
+					.vga_x(vgaX), .vga_y(vgaY), 
+					.sprite1_x(monster1_x), .sprite1_y(monster1_y), 
+					.sprite2_x(monster2_x), .sprite2_y(monster2_y), 
+					.sprite3_x(monster3_x), .sprite3_y(monster3_y),
+					.color(monster_color), 
+					.draw(monsterDraw)); 
+	samus(.enable(samus_en), 
+			.vga_x(vgaX), .vga_y(vgaY),
+			.sprite_x(samus_x), .sprite_y(samus_y), 
+			.walk(samus_walk), .jump(samus_jump), 
+			.vsync(vsync),
+			.direction(samus_dir)), 
+			.color(samus_color), 
+			.draw(samusDraw));
+	gui info(.titleEn(title_en), 
+				.health(health),
+				.win_en(win_en),
+				.lose_en(lose_en),
 				.vga_x(vgaX), .vga_y(vgaY),
-				.color(title_color), .draw(titleDraw));
-	explosion explode(.enable1(samus_temp[0]), .enable2(samus_temp[1]), .enable3(samus_temp[2]), .vsync(vsync), 
-							.vga_x(vgaX), .vga_y(vgaY), 
-							.exp1_x(240), .exp1_y(40), 
-							.exp2_x(340), .exp2_y(40), 
-							.exp3_x(440), .exp3_y(40),
+				.color(title_color), 
+				.draw(titleDraw));
+	explosion explode(.enable1(explosion1), 
+							.enable2(explosion2), 
+							.enable3(explosion3), 
+							.vsync(vsync), .vga_x(vgaX), .vga_y(vgaY), 
+							.exp1_x(exp1_x), .exp1_y(exp1_y), 
+							.exp2_x(exp2_x), .exp2_y(exp2_y), 
+							.exp3_x(exp3_x), .exp3_y(exp3_y),
 							.color(explosion_color), .draw(explosionDraw));
 	
 	
@@ -1407,6 +1399,8 @@ module background(
 	logic [10:0] background_x, background_y; // Normalized background array pointers:
 	logic [10:0] tile_x, tile_y; // Normalized tile coordinate pointers:
 	
+	logic [7:0] tile_num;
+	
 	// Sprites: 8 different backgrounds:
 	int BG1 [height][width];
 	int BG2 [height][width];
@@ -1854,11 +1848,34 @@ module background(
 		end
 	end
 	
+	//Always_comb to select the proper scene:
+	always_comb begin
+	   // Default:
+		tile_num = 0;
+		case(background_start_addr) begin
+			0: begin
+				tile_num = scene1[tile_y][tile_x];
+			end
+			1: begin
+			
+			end
+			2: begin
+			
+			end
+			3: begin
+			
+			end
+			4: begin
+			
+			end
+		end
+	end
+	
 	// Select the correct background tile from the background tile array:
 	always_comb begin
 		 // Default == Black
 		 color = 33;
-		 case(dummy[tile_y][tile_x])
+		 case(tile_num)
 			 0: begin
 				color = BG1[vga_y - background_y][vga_x - background_x];
 			 end
