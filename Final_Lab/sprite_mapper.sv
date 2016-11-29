@@ -11,15 +11,16 @@ input logic clk, reset,
 input logic vsync,
 /*
 // Samus
-input logic enable, direction,
+input logic enable, direction, walk, jump,
 input logic [9:0] samus_x, samus_y,
-input logic [2:0] sprite_num,
 
 // Background
 input logic scene_number,
 
 // GUI
 input logic title_en,
+input logic loss_en,
+input logic win_en,
 input logic [1:0] health,
 
 // Monster
@@ -94,8 +95,8 @@ output logic [7:0] red, green, blue
 					.sprite3_x(160), .sprite3_y(80),
 					.color(monster_color), .draw(monsterDraw)); 
 	samus(.enable(1'b1), .vga_x(vgaX), .vga_y(vgaY),
-			.sprite_x(40), .sprite_y(140), .sprite_num(samus_temp[2:0]),
-			.direction(samus_temp[3]), .color(samus_color), .draw(samusDraw));
+			.sprite_x(40), .sprite_y(140), .walk(1'b1), .jump(1'b0), .vsync(vsync),
+			.direction(1'b1)), .color(samus_color), .draw(samusDraw));
 	gui info(.titleEn(1'b0), .health(samus_temp[1:0]),
 				.vga_x(vgaX), .vga_y(vgaY),
 				.color(title_color), .draw(titleDraw));
@@ -372,9 +373,8 @@ endmodule
 //
 //--------------------------------------------------------------------------------------------
 module samus(
-	input logic  			enable,
+	input logic  			enable, vsync, walk, jump,
 	input logic  [10:0] 	vga_x, vga_y, sprite_x, sprite_y,
-	input logic  [2:0] 	sprite_num,
 	input logic direction,
 	output logic [5:0] 	color,
 	output logic 			draw
@@ -413,6 +413,12 @@ module samus(
 	int samus5[height5][width5];
 	int samus6[height6][width6];
 	int samus7[height7][width7];
+	
+	logic [3:0] vsync_slow;
+	logic [1:0] counter;
+	logic [2:0] sprite_num;
+	
+	
 	
 	always_ff begin
 		// Samus Standing Up:
@@ -874,6 +880,49 @@ module samus(
 						'{0,0,0,0,0,0,33,1,16,16,16,3,16,16,0,0,0,0,0,3,16,1,16,16,3,16,16,3,16,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
 	end
 	
+	 always_ff @ (posedge vsync)
+    begin 
+            vsync_slow[0] <= ~ (vsync_slow[0]);
+    end
+	 always_ff @ (posedge vsync_slow[0])
+    begin 
+            vsync_slow[1] <= ~ (vsync_slow[1]);
+    end
+	 always_ff @ (posedge vsync_slow[1])
+    begin 
+            vsync_slow[2] <= ~ (vsync_slow[2]);
+    end
+	 always_ff @ (posedge vsync_slow[2])
+    begin 
+            vsync_slow[3] <= ~ (vsync_slow[3]);
+    end
+	
+	// Animation Counter:
+	always_ff @ (posedge vsync_slow[3]) begin
+	    if(walk == 1'b0) counter <= 0;
+		 else if(counter == 2) counter <= 0;
+		 else counter <= counter + 1;
+	end
+	// If an animation is enabled determine the sprite_num:
+	always_comb begin
+	    // Deafult:
+		 sprite_num = 3'b110;
+	    if(walk == 1'b1) begin
+		     if(counter == 2'b00) sprite_num = 3'b001;
+			  if(counter == 2'b01) sprite_num = 3'b010;
+			  if(counter == 2'b10) sprite_num = 3'b011;
+		 end
+		 if(walk == 1'b0) begin
+		     sprite_num = 3'b110;
+		 end
+		 if(jump == 1'b1 && walk == 1'b1) begin
+		     sprite_num = 3'b101;
+		 end
+		 if(jump == 1'b1 && walk == 1'b0) begin
+		     sprite_num = 3'b100;
+		 end
+	end
+	
 	// Samus Combinational Logic:
 	always_comb begin
 	   // Determine the width and height of the
@@ -881,7 +930,7 @@ module samus(
 		color = 0;
 		draw = 0;
 	   case(sprite_num)
-		// SAMUS STAND:
+		// SAMUS STAND UP:
 		3'b000: begin
 			if(vga_x >= sprite_x && vga_x < sprite_x + width1 && vga_y >= sprite_y && vga_y < sprite_y + height1) begin
 			// Output the "draw" signal:

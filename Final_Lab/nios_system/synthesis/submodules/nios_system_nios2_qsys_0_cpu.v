@@ -4008,7 +4008,7 @@ module nios_system_nios2_qsys_0_cpu (
     2'b11;
 
   assign F_pc_no_crst_nxt = (F_pc_sel_nxt == 2'b00)? 67108872 :
-    (F_pc_sel_nxt == 2'b01)? 520 :
+    (F_pc_sel_nxt == 2'b01)? 1032 :
     (F_pc_sel_nxt == 2'b10)? E_arith_result[28 : 2] :
     F_pc_plus_one;
 

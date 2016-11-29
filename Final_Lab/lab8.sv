@@ -46,7 +46,6 @@ module  lab8 			( input         CLOCK_50,
 											);
     
     logic Reset_h, vssig, Clk;
-    logic [9:0] drawxsig, drawysig, ballxsig, ballysig, ballsizesig;
 	 logic [15:0] keycode;
     
 	 assign Clk = CLOCK_50;
@@ -114,36 +113,32 @@ module  lab8 			( input         CLOCK_50,
 	//
 	//--------------------------------------------------------------------------------------------
 	sprite_mapper sp1(.clk(Clk), .reset(Reset_h), .vgaX(drawxsig), .vgaY(drawysig), .red(VGA_R), .green(VGA_G), .blue(VGA_B), .vsync(VGA_VS)
-							/*// Samus Sprite Controller:
-							.samus_en(),
-							.samus_x(),
-							.samus_y(),
-							.samus_sprite(),
-							// Bullet Sprite Signals:
-							.bullet_1_en(),
-							.bullet_2_en(),
-							.bullet_3_en(),
-							.bullet_1_x(),
-							.bullet_1_y(),
-							.bullet_2_x(),
-							.bullet_2_y(),
-							.bullet_3_x(),
-							.bullet_3_y(),
-							// Monster sprites:
-							.monster_1_en(),
-							.monster_2_en(),
-							.monster_3_en(),
-							.monster_1_x(),
-							.monster_1_y(),
-							.monster_2_x(),
-							.monster_2_y(),
-							.monster_3_x(),
-							.monster_3_y(),
-							// Power Ups:
-							.power_up_en(),
-							.power_up_x(),
-							.power_up_y(),
-							.power_up_type()*/);
+							/*
+							// Samus
+							input logic enable, direction, walk, jump,
+							input logic [9:0] samus_x, samus_y,
+
+							// Background
+							input logic scene_number,
+
+							// GUI
+							input logic title_en,
+							input logic loss_en,
+							input logic win_en,
+							input logic [1:0] health,
+
+							// Monster
+							input logic monster1, monster2, monster3,
+							input logic [9:0] monster1_x, monster1_y, monster2_x, monster2_y, monster3_x, monster3_y,
+
+							// Explosion
+							input logic exp1_en, exp2_en, exp3_en,
+							input logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y, 
+
+							// Bullet
+							input logic bullet1, bullet2, bullet3,
+							input logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y,
+							*/);
 							
 	//--------------------------------------------------------------------------------------------
 	// Sound Unit:
