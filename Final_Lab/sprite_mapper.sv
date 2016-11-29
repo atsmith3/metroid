@@ -9,9 +9,9 @@
 module sprite_mapper(
 input logic clk, reset,
 input logic vsync,
-/*
+
 // Samus
-input logic enable, direction, walk, jump,
+input logic samus_en, samus_dir, samus_walk, samus_jump,
 input logic [9:0] samus_x, samus_y,
 
 // Background
@@ -34,7 +34,6 @@ input logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y,
 // Bullet
 input logic bullet1, bullet2, bullet3,
 input logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y,
-*/
 
 input logic [9:0] vgaX, vgaY, 
 output logic [7:0] red, green, blue

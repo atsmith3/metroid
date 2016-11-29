@@ -55,6 +55,33 @@ module  lab8 			( input         CLOCK_50,
 	 wire [15:0] hpi_data_in, hpi_data_out;
 	 wire hpi_r, hpi_w,hpi_cs;
 	 
+		// Logic signals for the sprite mapper:
+		logic samus_en, samus_dir, samus_walk, samus_jump;
+		logic [9:0] samus_x, samus_y;
+
+		// Background
+		logic [2:0]scene_number;
+
+		// GUI
+		logic title_en;
+		logic loss_en;
+		logic win_en;
+		logic [1:0] health;
+
+		// Monster
+		logic monster1, monster2, monster3;
+		logic [9:0] monster1_x, monster1_y, monster2_x, monster2_y, monster3_x, monster3_y;
+
+		// Explosion
+		logic exp1_en, exp2_en, exp3_en;
+		logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y;
+
+		// Bullet
+		logic bullet1, bullet2, bullet3;
+		logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y;
+	 
+	 
+	 
 	 hpi_io_intf hpi_io_inst(   .from_sw_address(hpi_addr),
 										 .from_sw_data_in(hpi_data_in),
 										 .from_sw_data_out(hpi_data_out),
@@ -69,30 +96,82 @@ module  lab8 			( input         CLOCK_50,
 										 .OTG_RST_N(OTG_RST_N),   
 										 .OTG_INT(OTG_INT),
 										 .Clk(Clk),
-										 .Reset(~KEY[1])	
+										 .Reset(~KEY[1]) 
 	 );
 	 
 	 
 	 //The connections for nios_system might be named different depending on how you set up Qsys
-	 nios_system nios_system(	 .clk_clk(Clk),         
-										 .reset_reset_n(KEY[0]),   
-										 .sdram_wire_addr(DRAM_ADDR), 
-										 .sdram_wire_ba(DRAM_BA),   
-										 .sdram_wire_cas_n(DRAM_CAS_N),
-										 .sdram_wire_cke(DRAM_CKE),  
-										 .sdram_wire_cs_n(DRAM_CS_N), 
-										 .sdram_wire_dq(DRAM_DQ),   
-										 .sdram_wire_dqm(DRAM_DQM),  
-										 .sdram_wire_ras_n(DRAM_RAS_N),
-										 .sdram_wire_we_n(DRAM_WE_N), 
-										 .sdram_clk_clk(DRAM_CLK),
-										 .keycode_export(keycode),  
-										 .otg_hpi_address_export(hpi_addr),
-										 .otg_hpi_data_in_port(hpi_data_in),
-										 .otg_hpi_data_out_port(hpi_data_out),
-										 .otg_hpi_cs_export(hpi_cs),
-										 .otg_hpi_r_export(hpi_r),
-										 .otg_hpi_w_export(hpi_w));
+	nios_system nios_system(		.clk_clk(Clk),         
+											.reset_reset_n(KEY[0]),   
+											.sdram_wire_addr(DRAM_ADDR), 
+											.sdram_wire_ba(DRAM_BA),   
+											.sdram_wire_cas_n(DRAM_CAS_N),
+											.sdram_wire_cke(DRAM_CKE),  
+											.sdram_wire_cs_n(DRAM_CS_N), 
+											.sdram_wire_dq(DRAM_DQ),   
+											.sdram_wire_dqm(DRAM_DQM),  
+											.sdram_wire_ras_n(DRAM_RAS_N),
+											.sdram_wire_we_n(DRAM_WE_N), 
+											.sdram_clk_clk(DRAM_CLK),
+											.keycode_export(keycode),  
+											.otg_hpi_address_export(hpi_addr),
+											.otg_hpi_data_in_port(hpi_data_in),
+											.otg_hpi_data_out_port(hpi_data_out),
+											.otg_hpi_cs_export(hpi_cs),
+											.otg_hpi_r_export(hpi_r),
+											.otg_hpi_w_export(hpi_w)
+											
+											// Our Game Config Here:
+											// Bullet:
+											.bullet1_en_export(bullet1),
+											.bullet1_x_export(b1_x),
+											.bullet1_y_export(b1_y),
+											.bullet2_en_export(bullet2),
+											.bullet2_x_export(b2_x),
+											.bullet2_y_export(b2_y),
+											.bullet3_en_export(bullet3),
+											.bullet3_x_export(b3_x),
+											.bullet3_y_export(b3_y),
+											
+											// Health + Title + Background:
+											.health_export(health),
+											.loss_en_export(loss_en),
+											.title_en_export(title_en),
+											.win_en_export(win_en),
+											.scene_sel_export(scene_number),
+											
+											// Samus:
+											.samus_dir_export(samus_dir),
+											.samus_en_export(samus_en),
+											.samus_jump_export(samus_jump),
+											.samus_walk_export(samus_walk),
+											.samus_x_export(samus_x),
+											.samus_y_export(samus_y),
+											
+											
+											// Monsters:
+											.monster1_en_export(monster1),
+											.monster1_x_export(monster1_x),
+											.monster1_y_export(monster1_y),
+											.monster2_en_export(monster2),
+											.monster2_x_export(monster2_x),
+											.monster2_y_export(monster2_y),
+											.monster3_en_export(monster3),
+											.monster3_x_export(monster3_x),
+											.monster3_y_export(monster3_y),
+											
+										   // Explosions:
+											.explosion1_en_export(exp1_en),
+											.explosion1_x_export(exp1_x),
+											.explosion1_y_export(exp1_y),
+											.explosion2_en_export(exp2_en),
+											.explosion2_x_export(exp2_x),
+											.explosion2_y_export(exp2_y),
+											.explosion3_en_export(exp3_en),
+											.explosion3_x_export(exp3_x),
+											.explosion3_y_export(exp3_y),
+											
+											);
 	
 	//Fill in the connections for the rest of the modules 
    vga_controller vgasync_instance(.*,.Reset(Reset_h),
@@ -112,40 +191,19 @@ module  lab8 			( input         CLOCK_50,
 	//		samus. (She is in the middle on the screen)
 	//
 	//--------------------------------------------------------------------------------------------
-	sprite_mapper sp1(.clk(Clk), .reset(Reset_h), .vgaX(drawxsig), .vgaY(drawysig), .red(VGA_R), .green(VGA_G), .blue(VGA_B), .vsync(VGA_VS)
-							/*
-							// Samus
-							input logic enable, direction, walk, jump,
-							input logic [9:0] samus_x, samus_y,
-
-							// Background
-							input logic scene_number,
-
-							// GUI
-							input logic title_en,
-							input logic loss_en,
-							input logic win_en,
-							input logic [1:0] health,
-
-							// Monster
-							input logic monster1, monster2, monster3,
-							input logic [9:0] monster1_x, monster1_y, monster2_x, monster2_y, monster3_x, monster3_y,
-
-							// Explosion
-							input logic exp1_en, exp2_en, exp3_en,
-							input logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y, 
-
-							// Bullet
-							input logic bullet1, bullet2, bullet3,
-							input logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y,
-							*/);
+	sprite_mapper sp1(.*, .clk(Clk), 
+							.reset(Reset_h), 
+							.vgaX(drawxsig), 
+							.vgaY(drawysig), 
+							.red(VGA_R), 
+							.green(VGA_G), 
+							.blue(VGA_B), 
+							.vsync(VGA_VS));
 							
 	//--------------------------------------------------------------------------------------------
 	// Sound Unit:
 	//
 	//		Interfaces with the GPIO Pins:
-	//		This is a custom sound unit that will connect with a low pass filter and amp on a
-	//		breadboard. Uses a 256 bit shift register to send a pwm signal to the filter / amp.
 	//
 	//--------------------------------------------------------------------------------------------
 	//sound_controller sc1(	.clk(), 
