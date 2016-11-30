@@ -59,6 +59,9 @@ module  lab8 			( input         CLOCK_50,
 		logic samus_en, samus_dir, samus_walk, samus_jump;
 		logic [9:0] samus_x, samus_y;
 
+		// VGA Signals:
+		logic [9:0] drawxsig, drawysig;
+		
 		// Background
 		logic [2:0]scene_number;
 
@@ -169,9 +172,7 @@ module  lab8 			( input         CLOCK_50,
 											.explosion2_y_export(exp2_y),
 											.explosion3_en_export(exp3_en),
 											.explosion3_x_export(exp3_x),
-											.explosion3_y_export(exp3_y),
-											
-											);
+											.explosion3_y_export(exp3_y));
 	
 	//Fill in the connections for the rest of the modules 
    vga_controller vgasync_instance(.*,.Reset(Reset_h),

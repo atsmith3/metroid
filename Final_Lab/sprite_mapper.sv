@@ -77,7 +77,7 @@ output logic [7:0] red, green, blue
 					.sprite3_x(monster3_x), .sprite3_y(monster3_y),
 					.color(monster_color), 
 					.draw(monsterDraw)); 
-	samus(.enable(samus_en), 
+	samus sam(.enable(samus_en), 
 			.vga_x(vgaX), .vga_y(vgaY),
 			.sprite_x(samus_x), .sprite_y(samus_y), 
 			.walk(samus_walk), .jump(samus_jump), 
@@ -312,7 +312,7 @@ output logic [7:0] red, green, blue
 			29: begin
 				red = 37;
 				green = 75;
-				blue = 258;
+				blue = 255;
 			end
 			//Color 30:
 			30: begin
@@ -907,7 +907,7 @@ module samus(
 	always_ff @ (posedge vsync_slow[3]) begin
 	    if(walk == 1'b0) counter <= 0;
 		 else if(counter == 2) counter <= 0;
-		 else counter <= counter + 1;
+		 else counter <= counter + 1'b1;
 	end
 	// If an animation is enabled determine the sprite_num:
 	always_comb begin
@@ -1425,7 +1425,7 @@ module background(
 	logic [6:0] BG6 [height][width];
 	logic [6:0] BG7 [height][width];
 	logic [6:0] BG8 [height][width];
-	logic [6:0] dummy [screenH][screenW];
+	//logic [6:0] dummy [screenH][screenW];
 	logic [6:0] scene1 [screenH][screenW];
 	logic [6:0] scene2 [screenH][screenW];
 	logic [6:0] scene3 [screenH][screenW];
@@ -1436,7 +1436,7 @@ module background(
 	// Sprite arrays + dummy background array:
 	//-------------------------------------------------------------------------------------------------------------
 	always_ff begin
-		dummy = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		/*dummy = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
 					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
 					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
@@ -1451,7 +1451,7 @@ module background(
 					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
 					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
 					 '{1,0,0,0,0,0,0,0,0,2,2,2,3,2,1,1,1,1,1,1,1,1},
-					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}}; */
 		
 		// Scene 1:
 		scene1 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -1812,89 +1812,89 @@ module background(
 			tile_x = 1;
 		end
 		if(vga_x >= 2*width && vga_x < 3*width) begin
-			background_x = 2*width;
+			background_x = 11'd2*width;
 			tile_x = 2;
 		end
 		if(vga_x >= 3*width && vga_x < 4*width) begin
-			background_x = 3*width;
+			background_x = 11'd3*width;
 			tile_x = 3;
 		end
 		if(vga_x >= 4*width && vga_x < 5*width) begin 
-			background_x = 4*width;
+			background_x = 11'd4*width;
 			tile_x = 4;
 		end
 		if(vga_x >= 5*width && vga_x < 6*width) begin
-			background_x = 5*width;
+			background_x = 11'd5*width;
 			tile_x = 5;
 		end
 		if(vga_x >= 6*width && vga_x < 7*width) begin
-			background_x = 6*width;
+			background_x = 11'd6*width;
 			tile_x = 6;
 		end
 		if(vga_x >= 7*width && vga_x < 8*width) begin
-			background_x = 7*width;
+			background_x = 11'd7*width;
 			tile_x = 7;
 		end
 		if(vga_x >= 8*width && vga_x < 9*width) begin
-			background_x = 8*width;
+			background_x = 11'd8*width;
 			tile_x = 8;
 		end
 		if(vga_x >= 9*width && vga_x < 10*width) begin
-			background_x = 9*width;
+			background_x = 11'd9*width;
 			tile_x = 9;
 		end
 		if(vga_x >= 10*width && vga_x < 11*width) begin
-			background_x = 10*width;
+			background_x = 11'd10*width;
 			tile_x = 10;
 		end
 		if(vga_x >= 11*width && vga_x < 12*width) begin
-			background_x = 11*width;
+			background_x = 11'd11*width;
 			tile_x = 11;
 		end
 		if(vga_x >= 12*width && vga_x < 13*width) begin
-			background_x = 12*width;
+			background_x = 11'd12*width;
 			tile_x = 12;
 		end
 		if(vga_x >= 13*width && vga_x < 14*width) begin
-			background_x = 13*width;
+			background_x = 11'd13*width;
 			tile_x = 13;
 		end
 		if(vga_x >= 14*width && vga_x < 15*width) begin
-			background_x = 14*width;
+			background_x = 11'd14*width;
 			tile_x = 14;
 		end
 		if(vga_x >= 15*width && vga_x < 16*width) begin
-			background_x = 15*width;
+			background_x = 11'd15*width;
 			tile_x = 15;
 		end
 		if(vga_x >= 16*width && vga_x < 17*width) begin
-			background_x = 16*width;
+			background_x = 11'd16*width;
 			tile_x = 16;
 		end
 		if(vga_x >= 17*width && vga_x < 18*width) begin
-			background_x = 17*width;
+			background_x = 11'd17*width;
 			tile_x = 17;
 		end
 		if(vga_x >= 18*width && vga_x < 19*width) begin
-			background_x = 18*width;
+			background_x = 11'd18*width;
 			tile_x = 18;
 		end
 		if(vga_x >= 19*width && vga_x < 20*width) begin
-			background_x = 19*width;
+			background_x = 11'd19*width;
 			tile_x = 19;
 		end
 		if(vga_x >= 20*width && vga_x < 21*width) begin
-			background_x = 20*width;
+			background_x = 11'd20*width;
 			tile_x = 20;
 		end
 		if(vga_x >= 21*width && vga_x < 22*width) begin
-			background_x = 21*width;
+			background_x = 11'd21*width;
 			tile_x = 21;
 		end
 		
 		
 		if(vga_y >= 0 && vga_y < height) begin
-			background_y = 0;
+			background_y = 11'd0;
 			tile_y = 0;
 		end
 		if(vga_y >= height && vga_y < 2*height) begin
@@ -1902,59 +1902,59 @@ module background(
 			tile_y = 1;
 		end
 		if(vga_y >= 2*height && vga_y < 3*height) begin
-			background_y = 2*height;
+			background_y = 11'd2*height;
 			tile_y = 2;
 		end
 		if(vga_y >= 3*height && vga_y < 4*height) begin
-			background_y = 3*height;
+			background_y = 11'd3*height;
 			tile_y = 3;
 		end
 		if(vga_y >= 4*height && vga_y < 5*height) begin
-			background_y = 4*height;
+			background_y = 11'd4*height;
 			tile_y = 4;
 		end
 		if(vga_y >= 5*height && vga_y	< 6*height) begin
-			background_y = 5*height;
+			background_y = 11'd5*height;
 			tile_y = 5;
 		end
 		if(vga_y >= 6*height && vga_y < 7*height) begin
-			background_y = 6*height;
+			background_y = 11'd6*height;
 			tile_y = 6;
 		end
 		if(vga_y >= 7*height && vga_y < 8*height) begin
-			background_y = 7*height;
+			background_y = 11'd7*height;
 			tile_y = 7;
 		end
 		if(vga_y >= 8*height && vga_y < 9*height) begin
-			background_y = 8*height;
+			background_y = 11'd8*height;
 			tile_y = 8;
 		end
 		if(vga_y >= 9*height && vga_y < 10*height) begin
-			background_y = 9*height;
+			background_y = 11'd9*height;
 			tile_y = 9;
 		end
 		if(vga_y >= 10*height && vga_y < 11*height) begin
-			background_y = 10*height;
+			background_y = 11'd10*height;
 			tile_y = 10;
 		end
 		if(vga_y >= 11*height && vga_y < 12*height) begin
-			background_y = 11*height;
+			background_y = 11'd11*height;
 			tile_y = 11;
 		end
 		if(vga_y >= 12*height && vga_y < 13*height) begin
-			background_y = 12*height;
+			background_y = 11'd12*height;
 			tile_y = 12;
 		end
 		if(vga_y >= 13*height && vga_y < 14*height) begin
-			background_y = 13*height;
+			background_y = 11'd13*height;
 			tile_y = 13;
 		end
 		if(vga_y >= 14*height && vga_y < 15*height) begin
-			background_y = 14*height;
+			background_y = 11'd14*height;
 			tile_y = 14;
 		end
 		if(vga_y >= 15*height && vga_y < 16*height) begin
-			background_y = 15*height;
+			background_y = 11'd15*height;
 			tile_y = 15;
 		end
 	end
@@ -2286,31 +2286,31 @@ module explosion(
 	
 	always_ff @ (posedge vsync_slow[3]) begin
 		// When enable goes on iterate through the explosion textures:
-		if(enable1 == 0) released1 <= 0;
-		if(enable1 == 1 && released1 == 0) begin
-			counter1 <= 1;
-			released1 <= 1;
+		if(enable1 == 1'b0) released1 <= 1'b0;
+		if(enable1 == 1'b1 && released1 == 1'b0) begin
+			counter1 <= 2'b01;
+			released1 <= 1'b1;
 		end
-		if(counter1 != 0) counter1 <= counter1 + 1;
-		if(counter1 >= 2) counter1 <= 0;
+		if(counter1 != 1'b0) counter1 <= counter1 + 2'b01;
+		if(counter1 >= 2'b10) counter1 <= 2'b00;
 		
 		// 
-		if(enable2 == 0) released2 <= 0;
-		if(enable2 == 1 && released2 == 0) begin
-			counter2 <= 1;
-			released2 <= 1;
+		if(enable2 == 1'b0) released2 <= 1'b0;
+		if(enable2 == 1'b1 && released2 == 1'b0) begin
+			counter2 <= 2'b01;
+			released2 <= 1'b1;
 		end
-		if(counter2 != 0) counter2 <= counter2 + 1;
-		if(counter2 >= 2) counter2 <= 0;
+		if(counter2 != 2'b00) counter2 <= counter2 + 2'b01;
+		if(counter2 >= 2'b10) counter2 <= 2'b00;
 		
 		//
-		if(enable3 == 0) released3 <= 0;
-		if(enable3 == 1 && released3 == 0) begin
-			counter3 <= 1;
-			released3 <= 1;
+		if(enable3 == 1'b0) released3 <= 1'b0;
+		if(enable3 == 1'b1 && released3 == 1'b0) begin
+			counter3 <= 2'b01;
+			released3 <= 1'b1;
 		end
-		if(counter3 != 0) counter3 <= counter3 + 1;
-		if(counter3 >= 2) counter3 <= 0;
+		if(counter3 != 2'b00) counter3 <= counter3 + 2'b01;
+		if(counter3 >= 2'b10) counter3 <= 2'b00;
 	end
 	
 	always_comb begin
