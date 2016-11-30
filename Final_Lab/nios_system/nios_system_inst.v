@@ -44,6 +44,7 @@
 		.samus_walk_export      (<connected-to-samus_walk_export>),      //      samus_walk.export
 		.samus_x_export         (<connected-to-samus_x_export>),         //         samus_x.export
 		.samus_y_export         (<connected-to-samus_y_export>),         //         samus_y.export
+		.scene_sel_export       (<connected-to-scene_sel_export>),       //       scene_sel.export
 		.sdram_wire_addr        (<connected-to-sdram_wire_addr>),        //      sdram_wire.addr
 		.sdram_wire_ba          (<connected-to-sdram_wire_ba>),          //                .ba
 		.sdram_wire_cas_n       (<connected-to-sdram_wire_cas_n>),       //                .cas_n
@@ -55,6 +56,6 @@
 		.sdram_wire_we_n        (<connected-to-sdram_wire_we_n>),        //                .we_n
 		.title_en_export        (<connected-to-title_en_export>),        //        title_en.export
 		.win_en_export          (<connected-to-win_en_export>),          //          win_en.export
-		.scene_sel_export       (<connected-to-scene_sel_export>)        //       scene_sel.export
+		.sdram_clk_clk          (<connected-to-sdram_clk_clk>)           //       sdram_clk.clk
 	);
 

@@ -119,7 +119,7 @@ module  lab8 			( input         CLOCK_50,
 											.otg_hpi_data_out_port(hpi_data_out),
 											.otg_hpi_cs_export(hpi_cs),
 											.otg_hpi_r_export(hpi_r),
-											.otg_hpi_w_export(hpi_w)
+											.otg_hpi_w_export(hpi_w),
 											
 											// Our Game Config Here:
 											// Bullet:

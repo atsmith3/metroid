@@ -50,6 +50,7 @@ module nios_system (
 		output wire [9:0]  samus_x_export,         //         samus_x.export
 		output wire [9:0]  samus_y_export,         //         samus_y.export
 		output wire [2:0]  scene_sel_export,       //       scene_sel.export
+		output wire        sdram_clk_clk,          //       sdram_clk.clk
 		output wire [12:0] sdram_wire_addr,        //      sdram_wire.addr
 		output wire [1:0]  sdram_wire_ba,          //                .ba
 		output wire        sdram_wire_cas_n,       //                .cas_n
@@ -907,7 +908,7 @@ module nios_system (
 		.readdata  (mm_interconnect_0_sdram_pll_pll_slave_readdata),  //                      .readdata
 		.writedata (mm_interconnect_0_sdram_pll_pll_slave_writedata), //                      .writedata
 		.c0        (sdram_pll_c0_clk),                                //                    c0.clk
-		.c1        (),                                                //                    c1.clk
+		.c1        (sdram_clk_clk),                                   //                    c1.clk
 		.areset    (),                                                //        areset_conduit.export
 		.locked    (),                                                //        locked_conduit.export
 		.phasedone ()                                                 //     phasedone_conduit.export

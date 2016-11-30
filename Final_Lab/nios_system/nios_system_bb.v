@@ -45,6 +45,7 @@ module nios_system (
 	samus_walk_export,
 	samus_x_export,
 	samus_y_export,
+	scene_sel_export,
 	sdram_wire_addr,
 	sdram_wire_ba,
 	sdram_wire_cas_n,
@@ -56,7 +57,7 @@ module nios_system (
 	sdram_wire_we_n,
 	title_en_export,
 	win_en_export,
-	scene_sel_export);	
+	sdram_clk_clk);	
 
 	output		bullet1_en_export;
 	output	[9:0]	bullet1_x_export;
@@ -103,6 +104,7 @@ module nios_system (
 	output		samus_walk_export;
 	output	[9:0]	samus_x_export;
 	output	[9:0]	samus_y_export;
+	output	[2:0]	scene_sel_export;
 	output	[12:0]	sdram_wire_addr;
 	output	[1:0]	sdram_wire_ba;
 	output		sdram_wire_cas_n;
@@ -114,5 +116,5 @@ module nios_system (
 	output		sdram_wire_we_n;
 	output		title_en_export;
 	output		win_en_export;
-	output	[2:0]	scene_sel_export;
+	output		sdram_clk_clk;
 endmodule

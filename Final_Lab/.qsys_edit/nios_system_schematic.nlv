@@ -1,111 +1,113 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst nios_system.samus_y -pg 1 -lvl 3 -y 4450
-preplace inst nios_system.otg_hpi_r -pg 1 -lvl 3 -y 1050
-preplace inst nios_system.monster2_y -pg 1 -lvl 3 -y 3550
-preplace inst nios_system.monster2_en -pg 1 -lvl 3 -y 3350
-preplace inst nios_system.monster1_x -pg 1 -lvl 3 -y 3150
-preplace inst nios_system.bullet1_en -pg 1 -lvl 3 -y 750
+preplace inst nios_system.scene_sel -pg 1 -lvl 3 -y 30
+preplace inst nios_system.samus_y -pg 1 -lvl 3 -y 4560
+preplace inst nios_system.otg_hpi_r -pg 1 -lvl 3 -y 1160
+preplace inst nios_system.monster2_y -pg 1 -lvl 3 -y 3660
+preplace inst nios_system.monster2_en -pg 1 -lvl 3 -y 3460
+preplace inst nios_system.monster1_x -pg 1 -lvl 3 -y 3260
+preplace inst nios_system.bullet1_en -pg 1 -lvl 3 -y 860
 preplace inst nios_system.nios2_qsys_0.reset_bridge -pg 1
-preplace inst nios_system.monster1_y -pg 1 -lvl 3 -y 3250
-preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 3 -y 450
-preplace inst nios_system.health -pg 1 -lvl 3 -y 2850
-preplace inst nios_system.otg_hpi_address -pg 1 -lvl 3 -y 4850
+preplace inst nios_system.monster1_y -pg 1 -lvl 3 -y 3360
+preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 3 -y 560
+preplace inst nios_system.health -pg 1 -lvl 3 -y 2960
+preplace inst nios_system.otg_hpi_address -pg 1 -lvl 3 -y 4960
 preplace inst nios_system.nios2_qsys_0.clock_bridge -pg 1
-preplace inst nios_system.monster3_x -pg 1 -lvl 3 -y 3750
-preplace inst nios_system.monster3_en -pg 1 -lvl 3 -y 3650
-preplace inst nios_system.explosion1_en -pg 1 -lvl 3 -y 1950
-preplace inst nios_system.bullet2_x -pg 1 -lvl 3 -y 1450
+preplace inst nios_system.monster3_x -pg 1 -lvl 3 -y 3860
+preplace inst nios_system.monster3_en -pg 1 -lvl 3 -y 3760
+preplace inst nios_system.explosion1_en -pg 1 -lvl 3 -y 2060
+preplace inst nios_system.bullet2_x -pg 1 -lvl 3 -y 1560
 preplace inst nios_system -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst nios_system.monster3_y -pg 1 -lvl 3 -y 3850
-preplace inst nios_system.explosion3_x -pg 1 -lvl 3 -y 2650
-preplace inst nios_system.bullet2_y -pg 1 -lvl 3 -y 1550
-preplace inst nios_system.onchip_memory2_0 -pg 1 -lvl 3 -y 290
-preplace inst nios_system.nios2_qsys_0 -pg 1 -lvl 2 -y 480
-preplace inst nios_system.explosion3_y -pg 1 -lvl 3 -y 2750
-preplace inst nios_system.explosion2_en -pg 1 -lvl 3 -y 2250
-preplace inst nios_system.bullet3_x -pg 1 -lvl 3 -y 1750
-preplace inst nios_system.sysid_qsys_0 -pg 1 -lvl 3 -y 370
-preplace inst nios_system.otg_hpi_w -pg 1 -lvl 3 -y 4750
-preplace inst nios_system.otg_hpi_cs -pg 1 -lvl 3 -y 850
-preplace inst nios_system.explosion2_x -pg 1 -lvl 3 -y 2350
-preplace inst nios_system.bullet3_y -pg 1 -lvl 3 -y 1850
-preplace inst nios_system.otg_hpi_data -pg 1 -lvl 3 -y 950
-preplace inst nios_system.explosion2_y -pg 1 -lvl 3 -y 2450
-preplace inst nios_system.samus_dir -pg 1 -lvl 3 -y 3950
-preplace inst nios_system.explosion1_x -pg 1 -lvl 3 -y 2050
-preplace inst nios_system.bullet3_en -pg 1 -lvl 3 -y 1650
-preplace inst nios_system.samus_jump -pg 1 -lvl 3 -y 4150
-preplace inst nios_system.monster1_en -pg 1 -lvl 3 -y 3050
-preplace inst nios_system.explosion1_y -pg 1 -lvl 3 -y 2150
-preplace inst nios_system.bullet2_en -pg 1 -lvl 3 -y 1350
-preplace inst nios_system.win_en -pg 1 -lvl 3 -y 4650
-preplace inst nios_system.keycode -pg 1 -lvl 3 -y 650
-preplace inst nios_system.explosion3_en -pg 1 -lvl 3 -y 2550
-preplace inst nios_system.bullet1_x -pg 1 -lvl 3 -y 1150
-preplace inst nios_system.title_en -pg 1 -lvl 3 -y 4550
-preplace inst nios_system.sdram_pll -pg 1 -lvl 3 -y 40
-preplace inst nios_system.sdram -pg 1 -lvl 3 -y 190
-preplace inst nios_system.samus_en -pg 1 -lvl 3 -y 4050
-preplace inst nios_system.loss_en -pg 1 -lvl 3 -y 2950
-preplace inst nios_system.bullet1_y -pg 1 -lvl 3 -y 1250
-preplace inst nios_system.samus_x -pg 1 -lvl 3 -y 4350
-preplace inst nios_system.samus_walk -pg 1 -lvl 3 -y 4250
+preplace inst nios_system.monster3_y -pg 1 -lvl 3 -y 3960
+preplace inst nios_system.explosion3_x -pg 1 -lvl 3 -y 2760
+preplace inst nios_system.bullet2_y -pg 1 -lvl 3 -y 1660
+preplace inst nios_system.onchip_memory2_0 -pg 1 -lvl 3 -y 400
+preplace inst nios_system.nios2_qsys_0 -pg 1 -lvl 2 -y 590
+preplace inst nios_system.explosion3_y -pg 1 -lvl 3 -y 2860
+preplace inst nios_system.explosion2_en -pg 1 -lvl 3 -y 2360
+preplace inst nios_system.bullet3_x -pg 1 -lvl 3 -y 1860
+preplace inst nios_system.sysid_qsys_0 -pg 1 -lvl 3 -y 480
+preplace inst nios_system.otg_hpi_w -pg 1 -lvl 3 -y 4860
+preplace inst nios_system.otg_hpi_cs -pg 1 -lvl 3 -y 960
+preplace inst nios_system.explosion2_x -pg 1 -lvl 3 -y 2460
+preplace inst nios_system.bullet3_y -pg 1 -lvl 3 -y 1960
+preplace inst nios_system.otg_hpi_data -pg 1 -lvl 3 -y 1060
+preplace inst nios_system.explosion2_y -pg 1 -lvl 3 -y 2560
+preplace inst nios_system.samus_dir -pg 1 -lvl 3 -y 4060
+preplace inst nios_system.explosion1_x -pg 1 -lvl 3 -y 2160
+preplace inst nios_system.bullet3_en -pg 1 -lvl 3 -y 1760
+preplace inst nios_system.samus_jump -pg 1 -lvl 3 -y 4260
+preplace inst nios_system.monster1_en -pg 1 -lvl 3 -y 3160
+preplace inst nios_system.explosion1_y -pg 1 -lvl 3 -y 2260
+preplace inst nios_system.bullet2_en -pg 1 -lvl 3 -y 1460
+preplace inst nios_system.win_en -pg 1 -lvl 3 -y 4760
+preplace inst nios_system.keycode -pg 1 -lvl 3 -y 760
+preplace inst nios_system.explosion3_en -pg 1 -lvl 3 -y 2660
+preplace inst nios_system.bullet1_x -pg 1 -lvl 3 -y 1260
+preplace inst nios_system.title_en -pg 1 -lvl 3 -y 4660
+preplace inst nios_system.sdram_pll -pg 1 -lvl 3 -y 150
+preplace inst nios_system.sdram -pg 1 -lvl 3 -y 300
+preplace inst nios_system.samus_en -pg 1 -lvl 3 -y 4160
+preplace inst nios_system.loss_en -pg 1 -lvl 3 -y 3060
+preplace inst nios_system.bullet1_y -pg 1 -lvl 3 -y 1360
+preplace inst nios_system.samus_x -pg 1 -lvl 3 -y 4460
+preplace inst nios_system.samus_walk -pg 1 -lvl 3 -y 4360
 preplace inst nios_system.nios2_qsys_0.cpu -pg 1
-preplace inst nios_system.monster2_x -pg 1 -lvl 3 -y 3450
-preplace inst nios_system.key -pg 1 -lvl 3 -y 550
-preplace inst nios_system.clk_0 -pg 1 -lvl 1 -y 610
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster2_en.external_connection,(SLAVE)nios_system.monster2_en) 1 0 3 NJ 3380 NJ 3380 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet3_x,(SLAVE)bullet3_x.external_connection) 1 0 3 NJ 1780 NJ 1780 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet1_x,(SLAVE)bullet1_x.external_connection) 1 0 3 NJ 1180 NJ 1180 NJ
+preplace inst nios_system.monster2_x -pg 1 -lvl 3 -y 3560
+preplace inst nios_system.key -pg 1 -lvl 3 -y 660
+preplace inst nios_system.clk_0 -pg 1 -lvl 1 -y 720
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.samus_x,(SLAVE)samus_x.external_connection) 1 0 3 NJ 4490 NJ 4490 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster1_y,(SLAVE)monster1_y.external_connection) 1 0 3 NJ 3390 NJ 3390 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)bullet3_x.external_connection,(SLAVE)nios_system.bullet3_x) 1 0 3 NJ 1890 NJ 1890 NJ
 preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(SLAVE)jtag_uart_0.irq,(MASTER)nios2_qsys_0.irq) 1 2 1 760
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)nios_system.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster2_x.external_connection,(SLAVE)nios_system.monster2_x) 1 0 3 NJ 3480 NJ 3480 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion3_y,(SLAVE)explosion3_y.external_connection) 1 0 3 NJ 2780 NJ 2780 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.title_en,(SLAVE)title_en.external_connection) 1 0 3 NJ 4580 NJ 4580 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_x.external_connection,(SLAVE)nios_system.samus_x) 1 0 3 NJ 4380 NJ 4380 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_dir.external_connection,(SLAVE)nios_system.samus_dir) 1 0 3 NJ 3980 NJ 3980 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet1_y,(SLAVE)bullet1_y.external_connection) 1 0 3 NJ 1280 NJ 1280 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster1_y.external_connection,(SLAVE)nios_system.monster1_y) 1 0 3 NJ 3280 NJ 3280 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion3_x,(SLAVE)explosion3_x.external_connection) 1 0 3 NJ 2680 NJ 2680 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion2_x,(SLAVE)explosion2_x.external_connection) 1 0 3 NJ 2380 NJ 2380 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)bullet3_y.external_connection,(SLAVE)nios_system.bullet3_y) 1 0 3 NJ 1880 NJ 1880 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.keycode,(SLAVE)keycode.external_connection) 1 0 3 NJ 700 NJ 700 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion1_x,(SLAVE)explosion1_x.external_connection) 1 0 3 NJ 2080 NJ 2080 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)explosion1_en.external_connection,(SLAVE)nios_system.explosion1_en) 1 0 3 NJ 1980 NJ 1980 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet2_en,(SLAVE)bullet2_en.external_connection) 1 0 3 NJ 1380 NJ 1380 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.win_en,(SLAVE)win_en.external_connection) 1 0 3 NJ 4680 NJ 4680 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster3_y.external_connection,(SLAVE)nios_system.monster3_y) 1 0 3 NJ 3880 NJ 3880 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)loss_en.external_connection,(SLAVE)nios_system.loss_en) 1 0 3 NJ 2980 NJ 2980 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.otg_hpi_address,(SLAVE)otg_hpi_address.external_connection) 1 0 3 NJ 4880 NJ 4880 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster2_y.external_connection,(SLAVE)nios_system.monster2_y) 1 0 3 NJ 3580 NJ 3580 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)explosion1_y.external_connection,(SLAVE)nios_system.explosion1_y) 1 0 3 NJ 2180 NJ 2180 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_en.external_connection,(SLAVE)nios_system.samus_en) 1 0 3 NJ 4080 NJ 4080 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_w.external_connection,(SLAVE)nios_system.otg_hpi_w) 1 0 3 NJ 4780 NJ 4780 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.otg_hpi_data,(SLAVE)otg_hpi_data.external_connection) 1 0 3 NJ 980 NJ 980 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster3_en,(SLAVE)monster3_en.external_connection) 1 0 3 NJ 3680 NJ 3680 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)bullet3_en.external_connection,(SLAVE)nios_system.bullet3_en) 1 0 3 NJ 1680 NJ 1680 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet1_en,(SLAVE)bullet1_en.external_connection) 1 0 3 NJ 780 NJ 780 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_walk.external_connection,(SLAVE)nios_system.samus_walk) 1 0 3 NJ 4280 NJ 4280 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.otg_hpi_r,(SLAVE)otg_hpi_r.external_connection) 1 0 3 NJ 1080 NJ 1080 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster3_x.external_connection,(SLAVE)nios_system.monster3_x) 1 0 3 NJ 3780 NJ 3780 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion2_y,(SLAVE)explosion2_y.external_connection) 1 0 3 NJ 2480 NJ 2480 NJ
-preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)samus_jump.reset,(SLAVE)explosion2_x.reset,(SLAVE)explosion2_y.reset,(SLAVE)samus_x.reset,(SLAVE)otg_hpi_r.reset,(SLAVE)samus_y.reset,(SLAVE)health.reset,(SLAVE)explosion3_en.reset,(SLAVE)samus_en.reset,(SLAVE)bullet1_en.reset,(SLAVE)explosion1_en.reset,(SLAVE)explosion1_x.reset,(SLAVE)bullet1_x.reset,(SLAVE)bullet2_x.reset,(SLAVE)monster3_y.reset,(SLAVE)explosion3_y.reset,(SLAVE)otg_hpi_address.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)loss_en.reset,(SLAVE)explosion1_y.reset,(SLAVE)otg_hpi_data.reset,(SLAVE)samus_walk.reset,(SLAVE)otg_hpi_cs.reset,(SLAVE)monster3_x.reset,(SLAVE)bullet3_x.reset,(SLAVE)keycode.reset,(SLAVE)title_en.reset,(SLAVE)monster1_en.reset,(SLAVE)monster2_en.reset,(SLAVE)monster2_x.reset,(MASTER)nios2_qsys_0.debug_reset_request,(SLAVE)monster1_y.reset,(SLAVE)bullet3_en.reset,(SLAVE)onchip_memory2_0.reset1,(MASTER)clk_0.clk_reset,(SLAVE)monster1_x.reset,(SLAVE)sdram.reset,(SLAVE)bullet3_y.reset,(SLAVE)bullet2_en.reset,(SLAVE)nios2_qsys_0.reset,(SLAVE)explosion3_x.reset,(SLAVE)key.reset,(SLAVE)samus_dir.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)explosion2_en.reset,(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)otg_hpi_w.reset,(SLAVE)bullet2_y.reset,(SLAVE)win_en.reset,(SLAVE)bullet1_y.reset,(SLAVE)monster3_en.reset,(SLAVE)monster2_y.reset) 1 1 2 340 660 780
-preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)samus_x.clk,(SLAVE)explosion1_en.clk,(SLAVE)otg_hpi_address.clk,(SLAVE)otg_hpi_w.clk,(SLAVE)win_en.clk,(SLAVE)otg_hpi_r.clk,(SLAVE)explosion3_y.clk,(SLAVE)bullet2_y.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)monster3_y.clk,(SLAVE)monster1_x.clk,(SLAVE)bullet1_y.clk,(SLAVE)samus_walk.clk,(SLAVE)monster3_x.clk,(SLAVE)bullet3_x.clk,(SLAVE)monster1_y.clk,(SLAVE)keycode.clk,(SLAVE)bullet3_y.clk,(SLAVE)monster2_y.clk,(SLAVE)samus_dir.clk,(SLAVE)key.clk,(SLAVE)explosion3_en.clk,(SLAVE)health.clk,(SLAVE)loss_en.clk,(SLAVE)bullet3_en.clk,(MASTER)clk_0.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)bullet2_x.clk,(SLAVE)explosion2_en.clk,(SLAVE)explosion2_y.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)explosion1_x.clk,(SLAVE)explosion1_y.clk,(SLAVE)bullet2_en.clk,(SLAVE)otg_hpi_cs.clk,(SLAVE)samus_jump.clk,(SLAVE)monster3_en.clk,(SLAVE)title_en.clk,(SLAVE)monster2_x.clk,(SLAVE)explosion3_x.clk,(SLAVE)samus_en.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)nios2_qsys_0.clk,(SLAVE)monster1_en.clk,(SLAVE)samus_y.clk,(SLAVE)monster2_en.clk,(SLAVE)explosion2_x.clk,(SLAVE)bullet1_en.clk,(SLAVE)bullet1_x.clk,(SLAVE)otg_hpi_data.clk) 1 1 2 320 620 800
-preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(SLAVE)sdram.clk,(MASTER)sdram_pll.c0) 1 2 2 820 30 1080
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)sdram.wire,(SLAVE)nios_system.sdram_wire) 1 0 3 NJ 260 NJ 260 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion2_en,(SLAVE)explosion2_en.external_connection) 1 0 3 NJ 2280 NJ 2280 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet2_y,(SLAVE)bullet2_y.external_connection) 1 0 3 NJ 1580 NJ 1580 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet2_x,(SLAVE)bullet2_x.external_connection) 1 0 3 NJ 1480 NJ 1480 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_y.external_connection,(SLAVE)nios_system.samus_y) 1 0 3 NJ 4480 NJ 4480 NJ
-preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)explosion1_y.s1,(SLAVE)health.s1,(SLAVE)bullet1_y.s1,(SLAVE)keycode.s1,(SLAVE)key.s1,(SLAVE)monster2_en.s1,(SLAVE)bullet2_x.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)bullet1_x.s1,(SLAVE)monster1_x.s1,(SLAVE)monster3_y.s1,(SLAVE)otg_hpi_cs.s1,(SLAVE)monster1_y.s1,(SLAVE)otg_hpi_data.s1,(SLAVE)explosion1_x.s1,(SLAVE)explosion3_y.s1,(MASTER)nios2_qsys_0.data_master,(SLAVE)explosion3_x.s1,(SLAVE)sysid_qsys_0.control_slave,(MASTER)nios2_qsys_0.instruction_master,(SLAVE)nios2_qsys_0.debug_mem_slave,(SLAVE)bullet1_en.s1,(SLAVE)monster1_en.s1,(SLAVE)explosion2_x.s1,(SLAVE)explosion3_en.s1,(SLAVE)bullet3_x.s1,(SLAVE)otg_hpi_w.s1,(SLAVE)samus_jump.s1,(SLAVE)bullet3_en.s1,(SLAVE)title_en.s1,(SLAVE)bullet2_y.s1,(SLAVE)loss_en.s1,(SLAVE)explosion2_en.s1,(SLAVE)monster2_x.s1,(SLAVE)samus_y.s1,(SLAVE)monster3_x.s1,(SLAVE)monster2_y.s1,(SLAVE)monster3_en.s1,(SLAVE)sdram.s1,(SLAVE)samus_walk.s1,(SLAVE)explosion2_y.s1,(SLAVE)samus_dir.s1,(SLAVE)explosion1_en.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)otg_hpi_r.s1,(SLAVE)samus_en.s1,(SLAVE)bullet2_en.s1,(SLAVE)sdram_pll.pll_slave,(SLAVE)win_en.s1,(SLAVE)otg_hpi_address.s1,(SLAVE)bullet3_y.s1,(SLAVE)samus_x.s1) 1 1 2 380 680 740
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_jump.external_connection,(SLAVE)nios_system.samus_jump) 1 0 3 NJ 4180 NJ 4180 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_cs.external_connection,(SLAVE)nios_system.otg_hpi_cs) 1 0 3 NJ 880 NJ 880 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster1_x,(SLAVE)monster1_x.external_connection) 1 0 3 NJ 3180 NJ 3180 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster1_en.external_connection,(SLAVE)nios_system.monster1_en) 1 0 3 NJ 3080 NJ 3080 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)key.external_connection,(SLAVE)nios_system.key) 1 0 3 NJ 600 NJ 640 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)health.external_connection,(SLAVE)nios_system.health) 1 0 3 NJ 2880 NJ 2880 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)explosion3_en.external_connection,(SLAVE)nios_system.explosion3_en) 1 0 3 NJ 2580 NJ 2580 NJ
+preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(MASTER)sdram_pll.c0,(SLAVE)sdram.clk) 1 2 2 840 140 1080
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion3_y,(SLAVE)explosion3_y.external_connection) 1 0 3 NJ 2890 NJ 2890 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion3_en,(SLAVE)explosion3_en.external_connection) 1 0 3 NJ 2690 NJ 2690 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)bullet2_x.external_connection,(SLAVE)nios_system.bullet2_x) 1 0 3 NJ 1590 NJ 1590 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.samus_walk,(SLAVE)samus_walk.external_connection) 1 0 3 NJ 4390 NJ 4390 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster2_x,(SLAVE)monster2_x.external_connection) 1 0 3 NJ 3590 NJ 3590 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster2_en,(SLAVE)monster2_en.external_connection) 1 0 3 NJ 3490 NJ 3490 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)scene_sel.external_connection,(SLAVE)nios_system.scene_sel) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet1_y,(SLAVE)bullet1_y.external_connection) 1 0 3 NJ 1390 NJ 1390 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)title_en.external_connection,(SLAVE)nios_system.title_en) 1 0 3 NJ 4690 NJ 4690 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.samus_dir,(SLAVE)samus_dir.external_connection) 1 0 3 NJ 4090 NJ 4090 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion3_x,(SLAVE)explosion3_x.external_connection) 1 0 3 NJ 2790 NJ 2790 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)bullet3_y.external_connection,(SLAVE)nios_system.bullet3_y) 1 0 3 NJ 1990 NJ 1990 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)bullet1_x.external_connection,(SLAVE)nios_system.bullet1_x) 1 0 3 NJ 1290 NJ 1290 NJ
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)sdram.s1,(SLAVE)bullet1_en.s1,(SLAVE)sdram_pll.pll_slave,(SLAVE)monster3_en.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)monster1_en.s1,(SLAVE)explosion2_y.s1,(SLAVE)samus_jump.s1,(SLAVE)monster2_x.s1,(SLAVE)monster1_x.s1,(SLAVE)nios2_qsys_0.debug_mem_slave,(SLAVE)explosion3_x.s1,(SLAVE)monster2_y.s1,(SLAVE)explosion1_y.s1,(SLAVE)bullet1_y.s1,(SLAVE)samus_dir.s1,(SLAVE)bullet2_en.s1,(SLAVE)bullet3_x.s1,(SLAVE)monster3_y.s1,(SLAVE)explosion1_en.s1,(SLAVE)samus_x.s1,(SLAVE)monster3_x.s1,(SLAVE)key.s1,(SLAVE)bullet2_y.s1,(SLAVE)keycode.s1,(SLAVE)bullet1_x.s1,(SLAVE)monster1_y.s1,(SLAVE)explosion1_x.s1,(SLAVE)explosion3_y.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)otg_hpi_data.s1,(SLAVE)bullet3_en.s1,(SLAVE)otg_hpi_r.s1,(SLAVE)bullet2_x.s1,(SLAVE)health.s1,(SLAVE)scene_sel.s1,(SLAVE)explosion3_en.s1,(SLAVE)otg_hpi_w.s1,(SLAVE)bullet3_y.s1,(SLAVE)otg_hpi_cs.s1,(SLAVE)samus_walk.s1,(SLAVE)monster2_en.s1,(SLAVE)explosion2_x.s1,(SLAVE)explosion2_en.s1,(MASTER)nios2_qsys_0.instruction_master,(SLAVE)title_en.s1,(SLAVE)otg_hpi_address.s1,(SLAVE)loss_en.s1,(MASTER)nios2_qsys_0.data_master,(SLAVE)samus_en.s1,(SLAVE)samus_y.s1,(SLAVE)win_en.s1,(SLAVE)onchip_memory2_0.s1) 1 1 2 380 730 740
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster3_x,(SLAVE)monster3_x.external_connection) 1 0 3 NJ 3890 NJ 3890 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion1_y,(SLAVE)explosion1_y.external_connection) 1 0 3 NJ 2290 NJ 2290 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion1_x,(SLAVE)explosion1_x.external_connection) 1 0 3 NJ 2190 NJ 2190 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)explosion1_en.external_connection,(SLAVE)nios_system.explosion1_en) 1 0 3 NJ 2090 NJ 2090 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet2_en,(SLAVE)bullet2_en.external_connection) 1 0 3 NJ 1490 NJ 1490 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.win_en,(SLAVE)win_en.external_connection) 1 0 3 NJ 4790 NJ 4790 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_r.external_connection,(SLAVE)nios_system.otg_hpi_r) 1 0 3 NJ 1190 NJ 1190 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_address.external_connection,(SLAVE)nios_system.otg_hpi_address) 1 0 3 NJ 4990 NJ 4990 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)loss_en.external_connection,(SLAVE)nios_system.loss_en) 1 0 3 NJ 3090 NJ 3090 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster2_y.external_connection,(SLAVE)nios_system.monster2_y) 1 0 3 NJ 3690 NJ 3690 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)explosion2_x.external_connection,(SLAVE)nios_system.explosion2_x) 1 0 3 NJ 2490 NJ 2490 NJ
+preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)monster3_x.clk,(SLAVE)monster2_y.clk,(SLAVE)monster1_x.clk,(SLAVE)samus_jump.clk,(SLAVE)otg_hpi_address.clk,(SLAVE)explosion1_en.clk,(SLAVE)monster1_en.clk,(SLAVE)samus_x.clk,(SLAVE)title_en.clk,(SLAVE)bullet3_x.clk,(SLAVE)otg_hpi_r.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)monster2_en.clk,(SLAVE)samus_y.clk,(SLAVE)bullet3_y.clk,(SLAVE)loss_en.clk,(SLAVE)bullet2_x.clk,(SLAVE)monster3_en.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)otg_hpi_w.clk,(SLAVE)bullet1_en.clk,(SLAVE)scene_sel.clk,(SLAVE)otg_hpi_cs.clk,(SLAVE)health.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)explosion2_x.clk,(SLAVE)monster1_y.clk,(SLAVE)key.clk,(SLAVE)bullet3_en.clk,(SLAVE)nios2_qsys_0.clk,(SLAVE)monster2_x.clk,(SLAVE)otg_hpi_data.clk,(SLAVE)bullet2_en.clk,(SLAVE)keycode.clk,(SLAVE)monster3_y.clk,(SLAVE)explosion1_x.clk,(MASTER)clk_0.clk,(SLAVE)explosion2_en.clk,(SLAVE)explosion2_y.clk,(SLAVE)explosion3_x.clk,(SLAVE)samus_walk.clk,(SLAVE)samus_en.clk,(SLAVE)win_en.clk,(SLAVE)bullet1_x.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)samus_dir.clk,(SLAVE)explosion3_en.clk,(SLAVE)bullet2_y.clk,(SLAVE)explosion1_y.clk,(SLAVE)explosion3_y.clk,(SLAVE)bullet1_y.clk) 1 1 2 360 750 800
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.samus_jump,(SLAVE)samus_jump.external_connection) 1 0 3 NJ 4290 NJ 4290 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_en.external_connection,(SLAVE)nios_system.samus_en) 1 0 3 NJ 4190 NJ 4190 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_w.external_connection,(SLAVE)nios_system.otg_hpi_w) 1 0 3 NJ 4890 NJ 4890 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster3_y,(SLAVE)monster3_y.external_connection) 1 0 3 NJ 3990 NJ 3990 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster3_en,(SLAVE)monster3_en.external_connection) 1 0 3 NJ 3790 NJ 3790 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)bullet3_en.external_connection,(SLAVE)nios_system.bullet3_en) 1 0 3 NJ 1790 NJ 1790 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet1_en,(SLAVE)bullet1_en.external_connection) 1 0 3 NJ 890 NJ 890 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion2_y,(SLAVE)explosion2_y.external_connection) 1 0 3 NJ 2590 NJ 2590 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)keycode.external_connection,(SLAVE)nios_system.keycode) 1 0 3 NJ 810 NJ 810 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.health,(SLAVE)health.external_connection) 1 0 3 NJ 2990 NJ 2990 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.explosion2_en,(SLAVE)explosion2_en.external_connection) 1 0 3 NJ 2390 NJ 2390 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.bullet2_y,(SLAVE)bullet2_y.external_connection) 1 0 3 NJ 1690 NJ 1690 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 370 NJ 370 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)samus_y.external_connection,(SLAVE)nios_system.samus_y) 1 0 3 NJ 4590 NJ 4590 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_data.external_connection,(SLAVE)nios_system.otg_hpi_data) 1 0 3 NJ 1090 NJ 1090 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.key,(SLAVE)key.external_connection) 1 0 3 NJ 710 NJ 770 NJ
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)explosion2_x.reset,(SLAVE)title_en.reset,(SLAVE)bullet2_en.reset,(SLAVE)otg_hpi_r.reset,(SLAVE)samus_x.reset,(MASTER)nios2_qsys_0.debug_reset_request,(SLAVE)samus_dir.reset,(SLAVE)bullet1_y.reset,(SLAVE)sdram.reset,(SLAVE)samus_jump.reset,(SLAVE)keycode.reset,(SLAVE)bullet3_x.reset,(SLAVE)win_en.reset,(MASTER)clk_0.clk_reset,(SLAVE)monster2_x.reset,(SLAVE)bullet3_y.reset,(SLAVE)monster3_en.reset,(SLAVE)explosion2_en.reset,(SLAVE)otg_hpi_data.reset,(SLAVE)monster1_y.reset,(SLAVE)monster2_y.reset,(SLAVE)explosion3_y.reset,(SLAVE)monster2_en.reset,(SLAVE)health.reset,(SLAVE)otg_hpi_w.reset,(SLAVE)key.reset,(SLAVE)explosion3_x.reset,(SLAVE)samus_walk.reset,(SLAVE)explosion1_en.reset,(SLAVE)nios2_qsys_0.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)bullet1_x.reset,(SLAVE)monster3_y.reset,(SLAVE)explosion1_x.reset,(SLAVE)monster1_x.reset,(SLAVE)explosion3_en.reset,(SLAVE)explosion2_y.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)loss_en.reset,(SLAVE)monster3_x.reset,(SLAVE)otg_hpi_address.reset,(SLAVE)samus_en.reset,(SLAVE)bullet3_en.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)samus_y.reset,(SLAVE)explosion1_y.reset,(SLAVE)monster1_en.reset,(SLAVE)bullet1_en.reset,(SLAVE)bullet2_x.reset,(SLAVE)scene_sel.reset,(SLAVE)bullet2_y.reset,(SLAVE)otg_hpi_cs.reset) 1 1 2 340 790 820
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)otg_hpi_cs.external_connection,(SLAVE)nios_system.otg_hpi_cs) 1 0 3 NJ 990 NJ 990 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.monster1_x,(SLAVE)monster1_x.external_connection) 1 0 3 NJ 3290 NJ 3290 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)monster1_en.external_connection,(SLAVE)nios_system.monster1_en) 1 0 3 NJ 3190 NJ 3190 NJ
 preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clk_0.clk_in,(SLAVE)nios_system.clk) 1 0 1 NJ
 levelinfo -pg 1 0 110 1120
 levelinfo -hier nios_system 120 150 500 890 1100
