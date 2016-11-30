@@ -679,7 +679,7 @@ int main(void)
     }
     else if(keycode==8){
         SAMUS_DIR = 1;
-        SAMUS_X+=1;
+        SAMUS_X-=1;
     }
     else{
       SAMUS_DIR = 0;
