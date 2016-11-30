@@ -16,7 +16,7 @@
 
 #include "system.h"
 #include "alt_types.h"
-#include <unistd.h>  // usleep 
+#include <unistd.h>  // usleep
 #include "sys/alt_irq.h"
 #include "io_handler.h"
 
@@ -25,6 +25,58 @@
 #include "lcp_cmd.h"
 #include "lcp_data.h"
 
+#define SAMUS_EN (volatile char*) 0x27F
+#define SAMUS_X (volatile int*) 0x26F
+#define SAMUS_Y (volatile int*) 0x25F
+#define SAMUS_DIR (volatile char*) 0x3F
+#define SAMUS_WALK (volatile char*) 0x24F
+#define SAMUS_JUMP (volatile char*) 0x23F
+
+#define MON1_EN (volatile char*) 0x22F
+#define MON1_X (volatile int*) 0x21F
+#define MON1_Y (volatile int*) 0x20F
+
+#define MON2_EN (volatile char*) 0x1FF
+#define MON2_X (volatile int*) 0x1EF
+#define MON2_Y (volatile int*) 0x1DF
+
+#define MON3_EN (volatile char*) 0x1CF
+#define MON3_X (volatile int*) 0x1BF
+#define MON3_Y (volatile int*) 0x1AF
+
+#define EXP1_EN (volatile int*) 0x19F
+#define EXP1_X (volatile int*) 0x18F
+#define EXP1_Y (volatile int*) 0x17F
+
+#define EXP2_EN (volatile int*) 0x16F
+#define EXP2_X (volatile int*) 0x15F
+#define EXP2_Y (volatile int*) 0x14F
+
+#define EXP3_EN (volatile int*) 0x13F
+#define EXP3_X (volatile int*) 0x12F
+#define EXP3_Y (volatile int*) 0x11F
+
+#define BUL1_EN (volatile int*) 0x10F
+#define BUL1_X (volatile int*) 0xFF
+#define BUL1_Y (volatile int*) 0xEF
+
+#define BUL2_EN (volatile int*) 0xDF
+#define BUL2_X (volatile int*) 0xCF
+#define BUL2_Y (volatile int*) 0xBF
+
+#define BUL3_EN (volatile int*) 0xAF
+#define BUL3_X (volatile int*) 0x9F
+#define BUL3_Y (volatile int*) 0x8F
+
+#define HEALTH (volatile int*) 0x7F
+
+#define TIT_EN (volatile int*) 0x6F
+
+#define LOSS_EN (volatile int*) 0x5F
+
+#define WIN_EN (volatile int*) 0x4F
+
+#define SCENE_SELECT (volatile int*) 0x2F
 
 //----------------------------------------------------------------------------------------//
 //
@@ -487,7 +539,7 @@ int main(void)
 		IO_write(HPI_DATA,0x0013);//8
 		IO_write(HPI_DATA,0x0000);//a
 		UsbWrite(HUSB_SIE1_pCurrentTDPtr,0x0500); //HUSB_SIE1_pCurrentTDPtr
-		
+
 		while (!(IO_read(HPI_STATUS) & HPI_STATUS_SIE1msg_FLAG) )  //read sie1 msg register
 		{
 			IO_write(HPI_ADDR,0x0500); //the start address
@@ -557,6 +609,82 @@ int main(void)
 
 			usleep(200);
 		}
+
+
+    // GAME START //keycode
+    /*
+#define SAMUS_EN (volatile char*) 0x27F
+#define SAMUS_X (volatile int*) 0x26F
+#define SAMUS_Y (volatile int*) 0x25F
+#define SAMUS_DIR (volatile char*) 0x3F
+#define SAMUS_WALK (volatile char*) 0x24F
+#define SAMUS_JUMP (volatile char*) 0x23F
+
+#define MON1_EN (volatile char*) 0x22F
+#define MON1_X (volatile int*) 0x21F
+#define MON1_Y (volatile int*) 0x20F
+
+#define MON2_EN (volatile char*) 0x1FF
+#define MON2_X (volatile int*) 0x1EF
+#define MON2_Y (volatile int*) 0x1DF
+
+#define MON3_EN (volatile char*) 0x1CF
+#define MON3_X (volatile int*) 0x1BF
+#define MON3_Y (volatile int*) 0x1AF
+
+#define EXP1_EN (volatile int*) 0x19F
+#define EXP1_X (volatile int*) 0x18F
+#define EXP1_Y (volatile int*) 0x17F
+
+#define EXP2_EN (volatile int*) 0x16F
+#define EXP2_X (volatile int*) 0x15F
+#define EXP2_Y (volatile int*) 0x14F
+
+#define EXP3_EN (volatile int*) 0x13F
+#define EXP3_X (volatile int*) 0x12F
+#define EXP3_Y (volatile int*) 0x11F
+
+#define BUL1_EN (volatile int*) 0x10F
+#define BUL1_X (volatile int*) 0xFF
+#define BUL1_Y (volatile int*) 0xEF
+
+#define BUL2_EN (volatile int*) 0xDF
+#define BUL2_X (volatile int*) 0xCF
+#define BUL2_Y (volatile int*) 0xBF
+
+#define BUL3_EN (volatile int*) 0xAF
+#define BUL3_X (volatile int*) 0x9F
+#define BUL3_Y (volatile int*) 0x8F
+
+#define HEALTH (volatile int*) 0x7F
+
+#define TIT_EN (volatile int*) 0x6F
+
+#define LOSS_EN (volatile int*) 0x5F
+
+#define WIN_EN (volatile int*) 0x4F
+
+#define SCENE_SELECT (volatile int*) 0x2F
+    */
+
+    //SAMUS MOVEMENT
+    SAMUS_WALK = 1;
+    SAMUS_EN = 1;
+    if(keycode==5){
+        SAMUS_DIR = 0;
+        SAMUS_X+=1;
+    }
+    else if(keycode==8){
+        SAMUS_DIR = 1;
+        SAMUS_X+=1;
+    }
+    else{
+      SAMUS_DIR = 0;
+    }
+    //MONSTER MOVEMENT
+    //COLLISSION DETECTION
+    //EXTRAS
+
 
 	}//end while
 
