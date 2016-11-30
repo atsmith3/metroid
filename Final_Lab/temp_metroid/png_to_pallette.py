@@ -22,7 +22,9 @@ ims = [Image.open("../sprites/NEW/block_blue.png"),
        Image.open("../sprites/NEW/Samus_running_forward_2.png"),
        Image.open("../sprites/NEW/Samus_running_forward1.png"),
        Image.open("../sprites/NEW/Samus_standing_up.png"),
-       Image.open("../sprites/NEW/Standing_forward.png"),] #Can be many different formats.
+       Image.open("../sprites/NEW/Standing_forward.png"),
+       Image.open("../sprites/NEW/Game_Over.png"),
+       Image.open("../sprites/NEW/title.gif"),]
 
 saveLocations = ["../sprites/MODIFIED/block_blue.png",
                  "../sprites/MODIFIED/block_gray.png",
@@ -46,7 +48,9 @@ saveLocations = ["../sprites/MODIFIED/block_blue.png",
                  "../sprites/MODIFIED/Samus_running_forward_2.png",
                  "../sprites/MODIFIED/Samus_running_forward1.png",
                  "../sprites/MODIFIED/Samus_standing_up.png",
-                 "../sprites/MODIFIED/Standing_forward.png",] #Can be many different formats.
+                 "../sprites/MODIFIED/Standing_forward.png",
+                 "../sprites/MODIFIED/Game_Over.png",
+                 "../sprites/MODIFIED/title.png",]
 
 saveLocations2 = ["../sprites/TEXT/block_blue.txt",
                   "../sprites/TEXT/block_gray.txt",
@@ -70,7 +74,9 @@ saveLocations2 = ["../sprites/TEXT/block_blue.txt",
                   "../sprites/TEXT/Samus_running_forward_2.txt",
                   "../sprites/TEXT/Samus_running_forward1.txt",
                   "../sprites/TEXT/Samus_standing_up.txt",
-                  "../sprites/TEXT/Standing_forward.txt",] #Can be many different formats.
+                  "../sprites/TEXT/Standing_forward.txt",
+                  "../sprites/TEXT/Game_Over.txt",
+                  "../sprites/TEXT/title.txt",]
 
 pallette = [(255,111,207),
             (44,92,10),
