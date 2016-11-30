@@ -61,8 +61,8 @@ output logic [7:0] red, green, blue
 					.enable3(bullet3), 
 					.vga_x(vgaX), .vga_y(vgaY), 
 					.sprite1_x(b1_x), .sprite1_y(b1_y), 
-					.sprite2_x(b2_y), .sprite2_y(b2_y), 
-					.sprite3_x(b3_y), .sprite3_y(b3_y), 
+					.sprite2_x(b2_x), .sprite2_y(b2_y), 
+					.sprite3_x(b3_x), .sprite3_y(b3_y), 
 					.empowered(1'b0),
 					.color(bullet_color),
 					.draw(bulletDraw));
@@ -87,9 +87,9 @@ output logic [7:0] red, green, blue
 				.vga_x(vgaX), .vga_y(vgaY),
 				.color(energy_color), 
 				.draw(energyDraw));
-	explosion explode(.enable1(explosion1), 
-							.enable2(explosion2), 
-							.enable3(explosion3), 
+	explosion explode(.enable1(exp1_en), 
+							.enable2(exp2_en), 
+							.enable3(exp3_en), 
 							.vsync(vsync), .vga_x(vgaX), .vga_y(vgaY), 
 							.exp1_x(exp1_x), .exp1_y(exp1_y), 
 							.exp2_x(exp2_x), .exp2_y(exp2_y), 
