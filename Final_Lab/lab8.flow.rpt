@@ -1,5 +1,5 @@
 Flow report for lab8
-Tue Nov 29 23:41:35 2016
+Wed Nov 30 00:20:34 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Flow Failed - Tue Nov 29 23:41:35 2016     ;
+; Flow Status                        ; Flow Failed - Wed Nov 30 00:20:34 2016     ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
 ; Revision Name                      ; lab8                                       ;
 ; Top-level Entity Name              ; lab8                                       ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/29/2016 23:40:31 ;
+; Start date & time ; 11/30/2016 00:20:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab8                ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +--------------------------------------+---------------------------------------------------------------+---------------+-----------------+----------------+
 ; Assignment Name                      ; Value                                                         ; Default Value ; Entity Name     ; Section Id     ;
 +--------------------------------------+---------------------------------------------------------------+---------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 0.148048443102879                                             ; --            ; --              ; --             ;
+; COMPILER_SIGNATURE_ID                ; 0.148048681903551                                             ; --            ; --              ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                            ; --            ; --              ; testbench      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                                                     ; --            ; --              ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                                             ; --            ; --              ; eda_simulation ;
@@ -104,7 +104,7 @@ agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                         ; --            ; --              ; --             ;
 ; SLD_FILE                             ; nios_system/synthesis/nios_system.regmap                      ; --            ; --              ; --             ;
 ; SLD_FILE                             ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --              ; --             ;
-; SLD_INFO                             ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1480436679 ; --            ; nios_system     ; --             ;
+; SLD_INFO                             ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1480484887 ; --            ; nios_system     ; --             ;
 ; SOPCINFO_FILE                        ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --              ; --             ;
 ; SYNTHESIS_ONLY_QIP                   ; On                                                            ; --            ; --              ; --             ;
 +--------------------------------------+---------------------------------------------------------------+---------------+-----------------+----------------+
@@ -115,8 +115,8 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:04     ; 1.0                     ; 2004 MB             ; 00:01:18                           ;
-; Total                ; 00:01:04     ; --                      ; --                  ; 00:01:18                           ;
+; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 1039 MB             ; 00:00:30                           ;
+; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:30                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
