@@ -154,10 +154,21 @@ for z in range(len(ims)):
     imw.save(saveLocations[z])
 
     with open(saveLocations2[z], 'w') as f:
-        for y in pngtext:
-            f.write("'{")
-            for x in y:
-                f.write(str(x) + ",")
+        f.write("\'{")
+        lastLine = pngtext[-1]
+        for y in range(len(pngtext)):
+            f.write("\'{")
+            for x in range(len(pngtext[y])):
+                if x == len(pngtext[y])-1:
+                    f.write(str(pngtext[y][x]))
+                    continue
+                f.write(str(pngtext[y][x]) + ",")
+            if y == len(pngtext)-1:
+                f.write("}")
+                break
             f.write("},\n")
+        f.write("};\n\n")
+        f.write("x = "+str(xsize)+"\n")
+        f.write("y = "+str(ysize)+"\n")
 
 print(background_ims)
