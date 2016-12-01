@@ -518,9 +518,9 @@ int main(void)
 
 	//-----------------------------------get keycode value------------------------------------------------//
 	usleep(10000);
-  SAMUS_EN = 1;
-  SAMUS_X = 30;
-  SAMUS_Y = 90;
+  *SAMUS_EN = 1;
+  *SAMUS_X = 30;
+  *SAMUS_Y = 90;
 	while(1)
 	{
 		toggle++;
@@ -671,18 +671,18 @@ int main(void)
     */
 
     //SAMUS MOVEMENT
-    SAMUS_WALK = 1;
-    SCENE_SELECT = 4;
+    *SAMUS_WALK = 1;
+    *SCENE_SELECT = 4;
     if(keycode==5){
-        SAMUS_DIR = 0;
-        SAMUS_X+=1;
+        *SAMUS_DIR = 0;
+        *SAMUS_X+=1;
     }
     else if(keycode==8){
-        SAMUS_DIR = 1;
-        SAMUS_X-=1;
+        *SAMUS_DIR = 1;
+        *SAMUS_X-=1;
     }
     else{
-      SAMUS_DIR = 0;
+        *SAMUS_DIR = 0;
     }
     //MONSTER MOVEMENT
     //COLLISSION DETECTION
