@@ -11,7 +11,7 @@ logic [15:0] tmp_data;
 logic from_sw_int; 
 
 //Tristate Buffer:
-assign OTG_DATA = from_sw_w ? {16{1'bZ}} : tmp_data;
+assign OTG_DATA = OTG_WR_N ? {16{1'bZ}} : tmp_data;
 
 //Fill in the blanks below. 
 assign OTG_RST_N =   ~Reset;
