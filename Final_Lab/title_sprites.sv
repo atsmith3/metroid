@@ -497,7 +497,7 @@ module game_over(
 		
 		if(loss_en == 1'b1) begin
 			draw = 1;
-			color = game_over[vga_x][vga_y];
+			color = game_over[vga_y][vga_x];
 		end
 	end
 
@@ -1003,7 +1003,7 @@ module title(
 		
 		if(titleEn == 1'b1) begin
 			draw = 1;
-			color = title_screen[vga_x][vga_y];
+			color = title_screen[vga_y][vga_x];
 		end
 	end
 endmodule
@@ -1508,7 +1508,7 @@ module victory(
 		
 		if(win_en == 1'b1) begin
 			draw = 1;
-			color = victory[vga_x][vga_y];
+			color = victory[vga_y][vga_x];
 		end
 	end
 endmodule

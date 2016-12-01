@@ -25,58 +25,61 @@
 #include "lcp_cmd.h"
 #include "lcp_data.h"
 
-#define SAMUS_EN (volatile char*) 0x27F
-#define SAMUS_X (volatile int*) 0x26F
-#define SAMUS_Y (volatile int*) 0x25F
-#define SAMUS_DIR (volatile char*) 0x3F
-#define SAMUS_WALK (volatile char*) 0x24F
-#define SAMUS_JUMP (volatile char*) 0x23F
+#define SAMUS_EN (volatile char*) 0x270
+#define SAMUS_X (volatile int*) 0x260
+#define SAMUS_Y (volatile int*) 0x250
+#define SAMUS_DIR (volatile char*) 0x30
+#define SAMUS_WALK (volatile char*) 0x240
+#define SAMUS_JUMP (volatile char*) 0x230
 
-#define MON1_EN (volatile char*) 0x22F
-#define MON1_X (volatile int*) 0x21F
-#define MON1_Y (volatile int*) 0x20F
+#define MON1_EN (volatile char*) 0x220
+#define MON1_X (volatile int*) 0x210
+#define MON1_Y (volatile int*) 0x200
 
-#define MON2_EN (volatile char*) 0x1FF
-#define MON2_X (volatile int*) 0x1EF
-#define MON2_Y (volatile int*) 0x1DF
+#define MON2_EN (volatile char*) 0x1F0
+#define MON2_X (volatile int*) 0x1E0
+#define MON2_Y (volatile int*) 0x1D0
 
-#define MON3_EN (volatile char*) 0x1CF
-#define MON3_X (volatile int*) 0x1BF
-#define MON3_Y (volatile int*) 0x1AF
+#define MON3_EN (volatile char*) 0x1C0
+#define MON3_X (volatile int*) 0x1B0
+#define MON3_Y (volatile int*) 0x1A0
 
-#define EXP1_EN (volatile int*) 0x19F
-#define EXP1_X (volatile int*) 0x18F
-#define EXP1_Y (volatile int*) 0x17F
+#define EXP1_EN (volatile int*) 0x190
+#define EXP1_X (volatile int*) 0x180
+#define EXP1_Y (volatile int*) 0x170
 
-#define EXP2_EN (volatile int*) 0x16F
-#define EXP2_X (volatile int*) 0x15F
-#define EXP2_Y (volatile int*) 0x14F
+#define EXP2_EN (volatile int*) 0x160
+#define EXP2_X (volatile int*) 0x150
+#define EXP2_Y (volatile int*) 0x140
 
-#define EXP3_EN (volatile int*) 0x13F
-#define EXP3_X (volatile int*) 0x12F
-#define EXP3_Y (volatile int*) 0x11F
+#define EXP3_EN (volatile int*) 0x130
+#define EXP3_X (volatile int*) 0x120
+#define EXP3_Y (volatile int*) 0x110
 
-#define BUL1_EN (volatile int*) 0x10F
-#define BUL1_X (volatile int*) 0xFF
-#define BUL1_Y (volatile int*) 0xEF
+#define BUL1_EN (volatile int*) 0x10
+#define BUL1_X (volatile int*) 0xF0
+#define BUL1_Y (volatile int*) 0xE0
 
-#define BUL2_EN (volatile int*) 0xDF
-#define BUL2_X (volatile int*) 0xCF
-#define BUL2_Y (volatile int*) 0xBF
+#define BUL2_EN (volatile int*) 0xD0
+#define BUL2_X (volatile int*) 0xC0
+#define BUL2_Y (volatile int*) 0xB0
 
-#define BUL3_EN (volatile int*) 0xAF
-#define BUL3_X (volatile int*) 0x9F
-#define BUL3_Y (volatile int*) 0x8F
+#define BUL3_EN (volatile int*) 0xA0
+#define BUL3_X (volatile int*) 0x90
+#define BUL3_Y (volatile int*) 0x80
 
-#define HEALTH (volatile int*) 0x7F
+#define HEALTH (volatile int*) 0x70
 
-#define TIT_EN (volatile int*) 0x6F
+#define TIT_EN (volatile int*) 0x60
 
-#define LOSS_EN (volatile int*) 0x5F
+#define LOSS_EN (volatile int*) 0x50
 
-#define WIN_EN (volatile int*) 0x4F
+#define WIN_EN (volatile int*) 0x40
 
-#define SCENE_SELECT (volatile int*) 0x2F
+#define SCENE_SELECT (volatile int*) 0x20
+
+#define True (int) 1
+#define False (int) 0
 
 //----------------------------------------------------------------------------------------//
 //
@@ -101,7 +104,7 @@ int main(void)
 	static alt_u16 ctl_reg = 0;
 	static alt_u16 no_device = 0;
 	alt_u16 fs_device = 0;
-	int keycode = 0;
+	long keycode = 0;
 	alt_u8 toggle = 0;
 	alt_u8 data_size;
 	alt_u8 hot_plug_count;
@@ -517,10 +520,145 @@ int main(void)
 
 
 	//-----------------------------------get keycode value------------------------------------------------//
+	/*HERE
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 *
+	 */
+	int scene[5][16][21] = 	{
+							{
+							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
+							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
+							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
+							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
+							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+							},
+							{
+							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
+							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
+							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
+							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
+							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+							},
+							{
+							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
+							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
+							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
+							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
+							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+							},
+							{
+							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
+							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
+							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
+							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
+							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+							},
+							{
+							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
+							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
+							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
+							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
+							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
+							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
+							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+							}
+							};
+
 	usleep(10000);
-  *SAMUS_EN = 1;
-  *SAMUS_X = 30;
-  *SAMUS_Y = 90;
+	*SAMUS_EN = 1;
+	*SAMUS_X = 150;
+	*SAMUS_Y = 400;
+	int SAMUS_BOT = 70;
+	int SAMUS_RIGHT = 35;
+	int y_inc = 0;
+	float y_inc_inc = 0;
+	int grounded = False;
+	int bulinc = 12;
+	int bul1Left = 0;
+	int bul1start = 0;
+	int bul2Left = 0;
+	int bul2start = 0;
+	int bul3Left = 0;
+	int bul3start = 0;
+	int bullet_en = True;
+	int sceneNum = 3;
+	int sceneStart = True;
+	int scenVictory = False;
+	int finalVictory = False;
+	int scene0_x = 0;
+	int scene0_y = 0;
+	int scene1_x = 0;
+	int scene1_y = 0;
+	int scene2_x = 0;
+	int scene2_y = 0;
+	int scene3_x = 10;
+	int scene3_y = 110;
+	int scene4_x = 0;
+	int scene4_y = 0;
 	while(1)
 	{
 		toggle++;
@@ -574,7 +712,7 @@ int main(void)
 		// TASK: Write the address to read from the memory for byte 3 of the report descriptor to HPI_ADDR.
 		IO_write(HPI_ADDR,0x051e); //the start address
 		keycode = IO_read(HPI_DATA);
-		printf("\nfirst two keycode values are %04x\n",keycode);
+		printf("\nkeycode value is %x\n",keycode);
 		IOWR(KEYCODE_BASE, 0, keycode & 0xff);
 
 
@@ -669,21 +807,179 @@ int main(void)
 
 #define SCENE_SELECT (volatile int*) 0x2F
     */
+	//Scene Init
+	if(sceneStart == True){
+		if(sceneNum == 3){
+			*SAMUS_X = scene3_x;
+			*SAMUS_Y = scene3_y;
+		}
+		sceneStart = False;
+	}
 
+
+	*HEALTH = 3;
     //SAMUS MOVEMENT
-    *SAMUS_WALK = 1;
     *SCENE_SELECT = 4;
-    if(keycode==5){
-        *SAMUS_DIR = 0;
-        *SAMUS_X+=1;
+    *TIT_EN = 0;
+    *SCENE_SELECT = 4;
+    //Move Right
+    if((keycode&0x0000FF)==7 || (keycode&0x00FF00)>>8 == 7 || (keycode&0xFF0000)>>16 == 7){
+    	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0){
+    		*SAMUS_DIR = 0;
+    		*SAMUS_X+=6;
+    		*SAMUS_WALK = 1;
+    	}
     }
-    else if(keycode==8){
-        *SAMUS_DIR = 1;
-        *SAMUS_X-=1;
+    //Move Left
+    else if((keycode&0x0000FF)==4 || (keycode&0x00FF00)>>8 == 4 || (keycode&0xFF0000)>>16 == 4){
+    	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0){
+    		*SAMUS_DIR = 1;
+    		*SAMUS_X-=6;
+    		*SAMUS_WALK = 1;
+    	}
+    }
+    else if(keycode==0x1a) *TIT_EN = 1;
+    else{
+        *SAMUS_WALK = 0;
+    }
+
+    // Jump code
+    if(((keycode&0x0000FF)==0x2c || (keycode&0x00FF00)>>8 == 0x2c || (keycode&0xFF0000)>>16 == 0x2c) && grounded == True){
+    	y_inc = -17;
+    	grounded = False;
+    	y_inc_inc = 0;
+    }
+    y_inc_inc +=.13;
+    y_inc += y_inc_inc;
+
+    if(grounded == 1){
+    	y_inc = 0;
+    	y_inc_inc = 1.25;
+    }
+    if(y_inc > 35){
+    	y_inc = 35;
+
+    }
+    if(y_inc_inc > 5){
+    	y_inc_inc = 6;
+    }
+
+    *SAMUS_Y += y_inc;
+
+    //bot collission detection
+    if(scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+33)/30] != 0){
+    	*SAMUS_Y = (*SAMUS_Y/30)*30+19;
+    	grounded = True;
     }
     else{
-        *SAMUS_DIR = 0;
+    	grounded = False;
     }
+
+    if(grounded == False){
+    	*SAMUS_WALK = 0;
+    }
+
+    //If hits head
+    if(scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+33)/30] != 0){
+    	y_inc = 0;
+    	y_inc_inc = 2.5;
+    }
+
+
+    //Bullet code
+    if(!((keycode&0x0000FF)==0x0d || (keycode&0x00FF00)>>8 == 0x0d || (keycode&0xFF0000)>>16 == 0x0d)){
+    	bullet_en = True;
+    }
+    if(((keycode&0x0000FF)==0x0d || (keycode&0x00FF00)>>8 == 0x0d || (keycode&0xFF0000)>>16 == 0x0d) && bullet_en == True){
+    	if(*BUL1_EN == True && *BUL2_EN == True && *BUL3_EN == False){
+    		if(*SAMUS_DIR == 1){
+    			*BUL3_EN = True;
+    			*BUL3_X = *SAMUS_X;
+    			*BUL3_Y = *SAMUS_Y+25;
+    			bul3Left = True;
+    		}
+    		else{
+    			*BUL3_EN = True;
+    			*BUL3_X = *SAMUS_X+30;
+    			*BUL3_Y = *SAMUS_Y+25;
+    			bul3Left = False;
+    		}
+    		bul3start = 0;
+    	}
+    	else if(*BUL1_EN == True && *BUL2_EN == False){
+			if(*SAMUS_DIR == 1){
+				*BUL2_EN = True;
+				*BUL2_X = *SAMUS_X;
+				*BUL2_Y = *SAMUS_Y+25;
+				bul2Left = True;
+			}
+			else{
+				*BUL2_EN = True;
+				*BUL2_X = *SAMUS_X+30;
+				*BUL2_Y = *SAMUS_Y+25;
+				bul2Left = False;
+			}
+			bul2start = 0;
+		}
+    	else if(*BUL1_EN == False){
+			if(*SAMUS_DIR == 1){
+				*BUL1_EN = True;
+				*BUL1_X = *SAMUS_X;
+				*BUL1_Y = *SAMUS_Y+25;
+				bul1Left = True;
+			}
+			else{
+				*BUL1_EN = True;
+				*BUL1_X = *SAMUS_X+30;
+				*BUL1_Y = *SAMUS_Y+25;
+				bul1Left = False;
+			}
+			bul1start = 0;
+		}
+    	bullet_en = False;
+    }
+
+    if(*BUL3_EN == True){
+    	if(bul3start >= 90)
+    		*BUL3_EN = False;
+    	else{
+    		if(bul3Left == True){
+    			*BUL3_X -= bulinc;
+    		}
+    		else{
+    			*BUL3_X += bulinc;
+    		}
+    		bul3start += bulinc;
+    	}
+    }
+    if(*BUL2_EN == True){
+		if(bul2start >= 90)
+			*BUL2_EN = False;
+		else{
+			if(bul2Left == True){
+				*BUL2_X -= bulinc;
+			}
+			else{
+				*BUL2_X += bulinc;
+			}
+			bul2start += bulinc;
+		}
+	}
+    if(*BUL1_EN == True){
+		if(bul1start >= 90)
+			*BUL1_EN = False;
+		else{
+			if(bul1Left == True){
+				*BUL1_X -= bulinc;
+			}
+			else{
+				*BUL1_X += bulinc;
+			}
+			bul1start += bulinc;
+		}
+	}
+
+
     //MONSTER MOVEMENT
     //COLLISSION DETECTION
     //EXTRAS
