@@ -46,6 +46,7 @@
 			samus_x_export         : out   std_logic_vector(9 downto 0);                     -- export
 			samus_y_export         : out   std_logic_vector(9 downto 0);                     -- export
 			scene_sel_export       : out   std_logic_vector(2 downto 0);                     -- export
+			sdram_clk_clk          : out   std_logic;                                        -- clk
 			sdram_wire_addr        : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_wire_ba          : out   std_logic_vector(1 downto 0);                     -- ba
 			sdram_wire_cas_n       : out   std_logic;                                        -- cas_n
@@ -57,7 +58,8 @@
 			sdram_wire_we_n        : out   std_logic;                                        -- we_n
 			title_en_export        : out   std_logic;                                        -- export
 			win_en_export          : out   std_logic;                                        -- export
-			sdram_clk_clk          : out   std_logic                                         -- clk
+			samus_up_export        : out   std_logic;                                        -- export
+			b_emp_export           : out   std_logic                                         -- export
 		);
 	end component nios_system;
 
@@ -109,6 +111,7 @@
 			samus_x_export         => CONNECTED_TO_samus_x_export,         --         samus_x.export
 			samus_y_export         => CONNECTED_TO_samus_y_export,         --         samus_y.export
 			scene_sel_export       => CONNECTED_TO_scene_sel_export,       --       scene_sel.export
+			sdram_clk_clk          => CONNECTED_TO_sdram_clk_clk,          --       sdram_clk.clk
 			sdram_wire_addr        => CONNECTED_TO_sdram_wire_addr,        --      sdram_wire.addr
 			sdram_wire_ba          => CONNECTED_TO_sdram_wire_ba,          --                .ba
 			sdram_wire_cas_n       => CONNECTED_TO_sdram_wire_cas_n,       --                .cas_n
@@ -120,6 +123,7 @@
 			sdram_wire_we_n        => CONNECTED_TO_sdram_wire_we_n,        --                .we_n
 			title_en_export        => CONNECTED_TO_title_en_export,        --        title_en.export
 			win_en_export          => CONNECTED_TO_win_en_export,          --          win_en.export
-			sdram_clk_clk          => CONNECTED_TO_sdram_clk_clk           --       sdram_clk.clk
+			samus_up_export        => CONNECTED_TO_samus_up_export,        --        samus_up.export
+			b_emp_export           => CONNECTED_TO_b_emp_export            --           b_emp.export
 		);
 

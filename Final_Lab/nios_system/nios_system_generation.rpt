@@ -1,7 +1,9 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate /home/andrew/Documents/ECE/ECE_385/Final_Lab/nios_system.qsys --block-symbol-file --output-directory=/home/andrew/Documents/ECE/ECE_385/Final_Lab/nios_system --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate E:\Github\ECE_385\Final_Lab\nios_system.qsys --block-symbol-file --output-directory=E:\Github\ECE_385\Final_Lab\nios_system --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading Final_Lab/nios_system.qsys
 Progress: Reading input file
+Progress: Adding b_emp [altera_avalon_pio 15.0]
+Progress: Parameterizing module b_emp
 Progress: Adding bullet1_en [altera_avalon_pio 15.0]
 Progress: Parameterizing module bullet1_en
 Progress: Adding bullet1_x [altera_avalon_pio 15.0]
@@ -88,6 +90,8 @@ Progress: Adding samus_en [altera_avalon_pio 15.0]
 Progress: Parameterizing module samus_en
 Progress: Adding samus_jump [altera_avalon_pio 15.0]
 Progress: Parameterizing module samus_jump
+Progress: Adding samus_up [altera_avalon_pio 15.0]
+Progress: Parameterizing module samus_up
 Progress: Adding samus_walk [altera_avalon_pio 15.0]
 Progress: Parameterizing module samus_walk
 Progress: Adding samus_x [altera_avalon_pio 15.0]
@@ -121,9 +125,11 @@ Info: ip-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /home/andrew/Documents/ECE/ECE_385/Final_Lab/nios_system.qsys --synthesis=VERILOG --output-directory=/home/andrew/Documents/ECE/ECE_385/Final_Lab/nios_system/synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate E:\Github\ECE_385\Final_Lab\nios_system.qsys --synthesis=VERILOG --output-directory=E:\Github\ECE_385\Final_Lab\nios_system\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading Final_Lab/nios_system.qsys
 Progress: Reading input file
+Progress: Adding b_emp [altera_avalon_pio 15.0]
+Progress: Parameterizing module b_emp
 Progress: Adding bullet1_en [altera_avalon_pio 15.0]
 Progress: Parameterizing module bullet1_en
 Progress: Adding bullet1_x [altera_avalon_pio 15.0]
@@ -210,6 +216,8 @@ Progress: Adding samus_en [altera_avalon_pio 15.0]
 Progress: Parameterizing module samus_en
 Progress: Adding samus_jump [altera_avalon_pio 15.0]
 Progress: Parameterizing module samus_jump
+Progress: Adding samus_up [altera_avalon_pio 15.0]
+Progress: Parameterizing module samus_up
 Progress: Adding samus_walk [altera_avalon_pio 15.0]
 Progress: Parameterizing module samus_walk
 Progress: Adding samus_x [altera_avalon_pio 15.0]
@@ -244,45 +252,45 @@ Info: Inserting clock-crossing logic between cmd_demux.src12 and cmd_mux_012.sin
 Info: Inserting clock-crossing logic between cmd_demux_001.src4 and cmd_mux_012.sink1
 Info: Inserting clock-crossing logic between rsp_demux_012.src0 and rsp_mux.sink12
 Info: Inserting clock-crossing logic between rsp_demux_012.src1 and rsp_mux_001.sink4
-Info: bullet1_en: Starting RTL generation for module 'nios_system_bullet1_en'
-Info: bullet1_en:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_bullet1_en --dir=/tmp/alt7135_2283025860684359120.dir/0001_bullet1_en_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0001_bullet1_en_gen//nios_system_bullet1_en_component_configuration.pl  --do_build_sim=0  ]
-Info: bullet1_en: Done RTL generation for module 'nios_system_bullet1_en'
-Info: bullet1_en: "nios_system" instantiated altera_avalon_pio "bullet1_en"
+Info: b_emp: Starting RTL generation for module 'nios_system_b_emp'
+Info: b_emp:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_b_emp --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0001_b_emp_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0001_b_emp_gen//nios_system_b_emp_component_configuration.pl  --do_build_sim=0  ]
+Info: b_emp: Done RTL generation for module 'nios_system_b_emp'
+Info: b_emp: "nios_system" instantiated altera_avalon_pio "b_emp"
 Info: bullet1_x: Starting RTL generation for module 'nios_system_bullet1_x'
-Info: bullet1_x:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_bullet1_x --dir=/tmp/alt7135_2283025860684359120.dir/0002_bullet1_x_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0002_bullet1_x_gen//nios_system_bullet1_x_component_configuration.pl  --do_build_sim=0  ]
+Info: bullet1_x:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_bullet1_x --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0002_bullet1_x_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0002_bullet1_x_gen//nios_system_bullet1_x_component_configuration.pl  --do_build_sim=0  ]
 Info: bullet1_x: Done RTL generation for module 'nios_system_bullet1_x'
 Info: bullet1_x: "nios_system" instantiated altera_avalon_pio "bullet1_x"
 Info: health: Starting RTL generation for module 'nios_system_health'
-Info: health:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_health --dir=/tmp/alt7135_2283025860684359120.dir/0003_health_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0003_health_gen//nios_system_health_component_configuration.pl  --do_build_sim=0  ]
+Info: health:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_health --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0003_health_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0003_health_gen//nios_system_health_component_configuration.pl  --do_build_sim=0  ]
 Info: health: Done RTL generation for module 'nios_system_health'
 Info: health: "nios_system" instantiated altera_avalon_pio "health"
 Info: jtag_uart_0: Starting RTL generation for module 'nios_system_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart_0 --dir=/tmp/alt7135_2283025860684359120.dir/0004_jtag_uart_0_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0004_jtag_uart_0_gen//nios_system_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart_0 --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0004_jtag_uart_0_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0004_jtag_uart_0_gen//nios_system_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'nios_system_jtag_uart_0'
 Info: jtag_uart_0: "nios_system" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: key: Starting RTL generation for module 'nios_system_key'
-Info: key:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_key --dir=/tmp/alt7135_2283025860684359120.dir/0005_key_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0005_key_gen//nios_system_key_component_configuration.pl  --do_build_sim=0  ]
+Info: key:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_key --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0005_key_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0005_key_gen//nios_system_key_component_configuration.pl  --do_build_sim=0  ]
 Info: key: Done RTL generation for module 'nios_system_key'
 Info: key: "nios_system" instantiated altera_avalon_pio "key"
 Info: keycode: Starting RTL generation for module 'nios_system_keycode'
-Info: keycode:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_keycode --dir=/tmp/alt7135_2283025860684359120.dir/0006_keycode_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0006_keycode_gen//nios_system_keycode_component_configuration.pl  --do_build_sim=0  ]
+Info: keycode:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_keycode --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0006_keycode_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0006_keycode_gen//nios_system_keycode_component_configuration.pl  --do_build_sim=0  ]
 Info: keycode: Done RTL generation for module 'nios_system_keycode'
 Info: keycode: "nios_system" instantiated altera_avalon_pio "keycode"
 Info: nios2_qsys_0: "nios_system" instantiated altera_nios2_gen2 "nios2_qsys_0"
 Info: onchip_memory2_0: Starting RTL generation for module 'nios_system_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_system_onchip_memory2_0 --dir=/tmp/alt7135_2283025860684359120.dir/0007_onchip_memory2_0_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0007_onchip_memory2_0_gen//nios_system_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_system_onchip_memory2_0 --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0007_onchip_memory2_0_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0007_onchip_memory2_0_gen//nios_system_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory2_0: Done RTL generation for module 'nios_system_onchip_memory2_0'
 Info: onchip_memory2_0: "nios_system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: otg_hpi_data: Starting RTL generation for module 'nios_system_otg_hpi_data'
-Info: otg_hpi_data:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_otg_hpi_data --dir=/tmp/alt7135_2283025860684359120.dir/0008_otg_hpi_data_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0008_otg_hpi_data_gen//nios_system_otg_hpi_data_component_configuration.pl  --do_build_sim=0  ]
+Info: otg_hpi_data:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_otg_hpi_data --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0008_otg_hpi_data_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0008_otg_hpi_data_gen//nios_system_otg_hpi_data_component_configuration.pl  --do_build_sim=0  ]
 Info: otg_hpi_data: Done RTL generation for module 'nios_system_otg_hpi_data'
 Info: otg_hpi_data: "nios_system" instantiated altera_avalon_pio "otg_hpi_data"
 Info: scene_sel: Starting RTL generation for module 'nios_system_scene_sel'
-Info: scene_sel:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_scene_sel --dir=/tmp/alt7135_2283025860684359120.dir/0009_scene_sel_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0009_scene_sel_gen//nios_system_scene_sel_component_configuration.pl  --do_build_sim=0  ]
+Info: scene_sel:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_scene_sel --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0009_scene_sel_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0009_scene_sel_gen//nios_system_scene_sel_component_configuration.pl  --do_build_sim=0  ]
 Info: scene_sel: Done RTL generation for module 'nios_system_scene_sel'
 Info: scene_sel: "nios_system" instantiated altera_avalon_pio "scene_sel"
 Info: sdram: Starting RTL generation for module 'nios_system_sdram'
-Info: sdram:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/perl/bin/perl -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/andrew/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_sdram --dir=/tmp/alt7135_2283025860684359120.dir/0010_sdram_gen/ --quartus_dir=/home/andrew/altera/15.0/quartus --verilog --config=/tmp/alt7135_2283025860684359120.dir/0010_sdram_gen//nios_system_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec C:/altera/quartus/bin64/perl/bin/perl.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/altera/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_sdram --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0010_sdram_gen/ --quartus_dir=C:/altera/quartus --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0010_sdram_gen//nios_system_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'nios_system_sdram'
 Info: sdram: "nios_system" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: sdram_pll: "nios_system" instantiated altpll "sdram_pll"
@@ -338,20 +346,25 @@ Info: avalon_st_adapter_047: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_048: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_049: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_050: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_051: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_052: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "nios_system" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "nios_system" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "nios_system" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'nios_system_nios2_qsys_0_cpu'
-Info: cpu:   Generation command is [exec /home/andrew/altera/15.0/quartus/linux64/eperlcmd -I /home/andrew/altera/15.0/quartus/linux64/perl/lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/europa -I /home/andrew/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/andrew/altera/15.0/quartus/sopc_builder/bin -I /home/andrew/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /home/andrew/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /home/andrew/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /home/andrew/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /home/andrew/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=nios_system_nios2_qsys_0_cpu --dir=/tmp/alt7135_2283025860684359120.dir/0016_cpu_gen/ --quartus_bindir=/home/andrew/altera/15.0/quartus/linux64 --verilog --config=/tmp/alt7135_2283025860684359120.dir/0016_cpu_gen//nios_system_nios2_qsys_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2016.11.29 23:49:01 (*) Starting Nios II generation
-Info: cpu: # 2016.11.29 23:49:01 (*)   Checking for plaintext license.
-Info: cpu: # 2016.11.29 23:49:03 (*)   Plaintext license not found.
-Info: cpu: # 2016.11.29 23:49:03 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2016.11.29 23:49:03 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2016.11.29 23:49:03 (*)   Creating all objects for CPU
-Info: cpu: # 2016.11.29 23:49:04 (*)   Generating RTL from CPU objects
-Info: cpu: # 2016.11.29 23:49:04 (*)   Creating plain-text RTL
-Info: cpu: # 2016.11.29 23:49:06 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/altera/quartus/bin64/eperlcmd.exe -I C:/altera/quartus/bin64/perl/lib -I C:/altera/quartus/sopc_builder/bin/europa -I C:/altera/quartus/sopc_builder/bin/perl_lib -I C:/altera/quartus/sopc_builder/bin -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/altera/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=nios_system_nios2_qsys_0_cpu --dir=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0016_cpu_gen/ --quartus_bindir=C:/altera/quartus/bin64 --verilog --config=C:/Users/Andrew/AppData/Local/Temp/alt7136_8281379746768303054.dir/0016_cpu_gen//nios_system_nios2_qsys_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2016.12.01 17:28:27 (*) Starting Nios II generation
+Info: cpu: # 2016.12.01 17:28:27 (*)   Checking for plaintext license.
+Info: cpu: # 2016.12.01 17:28:29 (*)   Couldn't query license setup in Quartus directory C:/altera/quartus/bin64
+Info: cpu: # 2016.12.01 17:28:29 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2016.12.01 17:28:29 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2016.12.01 17:28:29 (*)   Plaintext license not found.
+Info: cpu: # 2016.12.01 17:28:29 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2016.12.01 17:28:29 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2016.12.01 17:28:29 (*)   Creating all objects for CPU
+Info: cpu: # 2016.12.01 17:28:31 (*)   Generating RTL from CPU objects
+Info: cpu: # 2016.12.01 17:28:31 (*)   Creating plain-text RTL
+Info: cpu: # 2016.12.01 17:28:33 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'nios_system_nios2_qsys_0_cpu'
 Info: cpu: "nios2_qsys_0" instantiated altera_nios2_gen2_unit "cpu"
 Info: nios2_qsys_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_qsys_0_data_master_translator"
@@ -367,13 +380,13 @@ Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "c
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file /home/andrew/Documents/ECE/ECE_385/Final_Lab/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file E:/Github/ECE_385/Final_Lab/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/andrew/Documents/ECE/ECE_385/Final_Lab/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file E:/Github/ECE_385/Final_Lab/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file /home/andrew/Documents/ECE/ECE_385/Final_Lab/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file E:/Github/ECE_385/Final_Lab/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"

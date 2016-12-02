@@ -8,6 +8,7 @@
 <includePath path="C:\Altera\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include"/>
 <includePath path="C:\Altera\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include-fixed"/>
 <includePath path="C:\Altera\quartus\bin64\cygwin\usr\include"/>
+<includePath path="C:\altera\quartus\bin64\cygwin\usr\include\w32api"/>
 <includePath path="C:\Altera\quartus\bin64\cygwin\usr\include\w32api"/>
 <includePath path="C:\altera\13.0sp1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++"/>
 <includePath path="C:\altera\13.0sp1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\i686-pc-cygwin"/>
@@ -332,6 +333,7 @@
 <includePath path="C:\Altera\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include"/>
 <includePath path="C:\Altera\quartus\bin64\cygwin\lib\gcc\x86_64-pc-cygwin\4.8.3\include-fixed"/>
 <includePath path="C:\Altera\quartus\bin64\cygwin\usr\include"/>
+<includePath path="C:\altera\quartus\bin64\cygwin\usr\include\w32api"/>
 <includePath path="C:\Altera\quartus\bin64\cygwin\usr\include\w32api"/>
 <includePath path="C:\altera\13.0sp1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include"/>
 <includePath path="C:\altera\13.0sp1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed"/>

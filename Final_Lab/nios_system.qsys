@@ -17,6 +17,22 @@
          type = "String";
       }
    }
+   element b_emp
+   {
+      datum _sortIndex
+      {
+         value = "53";
+         type = "int";
+      }
+   }
+   element b_emp.s1
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
    element bullet1_en
    {
       datum _sortIndex
@@ -29,7 +45,7 @@
    {
       datum baseAddress
       {
-         value = "256";
+         value = "288";
          type = "String";
       }
    }
@@ -45,7 +61,7 @@
    {
       datum baseAddress
       {
-         value = "240";
+         value = "272";
          type = "String";
       }
    }
@@ -61,7 +77,7 @@
    {
       datum baseAddress
       {
-         value = "224";
+         value = "256";
          type = "String";
       }
    }
@@ -77,7 +93,7 @@
    {
       datum baseAddress
       {
-         value = "208";
+         value = "240";
          type = "String";
       }
    }
@@ -93,7 +109,7 @@
    {
       datum baseAddress
       {
-         value = "192";
+         value = "224";
          type = "String";
       }
    }
@@ -109,7 +125,7 @@
    {
       datum baseAddress
       {
-         value = "176";
+         value = "208";
          type = "String";
       }
    }
@@ -125,7 +141,7 @@
    {
       datum baseAddress
       {
-         value = "160";
+         value = "192";
          type = "String";
       }
    }
@@ -141,7 +157,7 @@
    {
       datum baseAddress
       {
-         value = "144";
+         value = "176";
          type = "String";
       }
    }
@@ -157,7 +173,7 @@
    {
       datum baseAddress
       {
-         value = "128";
+         value = "160";
          type = "String";
       }
    }
@@ -186,7 +202,7 @@
    {
       datum baseAddress
       {
-         value = "400";
+         value = "432";
          type = "String";
       }
    }
@@ -202,7 +218,7 @@
    {
       datum baseAddress
       {
-         value = "384";
+         value = "416";
          type = "String";
       }
    }
@@ -218,7 +234,7 @@
    {
       datum baseAddress
       {
-         value = "368";
+         value = "400";
          type = "String";
       }
    }
@@ -234,7 +250,7 @@
    {
       datum baseAddress
       {
-         value = "352";
+         value = "384";
          type = "String";
       }
    }
@@ -250,7 +266,7 @@
    {
       datum baseAddress
       {
-         value = "336";
+         value = "368";
          type = "String";
       }
    }
@@ -266,7 +282,7 @@
    {
       datum baseAddress
       {
-         value = "320";
+         value = "352";
          type = "String";
       }
    }
@@ -282,7 +298,7 @@
    {
       datum baseAddress
       {
-         value = "304";
+         value = "336";
          type = "String";
       }
    }
@@ -298,7 +314,7 @@
    {
       datum baseAddress
       {
-         value = "288";
+         value = "320";
          type = "String";
       }
    }
@@ -314,7 +330,7 @@
    {
       datum baseAddress
       {
-         value = "272";
+         value = "304";
          type = "String";
       }
    }
@@ -330,7 +346,7 @@
    {
       datum baseAddress
       {
-         value = "112";
+         value = "144";
          type = "String";
       }
    }
@@ -346,7 +362,7 @@
    {
       datum baseAddress
       {
-         value = "784";
+         value = "816";
          type = "String";
       }
    }
@@ -370,7 +386,7 @@
    {
       datum baseAddress
       {
-         value = "640";
+         value = "672";
          type = "String";
       }
    }
@@ -386,7 +402,7 @@
    {
       datum baseAddress
       {
-         value = "656";
+         value = "688";
          type = "String";
       }
    }
@@ -402,7 +418,7 @@
    {
       datum baseAddress
       {
-         value = "80";
+         value = "112";
          type = "String";
       }
    }
@@ -418,7 +434,7 @@
    {
       datum baseAddress
       {
-         value = "544";
+         value = "576";
          type = "String";
       }
    }
@@ -434,7 +450,7 @@
    {
       datum baseAddress
       {
-         value = "528";
+         value = "560";
          type = "String";
       }
    }
@@ -450,7 +466,7 @@
    {
       datum baseAddress
       {
-         value = "512";
+         value = "544";
          type = "String";
       }
    }
@@ -466,7 +482,7 @@
    {
       datum baseAddress
       {
-         value = "496";
+         value = "528";
          type = "String";
       }
    }
@@ -482,7 +498,7 @@
    {
       datum baseAddress
       {
-         value = "480";
+         value = "512";
          type = "String";
       }
    }
@@ -498,7 +514,7 @@
    {
       datum baseAddress
       {
-         value = "464";
+         value = "496";
          type = "String";
       }
    }
@@ -514,7 +530,7 @@
    {
       datum baseAddress
       {
-         value = "448";
+         value = "480";
          type = "String";
       }
    }
@@ -530,7 +546,7 @@
    {
       datum baseAddress
       {
-         value = "432";
+         value = "464";
          type = "String";
       }
    }
@@ -546,7 +562,7 @@
    {
       datum baseAddress
       {
-         value = "416";
+         value = "448";
          type = "String";
       }
    }
@@ -599,7 +615,7 @@
    {
       datum baseAddress
       {
-         value = "736";
+         value = "768";
          type = "String";
       }
    }
@@ -615,7 +631,7 @@
    {
       datum baseAddress
       {
-         value = "672";
+         value = "704";
          type = "String";
       }
    }
@@ -631,7 +647,7 @@
    {
       datum baseAddress
       {
-         value = "720";
+         value = "752";
          type = "String";
       }
    }
@@ -647,7 +663,7 @@
    {
       datum baseAddress
       {
-         value = "704";
+         value = "736";
          type = "String";
       }
    }
@@ -663,7 +679,7 @@
    {
       datum baseAddress
       {
-         value = "688";
+         value = "720";
          type = "String";
       }
    }
@@ -679,7 +695,7 @@
    {
       datum baseAddress
       {
-         value = "48";
+         value = "80";
          type = "String";
       }
    }
@@ -695,7 +711,7 @@
    {
       datum baseAddress
       {
-         value = "624";
+         value = "656";
          type = "String";
       }
    }
@@ -711,7 +727,23 @@
    {
       datum baseAddress
       {
-         value = "560";
+         value = "592";
+         type = "String";
+      }
+   }
+   element samus_up
+   {
+      datum _sortIndex
+      {
+         value = "52";
+         type = "int";
+      }
+   }
+   element samus_up.s1
+   {
+      datum baseAddress
+      {
+         value = "48";
          type = "String";
       }
    }
@@ -727,7 +759,7 @@
    {
       datum baseAddress
       {
-         value = "576";
+         value = "608";
          type = "String";
       }
    }
@@ -743,7 +775,7 @@
    {
       datum baseAddress
       {
-         value = "608";
+         value = "640";
          type = "String";
       }
    }
@@ -759,7 +791,7 @@
    {
       datum baseAddress
       {
-         value = "592";
+         value = "624";
          type = "String";
       }
    }
@@ -775,7 +807,7 @@
    {
       datum baseAddress
       {
-         value = "32";
+         value = "64";
          type = "String";
       }
    }
@@ -807,7 +839,7 @@
    {
       datum baseAddress
       {
-         value = "752";
+         value = "784";
          type = "String";
       }
    }
@@ -823,7 +855,7 @@
    {
       datum baseAddress
       {
-         value = "776";
+         value = "808";
          type = "String";
       }
    }
@@ -839,7 +871,7 @@
    {
       datum baseAddress
       {
-         value = "96";
+         value = "128";
          type = "String";
       }
    }
@@ -855,7 +887,7 @@
    {
       datum baseAddress
       {
-         value = "64";
+         value = "96";
          type = "String";
       }
    }
@@ -880,6 +912,11 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="b_emp"
+   internal="b_emp.external_connection"
+   type="conduit"
+   dir="end" />
  <interface
    name="bullet1_en"
    internal="bullet1_en.external_connection"
@@ -1078,6 +1115,11 @@
    type="conduit"
    dir="end" />
  <interface
+   name="samus_up"
+   internal="samus_up.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="samus_walk"
    internal="samus_walk.external_connection"
    type="conduit"
@@ -1109,6 +1151,20 @@
    internal="win_en.external_connection"
    type="conduit"
    dir="end" />
+ <module name="b_emp" kind="altera_avalon_pio" version="15.0" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
  <module name="bullet1_en" kind="altera_avalon_pio" version="15.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -1640,7 +1696,7 @@
   <parameter name="dataAddrWidth" value="29" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='scene_sel.s1' start='0x20' end='0x30' /><slave name='samus_dir.s1' start='0x30' end='0x40' /><slave name='win_en.s1' start='0x40' end='0x50' /><slave name='loss_en.s1' start='0x50' end='0x60' /><slave name='title_en.s1' start='0x60' end='0x70' /><slave name='health.s1' start='0x70' end='0x80' /><slave name='bullet3_y.s1' start='0x80' end='0x90' /><slave name='bullet3_x.s1' start='0x90' end='0xA0' /><slave name='bullet3_en.s1' start='0xA0' end='0xB0' /><slave name='bullet2_y.s1' start='0xB0' end='0xC0' /><slave name='bullet2_x.s1' start='0xC0' end='0xD0' /><slave name='bullet2_en.s1' start='0xD0' end='0xE0' /><slave name='bullet1_y.s1' start='0xE0' end='0xF0' /><slave name='bullet1_x.s1' start='0xF0' end='0x100' /><slave name='bullet1_en.s1' start='0x100' end='0x110' /><slave name='explosion3_y.s1' start='0x110' end='0x120' /><slave name='explosion3_x.s1' start='0x120' end='0x130' /><slave name='explosion3_en.s1' start='0x130' end='0x140' /><slave name='explosion2_y.s1' start='0x140' end='0x150' /><slave name='explosion2_x.s1' start='0x150' end='0x160' /><slave name='explosion2_en.s1' start='0x160' end='0x170' /><slave name='explosion1_y.s1' start='0x170' end='0x180' /><slave name='explosion1_x.s1' start='0x180' end='0x190' /><slave name='explosion1_en.s1' start='0x190' end='0x1A0' /><slave name='monster3_y.s1' start='0x1A0' end='0x1B0' /><slave name='monster3_x.s1' start='0x1B0' end='0x1C0' /><slave name='monster3_en.s1' start='0x1C0' end='0x1D0' /><slave name='monster2_y.s1' start='0x1D0' end='0x1E0' /><slave name='monster2_x.s1' start='0x1E0' end='0x1F0' /><slave name='monster2_en.s1' start='0x1F0' end='0x200' /><slave name='monster1_y.s1' start='0x200' end='0x210' /><slave name='monster1_x.s1' start='0x210' end='0x220' /><slave name='monster1_en.s1' start='0x220' end='0x230' /><slave name='samus_jump.s1' start='0x230' end='0x240' /><slave name='samus_walk.s1' start='0x240' end='0x250' /><slave name='samus_y.s1' start='0x250' end='0x260' /><slave name='samus_x.s1' start='0x260' end='0x270' /><slave name='samus_en.s1' start='0x270' end='0x280' /><slave name='key.s1' start='0x280' end='0x290' /><slave name='keycode.s1' start='0x290' end='0x2A0' /><slave name='otg_hpi_cs.s1' start='0x2A0' end='0x2B0' /><slave name='otg_hpi_w.s1' start='0x2B0' end='0x2C0' /><slave name='otg_hpi_r.s1' start='0x2C0' end='0x2D0' /><slave name='otg_hpi_data.s1' start='0x2D0' end='0x2E0' /><slave name='otg_hpi_address.s1' start='0x2E0' end='0x2F0' /><slave name='sdram_pll.pll_slave' start='0x2F0' end='0x300' /><slave name='sysid_qsys_0.control_slave' start='0x308' end='0x310' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x310' end='0x318' /><slave name='nios2_qsys_0.debug_mem_slave' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x10000000' end='0x18000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='b_emp.s1' start='0x20' end='0x30' /><slave name='samus_up.s1' start='0x30' end='0x40' /><slave name='scene_sel.s1' start='0x40' end='0x50' /><slave name='samus_dir.s1' start='0x50' end='0x60' /><slave name='win_en.s1' start='0x60' end='0x70' /><slave name='loss_en.s1' start='0x70' end='0x80' /><slave name='title_en.s1' start='0x80' end='0x90' /><slave name='health.s1' start='0x90' end='0xA0' /><slave name='bullet3_y.s1' start='0xA0' end='0xB0' /><slave name='bullet3_x.s1' start='0xB0' end='0xC0' /><slave name='bullet3_en.s1' start='0xC0' end='0xD0' /><slave name='bullet2_y.s1' start='0xD0' end='0xE0' /><slave name='bullet2_x.s1' start='0xE0' end='0xF0' /><slave name='bullet2_en.s1' start='0xF0' end='0x100' /><slave name='bullet1_y.s1' start='0x100' end='0x110' /><slave name='bullet1_x.s1' start='0x110' end='0x120' /><slave name='bullet1_en.s1' start='0x120' end='0x130' /><slave name='explosion3_y.s1' start='0x130' end='0x140' /><slave name='explosion3_x.s1' start='0x140' end='0x150' /><slave name='explosion3_en.s1' start='0x150' end='0x160' /><slave name='explosion2_y.s1' start='0x160' end='0x170' /><slave name='explosion2_x.s1' start='0x170' end='0x180' /><slave name='explosion2_en.s1' start='0x180' end='0x190' /><slave name='explosion1_y.s1' start='0x190' end='0x1A0' /><slave name='explosion1_x.s1' start='0x1A0' end='0x1B0' /><slave name='explosion1_en.s1' start='0x1B0' end='0x1C0' /><slave name='monster3_y.s1' start='0x1C0' end='0x1D0' /><slave name='monster3_x.s1' start='0x1D0' end='0x1E0' /><slave name='monster3_en.s1' start='0x1E0' end='0x1F0' /><slave name='monster2_y.s1' start='0x1F0' end='0x200' /><slave name='monster2_x.s1' start='0x200' end='0x210' /><slave name='monster2_en.s1' start='0x210' end='0x220' /><slave name='monster1_y.s1' start='0x220' end='0x230' /><slave name='monster1_x.s1' start='0x230' end='0x240' /><slave name='monster1_en.s1' start='0x240' end='0x250' /><slave name='samus_jump.s1' start='0x250' end='0x260' /><slave name='samus_walk.s1' start='0x260' end='0x270' /><slave name='samus_y.s1' start='0x270' end='0x280' /><slave name='samus_x.s1' start='0x280' end='0x290' /><slave name='samus_en.s1' start='0x290' end='0x2A0' /><slave name='key.s1' start='0x2A0' end='0x2B0' /><slave name='keycode.s1' start='0x2B0' end='0x2C0' /><slave name='otg_hpi_cs.s1' start='0x2C0' end='0x2D0' /><slave name='otg_hpi_w.s1' start='0x2D0' end='0x2E0' /><slave name='otg_hpi_r.s1' start='0x2E0' end='0x2F0' /><slave name='otg_hpi_data.s1' start='0x2F0' end='0x300' /><slave name='otg_hpi_address.s1' start='0x300' end='0x310' /><slave name='sdram_pll.pll_slave' start='0x310' end='0x320' /><slave name='sysid_qsys_0.control_slave' start='0x328' end='0x330' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x330' end='0x338' /><slave name='nios2_qsys_0.debug_mem_slave' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x10000000' end='0x18000000' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -1679,7 +1735,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="29" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='sdram_pll.pll_slave' start='0x2F0' end='0x300' /><slave name='sysid_qsys_0.control_slave' start='0x308' end='0x310' /><slave name='nios2_qsys_0.debug_mem_slave' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x10000000' end='0x18000000' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x10' /><slave name='sdram_pll.pll_slave' start='0x310' end='0x320' /><slave name='sysid_qsys_0.control_slave' start='0x328' end='0x330' /><slave name='nios2_qsys_0.debug_mem_slave' start='0x1000' end='0x1800' /><slave name='sdram.s1' start='0x10000000' end='0x18000000' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -1932,6 +1988,20 @@
   <parameter name="width" value="1" />
  </module>
  <module name="samus_jump" kind="altera_avalon_pio" version="15.0" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
+ <module name="samus_up" kind="altera_avalon_pio" version="15.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2239,7 +2309,7 @@
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0310" />
+  <parameter name="baseAddress" value="0x0330" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2248,7 +2318,7 @@
    start="nios2_qsys_0.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0308" />
+  <parameter name="baseAddress" value="0x0328" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2266,7 +2336,7 @@
    start="nios2_qsys_0.data_master"
    end="sdram_pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02f0" />
+  <parameter name="baseAddress" value="0x0310" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2284,7 +2354,7 @@
    start="nios2_qsys_0.data_master"
    end="otg_hpi_address.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02e0" />
+  <parameter name="baseAddress" value="0x0300" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2293,7 +2363,7 @@
    start="nios2_qsys_0.data_master"
    end="otg_hpi_data.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02d0" />
+  <parameter name="baseAddress" value="0x02f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2302,7 +2372,7 @@
    start="nios2_qsys_0.data_master"
    end="otg_hpi_r.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02c0" />
+  <parameter name="baseAddress" value="0x02e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2311,7 +2381,7 @@
    start="nios2_qsys_0.data_master"
    end="otg_hpi_w.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02b0" />
+  <parameter name="baseAddress" value="0x02d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2320,7 +2390,7 @@
    start="nios2_qsys_0.data_master"
    end="otg_hpi_cs.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02a0" />
+  <parameter name="baseAddress" value="0x02c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2329,7 +2399,7 @@
    start="nios2_qsys_0.data_master"
    end="keycode.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0290" />
+  <parameter name="baseAddress" value="0x02b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2338,7 +2408,7 @@
    start="nios2_qsys_0.data_master"
    end="key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0280" />
+  <parameter name="baseAddress" value="0x02a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2356,7 +2426,7 @@
    start="nios2_qsys_0.data_master"
    end="samus_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0270" />
+  <parameter name="baseAddress" value="0x0290" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2365,7 +2435,7 @@
    start="nios2_qsys_0.data_master"
    end="samus_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0260" />
+  <parameter name="baseAddress" value="0x0280" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2374,7 +2444,7 @@
    start="nios2_qsys_0.data_master"
    end="samus_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0250" />
+  <parameter name="baseAddress" value="0x0270" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2383,7 +2453,7 @@
    start="nios2_qsys_0.data_master"
    end="samus_walk.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0240" />
+  <parameter name="baseAddress" value="0x0260" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2392,7 +2462,7 @@
    start="nios2_qsys_0.data_master"
    end="samus_jump.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0230" />
+  <parameter name="baseAddress" value="0x0250" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2401,7 +2471,7 @@
    start="nios2_qsys_0.data_master"
    end="monster1_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0220" />
+  <parameter name="baseAddress" value="0x0240" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2410,7 +2480,7 @@
    start="nios2_qsys_0.data_master"
    end="monster1_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0210" />
+  <parameter name="baseAddress" value="0x0230" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2419,7 +2489,7 @@
    start="nios2_qsys_0.data_master"
    end="monster1_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0200" />
+  <parameter name="baseAddress" value="0x0220" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2428,7 +2498,7 @@
    start="nios2_qsys_0.data_master"
    end="monster2_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01f0" />
+  <parameter name="baseAddress" value="0x0210" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2437,7 +2507,7 @@
    start="nios2_qsys_0.data_master"
    end="monster2_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01e0" />
+  <parameter name="baseAddress" value="0x0200" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2446,7 +2516,7 @@
    start="nios2_qsys_0.data_master"
    end="monster2_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01d0" />
+  <parameter name="baseAddress" value="0x01f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2455,7 +2525,7 @@
    start="nios2_qsys_0.data_master"
    end="monster3_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01c0" />
+  <parameter name="baseAddress" value="0x01e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2464,7 +2534,7 @@
    start="nios2_qsys_0.data_master"
    end="monster3_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01b0" />
+  <parameter name="baseAddress" value="0x01d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2473,7 +2543,7 @@
    start="nios2_qsys_0.data_master"
    end="monster3_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01a0" />
+  <parameter name="baseAddress" value="0x01c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2482,7 +2552,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion1_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0190" />
+  <parameter name="baseAddress" value="0x01b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2491,7 +2561,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion1_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0180" />
+  <parameter name="baseAddress" value="0x01a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2500,7 +2570,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion1_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0170" />
+  <parameter name="baseAddress" value="0x0190" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2509,7 +2579,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion2_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0160" />
+  <parameter name="baseAddress" value="0x0180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2518,7 +2588,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion2_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0150" />
+  <parameter name="baseAddress" value="0x0170" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2527,7 +2597,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion2_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0140" />
+  <parameter name="baseAddress" value="0x0160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2536,7 +2606,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion3_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0130" />
+  <parameter name="baseAddress" value="0x0150" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2545,7 +2615,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion3_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0120" />
+  <parameter name="baseAddress" value="0x0140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2554,7 +2624,7 @@
    start="nios2_qsys_0.data_master"
    end="explosion3_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0110" />
+  <parameter name="baseAddress" value="0x0130" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2563,7 +2633,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet1_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0100" />
+  <parameter name="baseAddress" value="0x0120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2572,7 +2642,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet1_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00f0" />
+  <parameter name="baseAddress" value="0x0110" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2581,7 +2651,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet1_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00e0" />
+  <parameter name="baseAddress" value="0x0100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2590,7 +2660,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet2_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00d0" />
+  <parameter name="baseAddress" value="0x00f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2599,7 +2669,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet2_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00c0" />
+  <parameter name="baseAddress" value="0x00e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2608,7 +2678,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet2_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00b0" />
+  <parameter name="baseAddress" value="0x00d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2617,7 +2687,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet3_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00a0" />
+  <parameter name="baseAddress" value="0x00c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2626,7 +2696,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet3_x.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0090" />
+  <parameter name="baseAddress" value="0x00b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2635,7 +2705,7 @@
    start="nios2_qsys_0.data_master"
    end="bullet3_y.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x00a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2644,7 +2714,7 @@
    start="nios2_qsys_0.data_master"
    end="health.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0070" />
+  <parameter name="baseAddress" value="0x0090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2653,7 +2723,7 @@
    start="nios2_qsys_0.data_master"
    end="title_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2662,7 +2732,7 @@
    start="nios2_qsys_0.data_master"
    end="loss_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0050" />
+  <parameter name="baseAddress" value="0x0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2671,7 +2741,7 @@
    start="nios2_qsys_0.data_master"
    end="win_en.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2680,7 +2750,7 @@
    start="nios2_qsys_0.data_master"
    end="samus_dir.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0030" />
+  <parameter name="baseAddress" value="0x0050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2688,6 +2758,24 @@
    version="15.0"
    start="nios2_qsys_0.data_master"
    end="scene_sel.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="nios2_qsys_0.data_master"
+   end="samus_up.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0030" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="nios2_qsys_0.data_master"
+   end="b_emp.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0020" />
   <parameter name="defaultConnection" value="false" />
@@ -2698,7 +2786,7 @@
    start="nios2_qsys_0.instruction_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0308" />
+  <parameter name="baseAddress" value="0x0328" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2716,7 +2804,7 @@
    start="nios2_qsys_0.instruction_master"
    end="sdram_pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02f0" />
+  <parameter name="baseAddress" value="0x0310" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2790,6 +2878,8 @@
  <connection kind="clock" version="15.0" start="clk_0.clk" end="win_en.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="samus_dir.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="scene_sel.clk" />
+ <connection kind="clock" version="15.0" start="clk_0.clk" end="samus_up.clk" />
+ <connection kind="clock" version="15.0" start="clk_0.clk" end="b_emp.clk" />
  <connection
    kind="clock"
    version="15.0"
@@ -3053,6 +3143,12 @@
    kind="reset"
    version="15.0"
    start="clk_0.clk_reset"
+   end="samus_up.reset" />
+ <connection kind="reset" version="15.0" start="clk_0.clk_reset" end="b_emp.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="clk_0.clk_reset"
    end="onchip_memory2_0.reset1" />
  <connection
    kind="reset"
@@ -3304,6 +3400,16 @@
    version="15.0"
    start="nios2_qsys_0.debug_reset_request"
    end="scene_sel.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="nios2_qsys_0.debug_reset_request"
+   end="samus_up.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="nios2_qsys_0.debug_reset_request"
+   end="b_emp.reset" />
  <connection
    kind="reset"
    version="15.0"

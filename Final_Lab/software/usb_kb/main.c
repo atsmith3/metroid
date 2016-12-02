@@ -25,58 +25,59 @@
 #include "lcp_cmd.h"
 #include "lcp_data.h"
 
-#define SAMUS_EN (volatile char*) 0x270
-#define SAMUS_X (volatile int*) 0x260
-#define SAMUS_Y (volatile int*) 0x250
-#define SAMUS_DIR (volatile char*) 0x30
-#define SAMUS_WALK (volatile char*) 0x240
-#define SAMUS_JUMP (volatile char*) 0x230
+#define SAMUS_EN (volatile char*) SAMUS_EN_BASE
+#define SAMUS_X (volatile int*) SAMUS_X_BASE
+#define SAMUS_Y (volatile int*) SAMUS_Y_BASE
+#define SAMUS_DIR (volatile char*) SAMUS_DIR_BASE
+#define SAMUS_WALK (volatile char*) SAMUS_WALK_BASE
+#define SAMUS_JUMP (volatile char*) SAMUS_JUMP_BASE
+#define SAMUS_UP (volatile char*) SAMUS_UP_BASE
 
-#define MON1_EN (volatile char*) 0x220
-#define MON1_X (volatile int*) 0x210
-#define MON1_Y (volatile int*) 0x200
+#define MON1_EN (volatile char*) MONSTER1_EN_BASE
+#define MON1_X (volatile int*) MONSTER1_X_BASE
+#define MON1_Y (volatile int*) MONSTER1_Y_BASE
 
-#define MON2_EN (volatile char*) 0x1F0
-#define MON2_X (volatile int*) 0x1E0
-#define MON2_Y (volatile int*) 0x1D0
+#define MON2_EN (volatile char*) MONSTER2_EN_BASE
+#define MON2_X (volatile int*) MONSTER2_X_BASE
+#define MON2_Y (volatile int*) MONSTER2_Y_BASE
 
-#define MON3_EN (volatile char*) 0x1C0
-#define MON3_X (volatile int*) 0x1B0
-#define MON3_Y (volatile int*) 0x1A0
+#define MON3_EN (volatile char*) MONSTER3_EN_BASE
+#define MON3_X (volatile int*) MONSTER3_X_BASE
+#define MON3_Y (volatile int*) MONSTER3_Y_BASE
 
-#define EXP1_EN (volatile int*) 0x190
-#define EXP1_X (volatile int*) 0x180
-#define EXP1_Y (volatile int*) 0x170
+#define EXP1_EN (volatile int*) EXPLOSION1_EN_BASE
+#define EXP1_X (volatile int*) EXPLOSION1_X_BASE
+#define EXP1_Y (volatile int*) EXPLOSION1_Y_BASE
 
-#define EXP2_EN (volatile int*) 0x160
-#define EXP2_X (volatile int*) 0x150
-#define EXP2_Y (volatile int*) 0x140
+#define EXP2_EN (volatile int*) EXPLOSION2_EN_BASE
+#define EXP2_X (volatile int*) EXPLOSION2_X_BASE
+#define EXP2_Y (volatile int*) EXPLOSION2_Y_BASE
 
-#define EXP3_EN (volatile int*) 0x130
-#define EXP3_X (volatile int*) 0x120
-#define EXP3_Y (volatile int*) 0x110
+#define EXP3_EN (volatile int*) EXPLOSION3_EN_BASE
+#define EXP3_X (volatile int*) EXPLOSION3_X_BASE
+#define EXP3_Y (volatile int*) EXPLOSION3_Y_BASE
 
-#define BUL1_EN (volatile int*) 0x10
-#define BUL1_X (volatile int*) 0xF0
-#define BUL1_Y (volatile int*) 0xE0
+#define BUL1_EN (volatile int*) BULLET1_EN_BASE
+#define BUL1_X (volatile int*) BULLET1_X_BASE
+#define BUL1_Y (volatile int*) BULLET1_Y_BASE
 
-#define BUL2_EN (volatile int*) 0xD0
-#define BUL2_X (volatile int*) 0xC0
-#define BUL2_Y (volatile int*) 0xB0
+#define BUL2_EN (volatile int*) BULLET2_EN_BASE
+#define BUL2_X (volatile int*) BULLET2_X_BASE
+#define BUL2_Y (volatile int*) BULLET2_Y_BASE
 
-#define BUL3_EN (volatile int*) 0xA0
-#define BUL3_X (volatile int*) 0x90
-#define BUL3_Y (volatile int*) 0x80
+#define BUL3_EN (volatile int*) BULLET3_EN_BASE
+#define BUL3_X (volatile int*) BULLET3_X_BASE
+#define BUL3_Y (volatile int*) BULLET3_Y_BASE
 
-#define HEALTH (volatile int*) 0x70
+#define HEALTH (volatile int*) HEALTH_BASE
 
-#define TIT_EN (volatile int*) 0x60
+#define TIT_EN (volatile int*) TITLE_EN_BASE
 
-#define LOSS_EN (volatile int*) 0x50
+#define LOSS_EN (volatile int*) LOSS_EN_BASE
 
-#define WIN_EN (volatile int*) 0x40
+#define WIN_EN (volatile int*) WIN_EN_BASE
 
-#define SCENE_SELECT (volatile int*) 0x20
+#define SCENE_SELECT (volatile int*) SCENE_SEL_BASE
 
 #define True (int) 1
 #define False (int) 0
@@ -634,15 +635,21 @@ int main(void)
 	*SAMUS_Y = 400;
 	int SAMUS_BOT = 70;
 	int SAMUS_RIGHT = 35;
-	int y_inc = 0;
-	float y_inc_inc = 0;
+	float y_inc = 0;
+	float gravity = .8;
+	float jump_height = 0;
+	float max_jump_height = 80;
 	int grounded = False;
+	int let_go = False;
 	int bulinc = 12;
 	int bul1Left = 0;
+	int bul1Up = 0;
 	int bul1start = 0;
 	int bul2Left = 0;
+	int bul2Up = 0;
 	int bul2start = 0;
 	int bul3Left = 0;
+	int bul3Up = 0;
 	int bul3start = 0;
 	int bullet_en = True;
 	int sceneNum = 3;
@@ -651,6 +658,11 @@ int main(void)
 	int finalVictory = False;
 	int scene0_x = 0;
 	int scene0_y = 0;
+	int scene0_dir = 0;
+	int scene1_dir = 0;
+	int scene2_dir = 0;
+	int scene3_dir = 0;
+	int scene4_dir = 0;
 	int scene1_x = 0;
 	int scene1_y = 0;
 	int scene2_x = 0;
@@ -659,6 +671,19 @@ int main(void)
 	int scene3_y = 110;
 	int scene4_x = 0;
 	int scene4_y = 0;
+	int monster1_1_x_scene3 = 420;
+	int monster1_1_y_scene3 = 185;
+	int monster1_1_x = 420;
+	int monster1_1_y = 185;
+	int monster1_1_left = True;
+	int monster1_1_health = 3;
+	int monster2_1_x_scene3 = 420;
+	int monster2_1_y_scene3 = 205;
+	int monster2_1_x = 420;
+	int monster2_1_y = 205;
+	int monster2_1_left = True;
+	int monster2_1_health = 3;
+
 	while(1)
 	{
 		toggle++;
@@ -752,68 +777,26 @@ int main(void)
 		}
 
 
-    // GAME START //keycode
-    /*
-#define SAMUS_EN (volatile char*) 0x27F
-#define SAMUS_X (volatile int*) 0x26F
-#define SAMUS_Y (volatile int*) 0x25F
-#define SAMUS_DIR (volatile char*) 0x3F
-#define SAMUS_WALK (volatile char*) 0x24F
-#define SAMUS_JUMP (volatile char*) 0x23F
-
-#define MON1_EN (volatile char*) 0x22F
-#define MON1_X (volatile int*) 0x21F
-#define MON1_Y (volatile int*) 0x20F
-
-#define MON2_EN (volatile char*) 0x1FF
-#define MON2_X (volatile int*) 0x1EF
-#define MON2_Y (volatile int*) 0x1DF
-
-#define MON3_EN (volatile char*) 0x1CF
-#define MON3_X (volatile int*) 0x1BF
-#define MON3_Y (volatile int*) 0x1AF
-
-#define EXP1_EN (volatile int*) 0x19F
-#define EXP1_X (volatile int*) 0x18F
-#define EXP1_Y (volatile int*) 0x17F
-
-#define EXP2_EN (volatile int*) 0x16F
-#define EXP2_X (volatile int*) 0x15F
-#define EXP2_Y (volatile int*) 0x14F
-
-#define EXP3_EN (volatile int*) 0x13F
-#define EXP3_X (volatile int*) 0x12F
-#define EXP3_Y (volatile int*) 0x11F
-
-#define BUL1_EN (volatile int*) 0x10F
-#define BUL1_X (volatile int*) 0xFF
-#define BUL1_Y (volatile int*) 0xEF
-
-#define BUL2_EN (volatile int*) 0xDF
-#define BUL2_X (volatile int*) 0xCF
-#define BUL2_Y (volatile int*) 0xBF
-
-#define BUL3_EN (volatile int*) 0xAF
-#define BUL3_X (volatile int*) 0x9F
-#define BUL3_Y (volatile int*) 0x8F
-
-#define HEALTH (volatile int*) 0x7F
-
-#define TIT_EN (volatile int*) 0x6F
-
-#define LOSS_EN (volatile int*) 0x5F
-
-#define WIN_EN (volatile int*) 0x4F
-
-#define SCENE_SELECT (volatile int*) 0x2F
-    */
+    // GAME START
 	//Scene Init
 	if(sceneStart == True){
 		if(sceneNum == 3){
 			*SAMUS_X = scene3_x;
 			*SAMUS_Y = scene3_y;
+			*SAMUS_DIR = scene3_dir;
+			monster1_1_x = monster1_1_x_scene3;
+			monster1_1_y = monster1_1_y_scene3;
+			monster1_1_health = 3;
+			monster2_1_x = monster2_1_x_scene3;
+			monster2_1_y = monster2_1_y_scene3;
+			monster2_1_health = 3;
+			*MON1_EN = 1;
+			*MON2_EN = 1;
 		}
 		sceneStart = False;
+		*EXP1_EN = 0;
+		*EXP2_EN = 0;
+		*EXP3_EN = 0;
 	}
 
 
@@ -823,51 +806,82 @@ int main(void)
     *TIT_EN = 0;
     *SCENE_SELECT = 4;
     //Move Right
+    if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
+    	*SAMUS_UP = 1;
+    }
+    else{
+    	*SAMUS_UP = 0;
+    }
     if((keycode&0x0000FF)==7 || (keycode&0x00FF00)>>8 == 7 || (keycode&0xFF0000)>>16 == 7){
     	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0){
     		*SAMUS_DIR = 0;
     		*SAMUS_X+=6;
-    		*SAMUS_WALK = 1;
+    		if(grounded == True){
+    			*SAMUS_WALK = 1;
+    		}
+    		else{
+    			*SAMUS_WALK = 0;
+    		}
     	}
     }
     //Move Left
     else if((keycode&0x0000FF)==4 || (keycode&0x00FF00)>>8 == 4 || (keycode&0xFF0000)>>16 == 4){
-    	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0){
+    	if(scene[sceneNum][(*SAMUS_Y+15)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0){
     		*SAMUS_DIR = 1;
     		*SAMUS_X-=6;
-    		*SAMUS_WALK = 1;
+    		if(grounded == True){
+				*SAMUS_WALK = 1;
+			}
+    		else{
+				*SAMUS_WALK = 0;
+			}
     	}
     }
-    else if(keycode==0x1a) *TIT_EN = 1;
+    else if(keycode==0x17){
+    	*TIT_EN = 1;
+    	continue;
+    }
     else{
         *SAMUS_WALK = 0;
     }
 
     // Jump code
-    if(((keycode&0x0000FF)==0x2c || (keycode&0x00FF00)>>8 == 0x2c || (keycode&0xFF0000)>>16 == 0x2c) && grounded == True){
-    	y_inc = -17;
+    if(grounded == False){
+    	*SAMUS_JUMP = 1;
+    }
+    else{
+    	*SAMUS_JUMP = 0;
+    }
+    if(((keycode&0x0000FF)==0x2c || (keycode&0x00FF00)>>8 == 0x2c || (keycode&0xFF0000)>>16 == 0x2c) && grounded == True && let_go == False){
+    	y_inc = -12;
     	grounded = False;
-    	y_inc_inc = 0;
+    	let_go = True;
+    	jump_height = 0;
     }
-    y_inc_inc +=.13;
-    y_inc += y_inc_inc;
+    if((((keycode&0x0000FF)!=0x2c && (keycode&0x00FF00)>>8 != 0x2c && (keycode&0xFF0000)>>16 != 0x2c) && let_go == True)){
+    	let_go = False;
+    }
 
-    if(grounded == 1){
+    if(let_go == False || jump_height >= max_jump_height){
+    	if(y_inc < -6){
+    		y_inc = -6;
+    	}
+    	y_inc += gravity;
+    	let_go = False;
+    }
+
+    if(grounded == True){
     	y_inc = 0;
-    	y_inc_inc = 1.25;
     }
-    if(y_inc > 35){
-    	y_inc = 35;
-
-    }
-    if(y_inc_inc > 5){
-    	y_inc_inc = 6;
+    if(y_inc > 12){
+    	y_inc = 12;
     }
 
     *SAMUS_Y += y_inc;
+    jump_height -= y_inc;
 
-    //bot collission detection
-    if(scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+33)/30] != 0){
+    //bot collision detection
+    if((scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+33)/30] != 0) && let_go == False){
     	*SAMUS_Y = (*SAMUS_Y/30)*30+19;
     	grounded = True;
     }
@@ -881,8 +895,8 @@ int main(void)
 
     //If hits head
     if(scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+33)/30] != 0){
-    	y_inc = 0;
-    	y_inc_inc = 2.5;
+    	y_inc = -y_inc;
+    	let_go = False;
     }
 
 
@@ -904,9 +918,18 @@ int main(void)
     			*BUL3_Y = *SAMUS_Y+25;
     			bul3Left = False;
     		}
+    		if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
+    			bul3Up = True;
+    			*BUL3_Y = *SAMUS_Y;
+    			*BUL3_X = *SAMUS_X+18;
+    		}
+    		else{
+    			bul3Up = False;
+    		}
     		bul3start = 0;
     	}
     	else if(*BUL1_EN == True && *BUL2_EN == False){
+
 			if(*SAMUS_DIR == 1){
 				*BUL2_EN = True;
 				*BUL2_X = *SAMUS_X;
@@ -918,6 +941,15 @@ int main(void)
 				*BUL2_X = *SAMUS_X+30;
 				*BUL2_Y = *SAMUS_Y+25;
 				bul2Left = False;
+			}
+
+			if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
+				bul2Up = True;
+				*BUL2_Y = *SAMUS_Y;
+				*BUL2_X = *SAMUS_X+18;
+			}
+			else{
+				bul2Up = False;
 			}
 			bul2start = 0;
 		}
@@ -935,15 +967,56 @@ int main(void)
 				bul1Left = False;
 			}
 			bul1start = 0;
+			if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
+				bul1Up = True;
+				*BUL1_Y = *SAMUS_Y;
+				*BUL1_X = *SAMUS_X+18;
+			}
+			else{
+				bul1Up = False;
+			}
 		}
     	bullet_en = False;
     }
+    //Left collisions
+    if(*BUL3_EN == True && bul1Up == False && bul3Left == True && (scene[sceneNum][(*BUL3_Y)/30][(*BUL3_X-8)/30]!=0 || scene[sceneNum][(*BUL3_Y+8)/30][(*BUL3_X-8)/30]!=0)){
+    	*BUL3_EN = False;
+    }
+    if(*BUL1_EN == True && bul1Up == False && bul1Left == True && (scene[sceneNum][(*BUL1_Y)/30][(*BUL1_X-8)/30]!=0 || scene[sceneNum][(*BUL1_Y+8)/30][(*BUL1_X-8)/30]!=0)){
+		*BUL1_EN = False;
+	}
+    if(*BUL2_EN == True && bul2Up == False && bul2Left == True && (scene[sceneNum][(*BUL2_Y)/30][(*BUL2_X-8)/30]!=0 || scene[sceneNum][(*BUL2_Y+8)/30][(*BUL2_X-8)/30]!=0)){
+		*BUL2_EN = False;
+	}
+    //Right collisions
+    if(*BUL3_EN == True && bul3Up == False && bul3Left == False && (scene[sceneNum][(*BUL3_Y)/30][(*BUL3_X+18)/30]!=0 || scene[sceneNum][(*BUL3_Y+8)/30][(*BUL3_X+18)/30]!=0)){
+		*BUL3_EN = False;
+	}
+	if(*BUL1_EN == True && bul1Up == False && bul1Left == False && (scene[sceneNum][(*BUL1_Y)/30][(*BUL1_X+18)/30]!=0 || scene[sceneNum][(*BUL1_Y+8)/30][((*BUL1_X+18)/30)]!=0)){
+		*BUL1_EN = False;
+	}
+	if(*BUL2_EN == True && bul2Up == False && bul2Left == False && (scene[sceneNum][(*BUL2_Y)/30][(*BUL2_X+18)/30]!=0 || scene[sceneNum][(*BUL2_Y+8)/30][((*BUL2_X+18)/30)]!=0)){
+		*BUL2_EN = False;
+	}
+	//Top collisions
+	if(*BUL1_EN == True && bul1Up == True && (scene[sceneNum][(*BUL1_Y-8)/30][(*BUL1_X)/30]!=0 || scene[sceneNum][(*BUL1_Y-8)/30][(*BUL1_X+8)/30]!=0)){
+		*BUL1_EN = False;
+	}
+	if(*BUL2_EN == True && bul2Up == True && (scene[sceneNum][(*BUL2_Y-8)/30][(*BUL2_X)/30]!=0 || scene[sceneNum][(*BUL2_Y-8)/30][(*BUL2_X+8)/30]!=0)){
+		*BUL2_EN = False;
+	}
+	if(*BUL3_EN == True && bul3Up == True && (scene[sceneNum][(*BUL3_Y-8)/30][(*BUL3_X)/30]!=0 || scene[sceneNum][(*BUL3_Y-8)/30][(*BUL3_X+8)/30]!=0)){
+		*BUL3_EN = False;
+	}
 
     if(*BUL3_EN == True){
-    	if(bul3start >= 90)
+    	if(bul3start >= 110)
     		*BUL3_EN = False;
     	else{
-    		if(bul3Left == True){
+    		if(bul3Up == True){
+    			*BUL3_Y -= bulinc;
+    		}
+    		else if(bul3Left == True){
     			*BUL3_X -= bulinc;
     		}
     		else{
@@ -953,10 +1026,13 @@ int main(void)
     	}
     }
     if(*BUL2_EN == True){
-		if(bul2start >= 90)
+		if(bul2start >= 110)
 			*BUL2_EN = False;
 		else{
-			if(bul2Left == True){
+			if(bul2Up == True){
+				*BUL2_Y -= bulinc;
+			}
+			else if(bul2Left == True){
 				*BUL2_X -= bulinc;
 			}
 			else{
@@ -966,10 +1042,13 @@ int main(void)
 		}
 	}
     if(*BUL1_EN == True){
-		if(bul1start >= 90)
+		if(bul1start >= 110)
 			*BUL1_EN = False;
 		else{
-			if(bul1Left == True){
+			if(bul1Up == True){
+				*BUL1_Y -= bulinc;
+			}
+			else if(bul1Left == True){
 				*BUL1_X -= bulinc;
 			}
 			else{
@@ -980,10 +1059,88 @@ int main(void)
 	}
 
 
-    //MONSTER MOVEMENT
-    //COLLISSION DETECTION
-    //EXTRAS
+    //monsters code
+    *MON1_X = monster1_1_x;
+    *MON1_Y = monster1_1_y;
+    if(*MON1_EN == True){
+		if(monster1_1_left == True){
+			monster1_1_x-=5;
+		}
+		else{
+			monster1_1_x+=5;
+		}
+    }
 
+    if(scene[sceneNum][(monster1_1_y+35)/30][monster1_1_x/30]==0){
+    	monster1_1_left = False;
+    }
+    else if(scene[sceneNum][(monster1_1_y+35)/30][(monster1_1_x+30)/30]==0){
+    	monster1_1_left = True;
+    }
+    //Monster 2
+    *MON2_X = monster2_1_x;
+	*MON2_Y = monster2_1_y;
+	if(*MON2_EN == True){
+		if(monster2_1_left == True){
+			monster2_1_x-=5;
+		}
+		else{
+			monster2_1_x+=5;
+		}
+	}
+
+	if(scene[sceneNum][(monster1_1_y+35)/30][monster1_1_x/30]==0){
+		monster1_1_left = False;
+	}
+	else if(scene[sceneNum][(monster1_1_y+35)/30][(monster1_1_x+30)/30]==0){
+		monster1_1_left = True;
+	}
+
+
+    //bullet collision with monsters
+    if(*BUL1_X+12 > monster1_1_x && *BUL1_X < monster1_1_x+30 && *BUL1_Y+12 > monster1_1_y && *BUL1_Y < monster1_1_y+30 && *MON1_EN == True && *BUL1_EN == 1){
+    	*BUL1_EN=0;
+    	monster1_1_health-=1;
+    }
+    if(*BUL2_X+12 > monster1_1_x && *BUL2_X < monster1_1_x+30 && *BUL2_Y+12 > monster1_1_y && *BUL2_Y < monster1_1_y+30 && *MON1_EN == True && *BUL2_EN == 1){
+       	*BUL2_EN=0;
+       	monster1_1_health-=1;
+    }
+    if(*BUL3_X+12 > monster1_1_x && *BUL3_X < monster1_1_x+30 && *BUL3_Y+12 > monster1_1_y && *BUL3_Y < monster1_1_y+30 && *MON1_EN == True && *BUL3_EN == 1){
+       	*BUL3_EN=0;
+       	monster1_1_health-=1;
+    }
+    if(*BUL1_X+12 > monster2_1_x && *BUL1_X < monster2_1_x+30 && *BUL1_Y+12 > monster2_1_y && *BUL1_Y < monster2_1_y+30 && *MON2_EN == True && *BUL1_EN == 1){
+		*BUL1_EN=0;
+		monster2_1_health-=1;
+	}
+	if(*BUL2_X+12 > monster2_1_x && *BUL2_X < monster2_1_x+30 && *BUL2_Y+12 > monster2_1_y && *BUL2_Y < monster2_1_y+30 && *MON2_EN == True && *BUL2_EN == 1){
+		*BUL2_EN=0;
+		monster2_1_health-=1;
+	}
+	if(*BUL3_X+12 > monster2_1_x && *BUL3_X < monster2_1_x+30 && *BUL3_Y+12 > monster2_1_y && *BUL3_Y < monster2_1_y+30 && *MON2_EN == True && *BUL3_EN == 1){
+		*BUL3_EN=0;
+		monster2_1_health-=1;
+	}
+
+    if(monster1_1_health == 0){
+    	*MON1_EN = 0;
+    	*EXP1_X = monster1_1_x;
+    	*EXP1_Y = monster1_1_y;
+    	*EXP1_EN = 1;
+    }
+    if(monster2_1_health == 0){
+    	*MON2_EN = 0;
+    	*EXP2_X = monster2_1_x;
+    	*EXP2_Y = monster2_1_y;
+    	*EXP2_EN = 1;
+    }
+
+    //EXTRA
+    //debugging reset
+    if (keycode == 0x15){
+    	sceneStart = True;
+    }
 
 	}//end while
 

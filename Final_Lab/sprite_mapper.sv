@@ -11,7 +11,7 @@ input logic clk, reset,
 input logic vsync,
 
 // Samus
-input logic samus_en, samus_dir, samus_walk, samus_jump,
+input logic samus_en, samus_dir, samus_walk, samus_jump, samus_up,
 input logic [9:0] samus_x, samus_y,
 
 // Background
@@ -34,6 +34,7 @@ input logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y,
 // Bullet
 input logic bullet1, bullet2, bullet3,
 input logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y,
+input logic b_emp,
 
 input logic [9:0] vgaX, vgaY, 
 output logic [7:0] red, green, blue
@@ -65,7 +66,7 @@ output logic [7:0] red, green, blue
 					.sprite1_x(b1_x), .sprite1_y(b1_y), 
 					.sprite2_x(b2_x), .sprite2_y(b2_y), 
 					.sprite3_x(b3_x), .sprite3_y(b3_y), 
-					.empowered(1'b0),
+					.empowered(b_emp),
 					.color(bullet_color),
 					.draw(bulletDraw));
 	monster mon(.enable1(monster1), 
@@ -80,7 +81,7 @@ output logic [7:0] red, green, blue
 	samus sam(.enable(samus_en), 
 			.vga_x(vgaX), .vga_y(vgaY),
 			.sprite_x(samus_x), .sprite_y(samus_y), 
-			.walk(samus_walk), .jump(samus_jump), 
+			.walk(samus_walk), .jump(samus_jump), .up(samus_up), 
 			.vsync(vsync),
 			.direction(samus_dir), 
 			.color(samus_color), 
@@ -379,7 +380,7 @@ endmodule
 //
 //--------------------------------------------------------------------------------------------
 module samus(
-	input logic  			enable, vsync, walk, jump,
+	input logic  			enable, vsync, walk, jump, up,
 	input logic  [10:0] 	vga_x, vga_y, sprite_x, sprite_y,
 	input logic direction,
 	output logic [6:0] 	color,
@@ -925,6 +926,12 @@ module samus(
 		     sprite_num = 3'b101;
 		 end
 		 if(jump == 1'b1 && walk == 1'b0) begin
+		     sprite_num = 3'b100;
+		 end
+		 if(up == 1'b1 && walk == 1'b0 && jump == 1'b0) begin
+		     sprite_num = 3'b000;
+		 end
+		 if(jump == 1'b1 && walk == 1'b1 && up == 1'b1) begin
 		     sprite_num = 3'b100;
 		 end
 	end

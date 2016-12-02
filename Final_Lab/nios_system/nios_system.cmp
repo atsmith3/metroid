@@ -1,5 +1,6 @@
 	component nios_system is
 		port (
+			b_emp_export           : out   std_logic;                                        -- export
 			bullet1_en_export      : out   std_logic;                                        -- export
 			bullet1_x_export       : out   std_logic_vector(9 downto 0);                     -- export
 			bullet1_y_export       : out   std_logic_vector(9 downto 0);                     -- export
@@ -42,6 +43,7 @@
 			samus_dir_export       : out   std_logic;                                        -- export
 			samus_en_export        : out   std_logic;                                        -- export
 			samus_jump_export      : out   std_logic;                                        -- export
+			samus_up_export        : out   std_logic;                                        -- export
 			samus_walk_export      : out   std_logic;                                        -- export
 			samus_x_export         : out   std_logic_vector(9 downto 0);                     -- export
 			samus_y_export         : out   std_logic_vector(9 downto 0);                     -- export

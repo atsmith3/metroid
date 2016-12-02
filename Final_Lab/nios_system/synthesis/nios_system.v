@@ -4,6 +4,7 @@
 
 `timescale 1 ps / 1 ps
 module nios_system (
+		output wire        b_emp_export,           //           b_emp.export
 		output wire        bullet1_en_export,      //      bullet1_en.export
 		output wire [9:0]  bullet1_x_export,       //       bullet1_x.export
 		output wire [9:0]  bullet1_y_export,       //       bullet1_y.export
@@ -46,6 +47,7 @@ module nios_system (
 		output wire        samus_dir_export,       //       samus_dir.export
 		output wire        samus_en_export,        //        samus_en.export
 		output wire        samus_jump_export,      //      samus_jump.export
+		output wire        samus_up_export,        //        samus_up.export
 		output wire        samus_walk_export,      //      samus_walk.export
 		output wire [9:0]  samus_x_export,         //         samus_x.export
 		output wire [9:0]  samus_y_export,         //         samus_y.export
@@ -340,14 +342,35 @@ module nios_system (
 	wire   [1:0] mm_interconnect_0_scene_sel_s1_address;                      // mm_interconnect_0:scene_sel_s1_address -> scene_sel:address
 	wire         mm_interconnect_0_scene_sel_s1_write;                        // mm_interconnect_0:scene_sel_s1_write -> scene_sel:write_n
 	wire  [31:0] mm_interconnect_0_scene_sel_s1_writedata;                    // mm_interconnect_0:scene_sel_s1_writedata -> scene_sel:writedata
+	wire         mm_interconnect_0_samus_up_s1_chipselect;                    // mm_interconnect_0:samus_up_s1_chipselect -> samus_up:chipselect
+	wire  [31:0] mm_interconnect_0_samus_up_s1_readdata;                      // samus_up:readdata -> mm_interconnect_0:samus_up_s1_readdata
+	wire   [1:0] mm_interconnect_0_samus_up_s1_address;                       // mm_interconnect_0:samus_up_s1_address -> samus_up:address
+	wire         mm_interconnect_0_samus_up_s1_write;                         // mm_interconnect_0:samus_up_s1_write -> samus_up:write_n
+	wire  [31:0] mm_interconnect_0_samus_up_s1_writedata;                     // mm_interconnect_0:samus_up_s1_writedata -> samus_up:writedata
+	wire         mm_interconnect_0_b_emp_s1_chipselect;                       // mm_interconnect_0:b_emp_s1_chipselect -> b_emp:chipselect
+	wire  [31:0] mm_interconnect_0_b_emp_s1_readdata;                         // b_emp:readdata -> mm_interconnect_0:b_emp_s1_readdata
+	wire   [1:0] mm_interconnect_0_b_emp_s1_address;                          // mm_interconnect_0:b_emp_s1_address -> b_emp:address
+	wire         mm_interconnect_0_b_emp_s1_write;                            // mm_interconnect_0:b_emp_s1_write -> b_emp:write_n
+	wire  [31:0] mm_interconnect_0_b_emp_s1_writedata;                        // mm_interconnect_0:b_emp_s1_writedata -> b_emp:writedata
 	wire         irq_mapper_receiver0_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_qsys_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_qsys_0:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [bullet1_en:reset_n, bullet1_x:reset_n, bullet1_y:reset_n, bullet2_en:reset_n, bullet2_x:reset_n, bullet2_y:reset_n, bullet3_en:reset_n, bullet3_x:reset_n, bullet3_y:reset_n, explosion1_en:reset_n, explosion1_x:reset_n, explosion1_y:reset_n, explosion2_en:reset_n, explosion2_x:reset_n, explosion2_y:reset_n, explosion3_en:reset_n, explosion3_x:reset_n, explosion3_y:reset_n, health:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, loss_en:reset_n, mm_interconnect_0:nios2_qsys_0_reset_reset_bridge_in_reset_reset, monster1_en:reset_n, monster1_x:reset_n, monster1_y:reset_n, monster2_en:reset_n, monster2_x:reset_n, monster2_y:reset_n, monster3_en:reset_n, monster3_x:reset_n, monster3_y:reset_n, nios2_qsys_0:reset_n, onchip_memory2_0:reset, otg_hpi_address:reset_n, otg_hpi_cs:reset_n, otg_hpi_data:reset_n, otg_hpi_r:reset_n, otg_hpi_w:reset_n, rst_translator:in_reset, samus_dir:reset_n, samus_en:reset_n, samus_jump:reset_n, samus_walk:reset_n, samus_x:reset_n, samus_y:reset_n, scene_sel:reset_n, sdram_pll:reset, sysid_qsys_0:reset_n, title_en:reset_n, win_en:reset_n]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [b_emp:reset_n, bullet1_en:reset_n, bullet1_x:reset_n, bullet1_y:reset_n, bullet2_en:reset_n, bullet2_x:reset_n, bullet2_y:reset_n, bullet3_en:reset_n, bullet3_x:reset_n, bullet3_y:reset_n, explosion1_en:reset_n, explosion1_x:reset_n, explosion1_y:reset_n, explosion2_en:reset_n, explosion2_x:reset_n, explosion2_y:reset_n, explosion3_en:reset_n, explosion3_x:reset_n, explosion3_y:reset_n, health:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, loss_en:reset_n, mm_interconnect_0:nios2_qsys_0_reset_reset_bridge_in_reset_reset, monster1_en:reset_n, monster1_x:reset_n, monster1_y:reset_n, monster2_en:reset_n, monster2_x:reset_n, monster2_y:reset_n, monster3_en:reset_n, monster3_x:reset_n, monster3_y:reset_n, nios2_qsys_0:reset_n, onchip_memory2_0:reset, otg_hpi_address:reset_n, otg_hpi_cs:reset_n, otg_hpi_data:reset_n, otg_hpi_r:reset_n, otg_hpi_w:reset_n, rst_translator:in_reset, samus_dir:reset_n, samus_en:reset_n, samus_jump:reset_n, samus_up:reset_n, samus_walk:reset_n, samus_x:reset_n, samus_y:reset_n, scene_sel:reset_n, sdram_pll:reset, sysid_qsys_0:reset_n, title_en:reset_n, win_en:reset_n]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [nios2_qsys_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         nios2_qsys_0_debug_reset_request_reset;                      // nios2_qsys_0:debug_reset_request -> [rst_controller:reset_in1, rst_controller_001:reset_in1]
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [mm_interconnect_0:sdram_reset_reset_bridge_in_reset_reset, sdram:reset_n]
 
-	nios_system_bullet1_en bullet1_en (
+	nios_system_b_emp b_emp (
+		.clk        (clk_clk),                               //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),       //               reset.reset_n
+		.address    (mm_interconnect_0_b_emp_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_b_emp_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_b_emp_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_b_emp_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_b_emp_s1_readdata),   //                    .readdata
+		.out_port   (b_emp_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp bullet1_en (
 		.clk        (clk_clk),                                    //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
 		.address    (mm_interconnect_0_bullet1_en_s1_address),    //                  s1.address
@@ -380,7 +403,7 @@ module nios_system (
 		.out_port   (bullet1_y_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en bullet2_en (
+	nios_system_b_emp bullet2_en (
 		.clk        (clk_clk),                                    //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
 		.address    (mm_interconnect_0_bullet2_en_s1_address),    //                  s1.address
@@ -413,7 +436,7 @@ module nios_system (
 		.out_port   (bullet2_y_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en bullet3_en (
+	nios_system_b_emp bullet3_en (
 		.clk        (clk_clk),                                    //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
 		.address    (mm_interconnect_0_bullet3_en_s1_address),    //                  s1.address
@@ -446,7 +469,7 @@ module nios_system (
 		.out_port   (bullet3_y_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en explosion1_en (
+	nios_system_b_emp explosion1_en (
 		.clk        (clk_clk),                                       //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
 		.address    (mm_interconnect_0_explosion1_en_s1_address),    //                  s1.address
@@ -479,7 +502,7 @@ module nios_system (
 		.out_port   (explosion1_y_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en explosion2_en (
+	nios_system_b_emp explosion2_en (
 		.clk        (clk_clk),                                       //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
 		.address    (mm_interconnect_0_explosion2_en_s1_address),    //                  s1.address
@@ -512,7 +535,7 @@ module nios_system (
 		.out_port   (explosion2_y_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en explosion3_en (
+	nios_system_b_emp explosion3_en (
 		.clk        (clk_clk),                                       //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
 		.address    (mm_interconnect_0_explosion3_en_s1_address),    //                  s1.address
@@ -591,7 +614,7 @@ module nios_system (
 		.out_port   (keycode_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en loss_en (
+	nios_system_b_emp loss_en (
 		.clk        (clk_clk),                                 //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
 		.address    (mm_interconnect_0_loss_en_s1_address),    //                  s1.address
@@ -602,7 +625,7 @@ module nios_system (
 		.out_port   (loss_en_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en monster1_en (
+	nios_system_b_emp monster1_en (
 		.clk        (clk_clk),                                     //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),             //               reset.reset_n
 		.address    (mm_interconnect_0_monster1_en_s1_address),    //                  s1.address
@@ -635,7 +658,7 @@ module nios_system (
 		.out_port   (monster1_y_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en monster2_en (
+	nios_system_b_emp monster2_en (
 		.clk        (clk_clk),                                     //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),             //               reset.reset_n
 		.address    (mm_interconnect_0_monster2_en_s1_address),    //                  s1.address
@@ -668,7 +691,7 @@ module nios_system (
 		.out_port   (monster2_y_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en monster3_en (
+	nios_system_b_emp monster3_en (
 		.clk        (clk_clk),                                     //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),             //               reset.reset_n
 		.address    (mm_interconnect_0_monster3_en_s1_address),    //                  s1.address
@@ -754,7 +777,7 @@ module nios_system (
 		.out_port   (otg_hpi_address_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en otg_hpi_cs (
+	nios_system_b_emp otg_hpi_cs (
 		.clk        (clk_clk),                                    //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
 		.address    (mm_interconnect_0_otg_hpi_cs_s1_address),    //                  s1.address
@@ -777,7 +800,7 @@ module nios_system (
 		.out_port   (otg_hpi_data_out_port)                         //                    .export
 	);
 
-	nios_system_bullet1_en otg_hpi_r (
+	nios_system_b_emp otg_hpi_r (
 		.clk        (clk_clk),                                   //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
 		.address    (mm_interconnect_0_otg_hpi_r_s1_address),    //                  s1.address
@@ -788,7 +811,7 @@ module nios_system (
 		.out_port   (otg_hpi_r_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en otg_hpi_w (
+	nios_system_b_emp otg_hpi_w (
 		.clk        (clk_clk),                                   //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
 		.address    (mm_interconnect_0_otg_hpi_w_s1_address),    //                  s1.address
@@ -799,7 +822,7 @@ module nios_system (
 		.out_port   (otg_hpi_w_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en samus_dir (
+	nios_system_b_emp samus_dir (
 		.clk        (clk_clk),                                   //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
 		.address    (mm_interconnect_0_samus_dir_s1_address),    //                  s1.address
@@ -810,7 +833,7 @@ module nios_system (
 		.out_port   (samus_dir_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en samus_en (
+	nios_system_b_emp samus_en (
 		.clk        (clk_clk),                                  //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),          //               reset.reset_n
 		.address    (mm_interconnect_0_samus_en_s1_address),    //                  s1.address
@@ -821,7 +844,7 @@ module nios_system (
 		.out_port   (samus_en_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en samus_jump (
+	nios_system_b_emp samus_jump (
 		.clk        (clk_clk),                                    //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
 		.address    (mm_interconnect_0_samus_jump_s1_address),    //                  s1.address
@@ -832,7 +855,18 @@ module nios_system (
 		.out_port   (samus_jump_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en samus_walk (
+	nios_system_b_emp samus_up (
+		.clk        (clk_clk),                                  //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),          //               reset.reset_n
+		.address    (mm_interconnect_0_samus_up_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_samus_up_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_samus_up_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_samus_up_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_samus_up_s1_readdata),   //                    .readdata
+		.out_port   (samus_up_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp samus_walk (
 		.clk        (clk_clk),                                    //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
 		.address    (mm_interconnect_0_samus_walk_s1_address),    //                  s1.address
@@ -921,7 +955,7 @@ module nios_system (
 		.address  (mm_interconnect_0_sysid_qsys_0_control_slave_address)   //              .address
 	);
 
-	nios_system_bullet1_en title_en (
+	nios_system_b_emp title_en (
 		.clk        (clk_clk),                                  //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),          //               reset.reset_n
 		.address    (mm_interconnect_0_title_en_s1_address),    //                  s1.address
@@ -932,7 +966,7 @@ module nios_system (
 		.out_port   (title_en_export)                           // external_connection.export
 	);
 
-	nios_system_bullet1_en win_en (
+	nios_system_b_emp win_en (
 		.clk        (clk_clk),                                //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),        //               reset.reset_n
 		.address    (mm_interconnect_0_win_en_s1_address),    //                  s1.address
@@ -960,6 +994,11 @@ module nios_system (
 		.nios2_qsys_0_instruction_master_waitrequest    (nios2_qsys_0_instruction_master_waitrequest),                 //                                         .waitrequest
 		.nios2_qsys_0_instruction_master_read           (nios2_qsys_0_instruction_master_read),                        //                                         .read
 		.nios2_qsys_0_instruction_master_readdata       (nios2_qsys_0_instruction_master_readdata),                    //                                         .readdata
+		.b_emp_s1_address                               (mm_interconnect_0_b_emp_s1_address),                          //                                 b_emp_s1.address
+		.b_emp_s1_write                                 (mm_interconnect_0_b_emp_s1_write),                            //                                         .write
+		.b_emp_s1_readdata                              (mm_interconnect_0_b_emp_s1_readdata),                         //                                         .readdata
+		.b_emp_s1_writedata                             (mm_interconnect_0_b_emp_s1_writedata),                        //                                         .writedata
+		.b_emp_s1_chipselect                            (mm_interconnect_0_b_emp_s1_chipselect),                       //                                         .chipselect
 		.bullet1_en_s1_address                          (mm_interconnect_0_bullet1_en_s1_address),                     //                            bullet1_en_s1.address
 		.bullet1_en_s1_write                            (mm_interconnect_0_bullet1_en_s1_write),                       //                                         .write
 		.bullet1_en_s1_readdata                         (mm_interconnect_0_bullet1_en_s1_readdata),                    //                                         .readdata
@@ -1177,6 +1216,11 @@ module nios_system (
 		.samus_jump_s1_readdata                         (mm_interconnect_0_samus_jump_s1_readdata),                    //                                         .readdata
 		.samus_jump_s1_writedata                        (mm_interconnect_0_samus_jump_s1_writedata),                   //                                         .writedata
 		.samus_jump_s1_chipselect                       (mm_interconnect_0_samus_jump_s1_chipselect),                  //                                         .chipselect
+		.samus_up_s1_address                            (mm_interconnect_0_samus_up_s1_address),                       //                              samus_up_s1.address
+		.samus_up_s1_write                              (mm_interconnect_0_samus_up_s1_write),                         //                                         .write
+		.samus_up_s1_readdata                           (mm_interconnect_0_samus_up_s1_readdata),                      //                                         .readdata
+		.samus_up_s1_writedata                          (mm_interconnect_0_samus_up_s1_writedata),                     //                                         .writedata
+		.samus_up_s1_chipselect                         (mm_interconnect_0_samus_up_s1_chipselect),                    //                                         .chipselect
 		.samus_walk_s1_address                          (mm_interconnect_0_samus_walk_s1_address),                     //                            samus_walk_s1.address
 		.samus_walk_s1_write                            (mm_interconnect_0_samus_walk_s1_write),                       //                                         .write
 		.samus_walk_s1_readdata                         (mm_interconnect_0_samus_walk_s1_readdata),                    //                                         .readdata
