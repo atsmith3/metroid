@@ -630,17 +630,26 @@ int main(void)
 							};
 
 	usleep(10000);
+	*HEALTH = 3;
 	*SAMUS_EN = 1;
 	*SAMUS_X = 150;
 	*SAMUS_Y = 400;
+    *SCENE_SELECT = 4;
+	*LOSS_EN = False;
+	*TIT_EN = False;
 	int SAMUS_BOT = 70;
 	int SAMUS_RIGHT = 35;
+	int samus_inv_counter = 0;
+	int samus_inv_counter_start = False;
 	float y_inc = 0;
 	float gravity = .8;
 	float jump_height = 0;
-	float max_jump_height = 80;
+	float max_jump_height = 100;
 	int grounded = False;
 	int let_go = False;
+	int has_control = True;
+	int y_set = False;
+	int button_let_go = True;
 	int bulinc = 12;
 	int bul1Left = 0;
 	int bul1Up = 0;
@@ -678,11 +687,21 @@ int main(void)
 	int monster1_1_left = True;
 	int monster1_1_health = 3;
 	int monster2_1_x_scene3 = 420;
-	int monster2_1_y_scene3 = 205;
-	int monster2_1_x = 420;
-	int monster2_1_y = 205;
+	int monster2_1_y_scene3 = 30;
+	int monster2_1_x = 220;
+	int monster2_1_y = 55;
 	int monster2_1_left = True;
+	int monster2_jump_counter = 0;
+	int monster2_grounded = True;
+	int mon2_at_top = True;
+	int mon2_hit_bot = False;
+	float mon_2_y_inc = 0;
 	int monster2_1_health = 3;
+	int monster3_1_x_scene3 = 180;
+	int monster3_1_y_scene3 = 215;
+	int monster3_1_x = 220;
+	int monster3_1_y = 55;
+	int monster3_1_left = False;
 
 	while(1)
 	{
@@ -778,6 +797,30 @@ int main(void)
 
 
     // GAME START
+	if(*HEALTH == 0){
+		if (keycode == 0x15){
+			sceneStart = True;
+			*HEALTH = 3;
+			*LOSS_EN = False;
+		}
+		else{
+			*LOSS_EN = True;
+		}
+		continue;
+	}
+	if(keycode==0x17){
+		*TIT_EN = True;
+		continue;
+	}
+	else{
+		*TIT_EN = False;
+	}
+	if(*MON1_EN == False && *MON2_EN == False){
+		*WIN_EN = True;
+	}
+	else{
+		*WIN_EN = False;
+	}
 	//Scene Init
 	if(sceneStart == True){
 		if(sceneNum == 3){
@@ -790,8 +833,12 @@ int main(void)
 			monster2_1_x = monster2_1_x_scene3;
 			monster2_1_y = monster2_1_y_scene3;
 			monster2_1_health = 3;
+			mon2_at_top = True;
+			monster3_1_x = monster3_1_x_scene3;
+			monster3_1_y = monster3_1_y_scene3;
 			*MON1_EN = 1;
 			*MON2_EN = 1;
+			*MON3_EN = 1;
 		}
 		sceneStart = False;
 		*EXP1_EN = 0;
@@ -800,19 +847,17 @@ int main(void)
 	}
 
 
-	*HEALTH = 3;
     //SAMUS MOVEMENT
-    *SCENE_SELECT = 4;
     *TIT_EN = 0;
-    *SCENE_SELECT = 4;
     //Move Right
-    if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
+    if(((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A) && has_control == True){
     	*SAMUS_UP = 1;
     }
     else{
     	*SAMUS_UP = 0;
     }
-    if((keycode&0x0000FF)==7 || (keycode&0x00FF00)>>8 == 7 || (keycode&0xFF0000)>>16 == 7){
+    //Move right
+    if(((keycode&0x0000FF)==7 || (keycode&0x00FF00)>>8 == 7 || (keycode&0xFF0000)>>16 == 7) && has_control == True){
     	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0){
     		*SAMUS_DIR = 0;
     		*SAMUS_X+=6;
@@ -825,7 +870,7 @@ int main(void)
     	}
     }
     //Move Left
-    else if((keycode&0x0000FF)==4 || (keycode&0x00FF00)>>8 == 4 || (keycode&0xFF0000)>>16 == 4){
+    else if(((keycode&0x0000FF)==4 || (keycode&0x00FF00)>>8 == 4 || (keycode&0xFF0000)>>16 == 4) && has_control == True){
     	if(scene[sceneNum][(*SAMUS_Y+15)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0){
     		*SAMUS_DIR = 1;
     		*SAMUS_X-=6;
@@ -836,10 +881,6 @@ int main(void)
 				*SAMUS_WALK = 0;
 			}
     	}
-    }
-    else if(keycode==0x17){
-    	*TIT_EN = 1;
-    	continue;
     }
     else{
         *SAMUS_WALK = 0;
@@ -852,11 +893,15 @@ int main(void)
     else{
     	*SAMUS_JUMP = 0;
     }
-    if(((keycode&0x0000FF)==0x2c || (keycode&0x00FF00)>>8 == 0x2c || (keycode&0xFF0000)>>16 == 0x2c) && grounded == True && let_go == False){
+    if(((keycode&0x0000FF)==0x2c || (keycode&0x00FF00)>>8 == 0x2c || (keycode&0xFF0000)>>16 == 0x2c) && grounded == True && let_go == False && button_let_go == True && has_control == True){
     	y_inc = -12;
     	grounded = False;
     	let_go = True;
     	jump_height = 0;
+    	button_let_go = False;
+    }
+    if((((keycode&0x0000FF)!=0x2c && (keycode&0x00FF00)>>8 != 0x2c && (keycode&0xFF0000)>>16 != 0x2c))){
+    	button_let_go = True;
     }
     if((((keycode&0x0000FF)!=0x2c && (keycode&0x00FF00)>>8 != 0x2c && (keycode&0xFF0000)>>16 != 0x2c) && let_go == True)){
     	let_go = False;
@@ -881,7 +926,7 @@ int main(void)
     jump_height -= y_inc;
 
     //bot collision detection
-    if((scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+33)/30] != 0) && let_go == False){
+    if((scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+5)/30] != 0 || scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+33)/30] != 0)){
     	*SAMUS_Y = (*SAMUS_Y/30)*30+19;
     	grounded = True;
     }
@@ -1010,7 +1055,7 @@ int main(void)
 	}
 
     if(*BUL3_EN == True){
-    	if(bul3start >= 110)
+    	if(bul3start >= 90)
     		*BUL3_EN = False;
     	else{
     		if(bul3Up == True){
@@ -1026,7 +1071,7 @@ int main(void)
     	}
     }
     if(*BUL2_EN == True){
-		if(bul2start >= 110)
+		if(bul2start >= 90)
 			*BUL2_EN = False;
 		else{
 			if(bul2Up == True){
@@ -1042,7 +1087,7 @@ int main(void)
 		}
 	}
     if(*BUL1_EN == True){
-		if(bul1start >= 110)
+		if(bul1start >= 90)
 			*BUL1_EN = False;
 		else{
 			if(bul1Up == True){
@@ -1064,13 +1109,13 @@ int main(void)
     *MON1_Y = monster1_1_y;
     if(*MON1_EN == True){
 		if(monster1_1_left == True){
-			monster1_1_x-=5;
+			monster1_1_x-=2;
 		}
 		else{
-			monster1_1_x+=5;
+			monster1_1_x+=2;
 		}
     }
-
+    //Monster 1
     if(scene[sceneNum][(monster1_1_y+35)/30][monster1_1_x/30]==0){
     	monster1_1_left = False;
     }
@@ -1081,68 +1126,194 @@ int main(void)
     *MON2_X = monster2_1_x;
 	*MON2_Y = monster2_1_y;
 	if(*MON2_EN == True){
-		if(monster2_1_left == True){
-			monster2_1_x-=5;
+		if(monster2_1_left == True && mon2_at_top == False){
+			monster2_1_x-=3;
+		}
+		else if(monster2_1_left == False && mon2_at_top == False){
+			monster2_1_x+=3;
+		}
+	}
+	//Monster 3
+	*MON3_X = monster3_1_x;
+	*MON3_Y = monster3_1_y;
+	if(*MON3_EN == True){
+		if(monster3_1_left == True){
+			monster3_1_x-=5;
 		}
 		else{
-			monster2_1_x+=5;
+			monster3_1_x+=5;
 		}
 	}
 
+	//Monster 1 collision detection
 	if(scene[sceneNum][(monster1_1_y+35)/30][monster1_1_x/30]==0){
 		monster1_1_left = False;
 	}
 	else if(scene[sceneNum][(monster1_1_y+35)/30][(monster1_1_x+30)/30]==0){
 		monster1_1_left = True;
 	}
-
-
-    //bullet collision with monsters
-    if(*BUL1_X+12 > monster1_1_x && *BUL1_X < monster1_1_x+30 && *BUL1_Y+12 > monster1_1_y && *BUL1_Y < monster1_1_y+30 && *MON1_EN == True && *BUL1_EN == 1){
-    	*BUL1_EN=0;
-    	monster1_1_health-=1;
-    }
-    if(*BUL2_X+12 > monster1_1_x && *BUL2_X < monster1_1_x+30 && *BUL2_Y+12 > monster1_1_y && *BUL2_Y < monster1_1_y+30 && *MON1_EN == True && *BUL2_EN == 1){
-       	*BUL2_EN=0;
-       	monster1_1_health-=1;
-    }
-    if(*BUL3_X+12 > monster1_1_x && *BUL3_X < monster1_1_x+30 && *BUL3_Y+12 > monster1_1_y && *BUL3_Y < monster1_1_y+30 && *MON1_EN == True && *BUL3_EN == 1){
-       	*BUL3_EN=0;
-       	monster1_1_health-=1;
-    }
-    if(*BUL1_X+12 > monster2_1_x && *BUL1_X < monster2_1_x+30 && *BUL1_Y+12 > monster2_1_y && *BUL1_Y < monster2_1_y+30 && *MON2_EN == True && *BUL1_EN == 1){
-		*BUL1_EN=0;
-		monster2_1_health-=1;
+	//Monster 2 collision detection
+	if(scene[sceneNum][(monster2_1_y+25)/30][monster2_1_x/30]!=0 || scene[sceneNum][(monster2_1_y)/30][monster2_1_x/30]!=0){
+		monster2_1_left = False;
 	}
-	if(*BUL2_X+12 > monster2_1_x && *BUL2_X < monster2_1_x+30 && *BUL2_Y+12 > monster2_1_y && *BUL2_Y < monster2_1_y+30 && *MON2_EN == True && *BUL2_EN == 1){
-		*BUL2_EN=0;
-		monster2_1_health-=1;
+	else if(scene[sceneNum][(monster2_1_y+25)/30][(monster2_1_x+45)/30]!=0 || scene[sceneNum][(monster2_1_y)/30][(monster2_1_x+45)/30]!=0){
+		monster2_1_left = True;
 	}
-	if(*BUL3_X+12 > monster2_1_x && *BUL3_X < monster2_1_x+30 && *BUL3_Y+12 > monster2_1_y && *BUL3_Y < monster2_1_y+30 && *MON2_EN == True && *BUL3_EN == 1){
-		*BUL3_EN=0;
-		monster2_1_health-=1;
-	}
+	//Monster 2 Jump Code
+	if(*MON2_EN == True){
+		if (monster2_jump_counter >= 40 && mon2_at_top == True){
+			mon_2_y_inc = 15;
+			monster2_grounded = False;
+			mon2_hit_bot = False;
+			monster2_1_left = rand()%2;
+			mon2_at_top = False;
+		}
+		if(mon2_at_top == False){
+			monster2_jump_counter = 0;
+			mon_2_y_inc -= (gravity*.35);
+		}
+		else{
+			mon_2_y_inc = 0;
+		}
 
-    if(monster1_1_health == 0){
-    	*MON1_EN = 0;
-    	*EXP1_X = monster1_1_x;
-    	*EXP1_Y = monster1_1_y;
-    	*EXP1_EN = 1;
-    }
-    if(monster2_1_health == 0){
-    	*MON2_EN = 0;
-    	*EXP2_X = monster2_1_x;
-    	*EXP2_Y = monster2_1_y;
-    	*EXP2_EN = 1;
-    }
+		if(mon_2_y_inc < -15){
+			mon_2_y_inc = -15;
+		}
+		if(mon_2_y_inc > 15){
+			mon_2_y_inc = 15;
+		}
+		if(mon2_hit_bot == False || mon_2_y_inc < 0){
+			monster2_1_y += mon_2_y_inc;
+		}
 
-    //EXTRA
-    //debugging reset
-    if (keycode == 0x15){
-    	sceneStart = True;
-    }
+		//mon2 bot collision detection
+		if((scene[sceneNum][(monster2_1_y+30)/30][(monster2_1_x+5)/30] != 0 || scene[sceneNum][(monster2_1_y+30)/30][(monster2_1_x+40)/30] != 0)){
+			monster2_1_y = (monster2_1_y/30)*30;
+			mon2_hit_bot = True;
+		}
 
+		//If hits head
+		if((scene[sceneNum][(monster2_1_y-5)/30][(monster2_1_x+5)/30] != 0 || scene[sceneNum][(monster2_1_y-5)/30][(monster2_1_x+40)/30] != 0) && mon_2_y_inc < 0){
+			mon_2_y_inc = 0;
+			mon2_at_top = True;
+		}
+
+		monster2_jump_counter+=1;
+		}
+		//Monster 3 collision detection
+		if(scene[sceneNum][(monster3_1_y)/30][(monster3_1_x-5)/30]!=0 || scene[sceneNum][(monster3_1_y+10)/30][(monster3_1_x-5)/30]!=0){
+			monster3_1_left = False;
+		}
+		else if(scene[sceneNum][(monster3_1_y)/30][(monster3_1_x+35)/30]!=0 || scene[sceneNum][(monster3_1_y+10)/30][(monster3_1_x+35)/30]!=0){
+			monster3_1_left = True;
+		}
+
+
+		//bullet collision with monsters
+		if(*BUL1_X+12 > monster1_1_x && *BUL1_X < monster1_1_x+30 && *BUL1_Y+12 > monster1_1_y && *BUL1_Y < monster1_1_y+30 && *MON1_EN == True && *BUL1_EN == 1){
+			*BUL1_EN=0;
+			monster1_1_health-=1;
+		}
+		if(*BUL2_X+12 > monster1_1_x && *BUL2_X < monster1_1_x+30 && *BUL2_Y+12 > monster1_1_y && *BUL2_Y < monster1_1_y+30 && *MON1_EN == True && *BUL2_EN == 1){
+			*BUL2_EN=0;
+			monster1_1_health-=1;
+		}
+		if(*BUL3_X+12 > monster1_1_x && *BUL3_X < monster1_1_x+30 && *BUL3_Y+12 > monster1_1_y && *BUL3_Y < monster1_1_y+30 && *MON1_EN == True && *BUL3_EN == 1){
+			*BUL3_EN=0;
+			monster1_1_health-=1;
+		}
+		if(*BUL1_X+12 > monster2_1_x && *BUL1_X < monster2_1_x+30 && *BUL1_Y+12 > monster2_1_y && *BUL1_Y < monster2_1_y+30 && *MON2_EN == True && *BUL1_EN == 1){
+			*BUL1_EN=0;
+			monster2_1_health-=1;
+		}
+		if(*BUL2_X+12 > monster2_1_x && *BUL2_X < monster2_1_x+30 && *BUL2_Y+12 > monster2_1_y && *BUL2_Y < monster2_1_y+30 && *MON2_EN == True && *BUL2_EN == 1){
+			*BUL2_EN=0;
+			monster2_1_health-=1;
+		}
+		if(*BUL3_X+12 > monster2_1_x && *BUL3_X < monster2_1_x+30 && *BUL3_Y+12 > monster2_1_y && *BUL3_Y < monster2_1_y+30 && *MON2_EN == True && *BUL3_EN == 1){
+			*BUL3_EN=0;
+			monster2_1_health-=1;
+		}
+		if(*BUL1_X+12 > monster3_1_x && *BUL1_X < monster3_1_x+30 && *BUL1_Y+12 > monster3_1_y && *BUL1_Y < monster3_1_y+10 && *MON3_EN == True && *BUL1_EN == 1){
+			*BUL1_EN=0;
+		}
+		if(*BUL2_X+12 > monster3_1_x && *BUL2_X < monster3_1_x+30 && *BUL2_Y+12 > monster3_1_y && *BUL2_Y < monster3_1_y+10 && *MON3_EN == True && *BUL2_EN == 1){
+			*BUL2_EN=0;
+		}
+		if(*BUL3_X+12 > monster3_1_x && *BUL3_X < monster3_1_x+30 && *BUL3_Y+12 > monster3_1_y && *BUL3_Y < monster3_1_y+10 && *MON3_EN == True && *BUL3_EN == 1){
+			*BUL3_EN=0;
+		}
+
+		if(monster1_1_health == 0){
+			*MON1_EN = 0;
+			*EXP1_X = monster1_1_x-10;
+			*EXP1_Y = monster1_1_y-10;
+			*EXP1_EN = 1;
+		}
+		if(monster2_1_health == 0){
+			*MON2_EN = 0;
+			*EXP2_X = monster2_1_x;
+			*EXP2_Y = monster2_1_y;
+			*EXP2_EN = 1;
+		}
+
+		//Samus Collision with monster
+		if(*SAMUS_X+45 > monster3_1_x && *SAMUS_X < monster3_1_x+30 && ((*SAMUS_Y+70 > monster3_1_y && *SAMUS_Y < monster3_1_y+10 && grounded == True) || (*SAMUS_Y+45 > monster3_1_y && *SAMUS_Y < monster3_1_y+10 && grounded == False)) && *MON3_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
+			samus_inv_counter_start = True;
+			y_set = False;
+			*HEALTH = *HEALTH-1;
+		}
+		else if(*SAMUS_X+45 > monster2_1_x && *SAMUS_X < monster2_1_x+45 && ((*SAMUS_Y+70 > monster2_1_y && *SAMUS_Y < monster2_1_y+33 && grounded == True) || (*SAMUS_Y+45 > monster2_1_y && *SAMUS_Y < monster2_1_y+33 && grounded == False)) && *MON2_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
+			samus_inv_counter_start = True;
+			y_set = False;
+			*HEALTH = *HEALTH-1;
+		}
+		else if(*SAMUS_X+45 > monster1_1_x && *SAMUS_X < monster1_1_x+30 && ((*SAMUS_Y+70 > monster1_1_y && *SAMUS_Y < monster1_1_y+30 && grounded == True) || (*SAMUS_Y+45 > monster1_1_y && *SAMUS_Y < monster1_1_y+30 && grounded == False)) && *MON1_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
+			samus_inv_counter_start = True;
+			y_set = False;
+			*HEALTH = *HEALTH-1;
+		}
+
+		if(samus_inv_counter_start == True){
+			if(*SAMUS_EN == False){
+				*SAMUS_EN = True;
+			}
+			else{
+				*SAMUS_EN = False;
+			}
+			if(samus_inv_counter < 15){
+				if(scene[sceneNum][(*SAMUS_Y+15)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0 && *SAMUS_DIR == 0){
+					*SAMUS_X-=((25-samus_inv_counter)/2);
+				}
+				else if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0 && *SAMUS_DIR == 1){
+						*SAMUS_X+=((25-samus_inv_counter)/2);
+				}
+				if(scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+33)/30] == 0 && y_set == False){
+					y_inc= -5;
+					y_set = True;
+				}
+				has_control = False;
+			}
+			else{
+				has_control = True;
+			}
+			if(samus_inv_counter >= 50){
+				samus_inv_counter = 0;
+				samus_inv_counter_start = False;
+				*SAMUS_EN = True;
+			}
+			else{
+				samus_inv_counter+=1;
+			}
+		}
+		printf("%d %d", samus_inv_counter, samus_inv_counter_start);
+		//EXTRA
+		//debugging reset
+		if (keycode == 0x15){
+			sceneStart = True;
+		}
 	}//end while
+
 
 	return 0;
 }
