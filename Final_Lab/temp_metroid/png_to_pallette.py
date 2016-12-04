@@ -25,6 +25,9 @@ ims = [Image.open("../sprites/NEW/block_blue.png"),
        Image.open("../sprites/NEW/Standing_forward.png"),
        Image.open("../sprites/NEW/Game_Over.png"),
        Image.open("../sprites/NEW/end.png"),
+       Image.open("../sprites/NEW/Kraid.png"),
+       Image.open("../sprites/NEW/kraid_shoot.png"),
+       Image.open("../sprites/NEW/Kraid-throw.png"),
        Image.open("../sprites/NEW/title.gif"),]
 
 saveLocations = ["../sprites/MODIFIED/block_blue.png",
@@ -52,6 +55,9 @@ saveLocations = ["../sprites/MODIFIED/block_blue.png",
                  "../sprites/MODIFIED/Standing_forward.png",
                  "../sprites/MODIFIED/Game_Over.png",
                  "../sprites/MODIFIED/end.png",
+                 "../sprites/MODIFIED/Kraid.png",
+                 "../sprites/MODIFIED/kraid_shoot.png",
+                 "../sprites/MODIFIED/Kraid_throw.png",
                  "../sprites/MODIFIED/title.png",]
 
 saveLocations2 = ["../sprites/TEXT/block_blue.txt",
@@ -79,6 +85,9 @@ saveLocations2 = ["../sprites/TEXT/block_blue.txt",
                   "../sprites/TEXT/Standing_forward.txt",
                   "../sprites/TEXT/Game_Over.txt",
                   "../sprites/TEXT/end.txt",
+                  "../sprites/TEXT/Kraid.txt",
+                  "../sprites/TEXT/Kraid_throw.txt",
+                  "../sprites/TEXT/kraid_shoot.txt",
                   "../sprites/TEXT/title.txt",]
 
 pallette = [(255,111,207),
