@@ -56,9 +56,12 @@ module  lab8 			( input         CLOCK_50,
 	 wire hpi_r, hpi_w,hpi_cs;
 	 
 		// Logic signals for the sprite mapper:
-		logic samus_en, samus_dir, samus_walk, samus_jump;
+		logic samus_en, samus_dir, samus_walk, samus_jump, samus_up;
 		logic [9:0] samus_x, samus_y;
 
+		// VGA Signals:
+		logic [9:0] drawxsig, drawysig;
+		
 		// Background
 		logic [2:0]scene_number;
 
@@ -77,7 +80,7 @@ module  lab8 			( input         CLOCK_50,
 		logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y;
 
 		// Bullet
-		logic bullet1, bullet2, bullet3;
+		logic bullet1, bullet2, bullet3, b_emp;
 		logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y;
 	 
 	 
@@ -119,7 +122,7 @@ module  lab8 			( input         CLOCK_50,
 											.otg_hpi_data_out_port(hpi_data_out),
 											.otg_hpi_cs_export(hpi_cs),
 											.otg_hpi_r_export(hpi_r),
-											.otg_hpi_w_export(hpi_w)
+											.otg_hpi_w_export(hpi_w),
 											
 											// Our Game Config Here:
 											// Bullet:
@@ -132,6 +135,7 @@ module  lab8 			( input         CLOCK_50,
 											.bullet3_en_export(bullet3),
 											.bullet3_x_export(b3_x),
 											.bullet3_y_export(b3_y),
+											.b_emp_export(b_emp),
 											
 											// Health + Title + Background:
 											.health_export(health),
@@ -145,6 +149,7 @@ module  lab8 			( input         CLOCK_50,
 											.samus_en_export(samus_en),
 											.samus_jump_export(samus_jump),
 											.samus_walk_export(samus_walk),
+											.samus_up_export(samus_up),
 											.samus_x_export(samus_x),
 											.samus_y_export(samus_y),
 											
@@ -169,9 +174,7 @@ module  lab8 			( input         CLOCK_50,
 											.explosion2_y_export(exp2_y),
 											.explosion3_en_export(exp3_en),
 											.explosion3_x_export(exp3_x),
-											.explosion3_y_export(exp3_y),
-											
-											);
+											.explosion3_y_export(exp3_y));
 	
 	//Fill in the connections for the rest of the modules 
    vga_controller vgasync_instance(.*,.Reset(Reset_h),

@@ -11,7 +11,7 @@ input logic clk, reset,
 input logic vsync,
 
 // Samus
-input logic samus_en, samus_dir, samus_walk, samus_jump,
+input logic samus_en, samus_dir, samus_walk, samus_jump, samus_up,
 input logic [9:0] samus_x, samus_y,
 
 // Background
@@ -34,6 +34,7 @@ input logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y,
 // Bullet
 input logic bullet1, bullet2, bullet3,
 input logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y,
+input logic b_emp,
 
 input logic [9:0] vgaX, vgaY, 
 output logic [7:0] red, green, blue
@@ -46,9 +47,12 @@ output logic [7:0] red, green, blue
 	logic [6:0] monster_color;
 	logic [6:0] samus_color;
 	logic [6:0] title_color;
+	logic [6:0] energy_color;
 	logic [6:0] explosion_color;
    logic [6:0] color;
-	logic bulletDraw, monsterDraw, samusDraw, powerUpDraw, titleDraw, explosionDraw;
+	logic [6:0] g_o_color;
+	logic [6:0] win_color;
+	logic bulletDraw, monsterDraw, samusDraw, powerUpDraw, titleDraw, explosionDraw, energyDraw, winDraw, g_oDraw;
  
    // Texture Units: 
 	background bg(.background_start_addr(scene_number), 
@@ -60,9 +64,9 @@ output logic [7:0] red, green, blue
 					.enable3(bullet3), 
 					.vga_x(vgaX), .vga_y(vgaY), 
 					.sprite1_x(b1_x), .sprite1_y(b1_y), 
-					.sprite2_x(b2_y), .sprite2_y(b2_y), 
-					.sprite3_x(b3_y), .sprite3_y(b3_y), 
-					.empowered(1'b0),
+					.sprite2_x(b2_x), .sprite2_y(b2_y), 
+					.sprite3_x(b3_x), .sprite3_y(b3_y), 
+					.empowered(b_emp),
 					.color(bullet_color),
 					.draw(bulletDraw));
 	monster mon(.enable1(monster1), 
@@ -74,36 +78,48 @@ output logic [7:0] red, green, blue
 					.sprite3_x(monster3_x), .sprite3_y(monster3_y),
 					.color(monster_color), 
 					.draw(monsterDraw)); 
-	samus(.enable(samus_en), 
+	samus sam(.enable(samus_en), 
 			.vga_x(vgaX), .vga_y(vgaY),
 			.sprite_x(samus_x), .sprite_y(samus_y), 
-			.walk(samus_walk), .jump(samus_jump), 
+			.walk(samus_walk), .jump(samus_jump), .up(samus_up), 
 			.vsync(vsync),
-			.direction(samus_dir)), 
+			.direction(samus_dir), 
 			.color(samus_color), 
 			.draw(samusDraw));
-	gui info(.titleEn(title_en), 
-				.health(health),
-				.win_en(win_en),
-				.lose_en(lose_en),
+	gui info(.health(health),
 				.vga_x(vgaX), .vga_y(vgaY),
-				.color(title_color), 
-				.draw(titleDraw));
-	explosion explode(.enable1(explosion1), 
-							.enable2(explosion2), 
-							.enable3(explosion3), 
+				.color(energy_color), 
+				.draw(energyDraw));
+	explosion explode(.enable1(exp1_en), 
+							.enable2(exp2_en), 
+							.enable3(exp3_en), 
 							.vsync(vsync), .vga_x(vgaX), .vga_y(vgaY), 
 							.exp1_x(exp1_x), .exp1_y(exp1_y), 
 							.exp2_x(exp2_x), .exp2_y(exp2_y), 
 							.exp3_x(exp3_x), .exp3_y(exp3_y),
 							.color(explosion_color), .draw(explosionDraw));
-	
+	title tit(.titleEn(title_en),
+				 .vga_x(vgaX), .vga_y(vgaY),
+				 .color(title_color),
+				 .draw(titleDraw));
+	 game_over loss_sprite(	.loss_en(loss_en),
+									.vga_x(vgaX), .vga_y(vgaY),
+									.color(g_o_color),
+									.draw(g_oDraw));
+	 victory win_sprite(.win_en(win_en),
+								.vga_x(vgaX),
+								.vga_y(vgaY),
+								.color(win_color),
+								.draw(winDraw));
 	
 	// Select the color based on priority:
 	always_comb begin
 	   // Default:
 	   color = bg_color;
-	   if(titleDraw == 1'b1) color = title_color;
+		if(titleDraw == 1'b1) color = title_color;
+		else if(winDraw == 1'b1) color = win_color;
+		else if(g_oDraw == 1'b1) color = g_o_color;
+	   else if(energyDraw == 1'b1) color = energy_color;
 		else if(explosionDraw == 1'b1) color = explosion_color;
 		else if(samusDraw == 1'b1) color = samus_color;
 		else if(monsterDraw == 1'b1) color = monster_color;
@@ -297,7 +313,7 @@ output logic [7:0] red, green, blue
 			29: begin
 				red = 37;
 				green = 75;
-				blue = 258;
+				blue = 255;
 			end
 			//Color 30:
 			30: begin
@@ -364,10 +380,10 @@ endmodule
 //
 //--------------------------------------------------------------------------------------------
 module samus(
-	input logic  			enable, vsync, walk, jump,
+	input logic  			enable, vsync, walk, jump, up,
 	input logic  [10:0] 	vga_x, vga_y, sprite_x, sprite_y,
 	input logic direction,
-	output logic [5:0] 	color,
+	output logic [6:0] 	color,
 	output logic 			draw
 );
    // Direction:
@@ -397,13 +413,13 @@ module samus(
 	parameter [9:0] width7 = 45;
 	
 	// Sprites:
-	int samus1[height1][width1];
-	int samus2[height2][width2];
-	int samus3[height3][width3];
-	int samus4[height4][width4];
-	int samus5[height5][width5];
-	int samus6[height6][width6];
-	int samus7[height7][width7];
+	logic [6:0] samus1[height1][width1];
+	logic [6:0] samus2[height2][width2];
+	logic [6:0] samus3[height3][width3];
+	logic [6:0] samus4[height4][width4];
+	logic [6:0] samus5[height5][width5];
+	logic [6:0] samus6[height6][width6];
+	logic [6:0] samus7[height7][width7];
 	
 	logic [3:0] vsync_slow;
 	logic [1:0] counter;
@@ -892,7 +908,7 @@ module samus(
 	always_ff @ (posedge vsync_slow[3]) begin
 	    if(walk == 1'b0) counter <= 0;
 		 else if(counter == 2) counter <= 0;
-		 else counter <= counter + 1;
+		 else counter <= counter + 1'b1;
 	end
 	// If an animation is enabled determine the sprite_num:
 	always_comb begin
@@ -910,6 +926,12 @@ module samus(
 		     sprite_num = 3'b101;
 		 end
 		 if(jump == 1'b1 && walk == 1'b0) begin
+		     sprite_num = 3'b100;
+		 end
+		 if(up == 1'b1 && walk == 1'b0 && jump == 1'b0) begin
+		     sprite_num = 3'b000;
+		 end
+		 if(jump == 1'b1 && walk == 1'b1 && up == 1'b1) begin
 		     sprite_num = 3'b100;
 		 end
 	end
@@ -1092,7 +1114,7 @@ endmodule
 module monster(
 	input logic  			enable1, enable2, enable3,
 	input logic  [10:0] 	vga_x, vga_y, sprite1_x, sprite1_y, sprite2_x, sprite2_y, sprite3_x, sprite3_y,
-	output logic [5:0] 	color,
+	output logic [6:0] 	color,
 	output logic 			draw
 );
 	// Monster Sprites:
@@ -1103,9 +1125,9 @@ module monster(
 	parameter [9:0] height3 = 20;
 	parameter [9:0] width3 = 30;
 	
-	int monster1[height1][width1];
-	int monster2[height2][width2];
-	int monster3[height3][width3];
+	logic [6:0] monster1[height1][width1];
+	logic [6:0] monster2[height2][width2];
+	logic [6:0] monster3[height3][width3];
 	
 	always_ff begin
 		monster1 =   '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,28,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
@@ -1305,7 +1327,7 @@ module bullet(
 	input logic  			enable1, enable2, enable3,
 	input logic  [10:0] 	vga_x, vga_y, sprite1_x, sprite1_y, sprite2_x, sprite2_y, sprite3_x, sprite3_y,
 	input logic empowered,
-	output logic [5:0] 	color,
+	output logic [6:0] 	color,
 	output logic 			draw
 );
 // Mux the bullet instances:
@@ -1313,8 +1335,8 @@ module bullet(
 	parameter [9:0] height = 10;
 	parameter [9:0] width = 10;
 	
-	int BulletN [height][width];
-	int BulletE [height][width];
+	logic [6:0] BulletN [height][width];
+	logic [6:0] BulletE [height][width];
 	
 	always_ff begin
 	    BulletN = '{'{00,00,00,00,18,18,00,00,00,00},
@@ -1388,7 +1410,7 @@ endmodule
 module background(
    input logic  [10:0]	background_start_addr,
 	input logic  [9:0] 	vga_x, vga_y,
-	output logic [5:0] 	color
+	output logic [6:0] 	color
 );
 	// Background Tile sizes:
 	parameter [9:0] height = 30;
@@ -1399,24 +1421,47 @@ module background(
 	logic [10:0] background_x, background_y; // Normalized background array pointers:
 	logic [10:0] tile_x, tile_y; // Normalized tile coordinate pointers:
 	
-	logic [7:0] tile_num;
+	logic [6:0] tile_num;
 	
 	// Sprites: 8 different backgrounds:
-	int BG1 [height][width];
-	int BG2 [height][width];
-	int BG3 [height][width];
-	int BG4 [height][width];
-	int BG5 [height][width];
-	int BG6 [height][width];
-	int BG7 [height][width];
-	int BG8 [height][width];
-	int dummy [screenH][screenW];
+	logic [6:0] BG1 [height][width];
+	logic [6:0] BG2 [height][width];
+	logic [6:0] BG3 [height][width];
+	logic [6:0] BG4 [height][width];
+	logic [6:0] BG5 [height][width];
+	logic [6:0] BG6 [height][width];
+	logic [6:0] BG7 [height][width];
+	logic [6:0] BG8 [height][width];
+	//logic [6:0] dummy [screenH][screenW];
+	logic [6:0] scene1 [screenH][screenW];
+	logic [6:0] scene2 [screenH][screenW];
+	logic [6:0] scene3 [screenH][screenW];
+	logic [6:0] scene4 [screenH][screenW];
+	logic [6:0] scene5 [screenH][screenW];
 	
 	//-------------------------------------------------------------------------------------------------------------
 	// Sprite arrays + dummy background array:
 	//-------------------------------------------------------------------------------------------------------------
 	always_ff begin
-		dummy = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		/*dummy = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,6,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,4,0,0,1,1},
+					 '{1,0,0,0,0,0,0,1,2,3,3,0,0,0,0,7,7,5,0,0,1,1},
+					 '{1,0,0,0,0,0,0,3,2,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,1,1,1,1,0,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,2,3,2,1,1,1,1,1,1,1,1},
+					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}}; */
+		
+		// Scene 1:
+		scene1 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
 					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
 					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
@@ -1432,6 +1477,79 @@ module background(
 					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
 					 '{1,0,0,0,0,0,0,0,0,2,2,2,3,2,1,1,1,1,1,1,1,1},
 					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		
+		// Scene 2:
+		scene2 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,6,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,4,0,0,1,1},
+					 '{1,0,0,0,0,0,0,1,2,3,3,0,0,0,0,7,7,5,0,0,1,1},
+					 '{1,0,0,0,0,0,0,3,2,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,1,1,1,1,0,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,2,3,2,1,1,1,1,1,1,1,1},
+					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		
+		// Scene 3:
+		scene3 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,6,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,4,0,0,1,1},
+					 '{1,0,0,0,0,0,0,1,2,3,3,0,0,0,0,7,7,5,0,0,1,1},
+					 '{1,0,0,0,0,0,0,3,2,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,1,1,1,1,0,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,2,3,2,1,1,1,1,1,1,1,1},
+					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		
+		// Scene 4:
+		scene4 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,6,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,4,0,0,1,1},
+					 '{1,0,0,0,0,0,0,1,2,3,3,0,0,0,0,7,7,5,0,0,1,1},
+					 '{1,0,0,0,0,0,0,3,2,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,1,1,1,1,0,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
+					 '{1,0,0,0,0,0,0,0,0,2,2,2,3,2,1,1,1,1,1,1,1,1},
+					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		
+		// Scene 5:
+		scene5 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
+					 '{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
+					 '{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
+					 '{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
+					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
+					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
+					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+					 '{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
+					 '{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+					 '{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
+					 '{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
+					 '{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		
 		// All Black (08):
 		BG1 = '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 		        '{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
@@ -1701,89 +1819,89 @@ module background(
 			tile_x = 1;
 		end
 		if(vga_x >= 2*width && vga_x < 3*width) begin
-			background_x = 2*width;
+			background_x = 11'd2*width;
 			tile_x = 2;
 		end
 		if(vga_x >= 3*width && vga_x < 4*width) begin
-			background_x = 3*width;
+			background_x = 11'd3*width;
 			tile_x = 3;
 		end
 		if(vga_x >= 4*width && vga_x < 5*width) begin 
-			background_x = 4*width;
+			background_x = 11'd4*width;
 			tile_x = 4;
 		end
 		if(vga_x >= 5*width && vga_x < 6*width) begin
-			background_x = 5*width;
+			background_x = 11'd5*width;
 			tile_x = 5;
 		end
 		if(vga_x >= 6*width && vga_x < 7*width) begin
-			background_x = 6*width;
+			background_x = 11'd6*width;
 			tile_x = 6;
 		end
 		if(vga_x >= 7*width && vga_x < 8*width) begin
-			background_x = 7*width;
+			background_x = 11'd7*width;
 			tile_x = 7;
 		end
 		if(vga_x >= 8*width && vga_x < 9*width) begin
-			background_x = 8*width;
+			background_x = 11'd8*width;
 			tile_x = 8;
 		end
 		if(vga_x >= 9*width && vga_x < 10*width) begin
-			background_x = 9*width;
+			background_x = 11'd9*width;
 			tile_x = 9;
 		end
 		if(vga_x >= 10*width && vga_x < 11*width) begin
-			background_x = 10*width;
+			background_x = 11'd10*width;
 			tile_x = 10;
 		end
 		if(vga_x >= 11*width && vga_x < 12*width) begin
-			background_x = 11*width;
+			background_x = 11'd11*width;
 			tile_x = 11;
 		end
 		if(vga_x >= 12*width && vga_x < 13*width) begin
-			background_x = 12*width;
+			background_x = 11'd12*width;
 			tile_x = 12;
 		end
 		if(vga_x >= 13*width && vga_x < 14*width) begin
-			background_x = 13*width;
+			background_x = 11'd13*width;
 			tile_x = 13;
 		end
 		if(vga_x >= 14*width && vga_x < 15*width) begin
-			background_x = 14*width;
+			background_x = 11'd14*width;
 			tile_x = 14;
 		end
 		if(vga_x >= 15*width && vga_x < 16*width) begin
-			background_x = 15*width;
+			background_x = 11'd15*width;
 			tile_x = 15;
 		end
 		if(vga_x >= 16*width && vga_x < 17*width) begin
-			background_x = 16*width;
+			background_x = 11'd16*width;
 			tile_x = 16;
 		end
 		if(vga_x >= 17*width && vga_x < 18*width) begin
-			background_x = 17*width;
+			background_x = 11'd17*width;
 			tile_x = 17;
 		end
 		if(vga_x >= 18*width && vga_x < 19*width) begin
-			background_x = 18*width;
+			background_x = 11'd18*width;
 			tile_x = 18;
 		end
 		if(vga_x >= 19*width && vga_x < 20*width) begin
-			background_x = 19*width;
+			background_x = 11'd19*width;
 			tile_x = 19;
 		end
 		if(vga_x >= 20*width && vga_x < 21*width) begin
-			background_x = 20*width;
+			background_x = 11'd20*width;
 			tile_x = 20;
 		end
 		if(vga_x >= 21*width && vga_x < 22*width) begin
-			background_x = 21*width;
+			background_x = 11'd21*width;
 			tile_x = 21;
 		end
 		
 		
 		if(vga_y >= 0 && vga_y < height) begin
-			background_y = 0;
+			background_y = 11'd0;
 			tile_y = 0;
 		end
 		if(vga_y >= height && vga_y < 2*height) begin
@@ -1791,59 +1909,59 @@ module background(
 			tile_y = 1;
 		end
 		if(vga_y >= 2*height && vga_y < 3*height) begin
-			background_y = 2*height;
+			background_y = 11'd2*height;
 			tile_y = 2;
 		end
 		if(vga_y >= 3*height && vga_y < 4*height) begin
-			background_y = 3*height;
+			background_y = 11'd3*height;
 			tile_y = 3;
 		end
 		if(vga_y >= 4*height && vga_y < 5*height) begin
-			background_y = 4*height;
+			background_y = 11'd4*height;
 			tile_y = 4;
 		end
 		if(vga_y >= 5*height && vga_y	< 6*height) begin
-			background_y = 5*height;
+			background_y = 11'd5*height;
 			tile_y = 5;
 		end
 		if(vga_y >= 6*height && vga_y < 7*height) begin
-			background_y = 6*height;
+			background_y = 11'd6*height;
 			tile_y = 6;
 		end
 		if(vga_y >= 7*height && vga_y < 8*height) begin
-			background_y = 7*height;
+			background_y = 11'd7*height;
 			tile_y = 7;
 		end
 		if(vga_y >= 8*height && vga_y < 9*height) begin
-			background_y = 8*height;
+			background_y = 11'd8*height;
 			tile_y = 8;
 		end
 		if(vga_y >= 9*height && vga_y < 10*height) begin
-			background_y = 9*height;
+			background_y = 11'd9*height;
 			tile_y = 9;
 		end
 		if(vga_y >= 10*height && vga_y < 11*height) begin
-			background_y = 10*height;
+			background_y = 11'd10*height;
 			tile_y = 10;
 		end
 		if(vga_y >= 11*height && vga_y < 12*height) begin
-			background_y = 11*height;
+			background_y = 11'd11*height;
 			tile_y = 11;
 		end
 		if(vga_y >= 12*height && vga_y < 13*height) begin
-			background_y = 12*height;
+			background_y = 11'd12*height;
 			tile_y = 12;
 		end
 		if(vga_y >= 13*height && vga_y < 14*height) begin
-			background_y = 13*height;
+			background_y = 11'd13*height;
 			tile_y = 13;
 		end
 		if(vga_y >= 14*height && vga_y < 15*height) begin
-			background_y = 14*height;
+			background_y = 11'd14*height;
 			tile_y = 14;
 		end
 		if(vga_y >= 15*height && vga_y < 16*height) begin
-			background_y = 15*height;
+			background_y = 11'd15*height;
 			tile_y = 15;
 		end
 	end
@@ -1852,23 +1970,26 @@ module background(
 	always_comb begin
 	   // Default:
 		tile_num = 0;
-		case(background_start_addr) begin
+		case(background_start_addr)
 			0: begin
 				tile_num = scene1[tile_y][tile_x];
 			end
 			1: begin
-			
+			   tile_num = scene2[tile_y][tile_x];
 			end
 			2: begin
-			
+			   tile_num = scene3[tile_y][tile_x];
 			end
 			3: begin
-			
+			   tile_num = scene4[tile_y][tile_x];
 			end
 			4: begin
-			
+			   tile_num = scene5[tile_y][tile_x];
 			end
-		end
+			default: begin
+			   tile_num = 0;
+			end
+		endcase
 	end
 	
 	// Select the correct background tile from the background tile array:
@@ -1911,10 +2032,9 @@ endmodule
 //
 // Controls the title 
 module gui(
-   input logic titleEn,
 	input logic [1:0] health,
 	input logic [9:0] vga_x, vga_y,
-	output logic [5:0] color,
+	output logic [6:0] color,
 	output logic draw
 );
 
@@ -1932,8 +2052,8 @@ module gui(
 	parameter health3_x = 75;
 	parameter health_y = 23;
 	
-	int EN[height1][width1];
-	int EN_indicator[height2][width2];
+	logic [6:0] EN[height1][width1];
+	logic [6:0] EN_indicator[height2][width2];
 	
 	always_ff begin
 		EN = '{'{33,24,24,24,24,24,24,24,24,24,24,24,24,34,33,29,24,24,29,33,33,33,33,33,29,24,24,34,33,33},
@@ -2011,7 +2131,7 @@ endmodule
 module explosion(
 	input logic enable1, enable2, enable3, vsync, 
 	input logic [9:0] vga_x, vga_y, exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y,
-	output logic [5:0] color,
+	output logic [6:0] color,
 	output logic draw
 );
 	//Sprites:
@@ -2021,8 +2141,8 @@ module explosion(
 	parameter height2 = 60;
 	parameter width2 = 60;
 	
-	int explosion1[height1][width1];
-	int explosion2[height2][width2];
+	logic [6:0] explosion1[height1][width1];
+	logic [6:0] explosion2[height2][width2];
 	
 	logic vsync_slow[3:0];
 	logic [1:0] counter1, counter2, counter3;
@@ -2173,31 +2293,31 @@ module explosion(
 	
 	always_ff @ (posedge vsync_slow[3]) begin
 		// When enable goes on iterate through the explosion textures:
-		if(enable1 == 0) released1 <= 0;
-		if(enable1 == 1 && released1 == 0) begin
-			counter1 <= 1;
-			released1 <= 1;
+		if(enable1 == 1'b0) released1 <= 1'b0;
+		if(enable1 == 1'b1 && released1 == 1'b0) begin
+			counter1 <= 2'b01;
+			released1 <= 1'b1;
 		end
-		if(counter1 != 0) counter1 <= counter1 + 1;
-		if(counter1 >= 2) counter1 <= 0;
+		if(counter1 != 1'b0) counter1 <= counter1 + 2'b01;
+		if(counter1 >= 2'b10) counter1 <= 2'b00;
 		
 		// 
-		if(enable2 == 0) released2 <= 0;
-		if(enable2 == 1 && released2 == 0) begin
-			counter2 <= 1;
-			released2 <= 1;
+		if(enable2 == 1'b0) released2 <= 1'b0;
+		if(enable2 == 1'b1 && released2 == 1'b0) begin
+			counter2 <= 2'b01;
+			released2 <= 1'b1;
 		end
-		if(counter2 != 0) counter2 <= counter2 + 1;
-		if(counter2 >= 2) counter2 <= 0;
+		if(counter2 != 2'b00) counter2 <= counter2 + 2'b01;
+		if(counter2 >= 2'b10) counter2 <= 2'b00;
 		
 		//
-		if(enable3 == 0) released3 <= 0;
-		if(enable3 == 1 && released3 == 0) begin
-			counter3 <= 1;
-			released3 <= 1;
+		if(enable3 == 1'b0) released3 <= 1'b0;
+		if(enable3 == 1'b1 && released3 == 1'b0) begin
+			counter3 <= 2'b01;
+			released3 <= 1'b1;
 		end
-		if(counter3 != 0) counter3 <= counter3 + 1;
-		if(counter3 >= 2) counter3 <= 0;
+		if(counter3 != 2'b00) counter3 <= counter3 + 2'b01;
+		if(counter3 >= 2'b10) counter3 <= 2'b00;
 	end
 	
 	always_comb begin

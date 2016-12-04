@@ -3,6 +3,10 @@
 	<section name="NewClassWizardPage">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+		<item value="388" key="size.height"/>
+		<item value="272" key="location.y"/>
+		<item value="428" key="size.width"/>
+		<item value="760" key="location.x"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

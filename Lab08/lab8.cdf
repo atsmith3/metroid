@@ -1,10 +1,10 @@
-/* Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version */
+/* Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/zgleaso2/Downloads/ECE_385-master/Lab08/") File("lab8.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("/home/andrew/Documents/ECE/ECE_385/Lab08/") File("lab8.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

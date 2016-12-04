@@ -105,7 +105,7 @@ module  lab8 			( input         CLOCK_50,
 												   .DrawX(drawxsig), 
 								               .DrawY(drawysig));
    
-    ball ball_instance(.*,.Reset(Reset_h), .frame_clk(VGA_CLK), .keycode(keycode), .BallX(ballxsig), .BallY(ballysig), .BallS(ballsizesig));
+    ball ball_instance(.*,.Reset(Reset_h), .frame_clk(VGA_VS), .keycode(keycode), .BallX(ballxsig), .BallY(ballysig), .BallS(ballsizesig));
    
     color_mapper color_instance(.BallX(ballxsig), .BallY(ballysig), .DrawX(drawxsig), .DrawY(drawysig), .Ball_size(ballsizesig), .Red(VGA_R), .Green(VGA_G), .Blue(VGA_B));
 										  
