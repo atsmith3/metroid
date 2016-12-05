@@ -24,7 +24,7 @@ input logic win_en,
 input logic [1:0] health,
 
 // Monster
-input logic monster1, monster2, monster3,
+input logic monster1, monster2, monster3, monster3_dir,
 input logic [9:0] monster1_x, monster1_y, monster2_x, monster2_y, monster3_x, monster3_y,
 
 // Explosion
@@ -37,7 +37,11 @@ input logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y,
 input logic b_emp,
 
 input logic [9:0] vgaX, vgaY, 
-output logic [7:0] red, green, blue
+output logic [7:0] red, green, blue,
+
+// Kraid
+input logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_dir, kraid_as_dir,
+input logic  [10:0] 	kraid_y, kraid_x, kraid_spike_x, kraid_spike_y, kraid_throw_x, kraid_throw_y
 );
 
 	// Internal Signals:
@@ -52,7 +56,8 @@ output logic [7:0] red, green, blue
    logic [6:0] color;
 	logic [6:0] g_o_color;
 	logic [6:0] win_color;
-	logic bulletDraw, monsterDraw, samusDraw, powerUpDraw, titleDraw, explosionDraw, energyDraw, winDraw, g_oDraw;
+	logic [6:0] kraid_color;
+	logic bulletDraw, monsterDraw, samusDraw, powerUpDraw, titleDraw, explosionDraw, energyDraw, winDraw, g_oDraw, kraidDraw;
  
    // Texture Units: 
 	background bg(.background_start_addr(scene_number), 
@@ -72,6 +77,7 @@ output logic [7:0] red, green, blue
 	monster mon(.enable1(monster1), 
 					.enable2(monster2), 
 					.enable3(monster3),
+					.sprite3_dir(monster3_dir),
 					.vga_x(vgaX), .vga_y(vgaY), 
 					.sprite1_x(monster1_x), .sprite1_y(monster1_y), 
 					.sprite2_x(monster2_x), .sprite2_y(monster2_y), 
@@ -111,6 +117,19 @@ output logic [7:0] red, green, blue
 								.vga_y(vgaY),
 								.color(win_color),
 								.draw(winDraw));
+	  kraid kr(	.kraid_r_en(kraid_r_en), 
+					.kraid_g_en(kraid_g_en), 
+					.kraid_n_en(kraid_n_en), 
+					.kraid_shoot_en(kraid_shoot_en), 
+					.kraid_throw_en(kraid_throw_en), 
+					.kraid_dir(kraid_dir), 
+					.kraid_as_dir(kraid_as_dir),
+					.vga_x(vgaX), .vga_y(vgaY), 
+					.kraid_y(kraid_y), .kraid_x(kraid_x), 
+					.shoot_x(kraid_spike_x), .shoot_y(kraid_spike_y), 
+					.throw_x(kraid_throw_x), .throw_y(kraid_throw_y),
+					.color(kraid_color),
+					.draw(kraidDraw));
 								
 	
 	// Select the color based on priority:
@@ -123,6 +142,7 @@ output logic [7:0] red, green, blue
 	   else if(energyDraw == 1'b1) color = energy_color;
 		else if(explosionDraw == 1'b1) color = explosion_color;
 		else if(samusDraw == 1'b1) color = samus_color;
+		else if(kraidDraw == 1'b1) color = kraid_color;
 		else if(monsterDraw == 1'b1) color = monster_color;
 		else if(bulletDraw == 1'b1) color = bullet_color;
 		else color = bg_color; 
@@ -1114,7 +1134,7 @@ endmodule
 //		
 //--------------------------------------------------------------------------------------------
 module monster(
-	input logic  			enable1, enable2, enable3,
+	input logic  			enable1, enable2, enable3, sprite3_dir,
 	input logic  [10:0] 	vga_x, vga_y, sprite1_x, sprite1_y, sprite2_x, sprite2_y, sprite3_x, sprite3_y,
 	output logic [6:0] 	color,
 	output logic 			draw
@@ -1244,10 +1264,10 @@ module monster(
 				draw = 1'b1;
 				color = monster3[vga_y - sprite3_y][vga_x - sprite3_x];
 			end
-			if(direction == 1'b1) begin
-				if(samus7[vga_y - sprite_y][sprite_x + width7 - 1 - vga_x] != 0) begin
+			if(sprite3_dir == 1'b1) begin
+				if(monster3[vga_y - sprite3_y][sprite3_x + width3 - 1 - vga_x] != 0) begin
 					draw = 1'b1;
-					color = samus7[vga_y - sprite_y][sprite_x + width7 - 1 - vga_x];
+					color = monster3[vga_y - sprite3_y][sprite3_x + width3 - 1 - vga_x];
 				end
 			end
 		end

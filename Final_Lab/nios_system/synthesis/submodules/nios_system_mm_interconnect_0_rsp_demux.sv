@@ -28,8 +28,8 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         nios_system_mm_interconnect_0_rsp_demux
-//   ST_DATA_W:           111
-//   ST_CHANNEL_W:        53
+//   ST_DATA_W:           113
+//   ST_CHANNEL_W:        67
 //   NUM_OUTPUTS:         1
 //   VALID_WIDTH:         1
 // ------------------------------------------
@@ -46,8 +46,8 @@ module nios_system_mm_interconnect_0_rsp_demux
     // Sink
     // -------------------
     input  [1-1      : 0]   sink_valid,
-    input  [111-1    : 0]   sink_data, // ST_DATA_W=111
-    input  [53-1 : 0]   sink_channel, // ST_CHANNEL_W=53
+    input  [113-1    : 0]   sink_data, // ST_DATA_W=113
+    input  [67-1 : 0]   sink_channel, // ST_CHANNEL_W=67
     input                         sink_startofpacket,
     input                         sink_endofpacket,
     output                        sink_ready,
@@ -56,8 +56,8 @@ module nios_system_mm_interconnect_0_rsp_demux
     // Sources 
     // -------------------
     output reg                      src0_valid,
-    output reg [111-1    : 0] src0_data, // ST_DATA_W=111
-    output reg [53-1 : 0] src0_channel, // ST_CHANNEL_W=53
+    output reg [113-1    : 0] src0_data, // ST_DATA_W=113
+    output reg [67-1 : 0] src0_channel, // ST_CHANNEL_W=67
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
     input                           src0_ready,
@@ -94,7 +94,7 @@ module nios_system_mm_interconnect_0_rsp_demux
     // -------------------
     assign ready_vector[0] = src0_ready;
 
-    assign sink_ready = |(sink_channel & {{52{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
+    assign sink_ready = |(sink_channel & {{66{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
 
 endmodule
 

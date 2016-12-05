@@ -1,5 +1,6 @@
 
 module nios_system (
+	b_emp_export,
 	bullet1_en_export,
 	bullet1_x_export,
 	bullet1_y_export,
@@ -42,6 +43,7 @@ module nios_system (
 	samus_dir_export,
 	samus_en_export,
 	samus_jump_export,
+	samus_up_export,
 	samus_walk_export,
 	samus_x_export,
 	samus_y_export,
@@ -58,9 +60,22 @@ module nios_system (
 	sdram_wire_we_n,
 	title_en_export,
 	win_en_export,
-	samus_up_export,
-	b_emp_export);	
+	monster3_dir_export,
+	kraid_dir_export,
+	kraid_r_en_export,
+	kraid_n_en_export,
+	kraid_g_en_export,
+	kraid_throw_y_export,
+	kraid_throw_x_export,
+	kraid_spike_y_export,
+	kraid_spike_x_export,
+	kraid_y_export,
+	kraid_x_export,
+	kraid_as_dir_export,
+	kraid_throw_en_export,
+	kraid_shoot_en_export);	
 
+	output		b_emp_export;
 	output		bullet1_en_export;
 	output	[9:0]	bullet1_x_export;
 	output	[9:0]	bullet1_y_export;
@@ -103,6 +118,7 @@ module nios_system (
 	output		samus_dir_export;
 	output		samus_en_export;
 	output		samus_jump_export;
+	output		samus_up_export;
 	output		samus_walk_export;
 	output	[9:0]	samus_x_export;
 	output	[9:0]	samus_y_export;
@@ -119,6 +135,18 @@ module nios_system (
 	output		sdram_wire_we_n;
 	output		title_en_export;
 	output		win_en_export;
-	output		samus_up_export;
-	output		b_emp_export;
+	output		monster3_dir_export;
+	output		kraid_dir_export;
+	output		kraid_r_en_export;
+	output		kraid_n_en_export;
+	output		kraid_g_en_export;
+	output	[9:0]	kraid_throw_y_export;
+	output	[9:0]	kraid_throw_x_export;
+	output	[9:0]	kraid_spike_y_export;
+	output	[9:0]	kraid_spike_x_export;
+	output	[9:0]	kraid_y_export;
+	output	[9:0]	kraid_x_export;
+	output		kraid_as_dir_export;
+	output		kraid_throw_en_export;
+	output		kraid_shoot_en_export;
 endmodule

@@ -1,4 +1,5 @@
 	nios_system u0 (
+		.b_emp_export           (<connected-to-b_emp_export>),           //           b_emp.export
 		.bullet1_en_export      (<connected-to-bullet1_en_export>),      //      bullet1_en.export
 		.bullet1_x_export       (<connected-to-bullet1_x_export>),       //       bullet1_x.export
 		.bullet1_y_export       (<connected-to-bullet1_y_export>),       //       bullet1_y.export
@@ -41,6 +42,7 @@
 		.samus_dir_export       (<connected-to-samus_dir_export>),       //       samus_dir.export
 		.samus_en_export        (<connected-to-samus_en_export>),        //        samus_en.export
 		.samus_jump_export      (<connected-to-samus_jump_export>),      //      samus_jump.export
+		.samus_up_export        (<connected-to-samus_up_export>),        //        samus_up.export
 		.samus_walk_export      (<connected-to-samus_walk_export>),      //      samus_walk.export
 		.samus_x_export         (<connected-to-samus_x_export>),         //         samus_x.export
 		.samus_y_export         (<connected-to-samus_y_export>),         //         samus_y.export
@@ -57,7 +59,19 @@
 		.sdram_wire_we_n        (<connected-to-sdram_wire_we_n>),        //                .we_n
 		.title_en_export        (<connected-to-title_en_export>),        //        title_en.export
 		.win_en_export          (<connected-to-win_en_export>),          //          win_en.export
-		.samus_up_export        (<connected-to-samus_up_export>),        //        samus_up.export
-		.b_emp_export           (<connected-to-b_emp_export>)            //           b_emp.export
+		.monster3_dir_export    (<connected-to-monster3_dir_export>),    //    monster3_dir.export
+		.kraid_dir_export       (<connected-to-kraid_dir_export>),       //       kraid_dir.export
+		.kraid_r_en_export      (<connected-to-kraid_r_en_export>),      //      kraid_r_en.export
+		.kraid_n_en_export      (<connected-to-kraid_n_en_export>),      //      kraid_n_en.export
+		.kraid_g_en_export      (<connected-to-kraid_g_en_export>),      //      kraid_g_en.export
+		.kraid_throw_y_export   (<connected-to-kraid_throw_y_export>),   //   kraid_throw_y.export
+		.kraid_throw_x_export   (<connected-to-kraid_throw_x_export>),   //   kraid_throw_x.export
+		.kraid_spike_y_export   (<connected-to-kraid_spike_y_export>),   //   kraid_spike_y.export
+		.kraid_spike_x_export   (<connected-to-kraid_spike_x_export>),   //   kraid_spike_x.export
+		.kraid_y_export         (<connected-to-kraid_y_export>),         //         kraid_y.export
+		.kraid_x_export         (<connected-to-kraid_x_export>),         //         kraid_x.export
+		.kraid_as_dir_export    (<connected-to-kraid_as_dir_export>),    //    kraid_as_dir.export
+		.kraid_throw_en_export  (<connected-to-kraid_throw_en_export>),  //  kraid_throw_en.export
+		.kraid_shoot_en_export  (<connected-to-kraid_shoot_en_export>)   //  kraid_shoot_en.export
 	);
 

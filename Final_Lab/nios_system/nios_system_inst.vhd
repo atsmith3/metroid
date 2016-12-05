@@ -1,5 +1,6 @@
 	component nios_system is
 		port (
+			b_emp_export           : out   std_logic;                                        -- export
 			bullet1_en_export      : out   std_logic;                                        -- export
 			bullet1_x_export       : out   std_logic_vector(9 downto 0);                     -- export
 			bullet1_y_export       : out   std_logic_vector(9 downto 0);                     -- export
@@ -42,6 +43,7 @@
 			samus_dir_export       : out   std_logic;                                        -- export
 			samus_en_export        : out   std_logic;                                        -- export
 			samus_jump_export      : out   std_logic;                                        -- export
+			samus_up_export        : out   std_logic;                                        -- export
 			samus_walk_export      : out   std_logic;                                        -- export
 			samus_x_export         : out   std_logic_vector(9 downto 0);                     -- export
 			samus_y_export         : out   std_logic_vector(9 downto 0);                     -- export
@@ -58,13 +60,26 @@
 			sdram_wire_we_n        : out   std_logic;                                        -- we_n
 			title_en_export        : out   std_logic;                                        -- export
 			win_en_export          : out   std_logic;                                        -- export
-			samus_up_export        : out   std_logic;                                        -- export
-			b_emp_export           : out   std_logic                                         -- export
+			monster3_dir_export    : out   std_logic;                                        -- export
+			kraid_dir_export       : out   std_logic;                                        -- export
+			kraid_r_en_export      : out   std_logic;                                        -- export
+			kraid_n_en_export      : out   std_logic;                                        -- export
+			kraid_g_en_export      : out   std_logic;                                        -- export
+			kraid_throw_y_export   : out   std_logic_vector(9 downto 0);                     -- export
+			kraid_throw_x_export   : out   std_logic_vector(9 downto 0);                     -- export
+			kraid_spike_y_export   : out   std_logic_vector(9 downto 0);                     -- export
+			kraid_spike_x_export   : out   std_logic_vector(9 downto 0);                     -- export
+			kraid_y_export         : out   std_logic_vector(9 downto 0);                     -- export
+			kraid_x_export         : out   std_logic_vector(9 downto 0);                     -- export
+			kraid_as_dir_export    : out   std_logic;                                        -- export
+			kraid_throw_en_export  : out   std_logic;                                        -- export
+			kraid_shoot_en_export  : out   std_logic                                         -- export
 		);
 	end component nios_system;
 
 	u0 : component nios_system
 		port map (
+			b_emp_export           => CONNECTED_TO_b_emp_export,           --           b_emp.export
 			bullet1_en_export      => CONNECTED_TO_bullet1_en_export,      --      bullet1_en.export
 			bullet1_x_export       => CONNECTED_TO_bullet1_x_export,       --       bullet1_x.export
 			bullet1_y_export       => CONNECTED_TO_bullet1_y_export,       --       bullet1_y.export
@@ -107,6 +122,7 @@
 			samus_dir_export       => CONNECTED_TO_samus_dir_export,       --       samus_dir.export
 			samus_en_export        => CONNECTED_TO_samus_en_export,        --        samus_en.export
 			samus_jump_export      => CONNECTED_TO_samus_jump_export,      --      samus_jump.export
+			samus_up_export        => CONNECTED_TO_samus_up_export,        --        samus_up.export
 			samus_walk_export      => CONNECTED_TO_samus_walk_export,      --      samus_walk.export
 			samus_x_export         => CONNECTED_TO_samus_x_export,         --         samus_x.export
 			samus_y_export         => CONNECTED_TO_samus_y_export,         --         samus_y.export
@@ -123,7 +139,19 @@
 			sdram_wire_we_n        => CONNECTED_TO_sdram_wire_we_n,        --                .we_n
 			title_en_export        => CONNECTED_TO_title_en_export,        --        title_en.export
 			win_en_export          => CONNECTED_TO_win_en_export,          --          win_en.export
-			samus_up_export        => CONNECTED_TO_samus_up_export,        --        samus_up.export
-			b_emp_export           => CONNECTED_TO_b_emp_export            --           b_emp.export
+			monster3_dir_export    => CONNECTED_TO_monster3_dir_export,    --    monster3_dir.export
+			kraid_dir_export       => CONNECTED_TO_kraid_dir_export,       --       kraid_dir.export
+			kraid_r_en_export      => CONNECTED_TO_kraid_r_en_export,      --      kraid_r_en.export
+			kraid_n_en_export      => CONNECTED_TO_kraid_n_en_export,      --      kraid_n_en.export
+			kraid_g_en_export      => CONNECTED_TO_kraid_g_en_export,      --      kraid_g_en.export
+			kraid_throw_y_export   => CONNECTED_TO_kraid_throw_y_export,   --   kraid_throw_y.export
+			kraid_throw_x_export   => CONNECTED_TO_kraid_throw_x_export,   --   kraid_throw_x.export
+			kraid_spike_y_export   => CONNECTED_TO_kraid_spike_y_export,   --   kraid_spike_y.export
+			kraid_spike_x_export   => CONNECTED_TO_kraid_spike_x_export,   --   kraid_spike_x.export
+			kraid_y_export         => CONNECTED_TO_kraid_y_export,         --         kraid_y.export
+			kraid_x_export         => CONNECTED_TO_kraid_x_export,         --         kraid_x.export
+			kraid_as_dir_export    => CONNECTED_TO_kraid_as_dir_export,    --    kraid_as_dir.export
+			kraid_throw_en_export  => CONNECTED_TO_kraid_throw_en_export,  --  kraid_throw_en.export
+			kraid_shoot_en_export  => CONNECTED_TO_kraid_shoot_en_export   --  kraid_shoot_en.export
 		);
 

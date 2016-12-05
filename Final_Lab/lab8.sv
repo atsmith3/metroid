@@ -55,33 +55,37 @@ module  lab8 			( input         CLOCK_50,
 	 wire [15:0] hpi_data_in, hpi_data_out;
 	 wire hpi_r, hpi_w,hpi_cs;
 	 
-		// Logic signals for the sprite mapper:
-		logic samus_en, samus_dir, samus_walk, samus_jump, samus_up;
-		logic [9:0] samus_x, samus_y;
+	// Logic signals for the sprite mapper:
+	logic samus_en, samus_dir, samus_walk, samus_jump, samus_up;
+	logic [9:0] samus_x, samus_y;
 
-		// VGA Signals:
-		logic [9:0] drawxsig, drawysig;
-		
-		// Background
-		logic [2:0]scene_number;
+	// VGA Signals:
+	logic [9:0] drawxsig, drawysig;
+	
+	// Background
+	logic [2:0]scene_number;
 
-		// GUI
-		logic title_en;
-		logic loss_en;
-		logic win_en;
-		logic [1:0] health;
+	// GUI
+	logic title_en;
+	logic loss_en;
+	logic win_en;
+	logic [1:0] health;
 
-		// Monster
-		logic monster1, monster2, monster3;
-		logic [9:0] monster1_x, monster1_y, monster2_x, monster2_y, monster3_x, monster3_y;
+	// Monster
+	logic monster1, monster2, monster3, monster3_dir;
+	logic [9:0] monster1_x, monster1_y, monster2_x, monster2_y, monster3_x, monster3_y;
 
-		// Explosion
-		logic exp1_en, exp2_en, exp3_en;
-		logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y;
+	// Explosion
+	logic exp1_en, exp2_en, exp3_en;
+	logic [9:0] exp1_x, exp1_y, exp2_x, exp2_y, exp3_x, exp3_y;
 
-		// Bullet
-		logic bullet1, bullet2, bullet3, b_emp;
-		logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y;
+	// Bullet
+	logic bullet1, bullet2, bullet3, b_emp;
+	logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y;
+	
+	// Kraid
+	logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_dir, kraid_as_dir;
+	logic  [10:0] 	kraid_y, kraid_x, kraid_spike_x, kraid_spike_y, kraid_throw_x, kraid_throw_y;
 	 
 	 
 	 
@@ -164,6 +168,7 @@ module  lab8 			( input         CLOCK_50,
 											.monster3_en_export(monster3),
 											.monster3_x_export(monster3_x),
 											.monster3_y_export(monster3_y),
+											.monster3_dir_export(monster3_dir),
 											
 										   // Explosions:
 											.explosion1_en_export(exp1_en),
@@ -174,7 +179,19 @@ module  lab8 			( input         CLOCK_50,
 											.explosion2_y_export(exp2_y),
 											.explosion3_en_export(exp3_en),
 											.explosion3_x_export(exp3_x),
-											.explosion3_y_export(exp3_y));
+											.explosion3_y_export(exp3_y),
+											
+											// Kraid:
+											.kraid_r_en_export(kraid_r_en), 
+											.kraid_g_en_export(kraid_g_en), 
+											.kraid_n_en_export(kraid_n_en), 
+											.kraid_shoot_en_export(kraid_shoot_en), 
+											.kraid_throw_en_export(kraid_throw_en), 
+											.kraid_dir_export(kraid_dir), 
+											.kraid_as_dir_export(kraid_as_dir),
+											.kraid_y_export(kraid_y), .kraid_x_export(kraid_x), 
+											.kraid_spike_x_export(kraid_spike_x), .kraid_spike_y_export(kraid_spike_y), 
+											.kraid_throw_x_export(kraid_throw_x), .kraid_throw_y_export(kraid_throw_y));
 	
 	//Fill in the connections for the rest of the modules 
    vga_controller vgasync_instance(.*,.Reset(Reset_h),

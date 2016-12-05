@@ -27,6 +27,19 @@ module nios_system (
 		output wire [1:0]  health_export,          //          health.export
 		input  wire [1:0]  key_export,             //             key.export
 		output wire [15:0] keycode_export,         //         keycode.export
+		output wire        kraid_as_dir_export,    //    kraid_as_dir.export
+		output wire        kraid_dir_export,       //       kraid_dir.export
+		output wire        kraid_g_en_export,      //      kraid_g_en.export
+		output wire        kraid_n_en_export,      //      kraid_n_en.export
+		output wire        kraid_r_en_export,      //      kraid_r_en.export
+		output wire        kraid_shoot_en_export,  //  kraid_shoot_en.export
+		output wire [9:0]  kraid_spike_x_export,   //   kraid_spike_x.export
+		output wire [9:0]  kraid_spike_y_export,   //   kraid_spike_y.export
+		output wire        kraid_throw_en_export,  //  kraid_throw_en.export
+		output wire [9:0]  kraid_throw_x_export,   //   kraid_throw_x.export
+		output wire [9:0]  kraid_throw_y_export,   //   kraid_throw_y.export
+		output wire [9:0]  kraid_x_export,         //         kraid_x.export
+		output wire [9:0]  kraid_y_export,         //         kraid_y.export
 		output wire        loss_en_export,         //         loss_en.export
 		output wire        monster1_en_export,     //     monster1_en.export
 		output wire [9:0]  monster1_x_export,      //      monster1_x.export
@@ -34,6 +47,7 @@ module nios_system (
 		output wire        monster2_en_export,     //     monster2_en.export
 		output wire [9:0]  monster2_x_export,      //      monster2_x.export
 		output wire [9:0]  monster2_y_export,      //      monster2_y.export
+		output wire        monster3_dir_export,    //    monster3_dir.export
 		output wire        monster3_en_export,     //     monster3_en.export
 		output wire [9:0]  monster3_x_export,      //      monster3_x.export
 		output wire [9:0]  monster3_y_export,      //      monster3_y.export
@@ -352,9 +366,79 @@ module nios_system (
 	wire   [1:0] mm_interconnect_0_b_emp_s1_address;                          // mm_interconnect_0:b_emp_s1_address -> b_emp:address
 	wire         mm_interconnect_0_b_emp_s1_write;                            // mm_interconnect_0:b_emp_s1_write -> b_emp:write_n
 	wire  [31:0] mm_interconnect_0_b_emp_s1_writedata;                        // mm_interconnect_0:b_emp_s1_writedata -> b_emp:writedata
+	wire         mm_interconnect_0_monster3_dir_s1_chipselect;                // mm_interconnect_0:monster3_dir_s1_chipselect -> monster3_dir:chipselect
+	wire  [31:0] mm_interconnect_0_monster3_dir_s1_readdata;                  // monster3_dir:readdata -> mm_interconnect_0:monster3_dir_s1_readdata
+	wire   [1:0] mm_interconnect_0_monster3_dir_s1_address;                   // mm_interconnect_0:monster3_dir_s1_address -> monster3_dir:address
+	wire         mm_interconnect_0_monster3_dir_s1_write;                     // mm_interconnect_0:monster3_dir_s1_write -> monster3_dir:write_n
+	wire  [31:0] mm_interconnect_0_monster3_dir_s1_writedata;                 // mm_interconnect_0:monster3_dir_s1_writedata -> monster3_dir:writedata
+	wire         mm_interconnect_0_kraid_dir_s1_chipselect;                   // mm_interconnect_0:kraid_dir_s1_chipselect -> kraid_dir:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_dir_s1_readdata;                     // kraid_dir:readdata -> mm_interconnect_0:kraid_dir_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_dir_s1_address;                      // mm_interconnect_0:kraid_dir_s1_address -> kraid_dir:address
+	wire         mm_interconnect_0_kraid_dir_s1_write;                        // mm_interconnect_0:kraid_dir_s1_write -> kraid_dir:write_n
+	wire  [31:0] mm_interconnect_0_kraid_dir_s1_writedata;                    // mm_interconnect_0:kraid_dir_s1_writedata -> kraid_dir:writedata
+	wire         mm_interconnect_0_kraid_g_en_s1_chipselect;                  // mm_interconnect_0:kraid_g_en_s1_chipselect -> kraid_g_en:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_g_en_s1_readdata;                    // kraid_g_en:readdata -> mm_interconnect_0:kraid_g_en_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_g_en_s1_address;                     // mm_interconnect_0:kraid_g_en_s1_address -> kraid_g_en:address
+	wire         mm_interconnect_0_kraid_g_en_s1_write;                       // mm_interconnect_0:kraid_g_en_s1_write -> kraid_g_en:write_n
+	wire  [31:0] mm_interconnect_0_kraid_g_en_s1_writedata;                   // mm_interconnect_0:kraid_g_en_s1_writedata -> kraid_g_en:writedata
+	wire         mm_interconnect_0_kraid_r_en_s1_chipselect;                  // mm_interconnect_0:kraid_r_en_s1_chipselect -> kraid_r_en:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_r_en_s1_readdata;                    // kraid_r_en:readdata -> mm_interconnect_0:kraid_r_en_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_r_en_s1_address;                     // mm_interconnect_0:kraid_r_en_s1_address -> kraid_r_en:address
+	wire         mm_interconnect_0_kraid_r_en_s1_write;                       // mm_interconnect_0:kraid_r_en_s1_write -> kraid_r_en:write_n
+	wire  [31:0] mm_interconnect_0_kraid_r_en_s1_writedata;                   // mm_interconnect_0:kraid_r_en_s1_writedata -> kraid_r_en:writedata
+	wire         mm_interconnect_0_kraid_n_en_s1_chipselect;                  // mm_interconnect_0:kraid_n_en_s1_chipselect -> kraid_n_en:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_n_en_s1_readdata;                    // kraid_n_en:readdata -> mm_interconnect_0:kraid_n_en_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_n_en_s1_address;                     // mm_interconnect_0:kraid_n_en_s1_address -> kraid_n_en:address
+	wire         mm_interconnect_0_kraid_n_en_s1_write;                       // mm_interconnect_0:kraid_n_en_s1_write -> kraid_n_en:write_n
+	wire  [31:0] mm_interconnect_0_kraid_n_en_s1_writedata;                   // mm_interconnect_0:kraid_n_en_s1_writedata -> kraid_n_en:writedata
+	wire         mm_interconnect_0_kraid_shoot_en_s1_chipselect;              // mm_interconnect_0:kraid_shoot_en_s1_chipselect -> kraid_shoot_en:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_shoot_en_s1_readdata;                // kraid_shoot_en:readdata -> mm_interconnect_0:kraid_shoot_en_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_shoot_en_s1_address;                 // mm_interconnect_0:kraid_shoot_en_s1_address -> kraid_shoot_en:address
+	wire         mm_interconnect_0_kraid_shoot_en_s1_write;                   // mm_interconnect_0:kraid_shoot_en_s1_write -> kraid_shoot_en:write_n
+	wire  [31:0] mm_interconnect_0_kraid_shoot_en_s1_writedata;               // mm_interconnect_0:kraid_shoot_en_s1_writedata -> kraid_shoot_en:writedata
+	wire         mm_interconnect_0_kraid_throw_en_s1_chipselect;              // mm_interconnect_0:kraid_throw_en_s1_chipselect -> kraid_throw_en:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_throw_en_s1_readdata;                // kraid_throw_en:readdata -> mm_interconnect_0:kraid_throw_en_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_throw_en_s1_address;                 // mm_interconnect_0:kraid_throw_en_s1_address -> kraid_throw_en:address
+	wire         mm_interconnect_0_kraid_throw_en_s1_write;                   // mm_interconnect_0:kraid_throw_en_s1_write -> kraid_throw_en:write_n
+	wire  [31:0] mm_interconnect_0_kraid_throw_en_s1_writedata;               // mm_interconnect_0:kraid_throw_en_s1_writedata -> kraid_throw_en:writedata
+	wire         mm_interconnect_0_kraid_as_dir_s1_chipselect;                // mm_interconnect_0:kraid_as_dir_s1_chipselect -> kraid_as_dir:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_as_dir_s1_readdata;                  // kraid_as_dir:readdata -> mm_interconnect_0:kraid_as_dir_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_as_dir_s1_address;                   // mm_interconnect_0:kraid_as_dir_s1_address -> kraid_as_dir:address
+	wire         mm_interconnect_0_kraid_as_dir_s1_write;                     // mm_interconnect_0:kraid_as_dir_s1_write -> kraid_as_dir:write_n
+	wire  [31:0] mm_interconnect_0_kraid_as_dir_s1_writedata;                 // mm_interconnect_0:kraid_as_dir_s1_writedata -> kraid_as_dir:writedata
+	wire         mm_interconnect_0_kraid_x_s1_chipselect;                     // mm_interconnect_0:kraid_x_s1_chipselect -> kraid_x:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_x_s1_readdata;                       // kraid_x:readdata -> mm_interconnect_0:kraid_x_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_x_s1_address;                        // mm_interconnect_0:kraid_x_s1_address -> kraid_x:address
+	wire         mm_interconnect_0_kraid_x_s1_write;                          // mm_interconnect_0:kraid_x_s1_write -> kraid_x:write_n
+	wire  [31:0] mm_interconnect_0_kraid_x_s1_writedata;                      // mm_interconnect_0:kraid_x_s1_writedata -> kraid_x:writedata
+	wire         mm_interconnect_0_kraid_y_s1_chipselect;                     // mm_interconnect_0:kraid_y_s1_chipselect -> kraid_y:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_y_s1_readdata;                       // kraid_y:readdata -> mm_interconnect_0:kraid_y_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_y_s1_address;                        // mm_interconnect_0:kraid_y_s1_address -> kraid_y:address
+	wire         mm_interconnect_0_kraid_y_s1_write;                          // mm_interconnect_0:kraid_y_s1_write -> kraid_y:write_n
+	wire  [31:0] mm_interconnect_0_kraid_y_s1_writedata;                      // mm_interconnect_0:kraid_y_s1_writedata -> kraid_y:writedata
+	wire         mm_interconnect_0_kraid_spike_x_s1_chipselect;               // mm_interconnect_0:kraid_spike_x_s1_chipselect -> kraid_spike_x:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_spike_x_s1_readdata;                 // kraid_spike_x:readdata -> mm_interconnect_0:kraid_spike_x_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_spike_x_s1_address;                  // mm_interconnect_0:kraid_spike_x_s1_address -> kraid_spike_x:address
+	wire         mm_interconnect_0_kraid_spike_x_s1_write;                    // mm_interconnect_0:kraid_spike_x_s1_write -> kraid_spike_x:write_n
+	wire  [31:0] mm_interconnect_0_kraid_spike_x_s1_writedata;                // mm_interconnect_0:kraid_spike_x_s1_writedata -> kraid_spike_x:writedata
+	wire         mm_interconnect_0_kraid_spike_y_s1_chipselect;               // mm_interconnect_0:kraid_spike_y_s1_chipselect -> kraid_spike_y:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_spike_y_s1_readdata;                 // kraid_spike_y:readdata -> mm_interconnect_0:kraid_spike_y_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_spike_y_s1_address;                  // mm_interconnect_0:kraid_spike_y_s1_address -> kraid_spike_y:address
+	wire         mm_interconnect_0_kraid_spike_y_s1_write;                    // mm_interconnect_0:kraid_spike_y_s1_write -> kraid_spike_y:write_n
+	wire  [31:0] mm_interconnect_0_kraid_spike_y_s1_writedata;                // mm_interconnect_0:kraid_spike_y_s1_writedata -> kraid_spike_y:writedata
+	wire         mm_interconnect_0_kraid_throw_x_s1_chipselect;               // mm_interconnect_0:kraid_throw_x_s1_chipselect -> kraid_throw_x:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_throw_x_s1_readdata;                 // kraid_throw_x:readdata -> mm_interconnect_0:kraid_throw_x_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_throw_x_s1_address;                  // mm_interconnect_0:kraid_throw_x_s1_address -> kraid_throw_x:address
+	wire         mm_interconnect_0_kraid_throw_x_s1_write;                    // mm_interconnect_0:kraid_throw_x_s1_write -> kraid_throw_x:write_n
+	wire  [31:0] mm_interconnect_0_kraid_throw_x_s1_writedata;                // mm_interconnect_0:kraid_throw_x_s1_writedata -> kraid_throw_x:writedata
+	wire         mm_interconnect_0_kraid_throw_y_s1_chipselect;               // mm_interconnect_0:kraid_throw_y_s1_chipselect -> kraid_throw_y:chipselect
+	wire  [31:0] mm_interconnect_0_kraid_throw_y_s1_readdata;                 // kraid_throw_y:readdata -> mm_interconnect_0:kraid_throw_y_s1_readdata
+	wire   [1:0] mm_interconnect_0_kraid_throw_y_s1_address;                  // mm_interconnect_0:kraid_throw_y_s1_address -> kraid_throw_y:address
+	wire         mm_interconnect_0_kraid_throw_y_s1_write;                    // mm_interconnect_0:kraid_throw_y_s1_write -> kraid_throw_y:write_n
+	wire  [31:0] mm_interconnect_0_kraid_throw_y_s1_writedata;                // mm_interconnect_0:kraid_throw_y_s1_writedata -> kraid_throw_y:writedata
 	wire         irq_mapper_receiver0_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_qsys_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_qsys_0:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [b_emp:reset_n, bullet1_en:reset_n, bullet1_x:reset_n, bullet1_y:reset_n, bullet2_en:reset_n, bullet2_x:reset_n, bullet2_y:reset_n, bullet3_en:reset_n, bullet3_x:reset_n, bullet3_y:reset_n, explosion1_en:reset_n, explosion1_x:reset_n, explosion1_y:reset_n, explosion2_en:reset_n, explosion2_x:reset_n, explosion2_y:reset_n, explosion3_en:reset_n, explosion3_x:reset_n, explosion3_y:reset_n, health:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, loss_en:reset_n, mm_interconnect_0:nios2_qsys_0_reset_reset_bridge_in_reset_reset, monster1_en:reset_n, monster1_x:reset_n, monster1_y:reset_n, monster2_en:reset_n, monster2_x:reset_n, monster2_y:reset_n, monster3_en:reset_n, monster3_x:reset_n, monster3_y:reset_n, nios2_qsys_0:reset_n, onchip_memory2_0:reset, otg_hpi_address:reset_n, otg_hpi_cs:reset_n, otg_hpi_data:reset_n, otg_hpi_r:reset_n, otg_hpi_w:reset_n, rst_translator:in_reset, samus_dir:reset_n, samus_en:reset_n, samus_jump:reset_n, samus_up:reset_n, samus_walk:reset_n, samus_x:reset_n, samus_y:reset_n, scene_sel:reset_n, sdram_pll:reset, sysid_qsys_0:reset_n, title_en:reset_n, win_en:reset_n]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [b_emp:reset_n, bullet1_en:reset_n, bullet1_x:reset_n, bullet1_y:reset_n, bullet2_en:reset_n, bullet2_x:reset_n, bullet2_y:reset_n, bullet3_en:reset_n, bullet3_x:reset_n, bullet3_y:reset_n, explosion1_en:reset_n, explosion1_x:reset_n, explosion1_y:reset_n, explosion2_en:reset_n, explosion2_x:reset_n, explosion2_y:reset_n, explosion3_en:reset_n, explosion3_x:reset_n, explosion3_y:reset_n, health:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, kraid_as_dir:reset_n, kraid_dir:reset_n, kraid_g_en:reset_n, kraid_n_en:reset_n, kraid_r_en:reset_n, kraid_shoot_en:reset_n, kraid_spike_x:reset_n, kraid_spike_y:reset_n, kraid_throw_en:reset_n, kraid_throw_x:reset_n, kraid_throw_y:reset_n, kraid_x:reset_n, kraid_y:reset_n, loss_en:reset_n, mm_interconnect_0:nios2_qsys_0_reset_reset_bridge_in_reset_reset, monster1_en:reset_n, monster1_x:reset_n, monster1_y:reset_n, monster2_en:reset_n, monster2_x:reset_n, monster2_y:reset_n, monster3_dir:reset_n, monster3_en:reset_n, monster3_x:reset_n, monster3_y:reset_n, nios2_qsys_0:reset_n, onchip_memory2_0:reset, otg_hpi_address:reset_n, otg_hpi_cs:reset_n, otg_hpi_data:reset_n, otg_hpi_r:reset_n, otg_hpi_w:reset_n, rst_translator:in_reset, samus_dir:reset_n, samus_en:reset_n, samus_jump:reset_n, samus_up:reset_n, samus_walk:reset_n, samus_x:reset_n, samus_y:reset_n, scene_sel:reset_n, sdram_pll:reset, sysid_qsys_0:reset_n, title_en:reset_n, win_en:reset_n]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [nios2_qsys_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         nios2_qsys_0_debug_reset_request_reset;                      // nios2_qsys_0:debug_reset_request -> [rst_controller:reset_in1, rst_controller_001:reset_in1]
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [mm_interconnect_0:sdram_reset_reset_bridge_in_reset_reset, sdram:reset_n]
@@ -614,6 +698,149 @@ module nios_system (
 		.out_port   (keycode_export)                           // external_connection.export
 	);
 
+	nios_system_b_emp kraid_as_dir (
+		.clk        (clk_clk),                                      //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),              //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_as_dir_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_as_dir_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_as_dir_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_as_dir_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_as_dir_s1_readdata),   //                    .readdata
+		.out_port   (kraid_as_dir_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp kraid_dir (
+		.clk        (clk_clk),                                   //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_dir_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_dir_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_dir_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_dir_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_dir_s1_readdata),   //                    .readdata
+		.out_port   (kraid_dir_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp kraid_g_en (
+		.clk        (clk_clk),                                    //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_g_en_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_g_en_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_g_en_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_g_en_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_g_en_s1_readdata),   //                    .readdata
+		.out_port   (kraid_g_en_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp kraid_n_en (
+		.clk        (clk_clk),                                    //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_n_en_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_n_en_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_n_en_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_n_en_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_n_en_s1_readdata),   //                    .readdata
+		.out_port   (kraid_n_en_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp kraid_r_en (
+		.clk        (clk_clk),                                    //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_r_en_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_r_en_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_r_en_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_r_en_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_r_en_s1_readdata),   //                    .readdata
+		.out_port   (kraid_r_en_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp kraid_shoot_en (
+		.clk        (clk_clk),                                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_shoot_en_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_shoot_en_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_shoot_en_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_shoot_en_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_shoot_en_s1_readdata),   //                    .readdata
+		.out_port   (kraid_shoot_en_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x kraid_spike_x (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_spike_x_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_spike_x_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_spike_x_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_spike_x_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_spike_x_s1_readdata),   //                    .readdata
+		.out_port   (kraid_spike_x_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x kraid_spike_y (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_spike_y_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_spike_y_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_spike_y_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_spike_y_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_spike_y_s1_readdata),   //                    .readdata
+		.out_port   (kraid_spike_y_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp kraid_throw_en (
+		.clk        (clk_clk),                                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_throw_en_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_throw_en_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_throw_en_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_throw_en_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_throw_en_s1_readdata),   //                    .readdata
+		.out_port   (kraid_throw_en_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x kraid_throw_x (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_throw_x_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_throw_x_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_throw_x_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_throw_x_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_throw_x_s1_readdata),   //                    .readdata
+		.out_port   (kraid_throw_x_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x kraid_throw_y (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_throw_y_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_throw_y_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_throw_y_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_throw_y_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_throw_y_s1_readdata),   //                    .readdata
+		.out_port   (kraid_throw_y_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x kraid_x (
+		.clk        (clk_clk),                                 //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_x_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_x_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_x_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_x_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_x_s1_readdata),   //                    .readdata
+		.out_port   (kraid_x_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x kraid_y (
+		.clk        (clk_clk),                                 //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address    (mm_interconnect_0_kraid_y_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_kraid_y_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_kraid_y_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_kraid_y_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_kraid_y_s1_readdata),   //                    .readdata
+		.out_port   (kraid_y_export)                           // external_connection.export
+	);
+
 	nios_system_b_emp loss_en (
 		.clk        (clk_clk),                                 //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
@@ -689,6 +916,17 @@ module nios_system (
 		.chipselect (mm_interconnect_0_monster2_y_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_monster2_y_s1_readdata),   //                    .readdata
 		.out_port   (monster2_y_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp monster3_dir (
+		.clk        (clk_clk),                                      //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),              //               reset.reset_n
+		.address    (mm_interconnect_0_monster3_dir_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_monster3_dir_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_monster3_dir_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_monster3_dir_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_monster3_dir_s1_readdata),   //                    .readdata
+		.out_port   (monster3_dir_export)                           // external_connection.export
 	);
 
 	nios_system_b_emp monster3_en (
@@ -1111,6 +1349,71 @@ module nios_system (
 		.keycode_s1_readdata                            (mm_interconnect_0_keycode_s1_readdata),                       //                                         .readdata
 		.keycode_s1_writedata                           (mm_interconnect_0_keycode_s1_writedata),                      //                                         .writedata
 		.keycode_s1_chipselect                          (mm_interconnect_0_keycode_s1_chipselect),                     //                                         .chipselect
+		.kraid_as_dir_s1_address                        (mm_interconnect_0_kraid_as_dir_s1_address),                   //                          kraid_as_dir_s1.address
+		.kraid_as_dir_s1_write                          (mm_interconnect_0_kraid_as_dir_s1_write),                     //                                         .write
+		.kraid_as_dir_s1_readdata                       (mm_interconnect_0_kraid_as_dir_s1_readdata),                  //                                         .readdata
+		.kraid_as_dir_s1_writedata                      (mm_interconnect_0_kraid_as_dir_s1_writedata),                 //                                         .writedata
+		.kraid_as_dir_s1_chipselect                     (mm_interconnect_0_kraid_as_dir_s1_chipselect),                //                                         .chipselect
+		.kraid_dir_s1_address                           (mm_interconnect_0_kraid_dir_s1_address),                      //                             kraid_dir_s1.address
+		.kraid_dir_s1_write                             (mm_interconnect_0_kraid_dir_s1_write),                        //                                         .write
+		.kraid_dir_s1_readdata                          (mm_interconnect_0_kraid_dir_s1_readdata),                     //                                         .readdata
+		.kraid_dir_s1_writedata                         (mm_interconnect_0_kraid_dir_s1_writedata),                    //                                         .writedata
+		.kraid_dir_s1_chipselect                        (mm_interconnect_0_kraid_dir_s1_chipselect),                   //                                         .chipselect
+		.kraid_g_en_s1_address                          (mm_interconnect_0_kraid_g_en_s1_address),                     //                            kraid_g_en_s1.address
+		.kraid_g_en_s1_write                            (mm_interconnect_0_kraid_g_en_s1_write),                       //                                         .write
+		.kraid_g_en_s1_readdata                         (mm_interconnect_0_kraid_g_en_s1_readdata),                    //                                         .readdata
+		.kraid_g_en_s1_writedata                        (mm_interconnect_0_kraid_g_en_s1_writedata),                   //                                         .writedata
+		.kraid_g_en_s1_chipselect                       (mm_interconnect_0_kraid_g_en_s1_chipselect),                  //                                         .chipselect
+		.kraid_n_en_s1_address                          (mm_interconnect_0_kraid_n_en_s1_address),                     //                            kraid_n_en_s1.address
+		.kraid_n_en_s1_write                            (mm_interconnect_0_kraid_n_en_s1_write),                       //                                         .write
+		.kraid_n_en_s1_readdata                         (mm_interconnect_0_kraid_n_en_s1_readdata),                    //                                         .readdata
+		.kraid_n_en_s1_writedata                        (mm_interconnect_0_kraid_n_en_s1_writedata),                   //                                         .writedata
+		.kraid_n_en_s1_chipselect                       (mm_interconnect_0_kraid_n_en_s1_chipselect),                  //                                         .chipselect
+		.kraid_r_en_s1_address                          (mm_interconnect_0_kraid_r_en_s1_address),                     //                            kraid_r_en_s1.address
+		.kraid_r_en_s1_write                            (mm_interconnect_0_kraid_r_en_s1_write),                       //                                         .write
+		.kraid_r_en_s1_readdata                         (mm_interconnect_0_kraid_r_en_s1_readdata),                    //                                         .readdata
+		.kraid_r_en_s1_writedata                        (mm_interconnect_0_kraid_r_en_s1_writedata),                   //                                         .writedata
+		.kraid_r_en_s1_chipselect                       (mm_interconnect_0_kraid_r_en_s1_chipselect),                  //                                         .chipselect
+		.kraid_shoot_en_s1_address                      (mm_interconnect_0_kraid_shoot_en_s1_address),                 //                        kraid_shoot_en_s1.address
+		.kraid_shoot_en_s1_write                        (mm_interconnect_0_kraid_shoot_en_s1_write),                   //                                         .write
+		.kraid_shoot_en_s1_readdata                     (mm_interconnect_0_kraid_shoot_en_s1_readdata),                //                                         .readdata
+		.kraid_shoot_en_s1_writedata                    (mm_interconnect_0_kraid_shoot_en_s1_writedata),               //                                         .writedata
+		.kraid_shoot_en_s1_chipselect                   (mm_interconnect_0_kraid_shoot_en_s1_chipselect),              //                                         .chipselect
+		.kraid_spike_x_s1_address                       (mm_interconnect_0_kraid_spike_x_s1_address),                  //                         kraid_spike_x_s1.address
+		.kraid_spike_x_s1_write                         (mm_interconnect_0_kraid_spike_x_s1_write),                    //                                         .write
+		.kraid_spike_x_s1_readdata                      (mm_interconnect_0_kraid_spike_x_s1_readdata),                 //                                         .readdata
+		.kraid_spike_x_s1_writedata                     (mm_interconnect_0_kraid_spike_x_s1_writedata),                //                                         .writedata
+		.kraid_spike_x_s1_chipselect                    (mm_interconnect_0_kraid_spike_x_s1_chipselect),               //                                         .chipselect
+		.kraid_spike_y_s1_address                       (mm_interconnect_0_kraid_spike_y_s1_address),                  //                         kraid_spike_y_s1.address
+		.kraid_spike_y_s1_write                         (mm_interconnect_0_kraid_spike_y_s1_write),                    //                                         .write
+		.kraid_spike_y_s1_readdata                      (mm_interconnect_0_kraid_spike_y_s1_readdata),                 //                                         .readdata
+		.kraid_spike_y_s1_writedata                     (mm_interconnect_0_kraid_spike_y_s1_writedata),                //                                         .writedata
+		.kraid_spike_y_s1_chipselect                    (mm_interconnect_0_kraid_spike_y_s1_chipselect),               //                                         .chipselect
+		.kraid_throw_en_s1_address                      (mm_interconnect_0_kraid_throw_en_s1_address),                 //                        kraid_throw_en_s1.address
+		.kraid_throw_en_s1_write                        (mm_interconnect_0_kraid_throw_en_s1_write),                   //                                         .write
+		.kraid_throw_en_s1_readdata                     (mm_interconnect_0_kraid_throw_en_s1_readdata),                //                                         .readdata
+		.kraid_throw_en_s1_writedata                    (mm_interconnect_0_kraid_throw_en_s1_writedata),               //                                         .writedata
+		.kraid_throw_en_s1_chipselect                   (mm_interconnect_0_kraid_throw_en_s1_chipselect),              //                                         .chipselect
+		.kraid_throw_x_s1_address                       (mm_interconnect_0_kraid_throw_x_s1_address),                  //                         kraid_throw_x_s1.address
+		.kraid_throw_x_s1_write                         (mm_interconnect_0_kraid_throw_x_s1_write),                    //                                         .write
+		.kraid_throw_x_s1_readdata                      (mm_interconnect_0_kraid_throw_x_s1_readdata),                 //                                         .readdata
+		.kraid_throw_x_s1_writedata                     (mm_interconnect_0_kraid_throw_x_s1_writedata),                //                                         .writedata
+		.kraid_throw_x_s1_chipselect                    (mm_interconnect_0_kraid_throw_x_s1_chipselect),               //                                         .chipselect
+		.kraid_throw_y_s1_address                       (mm_interconnect_0_kraid_throw_y_s1_address),                  //                         kraid_throw_y_s1.address
+		.kraid_throw_y_s1_write                         (mm_interconnect_0_kraid_throw_y_s1_write),                    //                                         .write
+		.kraid_throw_y_s1_readdata                      (mm_interconnect_0_kraid_throw_y_s1_readdata),                 //                                         .readdata
+		.kraid_throw_y_s1_writedata                     (mm_interconnect_0_kraid_throw_y_s1_writedata),                //                                         .writedata
+		.kraid_throw_y_s1_chipselect                    (mm_interconnect_0_kraid_throw_y_s1_chipselect),               //                                         .chipselect
+		.kraid_x_s1_address                             (mm_interconnect_0_kraid_x_s1_address),                        //                               kraid_x_s1.address
+		.kraid_x_s1_write                               (mm_interconnect_0_kraid_x_s1_write),                          //                                         .write
+		.kraid_x_s1_readdata                            (mm_interconnect_0_kraid_x_s1_readdata),                       //                                         .readdata
+		.kraid_x_s1_writedata                           (mm_interconnect_0_kraid_x_s1_writedata),                      //                                         .writedata
+		.kraid_x_s1_chipselect                          (mm_interconnect_0_kraid_x_s1_chipselect),                     //                                         .chipselect
+		.kraid_y_s1_address                             (mm_interconnect_0_kraid_y_s1_address),                        //                               kraid_y_s1.address
+		.kraid_y_s1_write                               (mm_interconnect_0_kraid_y_s1_write),                          //                                         .write
+		.kraid_y_s1_readdata                            (mm_interconnect_0_kraid_y_s1_readdata),                       //                                         .readdata
+		.kraid_y_s1_writedata                           (mm_interconnect_0_kraid_y_s1_writedata),                      //                                         .writedata
+		.kraid_y_s1_chipselect                          (mm_interconnect_0_kraid_y_s1_chipselect),                     //                                         .chipselect
 		.loss_en_s1_address                             (mm_interconnect_0_loss_en_s1_address),                        //                               loss_en_s1.address
 		.loss_en_s1_write                               (mm_interconnect_0_loss_en_s1_write),                          //                                         .write
 		.loss_en_s1_readdata                            (mm_interconnect_0_loss_en_s1_readdata),                       //                                         .readdata
@@ -1146,6 +1449,11 @@ module nios_system (
 		.monster2_y_s1_readdata                         (mm_interconnect_0_monster2_y_s1_readdata),                    //                                         .readdata
 		.monster2_y_s1_writedata                        (mm_interconnect_0_monster2_y_s1_writedata),                   //                                         .writedata
 		.monster2_y_s1_chipselect                       (mm_interconnect_0_monster2_y_s1_chipselect),                  //                                         .chipselect
+		.monster3_dir_s1_address                        (mm_interconnect_0_monster3_dir_s1_address),                   //                          monster3_dir_s1.address
+		.monster3_dir_s1_write                          (mm_interconnect_0_monster3_dir_s1_write),                     //                                         .write
+		.monster3_dir_s1_readdata                       (mm_interconnect_0_monster3_dir_s1_readdata),                  //                                         .readdata
+		.monster3_dir_s1_writedata                      (mm_interconnect_0_monster3_dir_s1_writedata),                 //                                         .writedata
+		.monster3_dir_s1_chipselect                     (mm_interconnect_0_monster3_dir_s1_chipselect),                //                                         .chipselect
 		.monster3_en_s1_address                         (mm_interconnect_0_monster3_en_s1_address),                    //                           monster3_en_s1.address
 		.monster3_en_s1_write                           (mm_interconnect_0_monster3_en_s1_write),                      //                                         .write
 		.monster3_en_s1_readdata                        (mm_interconnect_0_monster3_en_s1_readdata),                   //                                         .readdata
