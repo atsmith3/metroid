@@ -111,6 +111,7 @@ output logic [7:0] red, green, blue
 								.vga_y(vgaY),
 								.color(win_color),
 								.draw(winDraw));
+								
 	
 	// Select the color based on priority:
 	always_comb begin
@@ -382,7 +383,7 @@ endmodule
 module samus(
 	input logic  			enable, vsync, walk, jump, up,
 	input logic  [10:0] 	vga_x, vga_y, sprite_x, sprite_y,
-	input logic direction,
+	input logic          direction,
 	output logic [6:0] 	color,
 	output logic 			draw
 );
@@ -887,22 +888,22 @@ module samus(
 						'{0,0,0,0,0,0,33,1,16,16,16,3,16,16,0,0,0,0,0,3,16,1,16,16,3,16,16,3,16,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
 	end
 	
-	 always_ff @ (posedge vsync)
-    begin 
-            vsync_slow[0] <= ~ (vsync_slow[0]);
-    end
-	 always_ff @ (posedge vsync_slow[0])
-    begin 
-            vsync_slow[1] <= ~ (vsync_slow[1]);
-    end
-	 always_ff @ (posedge vsync_slow[1])
-    begin 
-            vsync_slow[2] <= ~ (vsync_slow[2]);
-    end
-	 always_ff @ (posedge vsync_slow[2])
-    begin 
-            vsync_slow[3] <= ~ (vsync_slow[3]);
-    end
+	always_ff @ (posedge vsync)
+   begin 
+           vsync_slow[0] <= ~ (vsync_slow[0]);
+   end
+	always_ff @ (posedge vsync_slow[0])
+   begin 
+           vsync_slow[1] <= ~ (vsync_slow[1]);
+   end
+	always_ff @ (posedge vsync_slow[1])
+   begin 
+           vsync_slow[2] <= ~ (vsync_slow[2]);
+   end
+	always_ff @ (posedge vsync_slow[2])
+   begin 
+           vsync_slow[3] <= ~ (vsync_slow[3]);
+   end
 	
 	// Animation Counter:
 	always_ff @ (posedge vsync_slow[3]) begin
@@ -910,6 +911,7 @@ module samus(
 		 else if(counter == 2) counter <= 0;
 		 else counter <= counter + 1'b1;
 	end
+	
 	// If an animation is enabled determine the sprite_num:
 	always_comb begin
 	    // Deafult:
@@ -945,7 +947,7 @@ module samus(
 	   case(sprite_num)
 		// SAMUS STAND UP:
 		3'b000: begin
-			if(vga_x >= sprite_x && vga_x < sprite_x + width1 && vga_y >= sprite_y && vga_y < sprite_y + height1) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width1 && vga_y >= sprite_y && vga_y < sprite_y + height1 && enable) begin
 			// Output the "draw" signal:
 			// Make sure that the pointer is inside the sprite:
 				if(direction == 1'b0) begin
@@ -966,7 +968,7 @@ module samus(
 		3'b001: begin
 			// Output the "draw" signal:
 			// Make sure that the pointer is inside the sprite:
-			if(vga_x >= sprite_x && vga_x < sprite_x + width2 && vga_y >= sprite_y && vga_y < sprite_y + height2) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width2 && vga_y >= sprite_y && vga_y < sprite_y + height2 && enable) begin
 				// If the color is not pink output draw:
 				if(direction == 1'b0) begin
 					if(samus2[vga_y - sprite_y][vga_x - sprite_x] != 0) begin
@@ -986,7 +988,7 @@ module samus(
 		3'b010: begin
 			// Output the "draw" signal:
 			// Make sure that the pointer is inside the sprite:
-			if(vga_x >= sprite_x && vga_x < sprite_x + width3 && vga_y >= sprite_y && vga_y < sprite_y + height3) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width3 && vga_y >= sprite_y && vga_y < sprite_y + height3 && enable) begin
 				// If the color is not pink output draw:
 				if(direction == 1'b0) begin
 					if(samus3[vga_y - sprite_y][vga_x - sprite_x] != 0) begin
@@ -1006,7 +1008,7 @@ module samus(
 		3'b011: begin
 			// Output the "draw" signal:
 			// Make sure that the pointer is inside the sprite:
-			if(vga_x >= sprite_x && vga_x < sprite_x + width4 && vga_y >= sprite_y && vga_y < sprite_y + height4) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width4 && vga_y >= sprite_y && vga_y < sprite_y + height4 && enable) begin
 				// If the color is not pink output draw:
 				if(direction == 1'b0) begin
 					if(samus4[vga_y - sprite_y][vga_x - sprite_x] != 0) begin
@@ -1026,7 +1028,7 @@ module samus(
 		3'b100: begin
 			// Output the "draw" signal:
 			// Make sure that the pointer is inside the sprite:
-			if(vga_x >= sprite_x && vga_x < sprite_x + width5 && vga_y >= sprite_y && vga_y < sprite_y + height5) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width5 && vga_y >= sprite_y && vga_y < sprite_y + height5 && enable) begin
 				if(direction == 1'b0) begin
 					if(samus5[vga_y - sprite_y][vga_x - sprite_x] != 0) begin
 						draw = 1'b1;
@@ -1045,7 +1047,7 @@ module samus(
 		3'b101: begin
 			// Output the "draw" signal:
 			// Make sure that the pointer is inside the sprite:
-			if(vga_x >= sprite_x && vga_x < sprite_x + width6 && vga_y >= sprite_y && vga_y < sprite_y + height6) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width6 && vga_y >= sprite_y && vga_y < sprite_y + height6 && enable) begin
 				// If the color is not pink output draw:
 				if(direction == 1'b0) begin
 					if(samus6[vga_y - sprite_y][vga_x - sprite_x] != 0) begin
@@ -1065,7 +1067,7 @@ module samus(
 		3'b110: begin
 			// Output the "draw" signal:
 			// Make sure that the pointer is inside the sprite:
-			if(vga_x >= sprite_x && vga_x < sprite_x + width7 && vga_y >= sprite_y && vga_y < sprite_y + height7) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width7 && vga_y >= sprite_y && vga_y < sprite_y + height7 && enable) begin
 				// If the color is not pink output draw:
 				if(direction == 1'b0) begin
 					if(samus7[vga_y - sprite_y][vga_x - sprite_x] != 0) begin
@@ -1082,7 +1084,7 @@ module samus(
 			end
 		end
 		default: begin
-			if(vga_x >= sprite_x && vga_x < sprite_x + width1 && vga_y >= sprite_y && vga_y < sprite_y + height1) begin
+			if(vga_x >= sprite_x && vga_x < sprite_x + width1 && vga_y >= sprite_y && vga_y < sprite_y + height1 && enable) begin
 				// If the color is not pink output draw:
 				if(direction == 1'b0) begin
 					if(samus1[vga_y - sprite_y][vga_x - sprite_x] != 0) begin
@@ -1242,6 +1244,12 @@ module monster(
 				draw = 1'b1;
 				color = monster3[vga_y - sprite3_y][vga_x - sprite3_x];
 			end
+			if(direction == 1'b1) begin
+				if(samus7[vga_y - sprite_y][sprite_x + width7 - 1 - vga_x] != 0) begin
+					draw = 1'b1;
+					color = samus7[vga_y - sprite_y][sprite_x + width7 - 1 - vga_x];
+				end
+			end
 		end
 	end
 endmodule
@@ -1349,16 +1357,16 @@ module bullet(
 						 '{00,18,20,20,20,20,20,20,18,00},
 						 '{00,00,18,18,20,20,18,18,00,00},
 						 '{00,00,00,00,18,18,00,00,00,00}};
-		BulletE = '{'{00,00,00,00,06,06,00,00,00,00},
-		            '{00,00,06,06,07,07,06,06,00,00},
-						'{00,06,07,07,07,07,07,07,06,00},
-						'{00,06,07,07,06,06,07,07,06,00},
-						'{06,07,07,06,06,06,06,07,07,06},
-						'{06,07,07,06,06,06,06,07,07,06},
-						'{00,06,07,07,06,06,07,07,06,00},
-						'{00,06,07,07,07,07,07,07,06,00},
-						'{00,00,06,06,07,07,06,06,00,00},
-						'{00,00,00,00,06,06,00,00,00,00}};
+		BulletE =  '{'{00,00,00,00,06,06,00,00,00,00},
+		             '{00,00,06,06,07,07,06,06,00,00},
+						 '{00,06,07,07,07,07,07,07,06,00},
+						 '{00,06,07,07,06,06,07,07,06,00},
+						 '{06,07,07,06,06,06,06,07,07,06},
+						 '{06,07,07,06,06,06,06,07,07,06},
+						 '{00,06,07,07,06,06,07,07,06,00},
+						 '{00,06,07,07,07,07,07,07,06,00},
+						 '{00,00,06,06,07,07,06,06,00,00},
+						 '{00,00,00,00,06,06,00,00,00,00}};
 	end
 	
 	// Monster Combinational Logic:
@@ -1516,39 +1524,39 @@ module background(
 		
 		// Scene 4:
 		scene4 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,6,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,4,0,0,1,1},
-					 '{1,0,0,0,0,0,0,1,2,3,3,0,0,0,0,7,7,5,0,0,1,1},
-					 '{1,0,0,0,0,0,0,3,2,2,2,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,1,1,1,1,0,3,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,2,3,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,0,1,1},
-					 '{1,0,0,0,0,0,0,0,0,2,2,2,3,2,1,1,1,1,1,1,1,1},
-					 '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		           '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+					  '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
+					  '{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
+					  '{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
+					  '{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
+					  '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+					  '{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
+					  '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+					  '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
+					  '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+					  '{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
+					  '{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+					  '{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
+					  '{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
+					  '{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
 		
 		// Scene 5:
-		scene5 = '{'{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-		          '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-					 '{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
-					 '{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
-					 '{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
-					 '{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
-					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
-					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
-					 '{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-					 '{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
-					 '{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
-					 '{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
-					 '{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
-					 '{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+		scene5 = '{'{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+		           '{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+					  '{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{7,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+					  '{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+					  '{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+					  '{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}};
 		
 		// All Black (08):
 		BG1 = '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
