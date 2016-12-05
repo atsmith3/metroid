@@ -1,6 +1,6 @@
 module kraid(
-	input logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_dir, kraid_as_dir,
-	input logic  [10:0] 	vga_x, vga_y, kraid_y, kraid_x, shoot_x, shoot_y, throw_x, throw_y,
+	input logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_throw_2_en, kraid_dir, kraid_as_dir,
+	input logic  [10:0] 	vga_x, vga_y, kraid_y, kraid_x, shoot_x, shoot_y, throw_x, throw_y, throw_2_x, throw_2_y,
 	output logic [6:0] 	color,
 	output logic 			draw
 );
@@ -309,6 +309,19 @@ module kraid(
 				if(attack[vga_y - throw_y][throw_x + attack_w - 1 - vga_x] != 33) begin
 					draw = 1'b1;
 					color = attack[vga_y - throw_y][throw_x + attack_w - 1 - vga_x];
+				end
+			end
+		end
+		// Throw2:
+		if(vga_x >= throw_2_x && vga_x < throw_2_x + attack_w && vga_y >= throw_2_y && vga_y < throw_2_y + attack_h && kraid_throw_2_en) begin
+			if(attack[vga_y - throw_2_y][vga_x - throw_2_x] != 33) begin
+				draw = 1'b1;
+				color = attack[vga_y - throw_2_y][vga_x - throw_2_x];
+			end
+			if(kraid_as_dir == 1'b1) begin
+				if(attack[vga_y - throw_2_y][throw_2_x + attack_w - 1 - vga_x] != 33) begin
+					draw = 1'b1;
+					color = attack[vga_y - throw_2_y][throw_2_x + attack_w - 1 - vga_x];
 				end
 			end
 		end

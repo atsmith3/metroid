@@ -84,8 +84,8 @@ module  lab8 			( input         CLOCK_50,
 	logic [9:0] b1_x, b1_y, b2_x, b2_y, b3_x, b3_y;
 	
 	// Kraid
-	logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_dir, kraid_as_dir;
-	logic  [10:0] 	kraid_y, kraid_x, kraid_spike_x, kraid_spike_y, kraid_throw_x, kraid_throw_y;
+	logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_throw_2_en, kraid_dir, kraid_as_dir;
+	logic  [10:0] 	kraid_y, kraid_x, kraid_spike_x, kraid_spike_y, kraid_throw_x, kraid_throw_y, kraid_throw_2_x, kraid_throw_2_y;
 	 
 	 
 	 
@@ -186,12 +186,14 @@ module  lab8 			( input         CLOCK_50,
 											.kraid_g_en_export(kraid_g_en), 
 											.kraid_n_en_export(kraid_n_en), 
 											.kraid_shoot_en_export(kraid_shoot_en), 
-											.kraid_throw_en_export(kraid_throw_en), 
+											.kraid_throw_en_export(kraid_throw_en),
+											.krait_throw_2_en_export(kraid_throw_2_en),
 											.kraid_dir_export(kraid_dir), 
 											.kraid_as_dir_export(kraid_as_dir),
 											.kraid_y_export(kraid_y), .kraid_x_export(kraid_x), 
 											.kraid_spike_x_export(kraid_spike_x), .kraid_spike_y_export(kraid_spike_y), 
-											.kraid_throw_x_export(kraid_throw_x), .kraid_throw_y_export(kraid_throw_y));
+											.kraid_throw_x_export(kraid_throw_x), .kraid_throw_y_export(kraid_throw_y),
+											.krait_throw_2_x_export(kraid_throw_2_x), .krait_throw_2_y_export(kraid_throw_2_y));
 	
 	//Fill in the connections for the rest of the modules 
    vga_controller vgasync_instance(.*,.Reset(Reset_h),

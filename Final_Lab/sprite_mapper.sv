@@ -40,8 +40,8 @@ input logic [9:0] vgaX, vgaY,
 output logic [7:0] red, green, blue,
 
 // Kraid
-input logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_dir, kraid_as_dir,
-input logic  [10:0] 	kraid_y, kraid_x, kraid_spike_x, kraid_spike_y, kraid_throw_x, kraid_throw_y
+input logic  			kraid_r_en, kraid_g_en, kraid_n_en, kraid_shoot_en, kraid_throw_en, kraid_throw_2_en, kraid_dir, kraid_as_dir,
+input logic  [10:0] 	kraid_y, kraid_x, kraid_spike_x, kraid_spike_y, kraid_throw_x, kraid_throw_y, kraid_throw_2_x, kraid_throw_2_y
 );
 
 	// Internal Signals:
@@ -122,12 +122,14 @@ input logic  [10:0] 	kraid_y, kraid_x, kraid_spike_x, kraid_spike_y, kraid_throw
 					.kraid_n_en(kraid_n_en), 
 					.kraid_shoot_en(kraid_shoot_en), 
 					.kraid_throw_en(kraid_throw_en), 
+					.kraid_throw_2_en(kraid_throw_en), 
 					.kraid_dir(kraid_dir), 
 					.kraid_as_dir(kraid_as_dir),
 					.vga_x(vgaX), .vga_y(vgaY), 
 					.kraid_y(kraid_y), .kraid_x(kraid_x), 
 					.shoot_x(kraid_spike_x), .shoot_y(kraid_spike_y), 
 					.throw_x(kraid_throw_x), .throw_y(kraid_throw_y),
+					.throw_2_x(kraid_throw_2_x), .throw_2_y(kraid_throw_2_y),
 					.color(kraid_color),
 					.draw(kraidDraw));
 								
@@ -1566,7 +1568,7 @@ module background(
 					  '{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
 					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
 					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
-					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,2},
+					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2},
 					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
 					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
 					  '{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},

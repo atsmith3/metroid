@@ -79,7 +79,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  30 .jdi          00004442  00000000  00000000  0007abb3  2**0
                   CONTENTS, READONLY
- 31 .sopcinfo     00169c02  00000000  00000000  0007eff5  2**0
+ 31 .sopcinfo     001bfc30  00000000  00000000  0007eff5  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 10000000 l    d  .entry	00000000 .entry
@@ -898,22 +898,22 @@ void IO_init(void)
 100001fc:	df000015 	stw	fp,0(sp)
 10000200:	d839883a 	mov	fp,sp
 	*otg_hpi_cs = 1;
-10000204:	0080b004 	movi	r2,704
+10000204:	0080e804 	movi	r2,928
 10000208:	00c00044 	movi	r3,1
 1000020c:	10c00005 	stb	r3,0(r2)
 	*otg_hpi_r = 1;
-10000210:	0080b804 	movi	r2,736
+10000210:	0080f004 	movi	r2,960
 10000214:	00c00044 	movi	r3,1
 10000218:	10c00005 	stb	r3,0(r2)
 	*otg_hpi_w = 1;
-1000021c:	0080b404 	movi	r2,720
+1000021c:	0080ec04 	movi	r2,944
 10000220:	00c00044 	movi	r3,1
 10000224:	10c00005 	stb	r3,0(r2)
 	*otg_hpi_address = 0;
-10000228:	0080c004 	movi	r2,768
+10000228:	0080f804 	movi	r2,992
 1000022c:	10000015 	stw	zero,0(r2)
 	*otg_hpi_data = 0;
-10000230:	0080bc04 	movi	r2,752
+10000230:	0080f404 	movi	r2,976
 10000234:	10000015 	stw	zero,0(r2)
 }
 10000238:	e037883a 	mov	sp,fp
@@ -933,31 +933,31 @@ void IO_write(alt_u8 Address, alt_u16 Data)
 1000025c:	e0fffe05 	stb	r3,-8(fp)
 10000260:	e0bfff0d 	sth	r2,-4(fp)
 	*otg_hpi_address = Address;
-10000264:	0080c004 	movi	r2,768
+10000264:	0080f804 	movi	r2,992
 10000268:	e0fffe03 	ldbu	r3,-8(fp)
 1000026c:	10c00015 	stw	r3,0(r2)
 	*otg_hpi_data = Data;
-10000270:	0080bc04 	movi	r2,752
+10000270:	0080f404 	movi	r2,976
 10000274:	e0ffff0b 	ldhu	r3,-4(fp)
 10000278:	10c00015 	stw	r3,0(r2)
 	
 	*otg_hpi_r = 1;
-1000027c:	0080b804 	movi	r2,736
+1000027c:	0080f004 	movi	r2,960
 10000280:	00c00044 	movi	r3,1
 10000284:	10c00005 	stb	r3,0(r2)
 	*otg_hpi_cs = 0;
-10000288:	0080b004 	movi	r2,704
+10000288:	0080e804 	movi	r2,928
 1000028c:	10000005 	stb	zero,0(r2)
 	*otg_hpi_w = 0;
-10000290:	0080b404 	movi	r2,720
+10000290:	0080ec04 	movi	r2,944
 10000294:	10000005 	stb	zero,0(r2)
 	*otg_hpi_w = 1;
-10000298:	0080b404 	movi	r2,720
+10000298:	0080ec04 	movi	r2,944
 1000029c:	00c00044 	movi	r3,1
 100002a0:	10c00005 	stb	r3,0(r2)
 	
 	*otg_hpi_cs = 1;
-100002a4:	0080b004 	movi	r2,704
+100002a4:	0080e804 	movi	r2,928
 100002a8:	00c00044 	movi	r3,1
 100002ac:	10c00005 	stb	r3,0(r2)
 //*************************************************************************//
@@ -983,31 +983,31 @@ alt_u16 IO_read(alt_u8 Address)
 	alt_u16 temp;
 	
 	*otg_hpi_address = Address;
-100002d4:	0080c004 	movi	r2,768
+100002d4:	0080f804 	movi	r2,992
 100002d8:	e0ffff03 	ldbu	r3,-4(fp)
 100002dc:	10c00015 	stw	r3,0(r2)
 		
 	*otg_hpi_w = 1;
-100002e0:	0080b404 	movi	r2,720
+100002e0:	0080ec04 	movi	r2,944
 100002e4:	00c00044 	movi	r3,1
 100002e8:	10c00005 	stb	r3,0(r2)
 	*otg_hpi_cs = 0;
-100002ec:	0080b004 	movi	r2,704
+100002ec:	0080e804 	movi	r2,928
 100002f0:	10000005 	stb	zero,0(r2)
 	*otg_hpi_r = 0;
-100002f4:	0080b804 	movi	r2,736
+100002f4:	0080f004 	movi	r2,960
 100002f8:	10000005 	stb	zero,0(r2)
 	
 	temp = *otg_hpi_data;
-100002fc:	0080bc04 	movi	r2,752
+100002fc:	0080f404 	movi	r2,976
 10000300:	10800017 	ldw	r2,0(r2)
 10000304:	e0bffe0d 	sth	r2,-8(fp)
 	*otg_hpi_r = 1;
-10000308:	0080b804 	movi	r2,736
+10000308:	0080f004 	movi	r2,960
 1000030c:	00c00044 	movi	r3,1
 10000310:	10c00005 	stb	r3,0(r2)
 	*otg_hpi_cs = 1;
-10000314:	0080b004 	movi	r2,704
+10000314:	0080e804 	movi	r2,928
 10000318:	00c00044 	movi	r3,1
 1000031c:	10c00005 	stb	r3,0(r2)
 	
@@ -2307,30 +2307,30 @@ int main(void)
 10000de4:	0109c404 	movi	r4,10000
 10000de8:	0013a800 	call	10013a80 <usleep>
 	*HEALTH = 3;
-10000dec:	00802404 	movi	r2,144
+10000dec:	00805c04 	movi	r2,368
 10000df0:	00c000c4 	movi	r3,3
 10000df4:	10c00015 	stw	r3,0(r2)
 	*SAMUS_EN = 1;
-10000df8:	0080a404 	movi	r2,656
+10000df8:	0080dc04 	movi	r2,880
 10000dfc:	00c00044 	movi	r3,1
 10000e00:	10c00005 	stb	r3,0(r2)
 	*SAMUS_X = 150;
-10000e04:	0080a004 	movi	r2,640
+10000e04:	0080d804 	movi	r2,864
 10000e08:	00c02584 	movi	r3,150
 10000e0c:	10c00015 	stw	r3,0(r2)
 	*SAMUS_Y = 400;
-10000e10:	00809c04 	movi	r2,624
+10000e10:	0080d404 	movi	r2,848
 10000e14:	00c06404 	movi	r3,400
 10000e18:	10c00015 	stw	r3,0(r2)
     *SCENE_SELECT = 4;
-10000e1c:	00801004 	movi	r2,64
+10000e1c:	00804804 	movi	r2,288
 10000e20:	00c00104 	movi	r3,4
 10000e24:	10c00015 	stw	r3,0(r2)
 	*LOSS_EN = False;
-10000e28:	00801c04 	movi	r2,112
+10000e28:	00805404 	movi	r2,336
 10000e2c:	10000015 	stw	zero,0(r2)
 	*TIT_EN = False;
-10000e30:	00802004 	movi	r2,128
+10000e30:	00805804 	movi	r2,352
 10000e34:	10000015 	stw	zero,0(r2)
 	int SAMUS_BOT = 70;
 10000e38:	00801184 	movi	r2,70
@@ -2650,7 +2650,7 @@ int main(void)
 		IOWR(KEYCODE_BASE, 0, keycode & 0xff);
 10001128:	e0b94c17 	ldw	r2,-6864(fp)
 1000112c:	10c03fcc 	andi	r3,r2,255
-10001130:	0080ac04 	movi	r2,688
+10001130:	0080e404 	movi	r2,912
 10001134:	10c00035 	stwio	r3,0(r2)
 
 
@@ -2788,7 +2788,7 @@ int main(void)
 
     // GAME START
 	if(*HEALTH == 0){
-10001274:	00802404 	movi	r2,144
+10001274:	00805c04 	movi	r2,368
 10001278:	10800017 	ldw	r2,0(r2)
 1000127c:	10000f1e 	bne	r2,zero,100012bc <main+0xf88>
 		if (keycode == 0x15){
@@ -2799,11 +2799,11 @@ int main(void)
 1000128c:	00800044 	movi	r2,1
 10001290:	e0b93b15 	stw	r2,-6932(fp)
 			*HEALTH = 3;
-10001294:	00802404 	movi	r2,144
+10001294:	00805c04 	movi	r2,368
 10001298:	00c000c4 	movi	r3,3
 1000129c:	10c00015 	stw	r3,0(r2)
 			*LOSS_EN = False;
-100012a0:	00801c04 	movi	r2,112
+100012a0:	00805404 	movi	r2,336
 100012a4:	10000015 	stw	zero,0(r2)
 		}
 		else{
@@ -2817,7 +2817,7 @@ int main(void)
 		}
 		else{
 			*LOSS_EN = True;
-100012ac:	00801c04 	movi	r2,112
+100012ac:	00805404 	movi	r2,336
 100012b0:	00c00044 	movi	r3,1
 100012b4:	10c00015 	stw	r3,0(r2)
 		}
@@ -2829,7 +2829,7 @@ int main(void)
 100012c0:	108005d8 	cmpnei	r2,r2,23
 100012c4:	1000041e 	bne	r2,zero,100012d8 <main+0xfa4>
 		*TIT_EN = True;
-100012c8:	00802004 	movi	r2,128
+100012c8:	00805804 	movi	r2,352
 100012cc:	00c00044 	movi	r3,1
 100012d0:	10c00015 	stw	r3,0(r2)
 		continue;
@@ -2837,31 +2837,31 @@ int main(void)
 	}
 	else{
 		*TIT_EN = False;
-100012d8:	00802004 	movi	r2,128
+100012d8:	00805804 	movi	r2,352
 100012dc:	10000015 	stw	zero,0(r2)
 	}
 	if(*MON1_EN == False && *MON2_EN == False){
-100012e0:	00809004 	movi	r2,576
+100012e0:	0080c804 	movi	r2,800
 100012e4:	10800003 	ldbu	r2,0(r2)
 100012e8:	10803fcc 	andi	r2,r2,255
 100012ec:	1080201c 	xori	r2,r2,128
 100012f0:	10bfe004 	addi	r2,r2,-128
 100012f4:	10000a1e 	bne	r2,zero,10001320 <main+0xfec>
-100012f8:	00808404 	movi	r2,528
+100012f8:	0080bc04 	movi	r2,752
 100012fc:	10800003 	ldbu	r2,0(r2)
 10001300:	10803fcc 	andi	r2,r2,255
 10001304:	1080201c 	xori	r2,r2,128
 10001308:	10bfe004 	addi	r2,r2,-128
 1000130c:	1000041e 	bne	r2,zero,10001320 <main+0xfec>
 		*WIN_EN = True;
-10001310:	00801804 	movi	r2,96
+10001310:	00805004 	movi	r2,320
 10001314:	00c00044 	movi	r3,1
 10001318:	10c00015 	stw	r3,0(r2)
 1000131c:	00000206 	br	10001328 <main+0xff4>
 	}
 	else{
 		*WIN_EN = False;
-10001320:	00801804 	movi	r2,96
+10001320:	00805004 	movi	r2,320
 10001324:	10000015 	stw	zero,0(r2)
 	}
 	//Scene Init
@@ -2874,15 +2874,15 @@ int main(void)
 10001338:	108000d8 	cmpnei	r2,r2,3
 1000133c:	1000241e 	bne	r2,zero,100013d0 <main+0x109c>
 			*SAMUS_X = scene3_x;
-10001340:	0080a004 	movi	r2,640
+10001340:	0080d804 	movi	r2,864
 10001344:	e0f96217 	ldw	r3,-6776(fp)
 10001348:	10c00015 	stw	r3,0(r2)
 			*SAMUS_Y = scene3_y;
-1000134c:	00809c04 	movi	r2,624
+1000134c:	0080d404 	movi	r2,848
 10001350:	e0f96317 	ldw	r3,-6772(fp)
 10001354:	10c00015 	stw	r3,0(r2)
 			*SAMUS_DIR = scene3_dir;
-10001358:	00801404 	movi	r2,80
+10001358:	00804c04 	movi	r2,304
 1000135c:	e0f95c17 	ldw	r3,-6800(fp)
 10001360:	10c00005 	stb	r3,0(r2)
 			monster1_1_x = monster1_1_x_scene3;
@@ -2913,35 +2913,35 @@ int main(void)
 100013a4:	e0b96c17 	ldw	r2,-6736(fp)
 100013a8:	e0b94915 	stw	r2,-6876(fp)
 			*MON1_EN = 1;
-100013ac:	00809004 	movi	r2,576
+100013ac:	0080c804 	movi	r2,800
 100013b0:	00c00044 	movi	r3,1
 100013b4:	10c00005 	stb	r3,0(r2)
 			*MON2_EN = 1;
-100013b8:	00808404 	movi	r2,528
+100013b8:	0080bc04 	movi	r2,752
 100013bc:	00c00044 	movi	r3,1
 100013c0:	10c00005 	stb	r3,0(r2)
 			*MON3_EN = 1;
-100013c4:	00807804 	movi	r2,480
+100013c4:	0080b004 	movi	r2,704
 100013c8:	00c00044 	movi	r3,1
 100013cc:	10c00005 	stb	r3,0(r2)
 		}
 		sceneStart = False;
 100013d0:	e0393b15 	stw	zero,-6932(fp)
 		*EXP1_EN = 0;
-100013d4:	00806c04 	movi	r2,432
+100013d4:	0080a404 	movi	r2,656
 100013d8:	10000015 	stw	zero,0(r2)
 		*EXP2_EN = 0;
-100013dc:	00806004 	movi	r2,384
+100013dc:	00809804 	movi	r2,608
 100013e0:	10000015 	stw	zero,0(r2)
 		*EXP3_EN = 0;
-100013e4:	00805404 	movi	r2,336
+100013e4:	00808c04 	movi	r2,560
 100013e8:	10000015 	stw	zero,0(r2)
 	}
 
 
     //SAMUS MOVEMENT
     *TIT_EN = 0;
-100013ec:	00802004 	movi	r2,128
+100013ec:	00805804 	movi	r2,352
 100013f0:	10000015 	stw	zero,0(r2)
     //Move Right
     if(((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A) && has_control == True){
@@ -2963,14 +2963,14 @@ int main(void)
 10001430:	10800058 	cmpnei	r2,r2,1
 10001434:	1000041e 	bne	r2,zero,10001448 <main+0x1114>
     	*SAMUS_UP = 1;
-10001438:	00800c04 	movi	r2,48
+10001438:	00804404 	movi	r2,272
 1000143c:	00c00044 	movi	r3,1
 10001440:	10c00005 	stb	r3,0(r2)
 10001444:	00000206 	br	10001450 <main+0x111c>
     }
     else{
     	*SAMUS_UP = 0;
-10001448:	00800c04 	movi	r2,48
+10001448:	00804404 	movi	r2,272
 1000144c:	10000005 	stb	zero,0(r2)
     }
     //Move right
@@ -2993,14 +2993,14 @@ int main(void)
 1000148c:	10800058 	cmpnei	r2,r2,1
 10001490:	10008e1e 	bne	r2,zero,100016cc <main+0x1398>
     	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0){
-10001494:	00809c04 	movi	r2,624
+10001494:	0080d404 	movi	r2,848
 10001498:	10800017 	ldw	r2,0(r2)
 1000149c:	10800284 	addi	r2,r2,10
 100014a0:	1009883a 	mov	r4,r2
 100014a4:	01400784 	movi	r5,30
 100014a8:	00057ac0 	call	100057ac <__divsi3>
 100014ac:	1023883a 	mov	r17,r2
-100014b0:	0080a004 	movi	r2,640
+100014b0:	0080d804 	movi	r2,864
 100014b4:	10800017 	ldw	r2,0(r2)
 100014b8:	10800a04 	addi	r2,r2,40
 100014bc:	1009883a 	mov	r4,r2
@@ -3024,14 +3024,14 @@ int main(void)
 10001504:	10804604 	addi	r2,r2,280
 10001508:	10800017 	ldw	r2,0(r2)
 1000150c:	10006e1e 	bne	r2,zero,100016c8 <main+0x1394>
-10001510:	00809c04 	movi	r2,624
+10001510:	0080d404 	movi	r2,848
 10001514:	10800017 	ldw	r2,0(r2)
 10001518:	10800644 	addi	r2,r2,25
 1000151c:	1009883a 	mov	r4,r2
 10001520:	01400784 	movi	r5,30
 10001524:	00057ac0 	call	100057ac <__divsi3>
 10001528:	1023883a 	mov	r17,r2
-1000152c:	0080a004 	movi	r2,640
+1000152c:	0080d804 	movi	r2,864
 10001530:	10800017 	ldw	r2,0(r2)
 10001534:	10800a04 	addi	r2,r2,40
 10001538:	1009883a 	mov	r4,r2
@@ -3055,14 +3055,14 @@ int main(void)
 10001580:	10804604 	addi	r2,r2,280
 10001584:	10800017 	ldw	r2,0(r2)
 10001588:	10004f1e 	bne	r2,zero,100016c8 <main+0x1394>
-1000158c:	00809c04 	movi	r2,624
+1000158c:	0080d404 	movi	r2,848
 10001590:	10800017 	ldw	r2,0(r2)
 10001594:	10800c84 	addi	r2,r2,50
 10001598:	1009883a 	mov	r4,r2
 1000159c:	01400784 	movi	r5,30
 100015a0:	00057ac0 	call	100057ac <__divsi3>
 100015a4:	1023883a 	mov	r17,r2
-100015a8:	0080a004 	movi	r2,640
+100015a8:	0080d804 	movi	r2,864
 100015ac:	10800017 	ldw	r2,0(r2)
 100015b0:	10800a04 	addi	r2,r2,40
 100015b4:	1009883a 	mov	r4,r2
@@ -3086,14 +3086,14 @@ int main(void)
 100015fc:	10804604 	addi	r2,r2,280
 10001600:	10800017 	ldw	r2,0(r2)
 10001604:	1000301e 	bne	r2,zero,100016c8 <main+0x1394>
-10001608:	00809c04 	movi	r2,624
+10001608:	0080d404 	movi	r2,848
 1000160c:	10800017 	ldw	r2,0(r2)
 10001610:	10801184 	addi	r2,r2,70
 10001614:	1009883a 	mov	r4,r2
 10001618:	01400784 	movi	r5,30
 1000161c:	00057ac0 	call	100057ac <__divsi3>
 10001620:	1023883a 	mov	r17,r2
-10001624:	0080a004 	movi	r2,640
+10001624:	0080d804 	movi	r2,864
 10001628:	10800017 	ldw	r2,0(r2)
 1000162c:	10800a04 	addi	r2,r2,40
 10001630:	1009883a 	mov	r4,r2
@@ -3118,11 +3118,11 @@ int main(void)
 1000167c:	10800017 	ldw	r2,0(r2)
 10001680:	1000111e 	bne	r2,zero,100016c8 <main+0x1394>
     		*SAMUS_DIR = 0;
-10001684:	00801404 	movi	r2,80
+10001684:	00804c04 	movi	r2,304
 10001688:	10000005 	stb	zero,0(r2)
     		*SAMUS_X+=6;
-1000168c:	0080a004 	movi	r2,640
-10001690:	00c0a004 	movi	r3,640
+1000168c:	0080d804 	movi	r2,864
+10001690:	00c0d804 	movi	r3,864
 10001694:	18c00017 	ldw	r3,0(r3)
 10001698:	18c00184 	addi	r3,r3,6
 1000169c:	10c00015 	stw	r3,0(r2)
@@ -3131,14 +3131,14 @@ int main(void)
 100016a4:	10800058 	cmpnei	r2,r2,1
 100016a8:	1000041e 	bne	r2,zero,100016bc <main+0x1388>
     			*SAMUS_WALK = 1;
-100016ac:	00809804 	movi	r2,608
+100016ac:	0080d004 	movi	r2,832
 100016b0:	00c00044 	movi	r3,1
 100016b4:	10c00005 	stb	r3,0(r2)
 100016b8:	00000306 	br	100016c8 <main+0x1394>
     		}
     		else{
     			*SAMUS_WALK = 0;
-100016bc:	00809804 	movi	r2,608
+100016bc:	0080d004 	movi	r2,832
 100016c0:	10000005 	stb	zero,0(r2)
     else{
     	*SAMUS_UP = 0;
@@ -3172,14 +3172,14 @@ int main(void)
 10001708:	10800058 	cmpnei	r2,r2,1
 1000170c:	10008f1e 	bne	r2,zero,1000194c <main+0x1618>
     	if(scene[sceneNum][(*SAMUS_Y+15)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0){
-10001710:	00809c04 	movi	r2,624
+10001710:	0080d404 	movi	r2,848
 10001714:	10800017 	ldw	r2,0(r2)
 10001718:	108003c4 	addi	r2,r2,15
 1000171c:	1009883a 	mov	r4,r2
 10001720:	01400784 	movi	r5,30
 10001724:	00057ac0 	call	100057ac <__divsi3>
 10001728:	1023883a 	mov	r17,r2
-1000172c:	0080a004 	movi	r2,640
+1000172c:	0080d804 	movi	r2,864
 10001730:	10800017 	ldw	r2,0(r2)
 10001734:	10bfff44 	addi	r2,r2,-3
 10001738:	1009883a 	mov	r4,r2
@@ -3203,14 +3203,14 @@ int main(void)
 10001780:	10804604 	addi	r2,r2,280
 10001784:	10800017 	ldw	r2,0(r2)
 10001788:	10006f1e 	bne	r2,zero,10001948 <main+0x1614>
-1000178c:	00809c04 	movi	r2,624
+1000178c:	0080d404 	movi	r2,848
 10001790:	10800017 	ldw	r2,0(r2)
 10001794:	10800644 	addi	r2,r2,25
 10001798:	1009883a 	mov	r4,r2
 1000179c:	01400784 	movi	r5,30
 100017a0:	00057ac0 	call	100057ac <__divsi3>
 100017a4:	1023883a 	mov	r17,r2
-100017a8:	0080a004 	movi	r2,640
+100017a8:	0080d804 	movi	r2,864
 100017ac:	10800017 	ldw	r2,0(r2)
 100017b0:	10bfff44 	addi	r2,r2,-3
 100017b4:	1009883a 	mov	r4,r2
@@ -3234,14 +3234,14 @@ int main(void)
 100017fc:	10804604 	addi	r2,r2,280
 10001800:	10800017 	ldw	r2,0(r2)
 10001804:	1000501e 	bne	r2,zero,10001948 <main+0x1614>
-10001808:	00809c04 	movi	r2,624
+10001808:	0080d404 	movi	r2,848
 1000180c:	10800017 	ldw	r2,0(r2)
 10001810:	10800c84 	addi	r2,r2,50
 10001814:	1009883a 	mov	r4,r2
 10001818:	01400784 	movi	r5,30
 1000181c:	00057ac0 	call	100057ac <__divsi3>
 10001820:	1023883a 	mov	r17,r2
-10001824:	0080a004 	movi	r2,640
+10001824:	0080d804 	movi	r2,864
 10001828:	10800017 	ldw	r2,0(r2)
 1000182c:	10bfff44 	addi	r2,r2,-3
 10001830:	1009883a 	mov	r4,r2
@@ -3265,14 +3265,14 @@ int main(void)
 10001878:	10804604 	addi	r2,r2,280
 1000187c:	10800017 	ldw	r2,0(r2)
 10001880:	1000311e 	bne	r2,zero,10001948 <main+0x1614>
-10001884:	00809c04 	movi	r2,624
+10001884:	0080d404 	movi	r2,848
 10001888:	10800017 	ldw	r2,0(r2)
 1000188c:	10801184 	addi	r2,r2,70
 10001890:	1009883a 	mov	r4,r2
 10001894:	01400784 	movi	r5,30
 10001898:	00057ac0 	call	100057ac <__divsi3>
 1000189c:	1023883a 	mov	r17,r2
-100018a0:	0080a004 	movi	r2,640
+100018a0:	0080d804 	movi	r2,864
 100018a4:	10800017 	ldw	r2,0(r2)
 100018a8:	10bfff44 	addi	r2,r2,-3
 100018ac:	1009883a 	mov	r4,r2
@@ -3297,12 +3297,12 @@ int main(void)
 100018f8:	10800017 	ldw	r2,0(r2)
 100018fc:	1000121e 	bne	r2,zero,10001948 <main+0x1614>
     		*SAMUS_DIR = 1;
-10001900:	00801404 	movi	r2,80
+10001900:	00804c04 	movi	r2,304
 10001904:	00c00044 	movi	r3,1
 10001908:	10c00005 	stb	r3,0(r2)
     		*SAMUS_X-=6;
-1000190c:	0080a004 	movi	r2,640
-10001910:	00c0a004 	movi	r3,640
+1000190c:	0080d804 	movi	r2,864
+10001910:	00c0d804 	movi	r3,864
 10001914:	18c00017 	ldw	r3,0(r3)
 10001918:	18fffe84 	addi	r3,r3,-6
 1000191c:	10c00015 	stw	r3,0(r2)
@@ -3311,14 +3311,14 @@ int main(void)
 10001924:	10800058 	cmpnei	r2,r2,1
 10001928:	1000041e 	bne	r2,zero,1000193c <main+0x1608>
 				*SAMUS_WALK = 1;
-1000192c:	00809804 	movi	r2,608
+1000192c:	0080d004 	movi	r2,832
 10001930:	00c00044 	movi	r3,1
 10001934:	10c00005 	stb	r3,0(r2)
 10001938:	00000306 	br	10001948 <main+0x1614>
 			}
     		else{
 				*SAMUS_WALK = 0;
-1000193c:	00809804 	movi	r2,608
+1000193c:	0080d004 	movi	r2,832
 10001940:	10000005 	stb	zero,0(r2)
     		}
     	}
@@ -3334,7 +3334,7 @@ int main(void)
     }
     else{
         *SAMUS_WALK = 0;
-1000194c:	00809804 	movi	r2,608
+1000194c:	0080d004 	movi	r2,832
 10001950:	10000005 	stb	zero,0(r2)
     }
 
@@ -3343,14 +3343,14 @@ int main(void)
 10001954:	e0b92c17 	ldw	r2,-6992(fp)
 10001958:	1000041e 	bne	r2,zero,1000196c <main+0x1638>
     	*SAMUS_JUMP = 1;
-1000195c:	00809404 	movi	r2,592
+1000195c:	0080cc04 	movi	r2,816
 10001960:	00c00044 	movi	r3,1
 10001964:	10c00005 	stb	r3,0(r2)
 10001968:	00000206 	br	10001974 <main+0x1640>
     }
     else{
     	*SAMUS_JUMP = 0;
-1000196c:	00809404 	movi	r2,592
+1000196c:	0080cc04 	movi	r2,816
 10001970:	10000005 	stb	zero,0(r2)
     }
     if(((keycode&0x0000FF)==0x2c || (keycode&0x00FF00)>>8 == 0x2c || (keycode&0xFF0000)>>16 == 0x2c) && grounded == True && let_go == False && button_let_go == True && has_control == True){
@@ -3477,8 +3477,8 @@ int main(void)
     }
 
     *SAMUS_Y += y_inc;
-10001aec:	04009c04 	movi	r16,624
-10001af0:	00809c04 	movi	r2,624
+10001aec:	0400d404 	movi	r16,848
+10001af0:	0080d404 	movi	r2,848
 10001af4:	10800017 	ldw	r2,0(r2)
 10001af8:	1009883a 	mov	r4,r2
 10001afc:	00064580 	call	10006458 <__floatsisf>
@@ -3500,14 +3500,14 @@ int main(void)
 
     //bot collision detection
     if((scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+5)/30] != 0 || scene[sceneNum][(*SAMUS_Y+80)/30][(*SAMUS_X+33)/30] != 0)){
-10001b38:	00809c04 	movi	r2,624
+10001b38:	0080d404 	movi	r2,848
 10001b3c:	10800017 	ldw	r2,0(r2)
 10001b40:	10801404 	addi	r2,r2,80
 10001b44:	1009883a 	mov	r4,r2
 10001b48:	01400784 	movi	r5,30
 10001b4c:	00057ac0 	call	100057ac <__divsi3>
 10001b50:	1023883a 	mov	r17,r2
-10001b54:	0080a004 	movi	r2,640
+10001b54:	0080d804 	movi	r2,864
 10001b58:	10800017 	ldw	r2,0(r2)
 10001b5c:	10800144 	addi	r2,r2,5
 10001b60:	1009883a 	mov	r4,r2
@@ -3531,14 +3531,14 @@ int main(void)
 10001ba8:	10804604 	addi	r2,r2,280
 10001bac:	10800017 	ldw	r2,0(r2)
 10001bb0:	10001f1e 	bne	r2,zero,10001c30 <main+0x18fc>
-10001bb4:	00809c04 	movi	r2,624
+10001bb4:	0080d404 	movi	r2,848
 10001bb8:	10800017 	ldw	r2,0(r2)
 10001bbc:	10801404 	addi	r2,r2,80
 10001bc0:	1009883a 	mov	r4,r2
 10001bc4:	01400784 	movi	r5,30
 10001bc8:	00057ac0 	call	100057ac <__divsi3>
 10001bcc:	1023883a 	mov	r17,r2
-10001bd0:	0080a004 	movi	r2,640
+10001bd0:	0080d804 	movi	r2,864
 10001bd4:	10800017 	ldw	r2,0(r2)
 10001bd8:	10800844 	addi	r2,r2,33
 10001bdc:	1009883a 	mov	r4,r2
@@ -3563,8 +3563,8 @@ int main(void)
 10001c28:	10800017 	ldw	r2,0(r2)
 10001c2c:	10000e26 	beq	r2,zero,10001c68 <main+0x1934>
     	*SAMUS_Y = (*SAMUS_Y/30)*30+19;
-10001c30:	04009c04 	movi	r16,624
-10001c34:	00809c04 	movi	r2,624
+10001c30:	0400d404 	movi	r16,848
+10001c34:	0080d404 	movi	r2,848
 10001c38:	10800017 	ldw	r2,0(r2)
 10001c3c:	1009883a 	mov	r4,r2
 10001c40:	01400784 	movi	r5,30
@@ -3588,20 +3588,20 @@ int main(void)
 10001c6c:	e0b92c17 	ldw	r2,-6992(fp)
 10001c70:	1000021e 	bne	r2,zero,10001c7c <main+0x1948>
     	*SAMUS_WALK = 0;
-10001c74:	00809804 	movi	r2,608
+10001c74:	0080d004 	movi	r2,832
 10001c78:	10000005 	stb	zero,0(r2)
     }
 
     //If hits head
     if(scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+33)/30] != 0){
-10001c7c:	00809c04 	movi	r2,624
+10001c7c:	0080d404 	movi	r2,848
 10001c80:	10800017 	ldw	r2,0(r2)
 10001c84:	10800144 	addi	r2,r2,5
 10001c88:	1009883a 	mov	r4,r2
 10001c8c:	01400784 	movi	r5,30
 10001c90:	00057ac0 	call	100057ac <__divsi3>
 10001c94:	1023883a 	mov	r17,r2
-10001c98:	0080a004 	movi	r2,640
+10001c98:	0080d804 	movi	r2,864
 10001c9c:	10800017 	ldw	r2,0(r2)
 10001ca0:	10800084 	addi	r2,r2,2
 10001ca4:	1009883a 	mov	r4,r2
@@ -3625,14 +3625,14 @@ int main(void)
 10001cec:	10804604 	addi	r2,r2,280
 10001cf0:	10800017 	ldw	r2,0(r2)
 10001cf4:	10001f1e 	bne	r2,zero,10001d74 <main+0x1a40>
-10001cf8:	00809c04 	movi	r2,624
+10001cf8:	0080d404 	movi	r2,848
 10001cfc:	10800017 	ldw	r2,0(r2)
 10001d00:	10800144 	addi	r2,r2,5
 10001d04:	1009883a 	mov	r4,r2
 10001d08:	01400784 	movi	r5,30
 10001d0c:	00057ac0 	call	100057ac <__divsi3>
 10001d10:	1023883a 	mov	r17,r2
-10001d14:	0080a004 	movi	r2,640
+10001d14:	0080d804 	movi	r2,864
 10001d18:	10800017 	ldw	r2,0(r2)
 10001d1c:	10800844 	addi	r2,r2,33
 10001d20:	1009883a 	mov	r4,r2
@@ -3704,19 +3704,19 @@ int main(void)
 10001e00:	10800058 	cmpnei	r2,r2,1
 10001e04:	1000d81e 	bne	r2,zero,10002168 <main+0x1e34>
     	if(*BUL1_EN == True && *BUL2_EN == True && *BUL3_EN == False){
-10001e08:	00804804 	movi	r2,288
+10001e08:	00808004 	movi	r2,512
 10001e0c:	10800017 	ldw	r2,0(r2)
 10001e10:	10800058 	cmpnei	r2,r2,1
 10001e14:	1000481e 	bne	r2,zero,10001f38 <main+0x1c04>
-10001e18:	00803c04 	movi	r2,240
+10001e18:	00807404 	movi	r2,464
 10001e1c:	10800017 	ldw	r2,0(r2)
 10001e20:	10800058 	cmpnei	r2,r2,1
 10001e24:	1000441e 	bne	r2,zero,10001f38 <main+0x1c04>
-10001e28:	00803004 	movi	r2,192
+10001e28:	00806804 	movi	r2,416
 10001e2c:	10800017 	ldw	r2,0(r2)
 10001e30:	1000411e 	bne	r2,zero,10001f38 <main+0x1c04>
     		if(*SAMUS_DIR == 1){
-10001e34:	00801404 	movi	r2,80
+10001e34:	00804c04 	movi	r2,304
 10001e38:	10800003 	ldbu	r2,0(r2)
 10001e3c:	10803fcc 	andi	r2,r2,255
 10001e40:	1080201c 	xori	r2,r2,128
@@ -3724,17 +3724,17 @@ int main(void)
 10001e48:	10800058 	cmpnei	r2,r2,1
 10001e4c:	10000f1e 	bne	r2,zero,10001e8c <main+0x1b58>
     			*BUL3_EN = True;
-10001e50:	00803004 	movi	r2,192
+10001e50:	00806804 	movi	r2,416
 10001e54:	00c00044 	movi	r3,1
 10001e58:	10c00015 	stw	r3,0(r2)
     			*BUL3_X = *SAMUS_X;
-10001e5c:	00802c04 	movi	r2,176
-10001e60:	00c0a004 	movi	r3,640
+10001e5c:	00806404 	movi	r2,400
+10001e60:	00c0d804 	movi	r3,864
 10001e64:	18c00017 	ldw	r3,0(r3)
 10001e68:	10c00015 	stw	r3,0(r2)
     			*BUL3_Y = *SAMUS_Y+25;
-10001e6c:	00802804 	movi	r2,160
-10001e70:	00c09c04 	movi	r3,624
+10001e6c:	00806004 	movi	r2,384
+10001e70:	00c0d404 	movi	r3,848
 10001e74:	18c00017 	ldw	r3,0(r3)
 10001e78:	18c00644 	addi	r3,r3,25
 10001e7c:	10c00015 	stw	r3,0(r2)
@@ -3745,18 +3745,18 @@ int main(void)
     		}
     		else{
     			*BUL3_EN = True;
-10001e8c:	00803004 	movi	r2,192
+10001e8c:	00806804 	movi	r2,416
 10001e90:	00c00044 	movi	r3,1
 10001e94:	10c00015 	stw	r3,0(r2)
     			*BUL3_X = *SAMUS_X+30;
-10001e98:	00802c04 	movi	r2,176
-10001e9c:	00c0a004 	movi	r3,640
+10001e98:	00806404 	movi	r2,400
+10001e9c:	00c0d804 	movi	r3,864
 10001ea0:	18c00017 	ldw	r3,0(r3)
 10001ea4:	18c00784 	addi	r3,r3,30
 10001ea8:	10c00015 	stw	r3,0(r2)
     			*BUL3_Y = *SAMUS_Y+25;
-10001eac:	00802804 	movi	r2,160
-10001eb0:	00c09c04 	movi	r3,624
+10001eac:	00806004 	movi	r2,384
+10001eb0:	00c0d404 	movi	r3,848
 10001eb4:	18c00017 	ldw	r3,0(r3)
 10001eb8:	18c00644 	addi	r3,r3,25
 10001ebc:	10c00015 	stw	r3,0(r2)
@@ -3782,13 +3782,13 @@ int main(void)
 10001efc:	00800044 	movi	r2,1
 10001f00:	e0b93815 	stw	r2,-6944(fp)
     			*BUL3_Y = *SAMUS_Y;
-10001f04:	00802804 	movi	r2,160
-10001f08:	00c09c04 	movi	r3,624
+10001f04:	00806004 	movi	r2,384
+10001f08:	00c0d404 	movi	r3,848
 10001f0c:	18c00017 	ldw	r3,0(r3)
 10001f10:	10c00015 	stw	r3,0(r2)
     			*BUL3_X = *SAMUS_X+18;
-10001f14:	00802c04 	movi	r2,176
-10001f18:	00c0a004 	movi	r3,640
+10001f14:	00806404 	movi	r2,400
+10001f18:	00c0d804 	movi	r3,864
 10001f1c:	18c00017 	ldw	r3,0(r3)
 10001f20:	18c00484 	addi	r3,r3,18
 10001f24:	10c00015 	stw	r3,0(r2)
@@ -3803,16 +3803,16 @@ int main(void)
 10001f34:	00008b06 	br	10002164 <main+0x1e30>
     	}
     	else if(*BUL1_EN == True && *BUL2_EN == False){
-10001f38:	00804804 	movi	r2,288
+10001f38:	00808004 	movi	r2,512
 10001f3c:	10800017 	ldw	r2,0(r2)
 10001f40:	10800058 	cmpnei	r2,r2,1
 10001f44:	1000441e 	bne	r2,zero,10002058 <main+0x1d24>
-10001f48:	00803c04 	movi	r2,240
+10001f48:	00807404 	movi	r2,464
 10001f4c:	10800017 	ldw	r2,0(r2)
 10001f50:	1000411e 	bne	r2,zero,10002058 <main+0x1d24>
 
 			if(*SAMUS_DIR == 1){
-10001f54:	00801404 	movi	r2,80
+10001f54:	00804c04 	movi	r2,304
 10001f58:	10800003 	ldbu	r2,0(r2)
 10001f5c:	10803fcc 	andi	r2,r2,255
 10001f60:	1080201c 	xori	r2,r2,128
@@ -3820,17 +3820,17 @@ int main(void)
 10001f68:	10800058 	cmpnei	r2,r2,1
 10001f6c:	10000f1e 	bne	r2,zero,10001fac <main+0x1c78>
 				*BUL2_EN = True;
-10001f70:	00803c04 	movi	r2,240
+10001f70:	00807404 	movi	r2,464
 10001f74:	00c00044 	movi	r3,1
 10001f78:	10c00015 	stw	r3,0(r2)
 				*BUL2_X = *SAMUS_X;
-10001f7c:	00803804 	movi	r2,224
-10001f80:	00c0a004 	movi	r3,640
+10001f7c:	00807004 	movi	r2,448
+10001f80:	00c0d804 	movi	r3,864
 10001f84:	18c00017 	ldw	r3,0(r3)
 10001f88:	10c00015 	stw	r3,0(r2)
 				*BUL2_Y = *SAMUS_Y+25;
-10001f8c:	00803404 	movi	r2,208
-10001f90:	00c09c04 	movi	r3,624
+10001f8c:	00806c04 	movi	r2,432
+10001f90:	00c0d404 	movi	r3,848
 10001f94:	18c00017 	ldw	r3,0(r3)
 10001f98:	18c00644 	addi	r3,r3,25
 10001f9c:	10c00015 	stw	r3,0(r2)
@@ -3841,18 +3841,18 @@ int main(void)
 			}
 			else{
 				*BUL2_EN = True;
-10001fac:	00803c04 	movi	r2,240
+10001fac:	00807404 	movi	r2,464
 10001fb0:	00c00044 	movi	r3,1
 10001fb4:	10c00015 	stw	r3,0(r2)
 				*BUL2_X = *SAMUS_X+30;
-10001fb8:	00803804 	movi	r2,224
-10001fbc:	00c0a004 	movi	r3,640
+10001fb8:	00807004 	movi	r2,448
+10001fbc:	00c0d804 	movi	r3,864
 10001fc0:	18c00017 	ldw	r3,0(r3)
 10001fc4:	18c00784 	addi	r3,r3,30
 10001fc8:	10c00015 	stw	r3,0(r2)
 				*BUL2_Y = *SAMUS_Y+25;
-10001fcc:	00803404 	movi	r2,208
-10001fd0:	00c09c04 	movi	r3,624
+10001fcc:	00806c04 	movi	r2,432
+10001fd0:	00c0d404 	movi	r3,848
 10001fd4:	18c00017 	ldw	r3,0(r3)
 10001fd8:	18c00644 	addi	r3,r3,25
 10001fdc:	10c00015 	stw	r3,0(r2)
@@ -3879,13 +3879,13 @@ int main(void)
 1000201c:	00800044 	movi	r2,1
 10002020:	e0b93515 	stw	r2,-6956(fp)
 				*BUL2_Y = *SAMUS_Y;
-10002024:	00803404 	movi	r2,208
-10002028:	00c09c04 	movi	r3,624
+10002024:	00806c04 	movi	r2,432
+10002028:	00c0d404 	movi	r3,848
 1000202c:	18c00017 	ldw	r3,0(r3)
 10002030:	10c00015 	stw	r3,0(r2)
 				*BUL2_X = *SAMUS_X+18;
-10002034:	00803804 	movi	r2,224
-10002038:	00c0a004 	movi	r3,640
+10002034:	00807004 	movi	r2,448
+10002038:	00c0d804 	movi	r3,864
 1000203c:	18c00017 	ldw	r3,0(r3)
 10002040:	18c00484 	addi	r3,r3,18
 10002044:	10c00015 	stw	r3,0(r2)
@@ -3900,11 +3900,11 @@ int main(void)
 10002054:	00004306 	br	10002164 <main+0x1e30>
 		}
     	else if(*BUL1_EN == False){
-10002058:	00804804 	movi	r2,288
+10002058:	00808004 	movi	r2,512
 1000205c:	10800017 	ldw	r2,0(r2)
 10002060:	1000401e 	bne	r2,zero,10002164 <main+0x1e30>
 			if(*SAMUS_DIR == 1){
-10002064:	00801404 	movi	r2,80
+10002064:	00804c04 	movi	r2,304
 10002068:	10800003 	ldbu	r2,0(r2)
 1000206c:	10803fcc 	andi	r2,r2,255
 10002070:	1080201c 	xori	r2,r2,128
@@ -3912,17 +3912,17 @@ int main(void)
 10002078:	10800058 	cmpnei	r2,r2,1
 1000207c:	10000f1e 	bne	r2,zero,100020bc <main+0x1d88>
 				*BUL1_EN = True;
-10002080:	00804804 	movi	r2,288
+10002080:	00808004 	movi	r2,512
 10002084:	00c00044 	movi	r3,1
 10002088:	10c00015 	stw	r3,0(r2)
 				*BUL1_X = *SAMUS_X;
-1000208c:	00804404 	movi	r2,272
-10002090:	00c0a004 	movi	r3,640
+1000208c:	00807c04 	movi	r2,496
+10002090:	00c0d804 	movi	r3,864
 10002094:	18c00017 	ldw	r3,0(r3)
 10002098:	10c00015 	stw	r3,0(r2)
 				*BUL1_Y = *SAMUS_Y+25;
-1000209c:	00804004 	movi	r2,256
-100020a0:	00c09c04 	movi	r3,624
+1000209c:	00807804 	movi	r2,480
+100020a0:	00c0d404 	movi	r3,848
 100020a4:	18c00017 	ldw	r3,0(r3)
 100020a8:	18c00644 	addi	r3,r3,25
 100020ac:	10c00015 	stw	r3,0(r2)
@@ -3933,18 +3933,18 @@ int main(void)
 			}
 			else{
 				*BUL1_EN = True;
-100020bc:	00804804 	movi	r2,288
+100020bc:	00808004 	movi	r2,512
 100020c0:	00c00044 	movi	r3,1
 100020c4:	10c00015 	stw	r3,0(r2)
 				*BUL1_X = *SAMUS_X+30;
-100020c8:	00804404 	movi	r2,272
-100020cc:	00c0a004 	movi	r3,640
+100020c8:	00807c04 	movi	r2,496
+100020cc:	00c0d804 	movi	r3,864
 100020d0:	18c00017 	ldw	r3,0(r3)
 100020d4:	18c00784 	addi	r3,r3,30
 100020d8:	10c00015 	stw	r3,0(r2)
 				*BUL1_Y = *SAMUS_Y+25;
-100020dc:	00804004 	movi	r2,256
-100020e0:	00c09c04 	movi	r3,624
+100020dc:	00807804 	movi	r2,480
+100020e0:	00c0d404 	movi	r3,848
 100020e4:	18c00017 	ldw	r3,0(r3)
 100020e8:	18c00644 	addi	r3,r3,25
 100020ec:	10c00015 	stw	r3,0(r2)
@@ -3972,13 +3972,13 @@ int main(void)
 10002130:	00800044 	movi	r2,1
 10002134:	e0b93215 	stw	r2,-6968(fp)
 				*BUL1_Y = *SAMUS_Y;
-10002138:	00804004 	movi	r2,256
-1000213c:	00c09c04 	movi	r3,624
+10002138:	00807804 	movi	r2,480
+1000213c:	00c0d404 	movi	r3,848
 10002140:	18c00017 	ldw	r3,0(r3)
 10002144:	10c00015 	stw	r3,0(r2)
 				*BUL1_X = *SAMUS_X+18;
-10002148:	00804404 	movi	r2,272
-1000214c:	00c0a004 	movi	r3,640
+10002148:	00807c04 	movi	r2,496
+1000214c:	00c0d804 	movi	r3,864
 10002150:	18c00017 	ldw	r3,0(r3)
 10002154:	18c00484 	addi	r3,r3,18
 10002158:	10c00015 	stw	r3,0(r2)
@@ -3994,7 +3994,7 @@ int main(void)
     }
     //Left collisions
     if(*BUL3_EN == True && bul1Up == False && bul3Left == True && (scene[sceneNum][(*BUL3_Y)/30][(*BUL3_X-8)/30]!=0 || scene[sceneNum][(*BUL3_Y+8)/30][(*BUL3_X-8)/30]!=0)){
-10002168:	00803004 	movi	r2,192
+10002168:	00806804 	movi	r2,416
 1000216c:	10800017 	ldw	r2,0(r2)
 10002170:	10800058 	cmpnei	r2,r2,1
 10002174:	1000441e 	bne	r2,zero,10002288 <main+0x1f54>
@@ -4003,13 +4003,13 @@ int main(void)
 10002180:	e0b93717 	ldw	r2,-6948(fp)
 10002184:	10800058 	cmpnei	r2,r2,1
 10002188:	10003f1e 	bne	r2,zero,10002288 <main+0x1f54>
-1000218c:	00802804 	movi	r2,160
+1000218c:	00806004 	movi	r2,384
 10002190:	10800017 	ldw	r2,0(r2)
 10002194:	1009883a 	mov	r4,r2
 10002198:	01400784 	movi	r5,30
 1000219c:	00057ac0 	call	100057ac <__divsi3>
 100021a0:	1023883a 	mov	r17,r2
-100021a4:	00802c04 	movi	r2,176
+100021a4:	00806404 	movi	r2,400
 100021a8:	10800017 	ldw	r2,0(r2)
 100021ac:	10bffe04 	addi	r2,r2,-8
 100021b0:	1009883a 	mov	r4,r2
@@ -4033,14 +4033,14 @@ int main(void)
 100021f8:	10804604 	addi	r2,r2,280
 100021fc:	10800017 	ldw	r2,0(r2)
 10002200:	10001f1e 	bne	r2,zero,10002280 <main+0x1f4c>
-10002204:	00802804 	movi	r2,160
+10002204:	00806004 	movi	r2,384
 10002208:	10800017 	ldw	r2,0(r2)
 1000220c:	10800204 	addi	r2,r2,8
 10002210:	1009883a 	mov	r4,r2
 10002214:	01400784 	movi	r5,30
 10002218:	00057ac0 	call	100057ac <__divsi3>
 1000221c:	1023883a 	mov	r17,r2
-10002220:	00802c04 	movi	r2,176
+10002220:	00806404 	movi	r2,400
 10002224:	10800017 	ldw	r2,0(r2)
 10002228:	10bffe04 	addi	r2,r2,-8
 1000222c:	1009883a 	mov	r4,r2
@@ -4065,11 +4065,11 @@ int main(void)
 10002278:	10800017 	ldw	r2,0(r2)
 1000227c:	10000226 	beq	r2,zero,10002288 <main+0x1f54>
     	*BUL3_EN = False;
-10002280:	00803004 	movi	r2,192
+10002280:	00806804 	movi	r2,416
 10002284:	10000015 	stw	zero,0(r2)
     }
     if(*BUL1_EN == True && bul1Up == False && bul1Left == True && (scene[sceneNum][(*BUL1_Y)/30][(*BUL1_X-8)/30]!=0 || scene[sceneNum][(*BUL1_Y+8)/30][(*BUL1_X-8)/30]!=0)){
-10002288:	00804804 	movi	r2,288
+10002288:	00808004 	movi	r2,512
 1000228c:	10800017 	ldw	r2,0(r2)
 10002290:	10800058 	cmpnei	r2,r2,1
 10002294:	1000441e 	bne	r2,zero,100023a8 <main+0x2074>
@@ -4078,13 +4078,13 @@ int main(void)
 100022a0:	e0b93117 	ldw	r2,-6972(fp)
 100022a4:	10800058 	cmpnei	r2,r2,1
 100022a8:	10003f1e 	bne	r2,zero,100023a8 <main+0x2074>
-100022ac:	00804004 	movi	r2,256
+100022ac:	00807804 	movi	r2,480
 100022b0:	10800017 	ldw	r2,0(r2)
 100022b4:	1009883a 	mov	r4,r2
 100022b8:	01400784 	movi	r5,30
 100022bc:	00057ac0 	call	100057ac <__divsi3>
 100022c0:	1023883a 	mov	r17,r2
-100022c4:	00804404 	movi	r2,272
+100022c4:	00807c04 	movi	r2,496
 100022c8:	10800017 	ldw	r2,0(r2)
 100022cc:	10bffe04 	addi	r2,r2,-8
 100022d0:	1009883a 	mov	r4,r2
@@ -4108,14 +4108,14 @@ int main(void)
 10002318:	10804604 	addi	r2,r2,280
 1000231c:	10800017 	ldw	r2,0(r2)
 10002320:	10001f1e 	bne	r2,zero,100023a0 <main+0x206c>
-10002324:	00804004 	movi	r2,256
+10002324:	00807804 	movi	r2,480
 10002328:	10800017 	ldw	r2,0(r2)
 1000232c:	10800204 	addi	r2,r2,8
 10002330:	1009883a 	mov	r4,r2
 10002334:	01400784 	movi	r5,30
 10002338:	00057ac0 	call	100057ac <__divsi3>
 1000233c:	1023883a 	mov	r17,r2
-10002340:	00804404 	movi	r2,272
+10002340:	00807c04 	movi	r2,496
 10002344:	10800017 	ldw	r2,0(r2)
 10002348:	10bffe04 	addi	r2,r2,-8
 1000234c:	1009883a 	mov	r4,r2
@@ -4140,11 +4140,11 @@ int main(void)
 10002398:	10800017 	ldw	r2,0(r2)
 1000239c:	10000226 	beq	r2,zero,100023a8 <main+0x2074>
 		*BUL1_EN = False;
-100023a0:	00804804 	movi	r2,288
+100023a0:	00808004 	movi	r2,512
 100023a4:	10000015 	stw	zero,0(r2)
 	}
     if(*BUL2_EN == True && bul2Up == False && bul2Left == True && (scene[sceneNum][(*BUL2_Y)/30][(*BUL2_X-8)/30]!=0 || scene[sceneNum][(*BUL2_Y+8)/30][(*BUL2_X-8)/30]!=0)){
-100023a8:	00803c04 	movi	r2,240
+100023a8:	00807404 	movi	r2,464
 100023ac:	10800017 	ldw	r2,0(r2)
 100023b0:	10800058 	cmpnei	r2,r2,1
 100023b4:	1000441e 	bne	r2,zero,100024c8 <main+0x2194>
@@ -4153,13 +4153,13 @@ int main(void)
 100023c0:	e0b93417 	ldw	r2,-6960(fp)
 100023c4:	10800058 	cmpnei	r2,r2,1
 100023c8:	10003f1e 	bne	r2,zero,100024c8 <main+0x2194>
-100023cc:	00803404 	movi	r2,208
+100023cc:	00806c04 	movi	r2,432
 100023d0:	10800017 	ldw	r2,0(r2)
 100023d4:	1009883a 	mov	r4,r2
 100023d8:	01400784 	movi	r5,30
 100023dc:	00057ac0 	call	100057ac <__divsi3>
 100023e0:	1023883a 	mov	r17,r2
-100023e4:	00803804 	movi	r2,224
+100023e4:	00807004 	movi	r2,448
 100023e8:	10800017 	ldw	r2,0(r2)
 100023ec:	10bffe04 	addi	r2,r2,-8
 100023f0:	1009883a 	mov	r4,r2
@@ -4183,14 +4183,14 @@ int main(void)
 10002438:	10804604 	addi	r2,r2,280
 1000243c:	10800017 	ldw	r2,0(r2)
 10002440:	10001f1e 	bne	r2,zero,100024c0 <main+0x218c>
-10002444:	00803404 	movi	r2,208
+10002444:	00806c04 	movi	r2,432
 10002448:	10800017 	ldw	r2,0(r2)
 1000244c:	10800204 	addi	r2,r2,8
 10002450:	1009883a 	mov	r4,r2
 10002454:	01400784 	movi	r5,30
 10002458:	00057ac0 	call	100057ac <__divsi3>
 1000245c:	1023883a 	mov	r17,r2
-10002460:	00803804 	movi	r2,224
+10002460:	00807004 	movi	r2,448
 10002464:	10800017 	ldw	r2,0(r2)
 10002468:	10bffe04 	addi	r2,r2,-8
 1000246c:	1009883a 	mov	r4,r2
@@ -4215,12 +4215,12 @@ int main(void)
 100024b8:	10800017 	ldw	r2,0(r2)
 100024bc:	10000226 	beq	r2,zero,100024c8 <main+0x2194>
 		*BUL2_EN = False;
-100024c0:	00803c04 	movi	r2,240
+100024c0:	00807404 	movi	r2,464
 100024c4:	10000015 	stw	zero,0(r2)
 	}
     //Right collisions
     if(*BUL3_EN == True && bul3Up == False && bul3Left == False && (scene[sceneNum][(*BUL3_Y)/30][(*BUL3_X+18)/30]!=0 || scene[sceneNum][(*BUL3_Y+8)/30][(*BUL3_X+18)/30]!=0)){
-100024c8:	00803004 	movi	r2,192
+100024c8:	00806804 	movi	r2,416
 100024cc:	10800017 	ldw	r2,0(r2)
 100024d0:	10800058 	cmpnei	r2,r2,1
 100024d4:	1000431e 	bne	r2,zero,100025e4 <main+0x22b0>
@@ -4228,13 +4228,13 @@ int main(void)
 100024dc:	1000411e 	bne	r2,zero,100025e4 <main+0x22b0>
 100024e0:	e0b93717 	ldw	r2,-6948(fp)
 100024e4:	10003f1e 	bne	r2,zero,100025e4 <main+0x22b0>
-100024e8:	00802804 	movi	r2,160
+100024e8:	00806004 	movi	r2,384
 100024ec:	10800017 	ldw	r2,0(r2)
 100024f0:	1009883a 	mov	r4,r2
 100024f4:	01400784 	movi	r5,30
 100024f8:	00057ac0 	call	100057ac <__divsi3>
 100024fc:	1023883a 	mov	r17,r2
-10002500:	00802c04 	movi	r2,176
+10002500:	00806404 	movi	r2,400
 10002504:	10800017 	ldw	r2,0(r2)
 10002508:	10800484 	addi	r2,r2,18
 1000250c:	1009883a 	mov	r4,r2
@@ -4258,14 +4258,14 @@ int main(void)
 10002554:	10804604 	addi	r2,r2,280
 10002558:	10800017 	ldw	r2,0(r2)
 1000255c:	10001f1e 	bne	r2,zero,100025dc <main+0x22a8>
-10002560:	00802804 	movi	r2,160
+10002560:	00806004 	movi	r2,384
 10002564:	10800017 	ldw	r2,0(r2)
 10002568:	10800204 	addi	r2,r2,8
 1000256c:	1009883a 	mov	r4,r2
 10002570:	01400784 	movi	r5,30
 10002574:	00057ac0 	call	100057ac <__divsi3>
 10002578:	1023883a 	mov	r17,r2
-1000257c:	00802c04 	movi	r2,176
+1000257c:	00806404 	movi	r2,400
 10002580:	10800017 	ldw	r2,0(r2)
 10002584:	10800484 	addi	r2,r2,18
 10002588:	1009883a 	mov	r4,r2
@@ -4290,11 +4290,11 @@ int main(void)
 100025d4:	10800017 	ldw	r2,0(r2)
 100025d8:	10000226 	beq	r2,zero,100025e4 <main+0x22b0>
 		*BUL3_EN = False;
-100025dc:	00803004 	movi	r2,192
+100025dc:	00806804 	movi	r2,416
 100025e0:	10000015 	stw	zero,0(r2)
 	}
 	if(*BUL1_EN == True && bul1Up == False && bul1Left == False && (scene[sceneNum][(*BUL1_Y)/30][(*BUL1_X+18)/30]!=0 || scene[sceneNum][(*BUL1_Y+8)/30][((*BUL1_X+18)/30)]!=0)){
-100025e4:	00804804 	movi	r2,288
+100025e4:	00808004 	movi	r2,512
 100025e8:	10800017 	ldw	r2,0(r2)
 100025ec:	10800058 	cmpnei	r2,r2,1
 100025f0:	1000431e 	bne	r2,zero,10002700 <main+0x23cc>
@@ -4302,13 +4302,13 @@ int main(void)
 100025f8:	1000411e 	bne	r2,zero,10002700 <main+0x23cc>
 100025fc:	e0b93117 	ldw	r2,-6972(fp)
 10002600:	10003f1e 	bne	r2,zero,10002700 <main+0x23cc>
-10002604:	00804004 	movi	r2,256
+10002604:	00807804 	movi	r2,480
 10002608:	10800017 	ldw	r2,0(r2)
 1000260c:	1009883a 	mov	r4,r2
 10002610:	01400784 	movi	r5,30
 10002614:	00057ac0 	call	100057ac <__divsi3>
 10002618:	1023883a 	mov	r17,r2
-1000261c:	00804404 	movi	r2,272
+1000261c:	00807c04 	movi	r2,496
 10002620:	10800017 	ldw	r2,0(r2)
 10002624:	10800484 	addi	r2,r2,18
 10002628:	1009883a 	mov	r4,r2
@@ -4332,14 +4332,14 @@ int main(void)
 10002670:	10804604 	addi	r2,r2,280
 10002674:	10800017 	ldw	r2,0(r2)
 10002678:	10001f1e 	bne	r2,zero,100026f8 <main+0x23c4>
-1000267c:	00804004 	movi	r2,256
+1000267c:	00807804 	movi	r2,480
 10002680:	10800017 	ldw	r2,0(r2)
 10002684:	10800204 	addi	r2,r2,8
 10002688:	1009883a 	mov	r4,r2
 1000268c:	01400784 	movi	r5,30
 10002690:	00057ac0 	call	100057ac <__divsi3>
 10002694:	1023883a 	mov	r17,r2
-10002698:	00804404 	movi	r2,272
+10002698:	00807c04 	movi	r2,496
 1000269c:	10800017 	ldw	r2,0(r2)
 100026a0:	10800484 	addi	r2,r2,18
 100026a4:	1009883a 	mov	r4,r2
@@ -4364,11 +4364,11 @@ int main(void)
 100026f0:	10800017 	ldw	r2,0(r2)
 100026f4:	10000226 	beq	r2,zero,10002700 <main+0x23cc>
 		*BUL1_EN = False;
-100026f8:	00804804 	movi	r2,288
+100026f8:	00808004 	movi	r2,512
 100026fc:	10000015 	stw	zero,0(r2)
 	}
 	if(*BUL2_EN == True && bul2Up == False && bul2Left == False && (scene[sceneNum][(*BUL2_Y)/30][(*BUL2_X+18)/30]!=0 || scene[sceneNum][(*BUL2_Y+8)/30][((*BUL2_X+18)/30)]!=0)){
-10002700:	00803c04 	movi	r2,240
+10002700:	00807404 	movi	r2,464
 10002704:	10800017 	ldw	r2,0(r2)
 10002708:	10800058 	cmpnei	r2,r2,1
 1000270c:	1000431e 	bne	r2,zero,1000281c <main+0x24e8>
@@ -4376,13 +4376,13 @@ int main(void)
 10002714:	1000411e 	bne	r2,zero,1000281c <main+0x24e8>
 10002718:	e0b93417 	ldw	r2,-6960(fp)
 1000271c:	10003f1e 	bne	r2,zero,1000281c <main+0x24e8>
-10002720:	00803404 	movi	r2,208
+10002720:	00806c04 	movi	r2,432
 10002724:	10800017 	ldw	r2,0(r2)
 10002728:	1009883a 	mov	r4,r2
 1000272c:	01400784 	movi	r5,30
 10002730:	00057ac0 	call	100057ac <__divsi3>
 10002734:	1023883a 	mov	r17,r2
-10002738:	00803804 	movi	r2,224
+10002738:	00807004 	movi	r2,448
 1000273c:	10800017 	ldw	r2,0(r2)
 10002740:	10800484 	addi	r2,r2,18
 10002744:	1009883a 	mov	r4,r2
@@ -4406,14 +4406,14 @@ int main(void)
 1000278c:	10804604 	addi	r2,r2,280
 10002790:	10800017 	ldw	r2,0(r2)
 10002794:	10001f1e 	bne	r2,zero,10002814 <main+0x24e0>
-10002798:	00803404 	movi	r2,208
+10002798:	00806c04 	movi	r2,432
 1000279c:	10800017 	ldw	r2,0(r2)
 100027a0:	10800204 	addi	r2,r2,8
 100027a4:	1009883a 	mov	r4,r2
 100027a8:	01400784 	movi	r5,30
 100027ac:	00057ac0 	call	100057ac <__divsi3>
 100027b0:	1023883a 	mov	r17,r2
-100027b4:	00803804 	movi	r2,224
+100027b4:	00807004 	movi	r2,448
 100027b8:	10800017 	ldw	r2,0(r2)
 100027bc:	10800484 	addi	r2,r2,18
 100027c0:	1009883a 	mov	r4,r2
@@ -4438,26 +4438,26 @@ int main(void)
 1000280c:	10800017 	ldw	r2,0(r2)
 10002810:	10000226 	beq	r2,zero,1000281c <main+0x24e8>
 		*BUL2_EN = False;
-10002814:	00803c04 	movi	r2,240
+10002814:	00807404 	movi	r2,464
 10002818:	10000015 	stw	zero,0(r2)
 	}
 	//Top collisions
 	if(*BUL1_EN == True && bul1Up == True && (scene[sceneNum][(*BUL1_Y-8)/30][(*BUL1_X)/30]!=0 || scene[sceneNum][(*BUL1_Y-8)/30][(*BUL1_X+8)/30]!=0)){
-1000281c:	00804804 	movi	r2,288
+1000281c:	00808004 	movi	r2,512
 10002820:	10800017 	ldw	r2,0(r2)
 10002824:	10800058 	cmpnei	r2,r2,1
 10002828:	1000421e 	bne	r2,zero,10002934 <main+0x2600>
 1000282c:	e0b93217 	ldw	r2,-6968(fp)
 10002830:	10800058 	cmpnei	r2,r2,1
 10002834:	10003f1e 	bne	r2,zero,10002934 <main+0x2600>
-10002838:	00804004 	movi	r2,256
+10002838:	00807804 	movi	r2,480
 1000283c:	10800017 	ldw	r2,0(r2)
 10002840:	10bffe04 	addi	r2,r2,-8
 10002844:	1009883a 	mov	r4,r2
 10002848:	01400784 	movi	r5,30
 1000284c:	00057ac0 	call	100057ac <__divsi3>
 10002850:	1023883a 	mov	r17,r2
-10002854:	00804404 	movi	r2,272
+10002854:	00807c04 	movi	r2,496
 10002858:	10800017 	ldw	r2,0(r2)
 1000285c:	1009883a 	mov	r4,r2
 10002860:	01400784 	movi	r5,30
@@ -4480,14 +4480,14 @@ int main(void)
 100028a4:	10804604 	addi	r2,r2,280
 100028a8:	10800017 	ldw	r2,0(r2)
 100028ac:	10001f1e 	bne	r2,zero,1000292c <main+0x25f8>
-100028b0:	00804004 	movi	r2,256
+100028b0:	00807804 	movi	r2,480
 100028b4:	10800017 	ldw	r2,0(r2)
 100028b8:	10bffe04 	addi	r2,r2,-8
 100028bc:	1009883a 	mov	r4,r2
 100028c0:	01400784 	movi	r5,30
 100028c4:	00057ac0 	call	100057ac <__divsi3>
 100028c8:	1023883a 	mov	r17,r2
-100028cc:	00804404 	movi	r2,272
+100028cc:	00807c04 	movi	r2,496
 100028d0:	10800017 	ldw	r2,0(r2)
 100028d4:	10800204 	addi	r2,r2,8
 100028d8:	1009883a 	mov	r4,r2
@@ -4512,25 +4512,25 @@ int main(void)
 10002924:	10800017 	ldw	r2,0(r2)
 10002928:	10000226 	beq	r2,zero,10002934 <main+0x2600>
 		*BUL1_EN = False;
-1000292c:	00804804 	movi	r2,288
+1000292c:	00808004 	movi	r2,512
 10002930:	10000015 	stw	zero,0(r2)
 	}
 	if(*BUL2_EN == True && bul2Up == True && (scene[sceneNum][(*BUL2_Y-8)/30][(*BUL2_X)/30]!=0 || scene[sceneNum][(*BUL2_Y-8)/30][(*BUL2_X+8)/30]!=0)){
-10002934:	00803c04 	movi	r2,240
+10002934:	00807404 	movi	r2,464
 10002938:	10800017 	ldw	r2,0(r2)
 1000293c:	10800058 	cmpnei	r2,r2,1
 10002940:	1000421e 	bne	r2,zero,10002a4c <main+0x2718>
 10002944:	e0b93517 	ldw	r2,-6956(fp)
 10002948:	10800058 	cmpnei	r2,r2,1
 1000294c:	10003f1e 	bne	r2,zero,10002a4c <main+0x2718>
-10002950:	00803404 	movi	r2,208
+10002950:	00806c04 	movi	r2,432
 10002954:	10800017 	ldw	r2,0(r2)
 10002958:	10bffe04 	addi	r2,r2,-8
 1000295c:	1009883a 	mov	r4,r2
 10002960:	01400784 	movi	r5,30
 10002964:	00057ac0 	call	100057ac <__divsi3>
 10002968:	1023883a 	mov	r17,r2
-1000296c:	00803804 	movi	r2,224
+1000296c:	00807004 	movi	r2,448
 10002970:	10800017 	ldw	r2,0(r2)
 10002974:	1009883a 	mov	r4,r2
 10002978:	01400784 	movi	r5,30
@@ -4553,14 +4553,14 @@ int main(void)
 100029bc:	10804604 	addi	r2,r2,280
 100029c0:	10800017 	ldw	r2,0(r2)
 100029c4:	10001f1e 	bne	r2,zero,10002a44 <main+0x2710>
-100029c8:	00803404 	movi	r2,208
+100029c8:	00806c04 	movi	r2,432
 100029cc:	10800017 	ldw	r2,0(r2)
 100029d0:	10bffe04 	addi	r2,r2,-8
 100029d4:	1009883a 	mov	r4,r2
 100029d8:	01400784 	movi	r5,30
 100029dc:	00057ac0 	call	100057ac <__divsi3>
 100029e0:	1023883a 	mov	r17,r2
-100029e4:	00803804 	movi	r2,224
+100029e4:	00807004 	movi	r2,448
 100029e8:	10800017 	ldw	r2,0(r2)
 100029ec:	10800204 	addi	r2,r2,8
 100029f0:	1009883a 	mov	r4,r2
@@ -4585,25 +4585,25 @@ int main(void)
 10002a3c:	10800017 	ldw	r2,0(r2)
 10002a40:	10000226 	beq	r2,zero,10002a4c <main+0x2718>
 		*BUL2_EN = False;
-10002a44:	00803c04 	movi	r2,240
+10002a44:	00807404 	movi	r2,464
 10002a48:	10000015 	stw	zero,0(r2)
 	}
 	if(*BUL3_EN == True && bul3Up == True && (scene[sceneNum][(*BUL3_Y-8)/30][(*BUL3_X)/30]!=0 || scene[sceneNum][(*BUL3_Y-8)/30][(*BUL3_X+8)/30]!=0)){
-10002a4c:	00803004 	movi	r2,192
+10002a4c:	00806804 	movi	r2,416
 10002a50:	10800017 	ldw	r2,0(r2)
 10002a54:	10800058 	cmpnei	r2,r2,1
 10002a58:	1000421e 	bne	r2,zero,10002b64 <main+0x2830>
 10002a5c:	e0b93817 	ldw	r2,-6944(fp)
 10002a60:	10800058 	cmpnei	r2,r2,1
 10002a64:	10003f1e 	bne	r2,zero,10002b64 <main+0x2830>
-10002a68:	00802804 	movi	r2,160
+10002a68:	00806004 	movi	r2,384
 10002a6c:	10800017 	ldw	r2,0(r2)
 10002a70:	10bffe04 	addi	r2,r2,-8
 10002a74:	1009883a 	mov	r4,r2
 10002a78:	01400784 	movi	r5,30
 10002a7c:	00057ac0 	call	100057ac <__divsi3>
 10002a80:	1023883a 	mov	r17,r2
-10002a84:	00802c04 	movi	r2,176
+10002a84:	00806404 	movi	r2,400
 10002a88:	10800017 	ldw	r2,0(r2)
 10002a8c:	1009883a 	mov	r4,r2
 10002a90:	01400784 	movi	r5,30
@@ -4626,14 +4626,14 @@ int main(void)
 10002ad4:	10804604 	addi	r2,r2,280
 10002ad8:	10800017 	ldw	r2,0(r2)
 10002adc:	10001f1e 	bne	r2,zero,10002b5c <main+0x2828>
-10002ae0:	00802804 	movi	r2,160
+10002ae0:	00806004 	movi	r2,384
 10002ae4:	10800017 	ldw	r2,0(r2)
 10002ae8:	10bffe04 	addi	r2,r2,-8
 10002aec:	1009883a 	mov	r4,r2
 10002af0:	01400784 	movi	r5,30
 10002af4:	00057ac0 	call	100057ac <__divsi3>
 10002af8:	1023883a 	mov	r17,r2
-10002afc:	00802c04 	movi	r2,176
+10002afc:	00806404 	movi	r2,400
 10002b00:	10800017 	ldw	r2,0(r2)
 10002b04:	10800204 	addi	r2,r2,8
 10002b08:	1009883a 	mov	r4,r2
@@ -4658,12 +4658,12 @@ int main(void)
 10002b54:	10800017 	ldw	r2,0(r2)
 10002b58:	10000226 	beq	r2,zero,10002b64 <main+0x2830>
 		*BUL3_EN = False;
-10002b5c:	00803004 	movi	r2,192
+10002b5c:	00806804 	movi	r2,416
 10002b60:	10000015 	stw	zero,0(r2)
 	}
 
     if(*BUL3_EN == True){
-10002b64:	00803004 	movi	r2,192
+10002b64:	00806804 	movi	r2,416
 10002b68:	10800017 	ldw	r2,0(r2)
 10002b6c:	10800058 	cmpnei	r2,r2,1
 10002b70:	1000241e 	bne	r2,zero,10002c04 <main+0x28d0>
@@ -4672,7 +4672,7 @@ int main(void)
 10002b78:	10801690 	cmplti	r2,r2,90
 10002b7c:	1000031e 	bne	r2,zero,10002b8c <main+0x2858>
     		*BUL3_EN = False;
-10002b80:	00803004 	movi	r2,192
+10002b80:	00806804 	movi	r2,416
 10002b84:	10000015 	stw	zero,0(r2)
 10002b88:	00001e06 	br	10002c04 <main+0x28d0>
     	else{
@@ -4681,8 +4681,8 @@ int main(void)
 10002b90:	10800058 	cmpnei	r2,r2,1
 10002b94:	1000071e 	bne	r2,zero,10002bb4 <main+0x2880>
     			*BUL3_Y -= bulinc;
-10002b98:	00802804 	movi	r2,160
-10002b9c:	00c02804 	movi	r3,160
+10002b98:	00806004 	movi	r2,384
+10002b9c:	00c06004 	movi	r3,384
 10002ba0:	19000017 	ldw	r4,0(r3)
 10002ba4:	e0f95317 	ldw	r3,-6836(fp)
 10002ba8:	20c7c83a 	sub	r3,r4,r3
@@ -4694,8 +4694,8 @@ int main(void)
 10002bb8:	10800058 	cmpnei	r2,r2,1
 10002bbc:	1000071e 	bne	r2,zero,10002bdc <main+0x28a8>
     			*BUL3_X -= bulinc;
-10002bc0:	00802c04 	movi	r2,176
-10002bc4:	00c02c04 	movi	r3,176
+10002bc0:	00806404 	movi	r2,400
+10002bc4:	00c06404 	movi	r3,400
 10002bc8:	19000017 	ldw	r4,0(r3)
 10002bcc:	e0f95317 	ldw	r3,-6836(fp)
 10002bd0:	20c7c83a 	sub	r3,r4,r3
@@ -4704,8 +4704,8 @@ int main(void)
     		}
     		else{
     			*BUL3_X += bulinc;
-10002bdc:	00802c04 	movi	r2,176
-10002be0:	00c02c04 	movi	r3,176
+10002bdc:	00806404 	movi	r2,400
+10002be0:	00c06404 	movi	r3,400
 10002be4:	19000017 	ldw	r4,0(r3)
 10002be8:	e0f95317 	ldw	r3,-6836(fp)
 10002bec:	20c7883a 	add	r3,r4,r3
@@ -4719,7 +4719,7 @@ int main(void)
     	}
     }
     if(*BUL2_EN == True){
-10002c04:	00803c04 	movi	r2,240
+10002c04:	00807404 	movi	r2,464
 10002c08:	10800017 	ldw	r2,0(r2)
 10002c0c:	10800058 	cmpnei	r2,r2,1
 10002c10:	1000241e 	bne	r2,zero,10002ca4 <main+0x2970>
@@ -4728,7 +4728,7 @@ int main(void)
 10002c18:	10801690 	cmplti	r2,r2,90
 10002c1c:	1000031e 	bne	r2,zero,10002c2c <main+0x28f8>
 			*BUL2_EN = False;
-10002c20:	00803c04 	movi	r2,240
+10002c20:	00807404 	movi	r2,464
 10002c24:	10000015 	stw	zero,0(r2)
 10002c28:	00001e06 	br	10002ca4 <main+0x2970>
 		else{
@@ -4737,8 +4737,8 @@ int main(void)
 10002c30:	10800058 	cmpnei	r2,r2,1
 10002c34:	1000071e 	bne	r2,zero,10002c54 <main+0x2920>
 				*BUL2_Y -= bulinc;
-10002c38:	00803404 	movi	r2,208
-10002c3c:	00c03404 	movi	r3,208
+10002c38:	00806c04 	movi	r2,432
+10002c3c:	00c06c04 	movi	r3,432
 10002c40:	19000017 	ldw	r4,0(r3)
 10002c44:	e0f95317 	ldw	r3,-6836(fp)
 10002c48:	20c7c83a 	sub	r3,r4,r3
@@ -4750,8 +4750,8 @@ int main(void)
 10002c58:	10800058 	cmpnei	r2,r2,1
 10002c5c:	1000071e 	bne	r2,zero,10002c7c <main+0x2948>
 				*BUL2_X -= bulinc;
-10002c60:	00803804 	movi	r2,224
-10002c64:	00c03804 	movi	r3,224
+10002c60:	00807004 	movi	r2,448
+10002c64:	00c07004 	movi	r3,448
 10002c68:	19000017 	ldw	r4,0(r3)
 10002c6c:	e0f95317 	ldw	r3,-6836(fp)
 10002c70:	20c7c83a 	sub	r3,r4,r3
@@ -4760,8 +4760,8 @@ int main(void)
 			}
 			else{
 				*BUL2_X += bulinc;
-10002c7c:	00803804 	movi	r2,224
-10002c80:	00c03804 	movi	r3,224
+10002c7c:	00807004 	movi	r2,448
+10002c80:	00c07004 	movi	r3,448
 10002c84:	19000017 	ldw	r4,0(r3)
 10002c88:	e0f95317 	ldw	r3,-6836(fp)
 10002c8c:	20c7883a 	add	r3,r4,r3
@@ -4775,7 +4775,7 @@ int main(void)
 		}
 	}
     if(*BUL1_EN == True){
-10002ca4:	00804804 	movi	r2,288
+10002ca4:	00808004 	movi	r2,512
 10002ca8:	10800017 	ldw	r2,0(r2)
 10002cac:	10800058 	cmpnei	r2,r2,1
 10002cb0:	1000241e 	bne	r2,zero,10002d44 <main+0x2a10>
@@ -4784,7 +4784,7 @@ int main(void)
 10002cb8:	10801690 	cmplti	r2,r2,90
 10002cbc:	1000031e 	bne	r2,zero,10002ccc <main+0x2998>
 			*BUL1_EN = False;
-10002cc0:	00804804 	movi	r2,288
+10002cc0:	00808004 	movi	r2,512
 10002cc4:	10000015 	stw	zero,0(r2)
 10002cc8:	00001e06 	br	10002d44 <main+0x2a10>
 		else{
@@ -4793,8 +4793,8 @@ int main(void)
 10002cd0:	10800058 	cmpnei	r2,r2,1
 10002cd4:	1000071e 	bne	r2,zero,10002cf4 <main+0x29c0>
 				*BUL1_Y -= bulinc;
-10002cd8:	00804004 	movi	r2,256
-10002cdc:	00c04004 	movi	r3,256
+10002cd8:	00807804 	movi	r2,480
+10002cdc:	00c07804 	movi	r3,480
 10002ce0:	19000017 	ldw	r4,0(r3)
 10002ce4:	e0f95317 	ldw	r3,-6836(fp)
 10002ce8:	20c7c83a 	sub	r3,r4,r3
@@ -4806,8 +4806,8 @@ int main(void)
 10002cf8:	10800058 	cmpnei	r2,r2,1
 10002cfc:	1000071e 	bne	r2,zero,10002d1c <main+0x29e8>
 				*BUL1_X -= bulinc;
-10002d00:	00804404 	movi	r2,272
-10002d04:	00c04404 	movi	r3,272
+10002d00:	00807c04 	movi	r2,496
+10002d04:	00c07c04 	movi	r3,496
 10002d08:	19000017 	ldw	r4,0(r3)
 10002d0c:	e0f95317 	ldw	r3,-6836(fp)
 10002d10:	20c7c83a 	sub	r3,r4,r3
@@ -4816,8 +4816,8 @@ int main(void)
 			}
 			else{
 				*BUL1_X += bulinc;
-10002d1c:	00804404 	movi	r2,272
-10002d20:	00c04404 	movi	r3,272
+10002d1c:	00807c04 	movi	r2,496
+10002d20:	00c07c04 	movi	r3,496
 10002d24:	19000017 	ldw	r4,0(r3)
 10002d28:	e0f95317 	ldw	r3,-6836(fp)
 10002d2c:	20c7883a 	add	r3,r4,r3
@@ -4834,15 +4834,15 @@ int main(void)
 
     //monsters code
     *MON1_X = monster1_1_x;
-10002d44:	00808c04 	movi	r2,560
+10002d44:	0080c404 	movi	r2,784
 10002d48:	e0f93c17 	ldw	r3,-6928(fp)
 10002d4c:	10c00015 	stw	r3,0(r2)
     *MON1_Y = monster1_1_y;
-10002d50:	00808804 	movi	r2,544
+10002d50:	0080c004 	movi	r2,768
 10002d54:	e0f93d17 	ldw	r3,-6924(fp)
 10002d58:	10c00015 	stw	r3,0(r2)
     if(*MON1_EN == True){
-10002d5c:	00809004 	movi	r2,576
+10002d5c:	0080c804 	movi	r2,800
 10002d60:	10800003 	ldbu	r2,0(r2)
 10002d64:	10803fcc 	andi	r2,r2,255
 10002d68:	1080201c 	xori	r2,r2,128
@@ -4936,15 +4936,15 @@ int main(void)
     }
     //Monster 2
     *MON2_X = monster2_1_x;
-10002e94:	00808004 	movi	r2,512
+10002e94:	0080b804 	movi	r2,736
 10002e98:	e0f94017 	ldw	r3,-6912(fp)
 10002e9c:	10c00015 	stw	r3,0(r2)
 	*MON2_Y = monster2_1_y;
-10002ea0:	00807c04 	movi	r2,496
+10002ea0:	0080b404 	movi	r2,720
 10002ea4:	e0f94117 	ldw	r3,-6908(fp)
 10002ea8:	10c00015 	stw	r3,0(r2)
 	if(*MON2_EN == True){
-10002eac:	00808404 	movi	r2,528
+10002eac:	0080bc04 	movi	r2,752
 10002eb0:	10800003 	ldbu	r2,0(r2)
 10002eb4:	10803fcc 	andi	r2,r2,255
 10002eb8:	1080201c 	xori	r2,r2,128
@@ -4976,15 +4976,15 @@ int main(void)
 	}
 	//Monster 3
 	*MON3_X = monster3_1_x;
-10002f08:	00807404 	movi	r2,464
+10002f08:	0080ac04 	movi	r2,688
 10002f0c:	e0f94817 	ldw	r3,-6880(fp)
 10002f10:	10c00015 	stw	r3,0(r2)
 	*MON3_Y = monster3_1_y;
-10002f14:	00807004 	movi	r2,448
+10002f14:	0080a804 	movi	r2,672
 10002f18:	e0f94917 	ldw	r3,-6876(fp)
 10002f1c:	10c00015 	stw	r3,0(r2)
 	if(*MON3_EN == True){
-10002f20:	00807804 	movi	r2,480
+10002f20:	0080b004 	movi	r2,704
 10002f24:	10800003 	ldbu	r2,0(r2)
 10002f28:	10803fcc 	andi	r2,r2,255
 10002f2c:	1080201c 	xori	r2,r2,128
@@ -5202,7 +5202,7 @@ int main(void)
 	}
 	//Monster 2 Jump Code
 	if(*MON2_EN == True){
-10003228:	00808404 	movi	r2,528
+10003228:	0080bc04 	movi	r2,752
 1000322c:	10800003 	ldbu	r2,0(r2)
 10003230:	10803fcc 	andi	r2,r2,255
 10003234:	1080201c 	xori	r2,r2,128
@@ -5602,39 +5602,39 @@ int main(void)
 
 		//bullet collision with monsters
 		if(*BUL1_X+12 > monster1_1_x && *BUL1_X < monster1_1_x+30 && *BUL1_Y+12 > monster1_1_y && *BUL1_Y < monster1_1_y+30 && *MON1_EN == True && *BUL1_EN == 1){
-100037a0:	00804404 	movi	r2,272
+100037a0:	00807c04 	movi	r2,496
 100037a4:	10800017 	ldw	r2,0(r2)
 100037a8:	10800304 	addi	r2,r2,12
 100037ac:	e0f93c17 	ldw	r3,-6928(fp)
 100037b0:	18801f0e 	bge	r3,r2,10003830 <main+0x34fc>
-100037b4:	00804404 	movi	r2,272
+100037b4:	00807c04 	movi	r2,496
 100037b8:	10c00017 	ldw	r3,0(r2)
 100037bc:	e0b93c17 	ldw	r2,-6928(fp)
 100037c0:	10800784 	addi	r2,r2,30
 100037c4:	18801a0e 	bge	r3,r2,10003830 <main+0x34fc>
-100037c8:	00804004 	movi	r2,256
+100037c8:	00807804 	movi	r2,480
 100037cc:	10800017 	ldw	r2,0(r2)
 100037d0:	10800304 	addi	r2,r2,12
 100037d4:	e0f93d17 	ldw	r3,-6924(fp)
 100037d8:	1880150e 	bge	r3,r2,10003830 <main+0x34fc>
-100037dc:	00804004 	movi	r2,256
+100037dc:	00807804 	movi	r2,480
 100037e0:	10c00017 	ldw	r3,0(r2)
 100037e4:	e0b93d17 	ldw	r2,-6924(fp)
 100037e8:	10800784 	addi	r2,r2,30
 100037ec:	1880100e 	bge	r3,r2,10003830 <main+0x34fc>
-100037f0:	00809004 	movi	r2,576
+100037f0:	0080c804 	movi	r2,800
 100037f4:	10800003 	ldbu	r2,0(r2)
 100037f8:	10803fcc 	andi	r2,r2,255
 100037fc:	1080201c 	xori	r2,r2,128
 10003800:	10bfe004 	addi	r2,r2,-128
 10003804:	10800058 	cmpnei	r2,r2,1
 10003808:	1000091e 	bne	r2,zero,10003830 <main+0x34fc>
-1000380c:	00804804 	movi	r2,288
+1000380c:	00808004 	movi	r2,512
 10003810:	10800017 	ldw	r2,0(r2)
 10003814:	10800058 	cmpnei	r2,r2,1
 10003818:	1000051e 	bne	r2,zero,10003830 <main+0x34fc>
 			*BUL1_EN=0;
-1000381c:	00804804 	movi	r2,288
+1000381c:	00808004 	movi	r2,512
 10003820:	10000015 	stw	zero,0(r2)
 			monster1_1_health-=1;
 10003824:	e0b93f17 	ldw	r2,-6916(fp)
@@ -5642,39 +5642,39 @@ int main(void)
 1000382c:	e0b93f15 	stw	r2,-6916(fp)
 		}
 		if(*BUL2_X+12 > monster1_1_x && *BUL2_X < monster1_1_x+30 && *BUL2_Y+12 > monster1_1_y && *BUL2_Y < monster1_1_y+30 && *MON1_EN == True && *BUL2_EN == 1){
-10003830:	00803804 	movi	r2,224
+10003830:	00807004 	movi	r2,448
 10003834:	10800017 	ldw	r2,0(r2)
 10003838:	10800304 	addi	r2,r2,12
 1000383c:	e0f93c17 	ldw	r3,-6928(fp)
 10003840:	18801f0e 	bge	r3,r2,100038c0 <main+0x358c>
-10003844:	00803804 	movi	r2,224
+10003844:	00807004 	movi	r2,448
 10003848:	10c00017 	ldw	r3,0(r2)
 1000384c:	e0b93c17 	ldw	r2,-6928(fp)
 10003850:	10800784 	addi	r2,r2,30
 10003854:	18801a0e 	bge	r3,r2,100038c0 <main+0x358c>
-10003858:	00803404 	movi	r2,208
+10003858:	00806c04 	movi	r2,432
 1000385c:	10800017 	ldw	r2,0(r2)
 10003860:	10800304 	addi	r2,r2,12
 10003864:	e0f93d17 	ldw	r3,-6924(fp)
 10003868:	1880150e 	bge	r3,r2,100038c0 <main+0x358c>
-1000386c:	00803404 	movi	r2,208
+1000386c:	00806c04 	movi	r2,432
 10003870:	10c00017 	ldw	r3,0(r2)
 10003874:	e0b93d17 	ldw	r2,-6924(fp)
 10003878:	10800784 	addi	r2,r2,30
 1000387c:	1880100e 	bge	r3,r2,100038c0 <main+0x358c>
-10003880:	00809004 	movi	r2,576
+10003880:	0080c804 	movi	r2,800
 10003884:	10800003 	ldbu	r2,0(r2)
 10003888:	10803fcc 	andi	r2,r2,255
 1000388c:	1080201c 	xori	r2,r2,128
 10003890:	10bfe004 	addi	r2,r2,-128
 10003894:	10800058 	cmpnei	r2,r2,1
 10003898:	1000091e 	bne	r2,zero,100038c0 <main+0x358c>
-1000389c:	00803c04 	movi	r2,240
+1000389c:	00807404 	movi	r2,464
 100038a0:	10800017 	ldw	r2,0(r2)
 100038a4:	10800058 	cmpnei	r2,r2,1
 100038a8:	1000051e 	bne	r2,zero,100038c0 <main+0x358c>
 			*BUL2_EN=0;
-100038ac:	00803c04 	movi	r2,240
+100038ac:	00807404 	movi	r2,464
 100038b0:	10000015 	stw	zero,0(r2)
 			monster1_1_health-=1;
 100038b4:	e0b93f17 	ldw	r2,-6916(fp)
@@ -5682,39 +5682,39 @@ int main(void)
 100038bc:	e0b93f15 	stw	r2,-6916(fp)
 		}
 		if(*BUL3_X+12 > monster1_1_x && *BUL3_X < monster1_1_x+30 && *BUL3_Y+12 > monster1_1_y && *BUL3_Y < monster1_1_y+30 && *MON1_EN == True && *BUL3_EN == 1){
-100038c0:	00802c04 	movi	r2,176
+100038c0:	00806404 	movi	r2,400
 100038c4:	10800017 	ldw	r2,0(r2)
 100038c8:	10800304 	addi	r2,r2,12
 100038cc:	e0f93c17 	ldw	r3,-6928(fp)
 100038d0:	18801f0e 	bge	r3,r2,10003950 <main+0x361c>
-100038d4:	00802c04 	movi	r2,176
+100038d4:	00806404 	movi	r2,400
 100038d8:	10c00017 	ldw	r3,0(r2)
 100038dc:	e0b93c17 	ldw	r2,-6928(fp)
 100038e0:	10800784 	addi	r2,r2,30
 100038e4:	18801a0e 	bge	r3,r2,10003950 <main+0x361c>
-100038e8:	00802804 	movi	r2,160
+100038e8:	00806004 	movi	r2,384
 100038ec:	10800017 	ldw	r2,0(r2)
 100038f0:	10800304 	addi	r2,r2,12
 100038f4:	e0f93d17 	ldw	r3,-6924(fp)
 100038f8:	1880150e 	bge	r3,r2,10003950 <main+0x361c>
-100038fc:	00802804 	movi	r2,160
+100038fc:	00806004 	movi	r2,384
 10003900:	10c00017 	ldw	r3,0(r2)
 10003904:	e0b93d17 	ldw	r2,-6924(fp)
 10003908:	10800784 	addi	r2,r2,30
 1000390c:	1880100e 	bge	r3,r2,10003950 <main+0x361c>
-10003910:	00809004 	movi	r2,576
+10003910:	0080c804 	movi	r2,800
 10003914:	10800003 	ldbu	r2,0(r2)
 10003918:	10803fcc 	andi	r2,r2,255
 1000391c:	1080201c 	xori	r2,r2,128
 10003920:	10bfe004 	addi	r2,r2,-128
 10003924:	10800058 	cmpnei	r2,r2,1
 10003928:	1000091e 	bne	r2,zero,10003950 <main+0x361c>
-1000392c:	00803004 	movi	r2,192
+1000392c:	00806804 	movi	r2,416
 10003930:	10800017 	ldw	r2,0(r2)
 10003934:	10800058 	cmpnei	r2,r2,1
 10003938:	1000051e 	bne	r2,zero,10003950 <main+0x361c>
 			*BUL3_EN=0;
-1000393c:	00803004 	movi	r2,192
+1000393c:	00806804 	movi	r2,416
 10003940:	10000015 	stw	zero,0(r2)
 			monster1_1_health-=1;
 10003944:	e0b93f17 	ldw	r2,-6916(fp)
@@ -5722,39 +5722,39 @@ int main(void)
 1000394c:	e0b93f15 	stw	r2,-6916(fp)
 		}
 		if(*BUL1_X+12 > monster2_1_x && *BUL1_X < monster2_1_x+30 && *BUL1_Y+12 > monster2_1_y && *BUL1_Y < monster2_1_y+30 && *MON2_EN == True && *BUL1_EN == 1){
-10003950:	00804404 	movi	r2,272
+10003950:	00807c04 	movi	r2,496
 10003954:	10800017 	ldw	r2,0(r2)
 10003958:	10800304 	addi	r2,r2,12
 1000395c:	e0f94017 	ldw	r3,-6912(fp)
 10003960:	18801f0e 	bge	r3,r2,100039e0 <main+0x36ac>
-10003964:	00804404 	movi	r2,272
+10003964:	00807c04 	movi	r2,496
 10003968:	10c00017 	ldw	r3,0(r2)
 1000396c:	e0b94017 	ldw	r2,-6912(fp)
 10003970:	10800784 	addi	r2,r2,30
 10003974:	18801a0e 	bge	r3,r2,100039e0 <main+0x36ac>
-10003978:	00804004 	movi	r2,256
+10003978:	00807804 	movi	r2,480
 1000397c:	10800017 	ldw	r2,0(r2)
 10003980:	10800304 	addi	r2,r2,12
 10003984:	e0f94117 	ldw	r3,-6908(fp)
 10003988:	1880150e 	bge	r3,r2,100039e0 <main+0x36ac>
-1000398c:	00804004 	movi	r2,256
+1000398c:	00807804 	movi	r2,480
 10003990:	10c00017 	ldw	r3,0(r2)
 10003994:	e0b94117 	ldw	r2,-6908(fp)
 10003998:	10800784 	addi	r2,r2,30
 1000399c:	1880100e 	bge	r3,r2,100039e0 <main+0x36ac>
-100039a0:	00808404 	movi	r2,528
+100039a0:	0080bc04 	movi	r2,752
 100039a4:	10800003 	ldbu	r2,0(r2)
 100039a8:	10803fcc 	andi	r2,r2,255
 100039ac:	1080201c 	xori	r2,r2,128
 100039b0:	10bfe004 	addi	r2,r2,-128
 100039b4:	10800058 	cmpnei	r2,r2,1
 100039b8:	1000091e 	bne	r2,zero,100039e0 <main+0x36ac>
-100039bc:	00804804 	movi	r2,288
+100039bc:	00808004 	movi	r2,512
 100039c0:	10800017 	ldw	r2,0(r2)
 100039c4:	10800058 	cmpnei	r2,r2,1
 100039c8:	1000051e 	bne	r2,zero,100039e0 <main+0x36ac>
 			*BUL1_EN=0;
-100039cc:	00804804 	movi	r2,288
+100039cc:	00808004 	movi	r2,512
 100039d0:	10000015 	stw	zero,0(r2)
 			monster2_1_health-=1;
 100039d4:	e0b94717 	ldw	r2,-6884(fp)
@@ -5762,39 +5762,39 @@ int main(void)
 100039dc:	e0b94715 	stw	r2,-6884(fp)
 		}
 		if(*BUL2_X+12 > monster2_1_x && *BUL2_X < monster2_1_x+30 && *BUL2_Y+12 > monster2_1_y && *BUL2_Y < monster2_1_y+30 && *MON2_EN == True && *BUL2_EN == 1){
-100039e0:	00803804 	movi	r2,224
+100039e0:	00807004 	movi	r2,448
 100039e4:	10800017 	ldw	r2,0(r2)
 100039e8:	10800304 	addi	r2,r2,12
 100039ec:	e0f94017 	ldw	r3,-6912(fp)
 100039f0:	18801f0e 	bge	r3,r2,10003a70 <main+0x373c>
-100039f4:	00803804 	movi	r2,224
+100039f4:	00807004 	movi	r2,448
 100039f8:	10c00017 	ldw	r3,0(r2)
 100039fc:	e0b94017 	ldw	r2,-6912(fp)
 10003a00:	10800784 	addi	r2,r2,30
 10003a04:	18801a0e 	bge	r3,r2,10003a70 <main+0x373c>
-10003a08:	00803404 	movi	r2,208
+10003a08:	00806c04 	movi	r2,432
 10003a0c:	10800017 	ldw	r2,0(r2)
 10003a10:	10800304 	addi	r2,r2,12
 10003a14:	e0f94117 	ldw	r3,-6908(fp)
 10003a18:	1880150e 	bge	r3,r2,10003a70 <main+0x373c>
-10003a1c:	00803404 	movi	r2,208
+10003a1c:	00806c04 	movi	r2,432
 10003a20:	10c00017 	ldw	r3,0(r2)
 10003a24:	e0b94117 	ldw	r2,-6908(fp)
 10003a28:	10800784 	addi	r2,r2,30
 10003a2c:	1880100e 	bge	r3,r2,10003a70 <main+0x373c>
-10003a30:	00808404 	movi	r2,528
+10003a30:	0080bc04 	movi	r2,752
 10003a34:	10800003 	ldbu	r2,0(r2)
 10003a38:	10803fcc 	andi	r2,r2,255
 10003a3c:	1080201c 	xori	r2,r2,128
 10003a40:	10bfe004 	addi	r2,r2,-128
 10003a44:	10800058 	cmpnei	r2,r2,1
 10003a48:	1000091e 	bne	r2,zero,10003a70 <main+0x373c>
-10003a4c:	00803c04 	movi	r2,240
+10003a4c:	00807404 	movi	r2,464
 10003a50:	10800017 	ldw	r2,0(r2)
 10003a54:	10800058 	cmpnei	r2,r2,1
 10003a58:	1000051e 	bne	r2,zero,10003a70 <main+0x373c>
 			*BUL2_EN=0;
-10003a5c:	00803c04 	movi	r2,240
+10003a5c:	00807404 	movi	r2,464
 10003a60:	10000015 	stw	zero,0(r2)
 			monster2_1_health-=1;
 10003a64:	e0b94717 	ldw	r2,-6884(fp)
@@ -5802,39 +5802,39 @@ int main(void)
 10003a6c:	e0b94715 	stw	r2,-6884(fp)
 		}
 		if(*BUL3_X+12 > monster2_1_x && *BUL3_X < monster2_1_x+30 && *BUL3_Y+12 > monster2_1_y && *BUL3_Y < monster2_1_y+30 && *MON2_EN == True && *BUL3_EN == 1){
-10003a70:	00802c04 	movi	r2,176
+10003a70:	00806404 	movi	r2,400
 10003a74:	10800017 	ldw	r2,0(r2)
 10003a78:	10800304 	addi	r2,r2,12
 10003a7c:	e0f94017 	ldw	r3,-6912(fp)
 10003a80:	18801f0e 	bge	r3,r2,10003b00 <main+0x37cc>
-10003a84:	00802c04 	movi	r2,176
+10003a84:	00806404 	movi	r2,400
 10003a88:	10c00017 	ldw	r3,0(r2)
 10003a8c:	e0b94017 	ldw	r2,-6912(fp)
 10003a90:	10800784 	addi	r2,r2,30
 10003a94:	18801a0e 	bge	r3,r2,10003b00 <main+0x37cc>
-10003a98:	00802804 	movi	r2,160
+10003a98:	00806004 	movi	r2,384
 10003a9c:	10800017 	ldw	r2,0(r2)
 10003aa0:	10800304 	addi	r2,r2,12
 10003aa4:	e0f94117 	ldw	r3,-6908(fp)
 10003aa8:	1880150e 	bge	r3,r2,10003b00 <main+0x37cc>
-10003aac:	00802804 	movi	r2,160
+10003aac:	00806004 	movi	r2,384
 10003ab0:	10c00017 	ldw	r3,0(r2)
 10003ab4:	e0b94117 	ldw	r2,-6908(fp)
 10003ab8:	10800784 	addi	r2,r2,30
 10003abc:	1880100e 	bge	r3,r2,10003b00 <main+0x37cc>
-10003ac0:	00808404 	movi	r2,528
+10003ac0:	0080bc04 	movi	r2,752
 10003ac4:	10800003 	ldbu	r2,0(r2)
 10003ac8:	10803fcc 	andi	r2,r2,255
 10003acc:	1080201c 	xori	r2,r2,128
 10003ad0:	10bfe004 	addi	r2,r2,-128
 10003ad4:	10800058 	cmpnei	r2,r2,1
 10003ad8:	1000091e 	bne	r2,zero,10003b00 <main+0x37cc>
-10003adc:	00803004 	movi	r2,192
+10003adc:	00806804 	movi	r2,416
 10003ae0:	10800017 	ldw	r2,0(r2)
 10003ae4:	10800058 	cmpnei	r2,r2,1
 10003ae8:	1000051e 	bne	r2,zero,10003b00 <main+0x37cc>
 			*BUL3_EN=0;
-10003aec:	00803004 	movi	r2,192
+10003aec:	00806804 	movi	r2,416
 10003af0:	10000015 	stw	zero,0(r2)
 			monster2_1_health-=1;
 10003af4:	e0b94717 	ldw	r2,-6884(fp)
@@ -5842,111 +5842,111 @@ int main(void)
 10003afc:	e0b94715 	stw	r2,-6884(fp)
 		}
 		if(*BUL1_X+12 > monster3_1_x && *BUL1_X < monster3_1_x+30 && *BUL1_Y+12 > monster3_1_y && *BUL1_Y < monster3_1_y+10 && *MON3_EN == True && *BUL1_EN == 1){
-10003b00:	00804404 	movi	r2,272
+10003b00:	00807c04 	movi	r2,496
 10003b04:	10800017 	ldw	r2,0(r2)
 10003b08:	10800304 	addi	r2,r2,12
 10003b0c:	e0f94817 	ldw	r3,-6880(fp)
 10003b10:	18801c0e 	bge	r3,r2,10003b84 <main+0x3850>
-10003b14:	00804404 	movi	r2,272
+10003b14:	00807c04 	movi	r2,496
 10003b18:	10c00017 	ldw	r3,0(r2)
 10003b1c:	e0b94817 	ldw	r2,-6880(fp)
 10003b20:	10800784 	addi	r2,r2,30
 10003b24:	1880170e 	bge	r3,r2,10003b84 <main+0x3850>
-10003b28:	00804004 	movi	r2,256
+10003b28:	00807804 	movi	r2,480
 10003b2c:	10800017 	ldw	r2,0(r2)
 10003b30:	10800304 	addi	r2,r2,12
 10003b34:	e0f94917 	ldw	r3,-6876(fp)
 10003b38:	1880120e 	bge	r3,r2,10003b84 <main+0x3850>
-10003b3c:	00804004 	movi	r2,256
+10003b3c:	00807804 	movi	r2,480
 10003b40:	10c00017 	ldw	r3,0(r2)
 10003b44:	e0b94917 	ldw	r2,-6876(fp)
 10003b48:	10800284 	addi	r2,r2,10
 10003b4c:	18800d0e 	bge	r3,r2,10003b84 <main+0x3850>
-10003b50:	00807804 	movi	r2,480
+10003b50:	0080b004 	movi	r2,704
 10003b54:	10800003 	ldbu	r2,0(r2)
 10003b58:	10803fcc 	andi	r2,r2,255
 10003b5c:	1080201c 	xori	r2,r2,128
 10003b60:	10bfe004 	addi	r2,r2,-128
 10003b64:	10800058 	cmpnei	r2,r2,1
 10003b68:	1000061e 	bne	r2,zero,10003b84 <main+0x3850>
-10003b6c:	00804804 	movi	r2,288
+10003b6c:	00808004 	movi	r2,512
 10003b70:	10800017 	ldw	r2,0(r2)
 10003b74:	10800058 	cmpnei	r2,r2,1
 10003b78:	1000021e 	bne	r2,zero,10003b84 <main+0x3850>
 			*BUL1_EN=0;
-10003b7c:	00804804 	movi	r2,288
+10003b7c:	00808004 	movi	r2,512
 10003b80:	10000015 	stw	zero,0(r2)
 		}
 		if(*BUL2_X+12 > monster3_1_x && *BUL2_X < monster3_1_x+30 && *BUL2_Y+12 > monster3_1_y && *BUL2_Y < monster3_1_y+10 && *MON3_EN == True && *BUL2_EN == 1){
-10003b84:	00803804 	movi	r2,224
+10003b84:	00807004 	movi	r2,448
 10003b88:	10800017 	ldw	r2,0(r2)
 10003b8c:	10800304 	addi	r2,r2,12
 10003b90:	e0f94817 	ldw	r3,-6880(fp)
 10003b94:	18801c0e 	bge	r3,r2,10003c08 <main+0x38d4>
-10003b98:	00803804 	movi	r2,224
+10003b98:	00807004 	movi	r2,448
 10003b9c:	10c00017 	ldw	r3,0(r2)
 10003ba0:	e0b94817 	ldw	r2,-6880(fp)
 10003ba4:	10800784 	addi	r2,r2,30
 10003ba8:	1880170e 	bge	r3,r2,10003c08 <main+0x38d4>
-10003bac:	00803404 	movi	r2,208
+10003bac:	00806c04 	movi	r2,432
 10003bb0:	10800017 	ldw	r2,0(r2)
 10003bb4:	10800304 	addi	r2,r2,12
 10003bb8:	e0f94917 	ldw	r3,-6876(fp)
 10003bbc:	1880120e 	bge	r3,r2,10003c08 <main+0x38d4>
-10003bc0:	00803404 	movi	r2,208
+10003bc0:	00806c04 	movi	r2,432
 10003bc4:	10c00017 	ldw	r3,0(r2)
 10003bc8:	e0b94917 	ldw	r2,-6876(fp)
 10003bcc:	10800284 	addi	r2,r2,10
 10003bd0:	18800d0e 	bge	r3,r2,10003c08 <main+0x38d4>
-10003bd4:	00807804 	movi	r2,480
+10003bd4:	0080b004 	movi	r2,704
 10003bd8:	10800003 	ldbu	r2,0(r2)
 10003bdc:	10803fcc 	andi	r2,r2,255
 10003be0:	1080201c 	xori	r2,r2,128
 10003be4:	10bfe004 	addi	r2,r2,-128
 10003be8:	10800058 	cmpnei	r2,r2,1
 10003bec:	1000061e 	bne	r2,zero,10003c08 <main+0x38d4>
-10003bf0:	00803c04 	movi	r2,240
+10003bf0:	00807404 	movi	r2,464
 10003bf4:	10800017 	ldw	r2,0(r2)
 10003bf8:	10800058 	cmpnei	r2,r2,1
 10003bfc:	1000021e 	bne	r2,zero,10003c08 <main+0x38d4>
 			*BUL2_EN=0;
-10003c00:	00803c04 	movi	r2,240
+10003c00:	00807404 	movi	r2,464
 10003c04:	10000015 	stw	zero,0(r2)
 		}
 		if(*BUL3_X+12 > monster3_1_x && *BUL3_X < monster3_1_x+30 && *BUL3_Y+12 > monster3_1_y && *BUL3_Y < monster3_1_y+10 && *MON3_EN == True && *BUL3_EN == 1){
-10003c08:	00802c04 	movi	r2,176
+10003c08:	00806404 	movi	r2,400
 10003c0c:	10800017 	ldw	r2,0(r2)
 10003c10:	10800304 	addi	r2,r2,12
 10003c14:	e0f94817 	ldw	r3,-6880(fp)
 10003c18:	18801c0e 	bge	r3,r2,10003c8c <main+0x3958>
-10003c1c:	00802c04 	movi	r2,176
+10003c1c:	00806404 	movi	r2,400
 10003c20:	10c00017 	ldw	r3,0(r2)
 10003c24:	e0b94817 	ldw	r2,-6880(fp)
 10003c28:	10800784 	addi	r2,r2,30
 10003c2c:	1880170e 	bge	r3,r2,10003c8c <main+0x3958>
-10003c30:	00802804 	movi	r2,160
+10003c30:	00806004 	movi	r2,384
 10003c34:	10800017 	ldw	r2,0(r2)
 10003c38:	10800304 	addi	r2,r2,12
 10003c3c:	e0f94917 	ldw	r3,-6876(fp)
 10003c40:	1880120e 	bge	r3,r2,10003c8c <main+0x3958>
-10003c44:	00802804 	movi	r2,160
+10003c44:	00806004 	movi	r2,384
 10003c48:	10c00017 	ldw	r3,0(r2)
 10003c4c:	e0b94917 	ldw	r2,-6876(fp)
 10003c50:	10800284 	addi	r2,r2,10
 10003c54:	18800d0e 	bge	r3,r2,10003c8c <main+0x3958>
-10003c58:	00807804 	movi	r2,480
+10003c58:	0080b004 	movi	r2,704
 10003c5c:	10800003 	ldbu	r2,0(r2)
 10003c60:	10803fcc 	andi	r2,r2,255
 10003c64:	1080201c 	xori	r2,r2,128
 10003c68:	10bfe004 	addi	r2,r2,-128
 10003c6c:	10800058 	cmpnei	r2,r2,1
 10003c70:	1000061e 	bne	r2,zero,10003c8c <main+0x3958>
-10003c74:	00803004 	movi	r2,192
+10003c74:	00806804 	movi	r2,416
 10003c78:	10800017 	ldw	r2,0(r2)
 10003c7c:	10800058 	cmpnei	r2,r2,1
 10003c80:	1000021e 	bne	r2,zero,10003c8c <main+0x3958>
 			*BUL3_EN=0;
-10003c84:	00803004 	movi	r2,192
+10003c84:	00806804 	movi	r2,416
 10003c88:	10000015 	stw	zero,0(r2)
 		}
 
@@ -5954,20 +5954,20 @@ int main(void)
 10003c8c:	e0b93f17 	ldw	r2,-6916(fp)
 10003c90:	10000d1e 	bne	r2,zero,10003cc8 <main+0x3994>
 			*MON1_EN = 0;
-10003c94:	00809004 	movi	r2,576
+10003c94:	0080c804 	movi	r2,800
 10003c98:	10000005 	stb	zero,0(r2)
 			*EXP1_X = monster1_1_x-10;
-10003c9c:	00806804 	movi	r2,416
+10003c9c:	0080a004 	movi	r2,640
 10003ca0:	e0f93c17 	ldw	r3,-6928(fp)
 10003ca4:	18fffd84 	addi	r3,r3,-10
 10003ca8:	10c00015 	stw	r3,0(r2)
 			*EXP1_Y = monster1_1_y-10;
-10003cac:	00806404 	movi	r2,400
+10003cac:	00809c04 	movi	r2,624
 10003cb0:	e0f93d17 	ldw	r3,-6924(fp)
 10003cb4:	18fffd84 	addi	r3,r3,-10
 10003cb8:	10c00015 	stw	r3,0(r2)
 			*EXP1_EN = 1;
-10003cbc:	00806c04 	movi	r2,432
+10003cbc:	0080a404 	movi	r2,656
 10003cc0:	00c00044 	movi	r3,1
 10003cc4:	10c00015 	stw	r3,0(r2)
 		}
@@ -5975,40 +5975,40 @@ int main(void)
 10003cc8:	e0b94717 	ldw	r2,-6884(fp)
 10003ccc:	10000b1e 	bne	r2,zero,10003cfc <main+0x39c8>
 			*MON2_EN = 0;
-10003cd0:	00808404 	movi	r2,528
+10003cd0:	0080bc04 	movi	r2,752
 10003cd4:	10000005 	stb	zero,0(r2)
 			*EXP2_X = monster2_1_x;
-10003cd8:	00805c04 	movi	r2,368
+10003cd8:	00809404 	movi	r2,592
 10003cdc:	e0f94017 	ldw	r3,-6912(fp)
 10003ce0:	10c00015 	stw	r3,0(r2)
 			*EXP2_Y = monster2_1_y;
-10003ce4:	00805804 	movi	r2,352
+10003ce4:	00809004 	movi	r2,576
 10003ce8:	e0f94117 	ldw	r3,-6908(fp)
 10003cec:	10c00015 	stw	r3,0(r2)
 			*EXP2_EN = 1;
-10003cf0:	00806004 	movi	r2,384
+10003cf0:	00809804 	movi	r2,608
 10003cf4:	00c00044 	movi	r3,1
 10003cf8:	10c00015 	stw	r3,0(r2)
 		}
 
 		//Samus Collision with monster
 		if(*SAMUS_X+45 > monster3_1_x && *SAMUS_X < monster3_1_x+30 && ((*SAMUS_Y+70 > monster3_1_y && *SAMUS_Y < monster3_1_y+10 && grounded == True) || (*SAMUS_Y+45 > monster3_1_y && *SAMUS_Y < monster3_1_y+10 && grounded == False)) && *MON3_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
-10003cfc:	0080a004 	movi	r2,640
+10003cfc:	0080d804 	movi	r2,864
 10003d00:	10800017 	ldw	r2,0(r2)
 10003d04:	10800b44 	addi	r2,r2,45
 10003d08:	e0f94817 	ldw	r3,-6880(fp)
 10003d0c:	1880370e 	bge	r3,r2,10003dec <main+0x3ab8>
-10003d10:	0080a004 	movi	r2,640
+10003d10:	0080d804 	movi	r2,864
 10003d14:	10c00017 	ldw	r3,0(r2)
 10003d18:	e0b94817 	ldw	r2,-6880(fp)
 10003d1c:	10800784 	addi	r2,r2,30
 10003d20:	1880320e 	bge	r3,r2,10003dec <main+0x3ab8>
-10003d24:	00809c04 	movi	r2,624
+10003d24:	0080d404 	movi	r2,848
 10003d28:	10800017 	ldw	r2,0(r2)
 10003d2c:	10801184 	addi	r2,r2,70
 10003d30:	e0f94917 	ldw	r3,-6876(fp)
 10003d34:	1880080e 	bge	r3,r2,10003d58 <main+0x3a24>
-10003d38:	00809c04 	movi	r2,624
+10003d38:	0080d404 	movi	r2,848
 10003d3c:	10c00017 	ldw	r3,0(r2)
 10003d40:	e0b94917 	ldw	r2,-6876(fp)
 10003d44:	10800284 	addi	r2,r2,10
@@ -6016,26 +6016,26 @@ int main(void)
 10003d4c:	e0b92c17 	ldw	r2,-6992(fp)
 10003d50:	10800060 	cmpeqi	r2,r2,1
 10003d54:	10000c1e 	bne	r2,zero,10003d88 <main+0x3a54>
-10003d58:	00809c04 	movi	r2,624
+10003d58:	0080d404 	movi	r2,848
 10003d5c:	10800017 	ldw	r2,0(r2)
 10003d60:	10800b44 	addi	r2,r2,45
 10003d64:	e0f94917 	ldw	r3,-6876(fp)
 10003d68:	1880200e 	bge	r3,r2,10003dec <main+0x3ab8>
-10003d6c:	00809c04 	movi	r2,624
+10003d6c:	0080d404 	movi	r2,848
 10003d70:	10c00017 	ldw	r3,0(r2)
 10003d74:	e0b94917 	ldw	r2,-6876(fp)
 10003d78:	10800284 	addi	r2,r2,10
 10003d7c:	18801b0e 	bge	r3,r2,10003dec <main+0x3ab8>
 10003d80:	e0b92c17 	ldw	r2,-6992(fp)
 10003d84:	1000191e 	bne	r2,zero,10003dec <main+0x3ab8>
-10003d88:	00807804 	movi	r2,480
+10003d88:	0080b004 	movi	r2,704
 10003d8c:	10800003 	ldbu	r2,0(r2)
 10003d90:	10803fcc 	andi	r2,r2,255
 10003d94:	1080201c 	xori	r2,r2,128
 10003d98:	10bfe004 	addi	r2,r2,-128
 10003d9c:	10800058 	cmpnei	r2,r2,1
 10003da0:	1000121e 	bne	r2,zero,10003dec <main+0x3ab8>
-10003da4:	0080a404 	movi	r2,656
+10003da4:	0080dc04 	movi	r2,880
 10003da8:	10800003 	ldbu	r2,0(r2)
 10003dac:	10803fcc 	andi	r2,r2,255
 10003db0:	1080201c 	xori	r2,r2,128
@@ -6050,30 +6050,30 @@ int main(void)
 			y_set = False;
 10003dd0:	e0392f15 	stw	zero,-6980(fp)
 			*HEALTH = *HEALTH-1;
-10003dd4:	00802404 	movi	r2,144
-10003dd8:	00c02404 	movi	r3,144
+10003dd4:	00805c04 	movi	r2,368
+10003dd8:	00c05c04 	movi	r3,368
 10003ddc:	18c00017 	ldw	r3,0(r3)
 10003de0:	18ffffc4 	addi	r3,r3,-1
 10003de4:	10c00015 	stw	r3,0(r2)
 10003de8:	00007706 	br	10003fc8 <main+0x3c94>
 		}
 		else if(*SAMUS_X+45 > monster2_1_x && *SAMUS_X < monster2_1_x+45 && ((*SAMUS_Y+70 > monster2_1_y && *SAMUS_Y < monster2_1_y+33 && grounded == True) || (*SAMUS_Y+45 > monster2_1_y && *SAMUS_Y < monster2_1_y+33 && grounded == False)) && *MON2_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
-10003dec:	0080a004 	movi	r2,640
+10003dec:	0080d804 	movi	r2,864
 10003df0:	10800017 	ldw	r2,0(r2)
 10003df4:	10800b44 	addi	r2,r2,45
 10003df8:	e0f94017 	ldw	r3,-6912(fp)
 10003dfc:	1880370e 	bge	r3,r2,10003edc <main+0x3ba8>
-10003e00:	0080a004 	movi	r2,640
+10003e00:	0080d804 	movi	r2,864
 10003e04:	10c00017 	ldw	r3,0(r2)
 10003e08:	e0b94017 	ldw	r2,-6912(fp)
 10003e0c:	10800b44 	addi	r2,r2,45
 10003e10:	1880320e 	bge	r3,r2,10003edc <main+0x3ba8>
-10003e14:	00809c04 	movi	r2,624
+10003e14:	0080d404 	movi	r2,848
 10003e18:	10800017 	ldw	r2,0(r2)
 10003e1c:	10801184 	addi	r2,r2,70
 10003e20:	e0f94117 	ldw	r3,-6908(fp)
 10003e24:	1880080e 	bge	r3,r2,10003e48 <main+0x3b14>
-10003e28:	00809c04 	movi	r2,624
+10003e28:	0080d404 	movi	r2,848
 10003e2c:	10c00017 	ldw	r3,0(r2)
 10003e30:	e0b94117 	ldw	r2,-6908(fp)
 10003e34:	10800844 	addi	r2,r2,33
@@ -6081,26 +6081,26 @@ int main(void)
 10003e3c:	e0b92c17 	ldw	r2,-6992(fp)
 10003e40:	10800060 	cmpeqi	r2,r2,1
 10003e44:	10000c1e 	bne	r2,zero,10003e78 <main+0x3b44>
-10003e48:	00809c04 	movi	r2,624
+10003e48:	0080d404 	movi	r2,848
 10003e4c:	10800017 	ldw	r2,0(r2)
 10003e50:	10800b44 	addi	r2,r2,45
 10003e54:	e0f94117 	ldw	r3,-6908(fp)
 10003e58:	1880200e 	bge	r3,r2,10003edc <main+0x3ba8>
-10003e5c:	00809c04 	movi	r2,624
+10003e5c:	0080d404 	movi	r2,848
 10003e60:	10c00017 	ldw	r3,0(r2)
 10003e64:	e0b94117 	ldw	r2,-6908(fp)
 10003e68:	10800844 	addi	r2,r2,33
 10003e6c:	18801b0e 	bge	r3,r2,10003edc <main+0x3ba8>
 10003e70:	e0b92c17 	ldw	r2,-6992(fp)
 10003e74:	1000191e 	bne	r2,zero,10003edc <main+0x3ba8>
-10003e78:	00808404 	movi	r2,528
+10003e78:	0080bc04 	movi	r2,752
 10003e7c:	10800003 	ldbu	r2,0(r2)
 10003e80:	10803fcc 	andi	r2,r2,255
 10003e84:	1080201c 	xori	r2,r2,128
 10003e88:	10bfe004 	addi	r2,r2,-128
 10003e8c:	10800058 	cmpnei	r2,r2,1
 10003e90:	1000121e 	bne	r2,zero,10003edc <main+0x3ba8>
-10003e94:	0080a404 	movi	r2,656
+10003e94:	0080dc04 	movi	r2,880
 10003e98:	10800003 	ldbu	r2,0(r2)
 10003e9c:	10803fcc 	andi	r2,r2,255
 10003ea0:	1080201c 	xori	r2,r2,128
@@ -6115,30 +6115,30 @@ int main(void)
 			y_set = False;
 10003ec0:	e0392f15 	stw	zero,-6980(fp)
 			*HEALTH = *HEALTH-1;
-10003ec4:	00802404 	movi	r2,144
-10003ec8:	00c02404 	movi	r3,144
+10003ec4:	00805c04 	movi	r2,368
+10003ec8:	00c05c04 	movi	r3,368
 10003ecc:	18c00017 	ldw	r3,0(r3)
 10003ed0:	18ffffc4 	addi	r3,r3,-1
 10003ed4:	10c00015 	stw	r3,0(r2)
 10003ed8:	00003b06 	br	10003fc8 <main+0x3c94>
 		}
 		else if(*SAMUS_X+45 > monster1_1_x && *SAMUS_X < monster1_1_x+30 && ((*SAMUS_Y+70 > monster1_1_y && *SAMUS_Y < monster1_1_y+30 && grounded == True) || (*SAMUS_Y+45 > monster1_1_y && *SAMUS_Y < monster1_1_y+30 && grounded == False)) && *MON1_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
-10003edc:	0080a004 	movi	r2,640
+10003edc:	0080d804 	movi	r2,864
 10003ee0:	10800017 	ldw	r2,0(r2)
 10003ee4:	10800b44 	addi	r2,r2,45
 10003ee8:	e0f93c17 	ldw	r3,-6928(fp)
 10003eec:	1880360e 	bge	r3,r2,10003fc8 <main+0x3c94>
-10003ef0:	0080a004 	movi	r2,640
+10003ef0:	0080d804 	movi	r2,864
 10003ef4:	10c00017 	ldw	r3,0(r2)
 10003ef8:	e0b93c17 	ldw	r2,-6928(fp)
 10003efc:	10800784 	addi	r2,r2,30
 10003f00:	1880310e 	bge	r3,r2,10003fc8 <main+0x3c94>
-10003f04:	00809c04 	movi	r2,624
+10003f04:	0080d404 	movi	r2,848
 10003f08:	10800017 	ldw	r2,0(r2)
 10003f0c:	10801184 	addi	r2,r2,70
 10003f10:	e0f93d17 	ldw	r3,-6924(fp)
 10003f14:	1880080e 	bge	r3,r2,10003f38 <main+0x3c04>
-10003f18:	00809c04 	movi	r2,624
+10003f18:	0080d404 	movi	r2,848
 10003f1c:	10c00017 	ldw	r3,0(r2)
 10003f20:	e0b93d17 	ldw	r2,-6924(fp)
 10003f24:	10800784 	addi	r2,r2,30
@@ -6146,26 +6146,26 @@ int main(void)
 10003f2c:	e0b92c17 	ldw	r2,-6992(fp)
 10003f30:	10800060 	cmpeqi	r2,r2,1
 10003f34:	10000c1e 	bne	r2,zero,10003f68 <main+0x3c34>
-10003f38:	00809c04 	movi	r2,624
+10003f38:	0080d404 	movi	r2,848
 10003f3c:	10800017 	ldw	r2,0(r2)
 10003f40:	10800b44 	addi	r2,r2,45
 10003f44:	e0f93d17 	ldw	r3,-6924(fp)
 10003f48:	18801f0e 	bge	r3,r2,10003fc8 <main+0x3c94>
-10003f4c:	00809c04 	movi	r2,624
+10003f4c:	0080d404 	movi	r2,848
 10003f50:	10c00017 	ldw	r3,0(r2)
 10003f54:	e0b93d17 	ldw	r2,-6924(fp)
 10003f58:	10800784 	addi	r2,r2,30
 10003f5c:	18801a0e 	bge	r3,r2,10003fc8 <main+0x3c94>
 10003f60:	e0b92c17 	ldw	r2,-6992(fp)
 10003f64:	1000181e 	bne	r2,zero,10003fc8 <main+0x3c94>
-10003f68:	00809004 	movi	r2,576
+10003f68:	0080c804 	movi	r2,800
 10003f6c:	10800003 	ldbu	r2,0(r2)
 10003f70:	10803fcc 	andi	r2,r2,255
 10003f74:	1080201c 	xori	r2,r2,128
 10003f78:	10bfe004 	addi	r2,r2,-128
 10003f7c:	10800058 	cmpnei	r2,r2,1
 10003f80:	1000111e 	bne	r2,zero,10003fc8 <main+0x3c94>
-10003f84:	0080a404 	movi	r2,656
+10003f84:	0080dc04 	movi	r2,880
 10003f88:	10800003 	ldbu	r2,0(r2)
 10003f8c:	10803fcc 	andi	r2,r2,255
 10003f90:	1080201c 	xori	r2,r2,128
@@ -6180,8 +6180,8 @@ int main(void)
 			y_set = False;
 10003fb0:	e0392f15 	stw	zero,-6980(fp)
 			*HEALTH = *HEALTH-1;
-10003fb4:	00802404 	movi	r2,144
-10003fb8:	00c02404 	movi	r3,144
+10003fb4:	00805c04 	movi	r2,368
+10003fb8:	00c05c04 	movi	r3,368
 10003fbc:	18c00017 	ldw	r3,0(r3)
 10003fc0:	18ffffc4 	addi	r3,r3,-1
 10003fc4:	10c00015 	stw	r3,0(r2)
@@ -6192,21 +6192,21 @@ int main(void)
 10003fcc:	10800058 	cmpnei	r2,r2,1
 10003fd0:	10017f1e 	bne	r2,zero,100045d0 <main+0x429c>
 			if(*SAMUS_EN == False){
-10003fd4:	0080a404 	movi	r2,656
+10003fd4:	0080dc04 	movi	r2,880
 10003fd8:	10800003 	ldbu	r2,0(r2)
 10003fdc:	10803fcc 	andi	r2,r2,255
 10003fe0:	1080201c 	xori	r2,r2,128
 10003fe4:	10bfe004 	addi	r2,r2,-128
 10003fe8:	1000041e 	bne	r2,zero,10003ffc <main+0x3cc8>
 				*SAMUS_EN = True;
-10003fec:	0080a404 	movi	r2,656
+10003fec:	0080dc04 	movi	r2,880
 10003ff0:	00c00044 	movi	r3,1
 10003ff4:	10c00005 	stb	r3,0(r2)
 10003ff8:	00000206 	br	10004004 <main+0x3cd0>
 			}
 			else{
 				*SAMUS_EN = False;
-10003ffc:	0080a404 	movi	r2,656
+10003ffc:	0080dc04 	movi	r2,880
 10004000:	10000005 	stb	zero,0(r2)
 			}
 			if(samus_inv_counter < 15){
@@ -6214,14 +6214,14 @@ int main(void)
 10004008:	108003c8 	cmpgei	r2,r2,15
 1000400c:	1001621e 	bne	r2,zero,10004598 <main+0x4264>
 				if(scene[sceneNum][(*SAMUS_Y+15)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0 && *SAMUS_DIR == 0){
-10004010:	00809c04 	movi	r2,624
+10004010:	0080d404 	movi	r2,848
 10004014:	10800017 	ldw	r2,0(r2)
 10004018:	108003c4 	addi	r2,r2,15
 1000401c:	1009883a 	mov	r4,r2
 10004020:	01400784 	movi	r5,30
 10004024:	00057ac0 	call	100057ac <__divsi3>
 10004028:	1023883a 	mov	r17,r2
-1000402c:	0080a004 	movi	r2,640
+1000402c:	0080d804 	movi	r2,864
 10004030:	10800017 	ldw	r2,0(r2)
 10004034:	10bfff44 	addi	r2,r2,-3
 10004038:	1009883a 	mov	r4,r2
@@ -6245,14 +6245,14 @@ int main(void)
 10004080:	10804604 	addi	r2,r2,280
 10004084:	10800017 	ldw	r2,0(r2)
 10004088:	10006f1e 	bne	r2,zero,10004248 <main+0x3f14>
-1000408c:	00809c04 	movi	r2,624
+1000408c:	0080d404 	movi	r2,848
 10004090:	10800017 	ldw	r2,0(r2)
 10004094:	10800644 	addi	r2,r2,25
 10004098:	1009883a 	mov	r4,r2
 1000409c:	01400784 	movi	r5,30
 100040a0:	00057ac0 	call	100057ac <__divsi3>
 100040a4:	1023883a 	mov	r17,r2
-100040a8:	0080a004 	movi	r2,640
+100040a8:	0080d804 	movi	r2,864
 100040ac:	10800017 	ldw	r2,0(r2)
 100040b0:	10bfff44 	addi	r2,r2,-3
 100040b4:	1009883a 	mov	r4,r2
@@ -6276,14 +6276,14 @@ int main(void)
 100040fc:	10804604 	addi	r2,r2,280
 10004100:	10800017 	ldw	r2,0(r2)
 10004104:	1000501e 	bne	r2,zero,10004248 <main+0x3f14>
-10004108:	00809c04 	movi	r2,624
+10004108:	0080d404 	movi	r2,848
 1000410c:	10800017 	ldw	r2,0(r2)
 10004110:	10800c84 	addi	r2,r2,50
 10004114:	1009883a 	mov	r4,r2
 10004118:	01400784 	movi	r5,30
 1000411c:	00057ac0 	call	100057ac <__divsi3>
 10004120:	1023883a 	mov	r17,r2
-10004124:	0080a004 	movi	r2,640
+10004124:	0080d804 	movi	r2,864
 10004128:	10800017 	ldw	r2,0(r2)
 1000412c:	10bfff44 	addi	r2,r2,-3
 10004130:	1009883a 	mov	r4,r2
@@ -6307,14 +6307,14 @@ int main(void)
 10004178:	10804604 	addi	r2,r2,280
 1000417c:	10800017 	ldw	r2,0(r2)
 10004180:	1000311e 	bne	r2,zero,10004248 <main+0x3f14>
-10004184:	00809c04 	movi	r2,624
+10004184:	0080d404 	movi	r2,848
 10004188:	10800017 	ldw	r2,0(r2)
 1000418c:	10801184 	addi	r2,r2,70
 10004190:	1009883a 	mov	r4,r2
 10004194:	01400784 	movi	r5,30
 10004198:	00057ac0 	call	100057ac <__divsi3>
 1000419c:	1023883a 	mov	r17,r2
-100041a0:	0080a004 	movi	r2,640
+100041a0:	0080d804 	movi	r2,864
 100041a4:	10800017 	ldw	r2,0(r2)
 100041a8:	10bfff44 	addi	r2,r2,-3
 100041ac:	1009883a 	mov	r4,r2
@@ -6338,15 +6338,15 @@ int main(void)
 100041f4:	10804604 	addi	r2,r2,280
 100041f8:	10800017 	ldw	r2,0(r2)
 100041fc:	1000121e 	bne	r2,zero,10004248 <main+0x3f14>
-10004200:	00801404 	movi	r2,80
+10004200:	00804c04 	movi	r2,304
 10004204:	10800003 	ldbu	r2,0(r2)
 10004208:	10803fcc 	andi	r2,r2,255
 1000420c:	1080201c 	xori	r2,r2,128
 10004210:	10bfe004 	addi	r2,r2,-128
 10004214:	10000c1e 	bne	r2,zero,10004248 <main+0x3f14>
 					*SAMUS_X-=((25-samus_inv_counter)/2);
-10004218:	00c0a004 	movi	r3,640
-1000421c:	0080a004 	movi	r2,640
+10004218:	00c0d804 	movi	r3,864
+1000421c:	0080d804 	movi	r2,864
 10004220:	11000017 	ldw	r4,0(r2)
 10004224:	01400644 	movi	r5,25
 10004228:	e0b92817 	ldw	r2,-7008(fp)
@@ -6359,14 +6359,14 @@ int main(void)
 10004244:	00008e06 	br	10004480 <main+0x414c>
 				}
 				else if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0 && *SAMUS_DIR == 1){
-10004248:	00809c04 	movi	r2,624
+10004248:	0080d404 	movi	r2,848
 1000424c:	10800017 	ldw	r2,0(r2)
 10004250:	10800284 	addi	r2,r2,10
 10004254:	1009883a 	mov	r4,r2
 10004258:	01400784 	movi	r5,30
 1000425c:	00057ac0 	call	100057ac <__divsi3>
 10004260:	1023883a 	mov	r17,r2
-10004264:	0080a004 	movi	r2,640
+10004264:	0080d804 	movi	r2,864
 10004268:	10800017 	ldw	r2,0(r2)
 1000426c:	10800a04 	addi	r2,r2,40
 10004270:	1009883a 	mov	r4,r2
@@ -6390,14 +6390,14 @@ int main(void)
 100042b8:	10804604 	addi	r2,r2,280
 100042bc:	10800017 	ldw	r2,0(r2)
 100042c0:	10006f1e 	bne	r2,zero,10004480 <main+0x414c>
-100042c4:	00809c04 	movi	r2,624
+100042c4:	0080d404 	movi	r2,848
 100042c8:	10800017 	ldw	r2,0(r2)
 100042cc:	10800644 	addi	r2,r2,25
 100042d0:	1009883a 	mov	r4,r2
 100042d4:	01400784 	movi	r5,30
 100042d8:	00057ac0 	call	100057ac <__divsi3>
 100042dc:	1023883a 	mov	r17,r2
-100042e0:	0080a004 	movi	r2,640
+100042e0:	0080d804 	movi	r2,864
 100042e4:	10800017 	ldw	r2,0(r2)
 100042e8:	10800a04 	addi	r2,r2,40
 100042ec:	1009883a 	mov	r4,r2
@@ -6421,14 +6421,14 @@ int main(void)
 10004334:	10804604 	addi	r2,r2,280
 10004338:	10800017 	ldw	r2,0(r2)
 1000433c:	1000501e 	bne	r2,zero,10004480 <main+0x414c>
-10004340:	00809c04 	movi	r2,624
+10004340:	0080d404 	movi	r2,848
 10004344:	10800017 	ldw	r2,0(r2)
 10004348:	10800c84 	addi	r2,r2,50
 1000434c:	1009883a 	mov	r4,r2
 10004350:	01400784 	movi	r5,30
 10004354:	00057ac0 	call	100057ac <__divsi3>
 10004358:	1023883a 	mov	r17,r2
-1000435c:	0080a004 	movi	r2,640
+1000435c:	0080d804 	movi	r2,864
 10004360:	10800017 	ldw	r2,0(r2)
 10004364:	10800a04 	addi	r2,r2,40
 10004368:	1009883a 	mov	r4,r2
@@ -6452,14 +6452,14 @@ int main(void)
 100043b0:	10804604 	addi	r2,r2,280
 100043b4:	10800017 	ldw	r2,0(r2)
 100043b8:	1000311e 	bne	r2,zero,10004480 <main+0x414c>
-100043bc:	00809c04 	movi	r2,624
+100043bc:	0080d404 	movi	r2,848
 100043c0:	10800017 	ldw	r2,0(r2)
 100043c4:	10801184 	addi	r2,r2,70
 100043c8:	1009883a 	mov	r4,r2
 100043cc:	01400784 	movi	r5,30
 100043d0:	00057ac0 	call	100057ac <__divsi3>
 100043d4:	1023883a 	mov	r17,r2
-100043d8:	0080a004 	movi	r2,640
+100043d8:	0080d804 	movi	r2,864
 100043dc:	10800017 	ldw	r2,0(r2)
 100043e0:	10800a04 	addi	r2,r2,40
 100043e4:	1009883a 	mov	r4,r2
@@ -6483,7 +6483,7 @@ int main(void)
 1000442c:	10804604 	addi	r2,r2,280
 10004430:	10800017 	ldw	r2,0(r2)
 10004434:	1000121e 	bne	r2,zero,10004480 <main+0x414c>
-10004438:	00801404 	movi	r2,80
+10004438:	00804c04 	movi	r2,304
 1000443c:	10800003 	ldbu	r2,0(r2)
 10004440:	10803fcc 	andi	r2,r2,255
 10004444:	1080201c 	xori	r2,r2,128
@@ -6491,8 +6491,8 @@ int main(void)
 1000444c:	10800058 	cmpnei	r2,r2,1
 10004450:	10000b1e 	bne	r2,zero,10004480 <main+0x414c>
 						*SAMUS_X+=((25-samus_inv_counter)/2);
-10004454:	00c0a004 	movi	r3,640
-10004458:	0080a004 	movi	r2,640
+10004454:	00c0d804 	movi	r3,864
+10004458:	0080d804 	movi	r2,864
 1000445c:	11000017 	ldw	r4,0(r2)
 10004460:	01400644 	movi	r5,25
 10004464:	e0b92817 	ldw	r2,-7008(fp)
@@ -6504,14 +6504,14 @@ int main(void)
 1000447c:	18800015 	stw	r2,0(r3)
 				}
 				if(scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+33)/30] == 0 && y_set == False){
-10004480:	00809c04 	movi	r2,624
+10004480:	0080d404 	movi	r2,848
 10004484:	10800017 	ldw	r2,0(r2)
 10004488:	10800144 	addi	r2,r2,5
 1000448c:	1009883a 	mov	r4,r2
 10004490:	01400784 	movi	r5,30
 10004494:	00057ac0 	call	100057ac <__divsi3>
 10004498:	1023883a 	mov	r17,r2
-1000449c:	0080a004 	movi	r2,640
+1000449c:	0080d804 	movi	r2,864
 100044a0:	10800017 	ldw	r2,0(r2)
 100044a4:	10800084 	addi	r2,r2,2
 100044a8:	1009883a 	mov	r4,r2
@@ -6535,14 +6535,14 @@ int main(void)
 100044f0:	10804604 	addi	r2,r2,280
 100044f4:	10800017 	ldw	r2,0(r2)
 100044f8:	1000211e 	bne	r2,zero,10004580 <main+0x424c>
-100044fc:	00809c04 	movi	r2,624
+100044fc:	0080d404 	movi	r2,848
 10004500:	10800017 	ldw	r2,0(r2)
 10004504:	10800144 	addi	r2,r2,5
 10004508:	1009883a 	mov	r4,r2
 1000450c:	01400784 	movi	r5,30
 10004510:	00057ac0 	call	100057ac <__divsi3>
 10004514:	1023883a 	mov	r17,r2
-10004518:	0080a004 	movi	r2,640
+10004518:	0080d804 	movi	r2,864
 1000451c:	10800017 	ldw	r2,0(r2)
 10004520:	10800844 	addi	r2,r2,33
 10004524:	1009883a 	mov	r4,r2
@@ -6593,7 +6593,7 @@ int main(void)
 				samus_inv_counter_start = False;
 100045b0:	e0392915 	stw	zero,-7004(fp)
 				*SAMUS_EN = True;
-100045b4:	0080a404 	movi	r2,656
+100045b4:	0080dc04 	movi	r2,880
 100045b8:	00c00044 	movi	r3,1
 100045bc:	10c00005 	stb	r3,0(r2)
 100045c0:	00000306 	br	100045d0 <main+0x429c>

@@ -4,80 +4,83 @@
 
 `timescale 1 ps / 1 ps
 module nios_system (
-		output wire        b_emp_export,           //           b_emp.export
-		output wire        bullet1_en_export,      //      bullet1_en.export
-		output wire [9:0]  bullet1_x_export,       //       bullet1_x.export
-		output wire [9:0]  bullet1_y_export,       //       bullet1_y.export
-		output wire        bullet2_en_export,      //      bullet2_en.export
-		output wire [9:0]  bullet2_x_export,       //       bullet2_x.export
-		output wire [9:0]  bullet2_y_export,       //       bullet2_y.export
-		output wire        bullet3_en_export,      //      bullet3_en.export
-		output wire [9:0]  bullet3_x_export,       //       bullet3_x.export
-		output wire [9:0]  bullet3_y_export,       //       bullet3_y.export
-		input  wire        clk_clk,                //             clk.clk
-		output wire        explosion1_en_export,   //   explosion1_en.export
-		output wire [9:0]  explosion1_x_export,    //    explosion1_x.export
-		output wire [9:0]  explosion1_y_export,    //    explosion1_y.export
-		output wire        explosion2_en_export,   //   explosion2_en.export
-		output wire [9:0]  explosion2_x_export,    //    explosion2_x.export
-		output wire [9:0]  explosion2_y_export,    //    explosion2_y.export
-		output wire        explosion3_en_export,   //   explosion3_en.export
-		output wire [9:0]  explosion3_x_export,    //    explosion3_x.export
-		output wire [9:0]  explosion3_y_export,    //    explosion3_y.export
-		output wire [1:0]  health_export,          //          health.export
-		input  wire [1:0]  key_export,             //             key.export
-		output wire [15:0] keycode_export,         //         keycode.export
-		output wire        kraid_as_dir_export,    //    kraid_as_dir.export
-		output wire        kraid_dir_export,       //       kraid_dir.export
-		output wire        kraid_g_en_export,      //      kraid_g_en.export
-		output wire        kraid_n_en_export,      //      kraid_n_en.export
-		output wire        kraid_r_en_export,      //      kraid_r_en.export
-		output wire        kraid_shoot_en_export,  //  kraid_shoot_en.export
-		output wire [9:0]  kraid_spike_x_export,   //   kraid_spike_x.export
-		output wire [9:0]  kraid_spike_y_export,   //   kraid_spike_y.export
-		output wire        kraid_throw_en_export,  //  kraid_throw_en.export
-		output wire [9:0]  kraid_throw_x_export,   //   kraid_throw_x.export
-		output wire [9:0]  kraid_throw_y_export,   //   kraid_throw_y.export
-		output wire [9:0]  kraid_x_export,         //         kraid_x.export
-		output wire [9:0]  kraid_y_export,         //         kraid_y.export
-		output wire        loss_en_export,         //         loss_en.export
-		output wire        monster1_en_export,     //     monster1_en.export
-		output wire [9:0]  monster1_x_export,      //      monster1_x.export
-		output wire [9:0]  monster1_y_export,      //      monster1_y.export
-		output wire        monster2_en_export,     //     monster2_en.export
-		output wire [9:0]  monster2_x_export,      //      monster2_x.export
-		output wire [9:0]  monster2_y_export,      //      monster2_y.export
-		output wire        monster3_dir_export,    //    monster3_dir.export
-		output wire        monster3_en_export,     //     monster3_en.export
-		output wire [9:0]  monster3_x_export,      //      monster3_x.export
-		output wire [9:0]  monster3_y_export,      //      monster3_y.export
-		output wire [1:0]  otg_hpi_address_export, // otg_hpi_address.export
-		output wire        otg_hpi_cs_export,      //      otg_hpi_cs.export
-		input  wire [15:0] otg_hpi_data_in_port,   //    otg_hpi_data.in_port
-		output wire [15:0] otg_hpi_data_out_port,  //                .out_port
-		output wire        otg_hpi_r_export,       //       otg_hpi_r.export
-		output wire        otg_hpi_w_export,       //       otg_hpi_w.export
-		input  wire        reset_reset_n,          //           reset.reset_n
-		output wire        samus_dir_export,       //       samus_dir.export
-		output wire        samus_en_export,        //        samus_en.export
-		output wire        samus_jump_export,      //      samus_jump.export
-		output wire        samus_up_export,        //        samus_up.export
-		output wire        samus_walk_export,      //      samus_walk.export
-		output wire [9:0]  samus_x_export,         //         samus_x.export
-		output wire [9:0]  samus_y_export,         //         samus_y.export
-		output wire [2:0]  scene_sel_export,       //       scene_sel.export
-		output wire        sdram_clk_clk,          //       sdram_clk.clk
-		output wire [12:0] sdram_wire_addr,        //      sdram_wire.addr
-		output wire [1:0]  sdram_wire_ba,          //                .ba
-		output wire        sdram_wire_cas_n,       //                .cas_n
-		output wire        sdram_wire_cke,         //                .cke
-		output wire        sdram_wire_cs_n,        //                .cs_n
-		inout  wire [31:0] sdram_wire_dq,          //                .dq
-		output wire [3:0]  sdram_wire_dqm,         //                .dqm
-		output wire        sdram_wire_ras_n,       //                .ras_n
-		output wire        sdram_wire_we_n,        //                .we_n
-		output wire        title_en_export,        //        title_en.export
-		output wire        win_en_export           //          win_en.export
+		output wire        b_emp_export,            //            b_emp.export
+		output wire        bullet1_en_export,       //       bullet1_en.export
+		output wire [9:0]  bullet1_x_export,        //        bullet1_x.export
+		output wire [9:0]  bullet1_y_export,        //        bullet1_y.export
+		output wire        bullet2_en_export,       //       bullet2_en.export
+		output wire [9:0]  bullet2_x_export,        //        bullet2_x.export
+		output wire [9:0]  bullet2_y_export,        //        bullet2_y.export
+		output wire        bullet3_en_export,       //       bullet3_en.export
+		output wire [9:0]  bullet3_x_export,        //        bullet3_x.export
+		output wire [9:0]  bullet3_y_export,        //        bullet3_y.export
+		input  wire        clk_clk,                 //              clk.clk
+		output wire        explosion1_en_export,    //    explosion1_en.export
+		output wire [9:0]  explosion1_x_export,     //     explosion1_x.export
+		output wire [9:0]  explosion1_y_export,     //     explosion1_y.export
+		output wire        explosion2_en_export,    //    explosion2_en.export
+		output wire [9:0]  explosion2_x_export,     //     explosion2_x.export
+		output wire [9:0]  explosion2_y_export,     //     explosion2_y.export
+		output wire        explosion3_en_export,    //    explosion3_en.export
+		output wire [9:0]  explosion3_x_export,     //     explosion3_x.export
+		output wire [9:0]  explosion3_y_export,     //     explosion3_y.export
+		output wire [1:0]  health_export,           //           health.export
+		input  wire [1:0]  key_export,              //              key.export
+		output wire [15:0] keycode_export,          //          keycode.export
+		output wire        kraid_as_dir_export,     //     kraid_as_dir.export
+		output wire        kraid_dir_export,        //        kraid_dir.export
+		output wire        kraid_g_en_export,       //       kraid_g_en.export
+		output wire        kraid_n_en_export,       //       kraid_n_en.export
+		output wire        kraid_r_en_export,       //       kraid_r_en.export
+		output wire        kraid_shoot_en_export,   //   kraid_shoot_en.export
+		output wire [9:0]  kraid_spike_x_export,    //    kraid_spike_x.export
+		output wire [9:0]  kraid_spike_y_export,    //    kraid_spike_y.export
+		output wire        kraid_throw_en_export,   //   kraid_throw_en.export
+		output wire [9:0]  kraid_throw_x_export,    //    kraid_throw_x.export
+		output wire [9:0]  kraid_throw_y_export,    //    kraid_throw_y.export
+		output wire [9:0]  kraid_x_export,          //          kraid_x.export
+		output wire [9:0]  kraid_y_export,          //          kraid_y.export
+		output wire        krait_throw_2_en_export, // krait_throw_2_en.export
+		output wire [9:0]  krait_throw_2_x_export,  //  krait_throw_2_x.export
+		output wire [9:0]  krait_throw_2_y_export,  //  krait_throw_2_y.export
+		output wire        loss_en_export,          //          loss_en.export
+		output wire        monster1_en_export,      //      monster1_en.export
+		output wire [9:0]  monster1_x_export,       //       monster1_x.export
+		output wire [9:0]  monster1_y_export,       //       monster1_y.export
+		output wire        monster2_en_export,      //      monster2_en.export
+		output wire [9:0]  monster2_x_export,       //       monster2_x.export
+		output wire [9:0]  monster2_y_export,       //       monster2_y.export
+		output wire        monster3_dir_export,     //     monster3_dir.export
+		output wire        monster3_en_export,      //      monster3_en.export
+		output wire [9:0]  monster3_x_export,       //       monster3_x.export
+		output wire [9:0]  monster3_y_export,       //       monster3_y.export
+		output wire [1:0]  otg_hpi_address_export,  //  otg_hpi_address.export
+		output wire        otg_hpi_cs_export,       //       otg_hpi_cs.export
+		input  wire [15:0] otg_hpi_data_in_port,    //     otg_hpi_data.in_port
+		output wire [15:0] otg_hpi_data_out_port,   //                 .out_port
+		output wire        otg_hpi_r_export,        //        otg_hpi_r.export
+		output wire        otg_hpi_w_export,        //        otg_hpi_w.export
+		input  wire        reset_reset_n,           //            reset.reset_n
+		output wire        samus_dir_export,        //        samus_dir.export
+		output wire        samus_en_export,         //         samus_en.export
+		output wire        samus_jump_export,       //       samus_jump.export
+		output wire        samus_up_export,         //         samus_up.export
+		output wire        samus_walk_export,       //       samus_walk.export
+		output wire [9:0]  samus_x_export,          //          samus_x.export
+		output wire [9:0]  samus_y_export,          //          samus_y.export
+		output wire [2:0]  scene_sel_export,        //        scene_sel.export
+		output wire        sdram_clk_clk,           //        sdram_clk.clk
+		output wire [12:0] sdram_wire_addr,         //       sdram_wire.addr
+		output wire [1:0]  sdram_wire_ba,           //                 .ba
+		output wire        sdram_wire_cas_n,        //                 .cas_n
+		output wire        sdram_wire_cke,          //                 .cke
+		output wire        sdram_wire_cs_n,         //                 .cs_n
+		inout  wire [31:0] sdram_wire_dq,           //                 .dq
+		output wire [3:0]  sdram_wire_dqm,          //                 .dqm
+		output wire        sdram_wire_ras_n,        //                 .ras_n
+		output wire        sdram_wire_we_n,         //                 .we_n
+		output wire        title_en_export,         //         title_en.export
+		output wire        win_en_export            //           win_en.export
 	);
 
 	wire         sdram_pll_c0_clk;                                            // sdram_pll:c0 -> [mm_interconnect_0:sdram_pll_c0_clk, rst_controller_001:clk, sdram:clk]
@@ -436,9 +439,24 @@ module nios_system (
 	wire   [1:0] mm_interconnect_0_kraid_throw_y_s1_address;                  // mm_interconnect_0:kraid_throw_y_s1_address -> kraid_throw_y:address
 	wire         mm_interconnect_0_kraid_throw_y_s1_write;                    // mm_interconnect_0:kraid_throw_y_s1_write -> kraid_throw_y:write_n
 	wire  [31:0] mm_interconnect_0_kraid_throw_y_s1_writedata;                // mm_interconnect_0:kraid_throw_y_s1_writedata -> kraid_throw_y:writedata
+	wire         mm_interconnect_0_krait_throw_2_en_s1_chipselect;            // mm_interconnect_0:krait_throw_2_en_s1_chipselect -> krait_throw_2_en:chipselect
+	wire  [31:0] mm_interconnect_0_krait_throw_2_en_s1_readdata;              // krait_throw_2_en:readdata -> mm_interconnect_0:krait_throw_2_en_s1_readdata
+	wire   [1:0] mm_interconnect_0_krait_throw_2_en_s1_address;               // mm_interconnect_0:krait_throw_2_en_s1_address -> krait_throw_2_en:address
+	wire         mm_interconnect_0_krait_throw_2_en_s1_write;                 // mm_interconnect_0:krait_throw_2_en_s1_write -> krait_throw_2_en:write_n
+	wire  [31:0] mm_interconnect_0_krait_throw_2_en_s1_writedata;             // mm_interconnect_0:krait_throw_2_en_s1_writedata -> krait_throw_2_en:writedata
+	wire         mm_interconnect_0_krait_throw_2_x_s1_chipselect;             // mm_interconnect_0:krait_throw_2_x_s1_chipselect -> krait_throw_2_x:chipselect
+	wire  [31:0] mm_interconnect_0_krait_throw_2_x_s1_readdata;               // krait_throw_2_x:readdata -> mm_interconnect_0:krait_throw_2_x_s1_readdata
+	wire   [1:0] mm_interconnect_0_krait_throw_2_x_s1_address;                // mm_interconnect_0:krait_throw_2_x_s1_address -> krait_throw_2_x:address
+	wire         mm_interconnect_0_krait_throw_2_x_s1_write;                  // mm_interconnect_0:krait_throw_2_x_s1_write -> krait_throw_2_x:write_n
+	wire  [31:0] mm_interconnect_0_krait_throw_2_x_s1_writedata;              // mm_interconnect_0:krait_throw_2_x_s1_writedata -> krait_throw_2_x:writedata
+	wire         mm_interconnect_0_krait_throw_2_y_s1_chipselect;             // mm_interconnect_0:krait_throw_2_y_s1_chipselect -> krait_throw_2_y:chipselect
+	wire  [31:0] mm_interconnect_0_krait_throw_2_y_s1_readdata;               // krait_throw_2_y:readdata -> mm_interconnect_0:krait_throw_2_y_s1_readdata
+	wire   [1:0] mm_interconnect_0_krait_throw_2_y_s1_address;                // mm_interconnect_0:krait_throw_2_y_s1_address -> krait_throw_2_y:address
+	wire         mm_interconnect_0_krait_throw_2_y_s1_write;                  // mm_interconnect_0:krait_throw_2_y_s1_write -> krait_throw_2_y:write_n
+	wire  [31:0] mm_interconnect_0_krait_throw_2_y_s1_writedata;              // mm_interconnect_0:krait_throw_2_y_s1_writedata -> krait_throw_2_y:writedata
 	wire         irq_mapper_receiver0_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_qsys_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_qsys_0:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [b_emp:reset_n, bullet1_en:reset_n, bullet1_x:reset_n, bullet1_y:reset_n, bullet2_en:reset_n, bullet2_x:reset_n, bullet2_y:reset_n, bullet3_en:reset_n, bullet3_x:reset_n, bullet3_y:reset_n, explosion1_en:reset_n, explosion1_x:reset_n, explosion1_y:reset_n, explosion2_en:reset_n, explosion2_x:reset_n, explosion2_y:reset_n, explosion3_en:reset_n, explosion3_x:reset_n, explosion3_y:reset_n, health:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, kraid_as_dir:reset_n, kraid_dir:reset_n, kraid_g_en:reset_n, kraid_n_en:reset_n, kraid_r_en:reset_n, kraid_shoot_en:reset_n, kraid_spike_x:reset_n, kraid_spike_y:reset_n, kraid_throw_en:reset_n, kraid_throw_x:reset_n, kraid_throw_y:reset_n, kraid_x:reset_n, kraid_y:reset_n, loss_en:reset_n, mm_interconnect_0:nios2_qsys_0_reset_reset_bridge_in_reset_reset, monster1_en:reset_n, monster1_x:reset_n, monster1_y:reset_n, monster2_en:reset_n, monster2_x:reset_n, monster2_y:reset_n, monster3_dir:reset_n, monster3_en:reset_n, monster3_x:reset_n, monster3_y:reset_n, nios2_qsys_0:reset_n, onchip_memory2_0:reset, otg_hpi_address:reset_n, otg_hpi_cs:reset_n, otg_hpi_data:reset_n, otg_hpi_r:reset_n, otg_hpi_w:reset_n, rst_translator:in_reset, samus_dir:reset_n, samus_en:reset_n, samus_jump:reset_n, samus_up:reset_n, samus_walk:reset_n, samus_x:reset_n, samus_y:reset_n, scene_sel:reset_n, sdram_pll:reset, sysid_qsys_0:reset_n, title_en:reset_n, win_en:reset_n]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [b_emp:reset_n, bullet1_en:reset_n, bullet1_x:reset_n, bullet1_y:reset_n, bullet2_en:reset_n, bullet2_x:reset_n, bullet2_y:reset_n, bullet3_en:reset_n, bullet3_x:reset_n, bullet3_y:reset_n, explosion1_en:reset_n, explosion1_x:reset_n, explosion1_y:reset_n, explosion2_en:reset_n, explosion2_x:reset_n, explosion2_y:reset_n, explosion3_en:reset_n, explosion3_x:reset_n, explosion3_y:reset_n, health:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, kraid_as_dir:reset_n, kraid_dir:reset_n, kraid_g_en:reset_n, kraid_n_en:reset_n, kraid_r_en:reset_n, kraid_shoot_en:reset_n, kraid_spike_x:reset_n, kraid_spike_y:reset_n, kraid_throw_en:reset_n, kraid_throw_x:reset_n, kraid_throw_y:reset_n, kraid_x:reset_n, kraid_y:reset_n, krait_throw_2_en:reset_n, krait_throw_2_x:reset_n, krait_throw_2_y:reset_n, loss_en:reset_n, mm_interconnect_0:nios2_qsys_0_reset_reset_bridge_in_reset_reset, monster1_en:reset_n, monster1_x:reset_n, monster1_y:reset_n, monster2_en:reset_n, monster2_x:reset_n, monster2_y:reset_n, monster3_dir:reset_n, monster3_en:reset_n, monster3_x:reset_n, monster3_y:reset_n, nios2_qsys_0:reset_n, onchip_memory2_0:reset, otg_hpi_address:reset_n, otg_hpi_cs:reset_n, otg_hpi_data:reset_n, otg_hpi_r:reset_n, otg_hpi_w:reset_n, rst_translator:in_reset, samus_dir:reset_n, samus_en:reset_n, samus_jump:reset_n, samus_up:reset_n, samus_walk:reset_n, samus_x:reset_n, samus_y:reset_n, scene_sel:reset_n, sdram_pll:reset, sysid_qsys_0:reset_n, title_en:reset_n, win_en:reset_n]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [nios2_qsys_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         nios2_qsys_0_debug_reset_request_reset;                      // nios2_qsys_0:debug_reset_request -> [rst_controller:reset_in1, rst_controller_001:reset_in1]
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [mm_interconnect_0:sdram_reset_reset_bridge_in_reset_reset, sdram:reset_n]
@@ -839,6 +857,39 @@ module nios_system (
 		.chipselect (mm_interconnect_0_kraid_y_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_kraid_y_s1_readdata),   //                    .readdata
 		.out_port   (kraid_y_export)                           // external_connection.export
+	);
+
+	nios_system_b_emp krait_throw_2_en (
+		.clk        (clk_clk),                                          //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                  //               reset.reset_n
+		.address    (mm_interconnect_0_krait_throw_2_en_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_krait_throw_2_en_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_krait_throw_2_en_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_krait_throw_2_en_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_krait_throw_2_en_s1_readdata),   //                    .readdata
+		.out_port   (krait_throw_2_en_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x krait_throw_2_x (
+		.clk        (clk_clk),                                         //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                 //               reset.reset_n
+		.address    (mm_interconnect_0_krait_throw_2_x_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_krait_throw_2_x_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_krait_throw_2_x_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_krait_throw_2_x_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_krait_throw_2_x_s1_readdata),   //                    .readdata
+		.out_port   (krait_throw_2_x_export)                           // external_connection.export
+	);
+
+	nios_system_bullet1_x krait_throw_2_y (
+		.clk        (clk_clk),                                         //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                 //               reset.reset_n
+		.address    (mm_interconnect_0_krait_throw_2_y_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_krait_throw_2_y_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_krait_throw_2_y_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_krait_throw_2_y_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_krait_throw_2_y_s1_readdata),   //                    .readdata
+		.out_port   (krait_throw_2_y_export)                           // external_connection.export
 	);
 
 	nios_system_b_emp loss_en (
@@ -1414,6 +1465,21 @@ module nios_system (
 		.kraid_y_s1_readdata                            (mm_interconnect_0_kraid_y_s1_readdata),                       //                                         .readdata
 		.kraid_y_s1_writedata                           (mm_interconnect_0_kraid_y_s1_writedata),                      //                                         .writedata
 		.kraid_y_s1_chipselect                          (mm_interconnect_0_kraid_y_s1_chipselect),                     //                                         .chipselect
+		.krait_throw_2_en_s1_address                    (mm_interconnect_0_krait_throw_2_en_s1_address),               //                      krait_throw_2_en_s1.address
+		.krait_throw_2_en_s1_write                      (mm_interconnect_0_krait_throw_2_en_s1_write),                 //                                         .write
+		.krait_throw_2_en_s1_readdata                   (mm_interconnect_0_krait_throw_2_en_s1_readdata),              //                                         .readdata
+		.krait_throw_2_en_s1_writedata                  (mm_interconnect_0_krait_throw_2_en_s1_writedata),             //                                         .writedata
+		.krait_throw_2_en_s1_chipselect                 (mm_interconnect_0_krait_throw_2_en_s1_chipselect),            //                                         .chipselect
+		.krait_throw_2_x_s1_address                     (mm_interconnect_0_krait_throw_2_x_s1_address),                //                       krait_throw_2_x_s1.address
+		.krait_throw_2_x_s1_write                       (mm_interconnect_0_krait_throw_2_x_s1_write),                  //                                         .write
+		.krait_throw_2_x_s1_readdata                    (mm_interconnect_0_krait_throw_2_x_s1_readdata),               //                                         .readdata
+		.krait_throw_2_x_s1_writedata                   (mm_interconnect_0_krait_throw_2_x_s1_writedata),              //                                         .writedata
+		.krait_throw_2_x_s1_chipselect                  (mm_interconnect_0_krait_throw_2_x_s1_chipselect),             //                                         .chipselect
+		.krait_throw_2_y_s1_address                     (mm_interconnect_0_krait_throw_2_y_s1_address),                //                       krait_throw_2_y_s1.address
+		.krait_throw_2_y_s1_write                       (mm_interconnect_0_krait_throw_2_y_s1_write),                  //                                         .write
+		.krait_throw_2_y_s1_readdata                    (mm_interconnect_0_krait_throw_2_y_s1_readdata),               //                                         .readdata
+		.krait_throw_2_y_s1_writedata                   (mm_interconnect_0_krait_throw_2_y_s1_writedata),              //                                         .writedata
+		.krait_throw_2_y_s1_chipselect                  (mm_interconnect_0_krait_throw_2_y_s1_chipselect),             //                                         .chipselect
 		.loss_en_s1_address                             (mm_interconnect_0_loss_en_s1_address),                        //                               loss_en_s1.address
 		.loss_en_s1_write                               (mm_interconnect_0_loss_en_s1_write),                          //                                         .write
 		.loss_en_s1_readdata                            (mm_interconnect_0_loss_en_s1_readdata),                       //                                         .readdata

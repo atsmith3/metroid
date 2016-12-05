@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Thu Dec 01 18:30:01 CST 2016
+ * Generated: Sun Dec 04 20:21:31 CST 2016
  */
 
 /*
@@ -158,19 +158,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x330
+#define ALT_STDERR_BASE 0x410
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x330
+#define ALT_STDIN_BASE 0x410
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x330
+#define ALT_STDOUT_BASE 0x410
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -184,7 +184,7 @@
  */
 
 #define ALT_MODULE_CLASS_b_emp altera_avalon_pio
-#define B_EMP_BASE 0x20
+#define B_EMP_BASE 0x100
 #define B_EMP_BIT_CLEARING_EDGE_REGISTER 0
 #define B_EMP_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define B_EMP_CAPTURE 0
@@ -211,7 +211,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet1_en altera_avalon_pio
-#define BULLET1_EN_BASE 0x120
+#define BULLET1_EN_BASE 0x200
 #define BULLET1_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET1_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET1_EN_CAPTURE 0
@@ -238,7 +238,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet1_x altera_avalon_pio
-#define BULLET1_X_BASE 0x110
+#define BULLET1_X_BASE 0x1f0
 #define BULLET1_X_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET1_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET1_X_CAPTURE 0
@@ -265,7 +265,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet1_y altera_avalon_pio
-#define BULLET1_Y_BASE 0x100
+#define BULLET1_Y_BASE 0x1e0
 #define BULLET1_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET1_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET1_Y_CAPTURE 0
@@ -292,7 +292,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet2_en altera_avalon_pio
-#define BULLET2_EN_BASE 0xf0
+#define BULLET2_EN_BASE 0x1d0
 #define BULLET2_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET2_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET2_EN_CAPTURE 0
@@ -319,7 +319,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet2_x altera_avalon_pio
-#define BULLET2_X_BASE 0xe0
+#define BULLET2_X_BASE 0x1c0
 #define BULLET2_X_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET2_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET2_X_CAPTURE 0
@@ -346,7 +346,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet2_y altera_avalon_pio
-#define BULLET2_Y_BASE 0xd0
+#define BULLET2_Y_BASE 0x1b0
 #define BULLET2_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET2_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET2_Y_CAPTURE 0
@@ -373,7 +373,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet3_en altera_avalon_pio
-#define BULLET3_EN_BASE 0xc0
+#define BULLET3_EN_BASE 0x1a0
 #define BULLET3_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET3_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET3_EN_CAPTURE 0
@@ -400,7 +400,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet3_x altera_avalon_pio
-#define BULLET3_X_BASE 0xb0
+#define BULLET3_X_BASE 0x190
 #define BULLET3_X_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET3_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET3_X_CAPTURE 0
@@ -427,7 +427,7 @@
  */
 
 #define ALT_MODULE_CLASS_bullet3_y altera_avalon_pio
-#define BULLET3_Y_BASE 0xa0
+#define BULLET3_Y_BASE 0x180
 #define BULLET3_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define BULLET3_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BULLET3_Y_CAPTURE 0
@@ -454,7 +454,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion1_en altera_avalon_pio
-#define EXPLOSION1_EN_BASE 0x1b0
+#define EXPLOSION1_EN_BASE 0x290
 #define EXPLOSION1_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION1_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION1_EN_CAPTURE 0
@@ -481,7 +481,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion1_x altera_avalon_pio
-#define EXPLOSION1_X_BASE 0x1a0
+#define EXPLOSION1_X_BASE 0x280
 #define EXPLOSION1_X_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION1_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION1_X_CAPTURE 0
@@ -508,7 +508,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion1_y altera_avalon_pio
-#define EXPLOSION1_Y_BASE 0x190
+#define EXPLOSION1_Y_BASE 0x270
 #define EXPLOSION1_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION1_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION1_Y_CAPTURE 0
@@ -535,7 +535,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion2_en altera_avalon_pio
-#define EXPLOSION2_EN_BASE 0x180
+#define EXPLOSION2_EN_BASE 0x260
 #define EXPLOSION2_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION2_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION2_EN_CAPTURE 0
@@ -562,7 +562,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion2_x altera_avalon_pio
-#define EXPLOSION2_X_BASE 0x170
+#define EXPLOSION2_X_BASE 0x250
 #define EXPLOSION2_X_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION2_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION2_X_CAPTURE 0
@@ -589,7 +589,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion2_y altera_avalon_pio
-#define EXPLOSION2_Y_BASE 0x160
+#define EXPLOSION2_Y_BASE 0x240
 #define EXPLOSION2_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION2_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION2_Y_CAPTURE 0
@@ -616,7 +616,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion3_en altera_avalon_pio
-#define EXPLOSION3_EN_BASE 0x150
+#define EXPLOSION3_EN_BASE 0x230
 #define EXPLOSION3_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION3_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION3_EN_CAPTURE 0
@@ -643,7 +643,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion3_x altera_avalon_pio
-#define EXPLOSION3_X_BASE 0x140
+#define EXPLOSION3_X_BASE 0x220
 #define EXPLOSION3_X_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION3_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION3_X_CAPTURE 0
@@ -670,7 +670,7 @@
  */
 
 #define ALT_MODULE_CLASS_explosion3_y altera_avalon_pio
-#define EXPLOSION3_Y_BASE 0x130
+#define EXPLOSION3_Y_BASE 0x210
 #define EXPLOSION3_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define EXPLOSION3_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define EXPLOSION3_Y_CAPTURE 0
@@ -707,7 +707,7 @@
  */
 
 #define ALT_MODULE_CLASS_health altera_avalon_pio
-#define HEALTH_BASE 0x90
+#define HEALTH_BASE 0x170
 #define HEALTH_BIT_CLEARING_EDGE_REGISTER 0
 #define HEALTH_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEALTH_CAPTURE 0
@@ -734,7 +734,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x330
+#define JTAG_UART_0_BASE 0x410
 #define JTAG_UART_0_IRQ 5
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -752,7 +752,7 @@
  */
 
 #define ALT_MODULE_CLASS_key altera_avalon_pio
-#define KEY_BASE 0x2a0
+#define KEY_BASE 0x380
 #define KEY_BIT_CLEARING_EDGE_REGISTER 0
 #define KEY_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define KEY_CAPTURE 1
@@ -779,7 +779,7 @@
  */
 
 #define ALT_MODULE_CLASS_keycode altera_avalon_pio
-#define KEYCODE_BASE 0x2b0
+#define KEYCODE_BASE 0x390
 #define KEYCODE_BIT_CLEARING_EDGE_REGISTER 0
 #define KEYCODE_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define KEYCODE_CAPTURE 0
@@ -801,12 +801,363 @@
 
 
 /*
+ * kraid_as_dir configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_as_dir altera_avalon_pio
+#define KRAID_AS_DIR_BASE 0x80
+#define KRAID_AS_DIR_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_AS_DIR_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_AS_DIR_CAPTURE 0
+#define KRAID_AS_DIR_DATA_WIDTH 1
+#define KRAID_AS_DIR_DO_TEST_BENCH_WIRING 0
+#define KRAID_AS_DIR_DRIVEN_SIM_VALUE 0
+#define KRAID_AS_DIR_EDGE_TYPE "NONE"
+#define KRAID_AS_DIR_FREQ 50000000
+#define KRAID_AS_DIR_HAS_IN 0
+#define KRAID_AS_DIR_HAS_OUT 1
+#define KRAID_AS_DIR_HAS_TRI 0
+#define KRAID_AS_DIR_IRQ -1
+#define KRAID_AS_DIR_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_AS_DIR_IRQ_TYPE "NONE"
+#define KRAID_AS_DIR_NAME "/dev/kraid_as_dir"
+#define KRAID_AS_DIR_RESET_VALUE 0
+#define KRAID_AS_DIR_SPAN 16
+#define KRAID_AS_DIR_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_dir configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_dir altera_avalon_pio
+#define KRAID_DIR_BASE 0xe0
+#define KRAID_DIR_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_DIR_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_DIR_CAPTURE 0
+#define KRAID_DIR_DATA_WIDTH 1
+#define KRAID_DIR_DO_TEST_BENCH_WIRING 0
+#define KRAID_DIR_DRIVEN_SIM_VALUE 0
+#define KRAID_DIR_EDGE_TYPE "NONE"
+#define KRAID_DIR_FREQ 50000000
+#define KRAID_DIR_HAS_IN 0
+#define KRAID_DIR_HAS_OUT 1
+#define KRAID_DIR_HAS_TRI 0
+#define KRAID_DIR_IRQ -1
+#define KRAID_DIR_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_DIR_IRQ_TYPE "NONE"
+#define KRAID_DIR_NAME "/dev/kraid_dir"
+#define KRAID_DIR_RESET_VALUE 0
+#define KRAID_DIR_SPAN 16
+#define KRAID_DIR_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_g_en configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_g_en altera_avalon_pio
+#define KRAID_G_EN_BASE 0xd0
+#define KRAID_G_EN_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_G_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_G_EN_CAPTURE 0
+#define KRAID_G_EN_DATA_WIDTH 1
+#define KRAID_G_EN_DO_TEST_BENCH_WIRING 0
+#define KRAID_G_EN_DRIVEN_SIM_VALUE 0
+#define KRAID_G_EN_EDGE_TYPE "NONE"
+#define KRAID_G_EN_FREQ 50000000
+#define KRAID_G_EN_HAS_IN 0
+#define KRAID_G_EN_HAS_OUT 1
+#define KRAID_G_EN_HAS_TRI 0
+#define KRAID_G_EN_IRQ -1
+#define KRAID_G_EN_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_G_EN_IRQ_TYPE "NONE"
+#define KRAID_G_EN_NAME "/dev/kraid_g_en"
+#define KRAID_G_EN_RESET_VALUE 0
+#define KRAID_G_EN_SPAN 16
+#define KRAID_G_EN_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_n_en configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_n_en altera_avalon_pio
+#define KRAID_N_EN_BASE 0xb0
+#define KRAID_N_EN_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_N_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_N_EN_CAPTURE 0
+#define KRAID_N_EN_DATA_WIDTH 1
+#define KRAID_N_EN_DO_TEST_BENCH_WIRING 0
+#define KRAID_N_EN_DRIVEN_SIM_VALUE 0
+#define KRAID_N_EN_EDGE_TYPE "NONE"
+#define KRAID_N_EN_FREQ 50000000
+#define KRAID_N_EN_HAS_IN 0
+#define KRAID_N_EN_HAS_OUT 1
+#define KRAID_N_EN_HAS_TRI 0
+#define KRAID_N_EN_IRQ -1
+#define KRAID_N_EN_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_N_EN_IRQ_TYPE "NONE"
+#define KRAID_N_EN_NAME "/dev/kraid_n_en"
+#define KRAID_N_EN_RESET_VALUE 0
+#define KRAID_N_EN_SPAN 16
+#define KRAID_N_EN_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_r_en configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_r_en altera_avalon_pio
+#define KRAID_R_EN_BASE 0xc0
+#define KRAID_R_EN_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_R_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_R_EN_CAPTURE 0
+#define KRAID_R_EN_DATA_WIDTH 1
+#define KRAID_R_EN_DO_TEST_BENCH_WIRING 0
+#define KRAID_R_EN_DRIVEN_SIM_VALUE 0
+#define KRAID_R_EN_EDGE_TYPE "NONE"
+#define KRAID_R_EN_FREQ 50000000
+#define KRAID_R_EN_HAS_IN 0
+#define KRAID_R_EN_HAS_OUT 1
+#define KRAID_R_EN_HAS_TRI 0
+#define KRAID_R_EN_IRQ -1
+#define KRAID_R_EN_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_R_EN_IRQ_TYPE "NONE"
+#define KRAID_R_EN_NAME "/dev/kraid_r_en"
+#define KRAID_R_EN_RESET_VALUE 0
+#define KRAID_R_EN_SPAN 16
+#define KRAID_R_EN_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_shoot_en configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_shoot_en altera_avalon_pio
+#define KRAID_SHOOT_EN_BASE 0xa0
+#define KRAID_SHOOT_EN_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_SHOOT_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_SHOOT_EN_CAPTURE 0
+#define KRAID_SHOOT_EN_DATA_WIDTH 1
+#define KRAID_SHOOT_EN_DO_TEST_BENCH_WIRING 0
+#define KRAID_SHOOT_EN_DRIVEN_SIM_VALUE 0
+#define KRAID_SHOOT_EN_EDGE_TYPE "NONE"
+#define KRAID_SHOOT_EN_FREQ 50000000
+#define KRAID_SHOOT_EN_HAS_IN 0
+#define KRAID_SHOOT_EN_HAS_OUT 1
+#define KRAID_SHOOT_EN_HAS_TRI 0
+#define KRAID_SHOOT_EN_IRQ -1
+#define KRAID_SHOOT_EN_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_SHOOT_EN_IRQ_TYPE "NONE"
+#define KRAID_SHOOT_EN_NAME "/dev/kraid_shoot_en"
+#define KRAID_SHOOT_EN_RESET_VALUE 0
+#define KRAID_SHOOT_EN_SPAN 16
+#define KRAID_SHOOT_EN_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_spike_x configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_spike_x altera_avalon_pio
+#define KRAID_SPIKE_X_BASE 0x50
+#define KRAID_SPIKE_X_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_SPIKE_X_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_SPIKE_X_CAPTURE 0
+#define KRAID_SPIKE_X_DATA_WIDTH 10
+#define KRAID_SPIKE_X_DO_TEST_BENCH_WIRING 0
+#define KRAID_SPIKE_X_DRIVEN_SIM_VALUE 0
+#define KRAID_SPIKE_X_EDGE_TYPE "NONE"
+#define KRAID_SPIKE_X_FREQ 50000000
+#define KRAID_SPIKE_X_HAS_IN 0
+#define KRAID_SPIKE_X_HAS_OUT 1
+#define KRAID_SPIKE_X_HAS_TRI 0
+#define KRAID_SPIKE_X_IRQ -1
+#define KRAID_SPIKE_X_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_SPIKE_X_IRQ_TYPE "NONE"
+#define KRAID_SPIKE_X_NAME "/dev/kraid_spike_x"
+#define KRAID_SPIKE_X_RESET_VALUE 0
+#define KRAID_SPIKE_X_SPAN 16
+#define KRAID_SPIKE_X_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_spike_y configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_spike_y altera_avalon_pio
+#define KRAID_SPIKE_Y_BASE 0x40
+#define KRAID_SPIKE_Y_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_SPIKE_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_SPIKE_Y_CAPTURE 0
+#define KRAID_SPIKE_Y_DATA_WIDTH 10
+#define KRAID_SPIKE_Y_DO_TEST_BENCH_WIRING 0
+#define KRAID_SPIKE_Y_DRIVEN_SIM_VALUE 0
+#define KRAID_SPIKE_Y_EDGE_TYPE "NONE"
+#define KRAID_SPIKE_Y_FREQ 50000000
+#define KRAID_SPIKE_Y_HAS_IN 0
+#define KRAID_SPIKE_Y_HAS_OUT 1
+#define KRAID_SPIKE_Y_HAS_TRI 0
+#define KRAID_SPIKE_Y_IRQ -1
+#define KRAID_SPIKE_Y_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_SPIKE_Y_IRQ_TYPE "NONE"
+#define KRAID_SPIKE_Y_NAME "/dev/kraid_spike_y"
+#define KRAID_SPIKE_Y_RESET_VALUE 0
+#define KRAID_SPIKE_Y_SPAN 16
+#define KRAID_SPIKE_Y_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_throw_en configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_throw_en altera_avalon_pio
+#define KRAID_THROW_EN_BASE 0x90
+#define KRAID_THROW_EN_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_THROW_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_THROW_EN_CAPTURE 0
+#define KRAID_THROW_EN_DATA_WIDTH 1
+#define KRAID_THROW_EN_DO_TEST_BENCH_WIRING 0
+#define KRAID_THROW_EN_DRIVEN_SIM_VALUE 0
+#define KRAID_THROW_EN_EDGE_TYPE "NONE"
+#define KRAID_THROW_EN_FREQ 50000000
+#define KRAID_THROW_EN_HAS_IN 0
+#define KRAID_THROW_EN_HAS_OUT 1
+#define KRAID_THROW_EN_HAS_TRI 0
+#define KRAID_THROW_EN_IRQ -1
+#define KRAID_THROW_EN_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_THROW_EN_IRQ_TYPE "NONE"
+#define KRAID_THROW_EN_NAME "/dev/kraid_throw_en"
+#define KRAID_THROW_EN_RESET_VALUE 0
+#define KRAID_THROW_EN_SPAN 16
+#define KRAID_THROW_EN_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_throw_x configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_throw_x altera_avalon_pio
+#define KRAID_THROW_X_BASE 0x30
+#define KRAID_THROW_X_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_THROW_X_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_THROW_X_CAPTURE 0
+#define KRAID_THROW_X_DATA_WIDTH 10
+#define KRAID_THROW_X_DO_TEST_BENCH_WIRING 0
+#define KRAID_THROW_X_DRIVEN_SIM_VALUE 0
+#define KRAID_THROW_X_EDGE_TYPE "NONE"
+#define KRAID_THROW_X_FREQ 50000000
+#define KRAID_THROW_X_HAS_IN 0
+#define KRAID_THROW_X_HAS_OUT 1
+#define KRAID_THROW_X_HAS_TRI 0
+#define KRAID_THROW_X_IRQ -1
+#define KRAID_THROW_X_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_THROW_X_IRQ_TYPE "NONE"
+#define KRAID_THROW_X_NAME "/dev/kraid_throw_x"
+#define KRAID_THROW_X_RESET_VALUE 0
+#define KRAID_THROW_X_SPAN 16
+#define KRAID_THROW_X_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_throw_y configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_throw_y altera_avalon_pio
+#define KRAID_THROW_Y_BASE 0x20
+#define KRAID_THROW_Y_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_THROW_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_THROW_Y_CAPTURE 0
+#define KRAID_THROW_Y_DATA_WIDTH 10
+#define KRAID_THROW_Y_DO_TEST_BENCH_WIRING 0
+#define KRAID_THROW_Y_DRIVEN_SIM_VALUE 0
+#define KRAID_THROW_Y_EDGE_TYPE "NONE"
+#define KRAID_THROW_Y_FREQ 50000000
+#define KRAID_THROW_Y_HAS_IN 0
+#define KRAID_THROW_Y_HAS_OUT 1
+#define KRAID_THROW_Y_HAS_TRI 0
+#define KRAID_THROW_Y_IRQ -1
+#define KRAID_THROW_Y_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_THROW_Y_IRQ_TYPE "NONE"
+#define KRAID_THROW_Y_NAME "/dev/kraid_throw_y"
+#define KRAID_THROW_Y_RESET_VALUE 0
+#define KRAID_THROW_Y_SPAN 16
+#define KRAID_THROW_Y_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_x configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_x altera_avalon_pio
+#define KRAID_X_BASE 0x70
+#define KRAID_X_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_X_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_X_CAPTURE 0
+#define KRAID_X_DATA_WIDTH 10
+#define KRAID_X_DO_TEST_BENCH_WIRING 0
+#define KRAID_X_DRIVEN_SIM_VALUE 0
+#define KRAID_X_EDGE_TYPE "NONE"
+#define KRAID_X_FREQ 50000000
+#define KRAID_X_HAS_IN 0
+#define KRAID_X_HAS_OUT 1
+#define KRAID_X_HAS_TRI 0
+#define KRAID_X_IRQ -1
+#define KRAID_X_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_X_IRQ_TYPE "NONE"
+#define KRAID_X_NAME "/dev/kraid_x"
+#define KRAID_X_RESET_VALUE 0
+#define KRAID_X_SPAN 16
+#define KRAID_X_TYPE "altera_avalon_pio"
+
+
+/*
+ * kraid_y configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_kraid_y altera_avalon_pio
+#define KRAID_Y_BASE 0x60
+#define KRAID_Y_BIT_CLEARING_EDGE_REGISTER 0
+#define KRAID_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KRAID_Y_CAPTURE 0
+#define KRAID_Y_DATA_WIDTH 10
+#define KRAID_Y_DO_TEST_BENCH_WIRING 0
+#define KRAID_Y_DRIVEN_SIM_VALUE 0
+#define KRAID_Y_EDGE_TYPE "NONE"
+#define KRAID_Y_FREQ 50000000
+#define KRAID_Y_HAS_IN 0
+#define KRAID_Y_HAS_OUT 1
+#define KRAID_Y_HAS_TRI 0
+#define KRAID_Y_IRQ -1
+#define KRAID_Y_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define KRAID_Y_IRQ_TYPE "NONE"
+#define KRAID_Y_NAME "/dev/kraid_y"
+#define KRAID_Y_RESET_VALUE 0
+#define KRAID_Y_SPAN 16
+#define KRAID_Y_TYPE "altera_avalon_pio"
+
+
+/*
  * loss_en configuration
  *
  */
 
 #define ALT_MODULE_CLASS_loss_en altera_avalon_pio
-#define LOSS_EN_BASE 0x70
+#define LOSS_EN_BASE 0x150
 #define LOSS_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define LOSS_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LOSS_EN_CAPTURE 0
@@ -833,7 +1184,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster1_en altera_avalon_pio
-#define MONSTER1_EN_BASE 0x240
+#define MONSTER1_EN_BASE 0x320
 #define MONSTER1_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER1_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER1_EN_CAPTURE 0
@@ -860,7 +1211,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster1_x altera_avalon_pio
-#define MONSTER1_X_BASE 0x230
+#define MONSTER1_X_BASE 0x310
 #define MONSTER1_X_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER1_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER1_X_CAPTURE 0
@@ -887,7 +1238,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster1_y altera_avalon_pio
-#define MONSTER1_Y_BASE 0x220
+#define MONSTER1_Y_BASE 0x300
 #define MONSTER1_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER1_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER1_Y_CAPTURE 0
@@ -914,7 +1265,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster2_en altera_avalon_pio
-#define MONSTER2_EN_BASE 0x210
+#define MONSTER2_EN_BASE 0x2f0
 #define MONSTER2_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER2_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER2_EN_CAPTURE 0
@@ -941,7 +1292,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster2_x altera_avalon_pio
-#define MONSTER2_X_BASE 0x200
+#define MONSTER2_X_BASE 0x2e0
 #define MONSTER2_X_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER2_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER2_X_CAPTURE 0
@@ -968,7 +1319,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster2_y altera_avalon_pio
-#define MONSTER2_Y_BASE 0x1f0
+#define MONSTER2_Y_BASE 0x2d0
 #define MONSTER2_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER2_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER2_Y_CAPTURE 0
@@ -990,12 +1341,39 @@
 
 
 /*
+ * monster3_dir configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_monster3_dir altera_avalon_pio
+#define MONSTER3_DIR_BASE 0xf0
+#define MONSTER3_DIR_BIT_CLEARING_EDGE_REGISTER 0
+#define MONSTER3_DIR_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define MONSTER3_DIR_CAPTURE 0
+#define MONSTER3_DIR_DATA_WIDTH 1
+#define MONSTER3_DIR_DO_TEST_BENCH_WIRING 0
+#define MONSTER3_DIR_DRIVEN_SIM_VALUE 0
+#define MONSTER3_DIR_EDGE_TYPE "NONE"
+#define MONSTER3_DIR_FREQ 50000000
+#define MONSTER3_DIR_HAS_IN 0
+#define MONSTER3_DIR_HAS_OUT 1
+#define MONSTER3_DIR_HAS_TRI 0
+#define MONSTER3_DIR_IRQ -1
+#define MONSTER3_DIR_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define MONSTER3_DIR_IRQ_TYPE "NONE"
+#define MONSTER3_DIR_NAME "/dev/monster3_dir"
+#define MONSTER3_DIR_RESET_VALUE 0
+#define MONSTER3_DIR_SPAN 16
+#define MONSTER3_DIR_TYPE "altera_avalon_pio"
+
+
+/*
  * monster3_en configuration
  *
  */
 
 #define ALT_MODULE_CLASS_monster3_en altera_avalon_pio
-#define MONSTER3_EN_BASE 0x1e0
+#define MONSTER3_EN_BASE 0x2c0
 #define MONSTER3_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER3_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER3_EN_CAPTURE 0
@@ -1022,7 +1400,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster3_x altera_avalon_pio
-#define MONSTER3_X_BASE 0x1d0
+#define MONSTER3_X_BASE 0x2b0
 #define MONSTER3_X_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER3_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER3_X_CAPTURE 0
@@ -1049,7 +1427,7 @@
  */
 
 #define ALT_MODULE_CLASS_monster3_y altera_avalon_pio
-#define MONSTER3_Y_BASE 0x1c0
+#define MONSTER3_Y_BASE 0x2a0
 #define MONSTER3_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define MONSTER3_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MONSTER3_Y_CAPTURE 0
@@ -1105,7 +1483,7 @@
  */
 
 #define ALT_MODULE_CLASS_otg_hpi_address altera_avalon_pio
-#define OTG_HPI_ADDRESS_BASE 0x300
+#define OTG_HPI_ADDRESS_BASE 0x3e0
 #define OTG_HPI_ADDRESS_BIT_CLEARING_EDGE_REGISTER 0
 #define OTG_HPI_ADDRESS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define OTG_HPI_ADDRESS_CAPTURE 0
@@ -1132,7 +1510,7 @@
  */
 
 #define ALT_MODULE_CLASS_otg_hpi_cs altera_avalon_pio
-#define OTG_HPI_CS_BASE 0x2c0
+#define OTG_HPI_CS_BASE 0x3a0
 #define OTG_HPI_CS_BIT_CLEARING_EDGE_REGISTER 0
 #define OTG_HPI_CS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define OTG_HPI_CS_CAPTURE 0
@@ -1159,7 +1537,7 @@
  */
 
 #define ALT_MODULE_CLASS_otg_hpi_data altera_avalon_pio
-#define OTG_HPI_DATA_BASE 0x2f0
+#define OTG_HPI_DATA_BASE 0x3d0
 #define OTG_HPI_DATA_BIT_CLEARING_EDGE_REGISTER 0
 #define OTG_HPI_DATA_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define OTG_HPI_DATA_CAPTURE 0
@@ -1186,7 +1564,7 @@
  */
 
 #define ALT_MODULE_CLASS_otg_hpi_r altera_avalon_pio
-#define OTG_HPI_R_BASE 0x2e0
+#define OTG_HPI_R_BASE 0x3c0
 #define OTG_HPI_R_BIT_CLEARING_EDGE_REGISTER 0
 #define OTG_HPI_R_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define OTG_HPI_R_CAPTURE 0
@@ -1213,7 +1591,7 @@
  */
 
 #define ALT_MODULE_CLASS_otg_hpi_w altera_avalon_pio
-#define OTG_HPI_W_BASE 0x2d0
+#define OTG_HPI_W_BASE 0x3b0
 #define OTG_HPI_W_BIT_CLEARING_EDGE_REGISTER 0
 #define OTG_HPI_W_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define OTG_HPI_W_CAPTURE 0
@@ -1240,7 +1618,7 @@
  */
 
 #define ALT_MODULE_CLASS_samus_dir altera_avalon_pio
-#define SAMUS_DIR_BASE 0x50
+#define SAMUS_DIR_BASE 0x130
 #define SAMUS_DIR_BIT_CLEARING_EDGE_REGISTER 0
 #define SAMUS_DIR_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SAMUS_DIR_CAPTURE 0
@@ -1267,7 +1645,7 @@
  */
 
 #define ALT_MODULE_CLASS_samus_en altera_avalon_pio
-#define SAMUS_EN_BASE 0x290
+#define SAMUS_EN_BASE 0x370
 #define SAMUS_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define SAMUS_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SAMUS_EN_CAPTURE 0
@@ -1294,7 +1672,7 @@
  */
 
 #define ALT_MODULE_CLASS_samus_jump altera_avalon_pio
-#define SAMUS_JUMP_BASE 0x250
+#define SAMUS_JUMP_BASE 0x330
 #define SAMUS_JUMP_BIT_CLEARING_EDGE_REGISTER 0
 #define SAMUS_JUMP_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SAMUS_JUMP_CAPTURE 0
@@ -1321,7 +1699,7 @@
  */
 
 #define ALT_MODULE_CLASS_samus_up altera_avalon_pio
-#define SAMUS_UP_BASE 0x30
+#define SAMUS_UP_BASE 0x110
 #define SAMUS_UP_BIT_CLEARING_EDGE_REGISTER 0
 #define SAMUS_UP_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SAMUS_UP_CAPTURE 0
@@ -1348,7 +1726,7 @@
  */
 
 #define ALT_MODULE_CLASS_samus_walk altera_avalon_pio
-#define SAMUS_WALK_BASE 0x260
+#define SAMUS_WALK_BASE 0x340
 #define SAMUS_WALK_BIT_CLEARING_EDGE_REGISTER 0
 #define SAMUS_WALK_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SAMUS_WALK_CAPTURE 0
@@ -1375,7 +1753,7 @@
  */
 
 #define ALT_MODULE_CLASS_samus_x altera_avalon_pio
-#define SAMUS_X_BASE 0x280
+#define SAMUS_X_BASE 0x360
 #define SAMUS_X_BIT_CLEARING_EDGE_REGISTER 0
 #define SAMUS_X_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SAMUS_X_CAPTURE 0
@@ -1402,7 +1780,7 @@
  */
 
 #define ALT_MODULE_CLASS_samus_y altera_avalon_pio
-#define SAMUS_Y_BASE 0x270
+#define SAMUS_Y_BASE 0x350
 #define SAMUS_Y_BIT_CLEARING_EDGE_REGISTER 0
 #define SAMUS_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SAMUS_Y_CAPTURE 0
@@ -1429,7 +1807,7 @@
  */
 
 #define ALT_MODULE_CLASS_scene_sel altera_avalon_pio
-#define SCENE_SEL_BASE 0x40
+#define SCENE_SEL_BASE 0x120
 #define SCENE_SEL_BIT_CLEARING_EDGE_REGISTER 0
 #define SCENE_SEL_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SCENE_SEL_CAPTURE 0
@@ -1495,7 +1873,7 @@
  */
 
 #define ALT_MODULE_CLASS_sdram_pll altpll
-#define SDRAM_PLL_BASE 0x310
+#define SDRAM_PLL_BASE 0x3f0
 #define SDRAM_PLL_IRQ -1
 #define SDRAM_PLL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SDRAM_PLL_NAME "/dev/sdram_pll"
@@ -1509,13 +1887,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x328
+#define SYSID_QSYS_0_BASE 0x408
 #define SYSID_QSYS_0_ID 0
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1480634848
+#define SYSID_QSYS_0_TIMESTAMP 1480900814
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -1525,7 +1903,7 @@
  */
 
 #define ALT_MODULE_CLASS_title_en altera_avalon_pio
-#define TITLE_EN_BASE 0x80
+#define TITLE_EN_BASE 0x160
 #define TITLE_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define TITLE_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define TITLE_EN_CAPTURE 0
@@ -1552,7 +1930,7 @@
  */
 
 #define ALT_MODULE_CLASS_win_en altera_avalon_pio
-#define WIN_EN_BASE 0x60
+#define WIN_EN_BASE 0x140
 #define WIN_EN_BIT_CLEARING_EDGE_REGISTER 0
 #define WIN_EN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define WIN_EN_CAPTURE 0
