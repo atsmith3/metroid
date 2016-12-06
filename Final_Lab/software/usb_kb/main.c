@@ -33,6 +33,25 @@
 #define SAMUS_JUMP (volatile char*) SAMUS_JUMP_BASE
 #define SAMUS_UP (volatile char*) SAMUS_UP_BASE
 
+#define KRAID_G_EN (volatile int*) KRAID_G_EN_BASE
+#define KRAID_N_EN (volatile int*) KRAID_N_EN_BASE
+#define KRAID_R_EN (volatile int*) KRAID_R_EN_BASE
+
+#define KRAID_X (volatile int*) KRAID_X_BASE
+#define KRAID_Y (volatile int*) KRAID_Y_BASE
+
+#define KRAID_DIR (volatile int*) KRAID_DIR_BASE
+#define KRAID_BUL_DIR (volatile int*) KRAID_AS_DIR_BASE
+#define KRAID_SHOOT_EN (volatile int*) KRAID_SHOOT_EN_BASE
+#define KRAID_SPIKE_X (volatile int*) KRAID_SPIKE_X_BASE
+#define KRAID_SPIKE_Y (volatile int*) KRAID_SPIKE_Y_BASE
+#define KRAID_THROW_EN (volatile int*) KRAID_THROW_EN_BASE
+#define KRAID_THROW_2_EN (volatile int*) KRAIT_THROW_2_EN_BASE
+#define KRAID_THROW_X (volatile int*) KRAID_THROW_X_BASE
+#define KRAID_THROW_Y (volatile int*) KRAID_THROW_Y_BASE
+#define KRAID_THROW_2_X (volatile int*) KRAIT_THROW_2_X_BASE
+#define KRAID_THROW_2_Y (volatile int*) KRAIT_THROW_2_Y_BASE
+
 #define MON1_EN (volatile char*) MONSTER1_EN_BASE
 #define MON1_X (volatile int*) MONSTER1_X_BASE
 #define MON1_Y (volatile int*) MONSTER1_Y_BASE
@@ -610,22 +629,22 @@ int main(void)
 							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 							},
 							{
-							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
-							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
-							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
-							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
-							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+							{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2},
+							{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{7,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}
 							}
 							};
 
@@ -634,7 +653,7 @@ int main(void)
 	*SAMUS_EN = 1;
 	*SAMUS_X = 150;
 	*SAMUS_Y = 400;
-    *SCENE_SELECT = 4;
+    *SCENE_SELECT = 3;
 	*LOSS_EN = False;
 	*TIT_EN = False;
 	int SAMUS_BOT = 70;
@@ -661,7 +680,7 @@ int main(void)
 	int bul3Up = 0;
 	int bul3start = 0;
 	int bullet_en = True;
-	int sceneNum = 3;
+	int sceneNum = 4;
 	int sceneStart = True;
 	int scenVictory = False;
 	int finalVictory = False;
@@ -678,8 +697,8 @@ int main(void)
 	int scene2_y = 0;
 	int scene3_x = 10;
 	int scene3_y = 110;
-	int scene4_x = 0;
-	int scene4_y = 0;
+	int scene4_x = 40;
+	int scene4_y = 300;
 	int monster1_1_x_scene3 = 420;
 	int monster1_1_y_scene3 = 185;
 	int monster1_1_x = 420;
@@ -702,6 +721,28 @@ int main(void)
 	int monster3_1_x = 220;
 	int monster3_1_y = 55;
 	int monster3_1_left = False;
+	int kraid_health = 0;
+	int kraid_move_counter = 0;
+	int kraid_move_left = True;
+	int kraid_blink = False;
+	int kraid_counter_max = 10;
+	int kraid_kill_counter = 120;
+	int kraid_counter = 0;
+	int nail_one_inc = 0;
+	int nail_two_inc = 0;
+	int nail_counter = 100;
+	int bullet_counter = 100;
+	int attack_counter_nail = 0;
+	int attack_counter_bullet = 0;
+	int kraid_bul_start = 0;
+	int throw_dir_1 = 1;
+	int throw_dir_2 = 1;
+	int attack_counter_nail_2 = 0;
+
+
+	int god_mode = False;
+	int m_let_go = True;
+	int game_win = False;
 
 	while(1)
 	{
@@ -815,15 +856,32 @@ int main(void)
 	else{
 		*TIT_EN = False;
 	}
-	if(*MON1_EN == False && *MON2_EN == False){
+	if(game_win == True){
 		*WIN_EN = True;
 	}
 	else{
 		*WIN_EN = False;
 	}
+
+	if(keycode == 0x10 && m_let_go == True){
+		if(god_mode == True){
+			god_mode = False;
+		}
+		else{
+			god_mode = True;
+		}
+		m_let_go = False;
+	}
+
+	if(((keycode&0x0000FF)!=0x10 && (keycode&0x00FF00)>>8 != 0x10 && (keycode&0xFF0000)>>16 != 0x10) && m_let_go == False){
+		m_let_go = True;
+	}
+
 	//Scene Init
 	if(sceneStart == True){
 		if(sceneNum == 3){
+			*SAMUS_EN = 1;
+			*SCENE_SELECT = 3;
 			*SAMUS_X = scene3_x;
 			*SAMUS_Y = scene3_y;
 			*SAMUS_DIR = scene3_dir;
@@ -839,6 +897,25 @@ int main(void)
 			*MON1_EN = 1;
 			*MON2_EN = 1;
 			*MON3_EN = 1;
+			has_control = True;
+		}
+		if(sceneNum == 4){
+			*SAMUS_EN = 1;
+			*SCENE_SELECT = 4;
+			*SAMUS_X = scene4_x;
+			*SAMUS_Y = scene4_y;
+			*SAMUS_DIR = scene4_dir;
+			*MON1_EN = 0;
+			*MON2_EN = 0;
+			*MON3_EN = 0;
+			*KRAID_X = 400;
+			*KRAID_Y = 330;
+			*KRAID_R_EN = True;
+			*KRAID_DIR = 1;
+			kraid_health = 15;
+			has_control = True;
+			kraid_move_counter = 100;
+			kraid_move_left = True;
 		}
 		sceneStart = False;
 		*EXP1_EN = 0;
@@ -848,7 +925,6 @@ int main(void)
 
 
     //SAMUS MOVEMENT
-    *TIT_EN = 0;
     //Move Right
     if(((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A) && has_control == True){
     	*SAMUS_UP = 1;
@@ -858,14 +934,13 @@ int main(void)
     }
     //Move right
     if(((keycode&0x0000FF)==7 || (keycode&0x00FF00)>>8 == 7 || (keycode&0xFF0000)>>16 == 7) && has_control == True){
+    	printf("HERE");
     	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0){
+    		printf("HERE2");
     		*SAMUS_DIR = 0;
     		*SAMUS_X+=6;
     		if(grounded == True){
     			*SAMUS_WALK = 1;
-    		}
-    		else{
-    			*SAMUS_WALK = 0;
     		}
     	}
     }
@@ -877,13 +952,13 @@ int main(void)
     		if(grounded == True){
 				*SAMUS_WALK = 1;
 			}
-    		else{
-				*SAMUS_WALK = 0;
-			}
     	}
     }
-    else{
+    else if(grounded == True){
         *SAMUS_WALK = 0;
+    }
+    else{
+    	*SAMUS_WALK = 1;
     }
 
     // Jump code
@@ -905,6 +980,14 @@ int main(void)
     }
     if((((keycode&0x0000FF)!=0x2c && (keycode&0x00FF00)>>8 != 0x2c && (keycode&0xFF0000)>>16 != 0x2c) && let_go == True)){
     	let_go = False;
+    }
+    if(grounded == False){
+    	if((keycode&0x0000FF)!=0x1A && (keycode&0x00FF00)>>8 != 0x1A && (keycode&0xFF0000)>>16 != 0x1A){
+    		*SAMUS_WALK = True;
+    	}
+    	else{
+    		*SAMUS_WALK = False;
+    	}
     }
 
     if(let_go == False || jump_height >= max_jump_height){
@@ -934,10 +1017,6 @@ int main(void)
     	grounded = False;
     }
 
-    if(grounded == False){
-    	*SAMUS_WALK = 0;
-    }
-
     //If hits head
     if(scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+33)/30] != 0){
     	y_inc = -y_inc;
@@ -963,6 +1042,10 @@ int main(void)
     			*BUL3_Y = *SAMUS_Y+25;
     			bul3Left = False;
     		}
+			if(grounded == False){
+				*BUL3_Y = *SAMUS_Y+22;
+			}
+
     		if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
     			bul3Up = True;
     			*BUL3_Y = *SAMUS_Y;
@@ -986,6 +1069,9 @@ int main(void)
 				*BUL2_X = *SAMUS_X+30;
 				*BUL2_Y = *SAMUS_Y+25;
 				bul2Left = False;
+			}
+			if(grounded == False){
+				*BUL2_Y = *SAMUS_Y+22;
 			}
 
 			if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
@@ -1011,6 +1097,10 @@ int main(void)
 				*BUL1_Y = *SAMUS_Y+25;
 				bul1Left = False;
 			}
+			if(grounded == False){
+				*BUL1_Y = *SAMUS_Y+22;
+			}
+
 			bul1start = 0;
 			if((keycode&0x0000FF)==0x1A || (keycode&0x00FF00)>>8 == 0x1A || (keycode&0xFF0000)>>16 == 0x1A){
 				bul1Up = True;
@@ -1055,7 +1145,7 @@ int main(void)
 	}
 
     if(*BUL3_EN == True){
-    	if(bul3start >= 90)
+    	if(bul3start >= 105)
     		*BUL3_EN = False;
     	else{
     		if(bul3Up == True){
@@ -1071,7 +1161,7 @@ int main(void)
     	}
     }
     if(*BUL2_EN == True){
-		if(bul2start >= 90)
+		if(bul2start >= 105)
 			*BUL2_EN = False;
 		else{
 			if(bul2Up == True){
@@ -1087,7 +1177,7 @@ int main(void)
 		}
 	}
     if(*BUL1_EN == True){
-		if(bul1start >= 90)
+		if(bul1start >= 105)
 			*BUL1_EN = False;
 		else{
 			if(bul1Up == True){
@@ -1144,6 +1234,34 @@ int main(void)
 			monster3_1_x+=5;
 		}
 	}
+	//Kraid
+	if(*KRAID_G_EN == True || *KRAID_R_EN == True || *KRAID_N_EN == True){
+		if(kraid_move_left == False){
+			*KRAID_X+=4;
+			kraid_move_counter-=7;
+		}
+		else{
+			*KRAID_X-=4;
+			kraid_move_counter-=7;
+		}
+		if(kraid_move_counter < 0 || *KRAID_X < 200 || *KRAID_X > 550){
+			if(kraid_move_left == True){
+				kraid_move_left = False;
+			}
+			else{
+				kraid_move_left = True;
+			}
+			kraid_move_counter = rand()%200+50;
+		}
+	}
+
+	if(*SAMUS_X > *KRAID_X+20){
+		*KRAID_DIR = 0;
+	}
+	else{
+		*KRAID_DIR = 1;
+	}
+
 
 	//Monster 1 collision detection
 	if(scene[sceneNum][(monster1_1_y+35)/30][monster1_1_x/30]==0){
@@ -1243,6 +1361,26 @@ int main(void)
 		if(*BUL3_X+12 > monster3_1_x && *BUL3_X < monster3_1_x+30 && *BUL3_Y+12 > monster3_1_y && *BUL3_Y < monster3_1_y+10 && *MON3_EN == True && *BUL3_EN == 1){
 			*BUL3_EN=0;
 		}
+		if(*BUL1_X+12 > *KRAID_X && *BUL1_X < *KRAID_X+50 && *BUL1_Y+12 > *KRAID_Y && *BUL1_Y < *KRAID_Y+70 && (*KRAID_G_EN == True || *KRAID_N_EN == True || *KRAID_R_EN == True) && *BUL1_EN == 1){
+			if(kraid_blink == False)
+				kraid_health-=1;
+			*BUL1_EN=0;
+			kraid_blink = True;
+			kraid_counter = 0;
+		}
+		if(*BUL2_X+12 > *KRAID_X && *BUL2_X < *KRAID_X+50 && *BUL2_Y+12 > *KRAID_Y && *BUL2_Y < *KRAID_Y+70 && (*KRAID_G_EN == True || *KRAID_N_EN == True || *KRAID_R_EN == True) && *BUL2_EN == 1){
+			if(kraid_blink == False)
+				kraid_health-=1;
+			*BUL2_EN=0;
+			kraid_blink = True;
+			kraid_counter = 0;
+		}
+		if(*BUL3_X+12 > *KRAID_X && *BUL3_X < *KRAID_X+50 && *BUL3_Y+12 > *KRAID_Y && *BUL3_Y < *KRAID_Y+70 && (*KRAID_G_EN == True || *KRAID_N_EN == True || *KRAID_R_EN == True) && *BUL3_EN == 1){			if(kraid_blink == False)
+				kraid_health-=1;
+			*BUL3_EN=0;
+			kraid_blink = True;
+			kraid_counter = 0;
+		}
 
 		if(monster1_1_health == 0){
 			*MON1_EN = 0;
@@ -1255,6 +1393,44 @@ int main(void)
 			*EXP2_X = monster2_1_x;
 			*EXP2_Y = monster2_1_y;
 			*EXP2_EN = 1;
+		}
+		if(kraid_health == 0){
+			kraid_counter+=1;
+			if(kraid_counter > kraid_kill_counter){
+				game_win = True;
+			}
+			*KRAID_G_EN = 0;
+			*KRAID_N_EN = 0;
+			*KRAID_R_EN = 0;
+			has_control = False;
+			if(*EXP1_EN == 0){
+				*EXP1_X = *KRAID_X-20;
+				*EXP1_Y = *KRAID_Y-20;
+				*EXP1_EN = 1;
+
+				*EXP2_X = *KRAID_X+50;
+				*EXP2_Y = *KRAID_Y+10;
+				*EXP2_EN = 1;
+
+				*EXP3_X = *KRAID_X+15;
+				*EXP3_Y = *KRAID_Y+40;
+				*EXP3_EN = 1;
+			}
+		}
+		else if(kraid_health <= 5){
+			*KRAID_G_EN = 1;
+			*KRAID_N_EN = 0;
+			*KRAID_R_EN = 0;
+		}
+		else if(kraid_health <= 10){
+			*KRAID_G_EN = 0;
+			*KRAID_N_EN = 1;
+			*KRAID_R_EN = 0;
+		}
+		else if(kraid_health <= 15){
+			*KRAID_G_EN = 0;
+			*KRAID_N_EN = 0;
+			*KRAID_R_EN = 1;
 		}
 
 		//Samus Collision with monster
@@ -1273,6 +1449,18 @@ int main(void)
 			y_set = False;
 			*HEALTH = *HEALTH-1;
 		}
+		else if(*SAMUS_X+45 > *KRAID_X && *SAMUS_X < *KRAID_X+60 && ((*SAMUS_Y+70 > *KRAID_Y && *SAMUS_Y < *KRAID_Y+70 && grounded == True) || (*SAMUS_Y+45 > *KRAID_Y && *SAMUS_Y < *KRAID_Y+70 && grounded == False)) && (*KRAID_G_EN == True || *KRAID_N_EN == True || *KRAID_R_EN == True)&& *SAMUS_EN == 1 && samus_inv_counter_start == False){
+			samus_inv_counter_start = True;
+			y_set = False;
+			*HEALTH = *HEALTH-1;
+		}
+		else if(*SAMUS_X+45 > *KRAID_SPIKE_X && *SAMUS_X < *KRAID_SPIKE_X+10 && ((*SAMUS_Y+70 > *KRAID_SPIKE_Y && *SAMUS_Y < *KRAID_SPIKE_Y+10 && grounded == True) || (*SAMUS_Y+45 > *KRAID_SPIKE_Y && *SAMUS_Y < *KRAID_SPIKE_Y+10 && grounded == False)) && *KRAID_SHOOT_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
+			samus_inv_counter_start = True;
+			y_set = False;
+			*HEALTH = *HEALTH-1;
+			*KRAID_SHOOT_EN = False;
+		}
+
 
 		if(samus_inv_counter_start == True){
 			if(*SAMUS_EN == False){
@@ -1281,6 +1469,7 @@ int main(void)
 			else{
 				*SAMUS_EN = False;
 			}
+
 			if(samus_inv_counter < 15){
 				if(scene[sceneNum][(*SAMUS_Y+15)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X-3)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X-3)/30]==0 && *SAMUS_DIR == 0){
 					*SAMUS_X-=((25-samus_inv_counter)/2);
@@ -1297,6 +1486,7 @@ int main(void)
 			else{
 				has_control = True;
 			}
+
 			if(samus_inv_counter >= 50){
 				samus_inv_counter = 0;
 				samus_inv_counter_start = False;
@@ -1306,12 +1496,187 @@ int main(void)
 				samus_inv_counter+=1;
 			}
 		}
-		printf("%d %d", samus_inv_counter, samus_inv_counter_start);
+		//Kraid inv frames
+		if(kraid_blink == True){
+			if(kraid_health <= 5){
+				if(*KRAID_G_EN == True){
+					*KRAID_G_EN = False;
+					*KRAID_R_EN = True;
+				}
+			}
+			else if(kraid_health <= 10){
+				if(*KRAID_N_EN == True){
+					*KRAID_N_EN = False;
+					*KRAID_G_EN = True;
+				}
+			}
+			else if(kraid_health <= 15){
+				if(*KRAID_R_EN == True){
+					*KRAID_R_EN = False;
+					*KRAID_G_EN = True;
+				}
+			}
+			kraid_counter+=1;
+			if(kraid_counter > kraid_counter_max){
+				if(kraid_health <= 5){
+					*KRAID_G_EN = True;
+					*KRAID_R_EN = False;
+					*KRAID_N_EN = False;
+				}
+				else if(kraid_health <= 10){
+					*KRAID_G_EN = False;
+					*KRAID_R_EN = False;
+					*KRAID_N_EN = True;
+				}
+				else if(kraid_health <= 15){
+					*KRAID_R_EN = True;
+					*KRAID_G_EN = False;
+					*KRAID_N_EN = False;
+				}
+				kraid_blink = False;
+			}
+		}
+		//Kraid Attack
+		//int nail_one_inc = 0;
+		//int nail_two_inc = 0;
+		//int nail_counter = 0;
+		//int bullet_counter = 0;
+		//int attack_counter_nail = 0;
+		//int attack_coutner_bullet = 0;
+		//int kraid_bul_start = 0;
+
+
+		attack_counter_nail+=1;
+		attack_counter_nail_2+=1;
+		attack_counter_bullet+=1;
+		//nail
+		if((attack_counter_nail > nail_counter || attack_counter_nail_2 > nail_counter)&& (*KRAID_G_EN == True || *KRAID_R_EN == True || *KRAID_N_EN == True)){
+			if(*KRAID_THROW_EN == False){
+				*KRAID_THROW_EN = True;
+				if(*KRAID_DIR == 1){
+					throw_dir_1 = 1;
+					*KRAID_THROW_X = *KRAID_X;
+					*KRAID_THROW_Y = *KRAID_Y+5;
+				}
+				else{
+					*KRAID_BUL_DIR = 0;
+					*KRAID_THROW_X = *KRAID_X+60;
+					*KRAID_THROW_Y = *KRAID_Y+5;
+				}
+				nail_one_inc = -2;
+				attack_counter_nail = 0;
+			}
+			else if(*KRAID_THROW_2_EN == False){
+				*KRAID_THROW_2_EN = True;
+				if(*KRAID_DIR == 1){
+					throw_dir_2 = 1;
+					*KRAID_THROW_2_X = *KRAID_X;
+					*KRAID_THROW_2_Y = *KRAID_Y+5;
+				}
+				else{
+					*KRAID_BUL_DIR = 0;
+					*KRAID_THROW_2_X = *KRAID_X+60;
+					*KRAID_THROW_2_Y = *KRAID_Y+5;
+				}
+				nail_two_inc = -3;
+				attack_counter_nail_2 = 0;
+			}
+			if(kraid_health <=5){
+				attack_counter_nail = rand()%50+100;
+			}
+			if(kraid_health <=10){
+				attack_counter_nail = rand()%100+100;
+			}
+			if(kraid_health <=5){
+				attack_counter_nail = rand()%150+100;
+			}
+	    }
+		if(*KRAID_THROW_EN == True){
+			if(throw_dir_1 == 1){
+				*KRAID_THROW_X-=4;
+			}
+			else{
+				*KRAID_THROW_X+=4;
+			}
+			*KRAID_THROW_Y+=nail_one_inc;
+			nail_one_inc+=gravity;
+		}
+		if(*KRAID_THROW_2_EN == True){
+			if(throw_dir_2 == 1){
+				*KRAID_THROW_2_X-=4;
+			}
+			else{
+				*KRAID_THROW_2_X+=4;
+			}
+			*KRAID_THROW_2_Y+=nail_two_inc;
+			nail_two_inc+=gravity;
+		}
+	    if(*KRAID_THROW_EN == True && (scene[sceneNum][(*KRAID_THROW_Y)/30][(*KRAID_THROW_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y+8)/30][(*KRAID_THROW_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y)/30][(*KRAID_THROW_X+8)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y+8)/30][(*KRAID_THROW_X+8)/30]!=0)){
+	    	*KRAID_THROW_EN = False;
+	    }
+	    if(*KRAID_THROW_2_EN == True && (scene[sceneNum][(*KRAID_THROW_2_Y)/30][(*KRAID_THROW_2_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y+8)/30][(*KRAID_THROW_2_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y)/30][(*KRAID_THROW_2_X+8)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y+8)/30][(*KRAID_THROW_2_X+8)/30]!=0)){
+	    	*KRAID_THROW_2_EN = False;
+	    }
+
+	    //spike
+		if(attack_counter_bullet > bullet_counter && (*KRAID_G_EN == True || *KRAID_R_EN == True || *KRAID_N_EN == True)){
+			if(*KRAID_SHOOT_EN == False){
+				*KRAID_SHOOT_EN = True;
+				if(*KRAID_DIR == 1){
+					*KRAID_BUL_DIR = 1;
+					*KRAID_SPIKE_X = *KRAID_X;
+					*KRAID_SPIKE_Y = *KRAID_Y+25;
+				}
+				else{
+					*KRAID_BUL_DIR = 0;
+					*KRAID_SPIKE_X = *KRAID_X+60;
+					*KRAID_SPIKE_Y = *KRAID_Y+25;
+				}
+				kraid_bul_start = 0;
+			}
+			attack_counter_bullet = 0;
+			if(kraid_health <=5){
+				bullet_counter = rand()%50+100;
+			}
+			if(kraid_health <=10){
+				bullet_counter = rand()%100+100;
+			}
+			if(kraid_health <=5){
+				bullet_counter = rand()%150+100;
+			}
+	    }
+		if(*KRAID_SHOOT_EN == True){
+			if(*KRAID_BUL_DIR == 1){
+				*KRAID_SPIKE_X-=6;
+				kraid_bul_start+=6;
+			}
+			else{
+				*KRAID_SPIKE_X+=6;
+				kraid_bul_start+=6;
+			}
+		}
+		if(kraid_bul_start >= 200){
+			*KRAID_SHOOT_EN = False;
+		}
+	    if(*KRAID_SHOOT_EN == True && *KRAID_BUL_DIR == True && (scene[sceneNum][(*KRAID_SPIKE_Y)/30][(*KRAID_SPIKE_X)/30]!=0 || scene[sceneNum][(*KRAID_SPIKE_Y+8)/30][(*KRAID_SPIKE_X)/30]!=0)){
+	    	*KRAID_SHOOT_EN = False;
+	    }
+	    if(*KRAID_SHOOT_EN == True && *KRAID_BUL_DIR == False && (scene[sceneNum][(*KRAID_SPIKE_Y)/30][(*KRAID_SPIKE_X+10)/30]!=0 || scene[sceneNum][(*KRAID_SPIKE_Y+8)/30][(*KRAID_SPIKE_X+10)/30]!=0)){
+	    	*KRAID_SHOOT_EN = False;
+	    }
+
+
 		//EXTRA
 		//debugging reset
 		if (keycode == 0x15){
 			sceneStart = True;
+			game_win = False;
 		}
+		if(god_mode == True){
+			*HEALTH = 3;
+			printf("God-Mode enabled.");
+		}
+
 	}//end while
 
 

@@ -8,11 +8,11 @@ module kraid(
    parameter kraid_h = 62;
 	parameter kraid_w = 46;
 	
-	parameter shoot_h = 18;
-	parameter shoot_w = 21;
+	parameter shoot_h = 12;
+	parameter shoot_w = 17;
 	
-	parameter attack_h = 12;
-	parameter attack_w = 17;
+	parameter attack_h = 18;
+	parameter attack_w = 21;
 
 	logic [6:0] kraid_n[kraid_h][kraid_w];
 	logic [6:0] kraid_r[kraid_h][kraid_w];
@@ -212,7 +212,7 @@ module kraid(
 						'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 						'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33}};
 						
-						shoot =   '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
+						attack =  '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 										'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 										'{33,33,33,33,31,31,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 										'{33,33,33,33,18,18,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
@@ -231,7 +231,7 @@ module kraid(
 										'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 										'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33}};
 										
-						attack =  '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
+						shoot =   '{'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 										'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 										'{33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33},
 										'{33,33,33,31,33,31,33,31,33,31,33,33,33,33,33,33,33},
@@ -251,78 +251,66 @@ module kraid(
 		color = 0;
 
 		if(vga_x >= kraid_x && vga_x < kraid_x + kraid_w && vga_y >= kraid_y && vga_y < kraid_y + kraid_h && kraid_g_en) begin
-			if(kraid_g[vga_y - kraid_y][vga_x - kraid_x] != 8) begin
+			if((kraid_g[vga_y - kraid_y][vga_x - kraid_x] != 8) && kraid_dir == 1'b0) begin
 				draw = 1'b1;
 				color = kraid_g[vga_y - kraid_y][vga_x - kraid_x];
 			end
-			if(kraid_dir == 1'b1) begin
-				if(kraid_g[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x] != 8) begin
-					draw = 1'b1;
-					color = kraid_g[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x];
-				end
+			if((kraid_g[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x] != 8) && kraid_dir == 1'b1) begin
+				draw = 1'b1;
+				color = kraid_g[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x];
 			end
 		end
 		if(vga_x >= kraid_x && vga_x < kraid_x + kraid_w && vga_y >= kraid_y && vga_y < kraid_y + kraid_h && kraid_r_en) begin
-			if(kraid_r[vga_y - kraid_y][vga_x - kraid_x] != 8) begin
+			if((kraid_r[vga_y - kraid_y][vga_x - kraid_x] != 8) && kraid_dir == 1'b0) begin
 				draw = 1'b1;
 				color = kraid_r[vga_y - kraid_y][vga_x - kraid_x];
 			end
-			if(kraid_dir == 1'b1) begin
-				if(kraid_r[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x] != 8) begin
-					draw = 1'b1;
-					color = kraid_r[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x];
-				end
+			if((kraid_r[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x] != 8) && kraid_dir == 1'b1) begin
+				draw = 1'b1;
+				color = kraid_r[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x];
 			end
 		end
 		if(vga_x >= kraid_x && vga_x < kraid_x + kraid_w && vga_y >= kraid_y && vga_y < kraid_y + kraid_h && kraid_n_en) begin
-			if(kraid_n[vga_y - kraid_y][vga_x - kraid_x] != 33) begin
+			if((kraid_n[vga_y - kraid_y][vga_x - kraid_x] != 33) && kraid_dir == 1'b0) begin
 				draw = 1'b1;
 				color = kraid_n[vga_y - kraid_y][vga_x - kraid_x];
 			end
-			if(kraid_dir == 1'b1) begin
-				if(kraid_n[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x] != 33) begin
-					draw = 1'b1;
-					color = kraid_n[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x];
-				end
+			if((kraid_n[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x] != 33) && kraid_dir == 1'b1) begin
+				draw = 1'b1;
+				color = kraid_n[vga_y - kraid_y][kraid_x + kraid_w - 1 - vga_x];
 			end
 		end
 		// Shoot:
 		if(vga_x >= shoot_x && vga_x < shoot_x + shoot_w && vga_y >= shoot_y && vga_y < shoot_y + shoot_h && kraid_shoot_en) begin
-			if(shoot[vga_y - shoot_y][vga_x - shoot_x] != 33) begin
+			if((shoot[vga_y - shoot_y][vga_x - shoot_x] != 33) && kraid_as_dir == 1'b0) begin
 				draw = 1'b1;
 				color = shoot[vga_y - shoot_y][vga_x - shoot_x];
 			end
-			if(kraid_as_dir == 1'b1) begin
-				if(shoot[vga_y - shoot_y][shoot_x + shoot_w - 1 - vga_x] != 33) begin
-					draw = 1'b1;
-					color = shoot[vga_y - shoot_y][shoot_x + shoot_w - 1 - vga_x];
-				end
+			if((shoot[vga_y - shoot_y][shoot_x + shoot_w - 1 - vga_x] != 33) && kraid_as_dir == 1'b1) begin
+				draw = 1'b1;
+				color = shoot[vga_y - shoot_y][shoot_x + shoot_w - 1 - vga_x];
 			end
 		end
 		// Throw:
 		if(vga_x >= throw_x && vga_x < throw_x + attack_w && vga_y >= throw_y && vga_y < throw_y + attack_h && kraid_throw_en) begin
-			if(attack[vga_y - throw_y][vga_x - throw_x] != 33) begin
+			if((attack[vga_y - throw_y][vga_x - throw_x] != 33) && kraid_as_dir == 1'b0) begin
 				draw = 1'b1;
 				color = attack[vga_y - throw_y][vga_x - throw_x];
 			end
-			if(kraid_as_dir == 1'b1) begin
-				if(attack[vga_y - throw_y][throw_x + attack_w - 1 - vga_x] != 33) begin
-					draw = 1'b1;
-					color = attack[vga_y - throw_y][throw_x + attack_w - 1 - vga_x];
-				end
+			if((attack[vga_y - throw_y][throw_x + attack_w - 1 - vga_x] != 33) && kraid_as_dir == 1'b1) begin
+				draw = 1'b1;
+				color = attack[vga_y - throw_y][throw_x + attack_w - 1 - vga_x];
 			end
 		end
 		// Throw2:
 		if(vga_x >= throw_2_x && vga_x < throw_2_x + attack_w && vga_y >= throw_2_y && vga_y < throw_2_y + attack_h && kraid_throw_2_en) begin
-			if(attack[vga_y - throw_2_y][vga_x - throw_2_x] != 33) begin
+			if((attack[vga_y - throw_2_y][vga_x - throw_2_x] != 33) && kraid_as_dir == 1'b0) begin
 				draw = 1'b1;
 				color = attack[vga_y - throw_2_y][vga_x - throw_2_x];
 			end
-			if(kraid_as_dir == 1'b1) begin
-				if(attack[vga_y - throw_2_y][throw_2_x + attack_w - 1 - vga_x] != 33) begin
-					draw = 1'b1;
-					color = attack[vga_y - throw_2_y][throw_2_x + attack_w - 1 - vga_x];
-				end
+			if((attack[vga_y - throw_2_y][throw_2_x + attack_w - 1 - vga_x] != 33) && kraid_as_dir == 1'b1) begin
+				draw = 1'b1;
+				color = attack[vga_y - throw_2_y][throw_2_x + attack_w - 1 - vga_x];
 			end
 		end
 	end
