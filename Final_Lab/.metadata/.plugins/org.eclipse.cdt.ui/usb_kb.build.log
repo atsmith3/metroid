@@ -1,9 +1,357 @@
-01:50:25 **** Incremental Build of configuration Nios II for project usb_kb ****
+02:08:15 **** Incremental Build of configuration Nios II for project usb_kb ****
 make all 
 Info: Building ../usb_kb_bsp/
 C:/Altera/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../usb_kb_bsp/
 [BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../usb_kb_bsp//HAL/inc -I../usb_kb_bsp/ -I../usb_kb_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:562:8: warning: excess elements in array initializer
+        {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        ^
+main.c:562:8: warning: (near initialization for 'scene[0][0]')
+main.c:563:8: warning: excess elements in array initializer
+        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        ^
+main.c:563:8: warning: (near initialization for 'scene[0][1]')
+main.c:564:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:564:8: warning: (near initialization for 'scene[0][2]')
+main.c:565:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:565:8: warning: (near initialization for 'scene[0][3]')
+main.c:566:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:566:8: warning: (near initialization for 'scene[0][4]')
+main.c:567:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:567:8: warning: (near initialization for 'scene[0][5]')
+main.c:568:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:568:8: warning: (near initialization for 'scene[0][6]')
+main.c:569:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:569:8: warning: (near initialization for 'scene[0][7]')
+main.c:570:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:570:8: warning: (near initialization for 'scene[0][8]')
+main.c:571:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,1,1},
+        ^
+main.c:571:8: warning: (near initialization for 'scene[0][9]')
+main.c:572:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+        ^
+main.c:572:8: warning: (near initialization for 'scene[0][10]')
+main.c:573:8: warning: excess elements in array initializer
+        {7,6,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:573:8: warning: (near initialization for 'scene[0][11]')
+main.c:574:8: warning: excess elements in array initializer
+        {7,4,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:574:8: warning: (near initialization for 'scene[0][12]')
+main.c:575:8: warning: excess elements in array initializer
+        {7,5,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:575:8: warning: (near initialization for 'scene[0][13]')
+main.c:576:8: warning: excess elements in array initializer
+        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        ^
+main.c:576:8: warning: (near initialization for 'scene[0][14]')
+main.c:577:8: warning: excess elements in array initializer
+        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}},
+        ^
+main.c:577:8: warning: (near initialization for 'scene[0][15]')
+main.c:579:8: warning: excess elements in array initializer
+        {1,1,1,1,1,1,1,1,1,3,3,3,1,1,3,3,3,3,3,3,3,3},
+        ^
+main.c:579:8: warning: (near initialization for 'scene[1][0]')
+main.c:580:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+        ^
+main.c:580:8: warning: (near initialization for 'scene[1][1]')
+main.c:581:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+        ^
+main.c:581:8: warning: (near initialization for 'scene[1][2]')
+main.c:582:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+        ^
+main.c:582:8: warning: (near initialization for 'scene[1][3]')
+main.c:583:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+        ^
+main.c:583:8: warning: (near initialization for 'scene[1][4]')
+main.c:584:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,3,3},
+        ^
+main.c:584:8: warning: (near initialization for 'scene[1][5]')
+main.c:585:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,3,3},
+        ^
+main.c:585:8: warning: (near initialization for 'scene[1][6]')
+main.c:586:8: warning: excess elements in array initializer
+        {1,1,3,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+        ^
+main.c:586:8: warning: (near initialization for 'scene[1][7]')
+main.c:587:8: warning: excess elements in array initializer
+        {1,1,1,3,1,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+        ^
+main.c:587:8: warning: (near initialization for 'scene[1][8]')
+main.c:588:8: warning: excess elements in array initializer
+        {1,1,1,3,1,1,3,3,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:588:8: warning: (near initialization for 'scene[1][9]')
+main.c:589:8: warning: excess elements in array initializer
+        {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:589:8: warning: (near initialization for 'scene[1][10]')
+main.c:590:8: warning: excess elements in array initializer
+        {7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:590:8: warning: (near initialization for 'scene[1][11]')
+main.c:591:8: warning: excess elements in array initializer
+        {7,4,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,3,3,3,3,3},
+        ^
+main.c:591:8: warning: (near initialization for 'scene[1][12]')
+main.c:592:8: warning: excess elements in array initializer
+        {7,5,0,0,0,0,0,0,0,1,0,0,0,1,1,3,1,3,3,3,3,3},
+        ^
+main.c:592:8: warning: (near initialization for 'scene[1][13]')
+main.c:593:8: warning: excess elements in array initializer
+        {1,1,1,1,1,3,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
+        ^
+main.c:593:8: warning: (near initialization for 'scene[1][14]')
+main.c:594:8: warning: excess elements in array initializer
+        {1,1,1,1,1,1,3,1,3,3,1,1,1,1,3,3,3,3,3,3,3,3}},
+        ^
+main.c:594:8: warning: (near initialization for 'scene[1][15]')
+main.c:596:8: warning: excess elements in array initializer
+        {3,3,3,3,2,3,2,2,1,1,2,2,2,3,3,3,3,2,2,2,2,2},
+        ^
+main.c:596:8: warning: (near initialization for 'scene[2][0]')
+main.c:597:8: warning: excess elements in array initializer
+        {1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2},
+        ^
+main.c:597:8: warning: (near initialization for 'scene[2][1]')
+main.c:598:8: warning: excess elements in array initializer
+        {3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2},
+        ^
+main.c:598:8: warning: (near initialization for 'scene[2][2]')
+main.c:599:8: warning: excess elements in array initializer
+        {3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:599:8: warning: (near initialization for 'scene[2][3]')
+main.c:600:8: warning: excess elements in array initializer
+        {1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:600:8: warning: (near initialization for 'scene[2][4]')
+main.c:601:8: warning: excess elements in array initializer
+        {3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:601:8: warning: (near initialization for 'scene[2][5]')
+main.c:602:8: warning: excess elements in array initializer
+        {3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,3},
+        ^
+main.c:602:8: warning: (near initialization for 'scene[2][6]')
+main.c:603:8: warning: excess elements in array initializer
+        {1,1,2,2,3,3,1,0,0,0,0,0,0,0,0,2,3,3,0,0,2,2},
+        ^
+main.c:603:8: warning: (near initialization for 'scene[2][7]')
+main.c:604:8: warning: excess elements in array initializer
+        {1,3,3,3,3,3,1,0,0,0,0,0,0,2,1,2,0,0,0,0,2,2},
+        ^
+main.c:604:8: warning: (near initialization for 'scene[2][8]')
+main.c:605:8: warning: excess elements in array initializer
+        {7,6,0,0,0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,0,2,3},
+        ^
+main.c:605:8: warning: (near initialization for 'scene[2][9]')
+main.c:606:8: warning: excess elements in array initializer
+        {7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+        ^
+main.c:606:8: warning: (near initialization for 'scene[2][10]')
+main.c:607:8: warning: excess elements in array initializer
+        {7,5,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,2,3},
+        ^
+main.c:607:8: warning: (near initialization for 'scene[2][11]')
+main.c:608:8: warning: excess elements in array initializer
+        {3,1,3,3,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,1,3,2},
+        ^
+main.c:608:8: warning: (near initialization for 'scene[2][12]')
+main.c:609:8: warning: excess elements in array initializer
+        {1,1,3,3,0,0,0,0,0,2,3,0,0,3,3,3,0,0,3,1,2,2},
+        ^
+main.c:609:8: warning: (near initialization for 'scene[2][13]')
+main.c:610:8: warning: excess elements in array initializer
+        {1,1,1,1,3,0,0,0,1,2,2,2,3,2,3,2,2,3,3,3,2,2},
+        ^
+main.c:610:8: warning: (near initialization for 'scene[2][14]')
+main.c:611:8: warning: excess elements in array initializer
+        {3,1,3,2,2,2,3,3,3,2,2,3,2,3,3,2,2,2,2,2,2,2}},
+        ^
+main.c:611:8: warning: (near initialization for 'scene[2][15]')
+main.c:613:8: warning: excess elements in array initializer
+        {2,2,2,2,3,3,3,3,2,3,3,2,2,2,3,2,2,2,2,2,2,2},
+        ^
+main.c:613:8: warning: (near initialization for 'scene[3][0]')
+main.c:614:8: warning: excess elements in array initializer
+        {3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:614:8: warning: (near initialization for 'scene[3][1]')
+main.c:615:8: warning: excess elements in array initializer
+        {3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:615:8: warning: (near initialization for 'scene[3][2]')
+main.c:616:8: warning: excess elements in array initializer
+        {7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+        ^
+main.c:616:8: warning: (near initialization for 'scene[3][3]')
+main.c:617:8: warning: excess elements in array initializer
+        {3,4,0,0,0,0,0,0,0,0,0,3,3,2,2,2,2,2,0,0,7,7},
+        ^
+main.c:617:8: warning: (near initialization for 'scene[3][4]')
+main.c:618:8: warning: excess elements in array initializer
+        {7,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,3,2,2},
+        ^
+main.c:618:8: warning: (near initialization for 'scene[3][5]')
+main.c:619:8: warning: excess elements in array initializer
+        {3,3,3,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:619:8: warning: (near initialization for 'scene[3][6]')
+main.c:620:8: warning: excess elements in array initializer
+        {3,3,2,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:620:8: warning: (near initialization for 'scene[3][7]')
+main.c:621:8: warning: excess elements in array initializer
+        {3,3,2,2,2,0,0,0,0,0,3,3,2,3,0,0,0,0,0,0,2,2},
+        ^
+main.c:621:8: warning: (near initialization for 'scene[3][8]')
+main.c:622:8: warning: excess elements in array initializer
+        {3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3,2,2},
+        ^
+main.c:622:8: warning: (near initialization for 'scene[3][9]')
+main.c:623:8: warning: excess elements in array initializer
+        {3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:623:8: warning: (near initialization for 'scene[3][10]')
+main.c:624:8: warning: excess elements in array initializer
+        {3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:624:8: warning: (near initialization for 'scene[3][11]')
+main.c:625:8: warning: excess elements in array initializer
+        {3,3,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:625:8: warning: (near initialization for 'scene[3][12]')
+main.c:626:8: warning: excess elements in array initializer
+        {3,3,0,0,0,0,0,0,2,3,3,0,0,0,0,2,2,3,3,2,3,2},
+        ^
+main.c:626:8: warning: (near initialization for 'scene[3][13]')
+main.c:627:8: warning: excess elements in array initializer
+        {3,3,3,3,3,3,3,2,3,2,3,0,0,0,2,2,2,2,2,3,2,2},
+        ^
+main.c:627:8: warning: (near initialization for 'scene[3][14]')
+main.c:628:8: warning: excess elements in array initializer
+        {3,3,3,3,3,3,3,2,2,2,2,2,2,2,3,2,3,2,2,3,2,2}},
+        ^
+main.c:628:8: warning: (near initialization for 'scene[3][15]')
+main.c:630:8: warning: excess elements in array initializer
+        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+        ^
+main.c:630:8: warning: (near initialization for 'scene[4][0]')
+main.c:631:8: warning: excess elements in array initializer
+        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+        ^
+main.c:631:8: warning: (near initialization for 'scene[4][1]')
+main.c:632:8: warning: excess elements in array initializer
+        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+        ^
+main.c:632:8: warning: (near initialization for 'scene[4][2]')
+main.c:633:8: warning: excess elements in array initializer
+        {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:633:8: warning: (near initialization for 'scene[4][3]')
+main.c:634:8: warning: excess elements in array initializer
+        {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:634:8: warning: (near initialization for 'scene[4][4]')
+main.c:635:8: warning: excess elements in array initializer
+        {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2},
+        ^
+main.c:635:8: warning: (near initialization for 'scene[4][5]')
+main.c:636:8: warning: excess elements in array initializer
+        {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:636:8: warning: (near initialization for 'scene[4][6]')
+main.c:637:8: warning: excess elements in array initializer
+        {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:637:8: warning: (near initialization for 'scene[4][7]')
+main.c:638:8: warning: excess elements in array initializer
+        {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:638:8: warning: (near initialization for 'scene[4][8]')
+main.c:639:8: warning: excess elements in array initializer
+        {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:639:8: warning: (near initialization for 'scene[4][9]')
+main.c:640:8: warning: excess elements in array initializer
+        {7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:640:8: warning: (near initialization for 'scene[4][10]')
+main.c:641:8: warning: excess elements in array initializer
+        {7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:641:8: warning: (near initialization for 'scene[4][11]')
+main.c:642:8: warning: excess elements in array initializer
+        {7,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+        ^
+main.c:642:8: warning: (near initialization for 'scene[4][12]')
+main.c:643:8: warning: excess elements in array initializer
+        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+        ^
+main.c:643:8: warning: (near initialization for 'scene[4][13]')
+main.c:644:8: warning: excess elements in array initializer
+        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+        ^
+main.c:644:8: warning: (near initialization for 'scene[4][14]')
+main.c:645:8: warning: excess elements in array initializer
+        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}
+        ^
+main.c:645:8: warning: (near initialization for 'scene[4][15]')
+main.c:1602:122: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+     if(scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+2)/30] != 0 || scene[sceneNum][(*SAMUS_Y+5)/30][(*SAMUS_X+33)/30] == 0 && y_set == False){
+                                                                                                                          ^
+main.c:727:6: warning: variable 'monster2_grounded' set but not used [-Wunused-but-set-variable]
+  int monster2_grounded = True;
+      ^
+main.c:685:6: warning: unused variable 'finalVictory' [-Wunused-variable]
+  int finalVictory = False;
+      ^
+main.c:684:6: warning: unused variable 'scenVictory' [-Wunused-variable]
+  int scenVictory = False;
+      ^
+main.c:658:6: warning: unused variable 'SAMUS_RIGHT' [-Wunused-variable]
+  int SAMUS_RIGHT = 35;
+      ^
+main.c:657:6: warning: unused variable 'SAMUS_BOT' [-Wunused-variable]
+  int SAMUS_BOT = 70;
+      ^
+Info: Linking usb_kb.elf
+nios2-elf-g++  -T'../usb_kb_bsp//linker.x' -msys-crt0='../usb_kb_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../usb_kb_bsp/   -Wl,-Map=usb_kb.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o usb_kb.elf obj/default/io_handler.o obj/default/main.o obj/default/usb.o -lm 
+nios2-elf-insert usb_kb.elf --thread_model hal --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x438 --timestamp 1480905656 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "E:/Github/ECE_385/Final_Lab" --jdi E:/Github/ECE_385/Final_Lab/software/usb_kb_bsp/../../lab8.jdi --sopcinfo E:/Github/ECE_385/Final_Lab/software/usb_kb_bsp/../../nios_system.sopcinfo
+Info: (usb_kb.elf) 110 KBytes program size (code + initialized data).
+Info:              130954 KBytes free for stack + heap.
+Info: Creating usb_kb.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source usb_kb.elf >usb_kb.objdump
 [usb_kb build complete]
 
-01:50:26 Build Finished (took 778ms)
+02:08:17 Build Finished (took 1s.953ms)
 
