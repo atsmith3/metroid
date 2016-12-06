@@ -63,6 +63,7 @@
 #define MON3_EN (volatile char*) MONSTER3_EN_BASE
 #define MON3_X (volatile int*) MONSTER3_X_BASE
 #define MON3_Y (volatile int*) MONSTER3_Y_BASE
+#define MON3_DIR (volatile int*) MONSTER3_DIR_BASE
 
 #define EXP1_EN (volatile int*) EXPLOSION1_EN_BASE
 #define EXP1_X (volatile int*) EXPLOSION1_X_BASE
@@ -87,6 +88,8 @@
 #define BUL3_EN (volatile int*) BULLET3_EN_BASE
 #define BUL3_X (volatile int*) BULLET3_X_BASE
 #define BUL3_Y (volatile int*) BULLET3_Y_BASE
+
+#define BUL_EM (volatile int*) B_EMP_BASE
 
 #define HEALTH (volatile int*) HEALTH_BASE
 
@@ -556,78 +559,73 @@ int main(void)
 	 *
 	 */
 	int scene[5][16][21] = 	{
-							{
+							{{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
-							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
-							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
-							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
-							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-							},
-							{
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,1,1},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+							{7,6,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{7,4,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,7,7},
+							{7,5,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,7,7},
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
-							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
-							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
-							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
-							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-							},
+							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}},
 							{
-							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
-							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
-							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
-							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
-							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-							},
+							{1,1,1,1,1,1,1,1,1,3,3,3,1,1,3,3,3,3,3,3,3,3},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,1,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,3,3},
+							{1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,3,3},
+							{1,1,3,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,1,1,3,1,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{1,1,1,3,1,1,3,3,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{7,4,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,3,3,3,3,3},
+							{7,5,0,0,0,0,0,0,0,1,0,0,0,1,1,3,1,3,3,3,3,3},
+							{1,1,1,1,1,3,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
+							{1,1,1,1,1,1,3,1,3,3,1,1,1,1,3,3,3,3,3,3,3,3}},
 							{
-							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,6},
-							{6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4},
-							{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5},
-							{5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,3,3,3,3,0,0,0,1,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3},
-							{3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
-							{3,3,3,0,0,0,0,0,0,0,0,0,0,3,1,1,1,1,0,0,1,3},
-							{3,3,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,3,3,0,0,0,0,0,0,0,0,1,1},
-							{3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-							},
+							{3,3,3,3,2,3,2,2,1,1,2,2,2,3,3,3,3,2,2,2,2,2},
+							{1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2},
+							{3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2},
+							{3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,3},
+							{1,1,2,2,3,3,1,0,0,0,0,0,0,0,0,2,3,3,0,0,2,2},
+							{1,3,3,3,3,3,1,0,0,0,0,0,0,2,1,2,0,0,0,0,2,2},
+							{7,6,0,0,0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,0,2,3},
+							{7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3},
+							{7,5,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,2,3},
+							{3,1,3,3,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,1,3,2},
+							{1,1,3,3,0,0,0,0,0,2,3,0,0,3,3,3,0,0,3,1,2,2},
+							{1,1,1,1,3,0,0,0,1,2,2,2,3,2,3,2,2,3,3,3,2,2},
+							{3,1,3,2,2,2,3,3,3,2,2,3,2,3,3,2,2,2,2,2,2,2}},
+							{
+							{2,2,2,2,3,3,3,3,2,3,3,2,2,2,3,2,2,2,2,2,2,2},
+							{3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{7,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7},
+							{3,4,0,0,0,0,0,0,0,0,0,3,3,2,2,2,2,2,0,0,7,7},
+							{7,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,3,2,2},
+							{3,3,3,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{3,3,2,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{3,3,2,2,2,0,0,0,0,0,3,3,2,3,0,0,0,0,0,0,2,2},
+							{3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,2,2},
+							{3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
+							{3,3,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,2,2},
+							{3,3,0,0,0,0,0,0,2,3,3,0,0,0,0,0,0,3,3,2,3,2},
+							{3,3,3,3,3,3,3,2,3,2,3,0,0,0,0,0,2,2,2,3,2,2},
+							{3,3,3,3,3,3,3,2,2,2,2,2,2,2,3,2,3,2,2,3,2,2}},
 							{
 							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
 							{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
@@ -680,33 +678,48 @@ int main(void)
 	int bul3Up = 0;
 	int bul3start = 0;
 	int bullet_en = True;
+	int bul_max_length = 90;
 	int sceneNum = 4;
 	int sceneStart = True;
 	int scenVictory = False;
 	int finalVictory = False;
-	int scene0_x = 0;
-	int scene0_y = 0;
-	int scene0_dir = 0;
-	int scene1_dir = 0;
-	int scene2_dir = 0;
 	int scene3_dir = 0;
 	int scene4_dir = 0;
-	int scene1_x = 0;
-	int scene1_y = 0;
-	int scene2_x = 0;
-	int scene2_y = 0;
-	int scene3_x = 10;
+
+	int scene0_x = 40;
+	int scene0_y = 330;
+	int scene1_x = 40;
+	int scene1_y = 330;
+	int scene2_x = 40;
+	int scene2_y = 270;
+	int scene3_x = 40;
 	int scene3_y = 110;
 	int scene4_x = 40;
 	int scene4_y = 300;
-	int monster1_1_x_scene3 = 420;
-	int monster1_1_y_scene3 = 185;
+
+	int monster1_1_x_scene0 = 420;
+	int monster1_1_y_scene0 = 239;
+	int monster1_1_x_scene1 = 330;
+	int monster1_1_y_scene1 = 125;
+	int monster1_1_x_scene3 = 370;
+	int monster1_1_y_scene3 = 215;
+
+	int monster2_1_x_scene2 = 80;
+	int monster2_1_y_scene2 = 30;
+	int monster2_1_x_scene3 = 420;
+	int monster2_1_y_scene3 = 30;
+
+	int monster3_1_x_scene1 = 420;
+	int monster3_1_y_scene1 = 215;
+	int monster3_1_x_scene2 = 420;
+	int monster3_1_y_scene2 = 215;
+	int monster3_1_x_scene3 = 180;
+	int monster3_1_y_scene3 = 245;
+
 	int monster1_1_x = 420;
 	int monster1_1_y = 185;
 	int monster1_1_left = True;
 	int monster1_1_health = 3;
-	int monster2_1_x_scene3 = 420;
-	int monster2_1_y_scene3 = 30;
 	int monster2_1_x = 220;
 	int monster2_1_y = 55;
 	int monster2_1_left = True;
@@ -716,8 +729,6 @@ int main(void)
 	int mon2_hit_bot = False;
 	float mon_2_y_inc = 0;
 	int monster2_1_health = 3;
-	int monster3_1_x_scene3 = 180;
-	int monster3_1_y_scene3 = 215;
 	int monster3_1_x = 220;
 	int monster3_1_y = 55;
 	int monster3_1_left = False;
@@ -728,8 +739,8 @@ int main(void)
 	int kraid_counter_max = 10;
 	int kraid_kill_counter = 120;
 	int kraid_counter = 0;
-	int nail_one_inc = 0;
-	int nail_two_inc = 0;
+	float nail_one_inc = 0;
+	float nail_two_inc = 0;
 	int nail_counter = 100;
 	int bullet_counter = 100;
 	int attack_counter_nail = 0;
@@ -739,7 +750,7 @@ int main(void)
 	int throw_dir_2 = 1;
 	int attack_counter_nail_2 = 0;
 
-
+	int moving_on = False;
 	int god_mode = False;
 	int m_let_go = True;
 	int game_win = False;
@@ -797,7 +808,6 @@ int main(void)
 		// TASK: Write the address to read from the memory for byte 3 of the report descriptor to HPI_ADDR.
 		IO_write(HPI_ADDR,0x051e); //the start address
 		keycode = IO_read(HPI_DATA);
-		printf("\nkeycode value is %x\n",keycode);
 		IOWR(KEYCODE_BASE, 0, keycode & 0xff);
 
 
@@ -849,8 +859,11 @@ int main(void)
 		}
 		continue;
 	}
-	if(keycode==0x17){
+	if(keycode==0x17 || sceneNum == -1){
 		*TIT_EN = True;
+		if(keycode == 0x2c){
+			sceneNum = 0;
+		}
 		continue;
 	}
 	else{
@@ -879,7 +892,80 @@ int main(void)
 
 	//Scene Init
 	if(sceneStart == True){
-		if(sceneNum == 3){
+		if(sceneNum == 0){
+		    *SCENE_SELECT = 0;
+			moving_on = False;
+			*KRAID_G_EN = False;
+			*KRAID_R_EN = False;
+			*KRAID_N_EN = False;
+
+			*SAMUS_EN = 1;
+			*SAMUS_X = scene0_x;
+			*SAMUS_Y = scene0_y;
+			*SAMUS_DIR = 0;
+
+			monster1_1_x = monster1_1_x_scene0;
+			monster1_1_y = monster1_1_y_scene0;
+			*MON1_EN = 1;
+			*MON2_EN = 0;
+			*MON3_EN = 0;
+
+			*KRAID_THROW_EN = False;
+			*KRAID_THROW_2_EN = False;
+		}
+		else if(sceneNum == 1){
+		    *SCENE_SELECT = 1;
+			moving_on = False;
+			*KRAID_G_EN = False;
+			*KRAID_R_EN = False;
+			*KRAID_N_EN = False;
+
+			*SAMUS_EN = 1;
+			*SAMUS_X = scene1_x;
+			*SAMUS_Y = scene1_y;
+			*SAMUS_DIR = 0;
+
+
+			monster1_1_x = monster1_1_x_scene1;
+			monster1_1_y = monster1_1_y_scene1;
+
+			monster3_1_x = monster3_1_x_scene1;
+			monster3_1_y = monster3_1_y_scene1;
+
+			monster1_1_health = 3;
+
+			*MON1_EN = 1;
+			*MON2_EN = 0;
+			*MON3_EN = 1;
+
+		}
+		else if(sceneNum == 2){
+		    *SCENE_SELECT = 2;
+			moving_on = False;
+			*KRAID_G_EN = False;
+			*KRAID_R_EN = False;
+			*KRAID_N_EN = False;
+
+			*SAMUS_EN = 1;
+			*SAMUS_X = scene2_x;
+			*SAMUS_Y = scene2_y;
+			*SAMUS_DIR = 0;
+
+			monster2_1_x = monster2_1_x_scene2;
+			monster2_1_y = monster2_1_y_scene2;
+
+			monster3_1_x = monster3_1_x_scene2;
+			monster3_1_y = monster3_1_y_scene2;
+
+			monster2_1_health = 3;
+
+			*MON1_EN = 0;
+			*MON2_EN = 1;
+			*MON3_EN = 1;
+
+		}
+		else if(sceneNum == 3){
+			moving_on = False;
 			*SAMUS_EN = 1;
 			*SCENE_SELECT = 3;
 			*SAMUS_X = scene3_x;
@@ -898,8 +984,12 @@ int main(void)
 			*MON2_EN = 1;
 			*MON3_EN = 1;
 			has_control = True;
+			*KRAID_G_EN = False;
+			*KRAID_R_EN = False;
+			*KRAID_N_EN = False;
 		}
-		if(sceneNum == 4){
+		else if(sceneNum == 4){
+			moving_on = False;
 			*SAMUS_EN = 1;
 			*SCENE_SELECT = 4;
 			*SAMUS_X = scene4_x;
@@ -916,7 +1006,10 @@ int main(void)
 			has_control = True;
 			kraid_move_counter = 100;
 			kraid_move_left = True;
+			attack_counter_nail_2=50;
+			attack_counter_nail=0;
 		}
+		has_control = True;
 		sceneStart = False;
 		*EXP1_EN = 0;
 		*EXP2_EN = 0;
@@ -934,9 +1027,7 @@ int main(void)
     }
     //Move right
     if(((keycode&0x0000FF)==7 || (keycode&0x00FF00)>>8 == 7 || (keycode&0xFF0000)>>16 == 7) && has_control == True){
-    	printf("HERE");
     	if(scene[sceneNum][(*SAMUS_Y+10)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+25)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+50)/30][(*SAMUS_X+40)/30]==0 && scene[sceneNum][(*SAMUS_Y+70)/30][(*SAMUS_X+40)/30]==0){
-    		printf("HERE2");
     		*SAMUS_DIR = 0;
     		*SAMUS_X+=6;
     		if(grounded == True){
@@ -1145,7 +1236,7 @@ int main(void)
 	}
 
     if(*BUL3_EN == True){
-    	if(bul3start >= 105)
+    	if(bul3start >= bul_max_length)
     		*BUL3_EN = False;
     	else{
     		if(bul3Up == True){
@@ -1161,7 +1252,7 @@ int main(void)
     	}
     }
     if(*BUL2_EN == True){
-		if(bul2start >= 105)
+		if(bul2start >= bul_max_length)
 			*BUL2_EN = False;
 		else{
 			if(bul2Up == True){
@@ -1177,7 +1268,7 @@ int main(void)
 		}
 	}
     if(*BUL1_EN == True){
-		if(bul1start >= 105)
+		if(bul1start >= bul_max_length)
 			*BUL1_EN = False;
 		else{
 			if(bul1Up == True){
@@ -1192,6 +1283,15 @@ int main(void)
 			bul1start += bulinc;
 		}
 	}
+
+    if(sceneNum >= 3){
+    	bul_max_length = 180;
+    	*BUL_EM = 1;
+    }
+    else{
+    	bul_max_length = 90;
+    	*BUL_EM = 0;
+    }
 
 
     //monsters code
@@ -1325,6 +1425,12 @@ int main(void)
 		else if(scene[sceneNum][(monster3_1_y)/30][(monster3_1_x+35)/30]!=0 || scene[sceneNum][(monster3_1_y+10)/30][(monster3_1_x+35)/30]!=0){
 			monster3_1_left = True;
 		}
+		if(monster3_1_left == True){
+			*MON3_DIR = False;
+		}
+		else{
+			*MON3_DIR = True;
+		}
 
 
 		//bullet collision with monsters
@@ -1394,45 +1500,46 @@ int main(void)
 			*EXP2_Y = monster2_1_y;
 			*EXP2_EN = 1;
 		}
-		if(kraid_health == 0){
-			kraid_counter+=1;
-			if(kraid_counter > kraid_kill_counter){
-				game_win = True;
+		if(sceneNum == 4){
+			if(kraid_health <= 0){
+				kraid_counter+=1;
+				if(kraid_counter > kraid_kill_counter){
+					game_win = True;
+				}
+				*KRAID_G_EN = 0;
+				*KRAID_N_EN = 0;
+				*KRAID_R_EN = 0;
+				has_control = False;
+				if(*EXP1_EN == 0){
+					*EXP1_X = *KRAID_X-20;
+					*EXP1_Y = *KRAID_Y-20;
+					*EXP1_EN = 1;
+
+					*EXP2_X = *KRAID_X+50;
+					*EXP2_Y = *KRAID_Y+10;
+					*EXP2_EN = 1;
+
+					*EXP3_X = *KRAID_X+15;
+					*EXP3_Y = *KRAID_Y+40;
+					*EXP3_EN = 1;
+				}
 			}
-			*KRAID_G_EN = 0;
-			*KRAID_N_EN = 0;
-			*KRAID_R_EN = 0;
-			has_control = False;
-			if(*EXP1_EN == 0){
-				*EXP1_X = *KRAID_X-20;
-				*EXP1_Y = *KRAID_Y-20;
-				*EXP1_EN = 1;
-
-				*EXP2_X = *KRAID_X+50;
-				*EXP2_Y = *KRAID_Y+10;
-				*EXP2_EN = 1;
-
-				*EXP3_X = *KRAID_X+15;
-				*EXP3_Y = *KRAID_Y+40;
-				*EXP3_EN = 1;
+			else if(kraid_health <= 5){
+				*KRAID_G_EN = 1;
+				*KRAID_N_EN = 0;
+				*KRAID_R_EN = 0;
+			}
+			else if(kraid_health <= 10){
+				*KRAID_G_EN = 0;
+				*KRAID_N_EN = 1;
+				*KRAID_R_EN = 0;
+			}
+			else if(kraid_health <= 15){
+				*KRAID_G_EN = 0;
+				*KRAID_N_EN = 0;
+				*KRAID_R_EN = 1;
 			}
 		}
-		else if(kraid_health <= 5){
-			*KRAID_G_EN = 1;
-			*KRAID_N_EN = 0;
-			*KRAID_R_EN = 0;
-		}
-		else if(kraid_health <= 10){
-			*KRAID_G_EN = 0;
-			*KRAID_N_EN = 1;
-			*KRAID_R_EN = 0;
-		}
-		else if(kraid_health <= 15){
-			*KRAID_G_EN = 0;
-			*KRAID_N_EN = 0;
-			*KRAID_R_EN = 1;
-		}
-
 		//Samus Collision with monster
 		if(*SAMUS_X+45 > monster3_1_x && *SAMUS_X < monster3_1_x+30 && ((*SAMUS_Y+70 > monster3_1_y && *SAMUS_Y < monster3_1_y+10 && grounded == True) || (*SAMUS_Y+45 > monster3_1_y && *SAMUS_Y < monster3_1_y+10 && grounded == False)) && *MON3_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
 			samus_inv_counter_start = True;
@@ -1460,6 +1567,20 @@ int main(void)
 			*HEALTH = *HEALTH-1;
 			*KRAID_SHOOT_EN = False;
 		}
+		else if(*SAMUS_X+45 > *KRAID_THROW_X && *SAMUS_X < *KRAID_THROW_X+10 && ((*SAMUS_Y+70 > *KRAID_THROW_Y && *SAMUS_Y < *KRAID_THROW_Y+10 && grounded == True) || (*SAMUS_Y+45 > *KRAID_THROW_Y && *SAMUS_Y < *KRAID_THROW_Y+10 && grounded == False)) && *KRAID_THROW_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
+			samus_inv_counter_start = True;
+			y_set = False;
+			*HEALTH = *HEALTH-1;
+			*KRAID_THROW_EN = False;
+		}
+		else if(*SAMUS_X+45 > *KRAID_THROW_2_X && *SAMUS_X < *KRAID_THROW_2_X+10 && ((*SAMUS_Y+70 > *KRAID_THROW_2_Y && *SAMUS_Y < *KRAID_THROW_2_Y+10 && grounded == True) || (*SAMUS_Y+45 > *KRAID_THROW_2_Y && *SAMUS_Y < *KRAID_THROW_2_Y+10 && grounded == False)) && *KRAID_THROW_2_EN == True && *SAMUS_EN == 1 && samus_inv_counter_start == False){
+			samus_inv_counter_start = True;
+			y_set = False;
+			*HEALTH = *HEALTH-1;
+			*KRAID_THROW_2_EN = False;
+		}
+
+
 
 
 		if(samus_inv_counter_start == True){
@@ -1496,174 +1617,168 @@ int main(void)
 				samus_inv_counter+=1;
 			}
 		}
-		//Kraid inv frames
-		if(kraid_blink == True){
-			if(kraid_health <= 5){
-				if(*KRAID_G_EN == True){
-					*KRAID_G_EN = False;
-					*KRAID_R_EN = True;
-				}
-			}
-			else if(kraid_health <= 10){
-				if(*KRAID_N_EN == True){
-					*KRAID_N_EN = False;
-					*KRAID_G_EN = True;
-				}
-			}
-			else if(kraid_health <= 15){
-				if(*KRAID_R_EN == True){
-					*KRAID_R_EN = False;
-					*KRAID_G_EN = True;
-				}
-			}
-			kraid_counter+=1;
-			if(kraid_counter > kraid_counter_max){
+		if(sceneNum == 4){
+			//Kraid inv frames
+			if(kraid_blink == True){
 				if(kraid_health <= 5){
-					*KRAID_G_EN = True;
-					*KRAID_R_EN = False;
-					*KRAID_N_EN = False;
+					if(*KRAID_G_EN == True){
+						*KRAID_G_EN = False;
+						*KRAID_R_EN = True;
+					}
 				}
 				else if(kraid_health <= 10){
-					*KRAID_G_EN = False;
-					*KRAID_R_EN = False;
-					*KRAID_N_EN = True;
+					if(*KRAID_N_EN == True){
+						*KRAID_N_EN = False;
+						*KRAID_G_EN = True;
+					}
 				}
 				else if(kraid_health <= 15){
-					*KRAID_R_EN = True;
-					*KRAID_G_EN = False;
-					*KRAID_N_EN = False;
+					if(*KRAID_R_EN == True){
+						*KRAID_R_EN = False;
+						*KRAID_G_EN = True;
+					}
 				}
-				kraid_blink = False;
+				kraid_counter+=1;
+				if(kraid_counter > kraid_counter_max){
+					if(kraid_health <= 5){
+						*KRAID_G_EN = True;
+						*KRAID_R_EN = False;
+						*KRAID_N_EN = False;
+					}
+					else if(kraid_health <= 10){
+						*KRAID_G_EN = False;
+						*KRAID_R_EN = False;
+						*KRAID_N_EN = True;
+					}
+					else if(kraid_health <= 15){
+						*KRAID_R_EN = True;
+						*KRAID_G_EN = False;
+						*KRAID_N_EN = False;
+					}
+					kraid_blink = False;
+				}
 			}
-		}
-		//Kraid Attack
-		//int nail_one_inc = 0;
-		//int nail_two_inc = 0;
-		//int nail_counter = 0;
-		//int bullet_counter = 0;
-		//int attack_counter_nail = 0;
-		//int attack_coutner_bullet = 0;
-		//int kraid_bul_start = 0;
+			//Kraid Attack
 
-
-		attack_counter_nail+=1;
-		attack_counter_nail_2+=1;
-		attack_counter_bullet+=1;
-		//nail
-		if((attack_counter_nail > nail_counter || attack_counter_nail_2 > nail_counter)&& (*KRAID_G_EN == True || *KRAID_R_EN == True || *KRAID_N_EN == True)){
-			if(*KRAID_THROW_EN == False){
-				*KRAID_THROW_EN = True;
-				if(*KRAID_DIR == 1){
-					throw_dir_1 = 1;
-					*KRAID_THROW_X = *KRAID_X;
-					*KRAID_THROW_Y = *KRAID_Y+5;
+			attack_counter_nail+=1;
+			attack_counter_nail_2+=1;
+			attack_counter_bullet+=1;
+			//nail
+			if((attack_counter_nail > nail_counter || attack_counter_nail_2 > nail_counter)&& (*KRAID_G_EN == True || *KRAID_R_EN == True || *KRAID_N_EN == True)){
+				if(*KRAID_THROW_EN == False){
+					*KRAID_THROW_EN = True;
+					if(*KRAID_DIR == 1){
+						throw_dir_1 = 1;
+						*KRAID_THROW_X = *KRAID_X;
+						*KRAID_THROW_Y = *KRAID_Y+5;
+					}
+					else{
+						throw_dir_1 = 0;
+						*KRAID_THROW_X = *KRAID_X+60;
+						*KRAID_THROW_Y = *KRAID_Y+5;
+					}
+					nail_one_inc = -6;
+					attack_counter_nail = 0;
+				}
+				else if(*KRAID_THROW_2_EN == False){
+					*KRAID_THROW_2_EN = True;
+					if(*KRAID_DIR == 1){
+						throw_dir_2 = 1;
+						*KRAID_THROW_2_X = *KRAID_X;
+						*KRAID_THROW_2_Y = *KRAID_Y+5;
+					}
+					else{
+						throw_dir_2 = 0;
+						*KRAID_THROW_2_X = *KRAID_X+60;
+						*KRAID_THROW_2_Y = *KRAID_Y+5;
+					}
+					nail_two_inc = -7;
+					attack_counter_nail_2 = 0;
+				}
+				if(kraid_health <=5){
+					nail_counter = rand()%50+100;
+				}
+				if(kraid_health <=10){
+					nail_counter = rand()%100+100;
+				}
+				if(kraid_health <=5){
+					nail_counter = rand()%150+100;
+				}
+			}
+			if(*KRAID_THROW_EN == True){
+				if(throw_dir_1 == 1){
+					*KRAID_THROW_X-=6;
 				}
 				else{
-					*KRAID_BUL_DIR = 0;
-					*KRAID_THROW_X = *KRAID_X+60;
-					*KRAID_THROW_Y = *KRAID_Y+5;
+					*KRAID_THROW_X+=6;
 				}
-				nail_one_inc = -2;
-				attack_counter_nail = 0;
+				*KRAID_THROW_Y+=nail_one_inc;
+				nail_one_inc+=(gravity/2);
 			}
-			else if(*KRAID_THROW_2_EN == False){
-				*KRAID_THROW_2_EN = True;
-				if(*KRAID_DIR == 1){
-					throw_dir_2 = 1;
-					*KRAID_THROW_2_X = *KRAID_X;
-					*KRAID_THROW_2_Y = *KRAID_Y+5;
+			if(*KRAID_THROW_2_EN == True){
+				if(throw_dir_2 == 1){
+					*KRAID_THROW_2_X-=6;
 				}
 				else{
-					*KRAID_BUL_DIR = 0;
-					*KRAID_THROW_2_X = *KRAID_X+60;
-					*KRAID_THROW_2_Y = *KRAID_Y+5;
+					*KRAID_THROW_2_X+=6;
 				}
-				nail_two_inc = -3;
-				attack_counter_nail_2 = 0;
+				*KRAID_THROW_2_Y+=nail_two_inc;
+				nail_two_inc+=(gravity/2);
 			}
-			if(kraid_health <=5){
-				attack_counter_nail = rand()%50+100;
+			if(*KRAID_THROW_EN == True && (scene[sceneNum][(*KRAID_THROW_Y)/30][(*KRAID_THROW_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y+8)/30][(*KRAID_THROW_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y)/30][(*KRAID_THROW_X+8)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y+8)/30][(*KRAID_THROW_X+8)/30]!=0)){
+				*KRAID_THROW_EN = False;
 			}
-			if(kraid_health <=10){
-				attack_counter_nail = rand()%100+100;
+			if(*KRAID_THROW_2_EN == True && (scene[sceneNum][(*KRAID_THROW_2_Y)/30][(*KRAID_THROW_2_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y+8)/30][(*KRAID_THROW_2_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y)/30][(*KRAID_THROW_2_X+8)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y+8)/30][(*KRAID_THROW_2_X+8)/30]!=0)){
+				*KRAID_THROW_2_EN = False;
 			}
-			if(kraid_health <=5){
-				attack_counter_nail = rand()%150+100;
-			}
-	    }
-		if(*KRAID_THROW_EN == True){
-			if(throw_dir_1 == 1){
-				*KRAID_THROW_X-=4;
-			}
-			else{
-				*KRAID_THROW_X+=4;
-			}
-			*KRAID_THROW_Y+=nail_one_inc;
-			nail_one_inc+=gravity;
-		}
-		if(*KRAID_THROW_2_EN == True){
-			if(throw_dir_2 == 1){
-				*KRAID_THROW_2_X-=4;
-			}
-			else{
-				*KRAID_THROW_2_X+=4;
-			}
-			*KRAID_THROW_2_Y+=nail_two_inc;
-			nail_two_inc+=gravity;
-		}
-	    if(*KRAID_THROW_EN == True && (scene[sceneNum][(*KRAID_THROW_Y)/30][(*KRAID_THROW_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y+8)/30][(*KRAID_THROW_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y)/30][(*KRAID_THROW_X+8)/30]!=0 || scene[sceneNum][(*KRAID_THROW_Y+8)/30][(*KRAID_THROW_X+8)/30]!=0)){
-	    	*KRAID_THROW_EN = False;
-	    }
-	    if(*KRAID_THROW_2_EN == True && (scene[sceneNum][(*KRAID_THROW_2_Y)/30][(*KRAID_THROW_2_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y+8)/30][(*KRAID_THROW_2_X)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y)/30][(*KRAID_THROW_2_X+8)/30]!=0 || scene[sceneNum][(*KRAID_THROW_2_Y+8)/30][(*KRAID_THROW_2_X+8)/30]!=0)){
-	    	*KRAID_THROW_2_EN = False;
-	    }
 
-	    //spike
-		if(attack_counter_bullet > bullet_counter && (*KRAID_G_EN == True || *KRAID_R_EN == True || *KRAID_N_EN == True)){
-			if(*KRAID_SHOOT_EN == False){
-				*KRAID_SHOOT_EN = True;
-				if(*KRAID_DIR == 1){
-					*KRAID_BUL_DIR = 1;
-					*KRAID_SPIKE_X = *KRAID_X;
-					*KRAID_SPIKE_Y = *KRAID_Y+25;
+			//spike
+			if(attack_counter_bullet > bullet_counter && (*KRAID_G_EN == True || *KRAID_R_EN == True || *KRAID_N_EN == True)){
+				if(*KRAID_SHOOT_EN == False){
+					if(*KRAID_DIR == 1){
+						*KRAID_BUL_DIR = 1;
+						*KRAID_SPIKE_X = *KRAID_X;
+						*KRAID_SPIKE_Y = *KRAID_Y+25;
+					}
+					else{
+						*KRAID_BUL_DIR = 0;
+						*KRAID_SPIKE_X = *KRAID_X+60;
+						*KRAID_SPIKE_Y = *KRAID_Y+25;
+					}
+					*KRAID_SHOOT_EN = True;
+					kraid_bul_start = 0;
+				}
+				attack_counter_bullet = 0;
+				if(kraid_health <=5){
+					bullet_counter = rand()%25+50;
+				}
+				if(kraid_health <=10){
+					bullet_counter = rand()%50+50;
+				}
+				if(kraid_health <=5){
+					bullet_counter = rand()%100+50;
+				}
+			}
+			if(*KRAID_SHOOT_EN == True){
+				if(*KRAID_BUL_DIR == 1){
+					*KRAID_SPIKE_X-=6;
+					kraid_bul_start+=6;
 				}
 				else{
-					*KRAID_BUL_DIR = 0;
-					*KRAID_SPIKE_X = *KRAID_X+60;
-					*KRAID_SPIKE_Y = *KRAID_Y+25;
+					*KRAID_SPIKE_X+=6;
+					kraid_bul_start+=6;
 				}
-				kraid_bul_start = 0;
 			}
-			attack_counter_bullet = 0;
-			if(kraid_health <=5){
-				bullet_counter = rand()%50+100;
+			if(kraid_bul_start >= 200){
+				*KRAID_SHOOT_EN = False;
 			}
-			if(kraid_health <=10){
-				bullet_counter = rand()%100+100;
+			if(*KRAID_SHOOT_EN == True && *KRAID_BUL_DIR == True && (scene[sceneNum][(*KRAID_SPIKE_Y)/30][(*KRAID_SPIKE_X)/30]!=0 || scene[sceneNum][(*KRAID_SPIKE_Y+8)/30][(*KRAID_SPIKE_X)/30]!=0)){
+				*KRAID_SHOOT_EN = False;
 			}
-			if(kraid_health <=5){
-				bullet_counter = rand()%150+100;
-			}
-	    }
-		if(*KRAID_SHOOT_EN == True){
-			if(*KRAID_BUL_DIR == 1){
-				*KRAID_SPIKE_X-=6;
-				kraid_bul_start+=6;
-			}
-			else{
-				*KRAID_SPIKE_X+=6;
-				kraid_bul_start+=6;
+			if(*KRAID_SHOOT_EN == True && *KRAID_BUL_DIR == False && (scene[sceneNum][(*KRAID_SPIKE_Y)/30][(*KRAID_SPIKE_X+10)/30]!=0 || scene[sceneNum][(*KRAID_SPIKE_Y+8)/30][(*KRAID_SPIKE_X+10)/30]!=0)){
+				*KRAID_SHOOT_EN = False;
 			}
 		}
-		if(kraid_bul_start >= 200){
-			*KRAID_SHOOT_EN = False;
-		}
-	    if(*KRAID_SHOOT_EN == True && *KRAID_BUL_DIR == True && (scene[sceneNum][(*KRAID_SPIKE_Y)/30][(*KRAID_SPIKE_X)/30]!=0 || scene[sceneNum][(*KRAID_SPIKE_Y+8)/30][(*KRAID_SPIKE_X)/30]!=0)){
-	    	*KRAID_SHOOT_EN = False;
-	    }
-	    if(*KRAID_SHOOT_EN == True && *KRAID_BUL_DIR == False && (scene[sceneNum][(*KRAID_SPIKE_Y)/30][(*KRAID_SPIKE_X+10)/30]!=0 || scene[sceneNum][(*KRAID_SPIKE_Y+8)/30][(*KRAID_SPIKE_X+10)/30]!=0)){
-	    	*KRAID_SHOOT_EN = False;
-	    }
 
 
 		//EXTRA
@@ -1672,10 +1787,42 @@ int main(void)
 			sceneStart = True;
 			game_win = False;
 		}
+		if (keycode == 0x13){
+			sceneStart = True;
+			game_win = False;
+			sceneNum = -1;
+		}
+
 		if(god_mode == True){
 			*HEALTH = 3;
-			printf("God-Mode enabled.");
+			printf("God-Mode enabled.\n");
 		}
+		if(*MON1_EN == False && *MON2_EN == False && sceneNum != 4){
+			moving_on = True;
+		}
+		else{
+			moving_on = False;
+		}
+
+		if(moving_on == True && sceneNum == 3 && *SAMUS_X > 560 && *SAMUS_Y < 90){
+			sceneNum = 4;
+			sceneStart = True;
+		}
+		else if(moving_on == True && sceneNum == 0 && *SAMUS_X > 560 && *SAMUS_Y > 330){
+			sceneNum = 1;
+			sceneStart = True;
+		}
+		else if(moving_on == True && sceneNum == 1 && *SAMUS_X > 555 && *SAMUS_Y > 280){
+			sceneNum = 2;
+			sceneStart = True;
+		}
+		else if(moving_on == True && sceneNum == 2 && *SAMUS_X > 555 && *SAMUS_Y > 100 && *SAMUS_Y < 120){
+			sceneNum = 3;
+			sceneStart = True;
+		}
+
+
+
 
 	}//end while
 
