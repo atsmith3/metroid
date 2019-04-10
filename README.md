@@ -1,6 +1,6 @@
 # Metroid
 
-This was a final project for the Universiy of Illinois Electrical and Computer Engineering departments Digital Systems Lab (ECE 385). We chose to recreate a version of the classic Metroid game for the Altera Cyclone IV FPGA. We used Verilog to draw the scene and C code targeting a Nios II embedded processor to control the sprites on screen. [Here is a video of the game in action.](http://youtube.com)
+This was a final project for the Universiy of Illinois Electrical and Computer Engineering departments Digital Systems Lab Fall 2016 (ECE 385). We chose to recreate a version of the classic Metroid game for the Altera Cyclone IV FPGA. We used Verilog to draw the scene and C code targeting a Nios II embedded processor to control the sprites on screen. [Here is a video of the game in action.](https://youtu.be/hJv3r6Vqefs)
 
 ## Built With
 
@@ -11,7 +11,7 @@ This was a final project for the Universiy of Illinois Electrical and Computer E
 * **Andrew Smith** - *Graphics Driver* - [atsmith3](https://github.com/atsmith3)
 * **Zach Gleason** - *Game Logic* - [Zman94](https://github.com/Zman94)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/atsmith3/metroid/graphs/contributors) who participated in this project.
 
 ## License
 
