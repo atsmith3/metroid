@@ -1,2 +1,0 @@
-Warning (10268): Verilog HDL information at AES.sv(266): always construct contains both blocking and non-blocking assignments
-Info (10281): Verilog HDL Declaration information at AES.sv(14): object "Reset" differs only in case from object "RESET" in the same scope

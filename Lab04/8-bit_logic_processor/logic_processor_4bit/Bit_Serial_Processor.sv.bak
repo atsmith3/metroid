@@ -1,8 +1,0 @@
-module 8_bit_processor(input [1:0] R,
-							  input execute, LA, LB, reset, clock,
-							  input [2:0] f,
-							  output [7:0] A_val, B_val,
-							  output [6:0] A_hex_u, A_hex_l, B_hex_u, B_hex_l,
-							  output [3:0] LED);
-							  
-	testbench
