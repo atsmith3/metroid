@@ -1,0 +1,110 @@
+# Reading C:/Altera/modelsim_ase/tcl/vsim/pref.tcl
+# do Adders_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/Altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/Altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab04/adders {E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/ripple_adder.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:43:10 on Sep 19,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders" E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/ripple_adder.sv 
+# -- Compiling module ripple_adder
+# 
+# Top level modules:
+# 	ripple_adder
+# End time: 12:43:10 on Sep 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab04/adders {E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/HexDriver.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:43:10 on Sep 19,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders" E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/HexDriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 12:43:10 on Sep 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab04/adders {E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/carry_select_adder.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:43:10 on Sep 19,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders" E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/carry_select_adder.sv 
+# -- Compiling module carry_select_adder
+# 
+# Top level modules:
+# 	carry_select_adder
+# End time: 12:43:10 on Sep 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab04/adders {E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/standard_modules.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:43:10 on Sep 19,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders" E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/standard_modules.sv 
+# -- Compiling module two_input_mux
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	two_input_mux
+# 	full_adder
+# End time: 12:43:10 on Sep 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab04/adders {E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/adder_modules.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:43:10 on Sep 19,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders" E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/adder_modules.sv 
+# -- Compiling module four_ripple_adder
+# -- Compiling module LAAdder
+# -- Compiling module Carry_four_Lookahead
+# -- Compiling module four_LAAdder
+# -- Compiling module C_S_Adder
+# -- Compiling module four_cs_adder
+# 
+# Top level modules:
+# 	four_ripple_adder
+# 	four_LAAdder
+# 	four_cs_adder
+# End time: 12:43:10 on Sep 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab04/adders {E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/testbench_8.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:43:10 on Sep 19,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders" E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/testbench_8.sv 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 12:43:11 on Sep 19,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/School/University\ of\ Illinois/ECE\ 385/ECE_385/Lab04/adders {E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:43:11 on Sep 19,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders" E:/School/University of Illinois/ECE 385/ECE_385/Lab04/adders/lab4_adders_toplevel.sv 
+# -- Compiling module lab4_adders_toplevel
+# 
+# Top level modules:
+# 	lab4_adders_toplevel
+# End time: 12:43:11 on Sep 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.testbench
+# vsim -gui "+altera" -l msim_transcript -do "Adders_run_msim_rtl_verilog.do" 
+# Start time: 12:43:15 on Sep 19,2016
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.ripple_adder
+# Loading work.four_ripple_adder
+# Loading work.full_adder
+add wave -position insertpoint  \
+sim:/testbench/Sum \
+sim:/testbench/CO \
+sim:/testbench/B \
+sim:/testbench/A
+run
+# End time: 12:45:10 on Sep 19,2016, Elapsed time: 0:01:55
+# Errors: 0, Warnings: 0
