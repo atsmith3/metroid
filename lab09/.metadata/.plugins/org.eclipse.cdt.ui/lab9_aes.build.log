@@ -1,9 +1,0 @@
-18:15:08 **** Incremental Build of configuration Nios II for project lab9_aes ****
-make all 
-Info: Building ../lab9_aes_bsp/
-make --no-print-directory -C ../lab9_aes_bsp/
-[BSP build complete]
-[lab9_aes build complete]
-
-18:15:08 Build Finished (took 128ms)
-
